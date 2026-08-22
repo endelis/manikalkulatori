@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { IBM_Plex_Sans, JetBrains_Mono } from 'next/font/google';
+import { Footer } from '@/components/Footer';
 import { SITE_URL } from '@/lib/site';
 import './globals.css';
 
@@ -30,7 +31,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="lv" className={`${jetbrainsMono.variable} ${ibmPlexSans.variable}`}>
-      <body className="min-h-screen antialiased">{children}</body>
+      <body className="min-h-screen antialiased">
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
