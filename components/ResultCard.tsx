@@ -1,15 +1,20 @@
+export type ResultCardTone = 'winner' | 'loser' | 'neutral';
+
 interface ResultCardProps {
   label: string;
   value: string;
+  tone: ResultCardTone;
   accentVar: string;
   sublabel?: string;
 }
 
-export function ResultCard({ label, value, accentVar, sublabel }: ResultCardProps) {
+export function ResultCard({ label, value, tone, accentVar, sublabel }: ResultCardProps) {
+  const color = tone === 'winner' ? accentVar : tone === 'loser' ? 'var(--color-warn)' : 'var(--color-panel-text)';
+
   return (
-    <div className="rounded-lg border border-panel-border bg-panel-surface p-6" style={{ borderColor: accentVar }}>
+    <div className="rounded-lg border border-panel-border bg-panel-surface p-6" style={{ borderColor: color }}>
       <p className="text-sm text-panel-muted">{label}</p>
-      <p className="font-mono text-4xl font-semibold" style={{ color: accentVar }}>
+      <p className="font-mono text-4xl font-semibold" style={{ color }}>
         {value}
       </p>
       {sublabel ? <p className="mt-1 text-sm text-panel-muted">{sublabel}</p> : null}

@@ -31,11 +31,15 @@ export function ElektroautoVsBenzinaCalculator({ accentVar }: { accentVar: strin
         ? 'Benzīna auto lētāks gadā'
         : 'Izmaksas ir vienādas';
 
+  const tone: 'winner' | 'loser' | 'neutral' =
+    result.cheaperOption === 'ev' ? 'winner' : result.cheaperOption === 'ice' ? 'loser' : 'neutral';
+
   return (
     <div className="flex flex-col gap-6">
       <ResultCard
         label={verdictLabel}
         value={formatCurrencyEUR(Math.abs(result.annualSavings))}
+        tone={tone}
         accentVar={accentVar}
         sublabel={`5 gados: ${formatCurrencyEUR(Math.abs(result.fiveYearSavings))}`}
       />
