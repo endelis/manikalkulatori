@@ -20,7 +20,7 @@ Strategy: enter through the gaps, not the incumbent's strengths. Build authority
 
 1. 50 pages indexed within 6 weeks of launch.
 2. First AdSense/affiliate revenue within 8 to 12 weeks.
-3. Hosting cost at or near zero (self-hosted on Oracle Always Free + Coolify).
+3. Hosting cost at or near zero (Vercel Hobby tier).
 4. Positive monthly ROI (revenue exceeds domain + any incidental cost) by month 3.
 
 ## 3. Tech stack
@@ -28,8 +28,8 @@ Strategy: enter through the gaps, not the incumbent's strengths. Build authority
 Frontend and framework: Next.js 15 (App Router), TypeScript, static generation (SSG) with selective ISR.
 Styling: Tailwind CSS, no component library, custom design tokens.
 Data: mostly none. Calculators are pure client-side math. Supabase only if saved-calculation or contact features are added later.
-Hosting: Oracle Cloud Always Free ARM VM, Docker (Next.js standalone), Caddy reverse proxy with automatic TLS, Coolify for deploy UX.
-Analytics: Plausible (self-hosted on same VM) or Umami, to avoid Google Analytics bloat and stay privacy-clean.
+Hosting: Vercel (Hobby tier), git-push deploys, automatic TLS and preview deployments, no server to manage.
+Analytics: Vercel Web Analytics (included, privacy-friendly, zero setup) to avoid Google Analytics bloat; revisit Plausible/Umami Cloud later only if deeper funnel analysis is needed.
 Monetization: Google AdSense plus affiliate links; later a lightweight ad manager for direct deals.
 
 ## 4. Repository shape
@@ -157,11 +157,11 @@ Single source of truth. `lib/registry.ts` holds every calculator's metadata. Not
 
 Compute modules are pure. Each calculator's logic lives in `lib/calculators/<slug>.ts` as a pure function: inputs in, structured result out. No side effects, no DOM. This makes them trivially unit-testable and reusable (a compute module can power both the page and, later, an API endpoint or embeddable widget).
 
-Deployment. Next.js builds in standalone output mode into a small Docker image. Caddy sits in front for automatic HTTPS and compression. Coolify watches the Git repo and redeploys on push, giving you a Vercel-like flow on your own Oracle free VM. Because the site is static, a redeploy is just swapping a container; rollback is instant.
+Deployment. Vercel builds and deploys directly from the Git repo: push to main deploys to production, every branch/PR gets its own preview URL, TLS and CDN are automatic. Because the site is static, rollback is instant (redeploy any previous build from the dashboard).
 
-Observability. Self-hosted Plausible on the same VM gives privacy-friendly traffic data without Google Analytics weight. Log which calculators convert (ad clicks, affiliate outbound) to decide where to deepen content.
+Observability. Vercel Web Analytics gives privacy-friendly traffic data without Google Analytics weight, with zero infrastructure to run. Log which calculators convert (ad clicks, affiliate outbound) to decide where to deepen content.
 
-Future extension without rework. If saved calculations, user accounts, or an embeddable-widget business emerge, Supabase drops in for auth and storage, and the pure compute modules already double as an API. Nothing built now needs to be undone.
+Future extension without rework. If saved calculations, user accounts, or an embeddable-widget business emerge, Supabase drops in for auth and storage (Vercel's Supabase integration wires up env vars automatically), and the pure compute modules already double as an API. Nothing built now needs to be undone.
 
 ## 7. Pillar B — Frontend UI and UX
 
@@ -212,7 +212,7 @@ Paste the following into Claude Code from an empty project directory. It assumes
 ```
 Read PROJECT-OVERVIEW.md in full before writing any code. It is the single source of truth for this project. Build it in the order below and stop for my review at each checkpoint.
 
-PROJECT: Manikalkulatori.lv, a Latvian-language calculator hub for programmatic SEO. Next.js 15 App Router, TypeScript, Tailwind, static generation. Deployed later as a Docker standalone image behind Caddy on an Oracle free VM via Coolify. Do not add a database, auth, or any server-side data fetching. All calculator math runs client-side in pure functions.
+PROJECT: Manikalkulatori.lv, a Latvian-language calculator hub for programmatic SEO. Next.js 15 App Router, TypeScript, Tailwind, static generation. Deployed to Vercel (Hobby tier), git-push deploys. Do not add a database, auth, or any server-side data fetching. All calculator math runs client-side in pure functions.
 
 ARCHITECTURE RULES (non-negotiable):
 1. lib/registry.ts is the single source of truth. Every calculator is registered once with: slug, category, title, h1, metaDescription, keywords[], accentColor, and a dynamic import of its compute module. The sitemap, homepage grid, category pages, breadcrumbs, and related-calculators blocks must all derive from this registry. Never hardcode a calculator list anywhere else.
@@ -233,7 +233,7 @@ Checkpoint 2 — Wave 1, the competitor gaps. Build the full automotive category
 
 Checkpoint 3 — Wave 2, health category (8).
 
-Checkpoint 4 — Wave 3, the contested finance and tax category (14). These compete directly with the incumbent, so they come last, after the site has authority. Then a final pass: internal linking via related-calculators, sitemap completeness, Core Web Vitals check, and a deployment setup (Dockerfile in standalone mode, Caddyfile, and notes for Coolify on an Oracle ARM VM).
+Checkpoint 4 — Wave 3, the contested finance and tax category (14). These compete directly with the incumbent, so they come last, after the site has authority. Then a final pass: internal linking via related-calculators, sitemap completeness, Core Web Vitals check, and connecting the repo to Vercel for production deploys.
 
 For every calculator, take the exact slug, title, and category from the overview's list of 50. Ask me before inventing any formula whose Latvian tax rate, grant amount, or rate I have not specified; do not guess YMYL financial figures. Write a unit test for each compute module.
 
