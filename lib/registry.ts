@@ -61,6 +61,16 @@ export const calculators: CalculatorMeta[] = [
       'Salīdzini elektroauto un benzīna auto gada ekspluatācijas izmaksas pēc nobraukuma, patēriņa un enerģijas cenas.',
     keywords: ['elektroauto vs benzīns', 'elektroauto izmaksas', 'ev vs ice kalkulators'],
   },
+  {
+    slug: 'ekii-atbalsts',
+    category: 'auto',
+    title: 'EKII atbalsta kalkulators',
+    h1: 'Cik liels ir EKII atbalsts elektroauto iegādei?',
+    intro: 'Ievadi auto cenu un savus datus, uzzini pieejamā EKII atbalsta apmēru un auto cenu pēc atbalsta.',
+    metaDescription:
+      'Aprēķini EKII valsts atbalsta apmēru elektroauto vai spraudņa hibrīda iegādei 2026. gadā pēc auto cenas, statusa un Goda ģimenes apliecības.',
+    keywords: ['EKII atbalsts', 'elektroauto valsts atbalsts', 'EKII kalkulators 2026'],
+  },
 ];
 
 export function getCategory(slug: string): CategoryMeta | undefined {

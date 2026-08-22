@@ -67,6 +67,28 @@ const explanations: Record<string, React.ReactNode> = {
       </ul>
     </>
   ),
+  'ekii-atbalsts': (
+    <>
+      <p className="text-panel-muted">
+        EKII atbalsta apmērs ir atkarīgs no trim faktoriem: vai auto ir jauns vai lietots, vai tev ir Goda
+        ģimenes apliecība, un cik sēdvietu ir automašīnai. Standarta atbalsts pastāvīgam Latvijas
+        iedzīvotājam ir 4&nbsp;000 eiro par jaunu elektroauto, spraudņa hibrīdu vai ūdeņraža auto, un
+        3&nbsp;000 eiro par lietotu elektroauto vai ūdeņraža auto.
+      </p>
+      <p className="text-panel-muted">
+        Goda ģimenes apliecības turētājiem atbalsts ir lielāks, ja auto ir vismaz 5 sēdvietas. Ar 5 vai 6
+        sēdvietām atbalsts ir 6&nbsp;750 eiro jaunam auto un 5&nbsp;000 eiro lietotam. Ar 7 vai vairāk
+        sēdvietām atbalsts pieaug līdz 9&nbsp;000 eiro jaunam auto un 6&nbsp;750 eiro lietotam. Ģimenēm ar
+        4 un vairāk bērniem pienākas papildu 1&nbsp;000 eiro par katru bērnu sākot ar ceturto, ja auto ir
+        vismaz 5 sēdvietas.
+      </p>
+      <p className="text-panel-muted">
+        Kalkulators arī pārbauda cenas griestus. Jauna auto bāzes cena bez PVN nedrīkst pārsniegt
+        45&nbsp;000 eiro, vai 60&nbsp;000 eiro, ja auto ir vismaz 6 sēdvietas. Lietotam auto papildus
+        jāmaksā vismaz 8&nbsp;750 eiro bez PVN. Lietoti spraudņa hibrīdi atbalstu nesaņem.
+      </p>
+    </>
+  ),
 };
 
 export default async function CalculatorPage({
