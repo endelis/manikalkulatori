@@ -12,6 +12,7 @@ export interface CalculatorMeta {
   category: CategorySlug;
   title: string;
   h1: string;
+  intro: string;
   metaDescription: string;
   keywords: string[];
 }
@@ -54,7 +55,8 @@ export const calculators: CalculatorMeta[] = [
     slug: 'elektroauto-vs-benzina',
     category: 'auto',
     title: 'Elektroauto vs benzīna auto izmaksas',
-    h1: 'Elektroauto vai benzīna auto — kas izmaksā lētāk?',
+    h1: 'Elektroauto vai benzīna auto: kas izmaksā lētāk?',
+    intro: 'Ievadi savus skaitļus un uzzini, cik gadā maksā elektroauto salīdzinājumā ar benzīna auto.',
     metaDescription:
       'Salīdzini elektroauto un benzīna auto gada ekspluatācijas izmaksas pēc nobraukuma, patēriņa un enerģijas cenas.',
     keywords: ['elektroauto vs benzīns', 'elektroauto izmaksas', 'ev vs ice kalkulators'],
