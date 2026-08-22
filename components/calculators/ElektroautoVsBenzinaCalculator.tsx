@@ -84,7 +84,7 @@ export function ElektroautoVsBenzinaCalculator({ accentVar }: { accentVar: strin
       </div>
 
       <p className="text-xs text-panel-muted">
-        Noklusējuma vērtības (2026. gada augusts): elektrība 0,18 €/kWh, benzīns 1,85 €/L — pielāgo tās
+        Noklusējuma vērtības (2026. gada augusts): elektrība 0,18 €/kWh, benzīns 1,85 €/L. Pielāgo tās
         savai situācijai un pašreizējām cenām.
       </p>
 
