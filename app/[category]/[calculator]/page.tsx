@@ -153,6 +153,34 @@ const explanations: Record<string, React.ReactNode> = {
       izmaksas dala ar līdzbraucēju skaitu, lai parādītu izmaksas uz vienu cilvēku.
     </p>
   ),
+  'solaru-atmaksa': (
+    <p className="text-panel-muted">
+      Kalkulators aprēķina gada izstrādi no sistēmas jaudas un vidējās izstrādes uz kWp, tad sadala to
+      starp pašpatēriņu un tīklā nosūtīto pārpalikumu pēc tavis norādītās proporcijas. Katrai daļai
+      piemēro atbilstošo cenu, summē gada ietaupījumu, un dala sistēmas izmaksas ar gada ietaupījumu, lai
+      iegūtu atmaksāšanās laiku gados.
+    </p>
+  ),
+  'siltumsukna-atmaksa': (
+    <p className="text-panel-muted">
+      Kalkulators aprēķina, cik elektrības patērē siltumsūknis, dalot gada siltumenerģijas patēriņu ar
+      COP. Šo elektrības patēriņu reizina ar elektrības cenu, lai iegūtu siltumsūkņa gada izmaksas, un
+      salīdzina ar vecās apkures sistēmas gada izmaksām. Starpība ir gada ietaupījums, ko dala ar
+      siltumsūkņa izmaksām, lai iegūtu atmaksāšanās laiku.
+    </p>
+  ),
+  'elektribas-rekins': (
+    <p className="text-panel-muted">
+      Kalkulators reizina mēneša patēriņu ar elektrības cenu, lai iegūtu mainīgo daļu, tad pieskaita
+      fiksēto mēneša maksu. Gada izmaksas iegūst, reizinot mēneša rēķinu ar divpadsmit.
+    </p>
+  ),
+  'apkures-izmaksas': (
+    <p className="text-panel-muted">
+      Kalkulators reizina mājas gada siltumenerģijas patēriņu ar katra apkures veida cenu par kWh
+      siltumenerģijas, tad salīdzina rezultātus un parāda lētāko variantu.
+    </p>
+  ),
 };
 
 export default async function CalculatorPage({

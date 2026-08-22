@@ -9,6 +9,10 @@ import { UzladesIzmaksasCalculator } from './UzladesIzmaksasCalculator';
 import { NolietojumsCalculator } from './NolietojumsCalculator';
 import { RiepuIzmeraCalculator } from './RiepuIzmeraCalculator';
 import { CelaIzmaksasCalculator } from './CelaIzmaksasCalculator';
+import { SolaruAtmaksasCalculator } from './SolaruAtmaksasCalculator';
+import { SiltumsuknaAtmaksasCalculator } from './SiltumsuknaAtmaksasCalculator';
+import { ElektribasRekinaCalculator } from './ElektribasRekinaCalculator';
+import { ApkuresIzmaksasCalculator } from './ApkuresIzmaksasCalculator';
 
 /**
  * Props every calculator component receives from the calculator page.
@@ -30,6 +34,10 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'nolietojums': NolietojumsCalculator,
   'riepu-izmers': RiepuIzmeraCalculator,
   'cela-izmaksas': CelaIzmaksasCalculator,
+  'solaru-atmaksa': SolaruAtmaksasCalculator,
+  'siltumsukna-atmaksa': SiltumsuknaAtmaksasCalculator,
+  'elektribas-rekins': ElektribasRekinaCalculator,
+  'apkures-izmaksas': ApkuresIzmaksasCalculator,
 };
 
 export function getCalculatorComponent(slug: string): ComponentType<CalculatorComponentProps> | undefined {
