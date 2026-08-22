@@ -6,7 +6,7 @@
 
 **Architecture:** Fully static Next.js 15 App Router site. `lib/registry.ts` is the single source of truth for calculator/category metadata (slug, title, meta description, keywords, FAQ slug) — nothing about a calculator is hardcoded a second time anywhere else. Compute lives in `lib/calculators/<slug>.ts` as pure, dependency-free functions (inputs in, typed result out); a small parallel `components/calculators/registry.tsx` maps a slug to its interactive UI component, since each calculator has a different input shape that the data-only registry deliberately does not encode. Category and calculator pages are generated via `generateStaticParams` reading the registry; sitemap/robots are generated from the same registry.
 
-**Tech Stack:** Next.js 15 (App Router, TypeScript, `output: 'standalone'`), Tailwind CSS 3, Vitest for unit tests, no database/auth/server-side fetching — all math runs client-side.
+**Tech Stack:** Next.js 15 (App Router, TypeScript), Tailwind CSS 3, Vitest for unit tests, deployed to Vercel (git-push deploys, no Docker/standalone output needed), no database/auth/server-side fetching — all math runs client-side.
 
 **Spec:** `PROJECT-OVERVIEW.md` (repo root) — see especially §3 (tech stack), §4 (repo shape), §6 (backend/architecture pillar), §7 (UI/UX pillar), §8 (SEO pillar), §9 Checkpoint 1.
 
@@ -117,12 +117,13 @@
 ```js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone',
   reactStrictMode: true,
 };
 
 export default nextConfig;
 ```
+
+(No `output: 'standalone'` — that setting is for Docker deployments. This project deploys to Vercel, which builds its own optimized output automatically.)
 
 - [ ] **Step 4: Write `next-env.d.ts`**
 
@@ -904,6 +905,22 @@ describe('computeEvVsIce', () => {
     expect(result.iceAnnualFuelCost).toBe(0);
     expect(result.cheaperOption).toBe('equal');
   });
+
+  it('matches the sourced Latvia defaults (Aug 2026) used as the UI defaults in Task 9', () => {
+    const result = computeEvVsIce({
+      annualDistanceKm: 15000,
+      evConsumptionKwhPer100km: 16.5,
+      electricityPricePerKwh: 0.18,
+      iceConsumptionLPer100km: 7.0,
+      fuelPricePerLiter: 1.85,
+    });
+
+    expect(result.evAnnualEnergyCost).toBeCloseTo(445.5, 2);
+    expect(result.iceAnnualFuelCost).toBeCloseTo(1942.5, 2);
+    expect(result.annualSavings).toBeCloseTo(1497, 2);
+    expect(result.fiveYearSavings).toBeCloseTo(7485, 2);
+    expect(result.cheaperOption).toBe('ev');
+  });
 });
 ```
 
@@ -1356,12 +1373,16 @@ import { Breakdown } from '@/components/Breakdown';
 import { formatCurrencyEUR, formatNumber } from '@/lib/format';
 import { computeEvVsIce } from '@/lib/calculators/elektroauto-vs-benzina';
 
+// Latvia defaults, Aug 2026 — all-in household electricity (energy + Sadales tīkls
+// distribution + 21% PVN), 95-octane pump price, real-world mixed-driving consumption
+// for a compact crossover class (Hyundai Kona Electric-class EV vs. equivalent petrol).
+// Prices move often — revisit periodically.
 const DEFAULT_INPUT = {
   annualDistanceKm: 15000,
-  evConsumptionKwhPer100km: 17,
-  electricityPricePerKwh: 0.2,
-  iceConsumptionLPer100km: 6.5,
-  fuelPricePerLiter: 1.65,
+  evConsumptionKwhPer100km: 16.5,
+  electricityPricePerKwh: 0.18,
+  iceConsumptionLPer100km: 7.0,
+  fuelPricePerLiter: 1.85,
 };
 
 export function ElektroautoVsBenzinaCalculator() {
@@ -1429,7 +1450,8 @@ export function ElektroautoVsBenzinaCalculator() {
       </div>
 
       <p className="text-xs text-panel-muted">
-        Noklusējuma vērtības ir orientējošas — pielāgo tās savai situācijai un pašreizējām cenām.
+        Noklusējuma vērtības (2026. gada augusts): elektrība 0,18 €/kWh, benzīns 1,85 €/L — pielāgo tās
+        savai situācijai un pašreizējām cenām.
       </p>
 
       <Breakdown
@@ -1781,3 +1803,8 @@ git commit -m "chore: checkpoint 1 foundation complete" --allow-empty
 - **Deferred to later checkpoints, not this plan:** the other 49 calculators (§9 Checkpoints 2–4), connecting the repo to Vercel for production deploys (§9 Checkpoint 4 — updated 2026-08-22; no longer Dockerfile/Caddyfile/Coolify, see Amendments below), Vercel Web Analytics activation (§3), and AdSense/affiliate wiring beyond the placeholder `AdSlot` (§8 notes).
 - **Placeholder scan:** no TBDs; every step above contains complete, runnable file contents.
 - **Type consistency:** `CategoryMeta`/`CalculatorMeta` (Task 5) are the only shapes referenced by name in Tasks 8, 9, 10, and 11; `FaqEntry` (Task 7) is the only FAQ shape referenced in Tasks 8 and 10 — verified no divergent names were introduced.
+
+## Amendments (2026-08-22)
+
+- Deployment target changed from Oracle Cloud (self-hosted VM + Coolify) to Vercel — see `PROJECT-OVERVIEW.md`. Removed `output: 'standalone'` from Task 1's `next.config.mjs` (Docker-only setting, not needed on Vercel).
+- Task 9's `DEFAULT_INPUT` and Task 6's compute-module tests updated from generic placeholder figures to sourced, dated Latvia defaults (Aug 2026): electricity €0.18/kWh, EV 16.5 kWh/100km, petrol €1.85/L, ICE 7.0 L/100km, 15,000 km/year — provided and cited by the user, per the spec's own rule against inventing unverified YMYL figures. Added a regression test locking compute output to these exact defaults.
