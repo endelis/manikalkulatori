@@ -186,6 +186,42 @@ export const calculators: CalculatorMeta[] = [
     metaDescription: 'Salīdzini gāzes, malkas un siltumsūkņa apkures gada izmaksas pēc mājas siltumenerģijas patēriņa.',
     keywords: ['apkures izmaksu salīdzinājums', 'apkures veidu salīdzinājums', 'lētākā apkure'],
   },
+  {
+    slug: 'malkas-apjoms',
+    category: 'majoklis',
+    title: 'Malkas apjoma kalkulators',
+    h1: 'Cik ciešas malkas ir sakrautajā grēdā?',
+    intro: 'Ievadi grēdas garumu, platumu un augstumu, uzzini sakrautā apjoma un cietās koksnes apjomu.',
+    metaDescription: 'Aprēķini malkas grēdas apjomu steros un cietās koksnes kubikmetros pēc grēdas izmēriem.',
+    keywords: ['malkas apjoma kalkulators', 'malkas ster', 'malkas kubikmetri'],
+  },
+  {
+    slug: 'krasas-daudzums',
+    category: 'majoklis',
+    title: 'Krāsas daudzuma kalkulators',
+    h1: 'Cik daudz krāsas nepieciešams?',
+    intro: 'Ievadi krāsojamo platību, krāsas patēriņu un kārtu skaitu, uzzini nepieciešamo krāsas daudzumu litros.',
+    metaDescription: 'Aprēķini nepieciešamo krāsas daudzumu litros pēc krāsojamās platības, patēriņa un kārtu skaita.',
+    keywords: ['krāsas daudzuma kalkulators', 'krāsas patēriņš', 'cik krāsas vajag'],
+  },
+  {
+    slug: 'flizu-daudzums',
+    category: 'majoklis',
+    title: 'Flīžu daudzuma kalkulators',
+    h1: 'Cik flīžu nepieciešams?',
+    intro: 'Ievadi klājamo platību, flīzes izmēru un rezerves procentu, uzzini nepieciešamo flīžu skaitu.',
+    metaDescription: 'Aprēķini nepieciešamo flīžu skaitu pēc klājamās platības, flīzes izmēra un rezerves procenta.',
+    keywords: ['flīžu daudzuma kalkulators', 'flīžu skaits', 'cik flīžu vajag'],
+  },
+  {
+    slug: 'betona-apjoms',
+    category: 'majoklis',
+    title: 'Betona apjoma kalkulators',
+    h1: 'Cik daudz betona nepieciešams?',
+    intro: 'Ievadi betonējamā laukuma izmērus un biezumu, uzzini nepieciešamo betona apjomu un maisu skaitu.',
+    metaDescription: 'Aprēķini nepieciešamo betona apjomu kubikmetros un maisu skaitu pēc laukuma izmēriem un biezuma.',
+    keywords: ['betona apjoma kalkulators', 'betona daudzums', 'betona maisu skaits'],
+  },
 ];
 
 export function getCategory(slug: string): CategoryMeta | undefined {

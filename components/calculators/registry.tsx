@@ -13,6 +13,10 @@ import { SolaruAtmaksasCalculator } from './SolaruAtmaksasCalculator';
 import { SiltumsuknaAtmaksasCalculator } from './SiltumsuknaAtmaksasCalculator';
 import { ElektribasRekinaCalculator } from './ElektribasRekinaCalculator';
 import { ApkuresIzmaksasCalculator } from './ApkuresIzmaksasCalculator';
+import { MalkasApjomaCalculator } from './MalkasApjomaCalculator';
+import { KrasasDaudzumaCalculator } from './KrasasDaudzumaCalculator';
+import { FlizuDaudzumaCalculator } from './FlizuDaudzumaCalculator';
+import { BetonaApjomaCalculator } from './BetonaApjomaCalculator';
 
 /**
  * Props every calculator component receives from the calculator page.
@@ -38,6 +42,10 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'siltumsukna-atmaksa': SiltumsuknaAtmaksasCalculator,
   'elektribas-rekins': ElektribasRekinaCalculator,
   'apkures-izmaksas': ApkuresIzmaksasCalculator,
+  'malkas-apjoms': MalkasApjomaCalculator,
+  'krasas-daudzums': KrasasDaudzumaCalculator,
+  'flizu-daudzums': FlizuDaudzumaCalculator,
+  'betona-apjoms': BetonaApjomaCalculator,
 };
 
 export function getCalculatorComponent(slug: string): ComponentType<CalculatorComponentProps> | undefined {

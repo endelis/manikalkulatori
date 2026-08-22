@@ -181,6 +181,30 @@ const explanations: Record<string, React.ReactNode> = {
       siltumenerģijas, tad salīdzina rezultātus un parāda lētāko variantu.
     </p>
   ),
+  'malkas-apjoms': (
+    <p className="text-panel-muted">
+      Kalkulators reizina grēdas garumu, platumu un augstumu, lai iegūtu sakrauto apjomu, tad reizina to
+      ar cietās koksnes koeficientu, lai atspoguļotu gaisa spraugas starp pagalēm.
+    </p>
+  ),
+  'krasas-daudzums': (
+    <p className="text-panel-muted">
+      Kalkulators reizina krāsojamo platību ar kārtu skaitu, tad rezultātu dala ar krāsas patēriņu uz
+      litru, lai iegūtu nepieciešamo krāsas daudzumu litros.
+    </p>
+  ),
+  'flizu-daudzums': (
+    <p className="text-panel-muted">
+      Kalkulators dala klājamo platību ar vienas flīzes platību, lai iegūtu nepieciešamo flīžu skaitu bez
+      rezerves, tad pieskaita rezerves procentu un noapaļo uz augšu līdz veselam flīžu skaitam.
+    </p>
+  ),
+  'betona-apjoms': (
+    <p className="text-panel-muted">
+      Kalkulators reizina garumu, platumu un biezumu, lai iegūtu nepieciešamo betona apjomu kubikmetros,
+      tad dala to ar viena maisa iznākumu un noapaļo uz augšu, lai iegūtu nepieciešamo maisu skaitu.
+    </p>
+  ),
 };
 
 export default async function CalculatorPage({
