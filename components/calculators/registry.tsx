@@ -17,6 +17,10 @@ import { MalkasApjomaCalculator } from './MalkasApjomaCalculator';
 import { KrasasDaudzumaCalculator } from './KrasasDaudzumaCalculator';
 import { FlizuDaudzumaCalculator } from './FlizuDaudzumaCalculator';
 import { BetonaApjomaCalculator } from './BetonaApjomaCalculator';
+import { SkriesanasTempaCalculator } from './SkriesanasTempaCalculator';
+import { TriatlonaPlanotajaCalculator } from './TriatlonaPlanotajaCalculator';
+import { FtpZonuCalculator } from './FtpZonuCalculator';
+import { SirdsdarbibasZonuCalculator } from './SirdsdarbibasZonuCalculator';
 
 /**
  * Props every calculator component receives from the calculator page.
@@ -46,6 +50,10 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'krasas-daudzums': KrasasDaudzumaCalculator,
   'flizu-daudzums': FlizuDaudzumaCalculator,
   'betona-apjoms': BetonaApjomaCalculator,
+  'skriesanas-temps': SkriesanasTempaCalculator,
+  'triatlona-planotajs': TriatlonaPlanotajaCalculator,
+  'ftp-zonas': FtpZonuCalculator,
+  'sirdsdarbibas-zonas': SirdsdarbibasZonuCalculator,
 };
 
 export function getCalculatorComponent(slug: string): ComponentType<CalculatorComponentProps> | undefined {

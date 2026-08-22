@@ -205,6 +205,31 @@ const explanations: Record<string, React.ReactNode> = {
       tad dala to ar viena maisa iznākumu un noapaļo uz augšu, lai iegūtu nepieciešamo maisu skaitu.
     </p>
   ),
+  'skriesanas-temps': (
+    <p className="text-panel-muted">
+      Kalkulators saskaita kopējo laiku minūtēs un dala to ar distanci, lai iegūtu tempu uz kilometru.
+      Vidējo ātrumu aprēķina, dalot distanci ar laiku stundās.
+    </p>
+  ),
+  'triatlona-planotajs': (
+    <p className="text-panel-muted">
+      Kalkulators aprēķina katra posma laiku no distances un tempa, tad summē peldēšanas, abu pāreju,
+      riteņbraukšanas un skriešanas laikus, lai iegūtu paredzamo kopējo triatlona laiku.
+    </p>
+  ),
+  'ftp-zonas': (
+    <p className="text-panel-muted">
+      Kalkulators reizina tavu FTP ar katras zonas procentuālo robežu, lai iegūtu jaudas diapazonu vatos
+      katrai no septiņām standarta treniņu zonām.
+    </p>
+  ),
+  'sirdsdarbibas-zonas': (
+    <p className="text-panel-muted">
+      Kalkulators aprēķina pulsa rezervi, atņemot miera pulsu no maksimālā pulsa, tad katrai zonai pieskaita
+      miera pulsam attiecīgo procentuālo daļu no pulsa rezerves, iegūstot piecas treniņu zonas pēc
+      Karvonena metodes.
+    </p>
+  ),
 };
 
 export default async function CalculatorPage({
