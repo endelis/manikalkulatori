@@ -71,6 +71,45 @@ export const calculators: CalculatorMeta[] = [
       'Aprēķini EKII valsts atbalsta apmēru elektroauto vai spraudņa hibrīda iegādei 2026. gadā pēc auto cenas, statusa un Goda ģimenes apliecības.',
     keywords: ['EKII atbalsts', 'elektroauto valsts atbalsts', 'EKII kalkulators 2026'],
   },
+  {
+    slug: 'kasko-kalkulators',
+    category: 'auto',
+    title: 'KASKO kalkulators',
+    h1: 'Cik izmaksā KASKO apdrošināšana mēnesī?',
+    intro: 'Ievadi auto vērtību un savu KASKO piedāvājumu, uzzini mēneša maksājumu un izmaksas trīs gados.',
+    metaDescription:
+      'Aprēķini KASKO apdrošināšanas mēneša maksājumu un izmaksas kā daļu no auto vērtības pēc tavis saņemtā piedāvājuma.',
+    keywords: ['KASKO kalkulators', 'KASKO cena', 'auto apdrošināšana'],
+  },
+  {
+    slug: 'octa-kalkulators',
+    category: 'auto',
+    title: 'OCTA cenu salīdzinājums',
+    h1: 'Kurš OCTA piedāvājums ir lētākais?',
+    intro: 'Ievadi līdz trim saņemtajiem OCTA piedāvājumiem, uzzini lētāko un starpību pret dārgāko.',
+    metaDescription: 'Salīdzini vairākus OCTA apdrošināšanas piedāvājumus un atrodi lētāko variantu.',
+    keywords: ['OCTA kalkulators', 'OCTA cenas salīdzinājums', 'obligātā apdrošināšana'],
+  },
+  {
+    slug: 'lizings-vs-kredits',
+    category: 'auto',
+    title: 'Līzings vs kredīts auto',
+    h1: 'Līzings vai kredīts, kas izmaksā lētāk mēnesī?',
+    intro: 'Ievadi auto cenu un savu piedāvājumu, salīdzini kredīta un līzinga mēneša maksājumu.',
+    metaDescription:
+      'Salīdzini auto kredīta un līzinga mēneša maksājumu pēc auto cenas, pirmās iemaksas, termiņa un likmēm.',
+    keywords: ['līzings vs kredīts', 'auto līzings kalkulators', 'auto kredīts kalkulators'],
+  },
+  {
+    slug: 'degvielas-izmaksas',
+    category: 'auto',
+    title: 'Degvielas izmaksas gadā',
+    h1: 'Cik gadā izmaksā degviela tavam auto?',
+    intro: 'Ievadi gada nobraukumu, patēriņu un degvielas cenu, uzzini gada un mēneša degvielas izmaksas.',
+    metaDescription:
+      'Aprēķini auto degvielas izmaksas gadā un uz 100 kilometriem pēc nobraukuma, patēriņa un degvielas cenas.',
+    keywords: ['degvielas izmaksas kalkulators', 'degvielas patēriņš gadā', 'auto uzturēšanas izmaksas'],
+  },
 ];
 
 export function getCategory(slug: string): CategoryMeta | undefined {

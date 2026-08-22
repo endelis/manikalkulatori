@@ -89,6 +89,42 @@ const explanations: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  'kasko-kalkulators': (
+    <p className="text-panel-muted">
+      KASKO apdrošināšanas cena atšķiras katram apdrošinātājam un ir atkarīga no auto vērtības, vadītāja
+      vecuma un pieredzes, un citiem faktoriem, tāpēc kalkulators neaprēķina cenu, bet palīdz izvērtēt
+      tavu jau saņemto piedāvājumu. Ievadi auto vērtību un gada prēmiju, kalkulators parāda mēneša
+      maksājumu un prēmiju kā daļu no auto vērtības.
+    </p>
+  ),
+  'octa-kalkulators': (
+    <p className="text-panel-muted">
+      OCTA ir obligātā civiltiesiskās atbildības apdrošināšana, un tās cena atšķiras starp apdrošinātājiem
+      atkarībā no auto datiem un vadītāja vēstures. Ievadi līdz trim saņemtajiem piedāvājumiem, kalkulators
+      parāda lētāko un starpību pret dārgāko.
+    </p>
+  ),
+  'lizings-vs-kredits': (
+    <>
+      <p className="text-panel-muted">
+        Kalkulators salīdzina kredīta un līzinga mēneša maksājumu. Kredīta maksājumu aprēķina pēc
+        standarta aizdevuma amortizācijas formulas no atlikušās pamatsummas, procentu likmes un termiņa.
+        Līzinga maksājumu veido divas daļas: vērtības samazinājums no pirkuma cenas līdz atlikušajai
+        vērtībai, un finansēšanas daļa no vidējās finansētās summas un līzinga likmes.
+      </p>
+      <p className="text-panel-muted">
+        Pēc kredīta termiņa beigām auto pieder tev. Pēc līzinga termiņa beigām auto jāatdod, jāizpērk par
+        atlikušo vērtību, vai jāatjauno līgums, tāpēc zemāks mēneša maksājums nenozīmē automātiski
+        izdevīgāku izvēli.
+      </p>
+    </>
+  ),
+  'degvielas-izmaksas': (
+    <p className="text-panel-muted">
+      Kalkulators reizina tavu gada nobraukumu ar auto patēriņu uz 100 kilometriem un degvielas cenu.
+      Rezultāts parāda, cik degviela izmaksā gadā un uz 100 kilometriem pie tavis norādītajiem datiem.
+    </p>
+  ),
 };
 
 export default async function CalculatorPage({
