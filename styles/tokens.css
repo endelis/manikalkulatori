@@ -1,0 +1,16 @@
+:root {
+  --color-panel-bg: #0b0e11;
+  --color-panel-surface: #14181d;
+  --color-panel-border: #232a31;
+  --color-panel-text: #e6e9ec;
+  --color-panel-muted: #8b95a1;
+
+  --color-accent-auto: #4fd1c5;
+  --color-accent-finanses: #f6ad55;
+  --color-accent-majoklis: #68d391;
+  --color-accent-veseliba: #fc8181;
+  --color-accent-sports: #63b3ed;
+
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
