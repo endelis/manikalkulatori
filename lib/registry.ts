@@ -222,6 +222,45 @@ export const calculators: CalculatorMeta[] = [
     metaDescription: 'Aprēķini nepieciešamo betona apjomu kubikmetros un maisu skaitu pēc laukuma izmēriem un biezuma.',
     keywords: ['betona apjoma kalkulators', 'betona daudzums', 'betona maisu skaits'],
   },
+  {
+    slug: 'skriesanas-temps',
+    category: 'sports',
+    title: 'Skriešanas tempa kalkulators',
+    h1: 'Kāds ir tavs skriešanas temps?',
+    intro: 'Ievadi distanci un laiku, uzzini tempu uz kilometru un vidējo ātrumu.',
+    metaDescription: 'Aprēķini skriešanas tempu uz kilometru un vidējo ātrumu no distances un laika.',
+    keywords: ['skriešanas tempa kalkulators', 'skriešanas temps', 'skriešanas ātrums'],
+  },
+  {
+    slug: 'triatlona-planotajs',
+    category: 'sports',
+    title: 'Triatlona plānotājs',
+    h1: 'Cik ilgs būs triatlons?',
+    intro: 'Ievadi katra posma distanci un tempu, uzzini paredzamo kopējo triatlona laiku.',
+    metaDescription:
+      'Aprēķini paredzamo triatlona kopējo laiku no peldēšanas, riteņbraukšanas un skriešanas posmiem.',
+    keywords: ['triatlona plānotājs', 'triatlona kalkulators', 'triatlona laiks'],
+  },
+  {
+    slug: 'ftp-zonas',
+    category: 'sports',
+    title: 'FTP zonu kalkulators',
+    h1: 'Kādas ir tavas riteņbraukšanas jaudas zonas?',
+    intro: 'Ievadi savu FTP (funkcionālo sliekšņa jaudu), uzzini treniņu jaudas zonas vatos.',
+    metaDescription:
+      'Aprēķini riteņbraukšanas treniņu jaudas zonas no FTP pēc standarta septiņu zonu modeļa.',
+    keywords: ['ftp zonu kalkulators', 'riteņbraukšanas jaudas zonas', 'ftp kalkulators'],
+  },
+  {
+    slug: 'sirdsdarbibas-zonas',
+    category: 'sports',
+    title: 'Sirdsdarbības zonu kalkulators',
+    h1: 'Kādas ir tavas sirdsdarbības treniņu zonas?',
+    intro: 'Ievadi maksimālo un miera sirdsdarbības ātrumu, uzzini treniņu zonas pēc Karvonena metodes.',
+    metaDescription:
+      'Aprēķini sirdsdarbības treniņu zonas pēc Karvonena metodes no maksimālā un miera pulsa.',
+    keywords: ['sirdsdarbības zonu kalkulators', 'pulsa zonas', 'karvonena metode'],
+  },
 ];
 
 export function getCategory(slug: string): CategoryMeta | undefined {
