@@ -1,23 +1,31 @@
 import type { MetadataRoute } from 'next';
-import { calculators, categories } from '@/lib/registry';
-
-const BASE_URL = 'https://manikalkulatori.lv';
+import { calculators, categories, getCalculatorsByCategory } from '@/lib/registry';
+import { SITE_URL } from '@/lib/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const lastModified = new Date();
+
   const homeEntry: MetadataRoute.Sitemap[number] = {
-    url: BASE_URL,
+    url: SITE_URL,
+    lastModified,
     changeFrequency: 'weekly',
     priority: 1,
   };
 
-  const categoryEntries: MetadataRoute.Sitemap = categories.map((category) => ({
-    url: `${BASE_URL}/${category.slug}`,
-    changeFrequency: 'weekly',
-    priority: 0.8,
-  }));
+  // Categories with no calculators yet are real pages but have nothing to index —
+  // keep them out of the sitemap until they hold at least one calculator.
+  const categoryEntries: MetadataRoute.Sitemap = categories
+    .filter((category) => getCalculatorsByCategory(category.slug).length > 0)
+    .map((category) => ({
+      url: `${SITE_URL}/${category.slug}`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    }));
 
   const calculatorEntries: MetadataRoute.Sitemap = calculators.map((calculator) => ({
-    url: `${BASE_URL}/${calculator.category}/${calculator.slug}`,
+    url: `${SITE_URL}/${calculator.category}/${calculator.slug}`,
+    lastModified,
     changeFrequency: 'monthly',
     priority: 0.9,
   }));

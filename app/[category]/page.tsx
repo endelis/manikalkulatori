@@ -3,6 +3,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { categories, getCalculatorsByCategory, getCategory } from '@/lib/registry';
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return categories.map((category) => ({ category: category.slug }));
 }
@@ -15,7 +17,11 @@ export async function generateMetadata({
   const resolvedParams = await params;
   const category = getCategory(resolvedParams.category);
   if (!category) return {};
-  return { title: category.title, description: category.description };
+  return {
+    title: category.title,
+    description: category.description,
+    alternates: { canonical: `/${category.slug}` },
+  };
 }
 
 export default async function CategoryPage({
@@ -42,18 +48,24 @@ export default async function CategoryPage({
       </h1>
       <p className="text-panel-muted">{category.description}</p>
 
-      <ul className="flex flex-col gap-2">
-        {categoryCalculators.map((calculator) => (
-          <li key={calculator.slug}>
-            <Link
-              href={`/${category.slug}/${calculator.slug}`}
-              className="text-panel-text underline decoration-panel-border underline-offset-4 hover:decoration-current"
-            >
-              {calculator.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      {categoryCalculators.length === 0 ? (
+        <p className="rounded-md border border-panel-border bg-panel-surface p-4 text-panel-muted">
+          Šajā kategorijā drīzumā būs pieejami kalkulatori.
+        </p>
+      ) : (
+        <ul className="flex flex-col gap-2">
+          {categoryCalculators.map((calculator) => (
+            <li key={calculator.slug}>
+              <Link
+                href={`/${category.slug}/${calculator.slug}`}
+                className="text-panel-text underline decoration-panel-border underline-offset-4 hover:decoration-current"
+              >
+                {calculator.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
     </main>
   );
 }

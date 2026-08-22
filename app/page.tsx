@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { categories, getCalculatorsByCategory } from '@/lib/registry';
+import { pluralizeKalkulatori } from '@/lib/format';
 
 export default function HomePage() {
   return (
@@ -14,18 +15,34 @@ export default function HomePage() {
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {categories.map((category) => {
           const count = getCalculatorsByCategory(category.slug).length;
+          const cardClassName = 'flex flex-col gap-1 rounded-lg border border-panel-border bg-panel-surface p-5';
+
+          // Categories without calculators are shown but not linked — an empty category
+          // page is thin content, so we do not send visitors (or crawlers) there yet.
+          if (count === 0) {
+            return (
+              <div key={category.slug} className={`${cardClassName} opacity-60`}>
+                <h2 className="font-mono text-lg" style={{ color: category.accentVar }}>
+                  {category.title}
+                </h2>
+                <p className="text-sm text-panel-muted">{category.description}</p>
+                <p className="text-xs text-panel-muted">Drīzumā</p>
+              </div>
+            );
+          }
+
           return (
             <Link
               key={category.slug}
               href={`/${category.slug}`}
-              className="flex flex-col gap-1 rounded-lg border border-panel-border bg-panel-surface p-5"
+              className={cardClassName}
               style={{ borderColor: category.accentVar }}
             >
               <h2 className="font-mono text-lg" style={{ color: category.accentVar }}>
                 {category.title}
               </h2>
               <p className="text-sm text-panel-muted">{category.description}</p>
-              <p className="text-xs text-panel-muted">{count} kalkulatori</p>
+              <p className="text-xs text-panel-muted">{pluralizeKalkulatori(count)}</p>
             </Link>
           );
         })}

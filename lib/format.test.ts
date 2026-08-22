@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { formatCurrencyEUR, formatNumber, formatPercent } from './format';
+import { formatCurrencyEUR, formatNumber, formatPercent, pluralizeKalkulatori } from './format';
 
 describe('formatCurrencyEUR', () => {
   it('formats a whole euro amount with the euro sign', () => {
@@ -26,6 +26,23 @@ describe('formatNumber', () => {
 
   it('formats with the requested number of decimals', () => {
     expect(formatNumber(12.3, 2)).toMatch(/12,30/);
+  });
+});
+
+describe('pluralizeKalkulatori', () => {
+  it('uses the nominative singular for counts ending in 1', () => {
+    expect(pluralizeKalkulatori(1)).toBe('1 kalkulators');
+    expect(pluralizeKalkulatori(21)).toBe('21 kalkulators');
+  });
+
+  it('uses the nominative plural for 11 and other plural counts', () => {
+    expect(pluralizeKalkulatori(11)).toBe('11 kalkulatori');
+    expect(pluralizeKalkulatori(5)).toBe('5 kalkulatori');
+    expect(pluralizeKalkulatori(50)).toBe('50 kalkulatori');
+  });
+
+  it('uses the genitive plural for zero', () => {
+    expect(pluralizeKalkulatori(0)).toBe('0 kalkulatoru');
   });
 });
 
