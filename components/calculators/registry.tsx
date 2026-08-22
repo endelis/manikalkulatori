@@ -5,6 +5,10 @@ import { KaskoCalculator } from './KaskoCalculator';
 import { OctaCalculator } from './OctaCalculator';
 import { LizingsVsKreditsCalculator } from './LizingsVsKreditsCalculator';
 import { DegvielasIzmaksasCalculator } from './DegvielasIzmaksasCalculator';
+import { UzladesIzmaksasCalculator } from './UzladesIzmaksasCalculator';
+import { NolietojumsCalculator } from './NolietojumsCalculator';
+import { RiepuIzmeraCalculator } from './RiepuIzmeraCalculator';
+import { CelaIzmaksasCalculator } from './CelaIzmaksasCalculator';
 
 /**
  * Props every calculator component receives from the calculator page.
@@ -22,6 +26,10 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'octa-kalkulators': OctaCalculator,
   'lizings-vs-kredits': LizingsVsKreditsCalculator,
   'degvielas-izmaksas': DegvielasIzmaksasCalculator,
+  'uzlades-izmaksas': UzladesIzmaksasCalculator,
+  'nolietojums': NolietojumsCalculator,
+  'riepu-izmers': RiepuIzmeraCalculator,
+  'cela-izmaksas': CelaIzmaksasCalculator,
 };
 
 export function getCalculatorComponent(slug: string): ComponentType<CalculatorComponentProps> | undefined {

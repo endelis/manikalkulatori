@@ -110,6 +110,46 @@ export const calculators: CalculatorMeta[] = [
       'Aprēķini auto degvielas izmaksas gadā un uz 100 kilometriem pēc nobraukuma, patēriņa un degvielas cenas.',
     keywords: ['degvielas izmaksas kalkulators', 'degvielas patēriņš gadā', 'auto uzturēšanas izmaksas'],
   },
+  {
+    slug: 'uzlades-izmaksas',
+    category: 'auto',
+    title: 'Elektroauto uzlādes izmaksas',
+    h1: 'Cik izmaksā elektroauto uzlāde mājās un publiski?',
+    intro: 'Ievadi, cik daļu no uzlādes veic mājās un cik publiski, uzzini gada uzlādes izmaksas.',
+    metaDescription:
+      'Aprēķini elektroauto gada uzlādes izmaksas, sadalot uzlādi starp mājas un publisko lādēšanu.',
+    keywords: ['elektroauto uzlādes izmaksas', 'uzlādes cena mājās', 'publiskā lādēšana cena'],
+  },
+  {
+    slug: 'nolietojums',
+    category: 'auto',
+    title: 'Auto nolietojums',
+    h1: 'Cik daudz auto vērtība samazinās laika gaitā?',
+    intro: 'Ievadi pirkuma cenu, auto vecumu un gada nolietojuma likmi, uzzini pašreizējo vērtību.',
+    metaDescription:
+      'Aprēķini auto pašreizējo vērtību un kopējo nolietojumu pēc pirkuma cenas, vecuma un gada nolietojuma likmes.',
+    keywords: ['auto nolietojums kalkulators', 'auto vērtības samazinājums', 'auto vērtība pēc gadiem'],
+  },
+  {
+    slug: 'riepu-izmers',
+    category: 'auto',
+    title: 'Riepu izmēra kalkulators',
+    h1: 'Kā riepu izmēra maiņa ietekmē spidometra rādījumu?',
+    intro: 'Ievadi vecās un jaunās riepas izmēru, uzzini spidometra kļūdu un reālo braukšanas ātrumu.',
+    metaDescription:
+      'Aprēķini spidometra kļūdu un reālo ātrumu pēc riepu izmēra maiņas, salīdzinot veco un jauno riepu diametru.',
+    keywords: ['riepu izmēra kalkulators', 'spidometra kļūda', 'riepu diametrs'],
+  },
+  {
+    slug: 'cela-izmaksas',
+    category: 'auto',
+    title: 'Ceļa izmaksas kalkulators',
+    h1: 'Cik izmaksā konkrēts brauciens?',
+    intro: 'Ievadi brauciena attālumu, patēriņu un degvielas cenu, uzzini izmaksas kopā un uz vienu cilvēku.',
+    metaDescription:
+      'Aprēķini konkrēta brauciena degvielas izmaksas un izmaksas uz vienu cilvēku, dalot ar līdzbraucēju skaitu.',
+    keywords: ['ceļa izmaksas kalkulators', 'brauciena izmaksas', 'degvielas izmaksas uz braucienu'],
+  },
 ];
 
 export function getCategory(slug: string): CategoryMeta | undefined {
