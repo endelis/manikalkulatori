@@ -125,6 +125,34 @@ const explanations: Record<string, React.ReactNode> = {
       Rezultāts parāda, cik degviela izmaksā gadā un uz 100 kilometriem pie tavis norādītajiem datiem.
     </p>
   ),
+  'uzlades-izmaksas': (
+    <p className="text-panel-muted">
+      Kalkulators aprēķina kopējo gadā patērēto enerģiju no tava nobraukuma un patēriņa, tad sadala to
+      starp mājas un publisko lādēšanu pēc tavis norādītās proporcijas. Katrai daļai piemēro atbilstošo
+      cenu un summē kopējās gada izmaksas.
+    </p>
+  ),
+  'nolietojums': (
+    <p className="text-panel-muted">
+      Kalkulators piemēro vienādu gada nolietojuma likmi katram auto vecuma gadam, izmantojot saliktā
+      procenta formulu: pašreizējā vērtība ir pirkuma cena, reizināta ar (1 mīnus likme) vecuma pakāpē.
+      Tas atspoguļo to, ka auto zaudē procentuāli līdzīgu daļu no atlikušās vērtības katru gadu, nevis
+      vienādu summu.
+    </p>
+  ),
+  'riepu-izmers': (
+    <p className="text-panel-muted">
+      Kalkulators aprēķina riepas kopējo diametru no diska izmēra un riepas platuma un profila, gan
+      vecajai, gan jaunajai riepai. Diametru attiecība parāda, par cik procentiem mainās reālais ātrums
+      salīdzinājumā ar spidometra rādījumu.
+    </p>
+  ),
+  'cela-izmaksas': (
+    <p className="text-panel-muted">
+      Kalkulators aprēķina degvielas izmaksas no brauciena attāluma, patēriņa un degvielas cenas, tad
+      izmaksas dala ar līdzbraucēju skaitu, lai parādītu izmaksas uz vienu cilvēku.
+    </p>
+  ),
 };
 
 export default async function CalculatorPage({
