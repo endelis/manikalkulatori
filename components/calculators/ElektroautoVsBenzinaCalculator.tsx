@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import { NumberField } from '@/components/NumberField';
-import { ResultCard } from '@/components/ResultCard';
+import { ResultCard, type ResultCardTone } from '@/components/ResultCard';
 import { Breakdown } from '@/components/Breakdown';
 import { formatCurrencyEUR, formatNumber } from '@/lib/format';
 import { computeEvVsIce } from '@/lib/calculators/elektroauto-vs-benzina';
@@ -31,7 +31,7 @@ export function ElektroautoVsBenzinaCalculator({ accentVar }: { accentVar: strin
         ? 'Benzīna auto lētāks gadā'
         : 'Izmaksas ir vienādas';
 
-  const tone: 'winner' | 'loser' | 'neutral' =
+  const tone: ResultCardTone =
     result.cheaperOption === 'ev' ? 'winner' : result.cheaperOption === 'ice' ? 'loser' : 'neutral';
 
   return (
