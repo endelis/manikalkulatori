@@ -52,8 +52,9 @@ const explanations: Record<string, React.ReactNode> = {
     <>
       <p className="text-panel-muted">
         Kalkulators reizina tavu gada nobraukumu ar katra auto tipa patēriņu uz 100&nbsp;km un ar
-        attiecīgo enerģijas cenu — atsevišķi elektroauto (kWh × €/kWh) un benzīna auto (L × €/L).
-        Starpība starp abām gada summām ir tavs ietaupījums (vai papildu izmaksas), izvēloties elektroauto.
+        attiecīgo enerģijas cenu: elektroauto gadījumā kWh reizina ar €/kWh, benzīna auto gadījumā L
+        reizina ar €/L. Starpība starp abām gada summām ir tavs ietaupījums (vai papildu izmaksas),
+        izvēloties elektroauto.
       </p>
       <p className="text-panel-muted">
         <strong>Piemērs ar noklusējuma vērtībām</strong> (16,5&nbsp;kWh/100km un 0,18&nbsp;€/kWh

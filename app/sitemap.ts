@@ -30,5 +30,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  return [homeEntry, ...categoryEntries, ...calculatorEntries];
+  // Static legal/info pages — indexable, so they belong in the sitemap even though they
+  // are not driven by the calculator registry.
+  const legalEntries: MetadataRoute.Sitemap = [
+    '/par-mums',
+    '/kontakti',
+    '/privatuma-politika',
+    '/noteikumi',
+  ].map((path) => ({
+    url: `${SITE_URL}${path}`,
+    lastModified,
+    changeFrequency: 'yearly',
+    priority: 0.3,
+  }));
+
+  return [homeEntry, ...categoryEntries, ...calculatorEntries, ...legalEntries];
 }

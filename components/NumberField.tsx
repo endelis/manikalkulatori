@@ -16,7 +16,7 @@ export function NumberField({ id, label, value, onChange, unit, min = 0, step = 
       <label htmlFor={id} className="text-sm text-panel-muted">
         {label}
       </label>
-      <div className="flex items-center gap-2 rounded-md border border-panel-border bg-panel-surface px-3 py-2">
+      <div className="flex items-center gap-2 rounded-md border border-panel-border bg-panel-surface-2 px-3 py-2">
         <input
           id={id}
           type="number"

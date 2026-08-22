@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import { NumberField } from '@/components/NumberField';
-import { ResultCard } from '@/components/ResultCard';
+import { ResultCard, type ResultCardTone } from '@/components/ResultCard';
 import { Breakdown } from '@/components/Breakdown';
 import { formatCurrencyEUR, formatNumber } from '@/lib/format';
 import { computeEvVsIce } from '@/lib/calculators/elektroauto-vs-benzina';
@@ -31,11 +31,15 @@ export function ElektroautoVsBenzinaCalculator({ accentVar }: { accentVar: strin
         ? 'Benzīna auto lētāks gadā'
         : 'Izmaksas ir vienādas';
 
+  const tone: ResultCardTone =
+    result.cheaperOption === 'ev' ? 'winner' : result.cheaperOption === 'ice' ? 'loser' : 'neutral';
+
   return (
     <div className="flex flex-col gap-6">
       <ResultCard
         label={verdictLabel}
         value={formatCurrencyEUR(Math.abs(result.annualSavings))}
+        tone={tone}
         accentVar={accentVar}
         sublabel={`5 gados: ${formatCurrencyEUR(Math.abs(result.fiveYearSavings))}`}
       />
@@ -84,7 +88,7 @@ export function ElektroautoVsBenzinaCalculator({ accentVar }: { accentVar: strin
       </div>
 
       <p className="text-xs text-panel-muted">
-        Noklusējuma vērtības (2026. gada augusts): elektrība 0,18 €/kWh, benzīns 1,85 €/L — pielāgo tās
+        Noklusējuma vērtības (2026. gada augusts): elektrība 0,18 €/kWh, benzīns 1,85 €/L. Pielāgo tās
         savai situācijai un pašreizējām cenām.
       </p>
 

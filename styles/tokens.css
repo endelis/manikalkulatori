@@ -1,16 +1,18 @@
 :root {
-  --color-panel-bg: #0b0e11;
-  --color-panel-surface: #14181d;
-  --color-panel-border: #232a31;
-  --color-panel-text: #e6e9ec;
-  --color-panel-muted: #8b95a1;
+  --color-panel-bg: #0B0E14;
+  --color-panel-surface: #0F131C;
+  --color-panel-surface-2: #12161F;
+  --color-panel-border: #1B212D;
+  --color-panel-border-strong: #232A38;
+  --color-panel-text: #E8ECF3;
+  --color-panel-muted: #8A93A6;
+  --color-panel-faint: #5B6579;
 
-  --color-accent-auto: #4fd1c5;
-  --color-accent-finanses: #f6ad55;
-  --color-accent-majoklis: #68d391;
-  --color-accent-veseliba: #fc8181;
-  --color-accent-sports: #63b3ed;
+  --color-accent-auto: #00D3C7;
+  --color-accent-finanses: #4C9AFF;
+  --color-accent-majoklis: #FFB020;
+  --color-accent-veseliba: #FF6B8A;
+  --color-accent-sports: #7CE23F;
 
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
-  --font-sans: 'Inter', system-ui, sans-serif;
+  --color-warn: #FFB020;
 }
