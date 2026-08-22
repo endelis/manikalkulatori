@@ -150,6 +150,42 @@ export const calculators: CalculatorMeta[] = [
       'Aprēķini konkrēta brauciena degvielas izmaksas un izmaksas uz vienu cilvēku, dalot ar līdzbraucēju skaitu.',
     keywords: ['ceļa izmaksas kalkulators', 'brauciena izmaksas', 'degvielas izmaksas uz braucienu'],
   },
+  {
+    slug: 'solaru-atmaksa',
+    category: 'majoklis',
+    title: 'Solāro paneļu atmaksa',
+    h1: 'Cik gados atmaksājas solārie paneļi?',
+    intro: 'Ievadi sistēmas izmaksas, jaudu un paredzamo patēriņu, uzzini atmaksāšanās laiku gados.',
+    metaDescription: 'Aprēķini solāro paneļu sistēmas atmaksāšanās laiku pēc uzstādīšanas izmaksām, jaudas un pašpatēriņa.',
+    keywords: ['solāro paneļu atmaksa', 'saules paneļu kalkulators', 'saules enerģijas atmaksāšanās'],
+  },
+  {
+    slug: 'siltumsukna-atmaksa',
+    category: 'majoklis',
+    title: 'Siltumsūkņa atmaksa',
+    h1: 'Cik gados atmaksājas siltumsūknis?',
+    intro: 'Ievadi siltumsūkņa izmaksas, mājas siltumenerģijas patēriņu un vecās apkures cenu, uzzini atmaksāšanās laiku.',
+    metaDescription: 'Aprēķini siltumsūkņa atmaksāšanās laiku, salīdzinot ar vecās apkures sistēmas izmaksām.',
+    keywords: ['siltumsūkņa atmaksa', 'siltumsūkņa kalkulators', 'apkures izmaksu salīdzinājums'],
+  },
+  {
+    slug: 'elektribas-rekins',
+    category: 'majoklis',
+    title: 'Elektrības rēķina kalkulators',
+    h1: 'Cik liels būs elektrības rēķins?',
+    intro: 'Ievadi mēneša patēriņu, elektrības cenu un fiksēto maksu, uzzini rēķinu mēnesī un gadā.',
+    metaDescription: 'Aprēķini mājsaimniecības elektrības rēķinu mēnesī un gadā pēc patēriņa, cenas un fiksētās maksas.',
+    keywords: ['elektrības rēķina kalkulators', 'elektrības cena', 'mājsaimniecības elektrības izmaksas'],
+  },
+  {
+    slug: 'apkures-izmaksas',
+    category: 'majoklis',
+    title: 'Apkures izmaksu salīdzinājums',
+    h1: 'Kurš apkures veids izmaksā lētāk?',
+    intro: 'Ievadi mājas siltumenerģijas patēriņu un cenu par kWh katram apkures veidam, salīdzini gada izmaksas.',
+    metaDescription: 'Salīdzini gāzes, malkas un siltumsūkņa apkures gada izmaksas pēc mājas siltumenerģijas patēriņa.',
+    keywords: ['apkures izmaksu salīdzinājums', 'apkures veidu salīdzinājums', 'lētākā apkure'],
+  },
 ];
 
 export function getCategory(slug: string): CategoryMeta | undefined {
