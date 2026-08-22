@@ -67,6 +67,64 @@ const explanations: Record<string, React.ReactNode> = {
       </ul>
     </>
   ),
+  'ekii-atbalsts': (
+    <>
+      <p className="text-panel-muted">
+        EKII atbalsta apmērs ir atkarīgs no trim faktoriem: vai auto ir jauns vai lietots, vai tev ir Goda
+        ģimenes apliecība, un cik sēdvietu ir automašīnai. Standarta atbalsts pastāvīgam Latvijas
+        iedzīvotājam ir 4&nbsp;000 eiro par jaunu elektroauto, spraudņa hibrīdu vai ūdeņraža auto, un
+        3&nbsp;000 eiro par lietotu elektroauto vai ūdeņraža auto.
+      </p>
+      <p className="text-panel-muted">
+        Goda ģimenes apliecības turētājiem atbalsts ir lielāks, ja auto ir vismaz 5 sēdvietas. Ar 5 vai 6
+        sēdvietām atbalsts ir 6&nbsp;750 eiro jaunam auto un 5&nbsp;000 eiro lietotam. Ar 7 vai vairāk
+        sēdvietām atbalsts pieaug līdz 9&nbsp;000 eiro jaunam auto un 6&nbsp;750 eiro lietotam. Ģimenēm ar
+        4 un vairāk bērniem pienākas papildu 1&nbsp;000 eiro par katru bērnu sākot ar ceturto, ja auto ir
+        vismaz 5 sēdvietas.
+      </p>
+      <p className="text-panel-muted">
+        Kalkulators arī pārbauda cenas griestus. Jauna auto bāzes cena bez PVN nedrīkst pārsniegt
+        45&nbsp;000 eiro, vai 60&nbsp;000 eiro, ja auto ir vismaz 6 sēdvietas. Lietotam auto papildus
+        jāmaksā vismaz 8&nbsp;750 eiro bez PVN. Lietoti spraudņa hibrīdi atbalstu nesaņem.
+      </p>
+    </>
+  ),
+  'kasko-kalkulators': (
+    <p className="text-panel-muted">
+      KASKO apdrošināšanas cena atšķiras katram apdrošinātājam un ir atkarīga no auto vērtības, vadītāja
+      vecuma un pieredzes, un citiem faktoriem, tāpēc kalkulators neaprēķina cenu, bet palīdz izvērtēt
+      tavu jau saņemto piedāvājumu. Ievadi auto vērtību un gada prēmiju, kalkulators parāda mēneša
+      maksājumu un prēmiju kā daļu no auto vērtības.
+    </p>
+  ),
+  'octa-kalkulators': (
+    <p className="text-panel-muted">
+      OCTA ir obligātā civiltiesiskās atbildības apdrošināšana, un tās cena atšķiras starp apdrošinātājiem
+      atkarībā no auto datiem un vadītāja vēstures. Ievadi līdz trim saņemtajiem piedāvājumiem, kalkulators
+      parāda lētāko un starpību pret dārgāko.
+    </p>
+  ),
+  'lizings-vs-kredits': (
+    <>
+      <p className="text-panel-muted">
+        Kalkulators salīdzina kredīta un līzinga mēneša maksājumu. Kredīta maksājumu aprēķina pēc
+        standarta aizdevuma amortizācijas formulas no atlikušās pamatsummas, procentu likmes un termiņa.
+        Līzinga maksājumu veido divas daļas: vērtības samazinājums no pirkuma cenas līdz atlikušajai
+        vērtībai, un finansēšanas daļa no vidējās finansētās summas un līzinga likmes.
+      </p>
+      <p className="text-panel-muted">
+        Pēc kredīta termiņa beigām auto pieder tev. Pēc līzinga termiņa beigām auto jāatdod, jāizpērk par
+        atlikušo vērtību, vai jāatjauno līgums, tāpēc zemāks mēneša maksājums nenozīmē automātiski
+        izdevīgāku izvēli.
+      </p>
+    </>
+  ),
+  'degvielas-izmaksas': (
+    <p className="text-panel-muted">
+      Kalkulators reizina tavu gada nobraukumu ar auto patēriņu uz 100 kilometriem un degvielas cenu.
+      Rezultāts parāda, cik degviela izmaksā gadā un uz 100 kilometriem pie tavis norādītajiem datiem.
+    </p>
+  ),
 };
 
 export default async function CalculatorPage({
