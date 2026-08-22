@@ -1,6 +1,11 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { categories, getCalculatorsByCategory } from '@/lib/registry';
 import { pluralizeKalkulatori } from '@/lib/format';
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+};
 
 export default function HomePage() {
   return (
