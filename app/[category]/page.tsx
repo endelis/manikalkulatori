@@ -17,10 +17,14 @@ export async function generateMetadata({
   const resolvedParams = await params;
   const category = getCategory(resolvedParams.category);
   if (!category) return {};
+
+  const isEmpty = getCalculatorsByCategory(category.slug).length === 0;
+
   return {
     title: category.title,
     description: category.description,
     alternates: { canonical: `/${category.slug}` },
+    robots: isEmpty ? { index: false, follow: true } : undefined,
   };
 }
 
