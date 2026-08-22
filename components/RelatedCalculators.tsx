@@ -10,7 +10,7 @@ export function RelatedCalculators({ items }: RelatedCalculatorsProps) {
 
   return (
     <section aria-labelledby="related-heading" className="flex flex-col gap-3">
-      <h2 id="related-heading" className="font-mono text-xl">
+      <h2 id="related-heading" className="font-sans text-h2">
         Saistītie kalkulatori
       </h2>
       <ul className="flex flex-col gap-2">
@@ -18,7 +18,7 @@ export function RelatedCalculators({ items }: RelatedCalculatorsProps) {
           <li key={item.slug}>
             <Link
               href={`/${item.category}/${item.slug}`}
-              className="text-panel-text underline decoration-panel-border underline-offset-4 hover:decoration-current"
+              className="text-panel-text underline decoration-panel-border underline-offset-4 transition-colors duration-[120ms] hover:decoration-current"
             >
               {item.title}
             </Link>

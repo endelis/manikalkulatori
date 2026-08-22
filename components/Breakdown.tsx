@@ -13,7 +13,7 @@ export function Breakdown({ rows }: BreakdownProps) {
       {rows.map((row) => (
         <div key={row.label} className="flex items-center justify-between px-4 py-2">
           <dt className="text-sm text-panel-muted">{row.label}</dt>
-          <dd className="font-mono text-sm text-panel-text">{row.value}</dd>
+          <dd className="font-mono text-value text-panel-text">{row.value}</dd>
         </div>
       ))}
     </dl>

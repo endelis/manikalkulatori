@@ -47,7 +47,7 @@ export default async function CategoryPage({
         <span>{category.title}</span>
       </nav>
 
-      <h1 className="font-mono text-2xl font-semibold" style={{ color: category.accentVar }}>
+      <h1 className="font-sans text-h1" style={{ color: category.accentVar }}>
         {category.title}
       </h1>
       <p className="text-panel-muted">{category.description}</p>

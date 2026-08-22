@@ -13,10 +13,10 @@ interface NumberFieldProps {
 export function NumberField({ id, label, value, onChange, unit, min = 0, step = 1 }: NumberFieldProps) {
   return (
     <div className="flex flex-col gap-1">
-      <label htmlFor={id} className="text-sm text-panel-muted">
+      <label htmlFor={id} className="text-label uppercase text-panel-muted">
         {label}
       </label>
-      <div className="flex items-center gap-2 rounded-md border border-panel-border bg-panel-surface-2 px-3 py-2">
+      <div className="flex items-center gap-2 rounded-md border border-panel-border bg-panel-surface-2 px-3 py-2 transition-colors duration-[120ms]">
         <input
           id={id}
           type="number"

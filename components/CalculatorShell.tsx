@@ -40,7 +40,7 @@ export function CalculatorShell({
         <span>{calculator.title}</span>
       </nav>
 
-      <h1 className="font-mono text-2xl font-semibold">{calculator.h1}</h1>
+      <h1 className="font-sans text-h1">{calculator.h1}</h1>
 
       <p className="text-panel-muted">{calculator.intro}</p>
 
@@ -51,7 +51,7 @@ export function CalculatorShell({
       <div style={{ height: RESERVED_AD_HEIGHT }} aria-hidden="true" />
 
       <section aria-labelledby="explanation-heading" className="flex flex-col gap-3">
-        <h2 id="explanation-heading" className="font-mono text-xl">
+        <h2 id="explanation-heading" className="font-sans text-h2">
           Kā tiek aprēķināts
         </h2>
         {explanation}

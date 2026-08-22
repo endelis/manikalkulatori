@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <main className="mx-auto flex max-w-3xl flex-col gap-8 px-4 py-12">
+    <main className="mx-auto flex max-w-2xl flex-col gap-8 px-4 py-12">
       <header className="flex flex-col gap-2">
-        <h1 className="font-mono text-3xl font-semibold">Manikalkulatori.lv</h1>
+        <h1 className="font-sans text-h1">Manikalkulatori.lv</h1>
         <p className="text-panel-muted">
           Bezmaksas kalkulatori auto, finanšu, mājokļa, veselības un sporta jautājumiem latviešu valodā.
         </p>
