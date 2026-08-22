@@ -6,6 +6,7 @@ import { ResultCard, type ResultCardTone } from '@/components/ResultCard';
 import { Breakdown } from '@/components/Breakdown';
 import { formatCurrencyEUR, formatNumber } from '@/lib/format';
 import { computeEvVsIce } from '@/lib/calculators/elektroauto-vs-benzina';
+import { useTweenedNumber } from '@/hooks/useTweenedNumber';
 
 // Latvia defaults, Aug 2026 — all-in household electricity (energy + Sadales tīkls
 // distribution + 21% PVN), 95-octane pump price, real-world mixed-driving consumption
@@ -34,17 +35,20 @@ export function ElektroautoVsBenzinaCalculator({ accentVar }: { accentVar: strin
   const tone: ResultCardTone =
     result.cheaperOption === 'ev' ? 'winner' : result.cheaperOption === 'ice' ? 'loser' : 'neutral';
 
+  const tweenedAnnualSavings = useTweenedNumber(Math.abs(result.annualSavings));
+  const tweenedFiveYearSavings = useTweenedNumber(Math.abs(result.fiveYearSavings));
+
   return (
     <div className="flex flex-col gap-6">
       <ResultCard
         label={verdictLabel}
-        value={formatCurrencyEUR(Math.abs(result.annualSavings))}
+        value={formatCurrencyEUR(tweenedAnnualSavings)}
         tone={tone}
         accentVar={accentVar}
-        sublabel={`5 gados: ${formatCurrencyEUR(Math.abs(result.fiveYearSavings))}`}
+        sublabel={`5 gados: ${formatCurrencyEUR(tweenedFiveYearSavings)}`}
       />
 
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <div className="reveal grid grid-cols-1 gap-4 sm:grid-cols-2" style={{ animationDelay: '60ms' }}>
         <NumberField
           id="annualDistanceKm"
           label="Gada nobraukums"
@@ -87,7 +91,7 @@ export function ElektroautoVsBenzinaCalculator({ accentVar }: { accentVar: strin
         />
       </div>
 
-      <p className="text-xs text-panel-muted">
+      <p className="text-caption text-panel-faint">
         Noklusējuma vērtības (2026. gada augusts): elektrība 0,18 €/kWh, benzīns 1,85 €/L. Pielāgo tās
         savai situācijai un pašreizējām cenām.
       </p>

@@ -39,7 +39,7 @@ export default function PrivacyPolicyPage() {
       <p className="text-panel-muted">
         Jautājumus par datu apstrādi vari sūtīt uz kontaktu lapā norādīto e-pastu.
       </p>
-      <p className="text-sm text-panel-faint">Šī politika pēdējo reizi atjaunināta 2026. gada augustā.</p>
+      <p className="text-caption text-panel-faint">Šī politika pēdējo reizi atjaunināta 2026. gada augustā.</p>
     </main>
   );
 }

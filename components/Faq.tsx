@@ -9,7 +9,7 @@ export function Faq({ items }: FaqProps) {
 
   return (
     <section aria-labelledby="faq-heading" className="flex flex-col gap-4">
-      <h2 id="faq-heading" className="font-mono text-xl">
+      <h2 id="faq-heading" className="font-sans text-h2">
         Biežāk uzdotie jautājumi
       </h2>
       <div className="flex flex-col gap-3">

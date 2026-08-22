@@ -26,3 +26,18 @@ body {
   outline: 2px solid var(--accent, var(--color-accent-auto));
   outline-offset: 2px;
 }
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  animation: reveal 240ms ease-out both;
+}
