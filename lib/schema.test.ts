@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { buildBreadcrumbSchema, buildFaqSchema, buildSoftwareApplicationSchema } from './schema';
+import { buildBreadcrumbSchema, buildFaqSchema, buildSoftwareApplicationSchema, safeJsonLd } from './schema';
 
 describe('buildSoftwareApplicationSchema', () => {
   it('builds a schema.org SoftwareApplication node', () => {
@@ -34,6 +34,21 @@ describe('buildBreadcrumbSchema', () => {
       item: 'https://manikalkulatori.lv',
     });
     expect(schema.itemListElement[1].position).toBe(2);
+  });
+});
+
+describe('safeJsonLd', () => {
+  it('escapes < so a nested </script> cannot terminate the script tag', () => {
+    const json = safeJsonLd({ text: 'a </script><script>alert(1)</script> b' });
+
+    expect(json).not.toContain('</script>');
+    expect(json).toContain('\\u003c');
+    expect(JSON.parse(json)).toEqual({ text: 'a </script><script>alert(1)</script> b' });
+  });
+
+  it('produces JSON equivalent to JSON.stringify for ordinary data', () => {
+    const data = { '@type': 'FAQPage', mainEntity: [] };
+    expect(JSON.parse(safeJsonLd(data))).toEqual(data);
   });
 });
 

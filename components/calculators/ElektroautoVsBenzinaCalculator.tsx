@@ -19,7 +19,7 @@ const DEFAULT_INPUT = {
   fuelPricePerLiter: 1.85,
 };
 
-export function ElektroautoVsBenzinaCalculator() {
+export function ElektroautoVsBenzinaCalculator({ accentVar }: { accentVar: string }) {
   const [input, setInput] = useState(DEFAULT_INPUT);
 
   const result = useMemo(() => computeEvVsIce(input), [input]);
@@ -36,7 +36,7 @@ export function ElektroautoVsBenzinaCalculator() {
       <ResultCard
         label={verdictLabel}
         value={formatCurrencyEUR(Math.abs(result.annualSavings))}
-        accentVar="var(--color-accent-auto)"
+        accentVar={accentVar}
         sublabel={`5 gados: ${formatCurrencyEUR(Math.abs(result.fiveYearSavings))}`}
       />
 

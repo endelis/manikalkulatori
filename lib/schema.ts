@@ -1,3 +1,12 @@
+/**
+ * Serialise a schema object for embedding in a `<script type="application/ld+json">` tag.
+ * Escaping `<` prevents a `</script>` sequence inside content (FAQ markdown, titles)
+ * from terminating the script element early.
+ */
+export function safeJsonLd(data: unknown): string {
+  return JSON.stringify(data).replace(/</g, '\\u003c');
+}
+
 export interface SoftwareApplicationSchemaInput {
   name: string;
   description: string;

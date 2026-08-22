@@ -1,10 +1,19 @@
 import type { ComponentType } from 'react';
 import { ElektroautoVsBenzinaCalculator } from './ElektroautoVsBenzinaCalculator';
 
-export const calculatorComponents: Record<string, ComponentType> = {
+/**
+ * Props every calculator component receives from the calculator page.
+ * `accentVar` comes from the category record in `lib/registry.ts` — the single
+ * source of truth for category accent colours — so components never hardcode it.
+ */
+export interface CalculatorComponentProps {
+  accentVar: string;
+}
+
+export const calculatorComponents: Record<string, ComponentType<CalculatorComponentProps>> = {
   'elektroauto-vs-benzina': ElektroautoVsBenzinaCalculator,
 };
 
-export function getCalculatorComponent(slug: string): ComponentType | undefined {
+export function getCalculatorComponent(slug: string): ComponentType<CalculatorComponentProps> | undefined {
   return calculatorComponents[slug];
 }
