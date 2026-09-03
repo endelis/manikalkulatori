@@ -3,6 +3,7 @@ import { IBM_Plex_Sans, JetBrains_Mono } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import { CookieBanner } from '@/components/CookieBanner';
 import { Footer } from '@/components/Footer';
+import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 import { SITE_URL } from '@/lib/site';
 import './globals.css';
 
@@ -37,6 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <Footer />
         <Analytics />
+        <GoogleAnalytics />
         <CookieBanner />
       </body>
     </html>

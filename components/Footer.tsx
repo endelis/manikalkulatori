@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import { reopenCookieBanner } from '@/lib/cookieConsent';
 
 export function Footer() {
   return (
@@ -16,6 +19,9 @@ export function Footer() {
         <Link href="/noteikumi" className="hover:text-panel-text">
           Lietošanas noteikumi
         </Link>
+        <button type="button" onClick={reopenCookieBanner} className="hover:text-panel-text">
+          Sīkdatņu iestatījumi
+        </button>
       </nav>
       <p>Manikalkulatori.lv, {new Date().getFullYear()}.</p>
     </footer>
