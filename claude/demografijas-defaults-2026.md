@@ -71,14 +71,23 @@ code: IRS010; retrieval date: 2026-09-03; provisional: no; note: supersedes the
 11 637 provisional figure named in the task brief (that number came from an lvportals.lv
 article quoting CSP, forbidden as a direct source). The API figure is CSP's own
 finalized table value, table last updated 2026-06-02, so it is used as the calculator
-default for dzimušie gadā.
+default for dzimušie gadā. Re-verified 2026-09-03 (review pass): LBIRTH is queried
+directly as its own INDICATOR code, not derived from any other row, exact request:
+`curl -X POST -H "Content-Type: application/json" --data
+'{"query":[{"code":"INDICATOR","selection":{"filter":"item","values":["LBIRTH","DEATH"]}},
+{"code":"ContentsCode","selection":{"filter":"item","values":["IRS010"]}},
+{"code":"TIME","selection":{"filter":"item","values":["2025"]}}],"response":{"format":"json"}}'
+"https://data.stat.gov.lv/api/v1/lv/OSP_PUB/POP/IR/IRS/IRS010"` returns
+`{"key":["LBIRTH","2025"],"values":["11931"]}` and `{"key":["DEATH","2025"],"values":["26109"]}`
+directly, confirming both are raw table cells, not local arithmetic.
 
 ### 3. Mirušie 2025
 
 value: 26 109; unit: cilvēki; reference period: 2025; source name: CSP, PxWeb table
 IRS010, indicator DEATH; exact URL:
 https://data.stat.gov.lv/pxweb/lv/OSP_PUB/START__POP__IR__IRS/IRS010/; PxWeb table
-code: IRS010; retrieval date: 2026-09-03; provisional: no.
+code: IRS010; retrieval date: 2026-09-03; provisional: no. Re-verified 2026-09-03, see
+the exact request recorded under row 2.
 
 ### 4. Dabiskais pieaugums 2025
 
@@ -153,11 +162,27 @@ For the birth year cohort feature, `cohortSize(year)` reads `liveBirths` for tha
 from this file and errors clearly for any year outside 1920 to 2025 or for 1944 (no
 data), per the CHECKPOINT 2 spec; do not substitute a nearby year's value.
 
-## Still open before Checkpoint 2
+## Row 10 (Checkpoint 3 addition): comparison town for the "Mērogs" module
 
-1. IRS031 (regional/town population) has not been pulled yet for the "Mērogs"
-   engagement module's comparison town. That table is confirmed reachable by the same
-   API method (folder `POP/IR/IRS`, table `IRS031`) and will be pulled when that module
-   is built in Checkpoint 3; flagged here only so it is not forgotten, not required for
-   Checkpoint 1's nine rows.
-2. School-class-size figures for the same module (also Checkpoint 3, not sourced yet).
+value: 14 899; unit: cilvēki; reference period: 01.01.2026; source name: CSP, PxWeb
+table IRS031, indicator POP_SY, area code LV0026200 (Cēsis); exact URL:
+https://data.stat.gov.lv/pxweb/lv/OSP_PUB/START__POP__IR__IRS/IRS031/; PxWeb table
+code: IRS031; retrieval date: 2026-09-03; provisional: no; note: re-verified in the
+2026-09-03 review pass that 2026 is actually published for this area (not just 2025),
+exact request:
+`curl -X POST -H "Content-Type: application/json" --data
+'{"query":[{"code":"INDICATOR","selection":{"filter":"item","values":["POP_SY"]}},
+{"code":"AREA","selection":{"filter":"item","values":["LV0026200"]}},
+{"code":"TIME","selection":{"filter":"item","values":["2024","2025","2026"]}}],
+"response":{"format":"json"}}'
+"https://data.stat.gov.lv/api/v1/lv/OSP_PUB/POP/IR/IRS/IRS031"` returns 15 226 (2024),
+15 020 (2025), 14 899 (2026); the 2026 value is used since it is CSP's latest published
+figure for this area, matching the population reference date used elsewhere on the page
+(01.01.2026).
+
+## Not sourced, dropped rather than invented
+
+School-class-size figures for the "Mērogs" module were never found in a CSP table
+reachable within a reasonable search (checked the `IZG` and `OSP_OD` education
+folders); the module ships with only the comparison-town unit above. Per SOURCE
+DISCIPLINE, an unsourced number is removed rather than softened, so this was not added.

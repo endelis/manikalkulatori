@@ -297,7 +297,7 @@ export const calculators: CalculatorMeta[] = [
     title: 'Dzimstības kalkulators',
     h1: 'Cik bērniem Latvijā jāpiedzimst, lai iedzīvotāju skaits vairs nesarūk',
     intro:
-      'Ievadi savus pieņēmumus par mirušajiem, migrāciju un iedzīvotāju skaitu, uzzini, cik bērniem jāpiedzimst, lai sasniegtu izvēlēto mērķi.',
+      'Ievadi savus pieņēmumus par mirušajiem, migrāciju un iedzīvotāju skaitu un uzzini, cik bērniem jāpiedzimst, lai sasniegtu izvēlēto mērķi.',
     metaDescription:
       'Aprēķini, cik bērniem gadā jāpiedzimst Latvijā, lai iedzīvotāju skaits stabilizētos vai sasniegtu izvēlētu mērķi, pēc oficiāliem CSP datiem.',
     keywords: ['dzimstības kalkulators', 'cik bērniem jāpiedzimst Latvijā', 'Latvijas iedzīvotāju skaits'],
