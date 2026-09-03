@@ -1,4 +1,4 @@
-export type CategorySlug = 'auto' | 'finanses' | 'majoklis' | 'veseliba' | 'sports';
+export type CategorySlug = 'auto' | 'finanses' | 'majoklis' | 'veseliba' | 'sports' | 'sabiedriba';
 
 export interface CategoryMeta {
   slug: CategorySlug;
@@ -49,6 +49,12 @@ export const categories: CategoryMeta[] = [
     title: 'Izturība un sports',
     description: 'Skriešanas, riteņbraukšanas un peldēšanas kalkulatori.',
     accentVar: 'var(--color-accent-sports)',
+  },
+  {
+    slug: 'sabiedriba',
+    title: 'Sabiedrība',
+    description: 'Sabiedrības un demogrāfijas kalkulatori.',
+    accentVar: 'var(--color-accent-sabiedriba)',
   },
 ];
 
