@@ -7,10 +7,11 @@ interface NumberFieldProps {
   onChange: (value: number) => void;
   unit?: string;
   min?: number;
+  max?: number;
   step?: number;
 }
 
-export function NumberField({ id, label, value, onChange, unit, min = 0, step = 1 }: NumberFieldProps) {
+export function NumberField({ id, label, value, onChange, unit, min = 0, max, step = 1 }: NumberFieldProps) {
   return (
     <div className="flex flex-col gap-1">
       <label htmlFor={id} className="text-label uppercase text-panel-muted">
@@ -24,6 +25,7 @@ export function NumberField({ id, label, value, onChange, unit, min = 0, step = 
           className="w-full bg-transparent font-mono text-lg text-panel-text outline-none"
           value={Number.isNaN(value) ? '' : value}
           min={min}
+          max={max}
           step={step}
           onChange={(event) => {
             const next = event.target.valueAsNumber;

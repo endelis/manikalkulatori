@@ -1,0 +1,867 @@
+{
+  "source": "CSP PxWeb IRS010, Iedzivotaju skaits gada sakuma, ta izmainas un dabiskas kustibas galvenie raditaji 1920-2026",
+  "sourceUrl": "https://data.stat.gov.lv/pxweb/lv/OSP_PUB/START__POP__IR__IRS/IRS010/",
+  "apiUrl": "https://data.stat.gov.lv/api/v1/lv/OSP_PUB/POP/IR/IRS/IRS010",
+  "tableCode": "IRS010",
+  "tableUpdated": "2026-06-02",
+  "retrievalDate": "2026-09-03",
+  "note": "null means CSP has no published value for that indicator that year (1944 has no data at all due to WWII; several interwar years have no population-at-year-start figure because censuses were not annual before 1946). 2026 shows only populationAtYearStart because the year is not complete yet.",
+  "series": [
+    {
+      "year": 1920,
+      "populationAtYearStart": 1596131,
+      "liveBirths": 29434,
+      "deaths": 33891,
+      "naturalIncrease": -4457,
+      "netMigration": null
+    },
+    {
+      "year": 1921,
+      "populationAtYearStart": null,
+      "liveBirths": 36420,
+      "deaths": 25331,
+      "naturalIncrease": 11089,
+      "netMigration": null
+    },
+    {
+      "year": 1922,
+      "populationAtYearStart": null,
+      "liveBirths": 41146,
+      "deaths": 27553,
+      "naturalIncrease": 13593,
+      "netMigration": null
+    },
+    {
+      "year": 1923,
+      "populationAtYearStart": null,
+      "liveBirths": 41796,
+      "deaths": 26080,
+      "naturalIncrease": 15716,
+      "netMigration": null
+    },
+    {
+      "year": 1924,
+      "populationAtYearStart": null,
+      "liveBirths": 41172,
+      "deaths": 28399,
+      "naturalIncrease": 12773,
+      "netMigration": null
+    },
+    {
+      "year": 1925,
+      "populationAtYearStart": 1844805,
+      "liveBirths": 41314,
+      "deaths": 27683,
+      "naturalIncrease": 13631,
+      "netMigration": null
+    },
+    {
+      "year": 1926,
+      "populationAtYearStart": null,
+      "liveBirths": 41073,
+      "deaths": 27557,
+      "naturalIncrease": 13516,
+      "netMigration": null
+    },
+    {
+      "year": 1927,
+      "populationAtYearStart": null,
+      "liveBirths": 41610,
+      "deaths": 28941,
+      "naturalIncrease": 12669,
+      "netMigration": null
+    },
+    {
+      "year": 1928,
+      "populationAtYearStart": null,
+      "liveBirths": 39126,
+      "deaths": 27299,
+      "naturalIncrease": 11827,
+      "netMigration": null
+    },
+    {
+      "year": 1929,
+      "populationAtYearStart": null,
+      "liveBirths": 35673,
+      "deaths": 28512,
+      "naturalIncrease": 7161,
+      "netMigration": null
+    },
+    {
+      "year": 1930,
+      "populationAtYearStart": 1900045,
+      "liveBirths": 37835,
+      "deaths": 27110,
+      "naturalIncrease": 10725,
+      "netMigration": null
+    },
+    {
+      "year": 1931,
+      "populationAtYearStart": null,
+      "liveBirths": 36972,
+      "deaths": 26891,
+      "naturalIncrease": 10081,
+      "netMigration": null
+    },
+    {
+      "year": 1932,
+      "populationAtYearStart": null,
+      "liveBirths": 37366,
+      "deaths": 26342,
+      "naturalIncrease": 11024,
+      "netMigration": null
+    },
+    {
+      "year": 1933,
+      "populationAtYearStart": null,
+      "liveBirths": 34576,
+      "deaths": 26319,
+      "naturalIncrease": 8257,
+      "netMigration": null
+    },
+    {
+      "year": 1934,
+      "populationAtYearStart": null,
+      "liveBirths": 33383,
+      "deaths": 27065,
+      "naturalIncrease": 6318,
+      "netMigration": null
+    },
+    {
+      "year": 1935,
+      "populationAtYearStart": 1905936,
+      "liveBirths": 34419,
+      "deaths": 27660,
+      "naturalIncrease": 6759,
+      "netMigration": null
+    },
+    {
+      "year": 1936,
+      "populationAtYearStart": null,
+      "liveBirths": 35468,
+      "deaths": 27646,
+      "naturalIncrease": 7822,
+      "netMigration": null
+    },
+    {
+      "year": 1937,
+      "populationAtYearStart": null,
+      "liveBirths": 34863,
+      "deaths": 28083,
+      "naturalIncrease": 6780,
+      "netMigration": null
+    },
+    {
+      "year": 1938,
+      "populationAtYearStart": null,
+      "liveBirths": 36386,
+      "deaths": 26703,
+      "naturalIncrease": 9683,
+      "netMigration": null
+    },
+    {
+      "year": 1939,
+      "populationAtYearStart": null,
+      "liveBirths": 36932,
+      "deaths": 27827,
+      "naturalIncrease": 9105,
+      "netMigration": null
+    },
+    {
+      "year": 1940,
+      "populationAtYearStart": null,
+      "liveBirths": 37493,
+      "deaths": 30355,
+      "naturalIncrease": 7138,
+      "netMigration": null
+    },
+    {
+      "year": 1941,
+      "populationAtYearStart": null,
+      "liveBirths": 36295,
+      "deaths": 30434,
+      "naturalIncrease": 5861,
+      "netMigration": null
+    },
+    {
+      "year": 1942,
+      "populationAtYearStart": null,
+      "liveBirths": 36370,
+      "deaths": 29940,
+      "naturalIncrease": 6430,
+      "netMigration": null
+    },
+    {
+      "year": 1943,
+      "populationAtYearStart": null,
+      "liveBirths": 35915,
+      "deaths": 29904,
+      "naturalIncrease": 6011,
+      "netMigration": null
+    },
+    {
+      "year": 1944,
+      "populationAtYearStart": null,
+      "liveBirths": null,
+      "deaths": null,
+      "naturalIncrease": null,
+      "netMigration": null
+    },
+    {
+      "year": 1945,
+      "populationAtYearStart": null,
+      "liveBirths": 26217,
+      "deaths": null,
+      "naturalIncrease": null,
+      "netMigration": null
+    },
+    {
+      "year": 1946,
+      "populationAtYearStart": 1553577,
+      "liveBirths": 30544,
+      "deaths": 32266,
+      "naturalIncrease": -1722,
+      "netMigration": 164918
+    },
+    {
+      "year": 1947,
+      "populationAtYearStart": 1716773,
+      "liveBirths": 34832,
+      "deaths": 32435,
+      "naturalIncrease": 2397,
+      "netMigration": 137249
+    },
+    {
+      "year": 1948,
+      "populationAtYearStart": 1856419,
+      "liveBirths": 35402,
+      "deaths": 26500,
+      "naturalIncrease": 8902,
+      "netMigration": 21471
+    },
+    {
+      "year": 1949,
+      "populationAtYearStart": 1886792,
+      "liveBirths": 35671,
+      "deaths": 25640,
+      "naturalIncrease": 10031,
+      "netMigration": -12746
+    },
+    {
+      "year": 1950,
+      "populationAtYearStart": 1884077,
+      "liveBirths": 33137,
+      "deaths": 24250,
+      "naturalIncrease": 8887,
+      "netMigration": -2990
+    },
+    {
+      "year": 1951,
+      "populationAtYearStart": 1889974,
+      "liveBirths": 32764,
+      "deaths": 23898,
+      "naturalIncrease": 8866,
+      "netMigration": -263
+    },
+    {
+      "year": 1952,
+      "populationAtYearStart": 1898577,
+      "liveBirths": 32278,
+      "deaths": 22680,
+      "naturalIncrease": 9598,
+      "netMigration": 4662
+    },
+    {
+      "year": 1953,
+      "populationAtYearStart": 1912837,
+      "liveBirths": 30986,
+      "deaths": 22761,
+      "naturalIncrease": 8225,
+      "netMigration": 18076
+    },
+    {
+      "year": 1954,
+      "populationAtYearStart": 1939138,
+      "liveBirths": 33202,
+      "deaths": 22500,
+      "naturalIncrease": 10702,
+      "netMigration": 16727
+    },
+    {
+      "year": 1955,
+      "populationAtYearStart": 1966567,
+      "liveBirths": 32968,
+      "deaths": 21330,
+      "naturalIncrease": 11638,
+      "netMigration": 17149
+    },
+    {
+      "year": 1956,
+      "populationAtYearStart": 1995354,
+      "liveBirths": 32590,
+      "deaths": 20339,
+      "naturalIncrease": 12251,
+      "netMigration": 33373
+    },
+    {
+      "year": 1957,
+      "populationAtYearStart": 2040978,
+      "liveBirths": 33714,
+      "deaths": 21087,
+      "naturalIncrease": 12627,
+      "netMigration": 12763
+    },
+    {
+      "year": 1958,
+      "populationAtYearStart": 2066368,
+      "liveBirths": 35068,
+      "deaths": 20910,
+      "naturalIncrease": 14158,
+      "netMigration": -578
+    },
+    {
+      "year": 1959,
+      "populationAtYearStart": 2079948,
+      "liveBirths": 35028,
+      "deaths": 22601,
+      "naturalIncrease": 12427,
+      "netMigration": 11753
+    },
+    {
+      "year": 1960,
+      "populationAtYearStart": 2104128,
+      "liveBirths": 35468,
+      "deaths": 21314,
+      "naturalIncrease": 14154,
+      "netMigration": 19548
+    },
+    {
+      "year": 1961,
+      "populationAtYearStart": 2137830,
+      "liveBirths": 35993,
+      "deaths": 21759,
+      "naturalIncrease": 14234,
+      "netMigration": 15467
+    },
+    {
+      "year": 1962,
+      "populationAtYearStart": 2167531,
+      "liveBirths": 35061,
+      "deaths": 23592,
+      "naturalIncrease": 11469,
+      "netMigration": 16640
+    },
+    {
+      "year": 1963,
+      "populationAtYearStart": 2195640,
+      "liveBirths": 33843,
+      "deaths": 22703,
+      "naturalIncrease": 11140,
+      "netMigration": 19418
+    },
+    {
+      "year": 1964,
+      "populationAtYearStart": 2226198,
+      "liveBirths": 33053,
+      "deaths": 21165,
+      "naturalIncrease": 11888,
+      "netMigration": 16962
+    },
+    {
+      "year": 1965,
+      "populationAtYearStart": 2255048,
+      "liveBirths": 31212,
+      "deaths": 22780,
+      "naturalIncrease": 8432,
+      "netMigration": 13309
+    },
+    {
+      "year": 1966,
+      "populationAtYearStart": 2276789,
+      "liveBirths": 31974,
+      "deaths": 23350,
+      "naturalIncrease": 8624,
+      "netMigration": 4232
+    },
+    {
+      "year": 1967,
+      "populationAtYearStart": 2289645,
+      "liveBirths": 32232,
+      "deaths": 24362,
+      "naturalIncrease": 7870,
+      "netMigration": 15280
+    },
+    {
+      "year": 1968,
+      "populationAtYearStart": 2312795,
+      "liveBirths": 32693,
+      "deaths": 25104,
+      "naturalIncrease": 7589,
+      "netMigration": 14059
+    },
+    {
+      "year": 1969,
+      "populationAtYearStart": 2334443,
+      "liveBirths": 32915,
+      "deaths": 26229,
+      "naturalIncrease": 6686,
+      "netMigration": 10774
+    },
+    {
+      "year": 1970,
+      "populationAtYearStart": 2351903,
+      "liveBirths": 34333,
+      "deaths": 26546,
+      "naturalIncrease": 7787,
+      "netMigration": 6734
+    },
+    {
+      "year": 1971,
+      "populationAtYearStart": 2366424,
+      "liveBirths": 35239,
+      "deaths": 26275,
+      "naturalIncrease": 8964,
+      "netMigration": 10965
+    },
+    {
+      "year": 1972,
+      "populationAtYearStart": 2386353,
+      "liveBirths": 35007,
+      "deaths": 27296,
+      "naturalIncrease": 7711,
+      "netMigration": 10931
+    },
+    {
+      "year": 1973,
+      "populationAtYearStart": 2404995,
+      "liveBirths": 34008,
+      "deaths": 28139,
+      "naturalIncrease": 5869,
+      "netMigration": 15778
+    },
+    {
+      "year": 1974,
+      "populationAtYearStart": 2426642,
+      "liveBirths": 34920,
+      "deaths": 28143,
+      "naturalIncrease": 6777,
+      "netMigration": 14311
+    },
+    {
+      "year": 1975,
+      "populationAtYearStart": 2447730,
+      "liveBirths": 34810,
+      "deaths": 30042,
+      "naturalIncrease": 4768,
+      "netMigration": 12031
+    },
+    {
+      "year": 1976,
+      "populationAtYearStart": 2464529,
+      "liveBirths": 34644,
+      "deaths": 30373,
+      "naturalIncrease": 4271,
+      "netMigration": 8649
+    },
+    {
+      "year": 1977,
+      "populationAtYearStart": 2477449,
+      "liveBirths": 34240,
+      "deaths": 30869,
+      "naturalIncrease": 3371,
+      "netMigration": 11877
+    },
+    {
+      "year": 1978,
+      "populationAtYearStart": 2492697,
+      "liveBirths": 34258,
+      "deaths": 31261,
+      "naturalIncrease": 2997,
+      "netMigration": 7451
+    },
+    {
+      "year": 1979,
+      "populationAtYearStart": 2503145,
+      "liveBirths": 34683,
+      "deaths": 32162,
+      "naturalIncrease": 2521,
+      "netMigration": 3095
+    },
+    {
+      "year": 1980,
+      "populationAtYearStart": 2508761,
+      "liveBirths": 35534,
+      "deaths": 32100,
+      "naturalIncrease": 3434,
+      "netMigration": 2445
+    },
+    {
+      "year": 1981,
+      "populationAtYearStart": 2514640,
+      "liveBirths": 35732,
+      "deaths": 32090,
+      "naturalIncrease": 3642,
+      "netMigration": 5920
+    },
+    {
+      "year": 1982,
+      "populationAtYearStart": 2524202,
+      "liveBirths": 37477,
+      "deaths": 31234,
+      "naturalIncrease": 6243,
+      "netMigration": 7513
+    },
+    {
+      "year": 1983,
+      "populationAtYearStart": 2537958,
+      "liveBirths": 40572,
+      "deaths": 32330,
+      "naturalIncrease": 8242,
+      "netMigration": 7863
+    },
+    {
+      "year": 1984,
+      "populationAtYearStart": 2554063,
+      "liveBirths": 40847,
+      "deaths": 33406,
+      "naturalIncrease": 7441,
+      "netMigration": 8526
+    },
+    {
+      "year": 1985,
+      "populationAtYearStart": 2570030,
+      "liveBirths": 39751,
+      "deaths": 34166,
+      "naturalIncrease": 5585,
+      "netMigration": 12101
+    },
+    {
+      "year": 1986,
+      "populationAtYearStart": 2587716,
+      "liveBirths": 41960,
+      "deaths": 31328,
+      "naturalIncrease": 10632,
+      "netMigration": 13720
+    },
+    {
+      "year": 1987,
+      "populationAtYearStart": 2612068,
+      "liveBirths": 42135,
+      "deaths": 32150,
+      "naturalIncrease": 9985,
+      "netMigration": 19044
+    },
+    {
+      "year": 1988,
+      "populationAtYearStart": 2641097,
+      "liveBirths": 41275,
+      "deaths": 32421,
+      "naturalIncrease": 8854,
+      "netMigration": 15819
+    },
+    {
+      "year": 1989,
+      "populationAtYearStart": 2665770,
+      "liveBirths": 38922,
+      "deaths": 32584,
+      "naturalIncrease": 6338,
+      "netMigration": -3968
+    },
+    {
+      "year": 1990,
+      "populationAtYearStart": 2668140,
+      "liveBirths": 37918,
+      "deaths": 34812,
+      "naturalIncrease": 3106,
+      "netMigration": -13085
+    },
+    {
+      "year": 1991,
+      "populationAtYearStart": 2658161,
+      "liveBirths": 34633,
+      "deaths": 34749,
+      "naturalIncrease": -116,
+      "netMigration": -15045
+    },
+    {
+      "year": 1992,
+      "populationAtYearStart": 2643000,
+      "liveBirths": 31569,
+      "deaths": 35420,
+      "naturalIncrease": -3851,
+      "netMigration": -53474
+    },
+    {
+      "year": 1993,
+      "populationAtYearStart": 2585675,
+      "liveBirths": 26759,
+      "deaths": 39197,
+      "naturalIncrease": -12438,
+      "netMigration": -32333
+    },
+    {
+      "year": 1994,
+      "populationAtYearStart": 2540904,
+      "liveBirths": 24256,
+      "deaths": 41757,
+      "naturalIncrease": -17501,
+      "netMigration": -22823
+    },
+    {
+      "year": 1995,
+      "populationAtYearStart": 2500580,
+      "liveBirths": 21595,
+      "deaths": 38931,
+      "naturalIncrease": -17336,
+      "netMigration": -13713
+    },
+    {
+      "year": 1996,
+      "populationAtYearStart": 2469531,
+      "liveBirths": 19782,
+      "deaths": 34320,
+      "naturalIncrease": -14538,
+      "netMigration": -10081
+    },
+    {
+      "year": 1997,
+      "populationAtYearStart": 2444912,
+      "liveBirths": 18830,
+      "deaths": 33533,
+      "naturalIncrease": -14703,
+      "netMigration": -9420
+    },
+    {
+      "year": 1998,
+      "populationAtYearStart": 2420789,
+      "liveBirths": 18410,
+      "deaths": 34200,
+      "naturalIncrease": -15790,
+      "netMigration": -5751
+    },
+    {
+      "year": 1999,
+      "populationAtYearStart": 2399248,
+      "liveBirths": 19396,
+      "deaths": 32844,
+      "naturalIncrease": -13448,
+      "netMigration": -4085
+    },
+    {
+      "year": 2000,
+      "populationAtYearStart": 2381715,
+      "liveBirths": 20302,
+      "deaths": 32205,
+      "naturalIncrease": -11903,
+      "netMigration": -16428
+    },
+    {
+      "year": 2001,
+      "populationAtYearStart": 2353384,
+      "liveBirths": 19726,
+      "deaths": 32991,
+      "naturalIncrease": -13265,
+      "netMigration": -19163
+    },
+    {
+      "year": 2002,
+      "populationAtYearStart": 2320956,
+      "liveBirths": 20127,
+      "deaths": 32498,
+      "naturalIncrease": -12371,
+      "netMigration": -9195
+    },
+    {
+      "year": 2003,
+      "populationAtYearStart": 2299390,
+      "liveBirths": 21151,
+      "deaths": 32437,
+      "naturalIncrease": -11286,
+      "netMigration": -11584
+    },
+    {
+      "year": 2004,
+      "populationAtYearStart": 2276520,
+      "liveBirths": 20551,
+      "deaths": 32024,
+      "naturalIncrease": -11473,
+      "netMigration": -15323
+    },
+    {
+      "year": 2005,
+      "populationAtYearStart": 2249724,
+      "liveBirths": 21879,
+      "deaths": 32777,
+      "naturalIncrease": -10898,
+      "netMigration": -10952
+    },
+    {
+      "year": 2006,
+      "populationAtYearStart": 2227874,
+      "liveBirths": 22871,
+      "deaths": 33098,
+      "naturalIncrease": -10227,
+      "netMigration": -8807
+    },
+    {
+      "year": 2007,
+      "populationAtYearStart": 2208840,
+      "liveBirths": 23958,
+      "deaths": 33042,
+      "naturalIncrease": -9084,
+      "netMigration": -7946
+    },
+    {
+      "year": 2008,
+      "populationAtYearStart": 2191810,
+      "liveBirths": 24397,
+      "deaths": 31006,
+      "naturalIncrease": -6609,
+      "netMigration": -22367
+    },
+    {
+      "year": 2009,
+      "populationAtYearStart": 2162834,
+      "liveBirths": 22044,
+      "deaths": 29897,
+      "naturalIncrease": -7853,
+      "netMigration": -34477
+    },
+    {
+      "year": 2010,
+      "populationAtYearStart": 2120504,
+      "liveBirths": 19781,
+      "deaths": 30040,
+      "naturalIncrease": -10259,
+      "netMigration": -35640
+    },
+    {
+      "year": 2011,
+      "populationAtYearStart": 2074605,
+      "liveBirths": 18825,
+      "deaths": 28540,
+      "naturalIncrease": -9715,
+      "netMigration": -20077
+    },
+    {
+      "year": 2012,
+      "populationAtYearStart": 2044813,
+      "liveBirths": 19897,
+      "deaths": 29025,
+      "naturalIncrease": -9128,
+      "netMigration": -11860
+    },
+    {
+      "year": 2013,
+      "populationAtYearStart": 2023825,
+      "liveBirths": 20596,
+      "deaths": 28691,
+      "naturalIncrease": -8095,
+      "netMigration": -14262
+    },
+    {
+      "year": 2014,
+      "populationAtYearStart": 2001468,
+      "liveBirths": 21746,
+      "deaths": 28466,
+      "naturalIncrease": -6720,
+      "netMigration": -8652
+    },
+    {
+      "year": 2015,
+      "populationAtYearStart": 1986096,
+      "liveBirths": 21979,
+      "deaths": 28478,
+      "naturalIncrease": -6499,
+      "netMigration": -10640
+    },
+    {
+      "year": 2016,
+      "populationAtYearStart": 1968957,
+      "liveBirths": 21968,
+      "deaths": 28580,
+      "naturalIncrease": -6612,
+      "netMigration": -12229
+    },
+    {
+      "year": 2017,
+      "populationAtYearStart": 1950116,
+      "liveBirths": 20828,
+      "deaths": 28757,
+      "naturalIncrease": -7929,
+      "netMigration": -7808
+    },
+    {
+      "year": 2018,
+      "populationAtYearStart": 1934379,
+      "liveBirths": 19314,
+      "deaths": 28820,
+      "naturalIncrease": -9506,
+      "netMigration": -4905
+    },
+    {
+      "year": 2019,
+      "populationAtYearStart": 1919968,
+      "liveBirths": 18786,
+      "deaths": 27719,
+      "naturalIncrease": -8933,
+      "netMigration": -3360
+    },
+    {
+      "year": 2020,
+      "populationAtYearStart": 1907675,
+      "liveBirths": 17552,
+      "deaths": 28854,
+      "naturalIncrease": -11302,
+      "netMigration": -3150
+    },
+    {
+      "year": 2021,
+      "populationAtYearStart": 1893223,
+      "liveBirths": 17420,
+      "deaths": 34600,
+      "naturalIncrease": -17180,
+      "netMigration": -286
+    },
+    {
+      "year": 2022,
+      "populationAtYearStart": 1875757,
+      "liveBirths": 15954,
+      "deaths": 30731,
+      "naturalIncrease": -14777,
+      "netMigration": 22028
+    },
+    {
+      "year": 2023,
+      "populationAtYearStart": 1895239,
+      "liveBirths": 14490,
+      "deaths": 28031,
+      "naturalIncrease": -13541,
+      "netMigration": -3123
+    },
+    {
+      "year": 2024,
+      "populationAtYearStart": 1878575,
+      "liveBirths": 12887,
+      "deaths": 26661,
+      "naturalIncrease": -13774,
+      "netMigration": -4236
+    },
+    {
+      "year": 2025,
+      "populationAtYearStart": 1860565,
+      "liveBirths": 11931,
+      "deaths": 26109,
+      "naturalIncrease": -14178,
+      "netMigration": -1291
+    },
+    {
+      "year": 2026,
+      "populationAtYearStart": 1845096,
+      "liveBirths": null,
+      "deaths": null,
+      "naturalIncrease": null,
+      "netMigration": null
+    }
+  ]
+}

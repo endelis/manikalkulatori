@@ -1,4 +1,4 @@
-export type CategorySlug = 'auto' | 'finanses' | 'majoklis' | 'veseliba' | 'sports';
+export type CategorySlug = 'auto' | 'finanses' | 'majoklis' | 'veseliba' | 'sports' | 'sabiedriba';
 
 export interface CategoryMeta {
   slug: CategorySlug;
@@ -49,6 +49,12 @@ export const categories: CategoryMeta[] = [
     title: 'Izturība un sports',
     description: 'Skriešanas, riteņbraukšanas un peldēšanas kalkulatori.',
     accentVar: 'var(--color-accent-sports)',
+  },
+  {
+    slug: 'sabiedriba',
+    title: 'Sabiedrība',
+    description: 'Sabiedrības un demogrāfijas kalkulatori.',
+    accentVar: 'var(--color-accent-sabiedriba)',
   },
 ];
 
@@ -285,7 +291,29 @@ export const calculators: CalculatorMeta[] = [
     keywords: ['sirdsdarbības zonu kalkulators', 'pulsa zonas', 'karvonena metode'],
     contentUpdatedAt: '2026-08-22',
   },
+  {
+    slug: 'dzimstibas-kalkulators',
+    category: 'sabiedriba',
+    title: 'Dzimstības kalkulators',
+    h1: 'Cik bērniem Latvijā jāpiedzimst, lai iedzīvotāju skaits vairs nesarūk',
+    intro:
+      'Ievadi savus pieņēmumus par mirušajiem, migrāciju un iedzīvotāju skaitu, uzzini, cik bērniem jāpiedzimst, lai sasniegtu izvēlēto mērķi.',
+    metaDescription:
+      'Aprēķini, cik bērniem gadā jāpiedzimst Latvijā, lai iedzīvotāju skaits stabilizētos vai sasniegtu izvēlētu mērķi, pēc oficiāliem CSP datiem.',
+    keywords: ['dzimstības kalkulators', 'cik bērniem jāpiedzimst Latvijā', 'Latvijas iedzīvotāju skaits'],
+    contentUpdatedAt: '2026-09-03',
+  },
 ];
+
+/**
+ * Slugs that ship a bespoke `app/<category>/<slug>/page.tsx` instead of going through
+ * the generic `CalculatorShell` + `app/[category]/[calculator]/page.tsx` route. These
+ * calculators still live in the registry above (for the category listing, homepage
+ * count, related-calculators, and sitemap), but generateStaticParams for the generic
+ * dynamic route excludes them, and the registry-integrity tests that assume the
+ * generic shell (a mapped UI component, an explanations entry) skip them too.
+ */
+export const CUSTOM_ROUTED_SLUGS = new Set<string>(['dzimstibas-kalkulators']);
 
 export function getCategory(slug: string): CategoryMeta | undefined {
   return categories.find((category) => category.slug === slug);

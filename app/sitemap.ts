@@ -10,6 +10,12 @@ const LEGAL_PAGE_UPDATED_AT: Record<string, string> = {
   '/noteikumi': '2026-08-22',
 };
 
+// Content pages driven by sourced data rather than the calculator registry, but still
+// indexable. Bump the date only when the page's rendered figures or copy change.
+const INFO_PAGE_UPDATED_AT: Record<string, string> = {
+  '/sabiedriba/iedzivotaju-skaits-latvija': '2026-09-03',
+};
+
 function latest(dates: string[]): string {
   return dates.reduce((max, date) => (date > max ? date : max));
 }
@@ -49,5 +55,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.3,
   }));
 
-  return [homeEntry, ...categoryEntries, ...calculatorEntries, ...legalEntries];
+  const infoEntries: MetadataRoute.Sitemap = Object.entries(INFO_PAGE_UPDATED_AT).map(([path, updatedAt]) => ({
+    url: `${SITE_URL}${path}`,
+    lastModified: updatedAt,
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }));
+
+  return [homeEntry, ...categoryEntries, ...calculatorEntries, ...legalEntries, ...infoEntries];
 }
