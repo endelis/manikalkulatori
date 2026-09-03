@@ -6,6 +6,7 @@ import { SITE_URL } from '@/lib/site';
 import { buildBreadcrumbSchema, buildFaqSchema, buildSoftwareApplicationSchema, safeJsonLd } from '@/lib/schema';
 import { formatNumber } from '@/lib/format';
 import { Faq } from '@/components/Faq';
+import { BirthsDeathsChart } from '@/components/BirthsDeathsChart';
 import { BirthsDeathsTable } from '@/components/BirthsDeathsTable';
 import { DzimstibasKalkulators } from '@/components/calculators/DzimstibasKalkulators';
 import { computeDzimstibas } from '@/lib/calculators/dzimstibas-kalkulators';
@@ -84,10 +85,11 @@ export default function DzimstibasKalkulatorsPage() {
           populationSeries={POPULATION_SERIES}
         />
 
-        <section aria-labelledby="chart-heading" className="flex flex-col gap-3">
+        <section aria-labelledby="chart-heading" className="flex flex-col gap-4">
           <h2 id="chart-heading" className="font-sans text-h2">
             Dzīvi dzimušie un mirušie, 2015 līdz 2025
           </h2>
+          <BirthsDeathsChart rows={recentSeries} accentVar={category.accentVar} tableCode="IRS010" />
           <BirthsDeathsTable rows={recentSeries} accentVar={category.accentVar} />
         </section>
 
