@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import { calculators, getCalculator, getCategory, getRelatedCalculators } from '@/lib/registry';
+import { CUSTOM_ROUTED_SLUGS, calculators, getCalculator, getCategory, getRelatedCalculators } from '@/lib/registry';
 import { loadFaq } from '@/lib/faq';
 import { SITE_URL } from '@/lib/site';
 import {
@@ -20,10 +20,14 @@ interface PageParams {
 }
 
 export function generateStaticParams() {
-  return calculators.map((calculator) => ({
-    category: calculator.category,
-    calculator: calculator.slug,
-  }));
+  // Calculators with their own bespoke page (see CUSTOM_ROUTED_SLUGS) are served by a
+  // literal app/<category>/<slug>/page.tsx route instead, so they are excluded here.
+  return calculators
+    .filter((calculator) => !CUSTOM_ROUTED_SLUGS.has(calculator.slug))
+    .map((calculator) => ({
+      category: calculator.category,
+      calculator: calculator.slug,
+    }));
 }
 
 export async function generateMetadata({

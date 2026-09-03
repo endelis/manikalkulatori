@@ -52,9 +52,9 @@ describe('getRelatedCalculators', () => {
 });
 
 describe('categories', () => {
-  it('defines exactly the five top-level categories from the spec', () => {
+  it('defines exactly the six top-level categories from the spec', () => {
     expect(categories.map((c) => c.slug).sort()).toEqual(
-      ['auto', 'finanses', 'majoklis', 'sports', 'veseliba'].sort(),
+      ['auto', 'finanses', 'majoklis', 'sports', 'veseliba', 'sabiedriba'].sort(),
     );
   });
 });
