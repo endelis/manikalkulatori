@@ -58,3 +58,34 @@ describe('categories', () => {
     );
   });
 });
+
+describe('contentUpdatedAt', () => {
+  // Full ISO 8601 date-time with a mandatory timezone offset (Z or ±HH:MM). A bare
+  // date ("2026-09-03") must not pass: it cannot represent a second same-day content
+  // change, which is exactly the deadlock lib/calculatorContentDrift.test.ts exists to
+  // catch (see that file's docstring, and PR #16). This test is the guard that stops a
+  // bare date from creeping back onto any calculator.
+  const FULL_ISO_8601_WITH_OFFSET = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{1,3})?(Z|[+-]\d{2}:\d{2})$/;
+
+  it('every calculator has a full ISO 8601 timestamp with a timezone offset, not a bare date', () => {
+    for (const calc of calculators) {
+      expect(
+        FULL_ISO_8601_WITH_OFFSET.test(calc.contentUpdatedAt),
+        `${calc.slug}: contentUpdatedAt "${calc.contentUpdatedAt}" is not a full ISO 8601 timestamp with a timezone offset`,
+      ).toBe(true);
+    }
+  });
+
+  it('every calculator has a parseable, non-future timestamp', () => {
+    const now = Date.now();
+    for (const calc of calculators) {
+      const parsed = new Date(calc.contentUpdatedAt).getTime();
+      expect(Number.isNaN(parsed), `${calc.slug}: contentUpdatedAt "${calc.contentUpdatedAt}" does not parse`).toBe(
+        false,
+      );
+      expect(parsed, `${calc.slug}: contentUpdatedAt "${calc.contentUpdatedAt}" is in the future`).toBeLessThanOrEqual(
+        now,
+      );
+    }
+  });
+});

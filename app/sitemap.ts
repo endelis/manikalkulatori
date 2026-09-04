@@ -2,18 +2,22 @@ import type { MetadataRoute } from 'next';
 import { calculators, categories, getCalculatorsByCategory } from '@/lib/registry';
 import { SITE_URL } from '@/lib/site';
 
-// Hand maintained: bump a page's date here only when its rendered content actually changes.
+// Hand maintained: bump a page's timestamp here only when its rendered content
+// actually changes, to the real commit time (git log -1 --format=%cI -- <page file>),
+// not now. Full ISO 8601 with a timezone offset, same format and same reasoning as
+// contentUpdatedAt in lib/registry.ts: a bare date cannot represent a second same-day
+// change, see lib/calculatorContentDrift.test.ts and lib/registry.test.ts.
 const LEGAL_PAGE_UPDATED_AT: Record<string, string> = {
-  '/par-mums': '2026-08-22',
-  '/kontakti': '2026-08-22',
-  '/privatuma-politika': '2026-09-03',
-  '/noteikumi': '2026-08-22',
+  '/par-mums': '2026-08-22T17:05:41+03:00',
+  '/kontakti': '2026-08-22T17:05:41+03:00',
+  '/privatuma-politika': '2026-09-03T18:48:53+03:00',
+  '/noteikumi': '2026-08-22T17:05:41+03:00',
 };
 
 // Content pages driven by sourced data rather than the calculator registry, but still
-// indexable. Bump the date only when the page's rendered figures or copy change.
+// indexable. Bump the timestamp only when the page's rendered figures or copy change.
 const INFO_PAGE_UPDATED_AT: Record<string, string> = {
-  '/sabiedriba/iedzivotaju-skaits-latvija': '2026-09-03',
+  '/sabiedriba/iedzivotaju-skaits-latvija': '2026-09-03T20:16:44+03:00',
 };
 
 // Calculator contentUpdatedAt values are full ISO 8601 timestamps with a timezone
