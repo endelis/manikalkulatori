@@ -311,6 +311,22 @@ export const calculators: CalculatorMeta[] = [
     keywords: ['dzimstības kalkulators', 'cik bērniem jāpiedzimst Latvijā', 'Latvijas iedzīvotāju skaits'],
     contentUpdatedAt: '2026-09-04T13:22:48+03:00',
   },
+  {
+    slug: 'pensijas-kalkulators',
+    category: 'finanses',
+    title: 'Pensijas kalkulators',
+    h1: 'Cik liela būs mana 1. līmeņa pensija',
+    intro:
+      'Ievadi dzimšanas gadu, algu un apdrošināšanas stāžu, uzzini aptuvenu 1. līmeņa vecuma pensijas apmēru pēc VSAA formulas.',
+    metaDescription:
+      'Aprēķini aptuvenu Latvijas 1. līmeņa vecuma pensiju pēc VSAA formulas un koeficienta G, ar redzamu aprēķinu gaitu.',
+    keywords: ['pensijas kalkulators', 'mana pensija', 'kā aprēķina pensiju Latvijā', 'koeficients G'],
+    // Set to the real commit time of the latest tracked file (git log -1 --format=%cI),
+    // per CLAUDE.md, "Sitemap dates". Still provisional: per the same rule, this must be
+    // re-bumped to the squash merge commit's own time on master right before merging,
+    // since squashing rewrites every touched file's commit time (see PR #20's history).
+    contentUpdatedAt: '2026-09-04T20:20:07+03:00',
+  },
 ];
 
 /**
@@ -321,7 +337,7 @@ export const calculators: CalculatorMeta[] = [
  * dynamic route excludes them, and the registry-integrity tests that assume the
  * generic shell (a mapped UI component, an explanations entry) skip them too.
  */
-export const CUSTOM_ROUTED_SLUGS = new Set<string>(['dzimstibas-kalkulators']);
+export const CUSTOM_ROUTED_SLUGS = new Set<string>(['dzimstibas-kalkulators', 'pensijas-kalkulators']);
 
 export function getCategory(slug: string): CategoryMeta | undefined {
   return categories.find((category) => category.slug === slug);

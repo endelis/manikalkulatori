@@ -70,6 +70,7 @@ const CUSTOM_ROUTED_EXTRA_UI_FILES: Record<string, string[]> = {
     'components/BirthsDeathsChart.tsx',
     'components/BirthsDeathsTable.tsx',
   ],
+  'pensijas-kalkulators': ['components/calculators/PensijasKalkulators.tsx'],
 };
 
 function uiFilesForSlug(calc: CalculatorMeta): string[] {
