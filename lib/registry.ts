@@ -321,11 +321,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini aptuvenu Latvijas 1. līmeņa vecuma pensiju pēc VSAA formulas un koeficienta G, ar redzamu aprēķinu gaitu.',
     keywords: ['pensijas kalkulators', 'mana pensija', 'kā aprēķina pensiju Latvijā', 'koeficients G'],
-    // Set to the real commit time of the latest tracked file (git log -1 --format=%cI),
-    // per CLAUDE.md, "Sitemap dates". Still provisional: per the same rule, this must be
-    // re-bumped to the squash merge commit's own time on master right before merging,
-    // since squashing rewrites every touched file's commit time (see PR #20's history).
-    contentUpdatedAt: '2026-09-04T20:20:07+03:00',
+    contentUpdatedAt: '2026-09-04T20:40:47+03:00',
   },
 ];
 
