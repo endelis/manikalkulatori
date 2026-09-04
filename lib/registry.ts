@@ -323,7 +323,7 @@ export const calculators: CalculatorMeta[] = [
     keywords: ['pensijas kalkulators', 'mana pensija', 'kā aprēķina pensiju Latvijā', 'koeficients G'],
     // Placeholder, set on the squash merge commit's own time before merging, not the
     // feature branch commit time (see CLAUDE.md, "Sitemap dates").
-    contentUpdatedAt: '2026-09-04T13:53:00+03:00',
+    contentUpdatedAt: '2026-09-04T17:10:00+03:00',
   },
 ];
 

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { computePension, type PensionInput } from './pensijas-kalkulators';
+import { computePension, cumulativeIndex, type PensionInput } from './pensijas-kalkulators';
 
 // Small, self contained fixtures (not the real ~28 year VSAA series) so each test's
 // expected value can be hand verified rather than trusting the production table.
@@ -20,22 +20,37 @@ const base: PensionInput = {
 };
 
 describe('computePension, past capital', () => {
-  it('indexes each past year forward with the real per-year series, not a flat rate', () => {
+  it('backfills each past year at today\'s salary with no further indexation (avoids double counting wage growth)', () => {
+    // 2 years of record (2024, 2025), backfilled at today's salary: 1000 * 12 * 0.15
+    // = 1800 per year, flat, not run through the index series a second time (that
+    // salary figure is already expressed in today's terms).
     const result = computePension(base);
-    // Two years of record: 2024 and 2025. Annual contribution = 1000 * 12 * 0.15 = 1800.
-    // 2024's contribution is indexed by 2025 and 2026: 1800 * 1.05 * 1.0.
-    // 2025's contribution is indexed by 2026 only: 1800 * 1.0.
     const contribution = 1000 * 12 * 0.15;
-    const expected = contribution * 1.05 * 1.0 + contribution * 1.0;
-    expect(result.capitalPast).toBeCloseTo(expected, 6);
+    expect(result.capitalPast).toBeCloseTo(contribution * 2, 6);
+  });
+
+  it('is unaffected by the index series entirely: identical result whether the series is populated or empty', () => {
+    // Pins the "no double counting" fix: if the index series were still being applied
+    // to backfilled years, this would fail (the two results would differ).
+    const withIndex = computePension(base);
+    const withoutIndex = computePension({ ...base, wageIndexSeries: {} });
+    expect(withoutIndex.capitalPast).toBe(withIndex.capitalPast);
+  });
+
+  it('scales linearly with effectiveServiceYears, one flat contribution per year', () => {
+    const oneYear = computePension({ ...base, insuranceRecordYears: 1 });
+    const threeYears = computePension({ ...base, insuranceRecordYears: 3 });
+    expect(threeYears.capitalPast).toBeCloseTo(oneYear.capitalPast * 3, 6);
+  });
+});
+
+describe('cumulativeIndex (exported for methodology copy, not used by computePension)', () => {
+  it('multiplies the published per-year indices across the requested range', () => {
+    expect(cumulativeIndex(2024, 2026, INDEX_SERIES)).toBeCloseTo(1.05 * 1.0, 10);
   });
 
   it('treats a year with no published index as 1, not a fabricated value', () => {
-    const result = computePension({ ...base, insuranceRecordYears: 1, currentYear: 2027 });
-    // Service year 2026, indexed forward through 2027: only 2026's index factor is
-    // published (1.0 in the fixture); 2027 has no entry, so it must default to 1.
-    const contribution = 1000 * 12 * 0.15;
-    expect(result.capitalPast).toBeCloseTo(contribution * 1.0, 6);
+    expect(cumulativeIndex(2026, 2027, INDEX_SERIES)).toBeCloseTo(1, 10);
   });
 });
 

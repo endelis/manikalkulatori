@@ -19,6 +19,7 @@
   },
   "wageIndexSeries": {
     "source": "https://www.vsaa.gov.lv/lv/media/7364/download?attachment=",
+    "sourceLocation": "The PDF is 2 pages, titled \"Apdrošināšanas iemaksu algas indeksi (2025)\", with no printed page numbers or internal section headings, so citation is by physical page position, not a numbered section: page 1 lists the 1996 through 2013 contribution year rows; page 2 lists the 2014 through 2023 contribution year rows. Retrieved and paginated via WebFetch on 2026-09-04; if VSAA republishes this file with different pagination, this citation would need re-checking against the new file.",
     "note": "Apdrošināšanas iemaksu algas indeksi (2025). Full year by year series extracted from the source PDF's per-contribution-year index chains (each contribution year's list is a suffix of the prior year's list, so the underlying series is a single chain keyed by the application year, the year in which capital existing at that year's start is multiplied by the index). No 2025 or later index is published yet, matching the source's own 1 to 2 year publication lag; do not fabricate a value for an unpublished year.",
     "byApplicationYear": {
       "1997": 1.03, "1998": 1.12, "1999": 1.117, "2000": 1.069,

@@ -33,14 +33,15 @@ const MONTHS_PER_YEAR = 12;
 const PERCENT_DIVISOR = 100;
 
 /**
- * Cumulative index factor to bring capital contributed in `fromYear` forward to
- * `toYear`, using the real per-year VSAA index series. A year with no published index
- * (fromYear + 1 through toYear, inclusive, must all be present) is treated as 1 (no
- * indexation yet), matching the site's convention of not fabricating an unpublished
- * value: the true index for that year is not yet known, so no false precision is added
- * on top of what VSAA has actually published.
+ * Cumulative index factor from `fromYear` forward to `toYear`, using the real per-year
+ * VSAA index series. Exported for the page's methodology copy (to show, as cited
+ * context, what a genuinely historical nominal amount from `fromYear` would have grown
+ * to by `toYear`) — not used by computePension's own backfilled past capital, see the
+ * comment there for why. A year with no published index (fromYear + 1 through toYear,
+ * inclusive, must all be present) is treated as 1 (no indexation yet), matching the
+ * site's convention of not fabricating an unpublished value.
  */
-function cumulativeIndex(fromYear: number, toYear: number, series: Record<number, number>): number {
+export function cumulativeIndex(fromYear: number, toYear: number, series: Record<number, number>): number {
   let factor = 1;
   for (let year = fromYear + 1; year <= toYear; year += 1) {
     factor *= series[year] ?? 1;
@@ -57,7 +58,6 @@ export function computePension(input: PensionInput): PensionResult {
     retirementAge,
     ndcStartYear,
     pillar1ContributionRatePercent,
-    wageIndexSeries,
     gTable,
   } = input;
 
@@ -69,14 +69,15 @@ export function computePension(input: PensionInput): PensionResult {
   const pillar1Rate = pillar1ContributionRatePercent / PERCENT_DIVISOR;
   const annualSalaryNow = currentGrossSalaryMonthly * MONTHS_PER_YEAR;
 
-  // Past capital: each past year's contribution is approximated using today's salary
-  // (no year by year salary history is collected), then indexed forward to the current
-  // year with the real published index for each of those years.
-  let capitalPast = 0;
-  for (let year = serviceStartYear; year < currentYear; year += 1) {
-    const contribution = annualSalaryNow * pillar1Rate;
-    capitalPast += contribution * cumulativeIndex(year, currentYear, wageIndexSeries);
-  }
+  // Past capital: each past year's contribution is approximated using today's salary,
+  // since no year by year salary history is collected. That approximated amount is
+  // already expressed in today's nominal terms, so it is NOT run through the real
+  // per-year VSAA index: the index exists to bring a genuinely historical (lower)
+  // nominal amount up to today's terms, and applying it on top of an already-current
+  // stand-in figure would double count wage growth, inflating capitalPast beyond what
+  // the backfill assumption can defend. See
+  // claude/pension-calculator-defaults-2026.md, "K aprēķina vienkāršojums".
+  const capitalPast = effectiveServiceYears * annualSalaryNow * pillar1Rate;
 
   // Future capital: from now until retirement, salary is projected to grow at the
   // wage growth assumption; no further indexation is applied, since a future index has
