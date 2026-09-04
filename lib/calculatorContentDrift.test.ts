@@ -22,6 +22,16 @@ import { CUSTOM_ROUTED_SLUGS, calculators, type CalculatorMeta } from './registr
  *
  * Timestamps are compared as actual instants (Date.getTime()), not string order, so
  * differing timezone offsets can never sort incorrectly.
+ *
+ * A squash merge changes this test's answer for every file the PR touched: `git log -1
+ * --format=%cI -- <file>` on the base branch reports the squash commit's own time for
+ * all of them, not each file's real commit time on the feature branch. contentUpdatedAt
+ * set to the feature-branch commit time (correct there) goes stale the moment the PR is
+ * squash merged. This happened for real: PR #19's contentUpdatedAt values were set from
+ * the feature branch and had to be re-bumped to the squash commit's time (see PR
+ * fix/contentupdatedat-post-squash) once this test was run against master. When setting
+ * contentUpdatedAt right after a squash merge, use the squash commit's own time, not the
+ * feature branch commit's.
  */
 
 function lastCommitTimestamp(filePath: string): string | null {
