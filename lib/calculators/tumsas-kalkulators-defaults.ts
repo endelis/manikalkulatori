@@ -35,7 +35,21 @@ export const LATITUDE_DEGREES_NORTH = daylightData.latitude.degreesNorth;
 
 export const RETRIEVED_DATE = daylightData.retrievedDate;
 
+// Same fixed reference date pattern as CURRENT_YEAR in dzimstibas-kalkulators-defaults.ts
+// and pensijas-kalkulators-defaults.ts: this whole site is statically generated, not a
+// live clock driven app, so "today" is a build time snapshot, not `new Date()` (which
+// would also risk an SSR/hydration mismatch on a statically rendered page).
+export const TODAY_ISO = '2026-09-04';
+
 export const DEFAULT_BIRTH_DATE = '1990-06-15';
+export const DEFAULT_BIRTH_DAY = 15;
+export const DEFAULT_BIRTH_MONTH = 6;
+export const DEFAULT_BIRTH_YEAR = 1990;
+
+// A sane practical lower bound for the birth year input, not a sourced figure: nobody
+// filling in this calculator was born before this. Independent of ndcStartYear style
+// data cutoffs elsewhere on the site, this is purely a UI guard against absurd inputs.
+export const MIN_BIRTH_YEAR = 1900;
 
 export function buildTumsasInput(birthDate: string, today: string): TumsasInput {
   return {

@@ -3,6 +3,17 @@ import Link from 'next/link';
 import { getCategory, getCalculator } from '@/lib/registry';
 import { SITE_URL } from '@/lib/site';
 import { buildBreadcrumbSchema, buildSoftwareApplicationSchema, safeJsonLd } from '@/lib/schema';
+import { TumsasKalkulators } from '@/components/calculators/TumsasKalkulators';
+import {
+  AVERAGE_DAYLIGHT_HOURS,
+  AMPLITUDE_HOURS,
+  SUMMER_SOLSTICE_DAY_OF_YEAR,
+  TODAY_ISO,
+  MIN_BIRTH_YEAR,
+  DEFAULT_BIRTH_DAY,
+  DEFAULT_BIRTH_MONTH,
+  DEFAULT_BIRTH_YEAR,
+} from '@/lib/calculators/tumsas-kalkulators-defaults';
 
 const category = getCategory('sabiedriba')!;
 const calculator = getCalculator('sabiedriba', 'tumsas-kalkulators')!;
@@ -53,8 +64,17 @@ export default function TumsasKalkulatorsPage() {
         <h1 className="font-sans text-h1">{calculator.h1}</h1>
         <p className="text-panel-muted">{calculator.intro}</p>
 
-        {/* Checkpoint 2: birth date input (day, month, year) and the live result,
-            mirroring PensijasKalkulators.tsx's useMemo driven recompute pattern. */}
+        <TumsasKalkulators
+          accentVar={category.accentVar}
+          averageDaylightHours={AVERAGE_DAYLIGHT_HOURS}
+          amplitudeHours={AMPLITUDE_HOURS}
+          summerSolsticeDayOfYear={SUMMER_SOLSTICE_DAY_OF_YEAR}
+          today={TODAY_ISO}
+          minBirthYear={MIN_BIRTH_YEAR}
+          defaultBirthDay={DEFAULT_BIRTH_DAY}
+          defaultBirthMonth={DEFAULT_BIRTH_MONTH}
+          defaultBirthYear={DEFAULT_BIRTH_YEAR}
+        />
 
         {/* Checkpoint 3: methodology (Kā aprēķins veikts), limitations (Ko šis
             kalkulators neņem vērā), sources (Avoti), and FAQ sections, mirroring
