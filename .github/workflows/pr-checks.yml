@@ -1,0 +1,25 @@
+name: PR checks
+
+on:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # lib/calculatorContentDrift.test.ts compares real commit timestamps across
+          # files; a shallow clone would silently break that even though the test no
+          # longer uses git blame.
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+
+      - run: npm ci
+      - run: npx tsc --noEmit
+      - run: npm run build
+      - run: npm test
