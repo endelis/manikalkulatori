@@ -1,0 +1,19 @@
+:root {
+  --color-panel-bg: #0B0E14;
+  --color-panel-surface: #0F131C;
+  --color-panel-surface-2: #12161F;
+  --color-panel-border: #1B212D;
+  --color-panel-border-strong: #232A38;
+  --color-panel-text: #E8ECF3;
+  --color-panel-muted: #8A93A6;
+  --color-panel-faint: #5B6579;
+
+  --color-accent-auto: #00D3C7;
+  --color-accent-finanses: #4C9AFF;
+  --color-accent-majoklis: #FFB020;
+  --color-accent-veseliba: #FF6B8A;
+  --color-accent-sports: #7CE23F;
+  --color-accent-sabiedriba: #B18CFF;
+
+  --color-warn: #FFB020;
+}

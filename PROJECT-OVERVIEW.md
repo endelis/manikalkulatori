@@ -46,13 +46,12 @@ kalkulators/
     sitemap.ts
     robots.ts
   components/
-    CalculatorShell.tsx           // shared layout, ad slots, breadcrumb
+    CalculatorShell.tsx           // shared layout, reserved gaps for future ads, breadcrumb
     NumberField.tsx
     ResultCard.tsx
     Breakdown.tsx
     Faq.tsx                       // renders JSON-LD FAQ schema
     RelatedCalculators.tsx
-    AdSlot.tsx
   lib/
     calculators/                  // one file per calculator: inputs, compute, meta
     format.ts                     // lv-LV number/currency formatting
@@ -175,9 +174,9 @@ Design identity, not template. A consistent visual system across all 50 pages bu
 
 Trust signals. Every page states its assumptions plainly, shows a short "how this is calculated" note, and dates the tax rates or grant figures it uses. For Latvian financial and tax calculators, being visibly current and correct is the differentiator over stale competitors.
 
-Speed and accessibility as ranking and revenue factors. Core Web Vitals directly affect both SEO and ad revenue. Target: static HTML, no layout shift (reserve ad slot heights so ads don't push content), lazy-load below-fold ads, system-adjacent fonts or self-hosted subsets. Keyboard-navigable inputs, visible focus, reduced-motion respected, mobile-first since most search traffic is mobile.
+Speed and accessibility as ranking and revenue factors. Core Web Vitals directly affect both SEO and ad revenue. Target: static HTML, no layout shift, self-hosted subset fonts. Keyboard-navigable inputs, visible focus, reduced-motion respected, mobile-first since most search traffic is mobile.
 
-Ad placement that does not destroy UX. Reserve fixed-height ad slots in the layout so they never cause layout shift. Place one ad after the result and one in the related-calculators footer, not between the user and their answer. Good UX and ad viewability align; interstitial-style greed kills both rankings and repeat visits.
+Ad placement, deferred but designed for. Ads and affiliate are not built in this phase; AdSense realistically comes around month 3. The layout leaves two empty reserved gaps, one after the result and one in the footer, so ads later insert into pre-reserved height with zero layout shift and no page needs restructuring. Nothing sits between the user and their answer, then or now.
 
 Retention loop. Every calculator ends with a related-calculators block (from the registry) and a category link, turning one-query visitors into multi-page sessions. This raises pages-per-session, ad impressions, and topical authority simultaneously.
 
@@ -205,12 +204,12 @@ Off-page, lightweight. Seed a handful of links from your existing properties (@e
 
 ## 9. Exact Claude Code opening prompt
 
-Paste the following into Claude Code from an empty project directory. It assumes this file is available in the repo as `PROJECT-OVERVIEW.md`.
+Paste the following into Claude Code from an empty project directory. It assumes this file and `DESIGN-GUIDANCE.md` are both available in the repo.
 
 ---
 
 ```
-Read PROJECT-OVERVIEW.md in full before writing any code. It is the single source of truth for this project. Build it in the order below and stop for my review at each checkpoint.
+Read PROJECT-OVERVIEW.md and DESIGN-GUIDANCE.md in full before writing any code. Together they are the single source of truth for this project. Build it in the order below and stop for my review at each checkpoint.
 
 PROJECT: Manikalkulatori.lv, a Latvian-language calculator hub for programmatic SEO. Next.js 15 App Router, TypeScript, Tailwind, static generation. Deployed to Vercel (Hobby tier), git-push deploys. Do not add a database, auth, or any server-side data fetching. All calculator math runs client-side in pure functions.
 
@@ -220,14 +219,16 @@ ARCHITECTURE RULES (non-negotiable):
 3. Pages are statically generated. Use generateStaticParams from the registry. No ISR unless I ask.
 4. Every page ships JSON-LD: SoftwareApplication for the tool, BreadcrumbList, and FAQPage. Put the builders in lib/schema.ts.
 5. All numbers formatted via lib/format.ts using lv-LV locale and EUR.
-6. Reserve fixed-height ad slots (components/AdSlot.tsx) so ads never cause layout shift. AdSlot renders a placeholder for now.
+6. Do not build ads or any AdSlot component in this phase. Leave two empty reserved-height gaps in the shell (one after the breakdown, one in the footer) so ads can be added around month 3 with zero layout shift. Nothing above the result, ever.
 
 DESIGN:
-Dark instrument-panel aesthetic. Charcoal background, one accent color per category (defined in the registry), monospace for all figures, clean sans for labels. Result headline is the hero, large, above the fold, updates live on every input change with sensible defaults so a plausible number shows on load. No "calculate" button. Mobile-first. Reserve ad-slot heights. Visible focus states, reduced-motion respected. Follow the UI/UX pillar in the overview.
+Dark instrument-panel aesthetic. Charcoal background, one accent color per category (defined in the registry), monospace for all figures, clean sans for labels. Result headline is the hero, large, above the fold, updates live on every input change with sensible defaults so a plausible number shows on load. No "calculate" button. Mobile-first. Leave reserved gaps where ads go later but build no ad component now. Visible focus states, reduced-motion respected. Follow the UI/UX pillar in the overview and the full DESIGN-GUIDANCE.md.
+
+CONTENT (strict): all visible Latvian copy (intros, explanations, FAQ, category text) must read as plain practitioner Latvian, not AI-generated. Absolute rule: never use a dash or hyphen ("-", em dash, or en dash) as punctuation, as a pause, as a substitute for a comma/colon/parenthesis, or as a list marker anywhere in visible content. Use numbered lists, checkboxes, or plain prose instead. Legitimate hyphenated Latvian spelling is fine. Avoid AI-typical filler and hedging; use concrete Latvian figures and real local context; vary sentence rhythm. This applies to every string the site renders.
 
 BUILD ORDER AND CHECKPOINTS:
 
-Checkpoint 1 — Foundation. Set up the Next.js project, Tailwind, tokens, the registry type and an empty registry, lib/format.ts, lib/schema.ts, and the shared components: CalculatorShell, NumberField, ResultCard, Breakdown, Faq, RelatedCalculators, AdSlot. Build the dynamic routes app/[category]/[calculator]/page.tsx and app/[category]/page.tsx and the homepage, all driven by the (still small) registry. Add sitemap.ts and robots.ts. Wire up one real calculator end to end: elektroauto-vs-benzina (EV vs ICE), using the formula from the overview. Show me the running site with that one page working before continuing.
+Checkpoint 1 — Foundation. Set up the Next.js project, Tailwind, tokens, the registry type and an empty registry, lib/format.ts, lib/schema.ts, and the shared components: CalculatorShell, NumberField, ResultCard, Breakdown, Faq, RelatedCalculators. Do not build an AdSlot component; leave the two reserved gaps in the shell empty. Build the dynamic routes app/[category]/[calculator]/page.tsx and app/[category]/page.tsx and the homepage, all driven by the (still small) registry. Add sitemap.ts and robots.ts. Wire up one real calculator end to end: elektroauto-vs-benzina (EV vs ICE), using the formula from the overview. Show me the running site with that one page working before continuing.
 
 Checkpoint 2 — Wave 1, the competitor gaps. Build the full automotive category (12), home-energy category (8), and endurance-sport category (8): 28 calculators total. These are the categories where the incumbent kalkulatori.lv has nothing, so they are the priority. One compute module and one registry entry each, plus a short FAQ and worked example per page. Within this wave, build the first-hand-experience calculators first (EV vs ICE, EKII, KASKO, lease vs loan, fuel cost, solar payback, running pace, triathlon, FTP, heart-rate zones). Validate JSON-LD. Show me the three category pages populating.
 
