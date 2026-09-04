@@ -3,6 +3,25 @@ import Link from 'next/link';
 import { getCategory, getCalculator } from '@/lib/registry';
 import { SITE_URL } from '@/lib/site';
 import { buildBreadcrumbSchema, buildSoftwareApplicationSchema, safeJsonLd } from '@/lib/schema';
+import { PensijasKalkulators } from '@/components/calculators/PensijasKalkulators';
+import {
+  CURRENT_YEAR,
+  NDC_START_YEAR,
+  PILLAR_1_CONTRIBUTION_RATE_PERCENT,
+  WAGE_INDEX_SERIES,
+  G_COEFFICIENT_TABLE,
+  MIN_RETIREMENT_AGE,
+  MAX_RETIREMENT_AGE,
+  DEFAULT_BIRTH_YEAR,
+  DEFAULT_GROSS_SALARY_MONTHLY,
+  DEFAULT_INSURANCE_RECORD_YEARS,
+  DEFAULT_WAGE_GROWTH_PERCENT,
+  DEFAULT_RETIREMENT_AGE,
+  RECENT_ACTUAL_WAGE_GROWTH_PERCENT,
+  RECENT_ACTUAL_WAGE_GROWTH_YEAR,
+  FORECAST_WAGE_GROWTH_PERCENT,
+  FORECAST_WAGE_GROWTH_YEAR,
+} from '@/lib/calculators/pensijas-kalkulators-defaults';
 
 const category = getCategory('finanses')!;
 const calculator = getCalculator('finanses', 'pensijas-kalkulators')!;
@@ -53,9 +72,25 @@ export default function PensijasKalkulatorsPage() {
         <h1 className="font-sans text-h1">{calculator.h1}</h1>
         <p className="text-panel-muted">{calculator.intro}</p>
 
-        {/* Checkpoint 2: interactive input UI (birth year, salary, insurance record,
-            wage growth, retirement age slider) and the live result, mirroring
-            DzimstibasKalkulators.tsx. */}
+        <PensijasKalkulators
+          accentVar={category.accentVar}
+          currentYear={CURRENT_YEAR}
+          ndcStartYear={NDC_START_YEAR}
+          pillar1ContributionRatePercent={PILLAR_1_CONTRIBUTION_RATE_PERCENT}
+          wageIndexSeries={WAGE_INDEX_SERIES}
+          gTable={G_COEFFICIENT_TABLE}
+          minRetirementAge={MIN_RETIREMENT_AGE}
+          maxRetirementAge={MAX_RETIREMENT_AGE}
+          defaultBirthYear={DEFAULT_BIRTH_YEAR}
+          defaultGrossSalaryMonthly={DEFAULT_GROSS_SALARY_MONTHLY}
+          defaultInsuranceRecordYears={DEFAULT_INSURANCE_RECORD_YEARS}
+          defaultWageGrowthPercent={DEFAULT_WAGE_GROWTH_PERCENT}
+          defaultRetirementAge={DEFAULT_RETIREMENT_AGE}
+          recentActualWageGrowthPercent={RECENT_ACTUAL_WAGE_GROWTH_PERCENT}
+          recentActualWageGrowthYear={RECENT_ACTUAL_WAGE_GROWTH_YEAR}
+          forecastWageGrowthPercent={FORECAST_WAGE_GROWTH_PERCENT}
+          forecastWageGrowthYear={FORECAST_WAGE_GROWTH_YEAR}
+        />
 
         {/* Checkpoint 3: methodology (Kā aprēķins veikts), limitations (Ko šis
             kalkulators neņem vērā), sources (Avoti), and FAQ sections, mirroring
