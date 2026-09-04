@@ -29,6 +29,19 @@ export const VSAOI_TOTAL_RATE_PERCENT = 34.09;
 // and https://www.lsm.lv/raksts/zinas/ekonomika/18.06.2026-tiesa-pensiju-2-limena-iemaksu-likmes-termineta-samazinasana-par-vienu-procentpunktu-atbilst-satversmei.a651990/
 export const PILLAR_1_CONTRIBUTION_RATE_PERCENT = 15;
 export const PILLAR_1_RATE_IS_TEMPORARY = true;
+// The other 5 of the 20% total, invested in the user's chosen 2nd pillar fund; this
+// calculator does not model it (see claude/pension-calculator-defaults-2026.md, "MVP
+// darbības joma"), but the split is cited in the methodology and FAQ copy.
+export const PILLAR_2_CONTRIBUTION_RATE_PERCENT = 5;
+export const TOTAL_PENSION_CONTRIBUTION_RATE_PERCENT =
+  PILLAR_1_CONTRIBUTION_RATE_PERCENT + PILLAR_2_CONTRIBUTION_RATE_PERCENT;
+
+// The source PDF (VSAA "Apdrošināšanas iemaksu algas indeksi (2025)") has no printed
+// page numbers or section headings, so it is cited by physical position: page 1 has the
+// 1996 to 2013 contribution year rows, page 2 has 2014 to 2023. See
+// claude/data/lv-pension-vsaa-2026.json, wageIndexSeries.sourceLocation.
+export const WAGE_INDEX_SOURCE_PAGE_1_YEARS = { from: 1996, to: 2013 };
+export const WAGE_INDEX_SOURCE_PAGE_2_YEARS = { from: 2014, to: 2023 };
 
 // Conservative long run default, not the recent actual or forecast (see below). Cited
 // as an assumption, not a fact, see claude/pension-calculator-defaults-2026.md, row 6b.

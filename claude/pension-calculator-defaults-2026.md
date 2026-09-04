@@ -2,7 +2,7 @@
 
 Atsauces vērtības topošajam personiskās pensijas kalkulatoram (Manikalkulatori / kalkulators.lv). Fokuss uz 1. līmeni (valsts obligātā PAYG/NDC shēma), ar 2. un 3. līmeni kā papildu, vienkāršotiem blokiem. Šis dokuments 2026-09-04 pilnībā pārverificēts pret primārajiem avotiem (VSAA, LV portāls, CSP, Satversmes tiesa, manapensija.lv). Atjaunināt periodiski — koeficients G un iemaksu likmes mainās ik gadu.
 
-Statuss: izstrāde sākta (feat/pension-calculator), Checkpoint 1 (datu fails + lapas skelets) pabeigts 2026-09-04, tostarp labojums K aprēķina dubultās indeksācijas kļūdai (sk. zemāk). Kanoniskais datu avots tagad ir repo fails claude/data/lv-pension-vsaa-2026.json, nevis šis dokuments — šis dokuments paliek kā izpētes/lēmumu žurnāls un pirmavotu saraksts.
+Statuss: izstrāde sākta (feat/pension-calculator). Checkpoint 1 (datu fails + lapas skelets) pabeigts 2026-09-04, komits b3f8d9a, tostarp labojums K aprēķina dubultās indeksācijas kļūdai (sk. zemāk). Checkpoint 2 (ievades UI un dzīvais aprēķins) pabeigts 2026-09-04, komits fe58583. Kanoniskais datu avots tagad ir repo fails claude/data/lv-pension-vsaa-2026.json, nevis šis dokuments, šis dokuments paliek kā izpētes un lēmumu žurnāls un pirmavotu saraksts.
 
 ## Formula (1. līmenis)
 
