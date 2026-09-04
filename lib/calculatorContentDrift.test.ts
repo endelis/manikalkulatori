@@ -55,7 +55,11 @@ function componentFileForSlug(slug: string): string | null {
 // are their own route file, plus any bespoke interactive component they render. There is
 // no registry to derive the latter from, so it is listed here explicitly per slug.
 const CUSTOM_ROUTED_EXTRA_UI_FILES: Record<string, string[]> = {
-  'dzimstibas-kalkulators': ['components/calculators/DzimstibasKalkulators.tsx'],
+  'dzimstibas-kalkulators': [
+    'components/calculators/DzimstibasKalkulators.tsx',
+    'components/BirthsDeathsChart.tsx',
+    'components/BirthsDeathsTable.tsx',
+  ],
 };
 
 function uiFilesForSlug(calc: CalculatorMeta): string[] {

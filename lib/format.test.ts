@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { formatCurrencyEUR, formatNumber, formatPercent, pluralizeKalkulatori } from './format';
+import { formatCurrencyEUR, formatNumber, formatPercent, formatSignedNumber, pluralizeKalkulatori } from './format';
 
 describe('formatCurrencyEUR', () => {
   it('formats a whole euro amount with the euro sign', () => {
@@ -43,6 +43,20 @@ describe('pluralizeKalkulatori', () => {
 
   it('uses the genitive plural for zero', () => {
     expect(pluralizeKalkulatori(0)).toBe('0 kalkulatoru');
+  });
+});
+
+describe('formatSignedNumber', () => {
+  it('formats a non-negative value the same as formatNumber', () => {
+    expect(formatSignedNumber(47)).toBe(formatNumber(47));
+    expect(formatSignedNumber(0)).toBe(formatNumber(0));
+  });
+
+  it('prefixes a negative value with U+2212 MINUS SIGN, never U+002D HYPHEN-MINUS', () => {
+    const result = formatSignedNumber(-47);
+    expect(result[0]).toBe('−');
+    expect(result).not.toContain('-');
+    expect(result.slice(1)).toBe(formatNumber(47));
   });
 });
 

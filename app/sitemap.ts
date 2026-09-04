@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { calculators, categories, getCalculatorsByCategory } from '@/lib/registry';
 import { SITE_URL } from '@/lib/site';
+import { NOVADS_PILOT_AREAS } from '@/lib/novads-pilot-data';
 
 // Hand maintained: bump a page's timestamp here only when its rendered content
 // actually changes, to the real commit time (git log -1 --format=%cI -- <page file>),
@@ -17,8 +18,15 @@ const LEGAL_PAGE_UPDATED_AT: Record<string, string> = {
 // Content pages driven by sourced data rather than the calculator registry, but still
 // indexable. Bump the timestamp only when the page's rendered figures or copy change.
 const INFO_PAGE_UPDATED_AT: Record<string, string> = {
-  '/sabiedriba/iedzivotaju-skaits-latvija': '2026-09-03T20:16:44+03:00',
+  '/sabiedriba/iedzivotaju-skaits-latvija': '2026-09-04T12:09:46+03:00',
 };
+
+// Novads pilot pages (three only, see lib/novads-pilot-data.ts). Each entry's timestamp
+// is bumped to that page's own real commit time once committed, matching the pattern
+// above.
+const NOVADS_PILOT_UPDATED_AT: Record<string, string> = Object.fromEntries(
+  NOVADS_PILOT_AREAS.map((area) => [`/sabiedriba/iedzivotaju-skaits/${area.slug}`, '2026-09-04T12:09:46+03:00']),
+);
 
 // Calculator contentUpdatedAt values are full ISO 8601 timestamps with a timezone
 // offset; comparing them as actual instants (not string order) keeps this correct even
@@ -69,5 +77,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [homeEntry, ...categoryEntries, ...calculatorEntries, ...legalEntries, ...infoEntries];
+  const novadsPilotEntries: MetadataRoute.Sitemap = Object.entries(NOVADS_PILOT_UPDATED_AT).map(
+    ([path, updatedAt]) => ({
+      url: `${SITE_URL}${path}`,
+      lastModified: updatedAt,
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    }),
+  );
+
+  return [
+    homeEntry,
+    ...categoryEntries,
+    ...calculatorEntries,
+    ...legalEntries,
+    ...infoEntries,
+    ...novadsPilotEntries,
+  ];
 }

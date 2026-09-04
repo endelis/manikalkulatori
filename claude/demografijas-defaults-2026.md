@@ -180,9 +180,145 @@ exact request:
 figure for this area, matching the population reference date used elsewhere on the page
 (01.01.2026).
 
+## Novads pilot (three pages: Daugavpils, Jelgava, Varakļānu novads)
+
+Three CSP tables, all reached by the same POST method as above. Areas chosen: a
+large city, a mid sized city, and the smallest municipality in Latvia by
+population, to test whether pages built from the same template actually differ
+enough to index. Area codes confirmed via the IRS031 metadata AREA list:
+Daugavpils `LV0002000`, Jelgava `LV0003000`, Varakļānu novads `LV0055000`.
+
+Tables used:
+- IRS031 (already used for the comparison town above): indicators `POP_SY`
+  (population at year start), `NATGROW` (dabiskais pieaugums), `MIGR_NET`
+  (migrācijas saldo). `https://data.stat.gov.lv/pxweb/lv/OSP_PUB/START__POP__IR__IRS/IRS031/`
+- IDS031, "Dzīvi dzimušo skaits pēc dzimuma reģionos, valstspilsētās un
+  novados 1996 to 2025", contents code `IDS031`, variable `SEX_NEWBORN` set to
+  `T` (both sexes). `https://data.stat.gov.lv/pxweb/lv/OSP_PUB/START__POP__ID__IDS/IDS031/`
+- IMV021, "Mirušo skaits pēc dzimuma un pa vecuma grupām reģionos,
+  valstspilsētās un novados 1996 to 2025", contents code `IMV021`, variable
+  `SEX` set to `T`, variable `AgeGroup` set to `TOTAL`.
+  `https://data.stat.gov.lv/pxweb/lv/OSP_PUB/START__POP__IM__IMSV/IMV021/`
+- IDK021 checked for area level TFR (contents code `IDK0211`): returns `.`
+  (not applicable) for all three areas for 2024 and 2025. CSP does not publish
+  summārais dzimstības koeficients below the five statistical regions. Not
+  used; the novads pages omit a local TFR line rather than substituting the
+  national figure for a specific place, which would misrepresent it as
+  area level data.
+
+Retrieval date for everything in this section: 2026-09-04.
+
+Exact requests:
+```
+curl -X POST -H "Content-Type: application/json" --data
+'{"query":[{"code":"INDICATOR","selection":{"filter":"item","values":["POP_SY","NATGROW","MIGR_NET"]}},
+{"code":"AREA","selection":{"filter":"item","values":["LV0002000","LV0003000","LV0055000"]}},
+{"code":"TIME","selection":{"filter":"item","values":["2021","2022","2023","2024","2025","2026"]}}],
+"response":{"format":"json"}}'
+"https://data.stat.gov.lv/api/v1/lv/OSP_PUB/POP/IR/IRS/IRS031"
+
+curl -X POST -H "Content-Type: application/json" --data
+'{"query":[{"code":"SEX_NEWBORN","selection":{"filter":"item","values":["T"]}},
+{"code":"AREA","selection":{"filter":"item","values":["LV0002000","LV0003000","LV0055000"]}},
+{"code":"ContentsCode","selection":{"filter":"item","values":["IDS031"]}},
+{"code":"TIME","selection":{"filter":"item","values":["2021","2022","2023","2024","2025"]}}],
+"response":{"format":"json"}}'
+"https://data.stat.gov.lv/api/v1/lv/OSP_PUB/POP/ID/IDS/IDS031"
+
+curl -X POST -H "Content-Type: application/json" --data
+'{"query":[{"code":"SEX","selection":{"filter":"item","values":["T"]}},
+{"code":"AREA","selection":{"filter":"item","values":["LV0002000","LV0003000","LV0055000"]}},
+{"code":"AgeGroup","selection":{"filter":"item","values":["TOTAL"]}},
+{"code":"ContentsCode","selection":{"filter":"item","values":["IMV021"]}},
+{"code":"TIME","selection":{"filter":"item","values":["2021","2022","2023","2024","2025"]}}],
+"response":{"format":"json"}}'
+"https://data.stat.gov.lv/api/v1/lv/OSP_PUB/POP/IM/IMSV/IMV021"
+```
+
+A real data availability gap, not a bug: for Daugavpils and Jelgava, IDS031 and
+IMV021 (the birth/death breakdown tables) are published through 2025, matching
+IRS031. For Varakļānu novads, IDS031 and IMV021 return `..` (no value) for
+2025, so its most recent year with a matched population, births, deaths, and
+natural increase set is 2024, one year behind the two cities. Each area below
+uses its own real latest complete year rather than forcing all three onto the
+same year; the reference period field on each row says which year that is.
+
+### Daugavpils, reference year 2025
+
+value: 456 dzīvi dzimušie, 1207 mirušie, -751 dabiskais pieaugums, 111
+migrācijas saldo, 77 486 iedzīvotāji (01.01.2026); unit: cilvēki (or bērni for
+dzimušie); reference period: 2025 (population 01.01.2026); source name: CSP,
+PxWeb tables IRS031 (population, natural increase, migration), IDS031
+(births), IMV021 (deaths), area code `LV0002000`; PxWeb table codes: IRS031,
+IDS031, IMV021; retrieval date: 2026-09-04; provisional: no; note: -751 equals
+456 minus 1207 exactly, matching the NATGROW value IRS031 publishes directly
+for this area, so it is confirmed as a primary figure, not a local
+recomputation only.
+
+Five year population series 2021 to 2026 (IRS031, POP_SY): 80 627, 79 120,
+79 903, 78 942, 78 126, 77 486.
+Five year dzimušie series 2021 to 2025 (IDS031): 593, 550, 495, 505, 456.
+Five year mirušie series 2021 to 2025 (IMV021): 1 829, 1 479, 1 326, 1 208, 1 207.
+
+### Jelgava, reference year 2025
+
+value: 363 dzīvi dzimušie, 706 mirušie, -343 dabiskais pieaugums, -83
+migrācijas saldo, 54 408 iedzīvotāji (01.01.2026); reference period: 2025
+(population 01.01.2026); source, retrieval date, and table codes as
+Daugavpils above, area code `LV0003000`; note: -343 equals 363 minus 706
+exactly, matching IRS031's own NATGROW value for this area.
+
+Five year population series 2021 to 2026 (IRS031, POP_SY): 55 336, 54 694,
+55 459, 55 216, 54 834, 54 408.
+Five year dzimušie series 2021 to 2025 (IDS031): 560, 488, 455, 414, 363.
+Five year mirušie series 2021 to 2025 (IMV021): 911, 799, 693, 718, 706.
+
+### Varakļānu novads, reference year 2024 (see data availability note above)
+
+value: 20 dzīvi dzimušie, 56 mirušie, -36 dabiskais pieaugums, -36 migrācijas
+saldo, 2 820 iedzīvotāji (01.01.2025); reference period: 2024 (population
+01.01.2025); source, retrieval date, and table codes as Daugavpils above,
+area code `LV0055000`; note: -36 equals 20 minus 56 exactly, matching
+IRS031's own NATGROW value for this area for 2024. A newer population figure,
+2 820 at 01.01.2025 is itself already the 01.01.2025 figure paired with 2024
+flows here, so no further figures are pending except the eventual 2025
+births and deaths breakdown, not yet published for this area as of retrieval
+date.
+
+Four year dzimušie series 2021 to 2024 (IDS031, 2025 not yet published for
+this area): 18, 22, 15, 20.
+Four year mirušie series 2021 to 2024 (IMV021, 2025 not yet published for this
+area): 69, 57, 58, 56.
+Five year population series 2021 to 2025 (IRS031, POP_SY, 2026 not yet
+published for this area): 2 945, 2 918, 3 001, 2 892, 2 820.
+
+### National comparison rates used on the pilot pages
+
+Same year, same method as each area (natural increase for year Y divided by
+population at the start of year Y+1, times 1000):
+- 2025: national dabiskais pieaugums -14 178, population 01.01.2026
+  1 845 096 (both already sourced in rows 1 and 4 above), rate -7,685 per
+  1000. Used for Daugavpils and Jelgava.
+- 2024: national dabiskais pieaugums -13 774, population 01.01.2025
+  1 860 565 (CSP "Demogrāfija 2025" bulletin, page 2 table, already cited in
+  the "How this data was retrieved" section above), rate -7,403 per 1000.
+  Used for Varakļānu novads, so the comparison is against the same reference
+  year rather than mixing 2024 area data against a 2025 national rate.
+
+Both rates and each area's own rate (dabiskais pieaugums divided by
+population, times 1000) are derived values with the derivation written out
+here and every input traceable to a row above, per SOURCE DISCIPLINE.
+
 ## Not sourced, dropped rather than invented
 
 School-class-size figures for the "Mērogs" module were never found in a CSP table
 reachable within a reasonable search (checked the `IZG` and `OSP_OD` education
 folders); the module ships with only the comparison-town unit above. Per SOURCE
 DISCIPLINE, an unsourced number is removed rather than softened, so this was not added.
+
+Area level summārais dzimstības koeficients (TFR) for Daugavpils, Jelgava, and
+Varakļānu novads: checked IDK021, contents code IDK0211, returns `.` (not
+applicable) for all three areas. CSP does not publish TFR below the five
+statistical regions. The novads pilot pages omit a local TFR line rather than
+showing the national figure on a place page, which would misrepresent it as
+local data.

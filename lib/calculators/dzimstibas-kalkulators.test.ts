@@ -3,6 +3,8 @@ import {
   cohortRatio,
   cohortSize,
   computeDzimstibas,
+  naturalIncreaseRatePer1000,
+  yearsToLoseFraction,
   type DzimstibasBaseInput,
   type PopulationYearRow,
 } from './dzimstibas-kalkulators';
@@ -162,5 +164,31 @@ describe('cohortSize and cohortRatio', () => {
 
   it('returns null for the ratio instead of dividing by zero when birthsCurrent is 0', () => {
     expect(cohortRatio(1990, series, 0)).toBeNull();
+  });
+});
+
+describe('naturalIncreaseRatePer1000', () => {
+  it('matches the sourced national 2025 rate (Daugavpils vs national comparison on the novads pilot pages)', () => {
+    // -14 178 dabiskais pieaugums, 1 845 096 population, see claude/demografijas-defaults-2026.md.
+    expect(naturalIncreaseRatePer1000(-14178, 1845096)).toBeCloseTo(-7.685, 2);
+  });
+
+  it('is positive for positive natural increase', () => {
+    expect(naturalIncreaseRatePer1000(500, 100000)).toBeCloseTo(5, 10);
+  });
+});
+
+describe('yearsToLoseFraction', () => {
+  it('matches the sourced Daugavpils figure (deaths minus births as the annual loss)', () => {
+    // 77 486 population, -751 dabiskais pieaugums, see claude/demografijas-defaults-2026.md.
+    expect(yearsToLoseFraction(77486, -751, 0.1)).toBeCloseTo(10.32, 1);
+  });
+
+  it('returns null when natural increase is zero, not a division by zero', () => {
+    expect(yearsToLoseFraction(10000, 0, 0.1)).toBeNull();
+  });
+
+  it('returns null when natural increase is positive, since there is no decline to project', () => {
+    expect(yearsToLoseFraction(10000, 50, 0.1)).toBeNull();
   });
 });
