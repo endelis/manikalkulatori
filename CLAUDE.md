@@ -25,6 +25,8 @@ Anyone adding a one line script tag or tracking pixel: read this MAP, edit `comp
 
 Every calculator carries a hand maintained `contentUpdatedAt` (ISO date) in `lib/registry.ts`. `app/sitemap.ts` reads it directly. When you change a calculator's rendered numbers or copy, bump its `contentUpdatedAt` in the same commit. `lib/calculatorContentDrift.test.ts` checks this against git history and fails if a calculator's compute module or component changed more recently than its recorded `contentUpdatedAt`.
 
+Set `contentUpdatedAt` to the squash merge commit time on master, not the feature branch commit time. Branch time is earlier than the commit the drift test compares against and will fail on master.
+
 ## Dashes, hyphens, and the minus sign
 
 Visible Latvian copy must never contain a dash or hyphen used as punctuation (em dash,
