@@ -1,0 +1,58 @@
+{
+  "retrievedDate": "2026-09-04",
+  "latitude": {
+    "degreesNorth": 56.95,
+    "source": "https://sunrisesunset.io/lv/riga/riga/"
+  },
+  "longestDay2026": {
+    "date": "2026-06-21",
+    "daylightHoursMinutes": "17:52",
+    "sunrise": "04:30",
+    "sunset": "22:23",
+    "source": "https://sunrisesunset.io/lv/riga/riga/"
+  },
+  "shortestDay2026": {
+    "date": "2026-12-21",
+    "daylightHoursMinutes": "6:43",
+    "source": "https://sunrisesunset.io/lv/riga/riga/"
+  },
+  "crossCheck": {
+    "note": "Independent second source, close but not identical to sunrisesunset.io, kept as a corroborating range rather than reconciled to one figure.",
+    "longestDayApprox": "17:53",
+    "shortestDayApproxRange": "6:44 to 6:47",
+    "source": "https://en.tutiempo.net/daylight-hours/riga.html"
+  },
+  "annualTotal2026": {
+    "totalHoursMinutes": "4502:23",
+    "daysInYear": 365,
+    "note": "2026 is not a leap year. Average day length derived from this total divided by daysInYear, not entered as a separate hand rounded figure.",
+    "source": "https://en.tutiempo.net/daylight-hours/riga.html"
+  },
+  "summerSolstice2026": {
+    "date": "2026-06-21",
+    "dayOfYear": 172,
+    "note": "Day of year in a non leap year (31+28+31+30+31+21)."
+  },
+  "notFetchable": {
+    "note": "timeanddate.com and gaisma.com blocked automated fetching in this research pass (robots.txt or 403).",
+    "sources": ["timeanddate.com", "gaisma.com"]
+  },
+  "monthlyTotalDaylight2026": {
+    "unit": "hours:minutes total daylight for the month",
+    "source": "https://en.tutiempo.net/daylight-hours/riga.html",
+    "byMonth": {
+      "1": "230:11",
+      "2": "261:24",
+      "3": "361:57",
+      "4": "423:45",
+      "5": "507:34",
+      "6": "531:44",
+      "7": "534:39",
+      "8": "474:37",
+      "9": "388:33",
+      "10": "326:21",
+      "11": "248:03",
+      "12": "213:35"
+    }
+  }
+}
