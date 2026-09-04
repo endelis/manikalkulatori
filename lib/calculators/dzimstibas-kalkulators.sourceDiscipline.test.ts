@@ -12,7 +12,9 @@ import path from 'node:path';
 // percentage constants that need no statistical citation.
 
 // 0 is allowed as a structural sentinel (zero-check guards), not a statistical figure.
-const ALLOWED_NUMERIC_LITERALS = new Set(['365.25', '12', '24', '60', '100', '0']);
+// 1000 is the universal per-1000-residents demographic rate convention (used the same
+// way in every CSP table this project sources from), not a statistical figure itself.
+const ALLOWED_NUMERIC_LITERALS = new Set(['365.25', '12', '24', '60', '100', '0', '1000']);
 
 describe('dzimstibas-kalkulators source discipline', () => {
   it('contains no numeric literal beyond the allowlisted calendar and percentage constants', () => {

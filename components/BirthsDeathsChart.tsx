@@ -5,6 +5,8 @@ interface BirthsDeathsChartProps {
   rows: PopulationYearRow[];
   accentVar: string;
   tableCode: string;
+  /** Locative place name for the aria-label, e.g. "Latvijā" or "Daugavpilī". */
+  placeName?: string;
 }
 
 const VIEW_WIDTH = 800;
@@ -23,6 +25,22 @@ const PLOT_HEIGHT = VIEW_HEIGHT - MARGIN.top - MARGIN.bottom;
 const FONT_SIZE = 28;
 
 /**
+ * Rounds up to a "nice" axis maximum (a step of 1, 2, 5, or 10 times a power of ten,
+ * times the 4 gridline steps) that scales with the data instead of a single fixed
+ * rounding step. A fixed round-up-to-10000 step is fine for national scale numbers in
+ * the tens of thousands, but produces an unreadable, nearly flat chart for a small
+ * novads where every value is under 100.
+ */
+function niceAxisMax(maxValue: number): number {
+  if (maxValue <= 0) return 4;
+  const roughStep = maxValue / 4;
+  const magnitude = 10 ** Math.floor(Math.log10(roughStep));
+  const normalized = roughStep / magnitude;
+  const niceNormalized = normalized <= 1 ? 1 : normalized <= 2 ? 2 : normalized <= 5 ? 5 : 10;
+  return niceNormalized * magnitude * 4;
+}
+
+/**
  * Server rendered inline SVG, no client JS. Two series (dzimusie, mirusie) 2015 to
  * 2025 from the same IRS010 rows already used elsewhere on the page. The accessible
  * BirthsDeathsTable below this chart remains the text equivalent; this component is
@@ -34,11 +52,11 @@ const FONT_SIZE = 28;
  * a fixed ratio inside the SVG's own coordinate space, not something viewport scaling
  * changes. All eleven data points are still plotted and connected.
  */
-export function BirthsDeathsChart({ rows, accentVar, tableCode }: BirthsDeathsChartProps) {
+export function BirthsDeathsChart({ rows, accentVar, tableCode, placeName = 'Latvijā' }: BirthsDeathsChartProps) {
   const births = rows.map((row) => row.liveBirths ?? 0);
   const deaths = rows.map((row) => row.deaths ?? 0);
   const maxValue = Math.max(...births, ...deaths);
-  const yMax = Math.ceil(maxValue / 10000) * 10000;
+  const yMax = niceAxisMax(maxValue);
   const yTicks = [0, yMax / 4, yMax / 2, (yMax * 3) / 4, yMax];
 
   const xFor = (index: number) => MARGIN.left + (index / (rows.length - 1)) * PLOT_WIDTH;
@@ -61,11 +79,13 @@ export function BirthsDeathsChart({ rows, accentVar, tableCode }: BirthsDeathsCh
   const lastBirths = births[births.length - 1];
   const lastDeaths = deaths[deaths.length - 1];
 
+  // Factual first-vs-last comparison only, no claim of a steady or monotonic trend:
+  // that is true for the national series but not guaranteed for a small area with
+  // volatile year to year counts, and this component is shared by both.
   const ariaLabel =
-    `Grafiks rāda, ka no ${firstYear}. līdz ${lastYear}. gadam dzīvi dzimušo skaits Latvijā pastāvīgi ` +
-    `samazinājās no ${formatNumber(births[0], 0)} līdz ${formatNumber(lastBirths, 0)}, savukārt mirušo ` +
-    `skaits saglabājās augsts, ${lastYear}. gadā ${formatNumber(lastDeaths, 0)}, un starpība starp abiem ` +
-    `pastāvīgi palielinājās.`;
+    `Grafiks rāda dzīvi dzimušo un mirušo skaitu ${placeName} no ${firstYear}. līdz ${lastYear}. gadam. ` +
+    `Dzīvi dzimušo skaits ${lastYear}. gadā bija ${formatNumber(lastBirths, 0)}, ${firstYear}. gadā bija ` +
+    `${formatNumber(births[0], 0)}. Mirušo skaits ${lastYear}. gadā bija ${formatNumber(lastDeaths, 0)}.`;
 
   return (
     <figure className="flex flex-col gap-2">

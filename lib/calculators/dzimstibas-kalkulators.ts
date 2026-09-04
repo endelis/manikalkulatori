@@ -112,3 +112,25 @@ export function cohortRatio(year: number, series: PopulationYearRow[], birthsCur
   }
   return size / birthsCurrent;
 }
+
+/**
+ * Natural increase or decrease per 1000 residents, for comparing places of very
+ * different sizes on the same scale. `population` should be the population figure that
+ * corresponds to the same reference period as `naturalIncrease` (see the data file for
+ * how each place's pairing was chosen).
+ */
+export function naturalIncreaseRatePer1000(naturalIncrease: number, population: number): number {
+  return (naturalIncrease / population) * 1000;
+}
+
+/**
+ * Years until a place loses the given fraction of its population if the current
+ * natural decrease continued unchanged (no migration, no age structure, this is the
+ * same order of simplicity as the rest of this module, not a demographic projection).
+ * Returns null when natural increase is zero or positive, since there is no decline to
+ * project.
+ */
+export function yearsToLoseFraction(population: number, naturalIncrease: number, fraction: number): number | null {
+  if (naturalIncrease >= 0) return null;
+  return (fraction * population) / Math.abs(naturalIncrease);
+}

@@ -8,6 +8,7 @@ import { formatNumber } from '@/lib/format';
 import { Faq } from '@/components/Faq';
 import { BirthsDeathsTable } from '@/components/BirthsDeathsTable';
 import { DEFAULT_POPULATION, POPULATION_SERIES } from '@/lib/calculators/dzimstibas-kalkulators-defaults';
+import { NOVADS_PILOT_AREAS } from '@/lib/novads-pilot-data';
 
 const category = getCategory('sabiedriba')!;
 const PAGE_PATH = '/sabiedriba/iedzivotaju-skaits-latvija';
@@ -100,6 +101,24 @@ export default function IedzivotajuSkaitsPage() {
           </Link>
           .
         </p>
+
+        <section aria-labelledby="novadi-heading" className="flex flex-col gap-3">
+          <h2 id="novadi-heading" className="font-sans text-h2">
+            Iedzīvotāju skaits novados un pilsētās
+          </h2>
+          <ul className="flex flex-col gap-2">
+            {NOVADS_PILOT_AREAS.map((area) => (
+              <li key={area.slug}>
+                <Link
+                  href={`/sabiedriba/iedzivotaju-skaits/${area.slug}`}
+                  className="text-panel-text underline decoration-panel-border underline-offset-4 hover:decoration-current"
+                >
+                  {area.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
 
         <Faq items={faq} />
       </main>

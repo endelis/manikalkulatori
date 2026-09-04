@@ -4,19 +4,23 @@ import { formatNumber } from '@/lib/format';
 interface BirthsDeathsTableProps {
   rows: PopulationYearRow[];
   accentVar: string;
+  /** Locative place name for the caption, e.g. "Latvijā" or "Daugavpilī". */
+  placeName?: string;
 }
 
 /**
  * A real HTML table doubling as the chart: bar widths are CSS, the numbers are real
  * table cells, so it is its own text equivalent and needs no separate description.
  */
-export function BirthsDeathsTable({ rows, accentVar }: BirthsDeathsTableProps) {
+export function BirthsDeathsTable({ rows, accentVar, placeName = 'Latvijā' }: BirthsDeathsTableProps) {
   const maxValue = Math.max(...rows.map((row) => Math.max(row.liveBirths ?? 0, row.deaths ?? 0)));
+  const firstYear = rows[0]?.year;
+  const lastYear = rows[rows.length - 1]?.year;
 
   return (
     <table className="w-full border-collapse text-sm">
       <caption className="mb-2 text-left text-panel-muted">
-        Dzīvi dzimušie un mirušie Latvijā, 2015 līdz 2025. gads
+        Dzīvi dzimušie un mirušie {placeName}, {firstYear} līdz {lastYear}. gads
       </caption>
       <thead>
         <tr className="border-b border-panel-border text-left text-panel-muted">
