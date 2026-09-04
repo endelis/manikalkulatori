@@ -6,6 +6,7 @@ import { SITE_URL } from '@/lib/site';
 import { buildBreadcrumbSchema, buildFaqSchema, buildSoftwareApplicationSchema, safeJsonLd } from '@/lib/schema';
 import { formatNumber } from '@/lib/format';
 import { Faq } from '@/components/Faq';
+import { BirthsDeathsTable } from '@/components/BirthsDeathsTable';
 import { DzimstibasKalkulators } from '@/components/calculators/DzimstibasKalkulators';
 import { computeDzimstibas } from '@/lib/calculators/dzimstibas-kalkulators';
 import {
@@ -22,7 +23,6 @@ const url = `${SITE_URL}/${category.slug}/${calculator.slug}`;
 export const metadata: Metadata = {
   title: calculator.title,
   description: calculator.metaDescription,
-  keywords: calculator.keywords,
   alternates: { canonical: `/${category.slug}/${calculator.slug}` },
   openGraph: {
     title: calculator.h1,
@@ -33,6 +33,7 @@ export const metadata: Metadata = {
 };
 
 const faq = loadFaq(calculator.slug);
+const recentSeries = POPULATION_SERIES.filter((row) => row.year >= 2015 && row.year <= 2025);
 
 export default function DzimstibasKalkulatorsPage() {
   const defaultResult = computeDzimstibas(DEFAULT_INPUT);
@@ -83,6 +84,13 @@ export default function DzimstibasKalkulatorsPage() {
           populationSeries={POPULATION_SERIES}
         />
 
+        <section aria-labelledby="chart-heading" className="flex flex-col gap-3">
+          <h2 id="chart-heading" className="font-sans text-h2">
+            Dzīvi dzimušie un mirušie, 2015 līdz 2025
+          </h2>
+          <BirthsDeathsTable rows={recentSeries} accentVar={category.accentVar} />
+        </section>
+
         {/* Reserved for a future ad or affiliate placement (DESIGN-GUIDANCE.md sections 5 and 8).
             Kept empty and height stable now so inserting real content later causes zero CLS. */}
         <div style={{ height: 0 }} aria-hidden="true" />
@@ -107,7 +115,7 @@ export default function DzimstibasKalkulatorsPage() {
             2025. gadā Latvijā vidēji piedzima viens bērns ik pēc{' '}
             {formatNumber((365.25 * 24 * 60) / DEFAULT_INPUT.birthsCurrent, 0)} minūtēm. Lai sasniegtu nulles
             dabisko pieaugumu, bērnam vajadzētu piedzimt ik pēc{' '}
-            {formatNumber((365.25 * 24 * 60) / defaultResult.birthsNeeded, 0)} minūtēm, gandrīz divreiz biežāk.
+            {formatNumber((365.25 * 24 * 60) / defaultResult.birthsNeeded, 0)} minūtēm, vairāk nekā divreiz biežāk.
             Mirstības puse ir stabilāka: 2025. gadā cilvēks Latvijā mira vidēji ik pēc{' '}
             {formatNumber((365.25 * 24 * 60) / DEFAULT_INPUT.deaths, 0)} minūtēm, un šis intervāls tuvāko
             gadu laikā būtiski nemainīsies neatkarīgi no dzimstības, jo mirstību nosaka jau esošā vecuma
@@ -138,7 +146,7 @@ export default function DzimstibasKalkulatorsPage() {
             piedzima šajā mazajā deviņdesmito gadu paaudzē. Pat ja katra šīs paaudzes sieviete dzemdētu
             vairāk bērnu, kopējais dzimušo skaits ir ierobežots, jo pašu māšu ir mazāk. Tāpēc pat ar
             aizstājējdzimstības līmeni (summārais koeficients 2,1 līdz 2,2) iedzīvotāju skaits Latvijā vēl
-            ilgi turpinātu samazināties, iekams uz reproduktīvo vecumu nenonāktu lielākas paaudzes.
+            ilgi turpinātu samazināties, kamēr uz reproduktīvo vecumu nenonāktu lielākas paaudzes.
           </p>
         </section>
 

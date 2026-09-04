@@ -1,6 +1,6 @@
 ### Vai šis skaits nozīmē, ka Latvijas iedzīvotāju skaits drīz sāks augt?
 
-Nē. Kalkulators rāda tikai vienkāršu aritmētisku sliekšņa vērtību konkrētam mērķim, nevis prognozi. Latvijas iedzīvotāju vecuma struktūra nozīmē, ka mirstība nekritīsies desmitgadēm, pat ja dzimstība strauji augtu, jo lielākā daļa iedzīvotāju jau ir vecāki par darbaspējas vecumu. Vairāk lasi sadaļā "Kāpēc šis skaitlis nav scenārijs".
+Nē. Kalkulators rāda tikai vienkāršu aritmētisku sliekšņa vērtību konkrētam mērķim, nevis prognozi. Latvijas iedzīvotāju vecuma struktūra nozīmē, ka mirstība nekritīsies desmitgadēm, pat ja dzimstība strauji augtu, jo lielās paaudzes, kas piedzima pirms vairākām desmitgadēm, tuvāko gadu laikā vienalga sasniegs vecumu ar augstāku mirstību. Vairāk lasi sadaļā "Kāpēc šis skaitlis nav scenārijs".
 
 ### No kurienes nāk kalkulatora noklusējuma skaitļi?
 

@@ -50,7 +50,7 @@ export function DzimstibasKalkulators({
   const [targetYear, setTargetYear] = useState(currentYear + 10);
   const [targetPopulation, setTargetPopulation] = useState(defaultPopulation);
 
-  const [birthYear, setBirthYear] = useState<number | ''>('');
+  const [birthYear, setBirthYear] = useState<number | ''>(1990);
 
   const input: DzimstibasInput = useMemo(() => {
     const base = { deaths, netMigration, population, birthsCurrent, tfrCurrent: defaultTfrCurrent };
@@ -100,7 +100,9 @@ export function DzimstibasKalkulators({
           <p className="text-sm text-panel-muted">{result.error}</p>
         ) : (
           <>
-            <p className="text-sm text-panel-muted">Bērni dienā, lai sasniegtu izvēlēto mērķi</p>
+            <p className="text-sm text-panel-muted">
+              Bērni dienā, lai sasniegtu mērķi &quot;{MODE_LABELS[mode]}&quot;
+            </p>
             <p className="font-mono text-hero" style={{ color: accentVar }}>
               {formatNumber(result.value!.perDay, 1)}
             </p>
@@ -118,8 +120,9 @@ export function DzimstibasKalkulators({
             </p>
             {result.value!.tfrNeeded !== null ? (
               <p className="mt-1 text-caption text-panel-faint">
-                Aptuveni atbilstu summārajam dzimstības koeficientam {formatNumber(result.value!.tfrNeeded, 2)}{' '}
-                (lineārs tuvinājums, nevis precīzs demogrāfisks aprēķins pa vecuma grupām).
+                Aptuveni atbilstu summārajam dzimstības koeficientam {formatNumber(result.value!.tfrNeeded, 2)}
+                (pašreizējais koeficients ir {formatNumber(defaultTfrCurrent, 2)}), lineārs tuvinājums, nevis
+                precīzs demogrāfisks aprēķins pa vecuma grupām.
               </p>
             ) : null}
           </>
@@ -222,9 +225,9 @@ export function DzimstibasKalkulators({
       ) : null}
 
       <section aria-labelledby="paaudze-heading" className="flex flex-col gap-3 rounded-lg border border-panel-border bg-panel-surface p-4">
-        <h3 id="paaudze-heading" className="font-sans text-h2">
+        <h2 id="paaudze-heading" className="font-sans text-h2">
           Tava paaudze
-        </h3>
+        </h2>
         <NumberField
           id="dzimsanas-gads"
           label="Tavs dzimšanas gads"
