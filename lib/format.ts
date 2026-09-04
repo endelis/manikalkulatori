@@ -31,6 +31,20 @@ export function pluralizeKalkulatori(count: number): string {
   return `${count} kalkulatori`;
 }
 
+/**
+ * For a negative number that must render as a number (not spelled out in prose).
+ * Prefer rephrasing the sentence to avoid a negative value entirely wherever that
+ * reads naturally (e.g. "par 47 vairāk nekā dzimušo" instead of "-47"); this exists
+ * only for the remaining cases where that is not practical, such as a compact table
+ * or chart cell. Uses U+2212 MINUS SIGN, never the ASCII hyphen-minus (U+002D): a
+ * minus sign attached to a digit is mathematical notation, not the dash/hyphen
+ * punctuation the site's AI-tell ban targets. See CLAUDE.md, "Dashes, hyphens, and
+ * the minus sign".
+ */
+export function formatSignedNumber(value: number, decimals = 0): string {
+  return value < 0 ? `−${formatNumber(Math.abs(value), decimals)}` : formatNumber(value, decimals);
+}
+
 export function formatPercent(value: number, decimals = 1): string {
   return new Intl.NumberFormat('lv-LV', {
     style: 'percent',

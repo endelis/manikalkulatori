@@ -13,18 +13,11 @@ import {
   yearsToLoseFraction,
 } from '@/lib/calculators/dzimstibas-kalkulators';
 import { DEFAULT_TFR } from '@/lib/calculators/dzimstibas-kalkulators-defaults';
-import { NOVADS_PILOT_AREAS, getNovadsPilotArea } from '@/lib/novads-pilot-data';
+import { NOVADS_PILOT_AREAS, getNovadsPilotArea, isSmallArea, average } from '@/lib/novads-pilot-data';
 
 export const dynamicParams = false;
 
 const category = getCategory('sabiedriba')!;
-
-// The HARD RULE against dashes and hyphens in visible copy applies to the minus sign
-// too: it is the same character. Spelling negative numbers out with "mīnus" instead of
-// "-" keeps the figure exact while staying within the rule.
-function formatSigned(value: number, decimals = 0): string {
-  return value < 0 ? `mīnus ${formatNumber(Math.abs(value), decimals)}` : formatNumber(value, decimals);
-}
 
 export function generateStaticParams() {
   return NOVADS_PILOT_AREAS.map((area) => ({ slug: area.slug }));
@@ -69,14 +62,29 @@ export default async function NovadsIedzivotajuSkaitsPage({
   const url = `${SITE_URL}${path}`;
   const title = `Cik iedzīvotāju ir ${area.locative}`;
 
+  // Drop trailing years CSP has not yet published a births/deaths breakdown for (see
+  // lib/novads-pilot-data.ts): the chart and table would otherwise render a false zero
+  // for a year that just has no data yet.
+  const completeSeries = area.series.filter((row) => row.liveBirths !== null && row.deaths !== null);
+
+  const smallArea = isSmallArea(area);
+
+  // Below SMALL_AREA_POPULATION_THRESHOLD, a single year's births/deaths count is
+  // small enough that ordinary sampling noise rivals the real signal (see the
+  // threshold's reasoning in lib/novads-pilot-data.ts). Use the multi-year average
+  // across the years CSP has published a full breakdown for, instead of one noisy
+  // year, as the basis for the headline computation.
+  const headlineBirths = smallArea ? average(completeSeries.map((row) => row.liveBirths!)) : area.births;
+  const headlineDeaths = smallArea ? average(completeSeries.map((row) => row.deaths!)) : area.deaths;
+
   // Same compute module the interactive calculator uses, so this page answers its own
   // version of the same question instead of just restating the raw numbers.
   const result = computeDzimstibas({
     mode: 'nulles-kopejas',
-    deaths: area.deaths,
+    deaths: headlineDeaths,
     netMigration: area.netMigration,
     population: area.population,
-    birthsCurrent: area.births,
+    birthsCurrent: headlineBirths,
     tfrCurrent: DEFAULT_TFR, // not displayed: CSP does not publish TFR at this granularity
   });
 
@@ -87,11 +95,7 @@ export default async function NovadsIedzivotajuSkaitsPage({
   const yearsToLoseTenth = yearsToLoseFraction(area.population, area.naturalIncrease, 0.1);
 
   const migrationIsPositive = area.netMigration > 0;
-
-  // Drop trailing years CSP has not yet published a births/deaths breakdown for (see
-  // lib/novads-pilot-data.ts): the chart and table would otherwise render a false zero
-  // for a year that just has no data yet.
-  const completeSeries = area.series.filter((row) => row.liveBirths !== null && row.deaths !== null);
+  const naturalIncreaseIsNegative = area.naturalIncrease < 0;
 
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: 'Sākums', url: SITE_URL },
@@ -116,6 +120,8 @@ export default async function NovadsIedzivotajuSkaitsPage({
 
         <h1 className="font-sans text-h1">{title}</h1>
 
+        <p className="font-mono text-sm text-panel-muted">Jaunākie CSP dati: {area.referenceYear}. gads</p>
+
         <p className="text-panel-muted">
           {area.populationReferenceDate} {area.locative} dzīvoja {formatNumber(area.population, 0)} iedzīvotāji pēc
           Centrālās statistikas pārvaldes datiem,{' '}
@@ -128,7 +134,11 @@ export default async function NovadsIedzivotajuSkaitsPage({
             tabula IRS031
           </a>
           . {area.referenceYear}. gadā {area.locative} dzīvi dzimuši {formatNumber(area.births, 0)} bērni un miruši{' '}
-          {formatNumber(area.deaths, 0)} cilvēki, dabiskais pieaugums bija {formatSigned(area.naturalIncrease)}.
+          {formatNumber(area.deaths, 0)} cilvēki,{' '}
+          {naturalIncreaseIsNegative
+            ? `mirušo bija par ${formatNumber(Math.abs(area.naturalIncrease), 0)} vairāk nekā dzimušo`
+            : `dzimušo bija par ${formatNumber(Math.abs(area.naturalIncrease), 0)} vairāk nekā mirušo`}
+          .
         </p>
 
         <section
@@ -147,10 +157,17 @@ export default async function NovadsIedzivotajuSkaitsPage({
           </p>
           <p className="mt-2 text-sm text-panel-muted">
             {formatNumber(result.perMonth, 1)} bērni mēnesī, {formatNumber(result.birthsNeeded, 0)} bērni gadā,
-            rēķinot mirušos mīnus migrācijas saldo pēc tās pašas formulas, ko izmanto dzimstības kalkulators.
+            rēķinot mirušo skaitu, no kura atņemts migrācijas saldo, pēc tās pašas formulas, ko izmanto dzimstības
+            kalkulators.{' '}
+            {smallArea
+              ? `Tā kā ${area.genitive} iedzīvotāju skaits ir neliels, dzimušo un mirušo skaits šeit ir vairāku gadu (${completeSeries[0].year} līdz ${completeSeries[completeSeries.length - 1].year}) vidējais, nevis viena gada dati, lai gadu no gada svārstības neizskatītos pēc tendences.`
+              : ''}
           </p>
           <p className="mt-1 text-sm text-panel-muted">
-            Pašlaik {area.locative} dzīvi dzimst {formatNumber(area.births / 365.25, 2)} bērni dienā.
+            {smallArea
+              ? `Vidēji ${area.locative} dzīvi dzimst`
+              : `Pašlaik ${area.locative} dzīvi dzimst`}{' '}
+            {formatNumber(headlineBirths / 365.25, 2)} bērni dienā.
           </p>
         </section>
 
@@ -171,25 +188,41 @@ export default async function NovadsIedzivotajuSkaitsPage({
           <h2 id="comparison-heading" className="font-sans text-h2">
             Salīdzinājums ar valsti kopumā
           </h2>
-          <p className="text-panel-muted">
-            {area.name} dabiskā samazinājuma temps {area.referenceYear}. gadā bija {formatNumber(Math.abs(areaRate), 2)}{' '}
-            uz 1000 iedzīvotājiem, kas ir {rateIsWorseThanNational ? 'straujāks' : 'lēnāks'} nekā Latvijas vidējais
-            rādītājs tajā pašā gadā, {formatNumber(Math.abs(nationalRate), 2)} uz 1000 iedzīvotājiem.
-          </p>
-          {yearsToLoseTenth !== null ? (
+          {smallArea ? (
             <p className="text-panel-muted">
-              Ja pašreizējais dabiskā samazinājuma temps saglabātos nemainīgs un migrāciju neskaitot, {area.genitive}
-              iedzīvotāju skaits par desmito daļu samazinātos apmēram {formatNumber(yearsToLoseTenth, 1)} gadu laikā.
-              Šis ir vienkāršs aritmētisks aprēķins pašreizējā tempā, nevis prognoze, jo tas neņem vērā vecuma
-              struktūru vai migrācijas svārstības.
+              {area.genitive} iedzīvotāju skaits ir tikai apmēram {formatNumber(area.population, 0)}, tāpēc katru gadu
+              piedzimst vien ap {formatNumber(Math.round(headlineBirths), 0)} bērnu. Tik nelielā skaitā gadu no gada
+              svārstības ir parasta statistiska trokšņa daļa, nevis tendence: dzīvi dzimušo skaits pēdējos gados bija{' '}
+              {completeSeries.map((row) => formatNumber(row.liveBirths!, 0)).join(', ')}. Tāpēc šajā lapā nav rādīts
+              precīzs salīdzinājums ar Latvijas vidējo tempu vai aprēķins, cik gadu laikā iedzīvotāju skaits
+              samazinātos par desmito daļu: ar tik mazu notikumu skaitu šādi skaitļi izskatītos precīzāki, nekā
+              patiesībā ir.
             </p>
-          ) : null}
+          ) : (
+            <>
+              <p className="text-panel-muted">
+                {area.name} dabiskā samazinājuma temps {area.referenceYear}. gadā bija{' '}
+                {formatNumber(Math.abs(areaRate), 2)} uz 1000 iedzīvotājiem, kas ir{' '}
+                {rateIsWorseThanNational ? 'straujāks' : 'lēnāks'} nekā Latvijas vidējais rādītājs tajā pašā gadā,{' '}
+                {formatNumber(Math.abs(nationalRate), 2)} uz 1000 iedzīvotājiem.
+              </p>
+              {yearsToLoseTenth !== null ? (
+                <p className="text-panel-muted">
+                  Ja pašreizējais dabiskā samazinājuma temps saglabātos nemainīgs un migrāciju neskaitot,{' '}
+                  {area.genitive} iedzīvotāju skaits par desmito daļu samazinātos apmēram{' '}
+                  {formatNumber(yearsToLoseTenth, 1)} gadu laikā. Šis ir vienkāršs aritmētisks aprēķins pašreizējā
+                  tempā, nevis prognoze, jo tas neņem vērā vecuma struktūru vai migrācijas svārstības.
+                </p>
+              ) : null}
+            </>
+          )}
           <p className="text-panel-muted">
-            {area.referenceYear}. gadā migrācijas saldo {area.locative} bija {formatSigned(area.netMigration)}{' '}
-            cilvēki,{' '}
+            {area.referenceYear}. gadā {area.locative} par {formatNumber(Math.abs(area.netMigration), 0)} cilvēkiem{' '}
+            {migrationIsPositive ? 'vairāk ieradās, nekā aizbrauca' : 'vairāk aizbrauca, nekā ieradās'}, tātad
+            migrācija{' '}
             {migrationIsPositive
-              ? 'tātad migrācija daļēji atsvēra dabisko samazinājumu.'
-              : 'tātad migrācija pastiprināja dabisko samazinājumu, nevis to kompensēja.'}
+              ? 'daļēji atsvēra dabisko samazinājumu.'
+              : 'pastiprināja dabisko samazinājumu, nevis to kompensēja.'}
           </p>
         </section>
 

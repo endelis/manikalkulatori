@@ -6,7 +6,7 @@ import {
   yearsToLoseFraction,
   computeDzimstibas,
 } from '@/lib/calculators/dzimstibas-kalkulators';
-import { NOVADS_PILOT_AREAS } from '@/lib/novads-pilot-data';
+import { NOVADS_PILOT_AREAS, average } from '@/lib/novads-pilot-data';
 
 /**
  * These tests read the actual built HTML output (npm run build must run first, same
@@ -17,7 +17,13 @@ import { NOVADS_PILOT_AREAS } from '@/lib/novads-pilot-data';
  * "novada novadā" wording bug were all only caught by reading rendered output).
  */
 
-const DASH_CHARACTERS = /[‐‑‒–—−-]/;
+// The dash/hyphen ban targets punctuation used as an AI generated text tell, not the
+// mathematical minus sign attached to a digit. U+2212 (proper minus) immediately
+// followed by a digit is legitimate numeric notation (see formatSignedNumber in
+// lib/format.ts and CLAUDE.md, "Dashes, hyphens, and the minus sign") and is allowed;
+// everywhere else, including U+2212 not attached to a digit, every dash variant
+// (hyphen-minus and the hyphen/dash family) is still banned.
+const DASH_OR_MISUSED_MINUS = /[‐‑‒–—-]|−(?!\d)/;
 
 function readBuiltPage(slug: string): string | null {
   const file = path.join(process.cwd(), '.next', 'server', 'app', 'sabiedriba', 'iedzivotaju-skaits', `${slug}.html`);
@@ -60,12 +66,42 @@ describe.skipIf(!allBuilt)('novads pilot pages, rendered output', () => {
     }
   });
 
-  it('has no dash or hyphen character in visible text on any of the three pages', () => {
+  it('has no dash, hyphen, or misused minus sign character in visible text on any of the three pages', () => {
     for (const area of NOVADS_PILOT_AREAS) {
       const html = builtPages[area.slug]!;
       const text = visibleText(html);
-      const matches = text.match(new RegExp(DASH_CHARACTERS, 'g')) ?? [];
-      expect(matches, `${area.slug}: found dash/hyphen character(s) in visible text`).toHaveLength(0);
+      const matches = text.match(new RegExp(DASH_OR_MISUSED_MINUS, 'g')) ?? [];
+      expect(matches, `${area.slug}: found dash/hyphen/misused-minus character(s) in visible text`).toHaveLength(0);
+    }
+  });
+
+  it('suppresses the rate-comparison verdict and years-to-lose-a-tenth for the small area only', () => {
+    for (const area of NOVADS_PILOT_AREAS) {
+      const html = builtPages[area.slug]!;
+      const small = area.population < 10000;
+      expect(html.includes('dabiskā samazinājuma temps'), `${area.slug}: rate-comparison sentence present`).toBe(
+        !small,
+      );
+      expect(
+        html.includes('par desmito daļu samazinātos'),
+        `${area.slug}: years-to-lose-a-tenth sentence present`,
+      ).toBe(!small);
+      if (small) {
+        expect(html.includes('statistiska trokšņa'), `${area.slug}: small-area caveat sentence missing`).toBe(true);
+      }
+    }
+  });
+
+  it('states its own reference year visibly, not only inside a sentence', () => {
+    for (const area of NOVADS_PILOT_AREAS) {
+      // React inserts <!-- --> hydration markers between adjacent text/expression
+      // nodes, which visibleText's tag strip turns into extra whitespace; collapse
+      // runs of whitespace before comparing.
+      const text = visibleText(builtPages[area.slug]!).replace(/\s+/g, ' ');
+      expect(
+        text.includes(`Jaunākie CSP dati: ${area.referenceYear} . gads`),
+        `${area.slug}: no visible reference year line`,
+      ).toBe(true);
     }
   });
 
@@ -82,24 +118,38 @@ describe.skipIf(!allBuilt)('novads pilot pages, rendered output', () => {
 
       // Derived figures, recomputed here with the same exported pure functions the
       // page itself calls, so this test would fail if the page's arithmetic (or its
-      // inputs) ever silently diverged from the sourced data module.
+      // inputs) ever silently diverged from the sourced data module. Below the small
+      // area threshold the page uses a multi-year average of births/deaths as the
+      // compute module's input, and suppresses the rate comparison and years-to-lose-
+      // a-tenth figures entirely (see the small-area threshold test above) rather than
+      // rendering them from noisy single-year counts.
+      const small = area.population < 10000;
+      const completeSeries = area.series.filter((row) => row.liveBirths !== null && row.deaths !== null);
+      const headlineBirths = small
+        ? average(completeSeries.map((row) => row.liveBirths!))
+        : area.births;
+      const headlineDeaths = small ? average(completeSeries.map((row) => row.deaths!)) : area.deaths;
       const result = computeDzimstibas({
         mode: 'nulles-kopejas',
-        deaths: area.deaths,
+        deaths: headlineDeaths,
         netMigration: area.netMigration,
         population: area.population,
-        birthsCurrent: area.births,
+        birthsCurrent: headlineBirths,
         tfrCurrent: 1, // unused by mode nulles-kopejas, not rendered on this page
       });
-      const areaRate = Math.abs(naturalIncreaseRatePer1000(area.naturalIncrease, area.population));
-      const yearsToLoseTenth = yearsToLoseFraction(area.population, area.naturalIncrease, 0.1);
 
       expect(html.includes(formatDecimal(result.perDay, 2)), `${area.slug}: perDay not found`).toBe(true);
-      expect(html.includes(formatDecimal(areaRate, 2)), `${area.slug}: area rate not found`).toBe(true);
-      if (yearsToLoseTenth !== null) {
-        expect(html.includes(formatDecimal(yearsToLoseTenth, 1)), `${area.slug}: years to lose a tenth not found`).toBe(
-          true,
-        );
+
+      if (!small) {
+        const areaRate = Math.abs(naturalIncreaseRatePer1000(area.naturalIncrease, area.population));
+        const yearsToLoseTenth = yearsToLoseFraction(area.population, area.naturalIncrease, 0.1);
+        expect(html.includes(formatDecimal(areaRate, 2)), `${area.slug}: area rate not found`).toBe(true);
+        if (yearsToLoseTenth !== null) {
+          expect(
+            html.includes(formatDecimal(yearsToLoseTenth, 1)),
+            `${area.slug}: years to lose a tenth not found`,
+          ).toBe(true);
+        }
       }
     }
   });

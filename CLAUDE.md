@@ -25,6 +25,25 @@ Anyone adding a one line script tag or tracking pixel: read this MAP, edit `comp
 
 Every calculator carries a hand maintained `contentUpdatedAt` (ISO date) in `lib/registry.ts`. `app/sitemap.ts` reads it directly. When you change a calculator's rendered numbers or copy, bump its `contentUpdatedAt` in the same commit. `lib/calculatorContentDrift.test.ts` checks this against git history and fails if a calculator's compute module or component changed more recently than its recorded `contentUpdatedAt`.
 
+## Dashes, hyphens, and the minus sign
+
+Visible Latvian copy must never contain a dash or hyphen used as punctuation (em dash,
+en dash, hyphen-minus as a connector, etc.) — that punctuation is a well known AI
+generated text tell. This ban is about punctuation in prose, not about numbers. A
+mathematical minus sign attached to a digit (a negative number) is not punctuation and
+is not covered by the ban.
+
+- Prefer rephrasing so the negative number does not need to appear at all: "mirušo
+  bija par 47 vairāk nekā dzimušo" instead of "dabiskais pieaugums bija -47". This is
+  usually also the more readable sentence, and is the first choice.
+- Where a negative number must still render as a number (a table cell, a chart axis),
+  use U+2212 MINUS SIGN, never U+002D HYPHEN-MINUS. Use `formatSignedNumber` from
+  `lib/format.ts`, which does this.
+- A dash-scan test (see `app/sabiedriba/iedzivotaju-skaits/novads-pilot.rendered.test.ts`)
+  allows U+2212 only when it is immediately followed by a digit (i.e. genuinely part of
+  a number), and still fails on it, and on U+002D and the other dash variants, anywhere
+  else in visible text.
+
 ## Small change protocol
 
 For a change touching one or two named files:

@@ -105,3 +105,28 @@ export const NOVADS_PILOT_AREAS: NovadsPilotArea[] = [
 export function getNovadsPilotArea(slug: string): NovadsPilotArea | undefined {
   return NOVADS_PILOT_AREAS.find((area) => area.slug === slug);
 }
+
+/**
+ * Below this population, a single year's births/deaths count is small enough that
+ * ordinary year to year sampling noise (Poisson-ish: relative variation scales with
+ * 1/sqrt(count)) is comparable to or larger than the real signal a rate comparison or
+ * a "years until a tenth is lost" projection is trying to detect. At Latvia's roughly
+ * 6 to 7 births per 1000 residents per year, 10,000 residents means on the order of
+ * 60 to 70 births a year (relative noise around 12 to 13 percent); well below that,
+ * annual counts drop into the low tens, where the relative noise exceeds 20 percent.
+ * This is not a theoretical worry: Varakļānu novads (population ~2,820, see below)
+ * had 18, 22, 15, and 20 live births in four consecutive years, a swing of about a
+ * third with no underlying trend. Below this threshold, single-year derived figures
+ * (a rate comparison verdict, years until a tenth of the population is lost) are
+ * suppressed rather than shown with false precision; see
+ * app/sabiedriba/iedzivotaju-skaits/[slug]/page.tsx.
+ */
+export const SMALL_AREA_POPULATION_THRESHOLD = 10000;
+
+export function isSmallArea(area: NovadsPilotArea): boolean {
+  return area.population < SMALL_AREA_POPULATION_THRESHOLD;
+}
+
+export function average(values: number[]): number {
+  return values.reduce((sum, value) => sum + value, 0) / values.length;
+}
