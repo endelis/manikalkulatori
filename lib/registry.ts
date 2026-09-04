@@ -311,6 +311,20 @@ export const calculators: CalculatorMeta[] = [
     keywords: ['dzimstības kalkulators', 'cik bērniem jāpiedzimst Latvijā', 'Latvijas iedzīvotāju skaits'],
     contentUpdatedAt: '2026-09-04T13:22:48+03:00',
   },
+  {
+    slug: 'pensijas-kalkulators',
+    category: 'finanses',
+    title: 'Pensijas kalkulators',
+    h1: 'Cik liela būs mana 1. līmeņa pensija',
+    intro:
+      'Ievadi dzimšanas gadu, algu un apdrošināšanas stāžu, uzzini aptuvenu 1. līmeņa vecuma pensijas apmēru pēc VSAA formulas.',
+    metaDescription:
+      'Aprēķini aptuvenu Latvijas 1. līmeņa vecuma pensiju pēc VSAA formulas un koeficienta G, ar redzamu aprēķinu gaitu.',
+    keywords: ['pensijas kalkulators', 'mana pensija', 'kā aprēķina pensiju Latvijā', 'koeficients G'],
+    // Placeholder, set on the squash merge commit's own time before merging, not the
+    // feature branch commit time (see CLAUDE.md, "Sitemap dates").
+    contentUpdatedAt: '2026-09-04T13:53:00+03:00',
+  },
 ];
 
 /**
@@ -321,7 +335,7 @@ export const calculators: CalculatorMeta[] = [
  * dynamic route excludes them, and the registry-integrity tests that assume the
  * generic shell (a mapped UI component, an explanations entry) skip them too.
  */
-export const CUSTOM_ROUTED_SLUGS = new Set<string>(['dzimstibas-kalkulators']);
+export const CUSTOM_ROUTED_SLUGS = new Set<string>(['dzimstibas-kalkulators', 'pensijas-kalkulators']);
 
 export function getCategory(slug: string): CategoryMeta | undefined {
   return categories.find((category) => category.slug === slug);

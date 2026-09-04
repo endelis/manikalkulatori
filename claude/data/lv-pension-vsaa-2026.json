@@ -1,0 +1,33 @@
+{
+  "retrievedDate": "2026-09-04",
+  "gCoefficientTable": {
+    "source": "https://www.vsaa.gov.lv/lv/media/5322/download",
+    "note": "Vecuma pensijas aprēķināšanai piemērojamie plānotie vecuma pensijas izmaksas laika periodi G, spēkā no 2026-01-01.",
+    "byAge": {
+      "40": 37.87, "41": 37.00, "42": 36.12, "43": 35.24, "44": 34.36,
+      "45": 33.48, "46": 32.64, "47": 31.79, "48": 30.94, "49": 30.09,
+      "50": 29.24, "51": 28.43, "52": 27.63, "53": 26.82, "54": 26.01,
+      "55": 25.20, "56": 24.45, "57": 23.69, "58": 22.93, "59": 22.17,
+      "60": 21.41, "61": 20.68, "62": 19.95, "63": 19.22, "64": 18.49,
+      "65": 17.76, "66": 17.09, "67": 16.41, "68": 15.74, "69": 15.07,
+      "70": 14.39, "71": 13.78, "72": 13.16, "73": 12.54, "74": 11.92,
+      "75": 11.30, "76": 10.73, "77": 10.15, "78": 9.58, "79": 9.00,
+      "80": 8.42, "81": 7.94, "82": 7.45, "83": 6.97, "84": 6.48,
+      "85": 6.00, "86": 5.61, "87": 5.22, "88": 4.83, "89": 4.44,
+      "90": 4.05
+    }
+  },
+  "wageIndexSeries": {
+    "source": "https://www.vsaa.gov.lv/lv/media/7364/download?attachment=",
+    "note": "Apdrošināšanas iemaksu algas indeksi (2025). Full year by year series extracted from the source PDF's per-contribution-year index chains (each contribution year's list is a suffix of the prior year's list, so the underlying series is a single chain keyed by the application year, the year in which capital existing at that year's start is multiplied by the index). No 2025 or later index is published yet, matching the source's own 1 to 2 year publication lag; do not fabricate a value for an unpublished year.",
+    "byApplicationYear": {
+      "1997": 1.03, "1998": 1.12, "1999": 1.117, "2000": 1.069,
+      "2001": 1.0835, "2002": 1.0453, "2003": 1.1645, "2004": 1.1754,
+      "2005": 1.1712, "2006": 1.2333, "2007": 1.3593, "2008": 1.3106,
+      "2009": 1, "2010": 1, "2011": 1, "2012": 1, "2013": 1, "2014": 1,
+      "2015": 1, "2016": 1.0614, "2017": 1.0786, "2018": 1.1064,
+      "2019": 1.1029, "2020": 1.0445, "2021": 1.0632, "2022": 1.1357,
+      "2023": 1.1329, "2024": 1.1041
+    }
+  }
+}
