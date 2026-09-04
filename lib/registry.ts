@@ -335,7 +335,7 @@ export const calculators: CalculatorMeta[] = [
     keywords: ['tumsas kalkulators', 'cik tumšs ir Rīgā', 'gaismas stundas Latvijā', 'dienas garums Rīgā'],
     // Placeholder, set to the real commit time before merging, then re-checked against
     // the squash merge commit time before merging, per CLAUDE.md, "Sitemap dates".
-    contentUpdatedAt: '2026-09-04T22:12:00+03:00',
+    contentUpdatedAt: '2026-09-04T23:13:00+03:00',
   },
 ];
 
