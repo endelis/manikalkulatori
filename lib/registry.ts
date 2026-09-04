@@ -309,7 +309,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini, cik bērniem gadā jāpiedzimst Latvijā, lai iedzīvotāju skaits stabilizētos vai sasniegtu izvēlētu mērķi, pēc oficiāliem CSP datiem.',
     keywords: ['dzimstības kalkulators', 'cik bērniem jāpiedzimst Latvijā', 'Latvijas iedzīvotāju skaits'],
-    contentUpdatedAt: '2026-09-04T12:08:11+03:00',
+    contentUpdatedAt: '2026-09-04T12:09:46+03:00',
   },
 ];
 
