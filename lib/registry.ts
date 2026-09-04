@@ -15,7 +15,15 @@ export interface CalculatorMeta {
   intro: string;
   metaDescription: string;
   keywords: string[];
-  /** ISO date (YYYY-MM-DD) of the last change to this calculator's rendered numbers or copy. Bump by hand, never auto-generate. */
+  /**
+   * Full ISO 8601 timestamp with timezone offset (e.g. "2026-09-03T20:33:00+03:00") of
+   * the last change to this calculator's rendered numbers or copy. Bump by hand to the
+   * actual commit time, never auto-generate. A bare date is not precise enough: if
+   * content changes a second time on the same day, a date-only value would already
+   * read as "correct" without ever actually being touched by that second change, which
+   * defeats lib/calculatorContentDrift.test.ts. Use `git log -1 --format=%cI -- <file>`
+   * to find the real value when bumping.
+   */
   contentUpdatedAt: string;
 }
 
@@ -68,7 +76,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Salīdzini elektroauto un benzīna auto gada ekspluatācijas izmaksas pēc nobraukuma, patēriņa un enerģijas cenas.',
     keywords: ['elektroauto vs benzīns', 'elektroauto izmaksas', 'ev vs ice kalkulators'],
-    contentUpdatedAt: '2026-08-22',
+    contentUpdatedAt: '2026-08-22T19:55:03+03:00',
   },
   {
     slug: 'ekii-atbalsts',
@@ -79,7 +87,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini EKII valsts atbalsta apmēru elektroauto vai spraudņa hibrīda iegādei 2026. gadā pēc auto cenas, statusa un Goda ģimenes apliecības.',
     keywords: ['EKII atbalsts', 'elektroauto valsts atbalsts', 'EKII kalkulators 2026'],
-    contentUpdatedAt: '2026-08-22',
+    contentUpdatedAt: '2026-08-22T20:08:28+03:00',
   },
   {
     slug: 'kasko-kalkulators',
@@ -90,7 +98,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini KASKO apdrošināšanas mēneša maksājumu un izmaksas kā daļu no auto vērtības pēc tavis saņemtā piedāvājuma.',
     keywords: ['KASKO kalkulators', 'KASKO cena', 'auto apdrošināšana'],
-    contentUpdatedAt: '2026-08-22',
+    contentUpdatedAt: '2026-08-22T20:18:36+03:00',
   },
   {
     slug: 'octa-kalkulators',
@@ -100,7 +108,7 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi līdz trim saņemtajiem OCTA piedāvājumiem, uzzini lētāko un starpību pret dārgāko.',
     metaDescription: 'Salīdzini vairākus OCTA apdrošināšanas piedāvājumus un atrodi lētāko variantu.',
     keywords: ['OCTA kalkulators', 'OCTA cenas salīdzinājums', 'obligātā apdrošināšana'],
-    contentUpdatedAt: '2026-08-22',
+    contentUpdatedAt: '2026-08-22T20:18:36+03:00',
   },
   {
     slug: 'lizings-vs-kredits',
@@ -111,7 +119,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Salīdzini auto kredīta un līzinga mēneša maksājumu pēc auto cenas, pirmās iemaksas, termiņa un likmēm.',
     keywords: ['līzings vs kredīts', 'auto līzings kalkulators', 'auto kredīts kalkulators'],
-    contentUpdatedAt: '2026-08-22',
+    contentUpdatedAt: '2026-08-22T20:18:36+03:00',
   },
   {
     slug: 'degvielas-izmaksas',
@@ -122,7 +130,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini auto degvielas izmaksas gadā un uz 100 kilometriem pēc nobraukuma, patēriņa un degvielas cenas.',
     keywords: ['degvielas izmaksas kalkulators', 'degvielas patēriņš gadā', 'auto uzturēšanas izmaksas'],
-    contentUpdatedAt: '2026-08-22',
+    contentUpdatedAt: '2026-08-22T20:18:36+03:00',
   },
   {
     slug: 'uzlades-izmaksas',
@@ -133,7 +141,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini elektroauto gada uzlādes izmaksas, sadalot uzlādi starp mājas un publisko lādēšanu.',
     keywords: ['elektroauto uzlādes izmaksas', 'uzlādes cena mājās', 'publiskā lādēšana cena'],
-    contentUpdatedAt: '2026-08-22',
+    contentUpdatedAt: '2026-08-22T20:26:27+03:00',
   },
   {
     slug: 'nolietojums',
@@ -144,7 +152,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini auto pašreizējo vērtību un kopējo nolietojumu pēc pirkuma cenas, vecuma un gada nolietojuma likmes.',
     keywords: ['auto nolietojums kalkulators', 'auto vērtības samazinājums', 'auto vērtība pēc gadiem'],
-    contentUpdatedAt: '2026-08-22',
+    contentUpdatedAt: '2026-08-22T20:26:27+03:00',
   },
   {
     slug: 'riepu-izmers',
@@ -155,7 +163,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini spidometra kļūdu un reālo ātrumu pēc riepu izmēra maiņas, salīdzinot veco un jauno riepu diametru.',
     keywords: ['riepu izmēra kalkulators', 'spidometra kļūda', 'riepu diametrs'],
-    contentUpdatedAt: '2026-08-22',
+    contentUpdatedAt: '2026-08-22T20:26:27+03:00',
   },
   {
     slug: 'cela-izmaksas',
@@ -166,7 +174,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini konkrēta brauciena degvielas izmaksas un izmaksas uz vienu cilvēku, dalot ar līdzbraucēju skaitu.',
     keywords: ['ceļa izmaksas kalkulators', 'brauciena izmaksas', 'degvielas izmaksas uz braucienu'],
-    contentUpdatedAt: '2026-08-22',
+    contentUpdatedAt: '2026-08-22T20:26:27+03:00',
   },
   {
     slug: 'solaru-atmaksa',
@@ -176,7 +184,7 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi sistēmas izmaksas, jaudu un paredzamo patēriņu, uzzini atmaksāšanās laiku gados.',
     metaDescription: 'Aprēķini solāro paneļu sistēmas atmaksāšanās laiku pēc uzstādīšanas izmaksām, jaudas un pašpatēriņa.',
     keywords: ['solāro paneļu atmaksa', 'saules paneļu kalkulators', 'saules enerģijas atmaksāšanās'],
-    contentUpdatedAt: '2026-08-22',
+    contentUpdatedAt: '2026-08-22T20:39:05+03:00',
   },
   {
     slug: 'siltumsukna-atmaksa',
@@ -186,7 +194,7 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi siltumsūkņa izmaksas, mājas siltumenerģijas patēriņu un vecās apkures cenu, uzzini atmaksāšanās laiku.',
     metaDescription: 'Aprēķini siltumsūkņa atmaksāšanās laiku, salīdzinot ar vecās apkures sistēmas izmaksām.',
     keywords: ['siltumsūkņa atmaksa', 'siltumsūkņa kalkulators', 'apkures izmaksu salīdzinājums'],
-    contentUpdatedAt: '2026-08-22',
+    contentUpdatedAt: '2026-08-22T20:39:05+03:00',
   },
   {
     slug: 'elektribas-rekins',
@@ -196,7 +204,7 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi mēneša patēriņu, elektrības cenu un fiksēto maksu, uzzini rēķinu mēnesī un gadā.',
     metaDescription: 'Aprēķini mājsaimniecības elektrības rēķinu mēnesī un gadā pēc patēriņa, cenas un fiksētās maksas.',
     keywords: ['elektrības rēķina kalkulators', 'elektrības cena', 'mājsaimniecības elektrības izmaksas'],
-    contentUpdatedAt: '2026-08-22',
+    contentUpdatedAt: '2026-08-22T20:39:05+03:00',
   },
   {
     slug: 'apkures-izmaksas',
@@ -206,7 +214,7 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi mājas siltumenerģijas patēriņu un cenu par kWh katram apkures veidam, salīdzini gada izmaksas.',
     metaDescription: 'Salīdzini gāzes, malkas un siltumsūkņa apkures gada izmaksas pēc mājas siltumenerģijas patēriņa.',
     keywords: ['apkures izmaksu salīdzinājums', 'apkures veidu salīdzinājums', 'lētākā apkure'],
-    contentUpdatedAt: '2026-08-22',
+    contentUpdatedAt: '2026-08-22T20:39:05+03:00',
   },
   {
     slug: 'malkas-apjoms',
@@ -216,7 +224,7 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi grēdas garumu, platumu un augstumu, uzzini sakrautā apjoma un cietās koksnes apjomu.',
     metaDescription: 'Aprēķini malkas grēdas apjomu steros un cietās koksnes kubikmetros pēc grēdas izmēriem.',
     keywords: ['malkas apjoma kalkulators', 'malkas ster', 'malkas kubikmetri'],
-    contentUpdatedAt: '2026-08-22',
+    contentUpdatedAt: '2026-08-22T20:51:18+03:00',
   },
   {
     slug: 'krasas-daudzums',
@@ -226,7 +234,7 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi krāsojamo platību, krāsas patēriņu un kārtu skaitu, uzzini nepieciešamo krāsas daudzumu litros.',
     metaDescription: 'Aprēķini nepieciešamo krāsas daudzumu litros pēc krāsojamās platības, patēriņa un kārtu skaita.',
     keywords: ['krāsas daudzuma kalkulators', 'krāsas patēriņš', 'cik krāsas vajag'],
-    contentUpdatedAt: '2026-08-22',
+    contentUpdatedAt: '2026-08-22T20:51:18+03:00',
   },
   {
     slug: 'flizu-daudzums',
@@ -236,7 +244,7 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi klājamo platību, flīzes izmēru un rezerves procentu, uzzini nepieciešamo flīžu skaitu.',
     metaDescription: 'Aprēķini nepieciešamo flīžu skaitu pēc klājamās platības, flīzes izmēra un rezerves procenta.',
     keywords: ['flīžu daudzuma kalkulators', 'flīžu skaits', 'cik flīžu vajag'],
-    contentUpdatedAt: '2026-08-22',
+    contentUpdatedAt: '2026-08-22T20:51:18+03:00',
   },
   {
     slug: 'betona-apjoms',
@@ -246,7 +254,7 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi betonējamā laukuma izmērus un biezumu, uzzini nepieciešamo betona apjomu un maisu skaitu.',
     metaDescription: 'Aprēķini nepieciešamo betona apjomu kubikmetros un maisu skaitu pēc laukuma izmēriem un biezuma.',
     keywords: ['betona apjoma kalkulators', 'betona daudzums', 'betona maisu skaits'],
-    contentUpdatedAt: '2026-08-22',
+    contentUpdatedAt: '2026-08-22T20:51:18+03:00',
   },
   {
     slug: 'skriesanas-temps',
@@ -256,7 +264,7 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi distanci un laiku, uzzini tempu uz kilometru un vidējo ātrumu.',
     metaDescription: 'Aprēķini skriešanas tempu uz kilometru un vidējo ātrumu no distances un laika.',
     keywords: ['skriešanas tempa kalkulators', 'skriešanas temps', 'skriešanas ātrums'],
-    contentUpdatedAt: '2026-08-22',
+    contentUpdatedAt: '2026-08-22T21:02:45+03:00',
   },
   {
     slug: 'triatlona-planotajs',
@@ -267,7 +275,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini paredzamo triatlona kopējo laiku no peldēšanas, riteņbraukšanas un skriešanas posmiem.',
     keywords: ['triatlona plānotājs', 'triatlona kalkulators', 'triatlona laiks'],
-    contentUpdatedAt: '2026-08-22',
+    contentUpdatedAt: '2026-08-22T21:02:45+03:00',
   },
   {
     slug: 'ftp-zonas',
@@ -278,7 +286,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini riteņbraukšanas treniņu jaudas zonas no FTP pēc standarta septiņu zonu modeļa.',
     keywords: ['ftp zonu kalkulators', 'riteņbraukšanas jaudas zonas', 'ftp kalkulators'],
-    contentUpdatedAt: '2026-08-22',
+    contentUpdatedAt: '2026-08-22T21:02:45+03:00',
   },
   {
     slug: 'sirdsdarbibas-zonas',
@@ -289,7 +297,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini sirdsdarbības treniņu zonas pēc Karvonena metodes no maksimālā un miera pulsa.',
     keywords: ['sirdsdarbības zonu kalkulators', 'pulsa zonas', 'karvonena metode'],
-    contentUpdatedAt: '2026-08-22',
+    contentUpdatedAt: '2026-08-22T21:02:45+03:00',
   },
   {
     slug: 'dzimstibas-kalkulators',
@@ -301,7 +309,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini, cik bērniem gadā jāpiedzimst Latvijā, lai iedzīvotāju skaits stabilizētos vai sasniegtu izvēlētu mērķi, pēc oficiāliem CSP datiem.',
     keywords: ['dzimstības kalkulators', 'cik bērniem jāpiedzimst Latvijā', 'Latvijas iedzīvotāju skaits'],
-    contentUpdatedAt: '2026-09-03',
+    contentUpdatedAt: '2026-09-03T20:33:00+03:00',
   },
 ];
 

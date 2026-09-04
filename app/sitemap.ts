@@ -16,8 +16,11 @@ const INFO_PAGE_UPDATED_AT: Record<string, string> = {
   '/sabiedriba/iedzivotaju-skaits-latvija': '2026-09-03',
 };
 
-function latest(dates: string[]): string {
-  return dates.reduce((max, date) => (date > max ? date : max));
+// Calculator contentUpdatedAt values are full ISO 8601 timestamps with a timezone
+// offset; comparing them as actual instants (not string order) keeps this correct even
+// if entries ever carry differing offsets.
+function latest(timestamps: string[]): string {
+  return timestamps.reduce((max, timestamp) => (new Date(timestamp) > new Date(max) ? timestamp : max));
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
