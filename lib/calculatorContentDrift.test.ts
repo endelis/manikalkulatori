@@ -7,52 +7,26 @@ import { CUSTOM_ROUTED_SLUGS, calculators, type CalculatorMeta } from './registr
 /**
  * contentUpdatedAt is hand maintained (see lib/registry.ts), not derived from git or
  * build time, so it can silently go stale. This test catches that by comparing, per
- * calculator, the exact commit time its compute/UI files last changed against the
- * exact commit time its own contentUpdatedAt line was last set (via git blame on that
- * one line, not the whole file, since many calculators share both the file and often
- * the exact same date string).
+ * calculator, the exact commit time its compute/UI files last changed against
+ * contentUpdatedAt's own value.
  *
- * Full commit timestamps (git %cI), not day-truncated dates, are compared. A previous
- * version of this test truncated file commit dates to the day and compared them against
- * the day-only contentUpdatedAt string, which meant any edit landing on the same
- * calendar day as the last recorded date passed silently, whether or not the field was
- * actually bumped. Using precise timestamps on both sides fixes that: a later commit on
- * the same day still produces a strictly later timestamp and is correctly caught.
+ * contentUpdatedAt is a full ISO 8601 timestamp with a timezone offset, precise enough
+ * to compare directly: no git blame lookup is needed to find "when was this field last
+ * set" the way an earlier version of this test did, because the value itself now
+ * carries that information. A bare date could not do this: if content changed a second
+ * time on the same day, the correct value of the field would be unchanged, so there
+ * would be no diff, so no commit, so a blame based check could never be satisfied even
+ * when the field is genuinely accurate. That happened for real: dzimstibas-kalkulators'
+ * date read "2026-09-03" both before and after PR #13 changed its visible copy on that
+ * same day, and a blame based version of this test could not tell the two states apart.
+ *
+ * Timestamps are compared as actual instants (Date.getTime()), not string order, so
+ * differing timezone offsets can never sort incorrectly.
  */
 
 function lastCommitTimestamp(filePath: string): string | null {
   try {
     const timestamp = execSync(`git log -1 --format=%cI -- "${filePath}"`, {
-      cwd: process.cwd(),
-      encoding: 'utf-8',
-    }).trim();
-    return timestamp.length > 0 ? timestamp : null;
-  } catch {
-    return null;
-  }
-}
-
-function contentUpdatedAtCommitTimestamp(slug: string): string | null {
-  const registryPath = path.join(process.cwd(), 'lib', 'registry.ts');
-  const lines = fs.readFileSync(registryPath, 'utf-8').split('\n');
-  const slugLineIndex = lines.findIndex((line) => line.includes(`slug: '${slug}',`));
-  if (slugLineIndex === -1) return null;
-
-  const contentUpdatedAtOffset = lines
-    .slice(slugLineIndex, slugLineIndex + 20)
-    .findIndex((line) => line.includes('contentUpdatedAt:'));
-  if (contentUpdatedAtOffset === -1) return null;
-
-  const lineNumber = slugLineIndex + contentUpdatedAtOffset + 1; // git blame -L is 1-indexed
-
-  try {
-    const blame = execSync(`git blame -L ${lineNumber},${lineNumber} --porcelain -- lib/registry.ts`, {
-      cwd: process.cwd(),
-      encoding: 'utf-8',
-    });
-    const sha = blame.split('\n')[0].split(' ')[0];
-    if (!sha || /^0+$/.test(sha)) return null; // line not committed yet
-    const timestamp = execSync(`git log -1 --format=%cI ${sha}`, {
       cwd: process.cwd(),
       encoding: 'utf-8',
     }).trim();
@@ -106,17 +80,17 @@ describe('calculator content drift', () => {
         return;
       }
 
-      const latestContentChange = timestamps.reduce((max, t) => (t > max ? t : max));
-
-      const bumpTimestamp = contentUpdatedAtCommitTimestamp(calc.slug);
-      if (bumpTimestamp === null) {
-        // contentUpdatedAt line not committed yet — nothing to compare against.
-        return;
-      }
+      const latestContentChangeMs = Math.max(...timestamps.map((t) => new Date(t).getTime()));
+      const recordedMs = new Date(calc.contentUpdatedAt).getTime();
 
       expect(
-        bumpTimestamp >= latestContentChange,
-        `${calc.slug}: a tracked file changed at ${latestContentChange}, which is after contentUpdatedAt was last set (commit at ${bumpTimestamp}, currently reads "${calc.contentUpdatedAt}"). Bump contentUpdatedAt in lib/registry.ts.`,
+        Number.isNaN(recordedMs),
+        `${calc.slug}: contentUpdatedAt "${calc.contentUpdatedAt}" is not a valid ISO 8601 timestamp`,
+      ).toBe(false);
+
+      expect(
+        recordedMs >= latestContentChangeMs,
+        `${calc.slug}: a tracked file changed at ${new Date(latestContentChangeMs).toISOString()}, which is after contentUpdatedAt (currently "${calc.contentUpdatedAt}"). Bump contentUpdatedAt in lib/registry.ts to the real commit time (git log -1 --format=%cI -- <file>).`,
       ).toBe(true);
     });
   }
