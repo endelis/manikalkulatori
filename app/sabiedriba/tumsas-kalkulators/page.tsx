@@ -230,6 +230,17 @@ export default function TumsasKalkulatorsPage() {
             timeanddate.com un gaisma.com bloķēja automātisko piekļuvi šajā izpētes gājienā, tāpēc tie šeit nav
             citēti, lai gan varētu būt noderīgi turpmākai pārbaudei.
           </p>
+          <p className="text-panel-muted">
+            Ja skaitļi par tumsu liek domāt par dzimstību, aprēķini, cik bērniem Latvijā jāpiedzimst, lai
+            iedzīvotāju skaits vairs nesarūktu, ar{' '}
+            <Link
+              href="/sabiedriba/dzimstibas-kalkulators"
+              className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+            >
+              dzimstības kalkulatoru
+            </Link>
+            .
+          </p>
         </section>
 
         <Faq items={faq} />
