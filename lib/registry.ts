@@ -326,7 +326,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini nepieciešamo grants, smilts vai šķembu apjomu un masu pēc platības, kārtas biezuma un materiāla blīvuma.',
     keywords: ['grants kalkulators', 'smilts apjoma kalkulators', 'šķembu daudzuma kalkulators'],
-    contentUpdatedAt: '2026-09-05T21:26:16+03:00',
+    contentUpdatedAt: '2026-09-05T21:36:08+03:00',
   },
   {
     slug: 'skriesanas-temps',
