@@ -1,6 +1,6 @@
-### Kāpēc blīvuma vērtība ir tikai aplēse, nevis precīzs skaitlis?
+### Kāpēc smilts blīvums ir citēts kā fakts, bet grants un šķembu blīvums ir tikai aplēse?
 
-Smilts, grants un šķembu blīvums ļoti stipri atkarīgs no frakcijas, mitruma un iepakojuma veida, un Latvijas piegādātāji parasti nepublicē precīzu blīvuma skaitli savās produktu lapās, viņi pārdod pēc svara vai cenas par kubikmetru, nevis pēc pārrēķina koeficienta. Tāpēc šis kalkulators piedāvā vispārīgu aplēsi katram materiālam, ko vari brīvi pielāgot, ja zini konkrētā piegādātāja precīzāku skaitli.
+Smilts blīvumam ir atrasta Latvijas karjera materiālu tirgotāja lapa, kas to norāda tieši, tāpēc kalkulators to rāda kā sourced vērtību ar atsauci. Grants un šķembu gadījumā pārbaudītie Latvijas piegādātāji pārdod pēc svara vai cenas par kubikmetru, bet nepublicē precīzu blīvuma skaitli, tāpēc tiem izmantota vispārīga aplēse, ko vari brīvi pielāgot, ja zini konkrētā piegādātāja precīzāku skaitli.
 
 ### Kāpēc jāpasūta vairāk materiāla, nekā rāda gala kārtas apjoms?
 

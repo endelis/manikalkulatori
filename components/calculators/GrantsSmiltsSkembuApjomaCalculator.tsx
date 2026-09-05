@@ -96,11 +96,22 @@ export function GrantsSmiltsSkembuApjomaCalculator({ accentVar }: { accentVar: s
           onChange={setDensityTPerM3}
         />
         <p className="text-caption text-panel-faint">
-          {selectedMaterial.label} blīvums parasti ir no{' '}
-          {formatNumber(selectedMaterial.densityTPerM3Min, 2)} līdz{' '}
-          {formatNumber(selectedMaterial.densityTPerM3Max, 2)}&nbsp;t/m³ atkarībā no frakcijas un mitruma,
-          neviens Latvijas piegādātājs nepublicē precīzu skaitli, tāpēc šī ir aplēse, ne citēts fakts, un to
-          vari brīvi pielāgot pēc konkrētā piegādātāja informācijas.
+          {selectedMaterial.sourced ? (
+            <>
+              {selectedMaterial.label} blīvums, {formatNumber(selectedMaterial.densityTPerM3Min, 2)} līdz{' '}
+              {formatNumber(selectedMaterial.densityTPerM3Max, 2)}&nbsp;t/m³, ir tieši norādīts Latvijas
+              karjera materiālu tirgotāja lapā, sk. Avoti. Reālā piegāde var atšķirties, tāpēc vērtība
+              paliek pielāgojama.
+            </>
+          ) : (
+            <>
+              {selectedMaterial.label} blīvums parasti ir no{' '}
+              {formatNumber(selectedMaterial.densityTPerM3Min, 2)} līdz{' '}
+              {formatNumber(selectedMaterial.densityTPerM3Max, 2)}&nbsp;t/m³ atkarībā no frakcijas un
+              mitruma, neviens pārbaudītais Latvijas piegādātājs nepublicē precīzu skaitli, tāpēc šī ir
+              aplēse, ne citēts fakts, un to vari brīvi pielāgot pēc konkrētā piegādātāja informācijas.
+            </>
+          )}
         </p>
       </div>
 

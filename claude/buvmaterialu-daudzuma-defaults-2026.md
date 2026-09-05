@@ -74,14 +74,14 @@ Sourced primitīvi:
 
 Slug: `grants-smilts-skembu-apjoms`. Formula: apjoms_m3 = platība × biezums_m; apjoms_ar_rezervi = apjoms_m3 × (1 + sablīvēšanās_rezerve); masa_t = apjoms_ar_rezervi × blīvums.
 
-Pirms rakstīšanas veikta izpēte, lai pārbaudītu, vai smiltij, grantij un šķembām ir sourced blīvuma skaitlis Latvijas tirgū. Rezultāts (precīzāks par uzdevumā pieņemto): **neviens no trim materiāliem nav tieši sourced no Latvijas piegādātāja lapas**, ne tikai grants un šķembas. Smiltij ir samērā šaurs starptautisks diapazons (1,5 līdz 1,75 t/m³), kas atkārtojas daudzos vispārīgos avotos, bet neviena Latvijas karjera vai mazumtirgotāja lapa neuzrāda blīvuma skaitli tieši, viņi pārdod pēc svara vai cenas par m³, nepublicējot pārrēķina koeficientu. Tāpēc smilts diapazons ir "šaurāks", ne "sourced Latvijā".
+Pirms rakstīšanas veikta izpēte, lai pārbaudītu, vai smiltij, grantij un šķembām ir sourced blīvuma skaitlis Latvijas tirgū. Pirmais izpētes gājiens secināja, ka neviens no trim materiāliem nav tieši sourced no Latvijas piegādātāja lapas. **Tas bija nepareizi lietotāja neatkarīgas pārbaudes rezultātā**: lietotājs pats atrada un pārbaudīja [dgr.lv/karjera-materialu-tirdznieciba/](https://dgr.lv/karjera-materialu-tirdznieciba/), Latvijas karjera materiālu tirgotāja lapu, kas tieši norāda "Dabīga smilts ar filtrācijas koeficentu 1,6 līdz 2,2 m/dnn, blīvums 1,5 līdz 1,56 g/cm3". Šis tika neatkarīgi apstiprināts ar tiešu WebFetch pirms izmaiņu veikšanas. Tātad smiltij IR reāls Latvijas avots, grantij un šķembām nav (šķembām ir tikai foruma diskusija, ne ražotāja lapa).
 
-Sourced/aplēstie primitīvi:
-- Smilts blīvums, 1,5 līdz 1,75 t/m³, vairāku vispārīgu inženierijas avotu konverģence, nav atrasta neviena LV piegādātāja lapa ar šo skaitli.
+Sourced/aplēstie primitīvi (koriģēts pēc lietotāja pārbaudes):
+- **Smilts blīvums, 1,5 līdz 1,56 t/m³, sourced tieši no [dgr.lv](https://dgr.lv/karjera-materialu-tirdznieciba/) (Latvijas karjera materiālu tirgotājs), noklusējums 1,53 t/m³ (diapazona viduspunkts).** Rādīts UI kā citēts fakts ar atsauci, ne kā aplēse, atšķirībā no grants un šķembām.
 - Grants blīvums, nav atrasts neviens avots ar konkrētu skaitli, tikai aplēse (1,4 līdz 1,7 t/m³), atzīmēts kā vismazāk pamatotais no trim.
-- Šķembu blīvums, atkarīgs no frakcijas: šķirotai frakcijai apmēram 1,35 līdz 1,45 t/m³, jauktai granulometrijai 1,65 līdz 1,75 t/m³, [building.lv](https://www.building.lv) praktiķu foruma diskusija, ne ražotāja datu lapa, bet tas ir vienīgais atrastais avots ar reālu Latvijas kontekstu.
+- Šķembu blīvums, atkarīgs no frakcijas: šķirotai frakcijai apmēram 1,35 līdz 1,45 t/m³, jauktai granulometrijai 1,65 līdz 1,75 t/m³, [building.lv](https://www.building.lv) praktiķu foruma diskusija, ne ražotāja datu lapa.
 - Sablīvēšanās rezerve, 10 līdz 20 procenti, nav atrasts Latvijai specifisks vai oficiāls avots, tikai starptautiska aplēse (krievu GOST/SNiP avoti, kas nav uzskatāmi par Latvijas avotu), tāpēc pielāgojams lauks ar redzamu atrunu.
 
-Visi trīs blīvuma lauki un sablīvēšanās procents ir tieši labojami UI, ar skaidru tekstu, ka tie ir aplēses, ne citēti fakti, konsekventi ar šī kalkulatoru kopuma vispārējo pieeju nesourced skaitļiem.
+UI un limitāciju teksts diferencē smilti (sourced, ar atsauci) no grants un šķembām (aplēse, ar redzamu atrunu), nevis pieskaita visus trīs vienādi kā sākotnējā versijā.
 
 

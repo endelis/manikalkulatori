@@ -1,19 +1,22 @@
 {
   "retrievedDate": "2026-09-05",
-  "note": "Neviena Latvijas piegādātāja lapa neuzrāda blīvuma skaitli tieši, karjeri un mazumtirgotāji pārdod pēc svara vai cenas par m3, bet nepublicē pārrēķina koeficientu. Zemāk dotās vērtības ir vispārīgas, starptautiski atkārtotas inženierijas aplēses, ne Latvijas piegādātāja citēts fakts, tāpēc katram materiālam tas ir pielāgojams lauks ar redzamu atrunu, nevis sourced konstante.",
+  "note": "Smilts blīvums ir tieši sourced no Latvijas piegādātāja lapas. Grants un šķembu blīvumam Latvijas piegādātāju lapas neuzrāda skaitli tieši, karjeri un mazumtirgotāji tos pārdod pēc svara vai cenas par m3, bet nepublicē pārrēķina koeficientu, tāpēc tiem izmantotas vispārīgas aplēses ar redzamu atrunu, ne sourced konstante.",
   "materials": {
     "smilts": {
       "label": "Smilts",
-      "densityTPerM3Default": 1.6,
+      "densityTPerM3Default": 1.53,
       "densityTPerM3Min": 1.5,
-      "densityTPerM3Max": 1.75,
-      "note": "Diapazons ir samērā šaurs vairākos vispārīgos avotos, bet neviens no tiem nav Latvijas piegādātāja lapa."
+      "densityTPerM3Max": 1.56,
+      "sourced": true,
+      "note": "Dabīga smilts, blīvums 1,5 līdz 1,56 g/cm3, tieši norādīts Latvijas karjera materiālu tirgotāja lapā.",
+      "source": "https://dgr.lv/karjera-materialu-tirdznieciba/"
     },
     "grants": {
       "label": "Grants",
       "densityTPerM3Default": 1.5,
       "densityTPerM3Min": 1.4,
       "densityTPerM3Max": 1.7,
+      "sourced": false,
       "note": "Nav atrasts neviens avots ar konkrētu skaitli, Latvijas piegādātāji (piemēram, SS.lv sludinājumi) pārdod pēc svara, bet nepublicē blīvuma koeficientu. Šī vērtība ir aplēse, ne citēts fakts."
     },
     "skembas": {
@@ -21,6 +24,7 @@
       "densityTPerM3Default": 1.4,
       "densityTPerM3Min": 1.35,
       "densityTPerM3Max": 1.75,
+      "sourced": false,
       "note": "Diapazons pēc frakcijas: šķirotām frakcijām (piemēram, 8/16, 16/32) apmēram 1,35 līdz 1,45 t/m3, jauktai granulometrijai (0/45, 0/56) apmēram 1,65 līdz 1,75 t/m3. Praktiķu ziņotas vērtības forumā, ne ražotāja datu lapa.",
       "source": "https://www.building.lv (forums, praktiķu diskusija)"
     }
