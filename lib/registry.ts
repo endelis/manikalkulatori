@@ -317,6 +317,18 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-05T20:21:35+03:00',
   },
   {
+    slug: 'grants-smilts-skembu-apjoms',
+    category: 'majoklis',
+    title: 'Grants, smilts un šķembu apjoma kalkulators',
+    h1: 'Cik grants, smilts vai šķembu nepieciešams?',
+    intro:
+      'Izvēlies materiālu, ievadi aizpildāmo platību un kārtas biezumu, uzzini nepieciešamo apjomu un masu.',
+    metaDescription:
+      'Aprēķini nepieciešamo grants, smilts vai šķembu apjomu un masu pēc platības, kārtas biezuma un materiāla blīvuma.',
+    keywords: ['grants kalkulators', 'smilts apjoma kalkulators', 'šķembu daudzuma kalkulators'],
+    contentUpdatedAt: '2026-09-05T21:20:00+03:00',
+  },
+  {
     slug: 'skriesanas-temps',
     category: 'sports',
     title: 'Skriešanas tempa kalkulators',

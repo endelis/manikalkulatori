@@ -70,4 +70,18 @@ Sourced primitīvi:
 - Rezerves procents, 5 līdz 20 procenti, [homeadvisor.com](https://www.homeadvisor.com/r/drywall-calculator). Nav atrasts Latvijai specifisks avots, tikai starptautiska žāvējamā kartona kalkulatoru konvencija, tāpēc pielāgojams lauks ar redzamu atrunu.
 - Loksnu orientācija (horizontāli vai vertikāli) apzināti atstāta ārpus modeļa, tā ietekmē šuvju skaitu un montāžas darbu, bet ne kopējo nepieciešamo platību.
 
+## 6. Grants, smilts un šķembu apjoma kalkulators
+
+Slug: `grants-smilts-skembu-apjoms`. Formula: apjoms_m3 = platība × biezums_m; apjoms_ar_rezervi = apjoms_m3 × (1 + sablīvēšanās_rezerve); masa_t = apjoms_ar_rezervi × blīvums.
+
+Pirms rakstīšanas veikta izpēte, lai pārbaudītu, vai smiltij, grantij un šķembām ir sourced blīvuma skaitlis Latvijas tirgū. Rezultāts (precīzāks par uzdevumā pieņemto): **neviens no trim materiāliem nav tieši sourced no Latvijas piegādātāja lapas**, ne tikai grants un šķembas. Smiltij ir samērā šaurs starptautisks diapazons (1,5 līdz 1,75 t/m³), kas atkārtojas daudzos vispārīgos avotos, bet neviena Latvijas karjera vai mazumtirgotāja lapa neuzrāda blīvuma skaitli tieši, viņi pārdod pēc svara vai cenas par m³, nepublicējot pārrēķina koeficientu. Tāpēc smilts diapazons ir "šaurāks", ne "sourced Latvijā".
+
+Sourced/aplēstie primitīvi:
+- Smilts blīvums, 1,5 līdz 1,75 t/m³, vairāku vispārīgu inženierijas avotu konverģence, nav atrasta neviena LV piegādātāja lapa ar šo skaitli.
+- Grants blīvums, nav atrasts neviens avots ar konkrētu skaitli, tikai aplēse (1,4 līdz 1,7 t/m³), atzīmēts kā vismazāk pamatotais no trim.
+- Šķembu blīvums, atkarīgs no frakcijas: šķirotai frakcijai apmēram 1,35 līdz 1,45 t/m³, jauktai granulometrijai 1,65 līdz 1,75 t/m³, [building.lv](https://www.building.lv) praktiķu foruma diskusija, ne ražotāja datu lapa, bet tas ir vienīgais atrastais avots ar reālu Latvijas kontekstu.
+- Sablīvēšanās rezerve, 10 līdz 20 procenti, nav atrasts Latvijai specifisks vai oficiāls avots, tikai starptautiska aplēse (krievu GOST/SNiP avoti, kas nav uzskatāmi par Latvijas avotu), tāpēc pielāgojams lauks ar redzamu atrunu.
+
+Visi trīs blīvuma lauki un sablīvēšanās procents ir tieši labojami UI, ar skaidru tekstu, ka tie ir aplēses, ne citēti fakti, konsekventi ar šī kalkulatoru kopuma vispārējo pieeju nesourced skaitļiem.
+
 

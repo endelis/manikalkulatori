@@ -312,6 +312,24 @@ const explanations: Record<string, React.ReactNode> = {
       </ul>
     </>
   ),
+  'grants-smilts-skembu-apjoms': (
+    <>
+      <p className="text-panel-muted">
+        Kalkulators reizina platību ar kārtas biezumu, lai iegūtu irdena materiāla apjomu kubikmetros, tam
+        pieskaita sablīvēšanās rezervi, tad reizina ar izvēlētā materiāla blīvumu, lai iegūtu pasūtāmo masu
+        tonnās.
+      </p>
+      <p className="text-panel-muted">
+        <strong>Piemērs ar noklusējuma vērtībām</strong> (10&nbsp;m² platība, 100&nbsp;mm biezums, smilts,
+        1,6&nbsp;t/m³, 15&nbsp;% sablīvēšanās rezerve):
+      </p>
+      <ul className="list-disc pl-5 text-panel-muted">
+        <li>Apjoms bez rezerves: 10 × 0,1 = <strong>1&nbsp;m³</strong></li>
+        <li>Apjoms ar rezervi: 1 × 1,15 = <strong>1,15&nbsp;m³</strong></li>
+        <li>Masa: 1,15 × 1,6 ≈ <strong>1,84&nbsp;t</strong></li>
+      </ul>
+    </>
+  ),
   'skriesanas-temps': (
     <p className="text-panel-muted">
       Kalkulators saskaita kopējo laiku minūtēs un dala to ar distanci, lai iegūtu tempu uz kilometru.
@@ -431,6 +449,23 @@ const limitationsContent: Record<string, React.ReactNode> = {
       <li>
         Rezerves procentu. Nav atrasts Latvijai specifisks avots, izmantota vispārpieņemta konvencija,
         tas ir pielāgojams lauks, nevis citēts fakts.
+      </li>
+    </ul>
+  ),
+  'grants-smilts-skembu-apjoms': (
+    <ul className="flex flex-col gap-2 text-panel-muted">
+      <li>
+        Materiāla blīvumu. Neviens pārbaudītais Latvijas piegādātājs nepublicē precīzu blīvuma skaitli,
+        dotās vērtības ir vispārīgas inženierijas aplēses, ne konkrēta piegādātāja citēts fakts, sk. Biežāk
+        uzdotos jautājumus.
+      </li>
+      <li>
+        Sablīvēšanās rezervi. Nav atrasts Latvijai specifisks vai oficiāls avots šim procentam, tikai
+        starptautiska aplēse, tas ir pielāgojams lauks.
+      </li>
+      <li>
+        Frakcijas izvēli. Kalkulators nešķiro materiāla frakcijas (piemēram, šķembu 8/16 pret 16/32), tikai
+        vienu blīvuma vērtību katram materiāla veidam, konkrētai frakcijai blīvums var atšķirties.
       </li>
     </ul>
   ),
@@ -675,6 +710,23 @@ const sourcesContent: Record<string, React.ReactNode> = {
           homeadvisor.com
         </a>
         , izgūts 2026. gada 5. septembrī.
+      </li>
+    </ul>
+  ),
+  'grants-smilts-skembu-apjoms': (
+    <ul className="flex flex-col gap-2 text-sm text-panel-muted">
+      <li>
+        Šķembu blīvums pēc frakcijas, šķirotai frakcijai apmēram 1,35 līdz 1,45&nbsp;t/m³, jauktai
+        granulometrijai apmēram 1,65 līdz 1,75&nbsp;t/m³, praktiķu diskusija{' '}
+        <a
+          href="https://www.building.lv"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          building.lv
+        </a>
+        , izgūts 2026. gada 5. septembrī. Šis ir foruma avots, ne ražotāja datu lapa.
       </li>
     </ul>
   ),
