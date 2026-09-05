@@ -60,3 +60,14 @@ Cross-link: mūrjavas režīms tekstā norāda uz `kiegelu-bloku-daudzums` kalku
 
 Kļūda, ko atklāja lietotāja neatkarīga pārbaude pēc pirmās versijas apstiprināšanas: pirmajā versijā `calculateJavasDaudzums` savu `wastePercent` parametru nodeva tieši `calculateKiegeluBlokuDaudzums` izsaukumam, kas nozīmē, ka pie jebkuras rezerves vērtības, kas nav 0%, gan sienas apjoms, gan no tā atvasinātais vienību skaits tika vienādi uzpumpēti pirms atņemšanas, nevis tikai gala rezultāts. Tā kā abi termini tika uzpumpēti proporcionāli, praktiskā ietekme uz aprēķinu bija tuvu pareizajai (rezultāts vienkārši mērogojās ar (1+rezerve) reizinātāju), bet konceptuāli tas sajauca divus dažādus "rezerves" jēdzienus, mūrniecības pirkšanas rezervi (lūzumi, apgriešana) ar javas zudumu rezervi (šļakatas, sajaukšanas zudumi). Labots, aprēķinot vienību skaitu un sienas apjomu vienmēr ar rezervi 0% (fiziski patiesais, uzbūvētajā sienā esošais daudzums), un piemērojot šī kalkulatora paša rezerves procentu tikai reizi, tieši iegūtajam javas apjomam. Jauns tests (`javas-apmetuma-daudzums.test.ts`) tagad tieši pārbauda, ka rezerves procents maina tikai gala javas apjomu, nevis ģeometrijā izmantoto vienību skaitu.
 
+## 5. Ģipškartona lokšņu daudzuma kalkulators
+
+Slug: `gipskartona-loksnu-daudzums`. Formula: loksnes_platība = platums × garums; nepieciešamās loksnes = ceil((platība × (1 + rezerve)) ÷ loksnes_platība). Vienkāršākais no visiem desmit kalkulatoriem, viena formula, viens sourced izmērs, bez atsevišķa materiāla veida izvēles kā 1., 3. un 4. kalkulatoram.
+
+Sourced primitīvi:
+- Loksnes izmērs 1200 reiz 2600 mm, apstiprināts vairākos neatkarīgos LV mazumtirgotājos un vairākos loksnu veidos (standarta, mitrumizturīgais, ugunsdrošais), [ksenukai.lv](https://www.ksenukai.lv/p/gipskartona-plaksne-knauf-2600-mm-x-1200-mm-x-12-5-mm/esux), [buvniecibas-abc.lv](https://buvniecibas-abc.lv/lv/veikals/buvmateriali/gipskartons-un-gipskartona-profili/standarta-gipskartons/knauf-gkb-125x1200x2600mm-standarta-gipskartons-60loksnespalete), [wolmarveikals.lv](https://wolmarveikals.lv/product/knauf-red-gkf-ugunsdrosa-plaksne-1200x2600-12-5mm/), izgūts 2026-09-05. 2000 un 3000 mm garumi arī tiek tirgoti, iekļauti kā papildu izvēles pogas.
+- Biezums (9,5 vai 12,5 mm) apstiprināts kā reāli tirgoti varianti, bet apzināti nav aprēķina ievade, jo neietekmē platību, tikai svaru un klasi.
+- Rezerves procents, 5 līdz 20 procenti, [homeadvisor.com](https://www.homeadvisor.com/r/drywall-calculator). Nav atrasts Latvijai specifisks avots, tikai starptautiska žāvējamā kartona kalkulatoru konvencija, tāpēc pielāgojams lauks ar redzamu atrunu.
+- Loksnu orientācija (horizontāli vai vertikāli) apzināti atstāta ārpus modeļa, tā ietekmē šuvju skaitu un montāžas darbu, bet ne kopējo nepieciešamo platību.
+
+

@@ -305,6 +305,18 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-05T20:04:57+03:00',
   },
   {
+    slug: 'gipskartona-loksnu-daudzums',
+    category: 'majoklis',
+    title: 'Ģipškartona lokšņu daudzuma kalkulators',
+    h1: 'Cik ģipškartona lokšņu nepieciešams?',
+    intro:
+      'Ievadi klājamo platību un loksnes izmēru, uzzini nepieciešamo ģipškartona lokšņu skaitu.',
+    metaDescription:
+      'Aprēķini nepieciešamo ģipškartona lokšņu skaitu pēc sienas vai griestu platības, loksnes izmēra un rezerves procenta.',
+    keywords: ['ģipškartona kalkulators', 'ģipškartona lokšņu skaits', 'cik ģipškartona vajag'],
+    contentUpdatedAt: '2026-09-05T20:19:00+03:00',
+  },
+  {
     slug: 'skriesanas-temps',
     category: 'sports',
     title: 'Skriešanas tempa kalkulators',

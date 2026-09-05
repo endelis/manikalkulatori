@@ -294,6 +294,24 @@ const explanations: Record<string, React.ReactNode> = {
       </ul>
     </>
   ),
+  'gipskartona-loksnu-daudzums': (
+    <>
+      <p className="text-panel-muted">
+        Kalkulators reizina loksnes platumu ar garumu, lai iegūtu vienas loksnes platību, tad klājamajai
+        platībai pieskaita rezerves procentu un dala ar loksnes platību, noapaļojot uz augšu līdz veselam
+        lokšņu skaitam.
+      </p>
+      <p className="text-panel-muted">
+        <strong>Piemērs ar noklusējuma vērtībām</strong> (20&nbsp;m² platība, loksne 1200 reiz
+        2600&nbsp;mm, 10&nbsp;% rezerve):
+      </p>
+      <ul className="list-disc pl-5 text-panel-muted">
+        <li>Vienas loksnes platība: 1,2 × 2,6 = <strong>3,12&nbsp;m²</strong></li>
+        <li>Ar rezervi: 20 × 1,1 = <strong>22&nbsp;m²</strong></li>
+        <li>Loksnes: 22 ÷ 3,12 ≈ <strong>8 loksnes</strong></li>
+      </ul>
+    </>
+  ),
   'skriesanas-temps': (
     <p className="text-panel-muted">
       Kalkulators saskaita kopējo laiku minūtēs un dala to ar distanci, lai iegūtu tempu uz kilometru.
@@ -397,6 +415,22 @@ const limitationsContent: Record<string, React.ReactNode> = {
       <li>
         Rezerves procentu abos režīmos. Nav atrasts stingrs avots konkrētam skaitlim, tas ir pielāgojams
         lauks, nevis citēts fakts.
+      </li>
+    </ul>
+  ),
+  'gipskartona-loksnu-daudzums': (
+    <ul className="flex flex-col gap-2 text-panel-muted">
+      <li>
+        Loksnu orientāciju un izkārtojumu. Kalkulators rēķina tikai kopējo platību, nevis to, kā loksnes
+        tiek liktas pret rāmi vai spārēm, sk. Biežāk uzdotos jautājumus.
+      </li>
+      <li>
+        Logu un durvju izgriezumus. Tie iekļaujas rezerves procentā, nevis tiek atņemti atsevišķi no
+        kopējās platības.
+      </li>
+      <li>
+        Rezerves procentu. Nav atrasts Latvijai specifisks avots, izmantota vispārpieņemta konvencija,
+        tas ir pielāgojams lauks, nevis citēts fakts.
       </li>
     </ul>
   ),
@@ -611,6 +645,34 @@ const sourcesContent: Record<string, React.ReactNode> = {
           className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
         >
           engineeringcivil.com
+        </a>
+        , izgūts 2026. gada 5. septembrī.
+      </li>
+    </ul>
+  ),
+  'gipskartona-loksnu-daudzums': (
+    <ul className="flex flex-col gap-2 text-sm text-panel-muted">
+      <li>
+        Ģipškartona loksnes izmērs 1200 reiz 2600&nbsp;mm,{' '}
+        <a
+          href="https://www.ksenukai.lv/p/gipskartona-plaksne-knauf-2600-mm-x-1200-mm-x-12-5-mm/esux"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          ksenukai.lv
+        </a>
+        , izgūts 2026. gada 5. septembrī.
+      </li>
+      <li>
+        Rezerves procenta konvencija,{' '}
+        <a
+          href="https://www.homeadvisor.com/r/drywall-calculator"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          homeadvisor.com
         </a>
         , izgūts 2026. gada 5. septembrī.
       </li>
