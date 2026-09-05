@@ -266,7 +266,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini nepieciešamo jumta seguma daudzumu, dakstiņus, metāla loksnes vai bitumena šindeļus, pēc pamatnes platības un slīpuma leņķa.',
     keywords: ['jumta seguma kalkulators', 'jumta dakstiņu skaits', 'jumta platības aprēķins'],
-    contentUpdatedAt: '2026-09-05T16:09:58+03:00',
+    contentUpdatedAt: '2026-09-05T23:35:49+03:00',
   },
   {
     slug: 'tapetes-daudzums',
@@ -278,7 +278,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini nepieciešamo tapešu ruļļu skaitu pēc sienu platības, ruļļa izmēra un raksta atkārtojuma veida.',
     keywords: ['tapetes daudzuma kalkulators', 'tapešu ruļļu skaits', 'cik tapešu vajag'],
-    contentUpdatedAt: '2026-09-05T16:55:56+03:00',
+    contentUpdatedAt: '2026-09-05T23:35:49+03:00',
   },
   {
     slug: 'kiegelu-bloku-daudzums',
@@ -290,7 +290,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini nepieciešamo ķieģeļu vai gāzbetona bloku skaitu pēc sienas platības, vienības izmēriem un šuves biezuma.',
     keywords: ['ķieģeļu daudzuma kalkulators', 'bloku skaita aprēķins', 'cik ķieģeļu vajag'],
-    contentUpdatedAt: '2026-09-05T16:55:56+03:00',
+    contentUpdatedAt: '2026-09-05T23:35:49+03:00',
   },
   {
     slug: 'javas-apmetuma-daudzums',
@@ -302,7 +302,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini nepieciešamo apmetuma vai mūrjavas maisu skaitu pēc sienas platības, biezuma vai vienību izmēriem un šuves biezuma.',
     keywords: ['javas kalkulators', 'apmetuma daudzuma kalkulators', 'cik javas vajag', 'mūrjavas apjoms'],
-    contentUpdatedAt: '2026-09-05T23:30:10+03:00',
+    contentUpdatedAt: '2026-09-05T23:35:49+03:00',
   },
   {
     slug: 'gipskartona-loksnu-daudzums',
@@ -314,7 +314,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini nepieciešamo ģipškartona lokšņu skaitu pēc sienas vai griestu platības, loksnes izmēra un rezerves procenta.',
     keywords: ['ģipškartona kalkulators', 'ģipškartona lokšņu skaits', 'cik ģipškartona vajag'],
-    contentUpdatedAt: '2026-09-05T20:21:35+03:00',
+    contentUpdatedAt: '2026-09-05T23:35:49+03:00',
   },
   {
     slug: 'grants-smilts-skembu-apjoms',
@@ -326,7 +326,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini nepieciešamo grants, smilts vai šķembu apjomu un masu pēc platības, kārtas biezuma un materiāla blīvuma.',
     keywords: ['grants kalkulators', 'smilts apjoma kalkulators', 'šķembu daudzuma kalkulators'],
-    contentUpdatedAt: '2026-09-05T21:36:08+03:00',
+    contentUpdatedAt: '2026-09-05T23:35:49+03:00',
   },
   {
     slug: 'terases-delu-daudzums',
@@ -338,7 +338,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini nepieciešamo terases dēļu skaitu pēc terases platības, dēļa platuma, garuma un šuves starp dēļiem.',
     keywords: ['terases dēļu kalkulators', 'terases seguma aprēķins', 'cik terases dēļu vajag'],
-    contentUpdatedAt: '2026-09-05T21:45:44+03:00',
+    contentUpdatedAt: '2026-09-05T23:35:49+03:00',
   },
   {
     slug: 'laminata-vinila-daudzums',
@@ -350,7 +350,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini nepieciešamo laminātā vai vinila grīdas seguma iepakojumu skaitu pēc grīdas platības un viena iepakojuma seguma.',
     keywords: ['laminātā kalkulators', 'vinila grīdas kalkulators', 'grīdas seguma daudzums'],
-    contentUpdatedAt: '2026-09-05T22:26:32+03:00',
+    contentUpdatedAt: '2026-09-05T23:35:49+03:00',
   },
   {
     slug: 'pasizlidzinosas-javas-daudzums',
@@ -362,7 +362,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini nepieciešamo pašizlīdzinošās grīdas javas maisu skaitu pēc platības, kārtas biezuma un ražotāja norādītā patēriņa.',
     keywords: ['pašizlīdzinošā java', 'grīdas izlīdzināšanas kalkulators', 'cik javas vajag grīdai'],
-    contentUpdatedAt: '2026-09-05T22:38:40+03:00',
+    contentUpdatedAt: '2026-09-05T23:35:49+03:00',
   },
   {
     slug: 'zoga-materiala-daudzums',
@@ -374,7 +374,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini nepieciešamo žoga statņu un dēlīšu skaitu pēc žoga garuma, statņu atstarpes, dēlīša platuma un spraugas.',
     keywords: ['žoga kalkulators', 'žoga materiāla daudzums', 'žoga statņu skaits'],
-    contentUpdatedAt: '2026-09-05T23:30:10+03:00',
+    contentUpdatedAt: '2026-09-05T23:35:49+03:00',
   },
   {
     slug: 'skriesanas-temps',
