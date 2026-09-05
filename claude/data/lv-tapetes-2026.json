@@ -1,0 +1,23 @@
+{
+  "retrievedDate": "2026-09-05",
+  "rollSize": {
+    "note": "0.53 x 10m ir Latvijas mazumtirdzniecībā apzīmētais standarta izmērs (mārketinga noapaļojums), ES tehniskā specifikācija (piemēram, EN 12683) bieži uzrāda 10.05m faktisko garumu. Kalkulatorā izmantots noapaļotais LV mazumtirdzniecības izmērs kā noklusējums, jo tas ir tas, ko lietotājs redzēs uz iepakojuma.",
+    "widthM": 0.53,
+    "lengthM": 10,
+    "euTechnicalLengthM": 10.05,
+    "source": "https://www.tapetenshop.lv/en/collections/0-53-x-10m-wallpaper",
+    "corroboratingSources": [
+      "https://online.depo.lv/product/11243",
+      "https://online.depo.lv/product/11105",
+      "https://www.kursi.lv/lv/vinila-tapetes-rullis-0-53x10-m"
+    ]
+  },
+  "waste": {
+    "plain": { "percentMin": 10, "percentMax": 15, "percentDefault": 12 },
+    "patternSmallRepeat": { "percentDefault": 10, "note": "0 līdz 6 collu raksta atkārtojums" },
+    "patternLargeStraightMatch": { "percentDefault": 15, "note": "7 līdz 18 collu raksta atkārtojums" },
+    "patternDropMatch": { "percentDefault": 25, "note": "19 līdz 25 collu raksta atkārtojums, diagonāls, visdārgākais" },
+    "source": "https://deborainteriors.com/tools/wallpaper-calculator/",
+    "patternSource": "https://renocalchub.com/blog/interior/wallpaper-pattern-repeat.html"
+  }
+}

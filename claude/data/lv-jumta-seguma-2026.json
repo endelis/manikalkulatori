@@ -1,0 +1,40 @@
+{
+  "retrievedDate": "2026-09-05",
+  "formula": {
+    "note": "jumta_platība = pamatnes_platība ÷ cos(slīpuma_leņķis), standard roof pitch to slope area conversion.",
+    "source": "https://www.omnicalculator.com/construction/roofing"
+  },
+  "dakstini": {
+    "note": "Betona un keramikas dakstiņu segums, gabali uz m², atkarīgs no jumta slīpuma un konkrētā dakstiņu modeļa. Precīza tabula pa slīpuma pakāpēm nebija izgūstama no avota PDF šajā pētījuma gājienā (attēls, ne teksts), tāpēc izmantots avotā minētais kopējais diapazons ar viduspunktu kā noklusējumu.",
+    "coveragePerM2Min": 8.9,
+    "coveragePerM2Max": 12.8,
+    "coveragePerM2Default": 10.5,
+    "source": "https://orberg.lv/wp-content/uploads/2025/07/Benders-betona-dakstini-montazas-instrukcija-2025-ORBERG.pdf"
+  },
+  "metalaLoksnes": {
+    "note": "T20 trapecveida profila jumta loksnes, efektīvais segtais platums un maksimālais garums.",
+    "effectiveWidthM": 1.1,
+    "maxLengthM": 12,
+    "defaultLengthM": 6,
+    "source": "https://www.ruukki.com/lva/jumti/jumta-materiali/jumta-loksnes/jumta-loksnes-produkti/trapetsprofiil-t20-24w-1100"
+  },
+  "bitumenaSindeli": {
+    "note": "Iepakojuma segums atšķiras pa ražotājiem un produktiem, diapazons no vispārīga LV mazumtirdzniecības pārskata, apstiprināts ar konkrētu produktu (IKO Superglass 3TAB, 2 m² iepakojums).",
+    "coveragePerPackageM2Min": 2,
+    "coveragePerPackageM2Max": 3.1,
+    "coveragePerPackageM2Default": 2.5,
+    "source": "https://www.kursi.lv/lv/buvmateriali/jumta-segumi-un-jumta-piederumi/bitumena-sindeli",
+    "spotCheckSource": "https://www.kursi.lv/lv/bitumena-sindeli-iko-superglass-3tab-52-dual-black-iepakojums-2-m2",
+    "spotCheckNote": "kursi.lv blocked automated fetching (403) directly, confirmed via a search result citing this exact product page instead."
+  },
+  "waste": {
+    "note": "Nav atrasts drošs avots konkrētam procentam, tikai vispārīga nozares konvencija. Rādīts kā pielāgojams lauks, nevis citēts fakts.",
+    "percentMin": 10,
+    "percentMax": 15,
+    "percentDefault": 12,
+    "source": "https://roofr.com/blog/how-to-calculate-roof-waste-factor"
+  },
+  "outOfScope": {
+    "note": "Kores un citu piederumu (kores dakstiņi, vēdināšanas elementi, cirvju plēksnes) daudzums nav modelēts, jo nav atrasts vispārīgs aprēķina noteikums, iezīmēts kā nākamais solis, nevis izgudrota konstante."
+  }
+}

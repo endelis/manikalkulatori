@@ -1,0 +1,38 @@
+{
+  "retrievedDate": "2026-09-05",
+  "note": "Smilts blīvums ir tieši sourced no Latvijas piegādātāja lapas. Grants un šķembu blīvumam Latvijas piegādātāju lapas neuzrāda skaitli tieši, karjeri un mazumtirgotāji tos pārdod pēc svara vai cenas par m3, bet nepublicē pārrēķina koeficientu, tāpēc tiem izmantotas vispārīgas aplēses ar redzamu atrunu, ne sourced konstante.",
+  "materials": {
+    "smilts": {
+      "label": "Smilts",
+      "densityTPerM3Default": 1.53,
+      "densityTPerM3Min": 1.5,
+      "densityTPerM3Max": 1.56,
+      "sourced": true,
+      "note": "Dabīga smilts, blīvums 1,5 līdz 1,56 g/cm3, tieši norādīts Latvijas karjera materiālu tirgotāja lapā.",
+      "source": "https://dgr.lv/karjera-materialu-tirdznieciba/"
+    },
+    "grants": {
+      "label": "Grants",
+      "densityTPerM3Default": 1.5,
+      "densityTPerM3Min": 1.4,
+      "densityTPerM3Max": 1.7,
+      "sourced": false,
+      "note": "Nav atrasts neviens avots ar konkrētu skaitli, Latvijas piegādātāji (piemēram, SS.lv sludinājumi) pārdod pēc svara, bet nepublicē blīvuma koeficientu. Šī vērtība ir aplēse, ne citēts fakts."
+    },
+    "skembas": {
+      "label": "Šķembas",
+      "densityTPerM3Default": 1.4,
+      "densityTPerM3Min": 1.35,
+      "densityTPerM3Max": 1.75,
+      "sourced": false,
+      "note": "Diapazons pēc frakcijas: šķirotām frakcijām (piemēram, 8/16, 16/32) apmēram 1,35 līdz 1,45 t/m3, jauktai granulometrijai (0/45, 0/56) apmēram 1,65 līdz 1,75 t/m3. Praktiķu ziņotas vērtības forumā, ne ražotāja datu lapa.",
+      "source": "https://www.building.lv (forums, praktiķu diskusija)"
+    }
+  },
+  "compaction": {
+    "note": "Nav atrasts Latvijai specifisks vai oficiāls avots, tikai starptautiska aplēse par to, ka irdena piegādātā materiāla apjoms sablīvējoties samazinās, tāpēc jāpasūta vairāk nekā gala kārtas apjoms. Pielāgojams lauks, nevis citēts fakts.",
+    "percentMin": 10,
+    "percentMax": 20,
+    "percentDefault": 15
+  }
+}

@@ -17,6 +17,16 @@ import { MalkasApjomaCalculator } from './MalkasApjomaCalculator';
 import { KrasasDaudzumaCalculator } from './KrasasDaudzumaCalculator';
 import { FlizuDaudzumaCalculator } from './FlizuDaudzumaCalculator';
 import { BetonaApjomaCalculator } from './BetonaApjomaCalculator';
+import { JumtaSegumaDaudzumaCalculator } from './JumtaSegumaDaudzumaCalculator';
+import { TapetesDaudzumaCalculator } from './TapetesDaudzumaCalculator';
+import { KiegeluBlokuDaudzumaCalculator } from './KiegeluBlokuDaudzumaCalculator';
+import { JavasApmetumaDaudzumaCalculator } from './JavasApmetumaDaudzumaCalculator';
+import { GipskartonaLoksnuDaudzumaCalculator } from './GipskartonaLoksnuDaudzumaCalculator';
+import { GrantsSmiltsSkembuApjomaCalculator } from './GrantsSmiltsSkembuApjomaCalculator';
+import { TerasesDeluDaudzumaCalculator } from './TerasesDeluDaudzumaCalculator';
+import { LaminataVinilaDaudzumaCalculator } from './LaminataVinilaDaudzumaCalculator';
+import { PasizlidzinosasJavasDaudzumaCalculator } from './PasizlidzinosasJavasDaudzumaCalculator';
+import { ZogaMateriaLaDaudzumaCalculator } from './ZogaMateriaLaDaudzumaCalculator';
 import { SkriesanasTempaCalculator } from './SkriesanasTempaCalculator';
 import { TriatlonaPlanotajaCalculator } from './TriatlonaPlanotajaCalculator';
 import { FtpZonuCalculator } from './FtpZonuCalculator';
@@ -50,6 +60,16 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'krasas-daudzums': KrasasDaudzumaCalculator,
   'flizu-daudzums': FlizuDaudzumaCalculator,
   'betona-apjoms': BetonaApjomaCalculator,
+  'jumta-seguma-daudzums': JumtaSegumaDaudzumaCalculator,
+  'tapetes-daudzums': TapetesDaudzumaCalculator,
+  'kiegelu-bloku-daudzums': KiegeluBlokuDaudzumaCalculator,
+  'javas-apmetuma-daudzums': JavasApmetumaDaudzumaCalculator,
+  'gipskartona-loksnu-daudzums': GipskartonaLoksnuDaudzumaCalculator,
+  'grants-smilts-skembu-apjoms': GrantsSmiltsSkembuApjomaCalculator,
+  'terases-delu-daudzums': TerasesDeluDaudzumaCalculator,
+  'laminata-vinila-daudzums': LaminataVinilaDaudzumaCalculator,
+  'pasizlidzinosas-javas-daudzums': PasizlidzinosasJavasDaudzumaCalculator,
+  'zoga-materiala-daudzums': ZogaMateriaLaDaudzumaCalculator,
   'skriesanas-temps': SkriesanasTempaCalculator,
   'triatlona-planotajs': TriatlonaPlanotajaCalculator,
   'ftp-zonas': FtpZonuCalculator,
