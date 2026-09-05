@@ -302,7 +302,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini nepieciešamo apmetuma vai mūrjavas maisu skaitu pēc sienas platības, biezuma vai vienību izmēriem un šuves biezuma.',
     keywords: ['javas kalkulators', 'apmetuma daudzuma kalkulators', 'cik javas vajag', 'mūrjavas apjoms'],
-    contentUpdatedAt: '2026-09-05T20:04:57+03:00',
+    contentUpdatedAt: '2026-09-05T23:30:10+03:00',
   },
   {
     slug: 'gipskartona-loksnu-daudzums',
@@ -374,7 +374,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini nepieciešamo žoga statņu un dēlīšu skaitu pēc žoga garuma, statņu atstarpes, dēlīša platuma un spraugas.',
     keywords: ['žoga kalkulators', 'žoga materiāla daudzums', 'žoga statņu skaits'],
-    contentUpdatedAt: '2026-09-05T22:52:22+03:00',
+    contentUpdatedAt: '2026-09-05T23:30:10+03:00',
   },
   {
     slug: 'skriesanas-temps',
