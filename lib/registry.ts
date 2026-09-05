@@ -350,7 +350,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini nepieciešamo laminātā vai vinila grīdas seguma iepakojumu skaitu pēc grīdas platības un viena iepakojuma seguma.',
     keywords: ['laminātā kalkulators', 'vinila grīdas kalkulators', 'grīdas seguma daudzums'],
-    contentUpdatedAt: '2026-09-05T22:20:00+03:00',
+    contentUpdatedAt: '2026-09-05T22:26:32+03:00',
   },
   {
     slug: 'skriesanas-temps',
