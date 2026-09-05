@@ -266,7 +266,19 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini nepieciešamo jumta seguma daudzumu, dakstiņus, metāla loksnes vai bitumena šindeļus, pēc pamatnes platības un slīpuma leņķa.',
     keywords: ['jumta seguma kalkulators', 'jumta dakstiņu skaits', 'jumta platības aprēķins'],
-    contentUpdatedAt: '2026-09-05T16:07:00+03:00',
+    contentUpdatedAt: '2026-09-05T16:09:58+03:00',
+  },
+  {
+    slug: 'tapetes-daudzums',
+    category: 'majoklis',
+    title: 'Tapetes daudzuma kalkulators',
+    h1: 'Cik tapešu ruļļu nepieciešams?',
+    intro:
+      'Ievadi sienu platību, ruļļa izmēru un raksta veidu, uzzini nepieciešamo tapešu ruļļu skaitu.',
+    metaDescription:
+      'Aprēķini nepieciešamo tapešu ruļļu skaitu pēc sienu platības, ruļļa izmēra un raksta atkārtojuma veida.',
+    keywords: ['tapetes daudzuma kalkulators', 'tapešu ruļļu skaits', 'cik tapešu vajag'],
+    contentUpdatedAt: '2026-09-05T16:20:00+03:00',
   },
   {
     slug: 'skriesanas-temps',

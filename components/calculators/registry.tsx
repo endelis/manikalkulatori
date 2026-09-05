@@ -18,6 +18,7 @@ import { KrasasDaudzumaCalculator } from './KrasasDaudzumaCalculator';
 import { FlizuDaudzumaCalculator } from './FlizuDaudzumaCalculator';
 import { BetonaApjomaCalculator } from './BetonaApjomaCalculator';
 import { JumtaSegumaDaudzumaCalculator } from './JumtaSegumaDaudzumaCalculator';
+import { TapetesDaudzumaCalculator } from './TapetesDaudzumaCalculator';
 import { SkriesanasTempaCalculator } from './SkriesanasTempaCalculator';
 import { TriatlonaPlanotajaCalculator } from './TriatlonaPlanotajaCalculator';
 import { FtpZonuCalculator } from './FtpZonuCalculator';
@@ -52,6 +53,7 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'flizu-daudzums': FlizuDaudzumaCalculator,
   'betona-apjoms': BetonaApjomaCalculator,
   'jumta-seguma-daudzums': JumtaSegumaDaudzumaCalculator,
+  'tapetes-daudzums': TapetesDaudzumaCalculator,
   'skriesanas-temps': SkriesanasTempaCalculator,
   'triatlona-planotajs': TriatlonaPlanotajaCalculator,
   'ftp-zonas': FtpZonuCalculator,

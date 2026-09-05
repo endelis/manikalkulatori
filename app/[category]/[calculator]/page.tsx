@@ -228,6 +228,24 @@ const explanations: Record<string, React.ReactNode> = {
       </ul>
     </>
   ),
+  'tapetes-daudzums': (
+    <>
+      <p className="text-panel-muted">
+        Kalkulators reizina ruļļa platumu ar garumu, lai iegūtu viena ruļļa platību, tad sienu platībai
+        pieskaita rezerves procentu un dala ar viena ruļļa platību, noapaļojot uz augšu līdz veselam ruļļu
+        skaitam.
+      </p>
+      <p className="text-panel-muted">
+        <strong>Piemērs ar noklusējuma vērtībām</strong> (30&nbsp;m² sienu platība, ruļļa izmērs 0,53 reiz
+        10&nbsp;m, 12&nbsp;% rezerve):
+      </p>
+      <ul className="list-disc pl-5 text-panel-muted">
+        <li>Viena ruļļa platība: 0,53 × 10 = <strong>5,3&nbsp;m²</strong></li>
+        <li>Ar rezervi: 30 × 1,12 = <strong>33,6&nbsp;m²</strong></li>
+        <li>Ruļļi: 33,6 ÷ 5,3 ≈ <strong>7 ruļļi</strong></li>
+      </ul>
+    </>
+  ),
   'skriesanas-temps': (
     <p className="text-panel-muted">
       Kalkulators saskaita kopējo laiku minūtēs un dala to ar distanci, lai iegūtu tempu uz kilometru.
@@ -279,6 +297,24 @@ const limitationsContent: Record<string, React.ReactNode> = {
         formai, tāpēc reālais nepieciešamais skaits var atšķirties.
       </li>
       <li>Kores un citu piederumu daudzumu. Šis kalkulators tos nerēķina, sk. Biežāk uzdotos jautājumus.</li>
+    </ul>
+  ),
+  'tapetes-daudzums': (
+    <ul className="flex flex-col gap-2 text-panel-muted">
+      <li>
+        Logus un durvis. Kalkulators rēķina no ievadītās kopējās sienu platības, tas pats par sevi
+        neatņem logu vai durvju platību, sk. Biežāk uzdotos jautājumus.
+      </li>
+      <li>
+        Raksta saskaņošanas precizitāti. Rezerves procenti pēc raksta veida ir vispārīgas nozares
+        vadlīnijas, konkrētam tapetes modelim un raksta atkārtojuma izmēram var būt nepieciešams vairāk
+        vai mazāk.
+      </li>
+      <li>
+        Ruļļa garuma atšķirību. Latvijas mazumtirdzniecībā ierastais 10 metru garums un Eiropas tehniskajā
+        specifikācijā minētais 10,05 metru garums nav identiski, atšķirība ir neliela, bet precīzu skaitli
+        vienmēr vari pārbaudīt uz iepakojuma.
+      </li>
     </ul>
   ),
 };
@@ -348,6 +384,46 @@ const sourcesContent: Record<string, React.ReactNode> = {
           className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
         >
           roofr.com
+        </a>
+        , izgūts 2026. gada 5. septembrī.
+      </li>
+    </ul>
+  ),
+  'tapetes-daudzums': (
+    <ul className="flex flex-col gap-2 text-sm text-panel-muted">
+      <li>
+        Latvijas mazumtirdzniecības ruļļa izmērs 0,53 reiz 10 metri,{' '}
+        <a
+          href="https://www.tapetenshop.lv/en/collections/0-53-x-10m-wallpaper"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          tapetenshop.lv
+        </a>
+        , izgūts 2026. gada 5. septembrī.
+      </li>
+      <li>
+        Rezerves procents bez raksta,{' '}
+        <a
+          href="https://deborainteriors.com/tools/wallpaper-calculator/"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          deborainteriors.com
+        </a>
+        , izgūts 2026. gada 5. septembrī.
+      </li>
+      <li>
+        Rezerves procenti pēc raksta atkārtojuma veida,{' '}
+        <a
+          href="https://renocalchub.com/blog/interior/wallpaper-pattern-repeat.html"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          renocalchub.com
         </a>
         , izgūts 2026. gada 5. septembrī.
       </li>

@@ -19,3 +19,15 @@ Sourced primitīvi:
 Piezīme: pamanīta un labota reāla peldošā punkta problēma calculateJumtaSeguma iekšienē (skaidrs, apaļš ievades skaitlis, piemēram, 100 m² × 1,1 rezerve × 10 gab/m², dažkārt matemātiski precīzi deva veselu skaitu, bet peldošā punkta troksnis to pabīdīja tikko pāri robežai, un Math.ceil noapaļoja par vienu vienību par daudz). Labots ar nelielu epsilona korekciju pirms Math.ceil (ceilWhole palīgfunkcija), pietiekami maza, lai neietekmētu īstus, ne veselus rezultātus, bet novērš šo konkrēto artefaktu.
 
 Reģistrēts CalculatorShell paplašinājums (limitations un sources mezgli), sk. iepriekš šī dokumenta sākumā.
+
+## 2. Tapetes daudzuma kalkulators
+
+Slug: `tapetes-daudzums`. Formula: ruļļa_platība = ruļļa_platums × ruļļa_garums; nepieciešamie ruļļi = ceil((sienu_platība × (1 + rezerve)) ÷ ruļļa_platība).
+
+Sourced primitīvi:
+- Ruļļa izmērs 0,53 reiz 10 metri, Latvijas mazumtirdzniecības konvencija, apstiprināts vairākos LV veikalos (tapetenshop.lv skaidri raksta "standarta izmēra tapešu rullis", depo.lv un kursi.lv produktu saraksti). ES tehniskā specifikācija bieži uzrāda 10,05 m, atšķirība atzīmēta kā limitācija un FAQ, nevis klusi ignorēta.
+- Rezerves procents bez raksta, 10 līdz 15 procenti, [deborainteriors.com](https://deborainteriors.com/tools/wallpaper-calculator/), izgūts 2026-09-05.
+- Rezerves procenti pēc raksta atkārtojuma veida, [renocalchub.com](https://renocalchub.com/blog/interior/wallpaper-pattern-repeat.html): neliels raksts (0 līdz 6 collas) +10%, liels taisns raksts (7 līdz 18 collas) +15%, nobīdes raksts (19 līdz 25 collas) +25%. Avots dod konkrētus skaitļus katrai kategorijai, ne diapazonu kā uzdevumā pieņemts, izmantoti avotā tieši dotie skaitļi.
+
+Raksta veida izvēle UI ir ērtuma funkcija, ne aprēķina parametrs: izvēloties raksta veidu, rezerves procenta lauks automātiski piedāvā sourced vērtību, bet paliek tieši pielāgojams, tāpat kā citur šajā kalkulatoru saimē.
+
