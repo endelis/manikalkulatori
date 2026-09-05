@@ -353,6 +353,18 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-05T22:26:32+03:00',
   },
   {
+    slug: 'pasizlidzinosas-javas-daudzums',
+    category: 'majoklis',
+    title: 'Pašizlīdzinošās javas daudzuma kalkulators',
+    h1: 'Cik pašizlīdzinošās javas nepieciešams?',
+    intro:
+      'Izvēlies javas veidu, ievadi grīdas platību un kārtas biezumu, uzzini nepieciešamo maisu skaitu.',
+    metaDescription:
+      'Aprēķini nepieciešamo pašizlīdzinošās grīdas javas maisu skaitu pēc platības, kārtas biezuma un ražotāja norādītā patēriņa.',
+    keywords: ['pašizlīdzinošā java', 'grīdas izlīdzināšanas kalkulators', 'cik javas vajag grīdai'],
+    contentUpdatedAt: '2026-09-05T22:35:00+03:00',
+  },
+  {
     slug: 'skriesanas-temps',
     category: 'sports',
     title: 'Skriešanas tempa kalkulators',

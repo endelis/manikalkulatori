@@ -364,6 +364,24 @@ const explanations: Record<string, React.ReactNode> = {
       </ul>
     </>
   ),
+  'pasizlidzinosas-javas-daudzums': (
+    <>
+      <p className="text-panel-muted">
+        Kalkulators grīdas platībai pieskaita rezerves procentu, tad reizina ar kārtas biezumu un izvēlētās
+        javas patēriņa likmi, lai iegūtu nepieciešamo sausā maisījuma daudzumu kilogramos, tad dala ar maisa
+        svaru un noapaļo uz augšu.
+      </p>
+      <p className="text-panel-muted">
+        <strong>Piemērs ar noklusējuma vērtībām</strong> (15&nbsp;m² grīda, 5&nbsp;mm kārta, Ceresit CN 69,
+        1,5&nbsp;kg/m²/mm, 5&nbsp;% rezerve):
+      </p>
+      <ul className="list-disc pl-5 text-panel-muted">
+        <li>Platība ar rezervi: 15 × 1,05 = <strong>15,75&nbsp;m²</strong></li>
+        <li>Daudzums: 15,75 × 5 × 1,5 ≈ <strong>118,13&nbsp;kg</strong></li>
+        <li>Maisi: 118,13 ÷ 25 ≈ <strong>5 maisi</strong></li>
+      </ul>
+    </>
+  ),
   'skriesanas-temps': (
     <p className="text-panel-muted">
       Kalkulators saskaita kopējo laiku minūtēs un dala to ar distanci, lai iegūtu tempu uz kilometru.
@@ -537,6 +555,22 @@ const limitationsContent: Record<string, React.ReactNode> = {
       <li>
         Sarežģītu izkārtojumu. Rezerves procents ir ražotāja vadlīnija vienkāršam izkārtojumam, diagonālam
         vai rakstainam izkārtojumam (piemēram, zvaigžņu rakstam) reālā rezerve var būt ievērojami lielāka.
+      </li>
+    </ul>
+  ),
+  'pasizlidzinosas-javas-daudzums': (
+    <ul className="flex flex-col gap-2 text-panel-muted">
+      <li>
+        Biezuma diapazonu. Ražotāja patēriņa skaitlis attiecas tikai uz datu lapā norādīto biezuma
+        diapazonu katrai javai, ārpus tā reālais patēriņš var atšķirties, sk. Biežāk uzdotos jautājumus.
+      </li>
+      <li>
+        Rezerves procentu. Nevienā pārbaudītajā ražotāja datu lapā tas nav minēts šim materiālam, tas ir
+        vispārīga būvniecības konvencija, ne citēts fakts.
+      </li>
+      <li>
+        Pamatnes sagatavošanu. Kalkulators nerēķina gruntējuma patēriņu vai pamatnes sagatavošanas
+        materiālus, tikai pašu izlīdzinošo javu.
       </li>
     </ul>
   ),
@@ -897,6 +931,36 @@ const sourcesContent: Record<string, React.ReactNode> = {
           className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
         >
           egger.com
+        </a>
+        , izgūts 2026. gada 5. septembrī.
+      </li>
+    </ul>
+  ),
+  'pasizlidzinosas-javas-daudzums': (
+    <ul className="flex flex-col gap-2 text-sm text-panel-muted">
+      <li>
+        Ceresit CN 69 Nivel Extra, patēriņš 1,5&nbsp;kg/m²/mm, kārta 1 līdz 15&nbsp;mm, ražotāja tehnisko
+        datu lapa,{' '}
+        <a
+          href="https://dm.henkel-dam.com/is/content/henkel/lt-ceresit-cn69-savaime-issilyginantis-misinys-1-15mm-25kg-tds-lt"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          henkel-dam.com
+        </a>
+        , izgūts 2026. gada 5. septembrī.
+      </li>
+      <li>
+        Ceresit CN 76 Extrahart, patēriņš 2,0&nbsp;kg/m²/mm, kārta 4 līdz 50&nbsp;mm, ražotāja tehnisko datu
+        lapa,{' '}
+        <a
+          href="https://dm.henkel-dam.com/is/content/henkel/tds-lv-ceresit-cn76-pasizlidzinosa-java-25kg"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          henkel-dam.com
         </a>
         , izgūts 2026. gada 5. septembrī.
       </li>

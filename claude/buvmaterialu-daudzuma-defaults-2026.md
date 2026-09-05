@@ -105,5 +105,19 @@ Sourced primitīvi:
 - Rezerves procents, EGGER instalācijas vadlīnijas: 10% standarta gadījumā, līdz 15% nepieredzējušiem uzstādītājiem, tas ir ražotāja avots, ne tikai vispārīga konvencija. Sekundārs, mazāk uzticams avots min līdz 30% rakstainam izkārtojumam, atzīmēts limitācijās, bet nav izmantots kā primārais skaitlis.
 - Pamatne zem grīdas seguma apzināti atstāta ārpus modeļa, arī EGGER pats to rēķina atsevišķi no seguma iepakojuma.
 
+## 9. Pašizlīdzinošās javas daudzuma kalkulators
+
+Slug: `pasizlidzinosas-javas-daudzums`. Formula ir identiska 4. kalkulatora apmetuma režīmam (platība × biezums × likme, tad dala ar maisa svaru), tāpēc kods tieši importē un atkārtoti izmanto `calculateApmetumaDaudzums` no `javas-apmetuma-daudzums.ts`, nevis pārraksta to pašu formulu no jauna.
+
+Šī bija tā kalkulatora batch daļa, kur pirms rakstīšanas jau bija zināms, ka sourcing būs tīrs (divi oficiāli Henkel/Ceresit TDS skaitļi), un izpēte to apstiprināja, bez pārsteigumiem:
+
+Sourced primitīvi (visi trīs tieši no Henkel/Ceresit oficiālajām tehnisko datu lapām, PDF izlasīts tieši, ne meklēšanas fragmenti):
+- Ceresit CN 69 Nivel Extra (plāna finiša java), 1 līdz 15 mm, patēriņš 1,5 kg/m²/mm, maiss 25 kg, [henkel-dam.com (LT TDS)](https://dm.henkel-dam.com/is/content/henkel/lt-ceresit-cn69-savaime-issilyginantis-misinys-1-15mm-25kg-tds-lt), izgūts 2026-09-05.
+- Ceresit CN 76 Extrahart (bieza izlīdzinošā java), 4 līdz 50 mm, patēriņš 2,0 kg/m²/mm, maiss 25 kg, [henkel-dam.com (LV TDS)](https://dm.henkel-dam.com/is/content/henkel/tds-lv-ceresit-cn76-pasizlidzinosa-java-25kg), izgūts 2026-09-05.
+- (Trešais pārbaudītais produkts, Ceresit CN 75 Fiber Plan, 1,5 kg/m²/mm, netika iekļauts UI kā atsevišķa izvēle, jo tā patēriņš sakrīt ar CN69 un neienes jaunu informāciju, bet apstiprina, ka 1,5 kg/m²/mm nav nejaušība vienam produktam.)
+- Rezerves procents, 5 līdz 10 procenti, nav atrasts nevienā no trim pārbaudītajām datu lapām, tāpēc atklāti atzīmēts kā vispārīga būvniecības konvencija, ne šī materiāla ražotāja fakts.
+
+Divu javu izvēle (plāna pret biezu) atbilst reālam produktu sadalījumam, ne mākslīgi izgudrotai izvēlei, katrai ir savs biezuma diapazons un patēriņa likme.
+
 
 
