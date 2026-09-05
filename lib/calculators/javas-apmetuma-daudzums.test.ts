@@ -63,6 +63,33 @@ describe('calculateJavasDaudzums', () => {
     expect(result.bagsNeeded).toBe(Math.ceil(result.kgNeeded / 25 - 1e-9));
   });
 
+  it('applies its own waste percent to the final mortar volume, not to the unit count used for geometry', () => {
+    const noWaste = calculateJavasDaudzums({
+      wallAreaM2: 10,
+      unitLengthMm: 250,
+      unitWidthMm: 250,
+      unitHeightMm: 65,
+      jointThicknessMm: 10,
+      yieldKgPerLiter: 1.6667,
+      bagSizeKg: 25,
+      wastePercent: 0,
+    });
+    const withWaste = calculateJavasDaudzums({
+      wallAreaM2: 10,
+      unitLengthMm: 250,
+      unitWidthMm: 250,
+      unitHeightMm: 65,
+      jointThicknessMm: 10,
+      yieldKgPerLiter: 1.6667,
+      bagSizeKg: 25,
+      wastePercent: 10,
+    });
+    // the physical unit count in the wall does not change just because the user set a
+    // mortar waste percent, only the final mortar volume should scale by it
+    expect(withWaste.unitsNeeded).toBe(noWaste.unitsNeeded);
+    expect(withWaste.mortarVolumeLiters).toBeCloseTo(noWaste.mortarVolumeLiters * 1.1, 6);
+  });
+
   it('returns all zeros when unit dimensions are 0 instead of dividing by zero', () => {
     const result = calculateJavasDaudzums({
       wallAreaM2: 10,
