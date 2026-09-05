@@ -26,6 +26,7 @@ import { GrantsSmiltsSkembuApjomaCalculator } from './GrantsSmiltsSkembuApjomaCa
 import { TerasesDeluDaudzumaCalculator } from './TerasesDeluDaudzumaCalculator';
 import { LaminataVinilaDaudzumaCalculator } from './LaminataVinilaDaudzumaCalculator';
 import { PasizlidzinosasJavasDaudzumaCalculator } from './PasizlidzinosasJavasDaudzumaCalculator';
+import { ZogaMateriaLaDaudzumaCalculator } from './ZogaMateriaLaDaudzumaCalculator';
 import { SkriesanasTempaCalculator } from './SkriesanasTempaCalculator';
 import { TriatlonaPlanotajaCalculator } from './TriatlonaPlanotajaCalculator';
 import { FtpZonuCalculator } from './FtpZonuCalculator';
@@ -68,6 +69,7 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'terases-delu-daudzums': TerasesDeluDaudzumaCalculator,
   'laminata-vinila-daudzums': LaminataVinilaDaudzumaCalculator,
   'pasizlidzinosas-javas-daudzums': PasizlidzinosasJavasDaudzumaCalculator,
+  'zoga-materiala-daudzums': ZogaMateriaLaDaudzumaCalculator,
   'skriesanas-temps': SkriesanasTempaCalculator,
   'triatlona-planotajs': TriatlonaPlanotajaCalculator,
   'ftp-zonas': FtpZonuCalculator,

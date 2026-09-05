@@ -204,10 +204,22 @@ const explanations: Record<string, React.ReactNode> = {
     </p>
   ),
   'betona-apjoms': (
-    <p className="text-panel-muted">
-      Kalkulators reizina garumu, platumu un biezumu, lai iegūtu nepieciešamo betona apjomu kubikmetros,
-      tad dala to ar viena maisa iznākumu un noapaļo uz augšu, lai iegūtu nepieciešamo maisu skaitu.
-    </p>
+    <>
+      <p className="text-panel-muted">
+        Kalkulators reizina garumu, platumu un biezumu, lai iegūtu nepieciešamo betona apjomu kubikmetros,
+        tad dala to ar viena maisa iznākumu un noapaļo uz augšu, lai iegūtu nepieciešamo maisu skaitu.
+      </p>
+      <p className="text-panel-muted">
+        Ja rēķini betonu žoga statņu bedrēm, skaties arī{' '}
+        <a
+          href="/majoklis/zoga-materiala-daudzums"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          žoga materiāla daudzuma kalkulatoru
+        </a>
+        , kas aprēķina nepieciešamo statņu skaitu.
+      </p>
+    </>
   ),
   'jumta-seguma-daudzums': (
     <>
@@ -379,6 +391,26 @@ const explanations: Record<string, React.ReactNode> = {
         <li>Platība ar rezervi: 15 × 1,05 = <strong>15,75&nbsp;m²</strong></li>
         <li>Daudzums: 15,75 × 5 × 1,5 ≈ <strong>118,13&nbsp;kg</strong></li>
         <li>Maisi: 118,13 ÷ 25 ≈ <strong>5 maisi</strong></li>
+      </ul>
+    </>
+  ),
+  'zoga-materiala-daudzums': (
+    <>
+      <p className="text-panel-muted">
+        Statņu skaitu kalkulators aprēķina, dalot žoga garumu ar statņu atstarpi un noapaļojot uz augšu,
+        tad pieskaitot vienu, jo statnis stāv abos žoga galos. Dēlīšu skaitu aprēķina, pieskaitot spraugu
+        dēlīša platumam, lai iegūtu vienas dēlīša vietas segumu, tad žoga garumam ar rezervi dala ar šo
+        segumu, noapaļojot uz augšu.
+      </p>
+      <p className="text-panel-muted">
+        <strong>Piemērs ar noklusējuma vērtībām</strong> (20&nbsp;m žogs, statņu atstarpe 2,5&nbsp;m,
+        dēlītis 95&nbsp;mm, sprauga 20&nbsp;mm, 5&nbsp;% rezerve):
+      </p>
+      <ul className="list-disc pl-5 text-panel-muted">
+        <li>Statņi: 20 ÷ 2,5 = 8 intervāli, plus viens = <strong>9 statņi</strong></li>
+        <li>Viena dēlīša segums: (95+20) ÷ 1000 = <strong>0,115&nbsp;m</strong></li>
+        <li>Garums ar rezervi: 20 × 1,05 = <strong>21&nbsp;m</strong></li>
+        <li>Dēlīši: 21 ÷ 0,115 ≈ <strong>183 dēlīši</strong></li>
       </ul>
     </>
   ),
@@ -571,6 +603,26 @@ const limitationsContent: Record<string, React.ReactNode> = {
       <li>
         Pamatnes sagatavošanu. Kalkulators nerēķina gruntējuma patēriņu vai pamatnes sagatavošanas
         materiālus, tikai pašu izlīdzinošo javu.
+      </li>
+    </ul>
+  ),
+  'zoga-materiala-daudzums': (
+    <ul className="flex flex-col gap-2 text-panel-muted">
+      <li>
+        Statņu atstarpi. Nav atrasts viens autoritatīvs Latvijas standarts, tikai vairāku avotu
+        konverģējošs 2 līdz 3 metru diapazons koka žogiem, tas ir pielāgojams lauks.
+      </li>
+      <li>
+        Betona apjomu statņu bedrēm. Šis kalkulators to nerēķina, tikai piedāvā piemēra izmēru un norādi uz
+        betona apjoma kalkulatoru, sk. Biežāk uzdotos jautājumus.
+      </li>
+      <li>
+        Sprauga starp dēlīšiem. Nav atrasts Latvijai specifisks skaitlis koka dēlīšu žogam, noklusējums ir
+        vispārīga konvencija privātuma žogam, ne citēts fakts.
+      </li>
+      <li>
+        Stūra un pastiprinājuma statņus. Kalkulators rēķina taisnu žoga līniju, virziena maiņām vai vārtu
+        vietām parasti nepieciešami papildu, stiprāki statņi, ko šis kalkulators atsevišķi nerēķina.
       </li>
     </ul>
   ),
@@ -961,6 +1013,64 @@ const sourcesContent: Record<string, React.ReactNode> = {
           className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
         >
           henkel-dam.com
+        </a>
+        , izgūts 2026. gada 5. septembrī.
+      </li>
+    </ul>
+  ),
+  'zoga-materiala-daudzums': (
+    <ul className="flex flex-col gap-2 text-sm text-panel-muted">
+      <li>
+        Statņu atstarpes konvencija,{' '}
+        <a
+          href="https://www.saimnieks.lv/raksts/kadu-zogu-gadat"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          saimnieks.lv
+        </a>
+        , izgūts 2026. gada 5. septembrī.
+      </li>
+      <li>
+        Statņa bedres dziļums un diametrs,{' '}
+        <a
+          href="https://varupats.lv/zoga-stabu-veidi-un-to-iestrade/"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          varupats.lv
+        </a>
+        ,{' '}
+        <a
+          href="https://www.tvora.lv/lv/kludas-metala-zogu-ierikosana-un-izvele"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          tvora.lv
+        </a>
+        , izgūts 2026. gada 5. septembrī.
+      </li>
+      <li>
+        Žoga dēlīša platums 95 līdz 120&nbsp;mm,{' '}
+        <a
+          href="https://alakokmateriali.lv/products/zoga-delis-20x95-evelets-ar-faziti-taisns-1-skira/"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          alakokmateriali.lv
+        </a>
+        ,{' '}
+        <a
+          href="https://vttimber.lv/kokmateriali/zoga-deli/"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          vttimber.lv
         </a>
         , izgūts 2026. gada 5. septembrī.
       </li>

@@ -119,5 +119,20 @@ Sourced primitīvi (visi trīs tieši no Henkel/Ceresit oficiālajām tehnisko d
 
 Divu javu izvēle (plāna pret biezu) atbilst reālam produktu sadalījumam, ne mākslīgi izgudrotai izvēlei, katrai ir savs biezuma diapazons un patēriņa likme.
 
+## 10. Žoga materiāla daudzuma kalkulators
+
+Slug: `zoga-materiala-daudzums`. Pēdējais no desmit. Formula: statņu_skaits = ceil(garums ÷ atstarpe) + 1; dēlīša_segums = (platums + sprauga) ÷ 1000; dēlīšu_skaits = ceil((garums × (1 + rezerve)) ÷ dēlīša_segums).
+
+Sourced primitīvi:
+- Statņu atstarpe, 2 līdz 3 metri koka žogiem, nav viena autoritatīva Latvijas standarta, konverģējoša vairāku avotu aplēse, [saimnieks.lv](https://www.saimnieks.lv/raksts/kadu-zogu-gadat) (tiešais fetch atgrieza 500 kļūdu, skaitlis apstiprināts caur meklēšanas fragmentu no tā paša avota).
+- Statņa bedres dziļums (80 līdz 100 cm betonā, 60 līdz 80 cm grantī) un diametrs (15 līdz 25 cm), [varupats.lv](https://varupats.lv/zoga-stabu-veidi-un-to-iestrade/), [tvora.lv](https://www.tvora.lv/lv/kludas-metala-zogu-ierikosana-un-izvele), izgūts 2026-09-05. Izmantots kā piemēra vērtība (250×800mm) krustatsaucei uz betona apjoma kalkulatoru, šis kalkulators pats betona apjomu nerēķina.
+- Žoga dēlīša platums 95 līdz 120 mm, apstiprināts trīs neatkarīgos Latvijas kokmateriālu tirgotājos, [alakokmateriali.lv](https://alakokmateriali.lv/products/zoga-delis-20x95-evelets-ar-faziti-taisns-1-skira/), [tvora.lv](https://www.tvora.lv/lv/produkcija/zogi-setas/zoga-deli), [vttimber.lv](https://vttimber.lv/kokmateriali/zoga-deli/), izgūts 2026-09-05.
+- Sprauga starp dēlīšiem, nav atrasts Latvijai specifisks skaitlis koka dēlīšu žogam (tikai metāla profilu žogiem bija atrodams konkrēts skaitlis, bet tas nav pārnesams uz koka dēlīšiem), tāpēc noklusējums (20mm) ir vispārīga konvencija, atklāti atzīmēta kā tāda.
+- Rezerves procents, nav atrasts Latvijai specifisks avots, vispārīga konvencija.
+
+Krustatsauces (kā prasīts uzdevumā): šis kalkulators tekstā norāda uz `betona-apjoms` betona daudzumam statņu bedrēm, ar piemēra bedres izmēriem un skaidrojumu, kāpēc taisnstūra formulas izmantošana apļveida bedrei dod nelielu, drošu pārpalikumu, ne trūkumu (FAQ). `betona-apjoms` skaidrojumā pievienota pretēja virziena saite uz šo kalkulatoru. `betona-apjoms` `contentUpdatedAt` attiecīgi atjaunināts, lai gan drift tests to nepieprasa (page.tsx nav sekots vispārīgi maršrutētiem kalkulatoriem, tikai to komponentes fails), jo reāls redzamais saturs tomēr mainījās.
+
+Stūra/pastiprinājuma statņi un vārtu vietas apzināti atstāti ārpus modeļa, atzīmēti limitācijās, kalkulators pieņem taisnu žoga līniju.
+
 
 
