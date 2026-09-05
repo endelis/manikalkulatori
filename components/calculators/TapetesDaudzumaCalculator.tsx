@@ -119,7 +119,7 @@ export function TapetesDaudzumaCalculator({ accentVar }: { accentVar: string }) 
         <p className="text-caption text-panel-faint">
           Bez raksta rezerve parasti ir no {formatNumber(WASTE_PERCENT_MIN, 0)} līdz{' '}
           {formatNumber(WASTE_PERCENT_MAX, 0)} procentiem apgriešanai. Izvēloties raksta veidu iepriekš, šis
-          lauks automātiski piedāvā sourced vērtību, bet paliek pielāgojams.
+          lauks automātiski piedāvā avotā norādītu vērtību, bet paliek pielāgojams.
         </p>
       </div>
 

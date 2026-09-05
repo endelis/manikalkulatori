@@ -246,6 +246,24 @@ const explanations: Record<string, React.ReactNode> = {
       </ul>
     </>
   ),
+  'kiegelu-bloku-daudzums': (
+    <>
+      <p className="text-panel-muted">
+        Kalkulators pieskaita šuves biezumu vienības garumam un augstumam, lai iegūtu vienas vienības
+        efektīvo platību sienas sejā, tad sienu platībai pieskaita rezerves procentu un dala ar efektīvo
+        platību, noapaļojot uz augšu līdz veselam vienību skaitam.
+      </p>
+      <p className="text-panel-muted">
+        <strong>Piemērs ar noklusējuma vērtībām</strong> (10&nbsp;m² sienu platība, ķieģelis 250 reiz
+        65&nbsp;mm, 10&nbsp;mm šuve, 5&nbsp;% rezerve):
+      </p>
+      <ul className="list-disc pl-5 text-panel-muted">
+        <li>Efektīvā platība: (250+10) × (65+10) ÷ 1&nbsp;000&nbsp;000 = <strong>0,0195&nbsp;m²</strong></li>
+        <li>Ar rezervi: 10 × 1,05 = <strong>10,5&nbsp;m²</strong></li>
+        <li>Ķieģeļi: 10,5 ÷ 0,0195 ≈ <strong>539 ķieģeļi</strong></li>
+      </ul>
+    </>
+  ),
   'skriesanas-temps': (
     <p className="text-panel-muted">
       Kalkulators saskaita kopējo laiku minūtēs un dala to ar distanci, lai iegūtu tempu uz kilometru.
@@ -314,6 +332,24 @@ const limitationsContent: Record<string, React.ReactNode> = {
         Ruļļa garuma atšķirību. Latvijas mazumtirdzniecībā ierastais 10 metru garums un Eiropas tehniskajā
         specifikācijā minētais 10,05 metru garums nav identiski, atšķirība ir neliela, bet precīzu skaitli
         vienmēr vari pārbaudīt uz iepakojuma.
+      </li>
+    </ul>
+  ),
+  'kiegelu-bloku-daudzums': (
+    <ul className="flex flex-col gap-2 text-panel-muted">
+      <li>
+        Šuves biezumu. Avots ar konkrētu ieteikumu Latvijas mūrniekiem (FIBO vadlīnijas) bija bloķēts
+        automātiskai piekļuvei, tāpēc izmantots vairāku citu avotu konverģējošs diapazons no 10 līdz
+        14&nbsp;milimetriem, noklusējuma vērtība ir šī diapazona apakšējā robeža.
+      </li>
+      <li>
+        Rezerves procentu. Nav atrasts stingrs avots konkrētam procentam mūrniecībai, tas ir pielāgojams
+        lauks, nevis citēts fakts.
+      </li>
+      <li>
+        Plānšuves (līmes) sistēmas. Kalkulators modelē tikai parasto mūrēšanu ar javas šuvi, atsevišķu
+        gāzbetona bloku līmēšanu ar 1 līdz 3&nbsp;mm šuvi šis kalkulators nerēķina, sk. Biežāk uzdotos
+        jautājumus.
       </li>
     </ul>
   ),
@@ -424,6 +460,46 @@ const sourcesContent: Record<string, React.ReactNode> = {
           className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
         >
           renocalchub.com
+        </a>
+        , izgūts 2026. gada 5. septembrī.
+      </li>
+    </ul>
+  ),
+  'kiegelu-bloku-daudzums': (
+    <ul className="flex flex-col gap-2 text-sm text-panel-muted">
+      <li>
+        Keramiskā ķieģeļa izmērs 250 reiz 120 reiz 65&nbsp;mm,{' '}
+        <a
+          href="https://lode.lv/produkts/pilnais-apdares-kiegelis-sahara-250x120x65/"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          Lode
+        </a>
+        , izgūts 2026. gada 5. septembrī.
+      </li>
+      <li>
+        Gāzbetona bloka izmērs 600 reiz 300 reiz 200&nbsp;mm,{' '}
+        <a
+          href="https://bauroc.lv/eku-projektesana/tehniskie-dati/"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          Bauroc
+        </a>
+        , izgūts 2026. gada 5. septembrī.
+      </li>
+      <li>
+        Šuves biezuma diapazons parastai mūrēšanai,{' '}
+        <a
+          href="https://www.wienerberger.ee/lv/produkcija/keramiskie-un-klinkera-kiegeli-terca/padomi-un-instrukcijas/pamatnoteikumi-un-rekomendacijas-murdarbiem.html"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          Wienerberger
         </a>
         , izgūts 2026. gada 5. septembrī.
       </li>

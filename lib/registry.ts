@@ -278,7 +278,19 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini nepieciešamo tapešu ruļļu skaitu pēc sienu platības, ruļļa izmēra un raksta atkārtojuma veida.',
     keywords: ['tapetes daudzuma kalkulators', 'tapešu ruļļu skaits', 'cik tapešu vajag'],
-    contentUpdatedAt: '2026-09-05T16:20:00+03:00',
+    contentUpdatedAt: '2026-09-05T16:54:00+03:00',
+  },
+  {
+    slug: 'kiegelu-bloku-daudzums',
+    category: 'majoklis',
+    title: 'Ķieģeļu un bloku daudzuma kalkulators',
+    h1: 'Cik ķieģeļu vai bloku nepieciešams sienai?',
+    intro:
+      'Ievadi sienas platību, vienības izmērus un šuves biezumu, uzzini nepieciešamo ķieģeļu vai bloku skaitu.',
+    metaDescription:
+      'Aprēķini nepieciešamo ķieģeļu vai gāzbetona bloku skaitu pēc sienas platības, vienības izmēriem un šuves biezuma.',
+    keywords: ['ķieģeļu daudzuma kalkulators', 'bloku skaita aprēķins', 'cik ķieģeļu vajag'],
+    contentUpdatedAt: '2026-09-05T16:54:00+03:00',
   },
   {
     slug: 'skriesanas-temps',

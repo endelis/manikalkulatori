@@ -29,5 +29,18 @@ Sourced primitīvi:
 - Rezerves procents bez raksta, 10 līdz 15 procenti, [deborainteriors.com](https://deborainteriors.com/tools/wallpaper-calculator/), izgūts 2026-09-05.
 - Rezerves procenti pēc raksta atkārtojuma veida, [renocalchub.com](https://renocalchub.com/blog/interior/wallpaper-pattern-repeat.html): neliels raksts (0 līdz 6 collas) +10%, liels taisns raksts (7 līdz 18 collas) +15%, nobīdes raksts (19 līdz 25 collas) +25%. Avots dod konkrētus skaitļus katrai kategorijai, ne diapazonu kā uzdevumā pieņemts, izmantoti avotā tieši dotie skaitļi.
 
-Raksta veida izvēle UI ir ērtuma funkcija, ne aprēķina parametrs: izvēloties raksta veidu, rezerves procenta lauks automātiski piedāvā sourced vērtību, bet paliek tieši pielāgojams, tāpat kā citur šajā kalkulatoru saimē.
+Raksta veida izvēle UI ir ērtuma funkcija, ne aprēķina parametrs: izvēloties raksta veidu, rezerves procenta lauks automātiski piedāvā avotā norādītu vērtību, bet paliek tieši pielāgojams, tāpat kā citur šajā kalkulatoru saimē. (Piezīme: pirmajā versijā UI teksts kļūdaini saturēja angļu vārdu "sourced" Latviešu tekstā, atklāts un labots 3. kalkulatora izstrādes gaitā.)
+
+## 3. Ķieģeļu un bloku daudzuma kalkulators
+
+Slug: `kiegelu-bloku-daudzums`. Formula: efektīvā_vienības_platība = ((garums + šuve) ÷ 1000) × ((augstums + šuve) ÷ 1000); nepieciešamās vienības = ceil((sienas_platība × (1 + rezerve)) ÷ efektīvā_vienības_platība). Vienības biezums (sienas biezuma virziens) apzināti nav ievades parametrs, jo tas neietekmē vienību skaitu uz vienu m² sienas sejas.
+
+Sourced primitīvi:
+- Keramiskais ķieģelis, 250 reiz 120 reiz 65 mm, [Lode](https://lode.lv/produkts/pilnais-apdares-kiegelis-sahara-250x120x65/). Uzdevumā dotā URL (ar "-2" sufiksu) atgrieza 404, WebFetch uz šo tīro URL izdevās, un dimensija papildus apstiprināta caur meklēšanu vairākos citos Lode produktu ierakstos (Andromeda, Gemini, Vecais Brunis, Janka) un trešo pušu tirgotājiem (buvniecibas-abc.lv, ventum.lv, prof.lv, buveletak.lv).
+- Gāzbetona bloks, 600 reiz 300 reiz 200 mm, [Bauroc](https://bauroc.lv/eku-projektesana/tehniskie-dati/), izgūts tieši ar WebFetch, izgūts 2026-09-05. 300 mm platums ir CLASSIC 300 sērijas tipiskais biezums, sērijai kopumā diapazons ir 99 līdz 500 mm, aprēķinam izmantoti tikai garums un augstums.
+- Šuves biezums, 10 līdz 14 mm, konverģējošs vairāku avotu diapazons. FIBO vadlīnijas ([fibo.lv](https://www.fibo.lv/fibo-bloku-iestrades-vadlinijas)) bloķēja WebFetch (403 kļūda), diapazons apstiprināts caur [Wienerberger Baltic](https://www.wienerberger.ee/lv/produkcija/keramiskie-un-klinkera-kiegeli-terca/padomi-un-instrukcijas/pamatnoteikumi-un-rekomendacijas-murdarbiem.html) un citiem avotiem, izgūts 2026-09-05. Noklusējuma vērtība ir diapazona apakšējā robeža (10 mm).
+- Rezerves procents, nav atrasts stingrs avots konkrētam skaitlim mūrniecībai, tāpēc pielāgojams lauks (noklusējums 5%), nevis citēts fakts.
+- Plānšuves (līmes) sistēmas gāzbetona blokiem ar 1 līdz 3 mm šuvi apzināti atstātas ārpus MVP, tas ir cits mūrēšanas paņēmiens ar būtiski atšķirīgu materiālu patēriņu, atzīmēts limitācijās un FAQ.
+
+Reāla kļūda, ko atklāja mans pašrakstītais robežgadījuma tests pirms commit: sākotnējā nulles aizsardzība pārbaudīja atvasināto `effectiveUnitAreaM2 > 0`, nevis izejas dimensijas. Ja vienības garums un augstums abi ir 0, bet šuves biezums nav 0, atvasinātā platība tomēr ir nenulle (piemēram, 10 mm šuve viena pati dod 0,0001 m²), tāpēc aizsardzība neaktivizējās un kods dalīja sienas platību ar šo mākslīgi mazo skaitli, iegūstot absurdi lielu vienību skaitu (100 000 vietā 10 m² sienai ar 0 mm vienību). Labots, pārbaudot izejas dimensijas tieši (`unitLengthMm > 0 && unitHeightMm > 0`), nevis atvasināto platību.
 
