@@ -348,6 +348,22 @@ const explanations: Record<string, React.ReactNode> = {
       </ul>
     </>
   ),
+  'laminata-vinila-daudzums': (
+    <>
+      <p className="text-panel-muted">
+        Kalkulators grīdas platībai pieskaita rezerves procentu, tad dala ar viena iepakojuma segumu,
+        noapaļojot uz augšu līdz veselam iepakojumu skaitam.
+      </p>
+      <p className="text-panel-muted">
+        <strong>Piemērs ar noklusējuma vērtībām</strong> (20&nbsp;m² grīda, laminātā segums, 1,99&nbsp;m²
+        iepakojumā, 10&nbsp;% rezerve):
+      </p>
+      <ul className="list-disc pl-5 text-panel-muted">
+        <li>Platība ar rezervi: 20 × 1,1 = <strong>22&nbsp;m²</strong></li>
+        <li>Iepakojumi: 22 ÷ 1,99 ≈ <strong>12 iepakojumi</strong></li>
+      </ul>
+    </>
+  ),
   'skriesanas-temps': (
     <p className="text-panel-muted">
       Kalkulators saskaita kopējo laiku minūtēs un dala to ar distanci, lai iegūtu tempu uz kilometru.
@@ -505,6 +521,22 @@ const limitationsContent: Record<string, React.ReactNode> = {
       </li>
       <li>
         Rezerves procentu. Nav atrasts Latvijai specifisks avots, tas ir pielāgojams lauks.
+      </li>
+    </ul>
+  ),
+  'laminata-vinila-daudzums': (
+    <ul className="flex flex-col gap-2 text-panel-muted">
+      <li>
+        Iepakojuma segumu. Iepriekš aizpildītā vērtība ir viens reāls piemērs katram seguma veidam, ne
+        universāls standarts, konkrētam produktam segums var atšķirties gandrīz divkārt, sk. Biežāk uzdotos
+        jautājumus.
+      </li>
+      <li>
+        Pamatni zem grīdas seguma. Tā tiek pirkta atsevišķi pēc platības, kalkulators to nerēķina.
+      </li>
+      <li>
+        Sarežģītu izkārtojumu. Rezerves procents ir ražotāja vadlīnija vienkāršam izkārtojumam, diagonālam
+        vai rakstainam izkārtojumam (piemēram, zvaigžņu rakstam) reālā rezerve var būt ievērojami lielāka.
       </li>
     </ul>
   ),
@@ -825,6 +857,46 @@ const sourcesContent: Record<string, React.ReactNode> = {
           className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
         >
           gridasguru.lv
+        </a>
+        , izgūts 2026. gada 5. septembrī.
+      </li>
+    </ul>
+  ),
+  'laminata-vinila-daudzums': (
+    <ul className="flex flex-col gap-2 text-sm text-panel-muted">
+      <li>
+        Laminātā iepakojuma segums, 1,39 līdz 2,54&nbsp;m², visbiežākais 1,99&nbsp;m² (8 dēlīši),{' '}
+        <a
+          href="https://www.egger.com/en/blog/how-much-laminate-flooring-do-i-need"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          egger.com
+        </a>
+        , izgūts 2026. gada 5. septembrī.
+      </li>
+      <li>
+        Vinila (SPC) iepakojuma segums 2,208&nbsp;m², apstiprināts trīs produkta variantiem,{' '}
+        <a
+          href="https://www.kursi.lv/lv/vinila-grida-eterna-spc-6x181x1220-mm-33-klase-sebastian-oak-05325-m2"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          kursi.lv
+        </a>
+        , izgūts 2026. gada 5. septembrī.
+      </li>
+      <li>
+        Rezerves procenta vadlīnijas, 10 līdz 15&nbsp;procenti,{' '}
+        <a
+          href="https://www.egger.com/en/blog/how-much-laminate-flooring-do-i-need"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          egger.com
         </a>
         , izgūts 2026. gada 5. septembrī.
       </li>

@@ -341,6 +341,18 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-05T21:45:44+03:00',
   },
   {
+    slug: 'laminata-vinila-daudzums',
+    category: 'majoklis',
+    title: 'Laminātā un vinila grīdas seguma kalkulators',
+    h1: 'Cik laminātā vai vinila grīdas seguma nepieciešams?',
+    intro:
+      'Izvēlies seguma veidu, ievadi grīdas platību un iepakojuma segumu, uzzini nepieciešamo iepakojumu skaitu.',
+    metaDescription:
+      'Aprēķini nepieciešamo laminātā vai vinila grīdas seguma iepakojumu skaitu pēc grīdas platības un viena iepakojuma seguma.',
+    keywords: ['laminātā kalkulators', 'vinila grīdas kalkulators', 'grīdas seguma daudzums'],
+    contentUpdatedAt: '2026-09-05T22:20:00+03:00',
+  },
+  {
     slug: 'skriesanas-temps',
     category: 'sports',
     title: 'Skriešanas tempa kalkulators',

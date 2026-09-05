@@ -95,5 +95,15 @@ Sourced primitīvi:
 - Rezerves procents, 10 līdz 20 procenti, starptautiska terases kalkulatoru konvencija, nav Latvijai specifiska avota.
 - Atstarpe no mājas sienas vai citiem fiksētiem objektiem apzināti atstāta ārpus modeļa, tā ir cita, parasti platāka atstarpe, kas neietekmē dēļu skaitu.
 
+## 8. Laminātā un vinila grīdas seguma kalkulators
+
+Slug: `laminata-vinila-daudzums`. Formula: platība_ar_rezervi = platība × (1 + rezerve); nepieciešami_iepakojumi = ceil(platība_ar_rezervi ÷ iepakojuma_segums). Vienkāršākā formula šajā partijā līdzās ģipškartonam, bez papildu ģeometrijas, jo iepakojuma segums jau ir gatavs m² skaitlis, ne atvasināts no atsevišķām dēlīša dimensijām.
+
+Sourced primitīvi:
+- Laminātā iepakojuma segums, EGGER (ražotājs) pats publicē precīzus skaitļus savā instalācijas rokasgrāmatā: 1,39 m² (EL2033), 1,99 m² (visbiežākais, 8 dēlīši), 2,54 m² (EDF186), [egger.com](https://www.egger.com/en/blog/how-much-laminate-flooring-do-i-need), izgūts 2026-09-05. Noklusējums 1,99 m², visbiežāk sastopamais.
+- Vinila (SPC) iepakojuma segums 2,208 m², apstiprināts trīs ETERNA SPC 6x181x1220mm, 33. klase produkta krāsu variantiem, [kursi.lv](https://www.kursi.lv/lv/vinila-grida-eterna-spc-6x181x1220-mm-33-klase-sebastian-oak-05325-m2), izgūts 2026-09-05 (tiešais WebFetch bloķēts 403, apstiprināts caur meklēšanas rezultātu fragmentiem trim atsevišķiem produkta variantiem).
+- Rezerves procents, EGGER instalācijas vadlīnijas: 10% standarta gadījumā, līdz 15% nepieredzējušiem uzstādītājiem, tas ir ražotāja avots, ne tikai vispārīga konvencija. Sekundārs, mazāk uzticams avots min līdz 30% rakstainam izkārtojumam, atzīmēts limitācijās, bet nav izmantots kā primārais skaitlis.
+- Pamatne zem grīdas seguma apzināti atstāta ārpus modeļa, arī EGGER pats to rēķina atsevišķi no seguma iepakojuma.
+
 
 
