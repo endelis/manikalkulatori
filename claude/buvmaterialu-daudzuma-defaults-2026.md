@@ -84,4 +84,16 @@ Sourced/aplēstie primitīvi (koriģēts pēc lietotāja pārbaudes):
 
 UI un limitāciju teksts diferencē smilti (sourced, ar atsauci) no grants un šķembām (aplēse, ar redzamu atrunu), nevis pieskaita visus trīs vienādi kā sākotnējā versijā.
 
+## 7. Terases dēļu daudzuma kalkulators
+
+Slug: `terases-delu-daudzums`. Formula: viena_dēļa_segums = garums × (platums + šuve) ÷ 1000000; nepieciešamie dēļi = ceil((platība × (1 + rezerve)) ÷ viena_dēļa_segums). Tā pati "pieskaita šuvi platumam" loģika kā ķieģeļu/bloku un tapetes kalkulatoros, atkārtoti pielietota jaunam materiālam.
+
+Sourced primitīvi:
+- Kompozīta (WPC) dēļa izmērs 150 reiz 2900 mm, konverģē no trim neatkarīgiem produktiem (148, 149, 150 mm platums, 24 līdz 25 mm biezums), [buvniecibas-abc.lv](https://buvniecibas-abc.lv/en/shop/lumber/composite-materials-wpc/wpc-terrace-board-25x150x2900mm-gray-composite-material), [terasei.lv](https://terasei.lv/en/product/wpc-decking-board-art-2-149mm-x-24mm/), [topdex.lv](https://topdex.lv/lv/produkti/terases-deli/), izgūts 2026-09-05.
+- Koka dēļa platums 145 mm, sourced no reāla lapegles produkta, [patatimber.lv](https://patatimber.lv/p/86-terases-delis-lapegle-28-x-145-kd18-c-dt50), izgūts 2026-09-05. Garums 4000 mm ir aplēse tipiskajā 2400 līdz 4800 mm diapazonā, jo produkta lapa bloķēja pilnu piekļuvi, atklāti atzīmēts limitācijās kā aplēse, ne sourced.
+- Šuves platums pēc materiāla, sausam kokam 4 līdz 6 mm, mitram impregnētam kokam sākotnēji 2 līdz 3 mm (paplašinās žūstot), kompozītam 4 līdz 5 mm, [gridasguru.lv](https://gridasguru.lv/ka-ieklat-terases-delus-biezakas-kludas-un-ka-no-tam-izvairities), korespondē ar reālu instrumentu (Eurotec 4/5/6/8 mm starplikas), [ottensten.lv](https://ottensten.lv/products/eurotec-delu-starplika-4-8-mm). Noklusējums 5 mm ietilpst visos diapazonos.
+- Rezerves procents, 10 līdz 20 procenti, starptautiska terases kalkulatoru konvencija, nav Latvijai specifiska avota.
+- Atstarpe no mājas sienas vai citiem fiksētiem objektiem apzināti atstāta ārpus modeļa, tā ir cita, parasti platāka atstarpe, kas neietekmē dēļu skaitu.
+
+
 

@@ -330,6 +330,24 @@ const explanations: Record<string, React.ReactNode> = {
       </ul>
     </>
   ),
+  'terases-delu-daudzums': (
+    <>
+      <p className="text-panel-muted">
+        Kalkulators pieskaita šuves platumu dēļa platumam, lai iegūtu vienas rindas segumu, tad reizina ar
+        dēļa garumu, lai iegūtu viena dēļa kopējo segumu. Terases platībai pieskaita rezerves procentu un
+        dala ar viena dēļa segumu, noapaļojot uz augšu līdz veselam dēļu skaitam.
+      </p>
+      <p className="text-panel-muted">
+        <strong>Piemērs ar noklusējuma vērtībām</strong> (15&nbsp;m² terase, kompozīta dēlis 150 reiz
+        2900&nbsp;mm, 5&nbsp;mm šuve, 10&nbsp;% rezerve):
+      </p>
+      <ul className="list-disc pl-5 text-panel-muted">
+        <li>Viena dēļa segums: 2,9 × 0,155 ≈ <strong>0,4495&nbsp;m²</strong></li>
+        <li>Ar rezervi: 15 × 1,1 = <strong>16,5&nbsp;m²</strong></li>
+        <li>Dēļi: 16,5 ÷ 0,4495 ≈ <strong>37 dēļi</strong></li>
+      </ul>
+    </>
+  ),
   'skriesanas-temps': (
     <p className="text-panel-muted">
       Kalkulators saskaita kopējo laiku minūtēs un dala to ar distanci, lai iegūtu tempu uz kilometru.
@@ -467,6 +485,26 @@ const limitationsContent: Record<string, React.ReactNode> = {
       <li>
         Frakcijas izvēli. Kalkulators nešķiro materiāla frakcijas (piemēram, šķembu 8/16 pret 16/32), tikai
         vienu blīvuma vērtību katram materiāla veidam, konkrētai frakcijai blīvums var atšķirties.
+      </li>
+    </ul>
+  ),
+  'terases-delu-daudzums': (
+    <ul className="flex flex-col gap-2 text-panel-muted">
+      <li>
+        Dēļa izmēru. Iepriekš aizpildītais platums un garums ir viens reāls piemērs katram materiāla
+        veidam, ne universāls standarts, konkrētam produktam izmērs var atšķirties, sk. Biežāk uzdotos
+        jautājumus.
+      </li>
+      <li>
+        Koka dēļa garumu. Sourced ir tikai platums, garums ir aplēse tipiskajā 2400 līdz 4800 mm diapazonā,
+        jo konkrētā produkta lapa nebija pilnībā izgūstama.
+      </li>
+      <li>
+        Atstarpi no mājas sienas vai citiem fiksētiem objektiem. Tā parasti ir platāka par šuvi starp
+        dēļiem, bet neietekmē kopējo dēļu skaitu, tāpēc kalkulators to nerēķina.
+      </li>
+      <li>
+        Rezerves procentu. Nav atrasts Latvijai specifisks avots, tas ir pielāgojams lauks.
       </li>
     </ul>
   ),
@@ -740,6 +778,55 @@ const sourcesContent: Record<string, React.ReactNode> = {
           building.lv
         </a>
         , izgūts 2026. gada 5. septembrī. Šis ir foruma avots, ne ražotāja datu lapa.
+      </li>
+    </ul>
+  ),
+  'terases-delu-daudzums': (
+    <ul className="flex flex-col gap-2 text-sm text-panel-muted">
+      <li>
+        Kompozīta (WPC) dēļa izmērs 150 reiz 2900&nbsp;mm, apstiprināts vairākos neatkarīgos produktos,{' '}
+        <a
+          href="https://buvniecibas-abc.lv/en/shop/lumber/composite-materials-wpc/wpc-terrace-board-25x150x2900mm-gray-composite-material"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          buvniecibas-abc.lv
+        </a>
+        ,{' '}
+        <a
+          href="https://terasei.lv/en/product/wpc-decking-board-art-2-149mm-x-24mm/"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          terasei.lv
+        </a>
+        , izgūts 2026. gada 5. septembrī.
+      </li>
+      <li>
+        Koka dēļa platums 145&nbsp;mm,{' '}
+        <a
+          href="https://patatimber.lv/p/86-terases-delis-lapegle-28-x-145-kd18-c-dt50"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          patatimber.lv
+        </a>
+        , izgūts 2026. gada 5. septembrī.
+      </li>
+      <li>
+        Šuves platuma vadlīnijas pēc materiāla,{' '}
+        <a
+          href="https://gridasguru.lv/ka-ieklat-terases-delus-biezakas-kludas-un-ka-no-tam-izvairities"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          gridasguru.lv
+        </a>
+        , izgūts 2026. gada 5. septembrī.
       </li>
     </ul>
   ),

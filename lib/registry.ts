@@ -329,6 +329,18 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-05T21:36:08+03:00',
   },
   {
+    slug: 'terases-delu-daudzums',
+    category: 'majoklis',
+    title: 'Terases dēļu daudzuma kalkulators',
+    h1: 'Cik terases dēļu nepieciešams?',
+    intro:
+      'Izvēlies materiālu, ievadi terases platību un dēļa izmēru, uzzini nepieciešamo dēļu skaitu.',
+    metaDescription:
+      'Aprēķini nepieciešamo terases dēļu skaitu pēc terases platības, dēļa platuma, garuma un šuves starp dēļiem.',
+    keywords: ['terases dēļu kalkulators', 'terases seguma aprēķins', 'cik terases dēļu vajag'],
+    contentUpdatedAt: '2026-09-05T21:40:00+03:00',
+  },
+  {
     slug: 'skriesanas-temps',
     category: 'sports',
     title: 'Skriešanas tempa kalkulators',
