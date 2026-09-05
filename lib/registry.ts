@@ -302,7 +302,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini nepieciešamo apmetuma vai mūrjavas maisu skaitu pēc sienas platības, biezuma vai vienību izmēriem un šuves biezuma.',
     keywords: ['javas kalkulators', 'apmetuma daudzuma kalkulators', 'cik javas vajag', 'mūrjavas apjoms'],
-    contentUpdatedAt: '2026-09-05T19:20:00+03:00',
+    contentUpdatedAt: '2026-09-05T19:31:43+03:00',
   },
   {
     slug: 'skriesanas-temps',
