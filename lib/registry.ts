@@ -254,7 +254,7 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi betonējamā laukuma izmērus un biezumu, uzzini nepieciešamo betona apjomu un maisu skaitu.',
     metaDescription: 'Aprēķini nepieciešamo betona apjomu kubikmetros un maisu skaitu pēc laukuma izmēriem un biezuma.',
     keywords: ['betona apjoma kalkulators', 'betona daudzums', 'betona maisu skaits'],
-    contentUpdatedAt: '2026-09-05T22:48:00+03:00',
+    contentUpdatedAt: '2026-09-05T22:52:22+03:00',
   },
   {
     slug: 'jumta-seguma-daudzums',
@@ -374,7 +374,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini nepieciešamo žoga statņu un dēlīšu skaitu pēc žoga garuma, statņu atstarpes, dēlīša platuma un spraugas.',
     keywords: ['žoga kalkulators', 'žoga materiāla daudzums', 'žoga statņu skaits'],
-    contentUpdatedAt: '2026-09-05T22:48:00+03:00',
+    contentUpdatedAt: '2026-09-05T22:52:22+03:00',
   },
   {
     slug: 'skriesanas-temps',
