@@ -309,7 +309,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini, cik bērniem gadā jāpiedzimst Latvijā, lai iedzīvotāju skaits stabilizētos vai sasniegtu izvēlētu mērķi, pēc oficiāliem CSP datiem.',
     keywords: ['dzimstības kalkulators', 'cik bērniem jāpiedzimst Latvijā', 'Latvijas iedzīvotāju skaits'],
-    contentUpdatedAt: '2026-09-05T11:19:00+03:00',
+    contentUpdatedAt: '2026-09-05T11:23:14+03:00',
   },
   {
     slug: 'pensijas-kalkulators',
@@ -335,7 +335,7 @@ export const calculators: CalculatorMeta[] = [
     keywords: ['tumsas kalkulators', 'cik tumšs ir Rīgā', 'gaismas stundas Latvijā', 'dienas garums Rīgā'],
     // Placeholder, set to the real commit time before merging, then re-checked against
     // the squash merge commit time before merging, per CLAUDE.md, "Sitemap dates".
-    contentUpdatedAt: '2026-09-05T11:19:00+03:00',
+    contentUpdatedAt: '2026-09-05T11:23:14+03:00',
   },
 ];
 

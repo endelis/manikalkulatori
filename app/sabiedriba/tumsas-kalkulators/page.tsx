@@ -177,8 +177,8 @@ export default function TumsasKalkulatorsPage() {
             </li>
             <li>
               Sinusoidālo tuvinājumu. Formula neaprēķina reālus saullēkta un saulrieta laikus katrai dienai, tā
-              modelē gada gaitu ar gludu līkni. Precizitātes zaudējums ir neliels, bet nav nulle, sk. sadaļu "Kā
-              aprēķins veikts".
+              modelē gada gaitu ar gludu līkni. Precizitātes zaudējums ir neliels, bet nav nulle, sk. sadaļu
+              &quot;Kā aprēķins veikts&quot;.
             </li>
             <li>
               Vietas maiņu. Aprēķins pieņem, ka esi dzīvojis Rīgā visu laiku kopš dzimšanas. Ja daļu dzīves esi
