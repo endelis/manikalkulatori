@@ -362,7 +362,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini nepieciešamo pašizlīdzinošās grīdas javas maisu skaitu pēc platības, kārtas biezuma un ražotāja norādītā patēriņa.',
     keywords: ['pašizlīdzinošā java', 'grīdas izlīdzināšanas kalkulators', 'cik javas vajag grīdai'],
-    contentUpdatedAt: '2026-09-05T22:35:00+03:00',
+    contentUpdatedAt: '2026-09-05T22:38:40+03:00',
   },
   {
     slug: 'skriesanas-temps',
