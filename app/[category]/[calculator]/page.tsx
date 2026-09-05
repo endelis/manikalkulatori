@@ -264,6 +264,36 @@ const explanations: Record<string, React.ReactNode> = {
       </ul>
     </>
   ),
+  'javas-apmetuma-daudzums': (
+    <>
+      <p className="text-panel-muted">
+        Apmetuma režīmā kalkulators reizina platību, biezumu un izvēlētā produkta patēriņa likmi, lai
+        iegūtu nepieciešamo sausā maisījuma daudzumu kilogramos, tad dala ar maisa svaru un noapaļo uz
+        augšu. Mūrjavas režīmā kalkulators no kopējā sienas apjoma atņem ķieģeļu vai bloku apjomu, lai
+        iegūtu javas apjomu, tad pārvērš to litros par kilogramiem un maisiem, izmantojot konkrēta produkta
+        iznākumu.
+      </p>
+      <p className="text-panel-muted">
+        <strong>Piemērs apmetuma režīmā</strong> (20&nbsp;m² siena, 10&nbsp;mm biezums, Baumit MPI 25,
+        1,4&nbsp;kg/m²/mm, 5&nbsp;% rezerve):
+      </p>
+      <ul className="list-disc pl-5 text-panel-muted">
+        <li>Platība ar rezervi: 20 × 1,05 = <strong>21&nbsp;m²</strong></li>
+        <li>Daudzums: 21 × 10 × 1,4 = <strong>294&nbsp;kg</strong></li>
+        <li>Maisi: 294 ÷ 25 ≈ <strong>12 maisi</strong></li>
+      </ul>
+      <p className="text-panel-muted">
+        <strong>Piemērs mūrjavas režīmā</strong> (10&nbsp;m² siena, ķieģelis 250 reiz 120 reiz 65&nbsp;mm,
+        10&nbsp;mm šuve, 0&nbsp;% rezerve):
+      </p>
+      <ul className="list-disc pl-5 text-panel-muted">
+        <li>Vienības: 513 ķieģeļi</li>
+        <li>Sienas apjoms: 10 × 0,12 = <strong>1,2&nbsp;m³</strong></li>
+        <li>Ķieģeļu apjoms: 513 × 0,25 × 0,12 × 0,065 ≈ <strong>1,00035&nbsp;m³</strong></li>
+        <li>Javas apjoms: 1,2 − 1,00035 ≈ <strong>199,65&nbsp;L</strong></li>
+      </ul>
+    </>
+  ),
   'skriesanas-temps': (
     <p className="text-panel-muted">
       Kalkulators saskaita kopējo laiku minūtēs un dala to ar distanci, lai iegūtu tempu uz kilometru.
@@ -350,6 +380,23 @@ const limitationsContent: Record<string, React.ReactNode> = {
         Plānšuves (līmes) sistēmas. Kalkulators modelē tikai parasto mūrēšanu ar javas šuvi, atsevišķu
         gāzbetona bloku līmēšanu ar 1 līdz 3&nbsp;mm šuvi šis kalkulators nerēķina, sk. Biežāk uzdotos
         jautājumus.
+      </li>
+    </ul>
+  ),
+  'javas-apmetuma-daudzums': (
+    <ul className="flex flex-col gap-2 text-panel-muted">
+      <li>
+        Mūrjavas iznākumu. Aprēķinātais javas apjoms tiek pārvērsts kilogramos un maisos, izmantojot viena
+        konkrēta produkta (Sakret ZM) ražotāja norādīto iznākumu, citiem mūrjavas produktiem šis skaitlis
+        var atšķirties.
+      </li>
+      <li>
+        Vienības tukšumus. Javas apjoma ģeometriskais aprēķins pieņem pilnas, necaurumotas vienības,
+        perforētiem vai tukšumainiem ķieģeļiem un blokiem reālais javas patēriņš var atšķirties.
+      </li>
+      <li>
+        Rezerves procentu abos režīmos. Nav atrasts stingrs avots konkrētam skaitlim, tas ir pielāgojams
+        lauks, nevis citēts fakts.
       </li>
     </ul>
   ),
@@ -500,6 +547,70 @@ const sourcesContent: Record<string, React.ReactNode> = {
           className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
         >
           Wienerberger
+        </a>
+        , izgūts 2026. gada 5. septembrī.
+      </li>
+    </ul>
+  ),
+  'javas-apmetuma-daudzums': (
+    <ul className="flex flex-col gap-2 text-sm text-panel-muted">
+      <li>
+        Baumit MPI 25 patēriņš, 1,4&nbsp;kg/m²/mm,{' '}
+        <a
+          href="https://bau24.lv/sausie-maisijumi/razotajs-lv/baumit/baumit-mpi-25.html"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          bau24.lv
+        </a>
+        , izgūts 2026. gada 5. septembrī.
+      </li>
+      <li>
+        Stimelit ST 5.03 patēriņš, 1,6&nbsp;kg/m²/mm,{' '}
+        <a
+          href="http://www.bmvide.lv/?l=1&c=761&p=184"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          bmvide.lv
+        </a>
+        , izgūts 2026. gada 5. septembrī.
+      </li>
+      <li>
+        Baumit RatioGlatt patēriņš, 1,1&nbsp;kg/m²/mm,{' '}
+        <a
+          href="https://bau24.lv/sausie-maisijumi/razotajs-lv/baumit/baumit-ratioglatt-gipsa-apmetums.html"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          bau24.lv
+        </a>
+        , izgūts 2026. gada 5. septembrī.
+      </li>
+      <li>
+        Sakret ZM mūrjavas iznākums, 25&nbsp;kg maiss dod aptuveni 15&nbsp;litrus,{' '}
+        <a
+          href="https://bau24.lv/sausie-maisijumi/razotajs-lv/sakret/sakret-zm-murjava.html"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          bau24.lv
+        </a>
+        , izgūts 2026. gada 5. septembrī.
+      </li>
+      <li>
+        Javas apjoma ģeometriskā aprēķina metode (sienas apjoms mīnus vienību apjoms),{' '}
+        <a
+          href="https://www.engineeringcivil.com/mortar-calculation-in-brickwork.html"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          engineeringcivil.com
         </a>
         , izgūts 2026. gada 5. septembrī.
       </li>

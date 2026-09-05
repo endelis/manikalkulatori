@@ -44,3 +44,17 @@ Sourced primitīvi:
 
 Reāla kļūda, ko atklāja mans pašrakstītais robežgadījuma tests pirms commit: sākotnējā nulles aizsardzība pārbaudīja atvasināto `effectiveUnitAreaM2 > 0`, nevis izejas dimensijas. Ja vienības garums un augstums abi ir 0, bet šuves biezums nav 0, atvasinātā platība tomēr ir nenulle (piemēram, 10 mm šuve viena pati dod 0,0001 m²), tāpēc aizsardzība neaktivizējās un kods dalīja sienas platību ar šo mākslīgi mazo skaitli, iegūstot absurdi lielu vienību skaitu (100 000 vietā 10 m² sienai ar 0 mm vienību). Labots, pārbaudot izejas dimensijas tieši (`unitLengthMm > 0 && unitHeightMm > 0`), nevis atvasināto platību.
 
+## 4. Javas un apmetuma daudzuma kalkulators
+
+Slug: `javas-apmetuma-daudzums`. Šis kalkulators satur divus režīmus ar patiešām atšķirīgām formulām, ne vienu formulu ar materiāla izvēli kā 1. un 3. kalkulatorā.
+
+Pirms rakstīšanas veikta izpēte par to, vai mūrjavu (javu starp ķieģeļiem/blokiem) un apmetumu (virsmas apdares kārtu) var rēķināt ar vienu un to pašu pieeju. Secinājums, ko apstiprināja lietotājs pirms koda rakstīšanas:
+
+- **Apmetums**: tīri sourced. Trīs neatkarīgi produkti (Baumit MPI 25, Baumit RatioGlatt, Stimelit ST 5.03) dod konverģējošu patēriņa likmi 1,1 līdz 1,6 kg uz m² uz mm biezuma, katrs ar savu produkta lapu. Formula: daudzums_kg = platība × biezums_mm × likme, maisi = ceil(daudzums_kg ÷ maisa_svars).
+- **Mūrjava**: ražotāju dotais patēriņš uz kubikmetru mūra (138 līdz 200 kg/m³, [keraterm.lv](https://keraterm.lv/akcijas-noteikumi/), [bmvide.lv](http://www.bmvide.lv/?l=1&c=761&p=184)) atšķiras gandrīz uz pusi atkarībā no vienības tipa un tukšumiem, tas nav pietiekami precīzs formulai. Tā vietā javas apjoms aprēķināts ģeometriski: sienas apjoms mīnus vienību kopējais apjoms, izmantojot to pašu vienību skaita formulu, kas jau ir `kiegelu-bloku-daudzums` (kods faktiski importē un atkārtoti izmanto `calculateKiegeluBlokuDaudzums`, ne tikai atsauci uz to). Šī sienas apjoms mīnus vienību apjoms metode ir vispārpieņemta mūrniecības aprēķina metode, apstiprināta, piemēram, [engineeringcivil.com](https://www.engineeringcivil.com/mortar-calculation-in-brickwork.html) un [quantity-takeoff.com](https://www.quantity-takeoff.com/calculation-of-the-quantities-cement-sand-&-wate-in-mortar-for-any-brickwork.html). Iegūtais litru apjoms pārvērsts kilogramos ar viena konkrēta produkta (Sakret ZM, 25 kg maiss dod aptuveni 15 L) ražotāja iznākumu, nevis ar neprecīzu vidējo.
+- Šī pieeja pieprasīja vienības platumu (sienas biezuma virzienu) kā jaunu ievadi, ko `kiegelu-bloku-daudzums` formula apzināti neizmantoja (tur tas neietekmē vienību skaitu uz m²). Lai izvairītos no dublēšanās, `kiegelu-bloku-daudzums-defaults.ts` `UNIT_DEFAULTS` papildināts ar `widthMm` lauku katrai vienībai (atpakaļsaderīga papildināšana, neietekmē 3. kalkulatoru).
+
+Rezerves procents abos režīmos nav sourced, pielāgojams lauks.
+
+Cross-link: mūrjavas režīms tekstā norāda uz `kiegelu-bloku-daudzums` kalkulatoru kā avotu vienību skaitam, ja lietotājs to jau ir aprēķinājis, bet nepieprasa to, jebkurš var ievadīt izmērus tieši šeit.
+

@@ -293,6 +293,18 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-05T16:55:56+03:00',
   },
   {
+    slug: 'javas-apmetuma-daudzums',
+    category: 'majoklis',
+    title: 'Javas un apmetuma daudzuma kalkulators',
+    h1: 'Cik javas vai apmetuma nepieciešams?',
+    intro:
+      'Izvēlies apmetumu vai mūrjavu, ievadi sienas platību un izmērus, uzzini nepieciešamo maisu skaitu.',
+    metaDescription:
+      'Aprēķini nepieciešamo apmetuma vai mūrjavas maisu skaitu pēc sienas platības, biezuma vai vienību izmēriem un šuves biezuma.',
+    keywords: ['javas kalkulators', 'apmetuma daudzuma kalkulators', 'cik javas vajag', 'mūrjavas apjoms'],
+    contentUpdatedAt: '2026-09-05T19:20:00+03:00',
+  },
+  {
     slug: 'skriesanas-temps',
     category: 'sports',
     title: 'Skriešanas tempa kalkulators',
