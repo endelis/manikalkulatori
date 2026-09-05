@@ -254,7 +254,127 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi betonējamā laukuma izmērus un biezumu, uzzini nepieciešamo betona apjomu un maisu skaitu.',
     metaDescription: 'Aprēķini nepieciešamo betona apjomu kubikmetros un maisu skaitu pēc laukuma izmēriem un biezuma.',
     keywords: ['betona apjoma kalkulators', 'betona daudzums', 'betona maisu skaits'],
-    contentUpdatedAt: '2026-08-22T20:51:18+03:00',
+    contentUpdatedAt: '2026-09-05T22:52:22+03:00',
+  },
+  {
+    slug: 'jumta-seguma-daudzums',
+    category: 'majoklis',
+    title: 'Jumta seguma daudzuma kalkulators',
+    h1: 'Cik daudz jumta seguma materiāla nepieciešams?',
+    intro:
+      'Ievadi jumta pamatnes platību un slīpuma leņķi, izvēlies seguma materiālu, uzzini nepieciešamo daudzumu.',
+    metaDescription:
+      'Aprēķini nepieciešamo jumta seguma daudzumu, dakstiņus, metāla loksnes vai bitumena šindeļus, pēc pamatnes platības un slīpuma leņķa.',
+    keywords: ['jumta seguma kalkulators', 'jumta dakstiņu skaits', 'jumta platības aprēķins'],
+    contentUpdatedAt: '2026-09-05T16:09:58+03:00',
+  },
+  {
+    slug: 'tapetes-daudzums',
+    category: 'majoklis',
+    title: 'Tapetes daudzuma kalkulators',
+    h1: 'Cik tapešu ruļļu nepieciešams?',
+    intro:
+      'Ievadi sienu platību, ruļļa izmēru un raksta veidu, uzzini nepieciešamo tapešu ruļļu skaitu.',
+    metaDescription:
+      'Aprēķini nepieciešamo tapešu ruļļu skaitu pēc sienu platības, ruļļa izmēra un raksta atkārtojuma veida.',
+    keywords: ['tapetes daudzuma kalkulators', 'tapešu ruļļu skaits', 'cik tapešu vajag'],
+    contentUpdatedAt: '2026-09-05T16:55:56+03:00',
+  },
+  {
+    slug: 'kiegelu-bloku-daudzums',
+    category: 'majoklis',
+    title: 'Ķieģeļu un bloku daudzuma kalkulators',
+    h1: 'Cik ķieģeļu vai bloku nepieciešams sienai?',
+    intro:
+      'Ievadi sienas platību, vienības izmērus un šuves biezumu, uzzini nepieciešamo ķieģeļu vai bloku skaitu.',
+    metaDescription:
+      'Aprēķini nepieciešamo ķieģeļu vai gāzbetona bloku skaitu pēc sienas platības, vienības izmēriem un šuves biezuma.',
+    keywords: ['ķieģeļu daudzuma kalkulators', 'bloku skaita aprēķins', 'cik ķieģeļu vajag'],
+    contentUpdatedAt: '2026-09-05T16:55:56+03:00',
+  },
+  {
+    slug: 'javas-apmetuma-daudzums',
+    category: 'majoklis',
+    title: 'Javas un apmetuma daudzuma kalkulators',
+    h1: 'Cik javas vai apmetuma nepieciešams?',
+    intro:
+      'Izvēlies apmetumu vai mūrjavu, ievadi sienas platību un izmērus, uzzini nepieciešamo maisu skaitu.',
+    metaDescription:
+      'Aprēķini nepieciešamo apmetuma vai mūrjavas maisu skaitu pēc sienas platības, biezuma vai vienību izmēriem un šuves biezuma.',
+    keywords: ['javas kalkulators', 'apmetuma daudzuma kalkulators', 'cik javas vajag', 'mūrjavas apjoms'],
+    contentUpdatedAt: '2026-09-05T20:04:57+03:00',
+  },
+  {
+    slug: 'gipskartona-loksnu-daudzums',
+    category: 'majoklis',
+    title: 'Ģipškartona lokšņu daudzuma kalkulators',
+    h1: 'Cik ģipškartona lokšņu nepieciešams?',
+    intro:
+      'Ievadi klājamo platību un loksnes izmēru, uzzini nepieciešamo ģipškartona lokšņu skaitu.',
+    metaDescription:
+      'Aprēķini nepieciešamo ģipškartona lokšņu skaitu pēc sienas vai griestu platības, loksnes izmēra un rezerves procenta.',
+    keywords: ['ģipškartona kalkulators', 'ģipškartona lokšņu skaits', 'cik ģipškartona vajag'],
+    contentUpdatedAt: '2026-09-05T20:21:35+03:00',
+  },
+  {
+    slug: 'grants-smilts-skembu-apjoms',
+    category: 'majoklis',
+    title: 'Grants, smilts un šķembu apjoma kalkulators',
+    h1: 'Cik grants, smilts vai šķembu nepieciešams?',
+    intro:
+      'Izvēlies materiālu, ievadi aizpildāmo platību un kārtas biezumu, uzzini nepieciešamo apjomu un masu.',
+    metaDescription:
+      'Aprēķini nepieciešamo grants, smilts vai šķembu apjomu un masu pēc platības, kārtas biezuma un materiāla blīvuma.',
+    keywords: ['grants kalkulators', 'smilts apjoma kalkulators', 'šķembu daudzuma kalkulators'],
+    contentUpdatedAt: '2026-09-05T21:36:08+03:00',
+  },
+  {
+    slug: 'terases-delu-daudzums',
+    category: 'majoklis',
+    title: 'Terases dēļu daudzuma kalkulators',
+    h1: 'Cik terases dēļu nepieciešams?',
+    intro:
+      'Izvēlies materiālu, ievadi terases platību un dēļa izmēru, uzzini nepieciešamo dēļu skaitu.',
+    metaDescription:
+      'Aprēķini nepieciešamo terases dēļu skaitu pēc terases platības, dēļa platuma, garuma un šuves starp dēļiem.',
+    keywords: ['terases dēļu kalkulators', 'terases seguma aprēķins', 'cik terases dēļu vajag'],
+    contentUpdatedAt: '2026-09-05T21:45:44+03:00',
+  },
+  {
+    slug: 'laminata-vinila-daudzums',
+    category: 'majoklis',
+    title: 'Laminātā un vinila grīdas seguma kalkulators',
+    h1: 'Cik laminātā vai vinila grīdas seguma nepieciešams?',
+    intro:
+      'Izvēlies seguma veidu, ievadi grīdas platību un iepakojuma segumu, uzzini nepieciešamo iepakojumu skaitu.',
+    metaDescription:
+      'Aprēķini nepieciešamo laminātā vai vinila grīdas seguma iepakojumu skaitu pēc grīdas platības un viena iepakojuma seguma.',
+    keywords: ['laminātā kalkulators', 'vinila grīdas kalkulators', 'grīdas seguma daudzums'],
+    contentUpdatedAt: '2026-09-05T22:26:32+03:00',
+  },
+  {
+    slug: 'pasizlidzinosas-javas-daudzums',
+    category: 'majoklis',
+    title: 'Pašizlīdzinošās javas daudzuma kalkulators',
+    h1: 'Cik pašizlīdzinošās javas nepieciešams?',
+    intro:
+      'Izvēlies javas veidu, ievadi grīdas platību un kārtas biezumu, uzzini nepieciešamo maisu skaitu.',
+    metaDescription:
+      'Aprēķini nepieciešamo pašizlīdzinošās grīdas javas maisu skaitu pēc platības, kārtas biezuma un ražotāja norādītā patēriņa.',
+    keywords: ['pašizlīdzinošā java', 'grīdas izlīdzināšanas kalkulators', 'cik javas vajag grīdai'],
+    contentUpdatedAt: '2026-09-05T22:38:40+03:00',
+  },
+  {
+    slug: 'zoga-materiala-daudzums',
+    category: 'majoklis',
+    title: 'Žoga materiāla daudzuma kalkulators',
+    h1: 'Cik žoga materiāla nepieciešams?',
+    intro:
+      'Ievadi žoga garumu, statņu atstarpi un dēlīša izmēru, uzzini nepieciešamo statņu un dēlīšu skaitu.',
+    metaDescription:
+      'Aprēķini nepieciešamo žoga statņu un dēlīšu skaitu pēc žoga garuma, statņu atstarpes, dēlīša platuma un spraugas.',
+    keywords: ['žoga kalkulators', 'žoga materiāla daudzums', 'žoga statņu skaits'],
+    contentUpdatedAt: '2026-09-05T22:52:22+03:00',
   },
   {
     slug: 'skriesanas-temps',
