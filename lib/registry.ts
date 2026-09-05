@@ -338,7 +338,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini nepieciešamo terases dēļu skaitu pēc terases platības, dēļa platuma, garuma un šuves starp dēļiem.',
     keywords: ['terases dēļu kalkulators', 'terases seguma aprēķins', 'cik terases dēļu vajag'],
-    contentUpdatedAt: '2026-09-05T21:40:00+03:00',
+    contentUpdatedAt: '2026-09-05T21:45:44+03:00',
   },
   {
     slug: 'skriesanas-temps',
