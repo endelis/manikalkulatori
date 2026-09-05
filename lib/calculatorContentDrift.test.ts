@@ -71,6 +71,7 @@ const CUSTOM_ROUTED_EXTRA_UI_FILES: Record<string, string[]> = {
     'components/BirthsDeathsTable.tsx',
   ],
   'pensijas-kalkulators': ['components/calculators/PensijasKalkulators.tsx'],
+  'tumsas-kalkulators': ['components/calculators/TumsasKalkulators.tsx'],
 };
 
 function uiFilesForSlug(calc: CalculatorMeta): string[] {

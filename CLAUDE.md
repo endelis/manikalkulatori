@@ -45,6 +45,15 @@ is not covered by the ban.
   allows U+2212 only when it is immediately followed by a digit (i.e. genuinely part of
   a number), and still fails on it, and on U+002D and the other dash variants, anywhere
   else in visible text.
+- A displayed mathematical formula (monospace algebraic notation, e.g.
+  `tumsas_stundas(n) = 24 − gaismas_stundas(n)`) is not prose, so U+2212 used there as a
+  subtraction operator between algebraic terms is also exempt, on the same footing as ×
+  and ÷ already used in that notation. This only covers an actual formula display block,
+  never a subtraction written out in a sentence.
+- ISO date strings from a data file (`"2026-06-21"`) contain U+002D and must never be
+  interpolated directly into visible copy; format them into Latvian date prose first
+  (`"2026. gada 21. jūnijā"`). This is an easy one to miss once real content lands on top
+  of a skeleton that only had labels; scan the built HTML, not the source, to catch it.
 
 ## Small change protocol
 
