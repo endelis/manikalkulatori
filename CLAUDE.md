@@ -27,6 +27,23 @@ Every calculator carries a hand maintained `contentUpdatedAt` (ISO date) in `lib
 
 Set `contentUpdatedAt` to the squash merge commit time on master, not the feature branch commit time. Branch time is earlier than the commit the drift test compares against and will fail on master.
 
+## Local ESLint cannot be trusted from inside a worktree
+
+If this repo is checked out as a git worktree alongside another checkout of the same
+repo (e.g. a `.claude/worktrees/<name>` layout with a second `package-lock.json` in a
+parent directory), Next.js infers the wrong workspace root from the duplicate lockfile
+and `next/core-web-vitals` fails to resolve, so ESLint silently does nothing during
+`npm run build` (`npx next lint` fails the same way directly, not specific to any one
+invocation). The build still reports "Compiled successfully" and exits 0. GitHub
+Actions runs a clean single checkout with no such ambiguity, so its ESLint actually
+runs, which means a real lint error (most commonly `react/no-unescaped-entities`, a
+literal `"` or `'` typed directly as JSX text instead of `&quot;`/`&apos;`) can pass
+every local check and only fail once pushed. Until the worktree's duplicate lockfile is
+cleaned up, treat `npm run build` succeeding locally as necessary but not sufficient:
+grep new JSX text for stray literal quote characters by hand before pushing, or push
+early and check the actual GitHub Actions log rather than trusting a long local green
+streak.
+
 ## Dashes, hyphens, and the minus sign
 
 Visible Latvian copy must never contain a dash or hyphen used as punctuation (em dash,
