@@ -314,7 +314,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini nepieciešamo ģipškartona lokšņu skaitu pēc sienas vai griestu platības, loksnes izmēra un rezerves procenta.',
     keywords: ['ģipškartona kalkulators', 'ģipškartona lokšņu skaits', 'cik ģipškartona vajag'],
-    contentUpdatedAt: '2026-09-05T20:19:00+03:00',
+    contentUpdatedAt: '2026-09-05T20:21:35+03:00',
   },
   {
     slug: 'skriesanas-temps',
