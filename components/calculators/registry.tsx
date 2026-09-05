@@ -17,6 +17,7 @@ import { MalkasApjomaCalculator } from './MalkasApjomaCalculator';
 import { KrasasDaudzumaCalculator } from './KrasasDaudzumaCalculator';
 import { FlizuDaudzumaCalculator } from './FlizuDaudzumaCalculator';
 import { BetonaApjomaCalculator } from './BetonaApjomaCalculator';
+import { JumtaSegumaDaudzumaCalculator } from './JumtaSegumaDaudzumaCalculator';
 import { SkriesanasTempaCalculator } from './SkriesanasTempaCalculator';
 import { TriatlonaPlanotajaCalculator } from './TriatlonaPlanotajaCalculator';
 import { FtpZonuCalculator } from './FtpZonuCalculator';
@@ -50,6 +51,7 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'krasas-daudzums': KrasasDaudzumaCalculator,
   'flizu-daudzums': FlizuDaudzumaCalculator,
   'betona-apjoms': BetonaApjomaCalculator,
+  'jumta-seguma-daudzums': JumtaSegumaDaudzumaCalculator,
   'skriesanas-temps': SkriesanasTempaCalculator,
   'triatlona-planotajs': TriatlonaPlanotajaCalculator,
   'ftp-zonas': FtpZonuCalculator,

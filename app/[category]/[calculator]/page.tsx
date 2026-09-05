@@ -209,6 +209,25 @@ const explanations: Record<string, React.ReactNode> = {
       tad dala to ar viena maisa iznākumu un noapaļo uz augšu, lai iegūtu nepieciešamo maisu skaitu.
     </p>
   ),
+  'jumta-seguma-daudzums': (
+    <>
+      <p className="text-panel-muted">
+        Kalkulators vispirms pārrēķina jumta pamatnes platību uz reālo, slīpo platību: pamatnes platību dala
+        ar slīpuma leņķa kosinusu. Tad šai platībai pieskaita rezerves procentu, un atkarībā no izvēlētā
+        materiāla dala vai reizina rezultātu ar attiecīgo seguma vienas vienības segumu, noapaļojot uz augšu
+        līdz veselam skaitam.
+      </p>
+      <p className="text-panel-muted">
+        <strong>Piemērs ar noklusējuma vērtībām</strong> (100&nbsp;m² pamatne, 30 grādu slīpums, 12&nbsp;%
+        rezerve, dakstiņi 10,5&nbsp;gab/m²):
+      </p>
+      <ul className="list-disc pl-5 text-panel-muted">
+        <li>Slīpā platība: 100 ÷ cos(30°) ≈ <strong>115,47&nbsp;m²</strong></li>
+        <li>Ar rezervi: 115,47 × 1,12 ≈ <strong>129,33&nbsp;m²</strong></li>
+        <li>Dakstiņi: 129,33 × 10,5 ≈ <strong>1&nbsp;358 dakstiņi</strong></li>
+      </ul>
+    </>
+  ),
   'skriesanas-temps': (
     <p className="text-panel-muted">
       Kalkulators saskaita kopējo laiku minūtēs un dala to ar distanci, lai iegūtu tempu uz kilometru.
@@ -233,6 +252,106 @@ const explanations: Record<string, React.ReactNode> = {
       miera pulsam attiecīgo procentuālo daļu no pulsa rezerves, iegūstot piecas treniņu zonas pēc
       Karvonena metodes.
     </p>
+  ),
+};
+
+/**
+ * Optional "Ko šis kalkulators neņem vērā" content, only for calculators that cite real
+ * external sources and need to disclose an approximation, an unsourced adjustable
+ * field, or a scope decision. Most calculators in this file predate this map and have
+ * no entry, which is correct: CalculatorShell renders nothing when a slug is absent.
+ */
+const limitationsContent: Record<string, React.ReactNode> = {
+  'jumta-seguma-daudzums': (
+    <ul className="flex flex-col gap-2 text-panel-muted">
+      <li>
+        Dakstiņu segumu uz kvadrātmetru. Precīzais skaits ir avotā dotais diapazons, ne pa slīpuma
+        pakāpēm sadalīta tabula, jo ražotāja instrukcijas attēls nebija izgūstams teksta veidā šī
+        pētījuma gājienā. Pārbaudi precīzu vērtību savam dakstiņu modelim.
+      </li>
+      <li>
+        Rezerves procentu. Nav atrasts stingrs avots konkrētam procentam materiālu apgriešanai un
+        pārklāšanai, tikai nozares konvencija, tāpēc tas ir pielāgojams lauks, nevis citēts fakts.
+      </li>
+      <li>
+        Metāla lokšņu izkārtojumu. Aprēķins izmanto vienkāršu platības dalījumu ar vienas loksnes
+        segumu, tas neietver konkrētu lokšņu izkārtojumu pa jumta platumu vai pielāgošanu jumta
+        formai, tāpēc reālais nepieciešamais skaits var atšķirties.
+      </li>
+      <li>Kores un citu piederumu daudzumu. Šis kalkulators tos nerēķina, sk. Biežāk uzdotos jautājumus.</li>
+    </ul>
+  ),
+};
+
+/**
+ * Optional "Avoti" content, only for calculators with real cited sources for their
+ * default values (most calculators in this file have none, defaults are just
+ * reasonable placeholders the user is expected to override).
+ */
+const sourcesContent: Record<string, React.ReactNode> = {
+  'jumta-seguma-daudzums': (
+    <ul className="flex flex-col gap-2 text-sm text-panel-muted">
+      <li>
+        Pamatnes platības uz slīpo platību formula,{' '}
+        <a
+          href="https://www.omnicalculator.com/construction/roofing"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          omnicalculator.com
+        </a>
+        , izgūts 2026. gada 5. septembrī.
+      </li>
+      <li>
+        Betona dakstiņu segums uz m²,{' '}
+        <a
+          href="https://orberg.lv/wp-content/uploads/2025/07/Benders-betona-dakstini-montazas-instrukcija-2025-ORBERG.pdf"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          Benders montāžas instrukcija
+        </a>
+        , izgūts 2026. gada 5. septembrī.
+      </li>
+      <li>
+        Metāla T20 profila loksnes izmēri,{' '}
+        <a
+          href="https://www.ruukki.com/lva/jumti/jumta-materiali/jumta-loksnes/jumta-loksnes-produkti/trapetsprofiil-t20-24w-1100"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          Ruukki
+        </a>
+        , izgūts 2026. gada 5. septembrī.
+      </li>
+      <li>
+        Bitumena šindeļu iepakojuma segums,{' '}
+        <a
+          href="https://www.kursi.lv/lv/buvmateriali/jumta-segumi-un-jumta-piederumi/bitumena-sindeli"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          kursi.lv
+        </a>
+        , izgūts 2026. gada 5. septembrī.
+      </li>
+      <li>
+        Rezerves procenta konvencija,{' '}
+        <a
+          href="https://roofr.com/blog/how-to-calculate-roof-waste-factor"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          roofr.com
+        </a>
+        , izgūts 2026. gada 5. septembrī.
+      </li>
+    </ul>
   ),
 };
 
@@ -279,6 +398,8 @@ export default async function CalculatorPage({
         faq={faq}
         related={related}
         explanation={explanations[calculator.slug]}
+        limitations={limitationsContent[calculator.slug]}
+        sources={sourcesContent[calculator.slug]}
       >
         <CalculatorComponent accentVar={category.accentVar} />
       </CalculatorShell>

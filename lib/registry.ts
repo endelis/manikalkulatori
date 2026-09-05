@@ -257,6 +257,18 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-08-22T20:51:18+03:00',
   },
   {
+    slug: 'jumta-seguma-daudzums',
+    category: 'majoklis',
+    title: 'Jumta seguma daudzuma kalkulators',
+    h1: 'Cik daudz jumta seguma materiāla nepieciešams?',
+    intro:
+      'Ievadi jumta pamatnes platību un slīpuma leņķi, izvēlies seguma materiālu, uzzini nepieciešamo daudzumu.',
+    metaDescription:
+      'Aprēķini nepieciešamo jumta seguma daudzumu, dakstiņus, metāla loksnes vai bitumena šindeļus, pēc pamatnes platības un slīpuma leņķa.',
+    keywords: ['jumta seguma kalkulators', 'jumta dakstiņu skaits', 'jumta platības aprēķins'],
+    contentUpdatedAt: '2026-09-05T16:07:00+03:00',
+  },
+  {
     slug: 'skriesanas-temps',
     category: 'sports',
     title: 'Skriešanas tempa kalkulators',
