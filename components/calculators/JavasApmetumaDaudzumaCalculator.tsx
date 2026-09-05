@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import { NumberField } from '@/components/NumberField';
 import { ResultCard } from '@/components/ResultCard';
@@ -200,12 +201,12 @@ export function JavasApmetumaDaudzumaCalculator({ accentVar }: { accentVar: stri
           <p className="text-caption text-panel-faint">
             Javas apjomu aprēķina ģeometriski, no sienas apjoma atņemot ķieģeļu vai bloku apjomu, izmantojot
             to pašu vienību skaitu, ko dotu{' '}
-            <a
+            <Link
               href="/majoklis/kiegelu-bloku-daudzums"
               className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
             >
               ķieģeļu un bloku daudzuma kalkulators
-            </a>
+            </Link>
             . Ja tā rezultāts jau ir zināms, vienkārši ievadi tos pašus izmērus šeit.
           </p>
 

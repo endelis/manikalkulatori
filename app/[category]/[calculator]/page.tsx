@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
 import type { Metadata } from 'next';
 import { CUSTOM_ROUTED_SLUGS, calculators, getCalculator, getCategory, getRelatedCalculators } from '@/lib/registry';
 import { loadFaq } from '@/lib/faq';
@@ -211,12 +212,12 @@ const explanations: Record<string, React.ReactNode> = {
       </p>
       <p className="text-panel-muted">
         Ja rēķini betonu žoga statņu bedrēm, skaties arī{' '}
-        <a
+        <Link
           href="/majoklis/zoga-materiala-daudzums"
           className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
         >
           žoga materiāla daudzuma kalkulatoru
-        </a>
+        </Link>
         , kas aprēķina nepieciešamo statņu skaitu.
       </p>
     </>

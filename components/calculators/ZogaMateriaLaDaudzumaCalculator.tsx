@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import { NumberField } from '@/components/NumberField';
 import { ResultCard } from '@/components/ResultCard';
@@ -126,12 +127,12 @@ export function ZogaMateriaLaDaudzumaCalculator({ accentVar }: { accentVar: stri
         Katram statnim parasti vajadzīga betonēta bedre, apmēram {formatNumber(HOLE_DIAMETER_MM_EXAMPLE, 0)}
         &nbsp;mm diametrā un {formatNumber(HOLE_DEPTH_MM_EXAMPLE, 0)}&nbsp;mm dziļumā ir bieži sastopams
         piemērs. Vienas bedres betona daudzumu aprēķini{' '}
-        <a
+        <Link
           href="/majoklis/betona-apjoms"
           className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
         >
           betona apjoma kalkulatorā
-        </a>
+        </Link>
         , tad reizini ar statņu skaitu, sk. Biežāk uzdotos jautājumus.
       </p>
     </div>
