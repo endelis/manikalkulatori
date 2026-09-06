@@ -449,6 +449,32 @@ const explanations: Record<string, React.ReactNode> = {
  * no entry, which is correct: CalculatorShell renders nothing when a slug is absent.
  */
 const limitationsContent: Record<string, React.ReactNode> = {
+  'kasko-kalkulators': (
+    <ul className="flex flex-col gap-2 text-panel-muted">
+      <li>
+        Konkrēta apdrošinātāja cenu. Šis kalkulators nevar pateikt, cik KASKO maksātu pie BTA, Gjensidige,
+        If, Compensa vai ERGO, jo neviens apdrošinātājs nepublicē savu risku novērtēšanas formulu, sk.
+        Biežāk uzdotos jautājumus.
+      </li>
+      <li>
+        Seguma apjomu. Kalkulators rēķina tikai prēmiju, ne to, ko konkrētā polise faktiski sedz,
+        pašrisku vai izņēmumus, tie jāsalīdzina atsevišķi.
+      </li>
+    </ul>
+  ),
+  'octa-kalkulators': (
+    <ul className="flex flex-col gap-2 text-panel-muted">
+      <li>
+        Konkrēta apdrošinātāja cenu. Tāpat kā KASKO, arī OCTA cenu katrs apdrošinātājs nosaka pats, nav
+        publiskas koeficientu tabulas, ko šis kalkulators varētu izmantot cenas aprēķinam, sk. Biežāk
+        uzdotos jautājumus.
+      </li>
+      <li>
+        Bonus malus klasi. Bezavāriju braukšanas klasi kopīgi uztur LTAB, bet katra klase katram
+        apdrošinātājam dod atšķirīgu atlaidi, ko šis kalkulators nerēķina.
+      </li>
+    </ul>
+  ),
   'jumta-seguma-daudzums': (
     <ul className="flex flex-col gap-2 text-panel-muted">
       <li>
@@ -635,6 +661,24 @@ const limitationsContent: Record<string, React.ReactNode> = {
  * reasonable placeholders the user is expected to override).
  */
 const sourcesContent: Record<string, React.ReactNode> = {
+  'octa-kalkulators': (
+    <ul className="flex flex-col gap-2 text-sm text-panel-muted">
+      <li>
+        OCTA prēmiju nosaka apdrošinātājs, ne valsts (12. panta pirmā daļa), un minimālā apdrošinājuma
+        summa, līdz 6&nbsp;450&nbsp;000 eiro par miesas bojājumiem un līdz 1&nbsp;300&nbsp;000 eiro par
+        mantisko kaitējumu (15. panta pirmā daļa),{' '}
+        <a
+          href="https://likumi.lv/ta/id/87547-sauszemes-transportlidzeklu-ipasnieku-civiltiesiskas-atbildibas-obligatas-apdrosinasanas-likums"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          likumi.lv
+        </a>
+        , izgūts 2026. gada 6. septembrī.
+      </li>
+    </ul>
+  ),
   'jumta-seguma-daudzums': (
     <ul className="flex flex-col gap-2 text-sm text-panel-muted">
       <li>
