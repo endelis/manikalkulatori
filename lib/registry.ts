@@ -76,7 +76,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Salīdzini elektroauto un benzīna auto gada ekspluatācijas izmaksas pēc nobraukuma, patēriņa un enerģijas cenas.',
     keywords: ['elektroauto vs benzīns', 'elektroauto izmaksas', 'ev vs ice kalkulators'],
-    contentUpdatedAt: '2026-08-22T19:55:03+03:00',
+    contentUpdatedAt: '2026-09-06T23:14:36+03:00',
   },
   {
     slug: 'ekii-atbalsts',
@@ -113,13 +113,20 @@ export const calculators: CalculatorMeta[] = [
   {
     slug: 'lizings-vs-kredits',
     category: 'auto',
-    title: 'Līzings vs kredīts auto',
-    h1: 'Līzings vai kredīts, kas izmaksā lētāk mēnesī?',
-    intro: 'Ievadi auto cenu un savu piedāvājumu, salīdzini kredīta un līzinga mēneša maksājumu.',
+    title: 'Auto līzings vai kredīts',
+    h1: 'Auto līzings vai kredīts, kas izmaksā lētāk mēnesī?',
+    intro:
+      'Ievadi auto cenu un savu piedāvājumu, uzzini mēneša maksājumu auto līzingam un kredītam un salīdzini, kas izmaksā lētāk.',
     metaDescription:
-      'Salīdzini auto kredīta un līzinga mēneša maksājumu pēc auto cenas, pirmās iemaksas, termiņa un likmēm.',
-    keywords: ['līzings vs kredīts', 'auto līzings kalkulators', 'auto kredīts kalkulators'],
-    contentUpdatedAt: '2026-08-22T20:18:36+03:00',
+      'Salīdzini auto līzingu vai kredītu: mēneša maksājumu un kopējās izmaksas pēc auto cenas, pirmās iemaksas, termiņa un likmēm.',
+    keywords: [
+      'auto līzings vai kredīts',
+      'auto kredīts vai līzings',
+      'auto līzings kalkulators',
+      'auto kredīts kalkulators',
+      'mēneša maksājums auto līzingam',
+    ],
+    contentUpdatedAt: '2026-09-06T23:14:36+03:00',
   },
   {
     slug: 'degvielas-izmaksas',
@@ -135,13 +142,20 @@ export const calculators: CalculatorMeta[] = [
   {
     slug: 'uzlades-izmaksas',
     category: 'auto',
-    title: 'Elektroauto uzlādes izmaksas',
-    h1: 'Cik izmaksā elektroauto uzlāde mājās un publiski?',
-    intro: 'Ievadi, cik daļu no uzlādes veic mājās un cik publiski, uzzini gada uzlādes izmaksas.',
+    title: 'Elektroauto uzlādes cena',
+    h1: 'Cik maksā uzlādēt elektroauto mājās un publiski?',
+    intro:
+      'Ievadi, cik daļu no uzlādes veic mājās un cik publiski, uzzini elektroauto uzlādes cenu un gada izmaksas.',
     metaDescription:
-      'Aprēķini elektroauto gada uzlādes izmaksas, sadalot uzlādi starp mājas un publisko lādēšanu.',
-    keywords: ['elektroauto uzlādes izmaksas', 'uzlādes cena mājās', 'publiskā lādēšana cena'],
-    contentUpdatedAt: '2026-08-22T20:26:27+03:00',
+      'Aprēķini elektroauto uzlādes cenu un gada izmaksas, sadalot uzlādi starp mājas un publisko lādēšanu.',
+    keywords: [
+      'elektroauto uzlādes cena',
+      'elektroauto uzlādes cenas',
+      'cik maksā uzlādēt elektromobili',
+      'cik maksā uzlāde',
+      'elektroauto uzlādes izmaksas',
+    ],
+    contentUpdatedAt: '2026-09-06T23:14:36+03:00',
   },
   {
     slug: 'nolietojums',
