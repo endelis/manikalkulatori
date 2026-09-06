@@ -93,12 +93,12 @@ export const calculators: CalculatorMeta[] = [
     slug: 'kasko-kalkulators',
     category: 'auto',
     title: 'KASKO kalkulators',
-    h1: 'Cik izmaksā KASKO apdrošināšana mēnesī?',
+    h1: 'Cik izmaksā tavs KASKO piedāvājums mēnesī?',
     intro: 'Ievadi auto vērtību un savu KASKO piedāvājumu, uzzini mēneša maksājumu un izmaksas trīs gados.',
     metaDescription:
       'Aprēķini KASKO apdrošināšanas mēneša maksājumu un izmaksas kā daļu no auto vērtības pēc tavis saņemtā piedāvājuma.',
-    keywords: ['KASKO kalkulators', 'KASKO cena', 'auto apdrošināšana'],
-    contentUpdatedAt: '2026-08-22T20:18:36+03:00',
+    keywords: ['KASKO kalkulators', 'KASKO cena', 'auto apdrošināšana', 'KASKO piedāvājumu salīdzināšana'],
+    contentUpdatedAt: '2026-09-06T22:57:11+03:00',
   },
   {
     slug: 'octa-kalkulators',
@@ -108,7 +108,7 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi līdz trim saņemtajiem OCTA piedāvājumiem, uzzini lētāko un starpību pret dārgāko.',
     metaDescription: 'Salīdzini vairākus OCTA apdrošināšanas piedāvājumus un atrodi lētāko variantu.',
     keywords: ['OCTA kalkulators', 'OCTA cenas salīdzinājums', 'obligātā apdrošināšana'],
-    contentUpdatedAt: '2026-08-22T20:18:36+03:00',
+    contentUpdatedAt: '2026-09-06T22:57:11+03:00',
   },
   {
     slug: 'lizings-vs-kredits',
