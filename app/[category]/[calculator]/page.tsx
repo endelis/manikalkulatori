@@ -70,6 +70,16 @@ const explanations: Record<string, React.ReactNode> = {
         <li>Benzīna auto: 15&nbsp;000 / 100 × 7,0 × 1,85 = <strong>1&nbsp;942,50&nbsp;€</strong> gadā</li>
         <li>Ietaupījums: 1&nbsp;942,50&nbsp;€ − 445,50&nbsp;€ = <strong>1&nbsp;497,00&nbsp;€</strong> gadā</li>
       </ul>
+      <p className="text-panel-muted">
+        Ja vēlies precīzāk aprēķināt uzlādes izmaksas, sadalot to starp mājas un publisko lādēšanu, skaties{' '}
+        <Link
+          href="/auto/uzlades-izmaksas"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          uzlādes izmaksu kalkulatoru
+        </Link>
+        .
+      </p>
     </>
   ),
   'ekii-atbalsts': (
@@ -131,11 +141,23 @@ const explanations: Record<string, React.ReactNode> = {
     </p>
   ),
   'uzlades-izmaksas': (
-    <p className="text-panel-muted">
-      Kalkulators aprēķina kopējo gadā patērēto enerģiju no tava nobraukuma un patēriņa, tad sadala to
-      starp mājas un publisko lādēšanu pēc tavis norādītās proporcijas. Katrai daļai piemēro atbilstošo
-      cenu un summē kopējās gada izmaksas.
-    </p>
+    <>
+      <p className="text-panel-muted">
+        Kalkulators aprēķina kopējo gadā patērēto enerģiju no tava nobraukuma un patēriņa, tad sadala to
+        starp mājas un publisko lādēšanu pēc tavis norādītās proporcijas. Katrai daļai piemēro atbilstošo
+        cenu un summē kopējās gada izmaksas.
+      </p>
+      <p className="text-panel-muted">
+        Ja vēlies salīdzināt elektroauto ar benzīna auto kopumā, ne tikai uzlādes cenu, skaties{' '}
+        <Link
+          href="/auto/elektroauto-vs-benzina"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          elektroauto pret benzīna auto kalkulatoru
+        </Link>
+        .
+      </p>
+    </>
   ),
   'nolietojums': (
     <p className="text-panel-muted">
@@ -449,6 +471,31 @@ const explanations: Record<string, React.ReactNode> = {
  * no entry, which is correct: CalculatorShell renders nothing when a slug is absent.
  */
 const limitationsContent: Record<string, React.ReactNode> = {
+  'uzlades-izmaksas': (
+    <ul className="flex flex-col gap-2 text-panel-muted">
+      <li>
+        Konkrētu tarifu. Mājas un publiskās lādēšanas cena atšķiras starp elektrības tirgotājiem, uzlādes
+        operatoriem un lādēšanas ātrumu, sk. Avoti par reālo diapazonu. Noklusējuma vērtības ir šī
+        diapazona augšējā daļā, ievadi savu reālo cenu precīzākam rezultātam.
+      </li>
+      <li>
+        Dinamiskos tarifus. Kalkulators izmanto vienu fiksētu cenu katrai lādēšanas vietai, tas neietver
+        stundas vai nakts tarifu svārstības, sk. Biežāk uzdotos jautājumus.
+      </li>
+    </ul>
+  ),
+  'lizings-vs-kredits': (
+    <ul className="flex flex-col gap-2 text-panel-muted">
+      <li>
+        Vidējās tirgus likmes. Kalkulators nesniedz tipisku vai vidējo likmi, likme un atlikusī vērtība
+        jāievada no tava paša saņemtā piedāvājuma, sk. Biežāk uzdotos jautājumus.
+      </li>
+      <li>
+        Papildu maksas. Kalkulators nerēķina apdrošināšanas, reģistrācijas vai citas ar līgumu saistītas
+        papildu izmaksas, tikai pamatsummas maksājumu.
+      </li>
+    </ul>
+  ),
   'jumta-seguma-daudzums': (
     <ul className="flex flex-col gap-2 text-panel-muted">
       <li>
@@ -635,6 +682,36 @@ const limitationsContent: Record<string, React.ReactNode> = {
  * reasonable placeholders the user is expected to override).
  */
 const sourcesContent: Record<string, React.ReactNode> = {
+  'uzlades-izmaksas': (
+    <ul className="flex flex-col gap-2 text-sm text-panel-muted">
+      <li>
+        Mājas lādēšanas cena, 0,12 līdz 0,18 eiro/kWh, un publiskās lādēšanas cena, 0,30 līdz 0,45
+        eiro/kWh (Ignitis ON, Eleport, Elektrum Drive/Enefit Volt operatoru dati),{' '}
+        <a
+          href="https://www.skandimotors.lv/elektroauto-uzlade-kur-ladet-cik-maksa-un-kas-jazina/"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          skandimotors.lv
+        </a>
+        , publicēts 2026. gada 7. janvārī, izgūts 2026. gada 6. septembrī.
+      </li>
+      <li>
+        Elektrības tirgotāju enerģijas cena (bez PVN un sadales maksas), apstiprina mājas cenu diapazona
+        apakšējo daļu,{' '}
+        <a
+          href="https://www.elektroenergija.lv/"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          elektroenergija.lv
+        </a>
+        , stāvoklis uz 2026. gada 13. augustu, izgūts 2026. gada 6. septembrī.
+      </li>
+    </ul>
+  ),
   'jumta-seguma-daudzums': (
     <ul className="flex flex-col gap-2 text-sm text-panel-muted">
       <li>
