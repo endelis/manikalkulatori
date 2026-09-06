@@ -76,7 +76,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Salīdzini elektroauto un benzīna auto gada ekspluatācijas izmaksas pēc nobraukuma, patēriņa un enerģijas cenas.',
     keywords: ['elektroauto vs benzīns', 'elektroauto izmaksas', 'ev vs ice kalkulators'],
-    contentUpdatedAt: '2026-09-06T23:14:36+03:00',
+    contentUpdatedAt: '2026-09-06T23:15:47+03:00',
   },
   {
     slug: 'ekii-atbalsts',
@@ -126,7 +126,7 @@ export const calculators: CalculatorMeta[] = [
       'auto kredīts kalkulators',
       'mēneša maksājums auto līzingam',
     ],
-    contentUpdatedAt: '2026-09-06T23:14:36+03:00',
+    contentUpdatedAt: '2026-09-06T23:15:47+03:00',
   },
   {
     slug: 'degvielas-izmaksas',
@@ -155,7 +155,7 @@ export const calculators: CalculatorMeta[] = [
       'cik maksā uzlāde',
       'elektroauto uzlādes izmaksas',
     ],
-    contentUpdatedAt: '2026-09-06T23:14:36+03:00',
+    contentUpdatedAt: '2026-09-06T23:15:47+03:00',
   },
   {
     slug: 'nolietojums',
