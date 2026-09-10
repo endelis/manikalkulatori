@@ -39,8 +39,10 @@ Read at the start of every cycle. Contents:
   registry entry, per the MAP in `CLAUDE.md`), improve SEO/content quality
   on existing pages, fix tests/build/content-drift issues, write
   monetization-groundwork code (e.g. an `AdSlot` component per
-  DESIGN-GUIDANCE.md section 8) without wiring it to a live account.
-  Commit, push, and merge directly — no PR gate for code.
+  DESIGN-GUIDANCE.md section 8) without wiring it to a live account, and
+  general-web research (see "External research" below) to sanity-check a
+  slug, a competitor's coverage, or a figure before building. Commit, push,
+  and merge directly — no PR gate for code.
 - Gated, must stop and flag instead of acting: anything needing a real
   external account or credential (AdSense, affiliate program signup, DNS),
   anything that spends money, any YMYL figure (tax rate, grant amount,
@@ -92,7 +94,32 @@ something needs the user, or on requested actions). Given that:
 - Resuming after a stall is manual (`claude --resume` or messaging the
   session via Remote Control), not automatic. This is accepted, not solved.
 
+### 5. External research
+
+Checked what's actually available: an Ahrefs MCP connection is attached and
+does expose real Google Search Console endpoints (`gsc-keywords`,
+`gsc-page-history`, `gsc-performance-history`, etc.) plus site-explorer and
+keyword-research tools that would directly serve competitor-gap analysis
+against kalkulatori.lv and demand validation for new calculators. Every
+endpoint, including the free domain-rating lookup, currently returns
+`"Insufficient plan"` — this is an Ahrefs plan-tier limit, not a permissions
+issue. No separate Google Search Console or Google Analytics connector is
+attached at all.
+
+Decision: for now, the agent uses general `WebSearch`/`WebFetch` for
+research each cycle where it's relevant — checking what kalkulatori.lv or
+other competitors actually show for a target query, sanity-checking keyword
+ideas, confirming current tax/grant figures before building a finance
+calculator. This has no real search-volume or ranking numbers behind it, so
+findings from it are directional, not authoritative, and get recorded in
+`JOURNAL.md` as such. Revisit Ahrefs (upgrade + link GSC) once there's
+traffic or budget to justify it; when that happens, the CHARTER should be
+updated to prefer Ahrefs data over WebSearch impressions for anything it
+covers.
+
 ## Open items for the user
 
 - Enable Remote Control push notifications via `/config` (their action, not
   this agent's).
+- Revisit the Ahrefs plan tier later if real keyword/GSC data becomes worth
+  the cost.
