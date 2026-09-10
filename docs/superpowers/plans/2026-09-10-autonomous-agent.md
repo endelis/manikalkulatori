@@ -233,7 +233,7 @@ Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>"
 - None created or modified — this task invokes a skill and a tool, it does not touch the filesystem beyond what the loop's first cycle does on its own.
 
 **Interfaces:**
-- Consumes: `docs/agent/CHARTER.md` (Task 1) and `docs/agent/JOURNAL.md` (Task 3's seed "Next" line) as the loop's own inputs.
+- Consumes: `docs/agent/CHARTER.md` (Task 1) and `docs/agent/JOURNAL.md` (Task 2's seed "Next" line) as the loop's own inputs.
 - Produces: an active `ScheduleWakeup` registration for this session, running the `loop` skill in autonomous dynamic mode.
 
 - [ ] **Step 1: Invoke the loop skill in autonomous mode**

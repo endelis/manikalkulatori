@@ -1,6 +1,9 @@
 # Autonomous agent journal
 
-Append-only. One dated entry per work cycle, newest at the bottom.
+Append-only. One dated entry per work cycle, newest at the bottom. New
+entries append below the last entry in the file, not below this format
+block.
+
 Format:
 
 ```
@@ -11,6 +14,11 @@ Learned: <what worked, what didn't, anything that should change future
   priority or approach>
 Next: <what the next cycle should pick up>
 ```
+
+The heading may be a bare date (`## YYYY-MM-DD`) when no meaningful
+time is available, optionally followed by a short parenthetical tag
+(e.g. `## YYYY-MM-DD (seed)`) — both are acceptable variants of the
+same format, not exceptions to it.
 
 A `BLOCKED` entry uses the same format but starts `Did: BLOCKED —` and
 states exactly what decision or access is needed from the user.
