@@ -606,7 +606,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini paredzamo dzemdību termiņu un pašreizējo grūtniecības vecumu pēc Negēles likuma.',
     keywords: ['grūtniecības termiņa kalkulators', 'dzemdību termiņa kalkulators', 'negēles likums'],
-    contentUpdatedAt: '2026-09-11T13:06:23+03:00',
+    contentUpdatedAt: '2026-09-11T13:07:33+03:00',
   },
 ];
 
