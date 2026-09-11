@@ -136,13 +136,20 @@ pure waste, not extra safety.
 `contentUpdatedAt` sequencing: fetch the current timestamp
 (`date +"%Y-%m-%dT%H:%M:%S%z"`) as the last step before `git commit`
 (after all other file edits for this calculator are already done),
-not while drafting the registry entry earlier in the cycle. Several
-tool calls' worth of wall-clock time between fetching the timestamp
-and actually committing is exactly what causes the value to land
-behind the real commit time — check `git log -1 --format=%cI -- <file>`
-against it after the commit, and only spend a second fix-commit +
-scoped re-verify (`registry.test.ts` and `calculatorContentDrift.test.ts`,
-not the full suite) on the rare case where it's still behind.
+not while drafting the registry entry earlier in the cycle. Do not pad
+the fetched value forward to try to pre-empt commit latency —
+`lib/registry.test.ts` independently requires `contentUpdatedAt` not
+be later than wall-clock time when the test itself runs, and a
+forward-padded value that looks safe at commit time can overshoot that
+check once the test actually executes (this happened: a 45s pad
+landed the value in the future relative to the test run and failed
+the suite). Use the plain fetched timestamp; typical tool round-trip
+lag is small enough (seconds, not minutes) that the commit usually
+lands at or after it. Check `git log -1 --format=%cI -- <file>`
+against it after the commit, and spend a second fix-commit + scoped
+re-verify (`registry.test.ts` and `calculatorContentDrift.test.ts`,
+not the full suite) whenever it's behind — that fix-commit uses the
+real commit timestamp exactly, not a further guess.
 
 If any of these fail and can't be made to pass within the cycle, do not
 push. Journal the blocker as above instead.
