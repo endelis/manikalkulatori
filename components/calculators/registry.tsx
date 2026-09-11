@@ -42,6 +42,7 @@ import { KalorijuNormasCalculator } from './KalorijuNormasCalculator';
 import { TaukuProcentaCalculator } from './TaukuProcentaCalculator';
 import { IdealaSvaraCalculator } from './IdealaSvaraCalculator';
 import { UdensNormasCalculator } from './UdensNormasCalculator';
+import { KreditaKalkulators } from './KreditaKalkulators';
 
 /**
  * Props every calculator component receives from the calculator page.
@@ -96,6 +97,7 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'tauku-procents': TaukuProcentaCalculator,
   'idealais-svars': IdealaSvaraCalculator,
   'udens-norma': UdensNormasCalculator,
+  'kredita-kalkulators': KreditaKalkulators,
 };
 
 export function getCalculatorComponent(slug: string): ComponentType<CalculatorComponentProps> | undefined {

@@ -586,6 +586,17 @@ export const calculators: CalculatorMeta[] = [
     // right before merging, per CLAUDE.md, "Sitemap dates".
     contentUpdatedAt: '2026-09-05T14:49:43+03:00',
   },
+  {
+    slug: 'kredita-kalkulators',
+    category: 'finanses',
+    title: 'Patēriņa kredīta kalkulators',
+    h1: 'Cik maksās tavs kredīts?',
+    intro: 'Ievadi kredīta summu, procentu likmi un termiņu, uzzini ikmēneša maksājumu un kopējās izmaksas.',
+    metaDescription:
+      'Aprēķini patēriņa kredīta ikmēneša maksājumu, kopējās izmaksas un pārmaksu pēc anuitātes formulas.',
+    keywords: ['kredīta kalkulators', 'patēriņa kredīta kalkulators', 'aizdevuma maksājuma kalkulators'],
+    contentUpdatedAt: '2026-09-11T13:02:16+03:00',
+  },
 ];
 
 /**
