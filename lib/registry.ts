@@ -707,7 +707,7 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi kadastrālo vērtību un pašvaldības noteikto likmi, uzzini gada un ceturkšņa nodokli.',
     metaDescription: 'Aprēķini nekustamā īpašuma nodokli no kadastrālās vērtības un pašvaldības nodokļa likmes.',
     keywords: ['nekustamā īpašuma nodokļa kalkulators', 'nīn kalkulators', 'īpašuma nodoklis'],
-    contentUpdatedAt: '2026-09-11T15:10:56+03:00',
+    contentUpdatedAt: '2026-09-11T15:11:08+03:00',
   },
   {
     slug: 'grutniecibas-termins',
