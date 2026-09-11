@@ -165,6 +165,13 @@ const explanations: Record<string, React.ReactNode> = {
       atlaidi, ja automašīna aprīkota ar gāzes iekārtu.
     </p>
   ),
+  'uznemuma-auto-nodoklis': (
+    <p className="text-panel-muted">
+      Kalkulators nosaka mēneša likmi pēc transportlīdzekļa veida un dzinēja jaudas: elektromobiļiem un
+      spraudņa hibrīdiem fiksēta likme, citiem pēc 2009. gada reģistrētiem transportlīdzekļiem likme
+      pieaug pa jaudas grupām, tad reizina ar divpadsmit, lai iegūtu gada summu.
+    </p>
+  ),
   'solaru-atmaksa': (
     <p className="text-panel-muted">
       Kalkulators aprēķina gada izstrādi no sistēmas jaudas un vidējās izstrādes uz kWp, tad sadala to

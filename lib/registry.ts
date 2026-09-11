@@ -193,6 +193,22 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-11T09:52:08+03:00',
   },
   {
+    slug: 'uznemuma-auto-nodoklis',
+    category: 'auto',
+    title: 'Uzņēmuma vieglā auto nodokļa kalkulators',
+    h1: 'Cik maksā uzņēmuma vieglā auto nodoklis?',
+    intro:
+      'Ievadi transportlīdzekļa veidu un dzinēja jaudu, uzzini uzņēmumu vieglo transportlīdzekļu nodokli mēnesī un gadā.',
+    metaDescription:
+      'Aprēķini uzņēmumu vieglo transportlīdzekļu nodokli pēc transportlīdzekļa veida un dzinēja jaudas.',
+    keywords: [
+      'uzņēmuma auto nodoklis',
+      'uzņēmumu vieglo transportlīdzekļu nodoklis',
+      'uvtn kalkulators',
+    ],
+    contentUpdatedAt: '2026-09-11T10:21:53+03:00',
+  },
+  {
     slug: 'solaru-atmaksa',
     category: 'majoklis',
     title: 'Solāro paneļu atmaksa',

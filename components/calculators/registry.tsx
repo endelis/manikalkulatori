@@ -33,6 +33,7 @@ import { FtpZonuCalculator } from './FtpZonuCalculator';
 import { SirdsdarbibasZonuCalculator } from './SirdsdarbibasZonuCalculator';
 import { PeldesanasCssCalculator } from './PeldesanasCssCalculator';
 import { EkspluatacijasNodoklaCalculator } from './EkspluatacijasNodoklaCalculator';
+import { UznemumaAutoNodoklaCalculator } from './UznemumaAutoNodoklaCalculator';
 
 /**
  * Props every calculator component receives from the calculator page.
@@ -78,6 +79,7 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'sirdsdarbibas-zonas': SirdsdarbibasZonuCalculator,
   'peldesanas-css': PeldesanasCssCalculator,
   'ekspluatacijas-nodoklis': EkspluatacijasNodoklaCalculator,
+  'uznemuma-auto-nodoklis': UznemumaAutoNodoklaCalculator,
 };
 
 export function getCalculatorComponent(slug: string): ComponentType<CalculatorComponentProps> | undefined {
