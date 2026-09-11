@@ -288,3 +288,23 @@ grutniecibas-termins due date P2, ovulacija ovulation window P2,
 promiles blood alcohol P2). Pick tauku-procents next — standard body
 fat estimation (e.g. US Navy method using circumference measurements),
 no YMYL/sourcing risk.
+
+## 2026-09-11 12:27
+
+Did: built tauku-procents (body fat percentage). US Navy circumference
+method: waist+neck for men, waist+hip+neck for women, both against
+height, using the standard published logarithmic formula.
+lib/calculators/tauku-procents.ts + .test.ts,
+components/calculators/TaukuProcentaCalculator.tsx,
+content/faq/tauku-procents.md, registry entry, explanations block.
+Full checklist clean, pushed (commits d039ba3, 363eb9c).
+Learned: nothing new — third health calculator shipped in the same
+active session, still no process friction. Still chaining cycles per
+the user's earlier note about available headroom.
+Next: 5 health calculators remain (idealais-svars ideal weight P2,
+udens-norma water intake P3, grutniecibas-termins due date P2,
+ovulacija ovulation window P2, promiles blood alcohol P2). Pick
+idealais-svars next — standard formula (e.g. Devine or similar), no
+YMYL/sourcing risk. The remaining three (pregnancy, ovulation, blood
+alcohol) deserve careful wording as informational estimates, not
+medical advice, per the note two cycles ago.
