@@ -118,8 +118,14 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi auto cenu un savu piedāvājumu, salīdzini kredīta un līzinga mēneša maksājumu.',
     metaDescription:
       'Salīdzini auto kredīta un līzinga mēneša maksājumu pēc auto cenas, pirmās iemaksas, termiņa un likmēm.',
-    keywords: ['līzings vs kredīts', 'auto līzings kalkulators', 'auto kredīts kalkulators'],
-    contentUpdatedAt: '2026-08-22T20:18:36+03:00',
+    keywords: [
+      'līzings vs kredīts',
+      'auto līzings kalkulators',
+      'auto kredīts kalkulators',
+      'auto līzings vai kredīts',
+      'mēneša maksājums auto līzingam',
+    ],
+    contentUpdatedAt: '2026-09-11T17:03:37+03:00',
   },
   {
     slug: 'degvielas-izmaksas',
