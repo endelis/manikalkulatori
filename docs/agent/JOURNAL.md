@@ -1380,3 +1380,42 @@ instructions for what to grab from each site. No further unblocked
 pension work identified without either new data or a different kind
 of task; will check for user input each tick rather than manufacture
 more content.
+
+## 2026-09-11 23:33
+
+Did: user pasted data addressing all three flagged blockers. One
+fully resolved: the VID methodical-material PDF text for
+"Ienākums no ieguldījumu konta" came through as readable pasted text
+(the earlier blocker was environmental -- WebFetch couldn't parse the
+PDF and this machine has no poppler-utils for the Read tool's PDF
+rendering, not a research failure). Built
+ieguldijumu-konta-nodoklu-kalkulators: compares an ieguldījumu konts
+(taxed once at withdrawal on withdrawn-minus-deposited, 25.5%) against
+a regular account (worst-case annual realization), sourced directly
+from the pasted VID text (25.5% rate, income = withdrawals minus
+deposits, dividend/interest exclusion mechanics, 11.9 panta 12.2 daļa).
+Linked it into the pension hub page's new "Ilgtermiņa uzkrājumi"
+section. Full checklist green (with the same contentUpdatedAt drift
+fix pattern as recent commits), verified visually, numbers hand
+checked against the formula, commits 73fece9 and 8e673f8, pushed.
+
+The other two pastes only partially resolved their blockers:
+- CSP's PPP020 table came through, but the "Vidējais apmērs, EUR"
+  columns stopped at 2015 in the pasted view (table was wider than
+  what got copied) -- still no current (2025/2026) average pension
+  figure. vidējā pensija stays BLOCKED; would need the same table with
+  the recent-year columns actually visible, not just count data
+  through 2025.
+- An INDEXO fund performance chart (5-year cumulative return, one
+  specific lifecycle plan) is real data but only one provider's one
+  plan, not the risk-category breakdown (aktīvais/sabalansētais/
+  konservatīvais) the 2nd-level calculator needs. Noted as a candidate
+  reference point for a future default assumption, not sufficient on
+  its own to build the full calculator. 2nd-level stays BLOCKED.
+
+Session total for the pension initiative: article architecture, 5
+calculators (1st level enhanced, early retirement, 3rd level,
+investment account, plus the existing 1st level), 3 articles (minimum
+pension, early-vs-standard comparison, pillar hub page). Two items
+(vidējā pensija, 2nd-level fund returns) remain genuinely blocked on
+data neither WebFetch nor the pasted screenshots fully supplied.
