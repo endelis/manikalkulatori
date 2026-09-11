@@ -1133,3 +1133,30 @@ ranking well, e.g. the iedzivotaju-skaits city pages at position 6-10).
 A GA export was offered by the user and would help prioritize by
 conversion rather than just impressions for the next round. No
 BLOCKED items pending.
+
+## 2026-09-11 17:38
+
+Did: autonomous timer tick. Continued the GSC content-quality sweep
+with the remaining candidate flagged last cycle: riepu-izmers (75
+impressions, position ~35, already the best-positioned of the four
+flagged pages). Added one FAQ entry on profile height ("Kas ir riepas
+profila augstums...") matching a real query gap ("riepu augstuma
+kalkulators", 10 impressions) and 2 keywords. Deliberately did not add
+FAQ content for the car-brand-lookup queries in the export ("riepu
+izmērs pēc auto markas", "disku kalkulators pēc auto markas") since
+this calculator only does size-to-size conversion, not brand lookup —
+would have been misleading content for a marginal query match. Full
+checklist green, commit 4038ae8, pushed.
+Learned: not every query in a GSC export is a genuine content gap for
+that page — check the calculator actually answers the query before
+writing FAQ copy for it, rather than chasing every string match.
+Next: the /auto category page (57 impressions, position ~70) is the
+last GSC-flagged candidate from this export, but it's a category
+listing page, not a calculator with its own FAQ file — would need a
+different kind of change (category intro copy, internal linking) than
+the FAQ pattern used for the last 3 pages. This export's calculator-
+level signal is otherwise exhausted for now. Worth pausing the content
+sweep here rather than stretching for marginal work; a GA export
+(offered, not yet provided) would be the natural unlock for the next
+round, or resuming normal wave-order work if nothing new comes in. No
+BLOCKED items pending.
