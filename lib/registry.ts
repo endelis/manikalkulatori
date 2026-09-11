@@ -450,7 +450,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Prognozē maratona, pusmaratona vai 10 km laiku no nesena skrējiena rezultāta pēc Rīgela formulas.',
     keywords: ['maratona laika prognoze', 'skriešanas laika kalkulators', 'maratona laika kalkulators'],
-    contentUpdatedAt: '2026-09-11T10:52:06+03:00',
+    contentUpdatedAt: '2026-09-11T10:53:35+03:00',
   },
   {
     slug: 'peldesanas-css',
