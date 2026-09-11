@@ -14,7 +14,10 @@ export function Faq({ items }: FaqProps) {
       </h2>
       <div className="flex flex-col gap-3">
         {items.map((item) => (
-          <details key={item.question} className="rounded-md border border-panel-border bg-panel-surface p-4">
+          <details
+            key={item.question}
+            className="rounded-xl border border-panel-border bg-panel-surface p-5 shadow-sm"
+          >
             <summary className="cursor-pointer font-medium">{item.question}</summary>
             <p className="mt-2 text-sm text-panel-muted">{item.answer}</p>
           </details>
