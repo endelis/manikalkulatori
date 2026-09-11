@@ -1419,3 +1419,37 @@ investment account, plus the existing 1st level), 3 articles (minimum
 pension, early-vs-standard comparison, pillar hub page). Two items
 (vidējā pensija, 2nd-level fund returns) remain genuinely blocked on
 data neither WebFetch nor the pasted screenshots fully supplied.
+
+## 2026-09-11 23:49
+
+Did: continued the pension initiative with all remaining fully
+unblocked plan items. Added izdienas-pensija (service pension
+overview, sourced from the actual law text), ka-izveleties-pensiju-3-
+limena-planu (plan choice guidance, sourced from Latvijas Banka's
+consumer-protection page), and etf-pamati-pensijas-uzkrajumam (general
+ETF education, no product recommendations, reuses already-sourced tax
+facts). Linked all three into the pension hub page as they shipped.
+6 commits this stretch, full checklist green throughout (same
+contentUpdatedAt drift-fix pattern as before whenever a batch spanned
+enough wall-clock time for the real commit to land after the value set
+mid-edit), each new page verified visually via screenshot before push.
+
+This exhausts the fully-unblocked items from PENSION-TOPICAL-AUTHORITY-PLAN.md.
+Skipped the plan's separate "ieguldījumu konts explainer article" as
+redundant -- the calculator's own explanation + FAQ already cover the
+mechanics adequately, and a near-duplicate article would be thin
+content for its own sake, not real added value. Also skipped promoting
+the koeficients G FAQ entry to a standalone article per the plan's own
+instruction to only do that if real search volume supports it, which
+was never checked.
+
+Session total for the pension cluster: article-type architecture, 5
+calculators, 6 articles (including the hub page), all cross-linked.
+Only the two original blockers remain (vidējā pensija's current-year
+figure, 2nd-level fund returns by risk category) -- both need a
+cleaner data grab than what's been provided so far (see the two
+previous entries for exactly what's missing from each).
+Next: no more unblocked pension work without new data. Reasonable
+next moves: wait for the two blockers to clear, resume normal
+wave-order/content-quality work elsewhere on the site, or take
+direction on something else entirely.
