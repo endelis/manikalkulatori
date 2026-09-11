@@ -542,6 +542,13 @@ const explanations: Record<string, React.ReactNode> = {
       summu ar (1 plus likme), lai atrastu summu bez PVN, tad starpību uzrāda kā PVN daļu.
     </p>
   ),
+  'uzkrajumi': (
+    <p className="text-panel-muted">
+      Kalkulators katru mēnesi pieskaita jauno iemaksu un piemēro mēneša procentu likmi iepriekšējai
+      summai, atkārtojot to visus mēnešus, lai iegūtu galīgo uzkrāto summu ar salikto procentu
+      efektu.
+    </p>
+  ),
   'sirdsdarbibas-zonas': (
     <p className="text-panel-muted">
       Kalkulators aprēķina pulsa rezervi, atņemot miera pulsu no maksimālā pulsa, tad katrai zonai pieskaita
