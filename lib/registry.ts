@@ -609,6 +609,17 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-11T13:42:15+03:00',
   },
   {
+    slug: 'hipotekas-parmaksa',
+    category: 'finanses',
+    title: 'Hipotēkas pārmaksas kalkulators',
+    h1: 'Cik var ietaupīt, maksājot vairāk par grafiku?',
+    intro: 'Ievadi hipotēkas nosacījumus un papildu ikmēneša maksājumu, uzzini ietaupītos procentus un ātrāku atmaksas laiku.',
+    metaDescription:
+      'Aprēķini, cik procentu un laika ietaupīsi, maksājot par hipotēku vairāk nekā paredzēts grafikā.',
+    keywords: ['hipotēkas pārmaksas kalkulators', 'hipotēkas priekšlaicīga atmaksa', 'kredīta ietaupījuma kalkulators'],
+    contentUpdatedAt: '2026-09-11T13:46:43+03:00',
+  },
+  {
     slug: 'grutniecibas-termins',
     category: 'veseliba',
     title: 'Grūtniecības termiņa kalkulators',

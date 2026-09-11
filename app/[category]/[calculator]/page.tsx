@@ -529,6 +529,13 @@ const explanations: Record<string, React.ReactNode> = {
       iegūtu kopējās izmaksas un pārmaksu.
     </p>
   ),
+  'hipotekas-parmaksa': (
+    <p className="text-panel-muted">
+      Kalkulators pieskaita papildu maksājumu parastajai ikmēneša summai un pārrēķina, cik mēnešu
+      nepieciešams, lai ar lielāko maksājumu atmaksātu pamatsummu, tad salīdzina jauno un sākotnējo
+      procentu summu, lai iegūtu ietaupījumu.
+    </p>
+  ),
   'sirdsdarbibas-zonas': (
     <p className="text-panel-muted">
       Kalkulators aprēķina pulsa rezervi, atņemot miera pulsu no maksimālā pulsa, tad katrai zonai pieskaita
