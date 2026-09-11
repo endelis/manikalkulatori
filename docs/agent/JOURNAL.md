@@ -170,3 +170,27 @@ shorter race result, e.g. Riegel's formula) — pure math, no YMYL
 sourcing needed, same safe category as peldesanas-css. After that,
 vo2max and trenina-kalorijas (both P3, also non-YMYL) close out sport
 and all of Wave 1. Then Wave 2 (health category, 8 calculators).
+
+## 2026-09-11 10:56
+
+Did: built maratona-laika-prognoze (marathon/half-marathon/10K time
+predictor). Uses the Riegel formula (T2 = T1 * (D2/D1)^1.06), a
+well-established public running-science formula, no external sourcing
+needed. Reference distance and time as inputs, radio-select target
+distance (10km/half/full), predicted time and pace as outputs.
+lib/calculators/maratona-laika-prognoze.ts + .test.ts,
+components/calculators/MaratonaLaikaPrognozesCalculator.tsx,
+content/faq/maratona-laika-prognoze.md, registry entries, explanations
+block. Full checklist clean, pushed (commits 3e7ab69, 6cfa1ca).
+Learned: nothing new procedurally — this cycle confirmed the by-now
+routine shape (non-YMYL calculator: research formula, mirror an
+existing sibling's file pattern, ship in one cycle; contentUpdatedAt
+needs the two-step commit-then-bump dance every time, no exception
+seen yet).
+Next: sport category has 6 of 8 built (skriesanas-temps,
+triatlona-planotajs, peldesanas-css, ftp-zonas, sirdsdarbibas-zonas,
+maratona-laika-prognoze). Two P3 gaps remain: vo2max (VO2max estimate)
+and trenina-kalorijas (workout calorie burn) — both non-YMYL, same
+safe pattern. Either finishes Wave 1 entirely. After that: Wave 2
+(health category, 8 calculators, per PROJECT-OVERVIEW.md) or a
+content-quality/SEO pass on already-shipped pages.
