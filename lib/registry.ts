@@ -416,7 +416,7 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi svaru un augumu, uzzini ĶMI un tā kategoriju pēc PVO klasifikācijas.',
     metaDescription: 'Aprēķini ķermeņa masas indeksu (ĶMI) no svara un auguma un uzzini tā kategoriju.',
     keywords: ['ķmi kalkulators', 'ķermeņa masas indekss', 'bmi kalkulators latviski'],
-    contentUpdatedAt: '2026-09-11T12:18:29+03:00',
+    contentUpdatedAt: '2026-09-11T12:19:45+03:00',
   },
   {
     slug: 'skriesanas-temps',
