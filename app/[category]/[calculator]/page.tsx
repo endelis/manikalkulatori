@@ -477,6 +477,12 @@ const explanations: Record<string, React.ReactNode> = {
       reizina to ar izvēlētā aktivitātes līmeņa koeficientu, iegūstot dienas kaloriju normu.
     </p>
   ),
+  'tauku-procents': (
+    <p className="text-panel-muted">
+      Kalkulators izmanto ķermeņa apkārtmēru logaritmus ASV Jūras kara flotes formulā, lai aprēķinātu
+      ķermeņa tauku procentu no vidukļa, kakla un (sievietēm) gurnu apkārtmēra attiecībā pret augumu.
+    </p>
+  ),
   'sirdsdarbibas-zonas': (
     <p className="text-panel-muted">
       Kalkulators aprēķina pulsa rezervi, atņemot miera pulsu no maksimālā pulsa, tad katrai zonai pieskaita

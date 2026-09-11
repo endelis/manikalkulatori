@@ -39,6 +39,7 @@ import { Vo2maxCalculator } from './Vo2maxCalculator';
 import { TreninaKalorijuCalculator } from './TreninaKalorijuCalculator';
 import { KmiKalkulators } from './KmiKalkulators';
 import { KalorijuNormasCalculator } from './KalorijuNormasCalculator';
+import { TaukuProcentaCalculator } from './TaukuProcentaCalculator';
 
 /**
  * Props every calculator component receives from the calculator page.
@@ -90,6 +91,7 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'trenina-kalorijas': TreninaKalorijuCalculator,
   'kmi-kalkulators': KmiKalkulators,
   'kaloriju-norma': KalorijuNormasCalculator,
+  'tauku-procents': TaukuProcentaCalculator,
 };
 
 export function getCalculatorComponent(slug: string): ComponentType<CalculatorComponentProps> | undefined {

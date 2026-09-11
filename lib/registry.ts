@@ -430,6 +430,17 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-11T12:23:04+03:00',
   },
   {
+    slug: 'tauku-procents',
+    category: 'veseliba',
+    title: 'Ķermeņa tauku procenta kalkulators',
+    h1: 'Kāds ir tavs ķermeņa tauku procents?',
+    intro: 'Ievadi auguma un ķermeņa apkārtmērus, uzzini aptuveno ķermeņa tauku procentu pēc Navy metodes.',
+    metaDescription:
+      'Aprēķini ķermeņa tauku procentu no vidukļa, kakla un gurnu apkārtmēriem pēc ASV Jūras kara flotes metodes.',
+    keywords: ['ķermeņa tauku procents', 'tauku procenta kalkulators', 'navy metode kalkulators'],
+    contentUpdatedAt: '2026-09-11T12:25:00+03:00',
+  },
+  {
     slug: 'skriesanas-temps',
     category: 'sports',
     title: 'Skriešanas tempa kalkulators',
