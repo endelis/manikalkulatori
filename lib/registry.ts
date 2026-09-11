@@ -617,7 +617,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini paredzamo ovulācijas dienu un auglīgo periodu no pēdējo menstruāciju datuma un cikla garuma.',
     keywords: ['ovulācijas kalkulators', 'auglīgais periods', 'ovulācijas diena'],
-    contentUpdatedAt: '2026-09-11T13:09:41+03:00',
+    contentUpdatedAt: '2026-09-11T13:10:56+03:00',
   },
 ];
 
