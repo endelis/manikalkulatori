@@ -174,6 +174,31 @@ export const articleBody: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  'ka-izveleties-pensiju-3-limena-planu': (
+    <>
+      <p>
+        Pensiju 3. līmeņa plāni atšķiras pēc riska pakāpes (cik lielu daļu no līdzekļiem plāns iegulda
+        akcijās salīdzinājumā ar obligācijām), izmaksām un pārvaldītāja. Izvēle nav vienreizēja: to var un
+        vajag mainīt, mainoties vecumam un atlikušajam laikam līdz pensijai.
+      </p>
+      <p>
+        Jaunākiem dalībniekiem, kuriem līdz pensijai ir vēl daudz gadu, parasti atbilstošāka ir aktīvāka,
+        akcijās vairāk ieguldoša politika, jo ir laiks pārciest īstermiņa svārstības apmaiņā pret augstāku
+        ilgtermiņa ienesīgumu. Tuvojoties pensijas vecumam, vērts apsvērt kapitāla pārcelšanu uz plānu ar
+        konservatīvāku politiku, lai samazinātu risku tieši pirms naudas izmantošanas.
+      </p>
+      <p>
+        Pirms izvēles vērts salīdzināt dalībniekiem piemērojamās komisijas maksas dažādos plānos, jo tās
+        laika gaitā samazina neto ienesīgumu. Pensiju fondam ir pienākums šīs izmaksas skaidri izklāstīt
+        pirms dalības līguma parakstīšanas.
+      </p>
+      <p>
+        Uzkrāto kapitālu var pārcelt uz citu plānu, arī citā pensiju fondā, tāpēc sākotnējā izvēle nav
+        galīga. Iespējams arī vienlaicīgi iemaksāt vairākos plānos, kas ir viens no veidiem, kā sadalīt
+        risku starp dažādām ieguldījumu stratēģijām.
+      </p>
+    </>
+  ),
 };
 
 /** Optional "Avoti" section per article slug — omit an entry for an article with no
@@ -200,6 +225,18 @@ export const articleSources: Record<string, React.ReactNode> = {
         className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
       >
         &quot;Par izdienas pensijām&quot;
+      </a>
+      , izgūts 2026. gada 11. septembrī.
+    </p>
+  ),
+  'ka-izveleties-pensiju-3-limena-planu': (
+    <p className="text-sm text-panel-faint">
+      Latvijas Banka,{' '}
+      <a
+        href="https://www.bank.lv/darbibas-jomas/klientu-aizsardziba/jautajumi-un-atbildes/privatie-pensiju-fondi-pensiju-3-limenis"
+        className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+      >
+        &quot;Privātie pensiju fondi (pensiju 3. līmenis)&quot;
       </a>
       , izgūts 2026. gada 11. septembrī.
     </p>

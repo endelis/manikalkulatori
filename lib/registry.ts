@@ -903,6 +903,22 @@ export const articles: ArticleMeta[] = [
     keywords: ['izdienas pensija', 'izdienas pensija latvijā', 'kam pienākas izdienas pensija'],
     contentUpdatedAt: '2026-09-11T23:37:03+03:00',
   },
+  {
+    slug: 'ka-izveleties-pensiju-3-limena-planu',
+    category: 'finanses',
+    title: 'Kā izvēlēties pensiju 3. līmeņa plānu',
+    h1: 'Kā izvēlēties pensiju 3. līmeņa plānu',
+    intro:
+      'Uzzini, kā izvēlēties riska pakāpi, ko ņemt vērā par izmaksām, un vai vērts iemaksāt vairākos plānos.',
+    metaDescription:
+      'Kā izvēlēties pensiju 3. līmeņa plānu Latvijā: riska pakāpe pēc vecuma, izmaksas un plāna maiņa, pēc Latvijas Bankas skaidrojuma.',
+    keywords: [
+      'pensiju 3. līmeņa plāna izvēle',
+      'kā izvēlēties pensiju plānu',
+      'pensiju 3. līmenis riska pakāpe',
+    ],
+    contentUpdatedAt: '2026-09-11T23:42:00+03:00',
+  },
 ];
 
 /**
