@@ -619,6 +619,17 @@ export const calculators: CalculatorMeta[] = [
     keywords: ['ovulācijas kalkulators', 'auglīgais periods', 'ovulācijas diena'],
     contentUpdatedAt: '2026-09-11T13:10:56+03:00',
   },
+  {
+    slug: 'promiles',
+    category: 'veseliba',
+    title: 'Promiļu kalkulators',
+    h1: 'Kāds ir aptuvenais alkohola līmenis asinīs?',
+    intro: 'Ievadi svaru, izdzerto daudzumu un pagājušo laiku, uzzini aptuveno alkohola līmeni asinīs pēc Vidmarka formulas.',
+    metaDescription:
+      'Aprēķini aptuveno alkohola līmeni asinīs (promiles) pēc Vidmarka formulas no svara, izdzertā daudzuma un laika.',
+    keywords: ['promiļu kalkulators', 'alkohola līmenis asinīs', 'vidmarka formula'],
+    contentUpdatedAt: '2026-09-11T13:13:18+03:00',
+  },
 ];
 
 /**

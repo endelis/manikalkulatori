@@ -45,6 +45,7 @@ import { UdensNormasCalculator } from './UdensNormasCalculator';
 import { KreditaKalkulators } from './KreditaKalkulators';
 import { GrutniecibasTerminaCalculator } from './GrutniecibasTerminaCalculator';
 import { OvulacijasCalculator } from './OvulacijasCalculator';
+import { PromilesCalculator } from './PromilesCalculator';
 
 /**
  * Props every calculator component receives from the calculator page.
@@ -102,6 +103,7 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'kredita-kalkulators': KreditaKalkulators,
   'grutniecibas-termins': GrutniecibasTerminaCalculator,
   'ovulacija': OvulacijasCalculator,
+  'promiles': PromilesCalculator,
 };
 
 export function getCalculatorComponent(slug: string): ComponentType<CalculatorComponentProps> | undefined {
