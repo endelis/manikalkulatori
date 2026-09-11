@@ -667,7 +667,7 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi apgrozījumu, uzzini mikrouzņēmuma nodokli un summu, kas paliek pēc nodokļa.',
     metaDescription: 'Aprēķini mikrouzņēmuma nodokli 25 procentu apmērā no apgrozījuma un summu, kas paliek pēc nodokļa nomaksas.',
     keywords: ['mikrouzņēmuma nodokļa kalkulators', 'mun kalkulators', 'mikrouzņēmuma nodoklis'],
-    contentUpdatedAt: '2026-09-11T14:50:02+03:00',
+    contentUpdatedAt: '2026-09-11T14:50:16+03:00',
   },
   {
     slug: 'grutniecibas-termins',
