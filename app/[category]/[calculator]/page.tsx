@@ -502,6 +502,13 @@ const explanations: Record<string, React.ReactNode> = {
       kopējās izmaksas un pārmaksu.
     </p>
   ),
+  'grutniecibas-termins': (
+    <p className="text-panel-muted">
+      Kalkulators pieskaita 280 dienas pēdējo menstruāciju pirmajai dienai, iegūstot paredzamo
+      dzemdību termiņu pēc Negēles likuma, un aprēķina pagājušo dienu skaitu līdz šodienai, lai
+      parādītu pašreizējo grūtniecības vecumu.
+    </p>
+  ),
   'sirdsdarbibas-zonas': (
     <p className="text-panel-muted">
       Kalkulators aprēķina pulsa rezervi, atņemot miera pulsu no maksimālā pulsa, tad katrai zonai pieskaita

@@ -597,6 +597,17 @@ export const calculators: CalculatorMeta[] = [
     keywords: ['kredīta kalkulators', 'patēriņa kredīta kalkulators', 'aizdevuma maksājuma kalkulators'],
     contentUpdatedAt: '2026-09-11T13:03:37+03:00',
   },
+  {
+    slug: 'grutniecibas-termins',
+    category: 'veseliba',
+    title: 'Grūtniecības termiņa kalkulators',
+    h1: 'Kāds ir paredzamais dzemdību termiņš?',
+    intro: 'Ievadi pēdējo menstruāciju pirmo dienu, uzzini paredzamo dzemdību termiņu pēc Negēles likuma.',
+    metaDescription:
+      'Aprēķini paredzamo dzemdību termiņu un pašreizējo grūtniecības vecumu pēc Negēles likuma.',
+    keywords: ['grūtniecības termiņa kalkulators', 'dzemdību termiņa kalkulators', 'negēles likums'],
+    contentUpdatedAt: '2026-09-11T13:06:23+03:00',
+  },
 ];
 
 /**
