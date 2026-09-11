@@ -95,21 +95,76 @@ retrying the same blocked work immediately.
 
 ## Stop conditions
 
-Halt and journal a `BLOCKED` entry instead of proceeding if any of:
+The loop has no natural end state — it does not stop itself. The only
+two things that end it are: `docs/agent/STOP` existing (kill switch,
+below), or the user explicitly saying to stop within the current
+session. A hit blocker, a repeated failure, or an interrupted cycle
+are never reasons to call `ScheduleWakeup` with `stop: true` — they're
+reasons to journal, recover or back off, and reschedule anyway.
 
-- `git status` is not clean at the start of a cycle.
+Halt the current cycle's work (but still reschedule) if any of:
+
 - `git push` is rejected, or master has diverged from what this cycle
-  branched from.
+  branched from. Journal a `BLOCKED` entry describing the divergence;
+  do not force-push.
 - The same blocker has appeared in the last three journal entries —
-  back off and stop rescheduling rather than retry forever.
+  back off to a long delay (60+ minutes, capped at `ScheduleWakeup`'s
+  3600s maximum) instead of retrying it every cycle, but keep
+  rescheduling. If there's other, unblocked work available, do that
+  instead of waiting idle on the blocked item.
 - A single cycle would touch more than one calculator's worth of files.
   Keep changes small; split into separate cycles instead.
+
+**Recovery from an interrupted cycle:** if `git status` is not clean
+at the start of a cycle, this is expected occasionally, not just an
+error to halt on — a hard usage-limit cutoff (see "Usage limits"
+below) can kill the session mid-write, mid-commit, or mid-checklist,
+with no chance to journal what happened. Recover rather than just
+block:
+
+1. Run `git status` and `git diff` to see exactly what's uncommitted.
+2. If it looks like a finished calculator (all the files a normal
+   cycle would produce — compute module, test, component, FAQ, the
+   three registry/wiring edits — all present and consistent): finish
+   the cycle normally from here — set `contentUpdatedAt`, run the full
+   checklist once, commit, push.
+3. If it looks partial or broken (some files present, others missing;
+   a file half-written; wiring edits referencing a component that was
+   never created): discard the uncommitted changes
+   (`git checkout -- .` / remove the untracked files), confirm
+   `git status` is clean again, and treat the work as not started —
+   pick it (or something else) up fresh this cycle or a later one.
+4. Either way, journal what was found and which path was taken. This
+   is the record a future cycle (or the user) uses to understand what
+   the interruption cost, since the interrupted cycle itself couldn't
+   journal.
 
 Kill switch: at the start of every cycle, check whether
 `docs/agent/STOP` exists. If it does, journal that the loop is stopping
 (why: the stop file was found) and do not call `ScheduleWakeup` again.
 This lets the user halt an unattended loop by committing one empty
 file.
+
+## Usage limits
+
+There is no automatic resume when a hard usage limit is hit mid-cycle
+(confirmed: no Claude Code mechanism watches for this or restarts the
+session). When it happens, this loop simply goes silent — no journal
+entry, no `ScheduleWakeup` call, nothing pushed for whatever was
+mid-flight. The user notices this by the loop having gone quiet past
+its expected wake time, or via Remote Control push notifications if
+they've enabled them, and restarts the session themselves (`claude
+--resume` or messaging it via Remote Control) once their usage resets.
+
+This charter's job is to make that restart cheap, not to prevent the
+gap: every cycle's checkpoint-before-proceeding discipline (clean git
+status checked at cycle start, one calculator's worth of files per
+cycle, full checklist before every push) already means a usage-limit
+kill loses at most one in-progress calculator, never leaves a broken
+build live, and is fully recoverable via the "Recovery from an
+interrupted cycle" steps above. On restart, proceed exactly as a
+normal cycle start: read this file, check for `docs/agent/STOP`, check
+`git status`, recover if needed, continue.
 
 ## Deploy consequence
 
@@ -177,7 +232,10 @@ journal entry, not repeated in every commit message.
 2. Decide the next wake delay: shorter if there's obvious next work
    queued, longer if blocked or genuinely caught up on the current wave.
 3. Call `ScheduleWakeup` with that delay and `prompt: "<<autonomous-loop-dynamic>>"`.
-   If `ScheduleWakeup` is unavailable, the call fails, or the literal
-   prompt string doesn't behave as expected, do not go quiet with no
-   record: journal that the loop has stopped and why, and send a push
-   notification if the `PushNotification` tool is available.
+   Never call it with `stop: true` — see "Stop conditions" above, this
+   loop reschedules unconditionally except for the kill switch or an
+   explicit in-session user request. If `ScheduleWakeup` is unavailable,
+   the call fails, or the literal prompt string doesn't behave as
+   expected, do not go quiet with no record: journal that the loop has
+   stopped and why, and send a push notification if the
+   `PushNotification` tool is available.
