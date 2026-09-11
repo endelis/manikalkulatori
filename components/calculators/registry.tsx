@@ -34,6 +34,7 @@ import { SirdsdarbibasZonuCalculator } from './SirdsdarbibasZonuCalculator';
 import { PeldesanasCssCalculator } from './PeldesanasCssCalculator';
 import { EkspluatacijasNodoklaCalculator } from './EkspluatacijasNodoklaCalculator';
 import { UznemumaAutoNodoklaCalculator } from './UznemumaAutoNodoklaCalculator';
+import { MaratonaLaikaPrognozesCalculator } from './MaratonaLaikaPrognozesCalculator';
 
 /**
  * Props every calculator component receives from the calculator page.
@@ -80,6 +81,7 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'peldesanas-css': PeldesanasCssCalculator,
   'ekspluatacijas-nodoklis': EkspluatacijasNodoklaCalculator,
   'uznemuma-auto-nodoklis': UznemumaAutoNodoklaCalculator,
+  'maratona-laika-prognoze': MaratonaLaikaPrognozesCalculator,
 };
 
 export function getCalculatorComponent(slug: string): ComponentType<CalculatorComponentProps> | undefined {

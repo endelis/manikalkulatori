@@ -441,6 +441,18 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-08-22T21:02:45+03:00',
   },
   {
+    slug: 'maratona-laika-prognoze',
+    category: 'sports',
+    title: 'Maratona laika prognozes kalkulators',
+    h1: 'Kāds būs tavs paredzamais maratona laiks?',
+    intro:
+      'Ievadi nesena skrējiena distanci un laiku, uzzini prognozēto laiku maratonam, pusmaratonam vai 10 km.',
+    metaDescription:
+      'Prognozē maratona, pusmaratona vai 10 km laiku no nesena skrējiena rezultāta pēc Rīgela formulas.',
+    keywords: ['maratona laika prognoze', 'skriešanas laika kalkulators', 'maratona laika kalkulators'],
+    contentUpdatedAt: '2026-09-11T10:52:06+03:00',
+  },
+  {
     slug: 'peldesanas-css',
     category: 'sports',
     title: 'Peldēšanas CSS kalkulators',

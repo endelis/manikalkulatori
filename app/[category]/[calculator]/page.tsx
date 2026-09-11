@@ -447,6 +447,12 @@ const explanations: Record<string, React.ReactNode> = {
       katrai no septiņām standarta treniņu zonām.
     </p>
   ),
+  'maratona-laika-prognoze': (
+    <p className="text-panel-muted">
+      Kalkulators aprēķina attiecību starp mērķa distanci un atskaites distanci, kāpina to 1,06 pakāpē
+      un reizina ar atskaites laiku, iegūstot prognozēto laiku pēc Rīgela formulas.
+    </p>
+  ),
   'sirdsdarbibas-zonas': (
     <p className="text-panel-muted">
       Kalkulators aprēķina pulsa rezervi, atņemot miera pulsu no maksimālā pulsa, tad katrai zonai pieskaita
