@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/next';
 import { CookieBanner } from '@/components/CookieBanner';
 import { Footer } from '@/components/Footer';
 import { GoogleAnalytics } from '@/components/GoogleAnalytics';
+import { SiteNav } from '@/components/SiteNav';
 import { SITE_URL } from '@/lib/site';
 import './globals.css';
 
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="lv" className={`${jetbrainsMono.variable} ${ibmPlexSans.variable}`}>
       <body className="min-h-screen antialiased">
+        <SiteNav />
         {children}
         <Footer />
         <Analytics />
