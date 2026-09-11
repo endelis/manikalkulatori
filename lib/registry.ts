@@ -458,7 +458,7 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi svaru, uzzini ieteicamo ūdens daudzumu dienā.',
     metaDescription: 'Aprēķini ieteicamo dienas ūdens normu no ķermeņa svara pēc vispārpieņemtas vadlīnijas.',
     keywords: ['ūdens normas kalkulators', 'cik ūdens dzert dienā', 'ūdens patēriņa kalkulators'],
-    contentUpdatedAt: '2026-09-11T12:30:56+03:00',
+    contentUpdatedAt: '2026-09-11T12:32:04+03:00',
   },
   {
     slug: 'skriesanas-temps',
