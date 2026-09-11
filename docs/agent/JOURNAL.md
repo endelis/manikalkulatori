@@ -521,3 +521,29 @@ hipotekas-parmaksa (mortgage overpayment, P1) or pvn-kalkulators (VAT,
 P1) are both clean next picks, no YMYL sourcing needed for either
 (VAT rate itself would need sourcing if hardcoded, so take it as a
 user input like the interest rate, not a fixed constant).
+
+## 2026-09-11 13:48
+
+Did: built hipotekas-parmaksa (mortgage overpayment savings). Tried
+padding the contentUpdatedAt timestamp forward by 45s (my own idea
+from last entry) to pre-empt commit latency and skip the fix-commit
+entirely — it overshot: the value was still in the future relative to
+when the test suite actually ran (registry.test.ts checks against
+real wall-clock at test time, not commit time), so the full suite
+failed on the very check the padding was meant to avoid. Fixed to the
+exact commit timestamp (no padding) and re-ran the full checklist
+once, clean. Retracted the padding idea in CHARTER.md immediately so
+it doesn't get retried. Commits 742f457, 8c8df74, 3bfb912, pushed.
+lib/calculators/hipotekas-parmaksa.ts + .test.ts,
+components/calculators/HipotekasParmaksasCalculator.tsx,
+content/faq/hipotekas-parmaksa.md, registry entry, explanations block.
+Learned: don't pad timestamps forward, only backward-correct after
+the fact. The plain fetched value (no adjustment) is the right
+default: it's always safely in the past relative to the eventual
+test run, and only occasionally behind the actual commit time by a
+few seconds, which is cheap to fix with one scoped re-verify. A
+"clever" pre-emptive guess has two failure directions instead of one.
+Next: continue finance category — pvn-kalkulators (VAT, P1) is next;
+take the VAT rate as a user input (defaulting to nothing asserted as
+fact) rather than hardcoding Latvia's 21% standard rate, since that
+would be an unsourced YMYL figure.
