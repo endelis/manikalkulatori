@@ -44,10 +44,10 @@ export function CalculatorShell({
 }: CalculatorShellProps) {
   return (
     <main
-      className="mx-auto flex max-w-2xl flex-col gap-6 px-4 py-8"
+      className="mx-auto flex max-w-2xl flex-col gap-8 px-4 py-10"
       style={{ '--accent': category.accentVar } as React.CSSProperties}
     >
-      <nav aria-label="Breadcrumb" className="text-sm text-panel-muted">
+      <nav aria-label="Breadcrumb" className="text-sm text-panel-faint">
         <Link href="/">Sākums</Link>
         {' / '}
         <Link href={`/${category.slug}`}>{category.title}</Link>
