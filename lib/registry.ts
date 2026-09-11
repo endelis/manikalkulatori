@@ -461,7 +461,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini VO2max no Kūpera 12 minūšu skriešanas testa rezultāta un uzzini aptuveno izturības novērtējumu.',
     keywords: ['vo2max kalkulators', 'kūpera tests', 'vo2max aprēķins'],
-    contentUpdatedAt: '2026-09-11T11:21:51+03:00',
+    contentUpdatedAt: '2026-09-11T11:23:20+03:00',
   },
   {
     slug: 'peldesanas-css',
