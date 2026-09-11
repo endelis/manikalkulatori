@@ -18,44 +18,66 @@ Coherence across 50 pages. A visitor landing on the FTP calculator and later the
 
 Distinctive, not templated. Avoid the generic calculator-site look (cluttered, grey, ad-choked, three columns of noise). That look signals low quality to both users and Google. The instrument-panel direction below is the differentiator.
 
-## 2. Aesthetic direction: "instrument panel"
+## 2. Aesthetic direction: "instrument panel" (light, as of 2026-09-11)
 
-One committed concept: the site reads like a precision measurement instrument, a clean dashboard gauge, not a spreadsheet and not a generic web calculator. Calm, dark, exact. The feeling is "this tool is accurate and I can trust the reading."
+**Superseded from dark to light.** The site launched with the dark variant described
+below, but direct user feedback ("it seems dark, rushed and is not necessarily a very
+good experience... it should be smooth and very much user navigation friendly") led to
+a full light redesign, shipped 2026-09-11. See
+`docs/superpowers/specs/2026-09-11-light-redesign-design.md` for the design rationale
+and `docs/superpowers/plans/2026-09-11-light-redesign.md` for the exact implementation.
+§3 below reflects the current live values; this section's original dark-mode framing is
+kept only as history.
 
-Why this direction. It fits the product (readings, measurements, verdicts), it photographs well for ad viewability (high contrast around ad slots without clashing), it is memorable against grey competitor sites, and it is cheap to render fast because it relies on type, space, and one accent rather than heavy imagery.
+One committed concept: the site reads like a precision measurement instrument, a clean
+dashboard gauge, not a spreadsheet and not a generic web calculator. Calm, exact,
+warm rather than clinical. The feeling is "this tool is accurate and I can trust the
+reading" — now expressed as a light, card-based surface instead of a dark panel, since
+warmth and approachability read as more trustworthy for money and health topics than a
+cold dark terminal look.
 
-Light-mode variant is acceptable and may test better for broad finance queries and older demographics; if built, keep the same structure, swap tokens only. Decide once, apply through tokens, do not mix per page. Default recommendation: dark instrument panel for launch, because it differentiates hardest from the incumbent.
+Why this direction still fits. It fits the product (readings, measurements, verdicts),
+it is memorable against grey/cluttered competitor sites, and it is cheap to render fast
+because it relies on type, space, shadow, and one accent per category rather than heavy
+imagery. The hero number stays monospace regardless of theme — that is the constant
+signature, not the dark background.
+
+One committed light direction, applied through tokens, not mixed per page — a future
+dark variant would follow the same rule (decide once, swap tokens only) if ever built.
 
 ## 3. Color system
 
 Use CSS variables exclusively. Never hardcode a hex value in a component. One neutral base shared across the whole site, plus one accent per category defined in the registry.
 
-Base neutrals (dark theme):
+Base neutrals (light theme, live values — actual CSS variable names in
+`styles/tokens.css`, which this section now matches exactly rather than using
+shorthand names):
 
 ```
---bg:            #0B0E14   /* page background, near-black charcoal */
---surface:       #0F131C   /* cards, panels */
---surface-2:     #12161F   /* inputs, insets */
---border:        #1B212D   /* hairline dividers */
---border-strong: #232A38   /* input borders */
---text:          #E8ECF3   /* primary text */
---text-muted:    #8A93A6   /* labels, secondary */
---text-faint:    #5B6579   /* captions, assumptions, units */
+--color-panel-bg:            #FAFAF9   /* page background, warm off-white */
+--color-panel-surface:       #FFFFFF   /* cards, panels */
+--color-panel-surface-2:     #F3F2F0   /* inputs, insets */
+--color-panel-border:        #E7E5E2   /* hairline dividers */
+--color-panel-border-strong: #D6D3CE   /* input borders */
+--color-panel-text:          #1C1917   /* primary text, warm near-black */
+--color-panel-muted:         #57534E   /* labels, secondary (~7:1 contrast on bg) */
+--color-panel-faint:         #78716C   /* captions, units (~4.6:1, AA for normal text) */
 ```
 
-Category accents (one per category, set in registry, used for the hero number, the verdict, active states, and focus rings):
+Category accents (one per category, set in registry, used for the hero number, the verdict, active states, and focus rings — re-tuned darker than the original dark-mode values so each clears WCAG AA as text on the light background, verified by computed contrast ratio, not eyeballed):
 
 ```
---accent-auto:    #00D3C7   /* teal-cyan, automotive */
---accent-finance: #4C9AFF   /* blue, finances and tax */
---accent-home:    #FFB020   /* amber, home and energy */
---accent-health:  #FF6B8A   /* rose, health and body */
---accent-sport:   #7CE23F   /* lime, endurance and sport */
+--color-accent-auto:       #0F766E   /* teal, automotive */
+--color-accent-finanses:   #2563EB   /* blue, finances and tax */
+--color-accent-majoklis:   #B45309   /* amber, home and energy */
+--color-accent-veseliba:   #BE185D   /* pink, health and body */
+--color-accent-sports:     #15803D   /* green, endurance and sport */
+--color-accent-sabiedriba: #7C3AED   /* violet, society/demographics */
 ```
 
-Comparison semantics. When a calculator compares two options (EV vs ICE, lease vs loan), use the category accent for the "winner" side and a warm neutral amber (`#FFB020`) for the other, so the verdict is legible at a glance without relying on red/green (colorblind-safe). Never use red for "the more expensive option"; red reads as error, not cost.
+Comparison semantics. When a calculator compares two options (EV vs ICE, lease vs loan), use the category accent for the "winner" side and `--color-warn` (`#B45309`, amber) for the other, so the verdict is legible at a glance without relying on red/green (colorblind-safe). Never use red for "the more expensive option"; red reads as error, not cost.
 
-Contrast. All text must clear WCAG AA against its background. The faint tier (`--text-faint`) is for non-essential captions only; never put a real value in it.
+Contrast. All text must clear WCAG AA against its background — compute the actual ratio (e.g. relative-luminance formula or a real contrast checker) before shipping a new or changed token, not by eye; three of the six category accents failed AA on first pass during the 2026-09-11 redesign and needed darkening. The faint tier (`--color-panel-faint`) is for non-essential captions only; never put a real value in it.
 
 ## 4. Typography
 
@@ -112,7 +134,7 @@ Grid discipline, not grid monotony. Use an 8px grid, but allow the result card t
 
 All components live in `components/` and are theme-driven by tokens and the per-page accent from the registry.
 
-ResultCard. The signature component. Dark surface, 1px accent border, the verdict sentence in body sans, the hero number in large monospace accent. For comparisons, shows both figures with the winner in accent and the difference called out. Reserve its height so it never shifts.
+ResultCard. The signature component. Light surface with a soft shadow, 1px accent border, the verdict sentence in body sans, the hero number in large monospace accent. For comparisons, shows both figures with the winner in accent and the difference called out. Reserve its height so it never shifts.
 
 NumberField. Label (uppercase caption tier), input in monospace, unit suffix inside the field in faint tier, accent focus ring. Large tap targets (min 44px height) for mobile. Increment/decrement optional but keep them subtle. No spinner clutter.
 
@@ -127,6 +149,8 @@ AdSlot. Not built in this phase. Ads and affiliate come around month 3. For now 
 Breadcrumb. Small, faint, accent on hover, emits BreadcrumbList JSON-LD.
 
 CalculatorShell. Wraps all of the above in the fixed vertical order (including the two empty reserved gaps for future ads), injects the accent, sets the meta and schema from the registry. Every calculator page is `<CalculatorShell calc={...}>`.
+
+SiteNav (added 2026-09-11). Site-wide sticky header, rendered once in the root layout, not per-page — the wordmark plus the six category links on desktop, collapsing into a `MobileNavToggle` hamburger panel below the `lg` breakpoint. Before this, the site had no persistent navigation at all, only in-page breadcrumbs; this is what "user navigation friendly" in the 2026-09-11 redesign feedback actually fixed.
 
 ## 7. Motion
 
@@ -162,7 +186,7 @@ First, lock the token file and the two self-hosted fonts before building more pa
 
 Second, build CalculatorShell and ResultCard properly, since every page depends on them; the current auto calculator should be the reference implementation of the whole design system.
 
-Third, make the homepage category grid feel like the instrument system: dark surface cards, per-category accent, the live count per category ("1 kalkulators", "Drīzumā" as a quiet state), and a clear visual hierarchy so the live category stands out from the coming-soon ones.
+Third, make the homepage category grid feel like the instrument system: light surface cards with a soft shadow, per-category accent, the live count per category ("1 kalkulators", "Drīzumā" as a quiet state), and a clear visual hierarchy so the live category stands out from the coming-soon ones.
 
 Fourth, leave the two reserved gaps in the shell (see section 5) as empty height, so when ads and affiliate arrive around month 3 they slot in with zero CLS. Do not build any ad component now.
 
