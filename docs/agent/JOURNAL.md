@@ -821,3 +821,42 @@ two prior attempts (broad likumi.lv fetch, broad VID navigation fetch)
 both failed on documents too long or too generic. If it fails a third
 time, move to ipasuma-nodoklis or iin-kalkulators instead and revisit
 salary later.
+
+## 2026-09-11 15:06
+
+Did: **shipped alga-neto (gross to net salary), the highest-value
+remaining finance page**, after two prior BLOCKED attempts. The
+narrow-official-page-first technique worked: fm.gov.lv (Finance
+Ministry) had a dedicated page for IIN rates, updated 2026-01-20
+(current), giving the progressive rate directly (25.5% up to
+8,775 EUR/month, 33% above). A second fm.gov.lv page gave the
+non-taxable minimum thresholds (max 550 EUR/month, full up to 500
+EUR/month income, phasing to zero at 1,800). vid.gov.lv confirmed
+VSAOI employee rate at 10.5% directly.
+
+One residual uncertainty, disclosed rather than hidden: the
+non-taxable minimum's phase-out between 500 and 1,800 EUR/month is
+implemented as linear interpolation — the source gave the three
+threshold numbers but didn't explicitly state the interpolation is
+linear. This is a well-supported inference (matches the structure of
+the pre-2025 differentiated-minimum formula, which was explicitly
+linear) but not a direct primary-source confirmation of linearity
+itself, so the FAQ says so. Also explicitly does not model
+dependent-allowance relief (atvieglojumi par apgādājamiem) — stated as
+a scope limit, not silently omitted.
+
+lib/calculators/alga-neto.ts + .test.ts,
+components/calculators/AlgaNetoCalculator.tsx, content/faq/alga-neto.md,
+registry entry, explanations block. Commits 0e6d01d, 2a46250, one full
+checklist run, pushed.
+
+Learned: the fix from two entries ago (target a specific official
+agency page directly, not a broad statute or navigation page) worked
+on the third attempt where broader fetches had failed twice. Worth
+keeping as the default approach for any remaining tax-figure research.
+Next: alga-bruto (net to gross) is a natural, low-effort follow-up —
+same three verified figures, just inverted (given a target net salary,
+solve for the gross that produces it). Since alga-neto's net(gross)
+function is monotonically increasing, binary search over gross
+wrapping calculateAlgaNeto is the clean implementation — no new
+sourcing needed at all.
