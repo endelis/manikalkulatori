@@ -601,6 +601,12 @@ const explanations: Record<string, React.ReactNode> = {
       likmi, lai iegūtu summu, kas paliek pēc nodokļiem.
     </p>
   ),
+  'iin-kalkulators': (
+    <p className="text-panel-muted">
+      Kalkulators reizina ievadīto ienākumu no kapitāla ar 25,5 procentu likmi, iegūstot IIN, tad
+      atņem to no ienākuma, lai parādītu, cik paliek pēc nodokļa nomaksas.
+    </p>
+  ),
   'sirdsdarbibas-zonas': (
     <p className="text-panel-muted">
       Kalkulators aprēķina pulsa rezervi, atņemot miera pulsu no maksimālā pulsa, tad katrai zonai pieskaita

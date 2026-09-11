@@ -58,6 +58,7 @@ import { AlgaNetoCalculator } from './AlgaNetoCalculator';
 import { AlgaBrutoCalculator } from './AlgaBrutoCalculator';
 import { IpasumaNodoklaCalculator } from './IpasumaNodoklaCalculator';
 import { SaimnieciskasDarbibasCalculator } from './SaimnieciskasDarbibasCalculator';
+import { IinKalkulators } from './IinKalkulators';
 
 /**
  * Props every calculator component receives from the calculator page.
@@ -128,6 +129,7 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'alga-bruto': AlgaBrutoCalculator,
   'ipasuma-nodoklis': IpasumaNodoklaCalculator,
   'saimnieciska-darbiba': SaimnieciskasDarbibasCalculator,
+  'iin-kalkulators': IinKalkulators,
 };
 
 export function getCalculatorComponent(slug: string): ComponentType<CalculatorComponentProps> | undefined {

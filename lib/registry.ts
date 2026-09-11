@@ -720,6 +720,16 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-11T15:36:11+03:00',
   },
   {
+    slug: 'iin-kalkulators',
+    category: 'finanses',
+    title: 'IIN no kapitāla ienākuma kalkulators',
+    h1: 'Cik nodokļa jāmaksā no kapitāla ienākuma?',
+    intro: 'Ievadi ienākumu no kapitāla (peļņu, dividendes vai procentus), uzzini IIN un summu, kas paliek pēc nodokļa.',
+    metaDescription: 'Aprēķini iedzīvotāju ienākuma nodokli 25,5 procentu apmērā no kapitāla pieauguma, dividendēm vai procentu ienākumiem.',
+    keywords: ['iin kalkulators', 'kapitāla pieauguma nodoklis', 'dividenžu nodokļa kalkulators'],
+    contentUpdatedAt: '2026-09-11T16:08:11+03:00',
+  },
+  {
     slug: 'grutniecibas-termins',
     category: 'veseliba',
     title: 'Grūtniecības termiņa kalkulators',
