@@ -35,7 +35,15 @@ of finance still waits for its normal place in the wave order.
 5. Any change to a calculator's rendered numbers or copy must bump that
    calculator's `contentUpdatedAt` in `lib/registry.ts` in the same
    commit, per `CLAUDE.md`'s "Sitemap dates" rule. The pre-push
-   checklist below re-checks this via the drift test.
+   checklist below re-checks this via the drift test. This includes
+   editing another calculator's compute module to export a shared
+   helper (e.g. reusing `alga-neto.ts`'s `progressiveIin` in
+   `saimnieciska-darbiba.ts`) — the edited file's *own* calculator
+   also needs its `contentUpdatedAt` bumped, even though nothing
+   visible about it changed, because the drift test compares against
+   the file's git commit time, not against whether the change was
+   semantically meaningful. Check every calculator file touched in a
+   cycle, not just the one being built.
 6. Any visible Latvian copy written (FAQ content, calculator copy,
    metadata) must follow `CLAUDE.md`'s dash/hyphen ban (no em dash, en
    dash, or hyphen-minus used as punctuation — see that section for the
