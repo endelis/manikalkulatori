@@ -574,6 +574,13 @@ const explanations: Record<string, React.ReactNode> = {
       iegūtu kopējo slimības naudu.
     </p>
   ),
+  'alga-neto': (
+    <p className="text-panel-muted">
+      Kalkulators atņem no bruto algas VSAOI darbinieka daļu (10,5%), tad piemēro neapliekamo
+      minimumu un progresīvo IIN likmi (25,5% līdz 8775 eiro mēnesī, 33% virs tā) atlikušajai
+      summai, lai iegūtu algu uz rokas.
+    </p>
+  ),
   'sirdsdarbibas-zonas': (
     <p className="text-panel-muted">
       Kalkulators aprēķina pulsa rezervi, atņemot miera pulsu no maksimālā pulsa, tad katrai zonai pieskaita

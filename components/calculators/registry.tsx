@@ -54,6 +54,7 @@ import { InflacijasCalculator } from './InflacijasCalculator';
 import { AtvalinajumaNaudasCalculator } from './AtvalinajumaNaudasCalculator';
 import { MunKalkulators } from './MunKalkulators';
 import { SlimibasNaudasCalculator } from './SlimibasNaudasCalculator';
+import { AlgaNetoCalculator } from './AlgaNetoCalculator';
 
 /**
  * Props every calculator component receives from the calculator page.
@@ -120,6 +121,7 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'atvalinajuma-nauda': AtvalinajumaNaudasCalculator,
   'mun-kalkulators': MunKalkulators,
   'slimibas-nauda': SlimibasNaudasCalculator,
+  'alga-neto': AlgaNetoCalculator,
 };
 
 export function getCalculatorComponent(slug: string): ComponentType<CalculatorComponentProps> | undefined {

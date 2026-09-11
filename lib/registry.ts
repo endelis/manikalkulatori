@@ -680,6 +680,16 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-11T15:00:04+03:00',
   },
   {
+    slug: 'alga-neto',
+    category: 'finanses',
+    title: 'Algas neto kalkulators',
+    h1: 'Cik liela būs tava alga uz rokas?',
+    intro: 'Ievadi bruto algu, uzzini algu uz rokas pēc VSAOI un IIN atskaitīšanas.',
+    metaDescription: 'Aprēķini neto algu no bruto algas pēc VSAOI (10,5%) un progresīvās IIN likmes ar neapliekamo minimumu.',
+    keywords: ['algas neto kalkulators', 'alga uz rokas', 'bruto neto kalkulators'],
+    contentUpdatedAt: '2026-09-11T15:04:45+03:00',
+  },
+  {
     slug: 'grutniecibas-termins',
     category: 'veseliba',
     title: 'Grūtniecības termiņa kalkulators',
