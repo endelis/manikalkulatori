@@ -1363,3 +1363,20 @@ given the 2nd-level and investment-account pieces are blocked). Holding
 here rather than manufacturing lower-value work; three consecutive
 real blockers is a legitimate signal to wait for input rather than
 push further automated research on the same sources.
+
+## 2026-09-11 23:23
+
+Did: built the pension pillar hub page
+(pensija-latvija-celvedis) rather than waiting idle on the three
+blockers from the previous entry. Five real pieces already existed
+(1st level, early retirement + its comparison, 3rd level, minimum
+pension) -- enough to justify a hub page now, built honestly (states
+plainly that 2nd level isn't published yet and why, rather than
+pretending completeness). Linked internally to all five pieces by
+level. Full checklist green, verified visually, commit ba92b33, pushed.
+Next: still holding on the three sourcing blockers (vidējā pensija,
+2nd-level fund returns, ieguldījumu konts tax text) -- user has exact
+instructions for what to grab from each site. No further unblocked
+pension work identified without either new data or a different kind
+of task; will check for user input each tick rather than manufacture
+more content.
