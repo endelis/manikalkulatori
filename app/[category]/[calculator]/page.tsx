@@ -648,6 +648,21 @@ const explanations: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  'ieguldijumu-konta-nodoklu-kalkulators': (
+    <>
+      <p className="text-panel-muted">
+        Abu kontu pirms nodokļa vērtība tiek aprēķināta ar vienu un to pašu salikto procentu formulu.
+        Atšķiras tikai tas, kad un cik daudz nodokļa tiek ieturēts.
+      </p>
+      <p className="text-panel-muted">
+        Ieguldījumu kontā ar nodokli apliekamais ienākums ir izņemtā summa mīnus iemaksātā summa, un
+        nodoklis (25,5%) jāmaksā tikai vienreiz, kad summa tiek izņemta. Parastajā kontā kalkulators
+        pieņem, ka katra gada peļņa tiek realizēta un aplikta ar nodokli tajā pašā gadā, tāpēc mazāk
+        naudas turpina augt nākamajos gados. Starpība starp abām beigu summām ir nodokļa atlikšanas
+        radītais ieguvums.
+      </p>
+    </>
+  ),
 };
 
 /**
@@ -1301,6 +1316,24 @@ const sourcesContent: Record<string, React.ReactNode> = {
         izgūts 2026. gada 11. septembrī.
       </li>
       <li>Iedzīvotāju ienākuma nodokļa likme 25,5%, sk. avotus iin-kalkulators lapā.</li>
+    </ul>
+  ),
+  'ieguldijumu-konta-nodoklu-kalkulators': (
+    <ul className="flex flex-col gap-2 text-sm text-panel-muted">
+      <li>
+        Ieguldījumu konta nodokļa mehānisms (ienākums = izmaksātā summa mīnus iemaksātā summa, 25,5%
+        likme, dividenžu un procentu ienākuma izslēgšana no bāzes),{' '}
+        <a
+          href="https://www.vid.gov.lv/lv/media/1895/download?attachment="
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          VID
+        </a>
+        , metodiskais materiāls &quot;Ienākums no ieguldījumu konta&quot;, publicēts 2024. gada
+        27. decembrī, izgūts 2026. gada 11. septembrī.
+      </li>
     </ul>
   ),
 };

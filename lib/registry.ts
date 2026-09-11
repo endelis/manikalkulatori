@@ -641,6 +641,22 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-11T22:42:26+03:00',
   },
   {
+    slug: 'ieguldijumu-konta-nodoklu-kalkulators',
+    category: 'finanses',
+    title: 'Ieguldījumu konta nodokļu kalkulators',
+    h1: 'Cik izdevīgs ir ieguldījumu konts salīdzinājumā ar parastu kontu',
+    intro:
+      'Ievadi iemaksas, ienesīgumu un termiņu, uzzini nodokļa atlikšanas ietaupījumu ieguldījumu kontā.',
+    metaDescription:
+      'Aprēķini ieguldījumu konta nodokļa atlikšanas priekšrocību salīdzinājumā ar parastu kontu, pēc reālajiem IIN nosacījumiem.',
+    keywords: [
+      'ieguldījumu konts',
+      'ieguldījumu konta nodokļi',
+      'ieguldījumu konta kalkulators',
+    ],
+    contentUpdatedAt: '2026-09-11T23:26:41+03:00',
+  },
+  {
     slug: 'tumsas-kalkulators',
     category: 'sabiedriba',
     title: 'Tumsas kalkulators',
