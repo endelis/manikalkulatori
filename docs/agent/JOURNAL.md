@@ -716,3 +716,37 @@ two likumi.lv attempts (one succeeded narrowly scoped, one failed
 broad), try slimibas-nauda or mun-kalkulators next with a narrow,
 specific first fetch (ask for one exact article's text, not "find the
 rates") rather than alga-neto's broad multi-bracket complexity.
+
+## 2026-09-11 14:48
+
+Did: policy update at the user's explicit request — "remove the loop
+stop... run continuously, but if hit with usage limit, do recovery."
+Updated CHARTER.md's Stop conditions section: the loop no longer ever
+calls `ScheduleWakeup` with `stop: true` on its own initiative. The
+only two ways it ends now are the `docs/agent/STOP` kill switch or an
+explicit in-session user request. The old "same blocker 3x → stop
+rescheduling" rule is now "back off to a long delay but keep
+rescheduling, and do unblocked work instead if any is available."
+
+Added a new "Recovery from an interrupted cycle" procedure: a dirty
+`git status` at cycle start is now treated as an expected consequence
+of a usage-limit kill (not just an error to halt on) — inspect what's
+there, finish it if it looks like a complete calculator, discard it if
+partial/broken, journal either way. Added a "Usage limits" section
+documenting plainly that no auto-resume exists (confirmed earlier
+today via the claude-code-guide agent): a hard limit hit mid-cycle
+just goes silent, and the user has to restart the session themselves.
+This charter's job is making that restart cheap via the existing
+checkpoint discipline, not preventing the gap — nothing here changes
+that platform reality, it just names it and gives the loop a clean
+recovery path for whenever it does happen. Commit affc45a, pushed
+(docs-only, no code checklist needed).
+Learned: nothing structurally new — this formalizes what the
+checkpoint-per-cycle discipline was already doing implicitly (small
+diffs, full verification before push, one calculator at a time). The
+explicit "never self-terminate" rule matters mainly as a guardrail
+against a future cycle rationalizing a stop that wasn't actually
+asked for.
+Next: continue finance category. Try slimibas-nauda or mun-kalkulators
+with a narrow, specific likumi.lv fetch, per the plan from two entries
+ago.
