@@ -267,3 +267,15 @@ Wave 1 is complete (auto, home-energy, sport, 28/28) and Wave 2 (health) is unde
 **Action items, split by who does them:**
 - User (needs a Google/account action the agent cannot take): create or verify a Google Search Console property for manikalkulatori.lv and submit the sitemap; consider Ezoic Access Now signup; consider Elizings.lv / Latvijas Kredītu Centrs affiliate signup once `kredita-kalkulators` exists.
 - Agent (code-side, once the user has real credentials to wire in): add the GSC verification tag when given the code; wire an affiliate link into `kredita-kalkulators`'s reserved gap when given a real tracking link — never before, since an unwired or placeholder affiliate link is still a monetization decision made without the user, the same reasoning that applies to `AdSlot` (see section 9's rule and `docs/agent/CHARTER.md`).
+
+### Correction, 2026-09-11 (real GSC data received)
+
+The "not indexed at all" claim above was wrong — it was based on a `site:` web search, which is an unreliable proxy for real index status. The user shared actual Google Search Console Coverage and Performance exports, which are ground truth and should always be trusted over a search-engine proxy check:
+
+- **The site is indexed.** 20 pages indexed as of the report date, 17 more "Discovered, currently not indexed" (crawled, not yet chosen for the index — normal for a brand-new domain's remaining pages, not an error). GSC property verification is evidently already set up (the user is the one who pulled these reports).
+- **Real impressions since 2026-08-30**, climbing from ~32/day to ~150-190/day over the following week and a half.
+- **The actual bottleneck is ranking position, not indexing.** Average position across tracked queries is 42-55 (page 4-6 of results) — far too low for meaningful CTR regardless of impression volume. Total clicks in the period: 2, against roughly 1,500+ impressions. This is a domain-authority/time problem consistent with the original 3-month ROI ramp, not something a quick fix resolves.
+- **The wedge strategy is validated by the data.** `kasko-kalkulators` (628 impressions) and `octa-kalkulators` (475 impressions) are by far the two biggest pages — auto insurance calculators are where real search demand is already landing, exactly as section 1's competitive analysis predicted. Top queries are almost entirely KASKO/OCTA variants.
+- Three `sabiedriba/iedzivotaju-skaits/<city>` pages are already ranking well (position 6-10) but on low-volume queries, so they contribute little traffic yet despite good position.
+
+Revised bottleneck: keep publishing and let domain authority accrue (the original plan's own thesis), rather than treating indexing as the blocker it no longer is. AdSense timing guidance is unchanged (still wait — near-zero real traffic so far), but the reason is ranking position now, not lack of indexing.
