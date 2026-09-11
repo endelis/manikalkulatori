@@ -115,6 +115,13 @@ export const articleBody: Record<string, React.ReactNode> = {
         >
           Aprēķini savu 3. līmeņa uzkrājumu un nodokļa atmaksu
         </Link>
+        , vai izlasi{' '}
+        <Link
+          href="/finanses/ka-izveleties-pensiju-3-limena-planu"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          kā izvēlēties plānu
+        </Link>
         .
       </p>
 

@@ -889,7 +889,7 @@ export const articles: ArticleMeta[] = [
     metaDescription:
       'Pilns ceļvedis pensijai Latvijā: kā aprēķina 1. līmeņa pensiju, priekšlaicīgas pensionēšanās nosacījumi, 3. līmeņa uzkrājumi un minimālā pensija.',
     keywords: ['pensija latvijā', 'pensijas ceļvedis', 'viss par pensiju'],
-    contentUpdatedAt: '2026-09-11T23:39:44+03:00',
+    contentUpdatedAt: '2026-09-11T23:44:13+03:00',
   },
   {
     slug: 'izdienas-pensija',
