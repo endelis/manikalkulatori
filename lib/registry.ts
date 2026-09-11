@@ -190,7 +190,7 @@ export const calculators: CalculatorMeta[] = [
       'auto ekspluatācijas nodoklis',
       'transportlīdzekļa nodoklis CO2',
     ],
-    contentUpdatedAt: '2026-09-11T09:50:27+03:00',
+    contentUpdatedAt: '2026-09-11T09:52:08+03:00',
   },
   {
     slug: 'solaru-atmaksa',
