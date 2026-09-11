@@ -609,3 +609,17 @@ them could have outsized ROI compared to building another new,
 unproven page. Not urgent (ranking takes months regardless), but
 flagged as a good candidate next time raw calculator-building slows
 down.
+
+## 2026-09-11 13:58
+
+Did: built inflacija (purchasing power over time, pure math, rate is
+user input). Commits 110da53, b01145a, one full checklist run, pushed.
+Remaining finance P1 items (alga-neto, alga-bruto — salary net/gross)
+need real income-tax-bracket sourcing from likumi.lv/VID; deferring
+those to a cycle with room for that research rather than rushing it.
+Next: switch to the content-quality pass flagged two entries ago —
+kasko-kalkulators and octa-kalkulators have proven demand (1,100+
+combined impressions per real GSC data) but weak ranking position
+(39-55). Improve their FAQ depth and "kā tas aprēķināts" explanations
+this cycle rather than building another new, unproven finance
+calculator.
