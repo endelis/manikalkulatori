@@ -17,3 +17,11 @@ No tavas algas ieturētie 20 procenti pensiju apdrošināšanai sadalās starp a
 ### Vai kalkulators rāda pensiju pirms vai pēc nodokļa?
 
 Pirms. Kalkulators rāda aprēķināto pensijas apmēru, no kura vēl nav ieturēts iedzīvotāju ienākuma nodoklis. Faktiski izmaksātā summa var būt mazāka atkarībā no tavas kopējās ienākumu situācijas un pensijai piemērojamā neapliekamā minimuma.
+
+### Vai šis kalkulators rāda to pašu, ko dēvē par prognozējamo pensiju?
+
+Jā, būtībā tas ir tas pats jēdziens. Prognozējamā vecuma pensija ir aptuvens novērtējums par to, cik liela būs tava pensija nākotnē, balstoties uz šībrīža datiem, tieši to šis kalkulators arī aprēķina 1. līmenim.
+
+### Kas notiek, ja aprēķinātā pensija sanāk ļoti maza?
+
+Ja tavs aprēķinātais apmērs sanāk mazāks par valstī noteikto minimālo pensiju, faktiski saņemsi minimālo apmēru, nevis aprēķinu skaitli. Minimālās pensijas apmērs un aprēķins ir atsevišķi izskaidrots minimālās pensijas lapā.

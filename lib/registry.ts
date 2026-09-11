@@ -598,8 +598,15 @@ export const calculators: CalculatorMeta[] = [
       'Ievadi dzimšanas gadu, algu un apdrošināšanas stāžu, uzzini aptuvenu 1. līmeņa vecuma pensijas apmēru pēc VSAA formulas.',
     metaDescription:
       'Aprēķini aptuvenu Latvijas 1. līmeņa vecuma pensiju pēc VSAA formulas un koeficienta G, ar redzamu aprēķinu gaitu.',
-    keywords: ['pensijas kalkulators', 'mana pensija', 'kā aprēķina pensiju Latvijā', 'koeficients G'],
-    contentUpdatedAt: '2026-09-04T20:40:47+03:00',
+    keywords: [
+      'pensijas kalkulators',
+      'mana pensija',
+      'kā aprēķina pensiju Latvijā',
+      'koeficients G',
+      'prognozējamā pensija',
+      'mana pensija kalkulators',
+    ],
+    contentUpdatedAt: '2026-09-11T22:21:00+03:00',
   },
   {
     slug: 'tumsas-kalkulators',
