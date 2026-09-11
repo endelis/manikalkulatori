@@ -11,6 +11,13 @@ and `DESIGN-GUIDANCE.md`. Do not redecide priorities those files already
 answer. Build order: P1 before P2 before P3, gap-first waves (auto,
 home-energy, endurance-sport), then health, then contested finance/tax.
 
+One standing exception, per `PROJECT-OVERVIEW.md` section 11
+(monetization readiness, added 2026-09-11): build
+`patēriņa kredīta kalkulators` (`/finanses/kredita-kalkulators`, item
+17) ahead of the rest of the finance category, because a
+traffic-independent affiliate program already exists for it. The rest
+of finance still waits for its normal place in the wave order.
+
 ## Allowed autonomously
 
 1. Build the next unbuilt calculator: math module, UI component, FAQ
@@ -64,7 +71,13 @@ Commit, push, and merge directly for all of the above. No PR gate.
    and deliberately reverted — see
    `docs/superpowers/plans/2026-08-22-instrument-panel-redesign.md`
    Task 5 — because a scaffold that exists "unwired" is still a
-   monetization decision made without the user.)
+   monetization decision made without the user.) This still applies to
+   `kredita-kalkulators` (see Mission's standing exception above): build
+   the calculator itself freely, but do not add an affiliate link,
+   placeholder link, or tracking snippet to it under any circumstances
+   until the user hands over a real link from an account they hold —
+   an unwired or placeholder affiliate slot is the same "decision made
+   without the user" problem `AdSlot` was.
 5. Editing the legal pages: `app/privatuma-politika/`, `app/noteikumi/`,
    `app/kontakti/`, `app/par-mums/`. Legal/GDPR consequence, not the
    agent's call.
