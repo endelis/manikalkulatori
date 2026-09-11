@@ -888,3 +888,37 @@ own rate within a legal range), so taking the rate as a direct user
 input isn't a sourcing dodge here — it's the only design that's
 actually correct, since no single national rate exists to source.
 Straightforward: cadastral value × user-supplied rate.
+
+## 2026-09-11 15:12
+
+Did: built ipasuma-nodoklis (property tax). Rate taken as user input
+by design (genuinely municipality-set in Latvia, not a sourcing
+shortcut). Caught myself asserting an unsourced payment-schedule claim
+in the first FAQ draft again (same pattern as atvalinajuma-nauda) —
+verified the four quarterly deadlines (31 March, 15 May, 15 August,
+15 November) directly via likumi.lv Article 6 before shipping.
+lib/calculators/ipasuma-nodoklis.ts + .test.ts,
+components/calculators/IpasumaNodoklaCalculator.tsx,
+content/faq/ipasuma-nodoklis.md, registry entry, explanations block.
+Commits edadd07, c5cf87d, one full checklist run, pushed.
+
+**Finance category status: 12/14 built** (only saimnieciska-darbiba
+and iin-kalkulators remain). Both remaining items risk substantial
+overlap with alga-neto's already-built progressive IIN logic
+(sole-trader tax and general income tax both ultimately apply the
+same IIN structure, just with different deduction/VSAOI rules), so
+they need careful scoping to add real value rather than duplicate
+what's shipped, not just a quick build.
+
+Learned: the "verify every FAQ claim, not just the core calculation"
+lesson from atvalinajuma-nauda held again here — worth treating as a
+permanent habit at this point, not a one-off correction.
+Next: pause raw finance-category expansion here — the two highest
+value remaining items need real scoping thought (avoid duplicating
+alga-neto's IIN logic) rather than a rushed build. Good candidates for
+the next cycle: (a) scope and build saimnieciska-darbiba properly
+(reuse alga-neto's progressiveIin, research self-employed VSAOI
+rules), (b) check other categories (auto/home-energy/health) for any
+gaps against the full PROJECT-OVERVIEW.md list that might have been
+missed, or (c) another GSC-informed content-quality pass once new data
+is available.
