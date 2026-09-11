@@ -628,7 +628,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini aptuveno alkohola līmeni asinīs (promiles) pēc Vidmarka formulas no svara, izdzertā daudzuma un laika.',
     keywords: ['promiļu kalkulators', 'alkohola līmenis asinīs', 'vidmarka formula'],
-    contentUpdatedAt: '2026-09-11T13:13:18+03:00',
+    contentUpdatedAt: '2026-09-11T13:14:28+03:00',
   },
 ];
 
