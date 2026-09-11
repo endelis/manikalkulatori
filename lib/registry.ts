@@ -717,7 +717,7 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi mēneša apliekamo ienākumu, uzzini VSAOI un IIN summu un to, kas paliek pēc nodokļiem.',
     metaDescription: 'Aprēķini VSAOI un IIN no saimnieciskās darbības ienākuma vispārējā nodokļu režīmā.',
     keywords: ['saimnieciskās darbības nodokļi', 'pašnodarbinātā kalkulators', 'saimnieciskās darbības nodokļu kalkulators'],
-    contentUpdatedAt: '2026-09-11T15:35:57+03:00',
+    contentUpdatedAt: '2026-09-11T15:36:11+03:00',
   },
   {
     slug: 'grutniecibas-termins',
