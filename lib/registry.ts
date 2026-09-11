@@ -627,7 +627,7 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi summu un PVN likmi, pieskaiti vai izdali PVN.',
     metaDescription: 'Aprēķini PVN summu, pieskaitot vai izdalot pievienotās vērtības nodokli no jebkuras summas.',
     keywords: ['pvn kalkulators', 'pvn aprēķins', 'pievienotās vērtības nodokļa kalkulators'],
-    contentUpdatedAt: '2026-09-11T13:49:26+03:00',
+    contentUpdatedAt: '2026-09-11T13:49:37+03:00',
   },
   {
     slug: 'grutniecibas-termins',
