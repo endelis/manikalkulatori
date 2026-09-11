@@ -37,21 +37,44 @@ Read at the start of every cycle. Contents:
   of truth; the agent does not redecide priorities they already answer.
 - Allowed autonomously: build the next unbuilt calculator (math + UI + FAQ +
   registry entry, per the MAP in `CLAUDE.md`), improve SEO/content quality
-  on existing pages, fix tests/build/content-drift issues, write
-  monetization-groundwork code (e.g. an `AdSlot` component per
-  DESIGN-GUIDANCE.md section 8) without wiring it to a live account, and
-  general-web research (see "External research" below) to sanity-check a
-  slug, a competitor's coverage, or a figure before building. Commit, push,
-  and merge directly — no PR gate for code.
+  on existing pages, fix tests/build/content-drift issues, and general-web
+  research (see "External research" below) to sanity-check a slug, a
+  competitor's coverage, or a figure before building. Any change to a
+  calculator's rendered numbers or copy must bump that calculator's
+  `contentUpdatedAt` in `lib/registry.ts` in the same commit, per
+  `CLAUDE.md`'s "Sitemap dates" rule. Any visible Latvian copy written must
+  follow `CLAUDE.md`'s dash/hyphen ban and `DESIGN-GUIDANCE.md` section 11's
+  voice rules. Commit, push, and merge directly — no PR gate for code.
 - Gated, must stop and flag instead of acting: anything needing a real
   external account or credential (AdSense, affiliate program signup, DNS),
   anything that spends money, any YMYL figure (tax rate, grant amount,
   insurer price) it cannot source from an official reference — ask rather
-  than guess, per `PROJECT-OVERVIEW.md` section 9's existing rule.
+  than guess, per `PROJECT-OVERVIEW.md` section 10 ("YMYL caution").
+  "Sourced from an official reference" means fetched directly from an
+  acceptable primary source (e.g. vid.gov.lv, likumi.lv, csp.gov.lv, or the
+  issuing ministry/agency), with that source's URL and the retrieval date
+  recorded — a `WebSearch`/`WebFetch` directional finding alone never
+  satisfies this bar, it can only point at where to look. Monetization
+  groundwork is also gated, not allowed: per `DESIGN-GUIDANCE.md` section 8,
+  no `AdSlot` component and no ad/affiliate element are built in this
+  phase — monetization is deferred to month 3, and the reserved-height gaps
+  in `CalculatorShell` stay empty. (This was built once and deliberately
+  deleted for the same reason — see
+  `docs/superpowers/plans/2026-08-22-instrument-panel-redesign.md` Task 5.)
+  Also gated: editing the legal pages, touching cookie-consent or analytics
+  wiring, changing the slug of an already-published calculator, and
+  deleting or bulk-rewriting existing shipped content.
+- Stop conditions: the charter defines explicit halt conditions (unclean
+  git status at cycle start, a rejected push or diverged master, the same
+  blocker recurring three journal entries running, a cycle touching more
+  than one calculator's worth of files) and a user-operated kill switch — a
+  `docs/agent/STOP` file the loop checks for at the start of every cycle.
 - Deploy consequence: Vercel deploys on push to master, so pushing is going
-  live. Every cycle must reach a clean `npm run build` (and relevant tests)
-  before pushing. If it can't get green, it does not push broken code; it
-  journals the blocker and sends a push notification instead.
+  live, and since there is no PR gate, the pre-push checklist is the only
+  gate that exists. Every cycle must run the same checks CI runs
+  (`npx tsc --noEmit`, `npm run build`, the full `npm test` suite) before
+  pushing. If it can't get green, it does not push broken code; it journals
+  the blocker and sends a push notification instead.
 - Efficiency: follow the existing small-change protocol in `CLAUDE.md` and
   the user's efficiency-workflow preference (scoped work, `npm run build` as
   the one check, no speculative repo-wide exploration) for anything that

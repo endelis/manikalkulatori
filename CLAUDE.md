@@ -12,6 +12,7 @@ See PROJECT-OVERVIEW.md and DESIGN-GUIDANCE.md for product and design context. T
 - Calculator math (pure functions, one file per calculator): `lib/calculators/<slug>.ts`
 - Calculator UI components, one per calculator, mapped by slug: `components/calculators/<Name>Calculator.tsx`, registered in `components/calculators/registry.tsx`
 - Sitemap: `app/sitemap.ts` (reads `contentUpdatedAt` from the registry, never `Date.now()` or git). Robots: `app/robots.ts`
+- Autonomous agent standing instructions and work log: `docs/agent/CHARTER.md`, `docs/agent/JOURNAL.md`. Design: `docs/superpowers/specs/2026-09-10-autonomous-agent-design.md`.
 - Category and calculator routes: `app/[category]/page.tsx`, `app/[category]/[calculator]/page.tsx`
 - Homepage: `app/page.tsx`. Footer/legal nav: `components/Footer.tsx`
 - Legal pages (Latvian copy lives here): `app/privatuma-politika/page.tsx`, `app/noteikumi/page.tsx`, `app/par-mums/page.tsx`, `app/kontakti/page.tsx`
