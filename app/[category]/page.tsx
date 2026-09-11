@@ -28,6 +28,13 @@ export async function generateMetadata({
   };
 }
 
+function truncateAtWord(text: string, maxLength: number): string {
+  if (text.length <= maxLength) return text;
+  const cut = text.slice(0, maxLength);
+  const lastSpace = cut.lastIndexOf(' ');
+  return `${cut.slice(0, lastSpace > 0 ? lastSpace : maxLength)}…`;
+}
+
 export default async function CategoryPage({
   params,
 }: {
@@ -40,35 +47,37 @@ export default async function CategoryPage({
   const categoryCalculators = getCalculatorsByCategory(category.slug);
 
   return (
-    <main className="mx-auto flex max-w-2xl flex-col gap-6 px-4 py-8">
-      <nav aria-label="Breadcrumb" className="text-sm text-panel-muted">
+    <main className="mx-auto flex max-w-2xl flex-col gap-8 px-4 py-10">
+      <nav aria-label="Breadcrumb" className="text-sm text-panel-faint">
         <Link href="/">Sākums</Link>
         {' / '}
         <span>{category.title}</span>
       </nav>
 
-      <h1 className="font-sans text-h1" style={{ color: category.accentVar }}>
-        {category.title}
-      </h1>
-      <p className="text-panel-muted">{category.description}</p>
+      <header className="flex flex-col gap-2">
+        <h1 className="font-sans text-h1" style={{ color: category.accentVar }}>
+          {category.title}
+        </h1>
+        <p className="text-panel-muted">{category.description}</p>
+      </header>
 
       {categoryCalculators.length === 0 ? (
-        <p className="rounded-md border border-panel-border bg-panel-surface p-4 text-panel-muted">
+        <p className="rounded-xl border border-panel-border bg-panel-surface p-5 text-panel-muted shadow-sm">
           Šajā kategorijā drīzumā būs pieejami kalkulatori.
         </p>
       ) : (
-        <ul className="flex flex-col gap-2">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           {categoryCalculators.map((calculator) => (
-            <li key={calculator.slug}>
-              <Link
-                href={`/${category.slug}/${calculator.slug}`}
-                className="text-panel-text underline decoration-panel-border underline-offset-4 hover:decoration-current"
-              >
-                {calculator.title}
-              </Link>
-            </li>
+            <Link
+              key={calculator.slug}
+              href={`/${category.slug}/${calculator.slug}`}
+              className="flex flex-col gap-1 rounded-2xl border border-panel-border bg-panel-surface p-5 shadow-sm transition-shadow duration-[120ms] hover:shadow"
+            >
+              <span className="font-medium text-panel-text">{calculator.title}</span>
+              <span className="text-sm text-panel-faint">{truncateAtWord(calculator.intro, 80)}</span>
+            </Link>
           ))}
-        </ul>
+        </div>
       )}
     </main>
   );
