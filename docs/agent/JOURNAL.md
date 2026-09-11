@@ -1073,3 +1073,41 @@ reached) toward content-quality/SEO work on existing pages, following
 the KASKO/OCTA precedent, until new GSC data suggests a different
 priority. Check for other high-impression, weak-position pages once a
 new report is available.
+
+## 2026-09-11 17:02
+
+Did: session restart, resumed loop. User shared fresh Performance and
+Coverage GSC exports (xlsx, dated 2026-09-11, same day as the earlier
+export — "they do not get any fresher"). Parsed both with openpyxl
+(Read tool can't open binary xlsx). Full Pages table (19 rows) plus
+127 Queries confirmed kasko/octa remain the top two by impressions
+(628, 475) but also surfaced the next real opportunity:
+auto/uzlades-izmaksas (118 impressions, position ~78, 0 clicks) and
+auto/lizings-vs-kredits (99 impressions, position ~71, 0 clicks) are
+both far worse positioned than kasko/octa were before their pass,
+with real matching query volume ("elektroauto uzlādes cena" 40
+impressions/pos 82, "elektroauto uzlādes cenas" 20/pos 82,
+"cik maksā uzlāde" 10/pos 84, "auto līzings vai kredīts" 29/pos 78,
+"auto kredīts vai līzings" 26/pos 79). Picked uzlades-izmaksas for
+this cycle (single-page scope per CHARTER.md's cap). Added 2 FAQ
+entries matching real query phrasing ("Cik maksā uzlādēt
+elektromobili?", "Cik maksā uzlāde par vienu kWh?") and 2 keywords to
+its registry entry ("elektroauto uzlādes cena", "uzlāde kwh cena").
+Bumped contentUpdatedAt. Full checklist (tsc, build, npm test: 152
+files/712 tests) green, commit 0d4dd23, pushed.
+Learned: openpyxl is available in this environment and works for
+reading GSC xlsx exports directly; must force PYTHONIOENCODING=utf-8
+on Windows or Latvian diacritics in the data crash stdout mid-dump
+(cp1252 default). Also: the .claude/worktrees/checkpoint-1-foundation
+duplicate checkout means every vitest run reports each test twice
+(once per copy) — cosmetic, not a real failure, matches CLAUDE.md's
+documented worktree caveat.
+Next: lizings-vs-kredits is the clear next content-quality target
+(99 impressions, position ~71, multiple matching queries: "auto
+līzings vai kredīts", "auto kredīts vai līzings", "auto kredīts un
+līzings", "mēneša maksājums auto līzingam"). After that, riepu-izmers
+(75 impressions, position 35, already decent) and the /auto category
+page itself (57 impressions, position 70) are lower-priority
+candidates. User also offered a GA export for a future cycle to see
+which pages convert, not just rank; not needed for this cycle's
+work but worth requesting when picking the next content target.
