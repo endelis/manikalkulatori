@@ -141,3 +141,32 @@ candidate; try likumi.lv first this time rather than agency summary
 pages, given what worked this cycle. If that's also fully resolved,
 move to Wave 2 (health category) or a content-quality/SEO pass on
 existing pages.
+
+## 2026-09-11 10:26
+
+Did: built uznemuma-auto-nodoklis (company light vehicle tax, UVTN),
+the last auto Wave-1 P2 gap. Went to likumi.lv first this time (per
+last cycle's lesson) and it worked cleanly on the first fetch: Art.
+10-14 give the full rate structure (flat 15/25 EUR for electric/plug-in
+hybrid, power-band rates for other post-2009 vehicles, flat 60 EUR
+otherwise), confirmed in force since 2023-07-01 with the next
+amendment not until 2027-01-01. Deliberately scoped to the UVTN itself,
+not a full "company vs personal" comparison — the employee
+benefit-in-kind side is a separate, more complex topic, left
+unaddressed rather than guessed at. lib/calculators/uznemuma-auto-nodoklis.ts
++ .test.ts, components/calculators/UznemumaAutoNodoklaCalculator.tsx,
+content/faq/uznemuma-auto-nodoklis.md, registry entries, explanations
+block. Full checklist clean, pushed (commits fad9cd0, c7d9e48).
+Learned: re-verified the full slug list against PROJECT-OVERVIEW.md's
+50-calculator list properly this time (not just skimming). Auto (12/12)
+and home-energy (8/8) are now fully built. Sport is NOT fully done as
+earlier journal entries assumed — 5 of 8 built (skriesanas-temps,
+triatlona-planotajs, peldesanas-css, ftp-zonas, sirdsdarbibas-zonas),
+missing vo2max (P3), maratona-laika-prognoze (P2), trenina-kalorijas
+(P3). Worth double-checking registry against the full list on every
+"what's next" check, not just trusting a prior cycle's summary.
+Next: build maratona-laika-prognoze (marathon time prediction from a
+shorter race result, e.g. Riegel's formula) — pure math, no YMYL
+sourcing needed, same safe category as peldesanas-css. After that,
+vo2max and trenina-kalorijas (both P3, also non-YMYL) close out sport
+and all of Wave 1. Then Wave 2 (health category, 8 calculators).
