@@ -581,6 +581,13 @@ const explanations: Record<string, React.ReactNode> = {
       summai, lai iegūtu algu uz rokas.
     </p>
   ),
+  'alga-bruto': (
+    <p className="text-panel-muted">
+      Kalkulators pakāpeniski tuvina bruto algas vērtību, ar bināro meklēšanu pārbaudot, kāda neto
+      alga iznāktu katrai bruto vērtībai, līdz atrasta bruto summa, kas dod tieši vēlamo algu uz
+      rokas.
+    </p>
+  ),
   'sirdsdarbibas-zonas': (
     <p className="text-panel-muted">
       Kalkulators aprēķina pulsa rezervi, atņemot miera pulsu no maksimālā pulsa, tad katrai zonai pieskaita

@@ -690,6 +690,16 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-11T15:05:00+03:00',
   },
   {
+    slug: 'alga-bruto',
+    category: 'finanses',
+    title: 'Algas bruto kalkulators',
+    h1: 'Kāda bruto alga nepieciešama, lai saņemtu vēlamo summu uz rokas?',
+    intro: 'Ievadi vēlamo algu uz rokas, uzzini nepieciešamo bruto algu pēc VSAOI un IIN.',
+    metaDescription: 'Aprēķini nepieciešamo bruto algu, lai pēc VSAOI un IIN atskaitīšanas saņemtu vēlamo algu uz rokas.',
+    keywords: ['algas bruto kalkulators', 'neto uz bruto', 'bruto algas kalkulators'],
+    contentUpdatedAt: '2026-09-11T15:07:37+03:00',
+  },
+  {
     slug: 'grutniecibas-termins',
     category: 'veseliba',
     title: 'Grūtniecības termiņa kalkulators',
