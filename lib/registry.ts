@@ -595,7 +595,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini patēriņa kredīta ikmēneša maksājumu, kopējās izmaksas un pārmaksu pēc anuitātes formulas.',
     keywords: ['kredīta kalkulators', 'patēriņa kredīta kalkulators', 'aizdevuma maksājuma kalkulators'],
-    contentUpdatedAt: '2026-09-11T13:02:16+03:00',
+    contentUpdatedAt: '2026-09-11T13:03:37+03:00',
   },
 ];
 
