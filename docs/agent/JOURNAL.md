@@ -860,3 +860,31 @@ solve for the gross that produces it). Since alga-neto's net(gross)
 function is monotonically increasing, binary search over gross
 wrapping calculateAlgaNeto is the clean implementation — no new
 sourcing needed at all.
+
+## 2026-09-11 15:09
+
+Did: built alga-bruto (net to gross salary). Reused calculateAlgaNeto
+directly via binary search (60 iterations, converges to sub-cent
+precision) instead of duplicating the tax logic — single source of
+truth for the rates, matters for a YMYL figure since a future rate
+change only needs updating in one file. lib/calculators/alga-bruto.ts
++ .test.ts, components/calculators/AlgaBrutoCalculator.tsx,
+content/faq/alga-bruto.md, registry entry, explanations block.
+Commits d764429, 61fd995, one full checklist run, pushed.
+
+Finance category now has both salary calculators (the two
+highest-value remaining pages), kredita-kalkulators, hipotekas
+(x2), pvn, uzkrajumi, inflacija, atvalinajuma-nauda, mun-kalkulators,
+slimibas-nauda — 11 of 14 built. Remaining: ipasuma-nodoklis (property
+tax), iin-kalkulators (general income tax, likely overlaps
+significantly with alga-neto's already-built progressive IIN logic),
+saimnieciska-darbiba (sole trader tax, multiple overlapping tax
+types).
+
+Learned: nothing new — routine reuse-based cycle.
+Next: ipasuma-nodoklis (property tax). Unlike the salary taxes, this
+one is genuinely municipality-set (each Latvian municipality sets its
+own rate within a legal range), so taking the rate as a direct user
+input isn't a sourcing dodge here — it's the only design that's
+actually correct, since no single national rate exists to source.
+Straightforward: cadastral value × user-supplied rate.
