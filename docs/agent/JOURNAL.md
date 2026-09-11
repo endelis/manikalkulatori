@@ -270,3 +270,21 @@ weight, P2), udens-norma (water intake, P3), grutniecibas-termins (due
 date, P2), ovulacija (ovulation window, P2), promiles (blood alcohol,
 P2). Pick kaloriju-norma next (P1, standard Mifflin-St Jeor formula,
 no YMYL/sourcing risk).
+
+## 2026-09-11 12:25
+
+Did: built kaloriju-norma (BMR/TDEE). Mifflin-St Jeor formula for BMR
+(sex, weight, height, age), standard activity-level multipliers for
+TDEE (sedentary 1.2 through very active 1.9). lib/calculators/kaloriju-norma.ts
++ .test.ts, components/calculators/KalorijuNormasCalculator.tsx,
+content/faq/kaloriju-norma.md, registry entry, explanations block.
+Full checklist clean, pushed (commits e4b6aa6, a33151a).
+Learned: nothing new — same routine shape, second health calculator
+now shipped. Continuing to chain cycles in this active session per
+the user's mid-loop note about available headroom.
+Next: 6 health calculators remain (tauku-procents body fat P2,
+idealais-svars ideal weight P2, udens-norma water intake P3,
+grutniecibas-termins due date P2, ovulacija ovulation window P2,
+promiles blood alcohol P2). Pick tauku-procents next — standard body
+fat estimation (e.g. US Navy method using circumference measurements),
+no YMYL/sourcing risk.
