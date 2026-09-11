@@ -177,6 +177,22 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-08-22T20:26:27+03:00',
   },
   {
+    slug: 'ekspluatacijas-nodoklis',
+    category: 'auto',
+    title: 'Auto ekspluatācijas nodokļa kalkulators',
+    h1: 'Cik liels ir tavas automašīnas ekspluatācijas nodoklis?',
+    intro:
+      'Ievadi automašīnas CO2 izmešus, uzzini gada transportlīdzekļa ekspluatācijas nodokli pēc likumā noteiktajām likmēm.',
+    metaDescription:
+      'Aprēķini transportlīdzekļa ekspluatācijas nodokli pēc CO2 izmešiem automobiļiem, kas reģistrēti no 2021. gada.',
+    keywords: [
+      'ekspluatācijas nodokļa kalkulators',
+      'auto ekspluatācijas nodoklis',
+      'transportlīdzekļa nodoklis CO2',
+    ],
+    contentUpdatedAt: '2026-09-11T09:50:27+03:00',
+  },
+  {
     slug: 'solaru-atmaksa',
     category: 'majoklis',
     title: 'Solāro paneļu atmaksa',

@@ -158,6 +158,13 @@ const explanations: Record<string, React.ReactNode> = {
       izmaksas dala ar līdzbraucēju skaitu, lai parādītu izmaksas uz vienu cilvēku.
     </p>
   ),
+  'ekspluatacijas-nodoklis': (
+    <p className="text-panel-muted">
+      Kalkulators meklē ievadītajam CO2 izmešu daudzumam atbilstošo likmi likumā noteiktajā tabulā, tad
+      pieskaita 330 eiro piemaksu, ja dzinēja tilpums pārsniedz 3500 cm³, un piemēro 10 procentu
+      atlaidi, ja automašīna aprīkota ar gāzes iekārtu.
+    </p>
+  ),
   'solaru-atmaksa': (
     <p className="text-panel-muted">
       Kalkulators aprēķina gada izstrādi no sistēmas jaudas un vidējās izstrādes uz kWp, tad sadala to

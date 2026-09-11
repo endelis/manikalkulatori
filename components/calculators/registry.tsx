@@ -32,6 +32,7 @@ import { TriatlonaPlanotajaCalculator } from './TriatlonaPlanotajaCalculator';
 import { FtpZonuCalculator } from './FtpZonuCalculator';
 import { SirdsdarbibasZonuCalculator } from './SirdsdarbibasZonuCalculator';
 import { PeldesanasCssCalculator } from './PeldesanasCssCalculator';
+import { EkspluatacijasNodoklaCalculator } from './EkspluatacijasNodoklaCalculator';
 
 /**
  * Props every calculator component receives from the calculator page.
@@ -76,6 +77,7 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'ftp-zonas': FtpZonuCalculator,
   'sirdsdarbibas-zonas': SirdsdarbibasZonuCalculator,
   'peldesanas-css': PeldesanasCssCalculator,
+  'ekspluatacijas-nodoklis': EkspluatacijasNodoklaCalculator,
 };
 
 export function getCalculatorComponent(slug: string): ComponentType<CalculatorComponentProps> | undefined {
