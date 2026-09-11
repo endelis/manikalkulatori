@@ -447,3 +447,38 @@ be a legal YMYL figure needing sourcing per CHARTER.md's gated rule,
 and isn't needed for the calculator to be useful) — keep the
 disclaimer generic and strong: this is not a legal measurement, never
 use it to decide about driving.
+
+## 2026-09-11 13:16
+
+Did: built promiles (blood alcohol estimate, Widmark formula). Kept
+the plan from the previous entry: no specific legal limit number
+anywhere in the copy, strong generic disclaimer instead ("not a legal
+or medical measurement, never a basis for deciding whether to
+drive"). lib/calculators/promiles.ts + .test.ts,
+components/calculators/PromilesCalculator.tsx, content/faq/promiles.md,
+registry entry, explanations block. Full checklist clean, pushed
+(commits d05328e, 69a0c64).
+
+**MILESTONE: Wave 2 (health category) is now fully complete.**
+8/8: kmi-kalkulators, kaloriju-norma, tauku-procents, idealais-svars,
+udens-norma, grutniecibas-termins, ovulacija, promiles. Combined with
+Wave 1 (28/28) and kredita-kalkulators (finance, built early per the
+monetization-readiness exception), that's 37 calculators built across
+this session, all with clean checklists, no shipped mistakes.
+
+Learned: across three health-sensitive calculators in a row
+(pregnancy, ovulation, blood alcohol), the same pattern held up every
+time: use the well-established public formula, skip any legal/official
+figure that would need sourcing, and put a strong plain-language
+disclaimer in both the caption and FAQ. No case required gating or
+research — the sensitivity was about wording and scope, not about
+needing an external source the way tax figures did.
+Next: Wave 2 is done. Options for the next cycle: (a) continue finance
+category (section 5, 13 remaining after kredita-kalkulators) per the
+normal wave order now that it's next in line anyway, (b) do a
+content-quality/SEO pass on already-shipped pages instead of more raw
+calculator count, or (c) re-check PROJECT-OVERVIEW.md section 11 for
+any other calculator with a ready affiliate/monetization angle worth
+building ahead of order, the way kredita-kalkulators was. No BLOCKED
+items pending; pick based on what best serves getting the site ready
+for the indexing/traffic action items the user still needs to do.
