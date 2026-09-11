@@ -922,3 +922,46 @@ rules), (b) check other categories (auto/home-energy/health) for any
 gaps against the full PROJECT-OVERVIEW.md list that might have been
 missed, or (c) another GSC-informed content-quality pass once new data
 is available.
+
+## 2026-09-11 15:38
+
+Did: built saimnieciska-darbiba (sole trader tax), scoped as planned —
+exported `progressiveIin` from alga-neto.ts and reused it rather than
+duplicating the progressive IIN logic. Self-employed VSAOI (tiered:
+31.07% up to minimum wage 780 EUR/month, 10% above; flat 10% below
+minimum wage) confirmed via lvportals.lv, cross-checked against an
+independent WebSearch synthesis that matched exactly. Taxable income
+(after business expenses) taken as user input, not computed from raw
+revenue — expense deduction rules aren't modeled. Annual declaration
+non-taxable minimum also explicitly not modeled, stated in the FAQ.
+
+Hit a real gotcha: editing alga-neto.ts (to export the shared
+function) touched that file's own git history, which
+lib/calculatorContentDrift.test.ts correctly flagged — alga-neto's own
+contentUpdatedAt needed bumping too, even though nothing visible about
+alga-neto changed. Fixed and added a permanent note to CHARTER.md so
+future cycles check every calculator file touched, not just the one
+being built.
+
+lib/calculators/saimnieciska-darbiba.ts + .test.ts,
+components/calculators/SaimnieciskasDarbibasCalculator.tsx,
+content/faq/saimnieciska-darbiba.md, registry entry, explanations
+block, plus the alga-neto.ts export and its own timestamp fix.
+Commits bc59950, cde7b23, b7b8681, 8c6f385, one full checklist run
+(after the cross-file fix), pushed.
+
+**Finance category: 13/14.** Only iin-kalkulators remains, and it
+still needs a distinct angle from alga-neto/saimnieciska-darbiba to
+be worth building (e.g. capital gains/dividend tax, which has its own
+separate rate structure) rather than a third wrapper around the same
+progressive IIN logic.
+
+Learned: reusing code across calculator modules is good practice but
+has a real, non-obvious side effect on this repo's content-drift
+tracking — worth remembering as a standing habit, not just a one-off
+fix, whenever touching more than one calculator's files in a cycle.
+Next: research iin-kalkulators' distinct angle (capital gains/dividend
+tax rate) before building, to make sure it adds real value rather than
+duplicating what's shipped. If no clean distinct angle exists,
+finance category is effectively done at 13/14 and the next cycle
+should look at other categories or content-quality work instead.
