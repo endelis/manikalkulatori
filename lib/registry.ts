@@ -206,7 +206,7 @@ export const calculators: CalculatorMeta[] = [
       'uzņēmumu vieglo transportlīdzekļu nodoklis',
       'uvtn kalkulators',
     ],
-    contentUpdatedAt: '2026-09-11T10:21:53+03:00',
+    contentUpdatedAt: '2026-09-11T10:23:16+03:00',
   },
   {
     slug: 'solaru-atmaksa',
