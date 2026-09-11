@@ -214,3 +214,36 @@ entirely (all of auto, home-energy, and sport). After that: Wave 2
 content-quality/SEO pass on already-shipped pages — worth actually
 reading PROJECT-OVERVIEW.md's Wave 2 list in full next time rather
 than assuming, given the Wave-1-completeness miscount two cycles ago.
+
+## 2026-09-11 11:55
+
+Did: built trenina-kalorijas (workout calorie burn via the MET
+formula: calories = MET x weight_kg x duration_hours, four activities
+with standard MET values). lib/calculators/trenina-kalorijas.ts +
+.test.ts, components/calculators/TreninaKalorijuCalculator.tsx,
+content/faq/trenina-kalorijas.md, registry entries, explanations
+block. Full checklist clean, pushed (commits 965bd20, b0d14bb).
+
+**MILESTONE: Wave 1 is now fully complete.** Verified against the
+full slug list: auto (12/12), home-energy/majoklis (8/8), sport (8/8)
+— all 28 gap-first-category calculators from PROJECT-OVERVIEW.md are
+built and live. This closes out the entire "enter through the gaps"
+phase of the strategy.
+
+Learned: same routine non-YMYL cycle shape as the last three. The
+overall cadence (research/source when needed, mirror an existing
+sibling file, ship same-cycle, contentUpdatedAt two-step) has now
+proven itself across 6 consecutive shipped calculators plus one
+correctly-gated one. No process changes indicated.
+Next: start Wave 2 per PROJECT-OVERVIEW.md section "Build order" —
+the health category (8 calculators, all currently unbuilt: kmi-kalkulators
+BMI, kaloriju-norma BMR/TDEE, tauku-procents body fat, udens-norma
+water intake, idealais-svars ideal weight, grutniecibas-termins due
+date, ovulacija ovulation window, promiles blood alcohol). Start with
+a P1 item — kmi-kalkulators (BMI) is the simplest, most standard
+formula (BMI = weight_kg / height_m^2), good first Wave 2 pick. Note:
+grutniecibas-termins, ovulacija, and promiles touch health/medical
+territory more directly than sport calculators did — worth extra care
+on wording (informational estimate, not medical advice) even though
+the formulas themselves are standard and don't need external
+sourcing the way tax figures did.
