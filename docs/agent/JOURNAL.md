@@ -623,3 +623,31 @@ combined impressions per real GSC data) but weak ranking position
 (39-55). Improve their FAQ depth and "kā tas aprēķināts" explanations
 this cycle rather than building another new, unproven finance
 calculator.
+
+## 2026-09-11 14:00
+
+Did: content-quality pass on kasko-kalkulators and octa-kalkulators,
+per the real GSC query data. Added FAQ entries matching actual search
+queries found in the report: "kasko kalkulators bez tehniskas pases"
+(added an entry clarifying the calculator doesn't need the technical
+passport) and insurer-comparison queries for both pages (named real
+Latvian insurers — BTA, Balta, If, Gjensidige — neutrally, no
+affiliation claimed). Also added 1-2 matching keywords to each
+registry entry. Bumped contentUpdatedAt for both, though this isn't
+actually verified by lib/calculatorContentDrift.test.ts for a
+FAQ-only change (the drift test only tracks lib/calculators/<slug>.ts
+and the UI component file, not content/faq/*.md) — bumped anyway per
+CLAUDE.md's Sitemap-dates rule, which covers "rendered copy" generally
+regardless of what the automated check happens to verify. One full
+checklist run, commit 1c835c8, pushed.
+Learned: the content drift test has a real gap — FAQ-only content
+changes aren't checked against contentUpdatedAt at all. Not fixing the
+test itself (that's the user's call, out of scope for a content
+cycle), but worth remembering: I can't rely on the test to catch a
+missed bump on FAQ-only edits, so it takes deliberate attention, not
+automated verification, every time.
+Next: options are (a) more finance calculators (alga-neto/alga-bruto
+need likumi.lv sourcing for tax brackets — the next research-heavy
+one), (b) similar content-quality passes on other high-impression
+pages once more GSC data accumulates, or (c) resume the normal wave
+order. No BLOCKED items pending.
