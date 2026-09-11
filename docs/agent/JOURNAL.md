@@ -108,3 +108,36 @@ time, since it's the actual codified law text rather than an
 agency's summary page. Until then, skip ekspluatacijas-nodoklis and
 try the other Wave-1 P2 gap (uznemuma-auto vs personiskais auto) or a
 non-YMYL SEO/content-quality task instead.
+
+## 2026-09-11 09:55
+
+Did: resolved last cycle's BLOCKED item. Fetched likumi.lv directly
+(the actual statute, Transportlīdzekļa ekspluatācijas nodokļa un
+uzņēmumu vieglo transportlīdzekļu nodokļa likums) for both the CO2
+rate table (Art. 4) and the surcharge/discount provisions (Art. 4 §7:
+330 EUR for engines over 3500 cm3; Art. 7 §5.1: 90% of the total for
+gas-equipped vehicles). The statute confirms no per-tonne CO2
+component exists and no amendment has changed these rates since
+2021-01-01, as of the law's own 2025-11-01 update — resolving the
+ambiguity that blocked last cycle. Built the calculator: lib/calculators/ekspluatacijas-nodoklis.ts
++ .test.ts, components/calculators/EkspluatacijasNodoklaCalculator.tsx,
+content/faq/ekspluatacijas-nodoklis.md, registry entries in
+lib/registry.ts and components/calculators/registry.tsx, explanations
+block in app/[category]/[calculator]/page.tsx. Full pre-push checklist
+clean, pushed to master (commits 8a8b1cf, e00e809).
+Learned: the earlier block was the right call, not overcaution — the
+actual statute (likumi.lv) settled a conflict that two agency-summary
+pages (csdd.lv, fm.gov.lv) could not, since neither stated its own
+effective year clearly. For Latvian tax/legal YMYL figures, likumi.lv
+should be the first source tried, not the last, when an agency page's
+currency is in doubt. Also: this confirms the CHARTER's gate-first,
+verify-before-shipping approach works as intended across two cycles —
+worth keeping, not loosening.
+Next: check lib/registry.ts against PROJECT-OVERVIEW.md's 50-calculator
+list again for the next unbuilt gap. Wave 1 (auto/home-energy/sport)
+should now be fully built except uznemuma-auto vs personiskais auto
+(company vs personal car tax, auto P2) — likely the next YMYL-gated
+candidate; try likumi.lv first this time rather than agency summary
+pages, given what worked this cycle. If that's also fully resolved,
+move to Wave 2 (health category) or a content-quality/SEO pass on
+existing pages.
