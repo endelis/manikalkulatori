@@ -40,6 +40,7 @@ import { TreninaKalorijuCalculator } from './TreninaKalorijuCalculator';
 import { KmiKalkulators } from './KmiKalkulators';
 import { KalorijuNormasCalculator } from './KalorijuNormasCalculator';
 import { TaukuProcentaCalculator } from './TaukuProcentaCalculator';
+import { IdealaSvaraCalculator } from './IdealaSvaraCalculator';
 
 /**
  * Props every calculator component receives from the calculator page.
@@ -92,6 +93,7 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'kmi-kalkulators': KmiKalkulators,
   'kaloriju-norma': KalorijuNormasCalculator,
   'tauku-procents': TaukuProcentaCalculator,
+  'idealais-svars': IdealaSvaraCalculator,
 };
 
 export function getCalculatorComponent(slug: string): ComponentType<CalculatorComponentProps> | undefined {

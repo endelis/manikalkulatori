@@ -441,6 +441,16 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-11T12:26:07+03:00',
   },
   {
+    slug: 'idealais-svars',
+    category: 'veseliba',
+    title: 'Ideālā svara kalkulators',
+    h1: 'Kāds ir tavs ideālais svars?',
+    intro: 'Ievadi augumu un dzimumu, uzzini ideālo svaru pēc Devina formulas.',
+    metaDescription: 'Aprēķini ideālo svaru no auguma pēc Devina formulas, plaši lietotas medicīnā.',
+    keywords: ['ideālā svara kalkulators', 'devina formula', 'ideālais svars pēc auguma'],
+    contentUpdatedAt: '2026-09-11T12:27:56+03:00',
+  },
+  {
     slug: 'skriesanas-temps',
     category: 'sports',
     title: 'Skriešanas tempa kalkulators',

@@ -483,6 +483,12 @@ const explanations: Record<string, React.ReactNode> = {
       ķermeņa tauku procentu no vidukļa, kakla un (sievietēm) gurnu apkārtmēra attiecībā pret augumu.
     </p>
   ),
+  'idealais-svars': (
+    <p className="text-panel-muted">
+      Kalkulators pārvērš augumu collās, atņem 60 collas un reizina starpību ar 2,3, tad pieskaita
+      dzimumam atbilstošu bāzes svaru, iegūstot ideālo svaru pēc Devina formulas.
+    </p>
+  ),
   'sirdsdarbibas-zonas': (
     <p className="text-panel-muted">
       Kalkulators aprēķina pulsa rezervi, atņemot miera pulsu no maksimālā pulsa, tad katrai zonai pieskaita
