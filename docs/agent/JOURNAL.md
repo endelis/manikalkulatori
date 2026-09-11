@@ -333,3 +333,31 @@ advice" framing in the FAQ/caption, standard well-known formulas
 Widmark formula for BAC), still no external sourcing needed since
 these are public clinical-estimation formulas, not YMYL figures
 requiring an official source citation the way tax law did.
+
+## 2026-09-11 12:33
+
+Did: built udens-norma (daily water intake, 33ml/kg widely-cited
+guideline). lib/calculators/udens-norma.ts + .test.ts,
+components/calculators/UdensNormasCalculator.tsx,
+content/faq/udens-norma.md, registry entry, explanations block. Full
+checklist clean, pushed (commits 18ba894, 54973a0).
+
+This closes out the "easy" half of Wave 2's health category: 5 of 8
+built today in one extended active session (kmi-kalkulators,
+kaloriju-norma, tauku-procents, idealais-svars, udens-norma), all
+non-sensitive, no external sourcing needed, same routine shape
+throughout — no process friction across any of them.
+
+Learned: nothing new procedurally. Sticking to the pacing decision
+from two cycles ago: pausing the rapid chain here rather than
+continuing straight into grutniecibas-termins/ovulacija/promiles,
+since those three deserve a fresh look rather than being the last
+items rushed through a long streak.
+Next: 3 health calculators remain, all more health-sensitive than
+anything built today (pregnancy/fertility/intoxication topics) —
+grutniecibas-termins (due date, Naegele's rule), ovulacija (fertile
+window estimation), promiles (blood alcohol, Widmark formula). Each
+needs explicit "informational estimate, not medical/legal advice"
+framing. Formulas are standard public clinical-estimation methods,
+not YMYL figures needing an official source citation. After these
+three, Wave 2 is complete.
