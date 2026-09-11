@@ -608,6 +608,17 @@ export const calculators: CalculatorMeta[] = [
     keywords: ['grūtniecības termiņa kalkulators', 'dzemdību termiņa kalkulators', 'negēles likums'],
     contentUpdatedAt: '2026-09-11T13:07:33+03:00',
   },
+  {
+    slug: 'ovulacija',
+    category: 'veseliba',
+    title: 'Ovulācijas kalkulators',
+    h1: 'Kad ir tavs auglīgais periods?',
+    intro: 'Ievadi pēdējo menstruāciju pirmo dienu un cikla garumu, uzzini paredzamo ovulācijas dienu un auglīgo periodu.',
+    metaDescription:
+      'Aprēķini paredzamo ovulācijas dienu un auglīgo periodu no pēdējo menstruāciju datuma un cikla garuma.',
+    keywords: ['ovulācijas kalkulators', 'auglīgais periods', 'ovulācijas diena'],
+    contentUpdatedAt: '2026-09-11T13:09:41+03:00',
+  },
 ];
 
 /**

@@ -509,6 +509,12 @@ const explanations: Record<string, React.ReactNode> = {
       parādītu pašreizējo grūtniecības vecumu.
     </p>
   ),
+  'ovulacija': (
+    <p className="text-panel-muted">
+      Kalkulators atņem 14 dienu luteālo fāzi no cikla garuma, lai atrastu ovulācijas dienu, tad
+      piemēro piecu dienu logu pirms tās un vienu dienu pēc tās, lai noteiktu auglīgo periodu.
+    </p>
+  ),
   'sirdsdarbibas-zonas': (
     <p className="text-panel-muted">
       Kalkulators aprēķina pulsa rezervi, atņemot miera pulsu no maksimālā pulsa, tad katrai zonai pieskaita
