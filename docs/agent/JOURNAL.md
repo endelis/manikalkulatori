@@ -685,3 +685,34 @@ daily/monthly earnings as a direct input (not something the agent
 computes from raw payroll data via Darba likums' 6-month averaging
 rule), so the calculator is just earnings-per-day × vacation days,
 pure arithmetic, no legal figure asserted as fact.
+
+## 2026-09-11 14:27
+
+Did: built atvalinajuma-nauda (vacation pay = user-supplied average
+daily earnings × vacation days). Caught myself about to repeat the
+exact mistake that just got alga-neto blocked: my first FAQ draft
+asserted two Darba likums facts (28-day minimum leave, "pay one day
+before vacation starts") from memory, unsourced. Verified the 28-day
+figure and the 6-month averaging period directly via vdi.gov.lv
+(Valsts darba inspekcija, an official agency site) before shipping;
+dropped the payment-timing claim entirely since I couldn't verify it
+and it wasn't needed for the calculator to be useful.
+lib/calculators/atvalinajuma-nauda.ts + .test.ts,
+components/calculators/AtvalinajumaNaudasCalculator.tsx,
+content/faq/atvalinajuma-nauda.md, registry entry, explanations
+block. Commits 688d0e7, aa07074, one full checklist run, pushed.
+Learned: the YMYL gate isn't just for numbers that look like tax
+rates — any specific legal/procedural claim (day counts, deadlines,
+statutory periods) needs the same sourcing discipline, even when it
+feels like "common knowledge" I could state from training. The
+"scope around it by taking the figure as user input" trick only
+works for the core calculation; supporting FAQ claims still need
+their own check every time.
+Next: finance category still has real YMYL research debt
+(alga-neto/alga-bruto, ipasuma-nodoklis, iin-kalkulators,
+saimnieciska-darbiba, mun-kalkulators, slimibas-nauda) — all need
+proper likumi.lv/VID sourcing, not a quick WebSearch. Given today's
+two likumi.lv attempts (one succeeded narrowly scoped, one failed
+broad), try slimibas-nauda or mun-kalkulators next with a narrow,
+specific first fetch (ask for one exact article's text, not "find the
+rates") rather than alga-neto's broad multi-bracket complexity.
