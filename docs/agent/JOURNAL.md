@@ -1287,3 +1287,33 @@ user input on the non-taxable-minimum conflict. This export's
 calculator/category-level signal is now fully exhausted. Remaining
 options without new data: resume normal wave-order work (none left
 unblocked in the original 50 plan), or wait for a fresh GSC/GA pull.
+
+## 2026-09-11 20:35
+
+Did: user said "keep working with something else." No fresh GSC data,
+alga-neto/bruto still BLOCKED, original 50 calculators complete, and a
+quick check confirmed all FAQ files already sit at the same 3-entry
+baseline (5 where a content pass already ran) — no obvious "thin
+content" gap to chase without real query data. Instead ran a read-only
+site-wide dash-ban audit (CLAUDE.md's "Dashes, hyphens, and the minus
+sign" rule), since no test covers this outside 3 specific
+data-rendering pages (pensijas-kalkulators, novads-pilot,
+tumsas-kalkulators .rendered.test.ts files). Grepped content/faq/*.md,
+lib/registry.ts, all of app/ and components/ for em dash, en dash, and
+" - " patterns. Also verified FAQPage JSON-LD is genuinely wired
+(lib/schema.ts + app/[category]/[calculator]/page.tsx, unaffected by
+the redesign) despite DESIGN-GUIDANCE.md's Faq component description
+reading as if the component itself emits it — functionally correct,
+just an architectural detail, not worth a doc fix.
+Found: one real violation, pre-existing (not introduced this session) —
+app/privatuma-politika/page.tsx:47 uses an em dash as punctuation in
+visible text ("...netiek uzstādītas — vietne darbojas tāpat abos
+gadījumos."). Did NOT fix it: CHARTER.md gate 5 reserves legal pages
+(privātuma politika, noteikumi, kontakti, par mums) for the user, not
+autonomous edits. Checked the other three legal pages too — clean, no
+other violations found anywhere in the codebase.
+Next: flagged the privacy-policy dash to the user directly; a fix is a
+one-line rephrase (e.g. "netiek uzstādītas, un vietne darbojas tāpat
+abos gadījumos") but needs their go-ahead per the legal-page gate.
+Otherwise no BLOCKED items beyond alga-neto/bruto; still no clear
+unblocked calculator-building work without fresh demand data.
