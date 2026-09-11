@@ -569,3 +569,43 @@ Given the pace today, pick uzkrajumi (compound savings growth, P2)
 next instead — pure compound-interest math, principal/contribution/
 rate all user inputs, no sourcing needed, then return to alga-neto/
 alga-bruto with proper sourcing when there's room for that research.
+
+## 2026-09-11 13:55
+
+Did: built uzkrajumi (compound savings growth). Commits 8ae0bc1,
+b42300c, one full checklist run, pushed.
+
+Then the user shared real Google Search Console Coverage and
+Performance exports. This corrected a wrong claim from earlier today:
+PROJECT-OVERVIEW.md section 11 said the site wasn't indexed at all
+(based on a `site:` web search returning nothing) — GSC shows it IS
+indexed (20 pages, 17 more discovered-not-yet-indexed) and getting
+real impressions (~150-190/day, climbing since 2026-08-30). Fixed the
+doc rather than leave a wrong claim standing (commit 64e1529).
+
+Real bottleneck per the data: ranking position, not indexing. Average
+position 42-55 across tracked queries, only 2 total clicks against
+~1,500+ impressions. kasko-kalkulators (628 impressions) and
+octa-kalkulators (475) are far and away the two biggest pages —
+strong validation of the original wedge strategy (auto insurance
+calculators are where demand actually is). Three iedzivotaju-skaits
+city pages already rank well (position 6-10) but on low-volume
+queries.
+
+Learned: never trust a `site:` search as a proxy for real index
+status again — it was flatly wrong here. When the user can provide
+GSC/GA exports directly, that's ground truth and should be asked for
+or used immediately over any web-search-based inference. Also: this
+is genuinely good news, not a new problem — the strategy doesn't need
+another pivot, just patience plus continued publishing, which is
+already what's happening.
+Next: continue finance category as planned (uzkrajumi just shipped).
+Separately worth considering for a future cycle: a content-quality
+pass specifically on kasko-kalkulators and octa-kalkulators, since
+they're proven to have real demand (1,100+ combined impressions) but
+weak position (39-55) — deeper FAQ content, more thorough "kā tas
+aprēķināts" explanations, or additional internal links pointing to
+them could have outsized ROI compared to building another new,
+unproven page. Not urgent (ranking takes months regardless), but
+flagged as a good candidate next time raw calculator-building slows
+down.
