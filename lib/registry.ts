@@ -660,6 +660,16 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-11T14:25:12+03:00',
   },
   {
+    slug: 'mun-kalkulators',
+    category: 'finanses',
+    title: 'Mikrouzņēmuma nodokļa kalkulators',
+    h1: 'Cik liels ir mikrouzņēmuma nodoklis?',
+    intro: 'Ievadi apgrozījumu, uzzini mikrouzņēmuma nodokli un summu, kas paliek pēc nodokļa.',
+    metaDescription: 'Aprēķini mikrouzņēmuma nodokli 25 procentu apmērā no apgrozījuma un summu, kas paliek pēc nodokļa nomaksas.',
+    keywords: ['mikrouzņēmuma nodokļa kalkulators', 'mun kalkulators', 'mikrouzņēmuma nodoklis'],
+    contentUpdatedAt: '2026-09-11T14:50:02+03:00',
+  },
+  {
     slug: 'grutniecibas-termins',
     category: 'veseliba',
     title: 'Grūtniecības termiņa kalkulators',

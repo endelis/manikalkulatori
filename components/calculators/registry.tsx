@@ -52,6 +52,7 @@ import { PvnKalkulators } from './PvnKalkulators';
 import { UzkrajumuCalculator } from './UzkrajumuCalculator';
 import { InflacijasCalculator } from './InflacijasCalculator';
 import { AtvalinajumaNaudasCalculator } from './AtvalinajumaNaudasCalculator';
+import { MunKalkulators } from './MunKalkulators';
 
 /**
  * Props every calculator component receives from the calculator page.
@@ -116,6 +117,7 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'uzkrajumi': UzkrajumuCalculator,
   'inflacija': InflacijasCalculator,
   'atvalinajuma-nauda': AtvalinajumaNaudasCalculator,
+  'mun-kalkulators': MunKalkulators,
 };
 
 export function getCalculatorComponent(slug: string): ComponentType<CalculatorComponentProps> | undefined {

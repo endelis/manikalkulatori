@@ -561,6 +561,12 @@ const explanations: Record<string, React.ReactNode> = {
       kopējo atvaļinājuma naudas summu.
     </p>
   ),
+  'mun-kalkulators': (
+    <p className="text-panel-muted">
+      Kalkulators reizina ievadīto apgrozījumu ar 25 procentu likmi, iegūstot mikrouzņēmuma
+      nodokli, tad atņem to no apgrozījuma, lai parādītu, cik paliek pēc nodokļa nomaksas.
+    </p>
+  ),
   'sirdsdarbibas-zonas': (
     <p className="text-panel-muted">
       Kalkulators aprēķina pulsa rezervi, atņemot miera pulsu no maksimālā pulsa, tad katrai zonai pieskaita
