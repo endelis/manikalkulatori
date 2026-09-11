@@ -750,3 +750,43 @@ asked for.
 Next: continue finance category. Try slimibas-nauda or mun-kalkulators
 with a narrow, specific likumi.lv fetch, per the plan from two entries
 ago.
+
+## 2026-09-11 14:52
+
+Did: successfully sourced and built mun-kalkulators (micro-enterprise
+tax). This /loop firing came in bare (no custom prompt), which loads
+the generic autonomous-default PR-maintenance instructions instead of
+our charter-driven prompt — not applicable here (no PR workflow).
+Continued with the established CHARTER.md-driven cycle instead of
+following the generic script.
+
+Research: likumi.lv's Mikrouzņēmumu nodokļa likums is much shorter
+than the income tax law and fetched cleanly (unlike alga-neto's
+truncation problem). Article 6 confirmed a flat 25% rate on turnover
+for current registrants — but a follow-up fetch surfaced a real
+complication: Pārejas noteikumi (transition provisions) point 32
+defines a *different*, tiered 25%/40% regime (split at €25,000/year)
+for taxpayers who were already registered before 2021-01-01. A third
+fetch confirmed these are two coexisting regimes, not a conflict to
+resolve — new registrants get flat 25% (Article 6), legacy
+pre-2021 registrants get the tiered rule. Scoped the calculator to the
+standard current regime (Article 6) and noted the legacy exception in
+the FAQ without modeling it, rather than asserting eligibility
+mechanics I hadn't fully verified.
+
+lib/calculators/mun-kalkulators.ts + .test.ts,
+components/calculators/MunKalkulators.tsx, content/faq/mun-kalkulators.md,
+registry entry, explanations block. Commits e5ec7fe, e082a22, one
+full checklist run, pushed.
+
+Learned: a short, focused statute (this one) can be fetched reliably
+in 2-3 targeted passes even when the first pass surfaces something
+that looks like a contradiction — the fix was asking a sharper
+follow-up question ("does this transition provision have an end date,
+does it override Article 6"), not giving up or guessing. This is a
+better model for tackling alga-neto than a single broad fetch: expect
+2-3 rounds, not one.
+Next: continue finance category. slimibas-nauda (sick pay) is next on
+the safer-research list; alga-neto/alga-bruto is still open but should
+get a dedicated multi-round research approach like this one rather
+than a single broad attempt.
