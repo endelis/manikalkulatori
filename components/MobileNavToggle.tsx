@@ -11,7 +11,7 @@ export function MobileNavToggle({ categories }: MobileNavToggleProps) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="sm:hidden">
+    <div className="lg:hidden">
       <button
         type="button"
         onClick={() => setOpen((prev) => !prev)}
