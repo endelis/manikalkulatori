@@ -547,3 +547,25 @@ Next: continue finance category — pvn-kalkulators (VAT, P1) is next;
 take the VAT rate as a user input (defaulting to nothing asserted as
 fact) rather than hardcoding Latvia's 21% standard rate, since that
 would be an unsourced YMYL figure.
+
+## 2026-09-11 13:51
+
+Did: built pvn-kalkulators (VAT add/extract). Rate is a user input,
+default value 21 is illustrative only, not asserted as Latvia's
+current rate anywhere in copy — FAQ tells the user to verify the
+exact rate with VID rather than stating one. Commits d6f6a51 (11s
+timestamp lag, normal), aa569b3 (fix), pushed after one full checklist
+run. lib/calculators/pvn-kalkulators.ts + .test.ts,
+components/calculators/PvnKalkulators.tsx, content/faq/pvn-kalkulators.md,
+registry entry, explanations block.
+Learned: nothing new — confirms the no-padding, fix-if-needed approach
+from last entry is the right steady state (~10-15s lag, one cheap
+scoped fix, one full checklist run total).
+Next: alga-neto/alga-bruto (salary net/gross) are the remaining P1
+finance items but involve Latvia's actual progressive income tax
+brackets and social insurance rates — real YMYL figures needing
+likumi.lv/VID sourcing, not pure user-input math like the last three.
+Given the pace today, pick uzkrajumi (compound savings growth, P2)
+next instead — pure compound-interest math, principal/contribution/
+rate all user inputs, no sourcing needed, then return to alga-neto/
+alga-bruto with proper sourcing when there's room for that research.
