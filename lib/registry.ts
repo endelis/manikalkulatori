@@ -620,6 +620,16 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-11T13:46:11+03:00',
   },
   {
+    slug: 'pvn-kalkulators',
+    category: 'finanses',
+    title: 'PVN kalkulators',
+    h1: 'Cik ir PVN summa?',
+    intro: 'Ievadi summu un PVN likmi, pieskaiti vai izdali PVN.',
+    metaDescription: 'Aprēķini PVN summu, pieskaitot vai izdalot pievienotās vērtības nodokli no jebkuras summas.',
+    keywords: ['pvn kalkulators', 'pvn aprēķins', 'pievienotās vērtības nodokļa kalkulators'],
+    contentUpdatedAt: '2026-09-11T13:49:26+03:00',
+  },
+  {
     slug: 'grutniecibas-termins',
     category: 'veseliba',
     title: 'Grūtniecības termiņa kalkulators',

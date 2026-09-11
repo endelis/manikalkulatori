@@ -536,6 +536,12 @@ const explanations: Record<string, React.ReactNode> = {
       procentu summu, lai iegūtu ietaupījumu.
     </p>
   ),
+  'pvn-kalkulators': (
+    <p className="text-panel-muted">
+      Pieskaitot PVN, kalkulators reizina summu ar likmi procentos. Izdalot PVN, tas dala kopējo
+      summu ar (1 plus likme), lai atrastu summu bez PVN, tad starpību uzrāda kā PVN daļu.
+    </p>
+  ),
   'sirdsdarbibas-zonas': (
     <p className="text-panel-muted">
       Kalkulators aprēķina pulsa rezervi, atņemot miera pulsu no maksimālā pulsa, tad katrai zonai pieskaita

@@ -48,6 +48,7 @@ import { OvulacijasCalculator } from './OvulacijasCalculator';
 import { PromilesCalculator } from './PromilesCalculator';
 import { HipotekasMaksajumaCalculator } from './HipotekasMaksajumaCalculator';
 import { HipotekasParmaksasCalculator } from './HipotekasParmaksasCalculator';
+import { PvnKalkulators } from './PvnKalkulators';
 
 /**
  * Props every calculator component receives from the calculator page.
@@ -108,6 +109,7 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'promiles': PromilesCalculator,
   'hipotekas-maksajums': HipotekasMaksajumaCalculator,
   'hipotekas-parmaksa': HipotekasParmaksasCalculator,
+  'pvn-kalkulators': PvnKalkulators,
 };
 
 export function getCalculatorComponent(slug: string): ComponentType<CalculatorComponentProps> | undefined {
