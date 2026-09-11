@@ -2,6 +2,8 @@
 
 A programmatic SEO project. Each calculator is one indexed page targeting one high‑intent Latvian‑language query. The site earns via display ads and affiliate placements. Goal: positive ROI within 3 months of SEO ramp.
 
+**Status (2026-09-11): the original 50-calculator plan below is fully built** — auto 12/12, finance 14/14, home-energy 8/8, health 8/8, sport 8/8. Plus everything built beyond the original 50 (majoklis material calculators, pensijas-kalkulators, tumsas-kalkulators, dzimstibas-kalkulators, the iedzivotaju-skaits pages). See section 11 for the current monetization-readiness assessment and section 10's correction note for real Google Search Console data. `docs/agent/JOURNAL.md` has the full build history.
+
 ## 1. Concept
 
 A single-domain hub of financial, automotive, endurance, and everyday calculators for the Latvian market, where competition is thin and cost-per-click is meaningful. Every page is static, fast, and self-contained. Users land from search, get their number instantly, and see contextual ads or affiliate links (insurance, leasing, solar, energy, gear).
