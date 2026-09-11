@@ -117,6 +117,19 @@ export const articleBody: Record<string, React.ReactNode> = {
         </Link>
         .
       </p>
+
+      <h2 className="font-sans text-h2">Ilgtermiņa uzkrājumi un ieguldīšana pensijai</h2>
+      <p>
+        Papildus obligātajiem un brīvprātīgajiem pensiju līmeņiem daudzi veido arī savu, neatkarīgu
+        ilgtermiņa uzkrājumu vērtspapīros.{' '}
+        <Link
+          href="/finanses/ieguldijumu-konta-nodoklu-kalkulators"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          Uzzini, cik izdevīgs ir ieguldījumu konts salīdzinājumā ar parastu kontu
+        </Link>{' '}
+        nodokļu ziņā ilgtermiņa uzkrājumam.
+      </p>
     </>
   ),
 };

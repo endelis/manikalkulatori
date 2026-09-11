@@ -654,7 +654,7 @@ export const calculators: CalculatorMeta[] = [
       'ieguldījumu konta nodokļi',
       'ieguldījumu konta kalkulators',
     ],
-    contentUpdatedAt: '2026-09-11T23:26:41+03:00',
+    contentUpdatedAt: '2026-09-11T23:30:07+03:00',
   },
   {
     slug: 'tumsas-kalkulators',
@@ -889,7 +889,7 @@ export const articles: ArticleMeta[] = [
     metaDescription:
       'Pilns ceļvedis pensijai Latvijā: kā aprēķina 1. līmeņa pensiju, priekšlaicīgas pensionēšanās nosacījumi, 3. līmeņa uzkrājumi un minimālā pensija.',
     keywords: ['pensija latvijā', 'pensijas ceļvedis', 'viss par pensiju'],
-    contentUpdatedAt: '2026-09-11T23:20:13+03:00',
+    contentUpdatedAt: '2026-09-11T23:30:26+03:00',
   },
 ];
 
