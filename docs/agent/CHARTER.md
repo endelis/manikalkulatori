@@ -116,8 +116,7 @@ file.
 Vercel deploys on push to master. Pushing is going live, and since
 there is no PR gate for autonomous commits, the checklist below is the
 only gate that exists — it must match what CI (`.github/workflows/pr-checks.yml`)
-would otherwise have caught. Before every push, run in full, every
-cycle:
+would otherwise have caught. Before every push, run in full, once:
 
 1. `npx tsc --noEmit`
 2. `npm run build`
@@ -126,6 +125,24 @@ cycle:
    `contentUpdatedAt` was bumped in `lib/registry.ts` — `npm test`
    above includes `lib/calculatorContentDrift.test.ts`, which fails if
    it wasn't.
+
+Run this checklist exactly once per push, as the last step before
+`git push`, not once per commit within the cycle. A cycle that needs
+two commits (e.g. the `contentUpdatedAt` timestamp dance below) still
+gets one full checklist run, covering the final state of both commits
+together — rerunning the full suite after a one-line follow-up fix is
+pure waste, not extra safety.
+
+`contentUpdatedAt` sequencing: fetch the current timestamp
+(`date +"%Y-%m-%dT%H:%M:%S%z"`) as the last step before `git commit`
+(after all other file edits for this calculator are already done),
+not while drafting the registry entry earlier in the cycle. Several
+tool calls' worth of wall-clock time between fetching the timestamp
+and actually committing is exactly what causes the value to land
+behind the real commit time — check `git log -1 --format=%cI -- <file>`
+against it after the commit, and only spend a second fix-commit +
+scoped re-verify (`registry.test.ts` and `calculatorContentDrift.test.ts`,
+not the full suite) on the rare case where it's still behind.
 
 If any of these fail and can't be made to pass within the cycle, do not
 push. Journal the blocker as above instead.
@@ -138,6 +155,13 @@ for the affected file(s), batch unrelated small chores into one cycle.
 Full repo exploration is still warranted for a genuinely new feature
 the MAP doesn't already answer (e.g. the first calculator in a new
 category).
+
+Run the deploy checklist once per push, not once per commit (see
+"Deploy consequence" above) — this is the single biggest per-cycle
+cost and the most common source of duplicated work. Keep commit
+messages for routine calculator cycles short (a few lines: what and
+why, not a full rationale essay) — the detailed record belongs in the
+journal entry, not repeated in every commit message.
 
 ## End of cycle
 
