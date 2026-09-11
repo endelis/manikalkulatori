@@ -588,6 +588,12 @@ const explanations: Record<string, React.ReactNode> = {
       rokas.
     </p>
   ),
+  'ipasuma-nodoklis': (
+    <p className="text-panel-muted">
+      Kalkulators reizina kadastrālo vērtību ar ievadīto nodokļa likmi procentos, iegūstot gada
+      nodokli, tad dala to ar četri, lai parādītu ceturkšņa maksājumu.
+    </p>
+  ),
   'sirdsdarbibas-zonas': (
     <p className="text-panel-muted">
       Kalkulators aprēķina pulsa rezervi, atņemot miera pulsu no maksimālā pulsa, tad katrai zonai pieskaita

@@ -56,6 +56,7 @@ import { MunKalkulators } from './MunKalkulators';
 import { SlimibasNaudasCalculator } from './SlimibasNaudasCalculator';
 import { AlgaNetoCalculator } from './AlgaNetoCalculator';
 import { AlgaBrutoCalculator } from './AlgaBrutoCalculator';
+import { IpasumaNodoklaCalculator } from './IpasumaNodoklaCalculator';
 
 /**
  * Props every calculator component receives from the calculator page.
@@ -124,6 +125,7 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'slimibas-nauda': SlimibasNaudasCalculator,
   'alga-neto': AlgaNetoCalculator,
   'alga-bruto': AlgaBrutoCalculator,
+  'ipasuma-nodoklis': IpasumaNodoklaCalculator,
 };
 
 export function getCalculatorComponent(slug: string): ComponentType<CalculatorComponentProps> | undefined {

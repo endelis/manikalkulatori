@@ -700,6 +700,16 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-11T15:07:50+03:00',
   },
   {
+    slug: 'ipasuma-nodoklis',
+    category: 'finanses',
+    title: 'Nekustamā īpašuma nodokļa kalkulators',
+    h1: 'Cik liels ir nekustamā īpašuma nodoklis?',
+    intro: 'Ievadi kadastrālo vērtību un pašvaldības noteikto likmi, uzzini gada un ceturkšņa nodokli.',
+    metaDescription: 'Aprēķini nekustamā īpašuma nodokli no kadastrālās vērtības un pašvaldības nodokļa likmes.',
+    keywords: ['nekustamā īpašuma nodokļa kalkulators', 'nīn kalkulators', 'īpašuma nodoklis'],
+    contentUpdatedAt: '2026-09-11T15:10:56+03:00',
+  },
+  {
     slug: 'grutniecibas-termins',
     category: 'veseliba',
     title: 'Grūtniecības termiņa kalkulators',
