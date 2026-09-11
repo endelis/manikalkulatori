@@ -229,9 +229,22 @@ journal entry, not repeated in every commit message.
 
 1. Append one dated entry to `docs/agent/JOURNAL.md`: what was done,
    what was learned, what the next cycle should focus on.
-2. Decide the next wake delay: shorter if there's obvious next work
-   queued, longer if blocked or genuinely caught up on the current wave.
-3. Call `ScheduleWakeup` with that delay and `prompt: "<<autonomous-loop-dynamic>>"`.
+2. **If there's a clear next work item and the session is still active
+   (this turn hasn't ended), don't call `ScheduleWakeup` at all — go
+   straight into the next cycle in the same turn.** `ScheduleWakeup`
+   is for resuming a session that has actually gone idle, not a
+   mandatory pace-setter between every unit of work. Calling it after
+   every single cycle, even with a short delay, ends the turn and
+   waits regardless of the delay's length — that is still "stop and
+   wait," just not a permanent stop, and it's not what "run
+   continuously" means. Chain cycles directly for as long as there's
+   real queued work; only stop chaining when genuinely out of clear
+   next work, at a natural checkpoint worth surfacing to the user, or
+   the turn is actually ending.
+3. Only when actually ending the turn: decide the wake delay (shorter
+   if there's obvious next work queued, longer if blocked or
+   genuinely caught up on the current wave) and call `ScheduleWakeup`
+   with that delay and `prompt: "<<autonomous-loop-dynamic>>"`.
    Never call it with `stop: true` — see "Stop conditions" above, this
    loop reschedules unconditionally except for the kill switch or an
    explicit in-session user request. If `ScheduleWakeup` is unavailable,
