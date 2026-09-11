@@ -440,6 +440,13 @@ const explanations: Record<string, React.ReactNode> = {
       Karvonena metodes.
     </p>
   ),
+  'peldesanas-css': (
+    <p className="text-panel-muted">
+      Kalkulators atņem 200 metru laiku no 400 metru laika, iegūto starpību dala ar divi, lai aprēķinātu
+      tempu uz 100 metriem, un dala 200 metrus ar to pašu starpību, lai iegūtu kritisko peldēšanas
+      ātrumu metros sekundē.
+    </p>
+  ),
 };
 
 /**

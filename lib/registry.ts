@@ -409,6 +409,17 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-08-22T21:02:45+03:00',
   },
   {
+    slug: 'peldesanas-css',
+    category: 'sports',
+    title: 'Peldēšanas CSS kalkulators',
+    h1: 'Kāds ir tavs kritiskais peldēšanas ātrums?',
+    intro: 'Ievadi 400 metru un 200 metru peldējuma laiku, uzzini CSS un treniņu tempu uz 100 metriem.',
+    metaDescription:
+      'Aprēķini kritisko peldēšanas ātrumu (CSS) un treniņu tempu no 400 metru un 200 metru testa laika.',
+    keywords: ['css kalkulators peldēšanai', 'kritiskais peldēšanas ātrums', 'peldēšanas css tests'],
+    contentUpdatedAt: '2026-09-11T08:10:08+03:00',
+  },
+  {
     slug: 'sirdsdarbibas-zonas',
     category: 'sports',
     title: 'Sirdsdarbības zonu kalkulators',
