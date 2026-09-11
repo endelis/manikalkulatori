@@ -482,3 +482,42 @@ any other calculator with a ready affiliate/monetization angle worth
 building ahead of order, the way kredita-kalkulators was. No BLOCKED
 items pending; pick based on what best serves getting the site ready
 for the indexing/traffic action items the user still needs to do.
+
+## 2026-09-11 13:43
+
+Did: workflow speedup, per the user's request (only 11% of usage spent
+on the whole prior burst — asked to review and tighten). Found the
+real waste: every calculator cycle ran the full checklist (tsc, npm
+test, npm run build) twice — once before the first commit, once again
+after the contentUpdatedAt fix commit — despite only pushing once per
+cycle. Updated CHARTER.md's "Deploy consequence" and "Efficiency"
+sections: run the full checklist exactly once, as the last step before
+`git push`, not once per commit. Also: fetch the `contentUpdatedAt`
+timestamp as the literal last step before `git commit` (not early,
+while drafting the registry entry) to shrink the gap that causes the
+fix-commit in the first place, and keep routine commit messages short
+(detail lives in the journal, not repeated in every commit).
+
+Then built hipotekas-maksajums (mortgage payment, finance P1, same
+annuity math as kredita-kalkulators) using the new flow: wrote and
+wired all 7 files first, fetched the timestamp last, committed, ran
+the full checklist exactly once, pushed once. Still needed one
+fix-commit (timestamp landed 12s behind — tool round-trip latency
+between the `date` call and the commit), but only one full checklist
+run total instead of two. Commits edd05e4, 2ea95b7, pushed together.
+
+Learned: 12 seconds of latency between "fetch timestamp" and "commit"
+is apparently close to unavoidable given tool round-trip time, so the
+fix-commit will still usually be needed — but it's now cheap (one
+scoped re-verify, not a full rerun) rather than expensive. If this
+still shows up as slow, try padding the fetched timestamp by ~60
+seconds instead of using it raw, to clear the gap on the first try
+and skip the fix-commit entirely; watch whether that trips the
+registry.test.ts future-timestamp check (it compares against true
+wall-clock at test-run time, which will itself be later still, so
+60s of padding should stay safe).
+Next: continue finance category (section 5) at the faster pace —
+hipotekas-parmaksa (mortgage overpayment, P1) or pvn-kalkulators (VAT,
+P1) are both clean next picks, no YMYL sourcing needed for either
+(VAT rate itself would need sourcing if hardcoded, so take it as a
+user input like the interest rate, not a fixed constant).
