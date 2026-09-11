@@ -438,7 +438,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini ķermeņa tauku procentu no vidukļa, kakla un gurnu apkārtmēriem pēc ASV Jūras kara flotes metodes.',
     keywords: ['ķermeņa tauku procents', 'tauku procenta kalkulators', 'navy metode kalkulators'],
-    contentUpdatedAt: '2026-09-11T12:25:00+03:00',
+    contentUpdatedAt: '2026-09-11T12:26:07+03:00',
   },
   {
     slug: 'skriesanas-temps',
