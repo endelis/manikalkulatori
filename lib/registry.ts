@@ -409,6 +409,16 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-05T23:35:49+03:00',
   },
   {
+    slug: 'kmi-kalkulators',
+    category: 'veseliba',
+    title: 'ĶMI kalkulators',
+    h1: 'Kāds ir tavs ķermeņa masas indekss?',
+    intro: 'Ievadi svaru un augumu, uzzini ĶMI un tā kategoriju pēc PVO klasifikācijas.',
+    metaDescription: 'Aprēķini ķermeņa masas indeksu (ĶMI) no svara un auguma un uzzini tā kategoriju.',
+    keywords: ['ķmi kalkulators', 'ķermeņa masas indekss', 'bmi kalkulators latviski'],
+    contentUpdatedAt: '2026-09-11T12:18:29+03:00',
+  },
+  {
     slug: 'skriesanas-temps',
     category: 'sports',
     title: 'Skriešanas tempa kalkulators',

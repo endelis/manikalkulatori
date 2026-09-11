@@ -465,6 +465,12 @@ const explanations: Record<string, React.ReactNode> = {
       ilgumu stundās, iegūstot aptuveno sadedzināto kaloriju daudzumu.
     </p>
   ),
+  'kmi-kalkulators': (
+    <p className="text-panel-muted">
+      Kalkulators dala svaru kilogramos ar auguma kvadrātu metros, iegūstot ĶMI, tad piemēro PVO
+      noteiktās robežas, lai noteiktu kategoriju.
+    </p>
+  ),
   'sirdsdarbibas-zonas': (
     <p className="text-panel-muted">
       Kalkulators aprēķina pulsa rezervi, atņemot miera pulsu no maksimālā pulsa, tad katrai zonai pieskaita
