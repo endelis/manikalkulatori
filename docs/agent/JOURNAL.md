@@ -71,3 +71,40 @@ official Latvian source (vid.gov.lv or equivalent) fetched directly
 per CHARTER.md's YMYL sourcing rule before any figure is used; if no
 acceptable primary source can be fetched and read, gate it and journal
 BLOCKED rather than guess.
+
+## 2026-09-11 08:44
+
+Did: BLOCKED — attempted to build auto ekspluatacijas-nodoklis
+(vehicle operation tax). Fetched the CO2-band rate table directly from
+two primary sources: https://www.csdd.lv/transportlidzeklu-ekspluatacijas-nodoklis-likmes-no-01.01.2021/likme-vieglais-tl-kravas-tl-lidz-3500-kg-pirma-registracija-no-01-01-2021
+and https://www.fm.gov.lv/lv/transportlidzekla-ekspluatacijas-nodokla-likmes
+(both fetched 2026-09-11). Both agree on the same flat CO2-band table
+(0 EUR up to 50 g/km through 834 EUR at 401+ g/km, plus a 330 EUR
+surcharge for engine displacement over 3500 cm3 and a 10% discount for
+gas-equipped vehicles), for passenger cars first registered from
+01.01.2021 under the WLTP CO2 system.
+Did NOT ship it: the fm.gov.lv page states it was last updated
+29.12.2024 and does not confirm 2026 rates specifically, and an
+earlier WebSearch turned up a claim of a distinct CO2-per-tonne
+component (10 EUR/tonne in 2025, 20 EUR/tonne in 2026) that neither
+primary source's fetched content mentions at all — I cannot rule out
+that this changes the effective 2026 amount, and a general search
+summary is not sufficient to resolve a conflict between it and two
+fetched primary sources. Per CHARTER.md's gated rule 3, shipping a
+YMYL tax figure I'm not fully confident is current is worse than not
+shipping it.
+Learned: for Latvian vehicle/company tax topics specifically, "fetch
+the primary source" is necessary but not always sufficient when a
+source page doesn't state its own effective year clearly, or when
+budget-law changes (mentioned in news/ministry announcements) haven't
+propagated into the reference page yet. A WebSearch hit describing a
+rate change is a lead to verify, never itself sufficient to overturn
+or confirm what a fetched primary source shows.
+Next: either (a) the user manually confirms the correct 2026 CO2-per-tonne
+mechanism (or its absence) via likumi.lv's actual statute text for
+Transportlīdzekļa ekspluatācijas nodokļa likums, which would settle
+this decisively, or (b) a future cycle tries likumi.lv directly next
+time, since it's the actual codified law text rather than an
+agency's summary page. Until then, skip ekspluatacijas-nodoklis and
+try the other Wave-1 P2 gap (uznemuma-auto vs personiskais auto) or a
+non-YMYL SEO/content-quality task instead.
