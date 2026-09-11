@@ -132,6 +132,36 @@ export const articleBody: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  'izdienas-pensija': (
+    <>
+      <p>
+        Izdienas pensija ir atsevišķa pensijas shēma noteiktām profesijām, kur ilgstošs darbs konkrētajā
+        amatā vai dienestā ir saistīts ar profesionālo iemaņu zudumu vai paaugstinātu risku. Tā nav daļa no
+        1., 2. vai 3. pensiju līmeņa un tai ir savi, atsevišķi likumā noteikti nosacījumi katrai profesiju
+        grupai.
+      </p>
+      <p>
+        Likums &quot;Par izdienas pensijām&quot; aptver vairākas profesiju grupas: aviācijas darbiniekus
+        (piloti, apkalpe, gaisa satiksmes dispečeri, tehniskais personāls), dzelzceļa darbiniekus
+        (stacijas dežuranti un dispečeri lielas satiksmes intensitātes līnijās, lokomotīvju vadītāji,
+        ceļu uzturēšanas darbinieki), jūrniecības un sabiedriskā transporta darbiniekus (zvejas un upju
+        flotes jūrnieki, autobusu, trolejbusu un tramvaju vadītāji pilsētās ar vismaz 40 000 iedzīvotāju),
+        kā arī mākslas un kultūras jomas darbiniekus (baleta dejotāji, cirka izpildītāji, operas un baleta
+        teātra solisti, leļļu teātra aktieri).
+      </p>
+      <p>
+        Militārpersonām ir sava, atsevišķa izdienas pensijas shēma, ko regulē Militārpersonu izdienas
+        pensiju likums, nevis likums &quot;Par izdienas pensijām&quot;.
+      </p>
+      <p>
+        Nepieciešamais stāžs atšķiras pēc profesijas, piemēram, aviācijas pilotiem tas ir 25 gadi vīriešiem
+        un 20 gadi sievietēm, dzelzceļa darbiniekiem 25 gadi vīriešiem un 20 gadi sievietēm (ar daļu no tā
+        nostrādātu tieši attiecīgajā amatā), baleta dejotājiem vismaz 20 gadi radošā darba stāža. Pensijas
+        apmēru aprēķina pēc likuma &quot;Par valsts pensijām&quot; vispārējās kārtības, nevis pēc atsevišķas
+        izdienas pensijas formulas.
+      </p>
+    </>
+  ),
 };
 
 /** Optional "Avoti" section per article slug — omit an entry for an article with no
@@ -148,6 +178,18 @@ export const articleSources: Record<string, React.ReactNode> = {
         &quot;No 2026. gada 1. janvāra paaugstināti pensiju un atlīdzību minimālie apmēri&quot;
       </a>
       , publicēts 2025. gada 12. decembrī, spēkā no 2026. gada 1. janvāra, izgūts 2026. gada 11. septembrī.
+    </p>
+  ),
+  'izdienas-pensija': (
+    <p className="text-sm text-panel-faint">
+      Likums{' '}
+      <a
+        href="https://m.likumi.lv/ta/id/65827-par-izdienas-pensijam"
+        className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+      >
+        &quot;Par izdienas pensijām&quot;
+      </a>
+      , izgūts 2026. gada 11. septembrī.
     </p>
   ),
 };

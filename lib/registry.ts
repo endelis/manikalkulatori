@@ -891,6 +891,18 @@ export const articles: ArticleMeta[] = [
     keywords: ['pensija latvijā', 'pensijas ceļvedis', 'viss par pensiju'],
     contentUpdatedAt: '2026-09-11T23:30:26+03:00',
   },
+  {
+    slug: 'izdienas-pensija',
+    category: 'finanses',
+    title: 'Izdienas pensija',
+    h1: 'Kas ir izdienas pensija un kam tā pienākas',
+    intro:
+      'Uzzini, kurām profesijām Latvijā pienākas izdienas pensija un kā tā atšķiras no parastās vecuma pensijas.',
+    metaDescription:
+      'Izdienas pensija Latvijā: kurām profesijām tā pienākas (aviācija, dzelzceļš, jūrniecība, māksla), stāža nosacījumi un atšķirība no vecuma pensijas.',
+    keywords: ['izdienas pensija', 'izdienas pensija latvijā', 'kam pienākas izdienas pensija'],
+    contentUpdatedAt: '2026-09-11T23:37:03+03:00',
+  },
 ];
 
 /**
