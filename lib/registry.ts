@@ -472,7 +472,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini treniņā sadedzinātās kalorijas pēc MET metodes skriešanai, riteņbraukšanai, peldēšanai un iešanai.',
     keywords: ['treniņa kaloriju kalkulators', 'sadedzinātās kalorijas', 'met kalkulators'],
-    contentUpdatedAt: '2026-09-11T11:50:55+03:00',
+    contentUpdatedAt: '2026-09-11T11:52:10+03:00',
   },
   {
     slug: 'peldesanas-css',
