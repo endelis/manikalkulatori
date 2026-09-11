@@ -1317,3 +1317,49 @@ one-line rephrase (e.g. "netiek uzstādītas, un vietne darbojas tāpat
 abos gadījumos") but needs their go-ahead per the legal-page gate.
 Otherwise no BLOCKED items beyond alga-neto/bruto; still no clear
 unblocked calculator-building work without fresh demand data.
+
+## 2026-09-11 22:48
+
+Did: continued the pension/retirement topical authority push (user
+said "run all now" on the full plan in PENSION-TOPICAL-AUTHORITY-PLAN.md).
+This tick: verified the ieguldījumu konts tax mechanics needed direct
+primary-source confirmation before building that calculator -- both
+likumi.lv (full IIN law truncated before reaching the relevant article,
+same failure mode as the alga-neto attempts weeks ago) and a VID
+methodical-material PDF (downloaded successfully, 742KB/26 pages, but
+this environment has no pdftoppm/poppler-utils so the Read tool's PDF
+page-rendering failed) came up short. Marked BLOCKED rather than ship
+on the WebSearch-only summary already in hand. Pivoted to something
+fully unblocked instead: priekslaicigas-vs-standarta-pensija, a pure
+synthesis article comparing the two pension calculators already built
+and sourced this session, needing zero new research. Full checklist
+green each time (caught and fixed two more contentUpdatedAt drift
+issues the same way as the previous entry, real commit time landing
+after the value set mid-edit-batch), verified visually via
+screenshots, commit 2336af8, pushed.
+
+Session total for this initiative so far: article content-type
+architecture, minimala-pensija article, pensijas-kalkulators keyword/
+FAQ enhancement, priekslaicigas-pensijas-kalkulators (early
+retirement, reused the existing G-coefficient table, no new sourcing
+needed), pensiju-3-limena-kalkulators (voluntary savings + IIN
+refund), priekslaicigas-vs-standarta-pensija comparison article.
+
+Three real BLOCKED items now stacked up, all failing for tooling
+reasons (interactive database viewers or unreadable PDFs), not lack of
+effort: vidējā pensija (CSP/VSAA data behind an interactive table,
+3 attempts), 2nd-level pension fund returns (Manapensija.lv, same
+pattern, 2 attempts), ieguldījumu konts exact tax article text
+(likumi.lv truncation + unreadable VID PDF, 2 attempts). All three
+block different remaining plan items (an article, a calculator, and
+another calculator respectively) -- flagged directly to the user,
+since a screenshot or copy-paste from any of those sites' UI would
+unblock each one immediately, faster than more automated fetch
+attempts are likely to succeed.
+Next: without new input on any of the three blockers, remaining
+unblocked plan items are thin (the pillar hub page depends on enough
+of the cluster existing to be worth building, and isn't there yet
+given the 2nd-level and investment-account pieces are blocked). Holding
+here rather than manufacturing lower-value work; three consecutive
+real blockers is a legitimate signal to wait for input rather than
+push further automated research on the same sources.
