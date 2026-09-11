@@ -1,0 +1,42 @@
+{
+  "retrievedDate": "2026-09-05",
+  "materials": {
+    "kompozits": {
+      "label": "Kompozīts (WPC)",
+      "widthMmDefault": 150,
+      "lengthMmDefault": 2900,
+      "note": "Platums 148 līdz 150 mm un garums 2900 līdz 4000 mm atkārtojas vairākos neatkarīgos WPC terases dēļu produktos, izmantots kā konverģējošs noklusējums, konkrētam produktam izmēri var atšķirties.",
+      "sources": [
+        "https://buvniecibas-abc.lv/en/shop/lumber/composite-materials-wpc/wpc-terrace-board-25x150x2900mm-gray-composite-material",
+        "https://terasei.lv/en/product/wpc-decking-board-art-2-149mm-x-24mm/",
+        "https://topdex.lv/lv/produkti/terases-deli/"
+      ]
+    },
+    "koks": {
+      "label": "Koks",
+      "widthMmDefault": 145,
+      "lengthMmDefault": 4000,
+      "note": "Platums 145 mm sourced no reāla lapegles terases dēļa produkta. Garums 4000 mm ir aptuvena vērtība koka dēļu tipiskajā 2400 līdz 4800 mm diapazonā, konkrētajam produktam precīzs garums nebija izgūstams (produkta lapa bloķēja pilnu piekļuvi), tāpēc garums šeit ir aplēse, ne tieši sourced skaitlis.",
+      "source": "https://patatimber.lv/p/86-terases-delis-lapegle-28-x-145-kd18-c-dt50"
+    }
+  },
+  "gap": {
+    "note": "Sausam vai akklimatizētam kokam 4 līdz 6 mm, mitram impregnētam kokam sākotnēji 2 līdz 3 mm (paplašinās žūstot), kompozītam (WPC) 4 līdz 5 mm sānu šuvē. Noklusējums 5 mm ietilpst visos diapazonos.",
+    "mmMin": 2,
+    "mmMax": 8,
+    "mmDefault": 5,
+    "sources": [
+      "https://gridasguru.lv/ka-ieklat-terases-delus-biezakas-kludas-un-ka-no-tam-izvairities",
+      "https://ottensten.lv/products/eurotec-delu-starplika-4-8-mm"
+    ]
+  },
+  "waste": {
+    "note": "Nav atrasts Latvijai specifisks avots, starptautiska terases kalkulatoru konvencija: vienkāršam taisnstūra izkārtojumam zemāka vērtība, slīpam vai rakstainam izkārtojumam augstāka.",
+    "percentMin": 10,
+    "percentMax": 20,
+    "percentDefault": 10
+  },
+  "outOfScope": {
+    "note": "Attālums no mājas sienas vai citiem fiksētiem objektiem parasti ir lielāks par dēļu savstarpējo šuvi (dažādi avoti min 5 līdz 20 mm), bet neietekmē kopējo dēļu skaitu, tāpēc kalkulators to nerēķina."
+  }
+}

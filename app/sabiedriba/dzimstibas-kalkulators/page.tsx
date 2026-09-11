@@ -275,6 +275,14 @@ export default function DzimstibasKalkulatorsPage() {
             >
               lapā par Latvijas iedzīvotāju skaitu
             </Link>
+            . Ja dzimstība un iedzīvotāju skaits šķiet par maz, uzzini arī, cik dienu no savas dzīves esi
+            pavadījis tumsā, ar{' '}
+            <Link
+              href="/sabiedriba/tumsas-kalkulators"
+              className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+            >
+              tumsas kalkulatoru
+            </Link>
             .
           </p>
         </section>

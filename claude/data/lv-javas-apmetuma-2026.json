@@ -1,0 +1,57 @@
+{
+  "retrievedDate": "2026-09-05",
+  "apmetums": {
+    "note": "Sausā maisījuma patēriņa likme kg uz m2 uz mm biezuma, aprēķināta no ražotāja datu lapā dotā patēriņa pie atsauces biezuma. Trīs neatkarīgi produkti konverģē uz līdzīgu likmi.",
+    "products": [
+      {
+        "name": "Baumit MPI 25 (kaļķa cementa mašīnapmetums)",
+        "consumptionKgPerM2PerMm": 1.4,
+        "referenceThicknessMm": 10,
+        "bagSizeKg": 25,
+        "source": "https://bau24.lv/sausie-maisijumi/razotajs-lv/baumit/baumit-mpi-25.html"
+      },
+      {
+        "name": "Stimelit ST 5.03 (universālā cementa java)",
+        "consumptionKgPerM2PerMm": 1.6,
+        "referenceThicknessMm": 10,
+        "bagSizeKg": 25,
+        "source": "http://www.bmvide.lv/?l=1&c=761&p=184"
+      },
+      {
+        "name": "Baumit RatioGlatt (ģipša finišapmetums)",
+        "consumptionKgPerM2PerMm": 1.1,
+        "referenceThicknessMm": 10,
+        "bagSizeKg": 30,
+        "source": "https://bau24.lv/sausie-maisijumi/razotajs-lv/baumit/baumit-ratioglatt-gipsa-apmetums.html"
+      }
+    ],
+    "thicknessMmMin": 8,
+    "thicknessMmMax": 15,
+    "thicknessMmDefault": 10
+  },
+  "murjava": {
+    "note": "Mūrjavas patēriņš uz m3 mūra svārstās aptuveni 138 līdz 200 kg atkarībā no vienības tipa un tukšumu daudzuma, tas nav pietiekami precīzs formulai. Tāpēc šis kalkulators aprēķina javas apjomu ģeometriski (sienas apjoms mīnus vienību apjoms), izmantojot to pašu vienību datubāzi, kas jau ir ķieģeļu un bloku kalkulatorā, un pārvērš litros par kilogramiem ar konkrēta produkta ražotāja norādīto iznākumu.",
+    "wideRangeSources": [
+      "https://keraterm.lv/akcijas-noteikumi/",
+      "http://www.bmvide.lv/?l=1&c=761&p=184"
+    ],
+    "yieldProduct": {
+      "name": "Sakret ZM (mūrjava)",
+      "bagSizeKg": 25,
+      "yieldLiters": 15,
+      "kgPerLiter": 1.6667,
+      "source": "https://bau24.lv/sausie-maisijumi/razotajs-lv/sakret/sakret-zm-murjava.html"
+    }
+  },
+  "waste": {
+    "note": "Nav atrasts stingrs avots konkrētam rezerves procentam, pielāgojams lauks, nevis citēts fakts.",
+    "percentDefault": 5
+  },
+  "geometricMortarVolumeMethod": {
+    "note": "Sienas apjoms mīnus vienību kopējais apjoms ir vispārpieņemta, gadu desmitiem lietota mūrniecības aprēķina metode, apstiprināta vairākos neatkarīgos avotos.",
+    "sources": [
+      "https://www.engineeringcivil.com/mortar-calculation-in-brickwork.html",
+      "https://www.quantity-takeoff.com/calculation-of-the-quantities-cement-sand-&-wate-in-mortar-for-any-brickwork.html"
+    ]
+  }
+}

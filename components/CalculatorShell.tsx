@@ -16,6 +16,19 @@ interface CalculatorShellProps {
   related: CalculatorMeta[];
   /** Plain-language formula explanation plus a worked example, required on every calculator page. */
   explanation: React.ReactNode;
+  /**
+   * Optional "Ko šis kalkulators neņem vērā" section, rendered between the explanation
+   * and sources when provided. Omit entirely (do not pass the prop) for a calculator
+   * that has nothing to disclose; existing calculators that predate this prop render
+   * exactly as before.
+   */
+  limitations?: React.ReactNode;
+  /**
+   * Optional "Avoti" section, rendered between limitations and FAQ when provided, for
+   * calculators that cite real external sources for their default values. Omit for a
+   * calculator with no cited constants.
+   */
+  sources?: React.ReactNode;
   children: React.ReactNode;
 }
 
@@ -25,6 +38,8 @@ export function CalculatorShell({
   faq,
   related,
   explanation,
+  limitations,
+  sources,
   children,
 }: CalculatorShellProps) {
   return (
@@ -56,6 +71,24 @@ export function CalculatorShell({
         </h2>
         {explanation}
       </section>
+
+      {limitations ? (
+        <section aria-labelledby="limitations-heading" className="flex flex-col gap-3">
+          <h2 id="limitations-heading" className="font-sans text-h2">
+            Ko šis kalkulators neņem vērā
+          </h2>
+          {limitations}
+        </section>
+      ) : null}
+
+      {sources ? (
+        <section aria-labelledby="sources-heading" className="flex flex-col gap-3">
+          <h2 id="sources-heading" className="font-sans text-h2">
+            Avoti
+          </h2>
+          {sources}
+        </section>
+      ) : null}
 
       <Faq items={faq} />
 

@@ -1,0 +1,25 @@
+{
+  "retrievedDate": "2026-09-05",
+  "sheet": {
+    "note": "1200 mm platums ir universāls visiem Latvijā tirgotajiem ģipškartona veidiem (standarta, mitrumizturīgais, ugunsdrošais). 2600 mm garums ir konsekventākā izvēle, kas atkārtojas vairākos mazumtirgotājos un vairākos plākšņu veidos, tāpēc izmantots kā noklusējums, 2000 un 3000 mm garumi arī tiek tirgoti kā otršķirīgas iespējas.",
+    "widthMm": 1200,
+    "lengthMmDefault": 2600,
+    "lengthMmOptions": [2000, 2600, 3000],
+    "thicknessMmOptions": [9.5, 12.5],
+    "sources": [
+      "https://buvniecibas-abc.lv/lv/veikals/buvmateriali/gipskartons-un-gipskartona-profili/standarta-gipskartons/knauf-gkb-125x1200x2600mm-standarta-gipskartons-60loksnespalete",
+      "https://www.ksenukai.lv/p/gipskartona-plaksne-knauf-2600-mm-x-1200-mm-x-12-5-mm/esux",
+      "https://wolmarveikals.lv/product/knauf-red-gkf-ugunsdrosa-plaksne-1200x2600-12-5mm/"
+    ]
+  },
+  "waste": {
+    "note": "Nav atrasts LV specifisks avots, izmantota vispārpieņemta žāvējamā kartona kalkulatoru konvencija, vienkāršai taisnstūra sienai zemāka vērtība, sarežģītiem griezumiem ap logiem un durvīm augstāka.",
+    "percentMin": 5,
+    "percentDefault": 10,
+    "percentMax": 20,
+    "source": "https://www.homeadvisor.com/r/drywall-calculator"
+  },
+  "outOfScope": {
+    "note": "Loksnu orientācija (horizontāli vai vertikāli) un konkrēts izkārtojums pret sienas rāmi vai griestu spāres neietekmē platības aprēķinu, bet ietekmē reālo montāžu un šuvju skaitu, kalkulators to nerēķina."
+  }
+}

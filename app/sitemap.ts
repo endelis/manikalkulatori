@@ -18,14 +18,14 @@ const LEGAL_PAGE_UPDATED_AT: Record<string, string> = {
 // Content pages driven by sourced data rather than the calculator registry, but still
 // indexable. Bump the timestamp only when the page's rendered figures or copy change.
 const INFO_PAGE_UPDATED_AT: Record<string, string> = {
-  '/sabiedriba/iedzivotaju-skaits-latvija': '2026-09-04T12:09:46+03:00',
+  '/sabiedriba/iedzivotaju-skaits-latvija': '2026-09-04T13:22:48+03:00',
 };
 
 // Novads pilot pages (three only, see lib/novads-pilot-data.ts). Each entry's timestamp
 // is bumped to that page's own real commit time once committed, matching the pattern
 // above.
 const NOVADS_PILOT_UPDATED_AT: Record<string, string> = Object.fromEntries(
-  NOVADS_PILOT_AREAS.map((area) => [`/sabiedriba/iedzivotaju-skaits/${area.slug}`, '2026-09-04T12:09:46+03:00']),
+  NOVADS_PILOT_AREAS.map((area) => [`/sabiedriba/iedzivotaju-skaits/${area.slug}`, '2026-09-04T13:22:48+03:00']),
 );
 
 // Calculator contentUpdatedAt values are full ISO 8601 timestamps with a timezone

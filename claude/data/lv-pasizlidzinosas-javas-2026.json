@@ -1,0 +1,27 @@
+{
+  "retrievedDate": "2026-09-05",
+  "products": [
+    {
+      "name": "Ceresit CN 69 Nivel Extra (plāna finiša kārta)",
+      "thicknessMmMin": 1,
+      "thicknessMmMax": 15,
+      "consumptionKgPerM2PerMm": 1.5,
+      "bagSizeKg": 25,
+      "source": "https://dm.henkel-dam.com/is/content/henkel/lt-ceresit-cn69-savaime-issilyginantis-misinys-1-15mm-25kg-tds-lt"
+    },
+    {
+      "name": "Ceresit CN 76 Extrahart (bieza izlīdzinošā kārta)",
+      "thicknessMmMin": 4,
+      "thicknessMmMax": 50,
+      "consumptionKgPerM2PerMm": 2.0,
+      "bagSizeKg": 25,
+      "source": "https://dm.henkel-dam.com/is/content/henkel/tds-lv-ceresit-cn76-pasizlidzinosa-java-25kg"
+    }
+  ],
+  "waste": {
+    "note": "Nevienā no trim pārbaudītajām Ceresit tehnisko datu lapām (CN69, CN76, CN75) nav minēts rezerves procents pašizlīdzinošai javai, tāpēc šī vērtība ir vispārīga būvniecības konvencija, ne šī konkrētā materiāla ražotāja fakts.",
+    "percentMin": 5,
+    "percentMax": 10,
+    "percentDefault": 5
+  }
+}

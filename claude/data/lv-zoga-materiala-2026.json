@@ -1,0 +1,40 @@
+{
+  "retrievedDate": "2026-09-05",
+  "postSpacing": {
+    "note": "Nav atrasts viens autoritatīvs Latvijas būvnormatīvs, tikai vairāku avotu konverģējošs diapazons kokstabu žogiem.",
+    "mMin": 2,
+    "mMax": 3,
+    "mDefault": 2.5,
+    "sources": ["https://www.saimnieks.lv/raksts/kadu-zogu-gadat"]
+  },
+  "postFooting": {
+    "note": "Koka staba iestrādei betonā parasti iesaka 80 līdz 100 cm dziļu bedri, grants vai smilts iestrādei 60 līdz 80 cm. Bedres diametrs parasti 15 līdz 25 cm. Šie skaitļi ir tikai piemērs, ko izmantot kopā ar esošo betona apjoma kalkulatoru, šis kalkulators pats betona apjomu nerēķina.",
+    "holeDiameterMmExample": 250,
+    "holeDepthMmExample": 800,
+    "sources": [
+      "https://varupats.lv/zoga-stabu-veidi-un-to-iestrade/",
+      "https://www.tvora.lv/lv/kludas-metala-zogu-ierikosana-un-izvele"
+    ]
+  },
+  "board": {
+    "note": "Platums 95 līdz 120 mm atkārtojas vairākos neatkarīgos Latvijas kokmateriālu tirgotājos.",
+    "widthMmDefault": 95,
+    "widthMmMin": 95,
+    "widthMmMax": 120,
+    "sources": [
+      "https://alakokmateriali.lv/products/zoga-delis-20x95-evelets-ar-faziti-taisns-1-skira/",
+      "https://www.tvora.lv/lv/produkcija/zogi-setas/zoga-deli",
+      "https://vttimber.lv/kokmateriali/zoga-deli/"
+    ]
+  },
+  "gap": {
+    "note": "Nav atrasts Latvijai specifisks skaitlis koka dēlīšu žogam, tikai vispārīga konvencija: apmēram dēļa platuma lieluma sprauga puscaurredzamam žogam, neliela 10 līdz 20 mm sprauga gandrīz necaurredzamam privātuma žogam koka izžūšanai un ventilācijai.",
+    "mmMin": 0,
+    "mmMax": 100,
+    "mmDefault": 20
+  },
+  "waste": {
+    "note": "Nav atrasts Latvijai specifisks avots, vispārīga būvniecības konvencija.",
+    "percentDefault": 5
+  }
+}

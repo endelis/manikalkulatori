@@ -25,6 +25,25 @@ Anyone adding a one line script tag or tracking pixel: read this MAP, edit `comp
 
 Every calculator carries a hand maintained `contentUpdatedAt` (ISO date) in `lib/registry.ts`. `app/sitemap.ts` reads it directly. When you change a calculator's rendered numbers or copy, bump its `contentUpdatedAt` in the same commit. `lib/calculatorContentDrift.test.ts` checks this against git history and fails if a calculator's compute module or component changed more recently than its recorded `contentUpdatedAt`.
 
+Set `contentUpdatedAt` to the squash merge commit time on master, not the feature branch commit time. Branch time is earlier than the commit the drift test compares against and will fail on master.
+
+## Local ESLint cannot be trusted from inside a worktree
+
+If this repo is checked out as a git worktree alongside another checkout of the same
+repo (e.g. a `.claude/worktrees/<name>` layout with a second `package-lock.json` in a
+parent directory), Next.js infers the wrong workspace root from the duplicate lockfile
+and `next/core-web-vitals` fails to resolve, so ESLint silently does nothing during
+`npm run build` (`npx next lint` fails the same way directly, not specific to any one
+invocation). The build still reports "Compiled successfully" and exits 0. GitHub
+Actions runs a clean single checkout with no such ambiguity, so its ESLint actually
+runs, which means a real lint error (most commonly `react/no-unescaped-entities`, a
+literal `"` or `'` typed directly as JSX text instead of `&quot;`/`&apos;`) can pass
+every local check and only fail once pushed. Until the worktree's duplicate lockfile is
+cleaned up, treat `npm run build` succeeding locally as necessary but not sufficient:
+grep new JSX text for stray literal quote characters by hand before pushing, or push
+early and check the actual GitHub Actions log rather than trusting a long local green
+streak.
+
 ## Dashes, hyphens, and the minus sign
 
 Visible Latvian copy must never contain a dash or hyphen used as punctuation (em dash,
@@ -43,6 +62,15 @@ is not covered by the ban.
   allows U+2212 only when it is immediately followed by a digit (i.e. genuinely part of
   a number), and still fails on it, and on U+002D and the other dash variants, anywhere
   else in visible text.
+- A displayed mathematical formula (monospace algebraic notation, e.g.
+  `tumsas_stundas(n) = 24 − gaismas_stundas(n)`) is not prose, so U+2212 used there as a
+  subtraction operator between algebraic terms is also exempt, on the same footing as ×
+  and ÷ already used in that notation. This only covers an actual formula display block,
+  never a subtraction written out in a sentence.
+- ISO date strings from a data file (`"2026-06-21"`) contain U+002D and must never be
+  interpolated directly into visible copy; format them into Latvian date prose first
+  (`"2026. gada 21. jūnijā"`). This is an easy one to miss once real content lands on top
+  of a skeleton that only had labels; scan the built HTML, not the source, to catch it.
 
 ## Small change protocol
 

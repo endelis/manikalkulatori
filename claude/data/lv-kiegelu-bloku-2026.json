@@ -1,0 +1,40 @@
+{
+  "retrievedDate": "2026-09-05",
+  "ceramicBrick": {
+    "note": "Pilnais apdares ķieģelis, standarta NF formāts, Lode ir Latvijas lielākais ķieģeļu ražotājs. Garums un augstums ir pie mūra sienas redzamā seja, platums (120mm) ir sienas biezuma virziens un neietekmē vienību skaitu uz m² sienas.",
+    "lengthMm": 250,
+    "widthMm": 120,
+    "heightMm": 65,
+    "source": "https://lode.lv/produkts/pilnais-apdares-kiegelis-sahara-250x120x65/",
+    "corroboratingSources": [
+      "https://buvniecibas-abc.lv/lv/veikals/buvmateriali/bloki-kiegeli-parsedzes/kiegeli/lodes-pilnais-apdaresdumvadu-kiegelis-250x120x65-bruns-344gbpallgl-brunis"
+    ]
+  },
+  "aeratedBlock": {
+    "note": "Bauroc gāzbetona bloks. 600 mm garums, 200 mm augstums ir redzamā seja, 300 mm platums ir tipisks CLASSIC 300 sērijas biezums, konkrētajai sērijai platums atšķiras no 99 līdz 500 mm.",
+    "lengthMm": 600,
+    "widthMm": 300,
+    "heightMm": 200,
+    "source": "https://bauroc.lv/eku-projektesana/tehniskie-dati/"
+  },
+  "jointThickness": {
+    "note": "Vairāku avotu konverģējošs diapazons parastai (ne plānšuves) mūrēšanai, gan ķieģeļiem, gan blokiem.",
+    "millimetersMin": 10,
+    "millimetersMax": 14,
+    "millimetersDefault": 10,
+    "sources": [
+      "https://www.fibo.lv/fibo-bloku-iestrades-vadlinijas",
+      "https://nospied.lv/wp-content/uploads/2011/04/Kiegjelju-sienas.pdf",
+      "https://www.wienerberger.ee/lv/produkcija/keramiskie-un-klinkera-kiegeli-terca/padomi-un-instrukcijas/pamatnoteikumi-un-rekomendacijas-murdarbiem.html",
+      "https://www.lv.weber/files/lv/2018-03/Weber_M100_600.pdf"
+    ],
+    "blockedSources": ["https://www.fibo.lv/fibo-bloku-iestrades-vadlinijas"]
+  },
+  "waste": {
+    "note": "Nav atrasts stingrs avots konkrētam procentam mūrniecībai, pielāgojams lauks, nevis citēts fakts.",
+    "percentDefault": 5
+  },
+  "outOfScope": {
+    "note": "Plānšuves (līmes) sistēmas gāzbetona blokiem ar 1 līdz 3 mm šuvi nav modelētas, tas ir atsevišķs mūrēšanas paņēmiens ar būtiski atšķirīgu materiālu patēriņu."
+  }
+}

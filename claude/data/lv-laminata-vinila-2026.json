@@ -1,0 +1,31 @@
+{
+  "retrievedDate": "2026-09-05",
+  "materials": {
+    "laminats": {
+      "label": "Laminātā grīdas segums",
+      "packCoverageM2Default": 1.99,
+      "packCoverageM2Min": 1.39,
+      "packCoverageM2Max": 2.54,
+      "note": "1,99 m2 ir EGGER visbiežāk sastopamais iepakojuma segums (8 dēlīši, apmēram 1292x192mm), diapazons 1,39 līdz 2,54 m2 pēc dažādiem konkrētiem produktiem tajā pašā ražotāja rokasgrāmatā.",
+      "source": "https://www.egger.com/en/blog/how-much-laminate-flooring-do-i-need"
+    },
+    "vinils": {
+      "label": "Vinila (SPC/LVT) grīdas segums",
+      "packCoverageM2Default": 2.208,
+      "packCoverageM2Min": 2.0,
+      "packCoverageM2Max": 2.5,
+      "note": "2,208 m2 apstiprināts trīs ETERNA SPC 6x181x1220mm, 33. klase produkta variantiem (dažādas krāsas, viens un tas pats iepakojuma segums).",
+      "source": "https://www.kursi.lv/lv/vinila-grida-eterna-spc-6x181x1220-mm-33-klase-sebastian-oak-05325-m2"
+    }
+  },
+  "waste": {
+    "note": "Ražotāja (EGGER) instalācijas vadlīnijas iesaka 10% standarta gadījumā, līdz 15% nepieredzējušiem uzstādītājiem vai sarežģītākam izkārtojumam. Sekundārs (mazāk uzticams) avots min līdz pat 15 līdz 20% diagonālam izkārtojumam un 25 līdz 30% zvaigžņu vai citiem rakstainiem izkārtojumiem, šie augstākie skaitļi nav apstiprināti ar ražotāja avotu.",
+    "percentMin": 10,
+    "percentMax": 15,
+    "percentDefault": 10,
+    "source": "https://www.egger.com/en/blog/how-much-laminate-flooring-do-i-need"
+  },
+  "outOfScope": {
+    "note": "Pamatne (paklājiņš) zem grīdas seguma tiek pārdota atsevišķi pēc platības, ražotāja vadlīnijas to nerēķina kopā ar seguma iepakojumu, tāpēc arī šis kalkulators to neietver."
+  }
+}
