@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 /**
  * Body + sources copy per article slug, hand written JSX exactly like `explanations`/
  * `sourcesContent` in `app/[category]/[calculator]/page.tsx` for calculators — no
@@ -46,6 +48,74 @@ export const articleBody: Record<string, React.ReactNode> = {
         atsver zemāko mēneša summu. Tīri finansiālā ziņā, ja veselība un darba iespējas to atļauj, nogaidīšana
         līdz standarta vecumam (vai pat vēlāk, jo katrs papildu gads to vēl palielina) dod lielāku mēneša
         pensiju.
+      </p>
+    </>
+  ),
+  'pensija-latvija-celvedis': (
+    <>
+      <p>
+        Latvijas pensiju sistēmai ir trīs līmeņi. 1. līmenis ir obligāts un valsts pārvaldīts, 2. līmenis ir
+        obligāts, bet ieguldīts tavā izvēlētajā fondā, un 3. līmenis ir pilnībā brīvprātīgs papildu
+        uzkrājums. Turpmāk katram no tiem ir sava sadaļa ar saiti uz attiecīgo kalkulatoru vai skaidrojumu.
+      </p>
+
+      <h2 className="font-sans text-h2">1. līmenis</h2>
+      <p>
+        Obligātā, valsts pārvaldītā pensijas daļa, kas balstīta uz apdrošināšanas stāžu un algu, no kuras
+        veiktas iemaksas.{' '}
+        <Link
+          href="/finanses/pensijas-kalkulators"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          Aprēķini savu paredzamo 1. līmeņa pensiju
+        </Link>
+        , vai uzzini par{' '}
+        <Link
+          href="/finanses/minimala-pensija"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          minimālās pensijas garantiju
+        </Link>
+        , ja aprēķinātā summa sanāk maza.
+      </p>
+
+      <h2 className="font-sans text-h2">Priekšlaicīga pensionēšanās</h2>
+      <p>
+        Ar vismaz 30 gadu apdrošināšanas stāžu ir iespējams pensionēties līdz 2 gadiem agrāk par standarta
+        65 gadu vecumu, taču par zemāku mēneša summu.{' '}
+        <Link
+          href="/finanses/priekslaicigas-pensijas-kalkulators"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          Aprēķini priekšlaicīgo pensiju
+        </Link>{' '}
+        vai izlasi{' '}
+        <Link
+          href="/finanses/priekslaicigas-vs-standarta-pensija"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          salīdzinājumu ar standarta pensionēšanos
+        </Link>
+        .
+      </p>
+
+      <h2 className="font-sans text-h2">2. līmenis</h2>
+      <p>
+        Obligātā daļa, kas tiek ieguldīta tavā izvēlētajā pensiju fondā. Šai sadaļai plānots kalkulators,
+        taču tas vēl nav publicēts, jo fondu vidējā ienesīguma dati pēc riska kategorijām vēl nav pieejami
+        sagatavošanai nepieciešamajā formā.
+      </p>
+
+      <h2 className="font-sans text-h2">3. līmenis</h2>
+      <p>
+        Pilnībā brīvprātīgs papildu uzkrājums ar iedzīvotāju ienākuma nodokļa atmaksu par iemaksām.{' '}
+        <Link
+          href="/finanses/pensiju-3-limena-kalkulators"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          Aprēķini savu 3. līmeņa uzkrājumu un nodokļa atmaksu
+        </Link>
+        .
       </p>
     </>
   ),

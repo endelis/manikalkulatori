@@ -863,6 +863,18 @@ export const articles: ArticleMeta[] = [
     keywords: ['priekšlaicīga vai standarta pensija', 'pensijas izvēle', 'kad izdevīgāk pensionēties'],
     contentUpdatedAt: '2026-09-11T22:43:54+03:00',
   },
+  {
+    slug: 'pensija-latvija-celvedis',
+    category: 'finanses',
+    title: 'Pensija Latvijā: pilns ceļvedis',
+    h1: 'Pensija Latvijā: pilns ceļvedis',
+    intro:
+      'Viss par pensiju Latvijā vienā vietā: 1., 2. un 3. līmenis, priekšlaicīga pensionēšanās un minimālā pensija.',
+    metaDescription:
+      'Pilns ceļvedis pensijai Latvijā: kā aprēķina 1. līmeņa pensiju, priekšlaicīgas pensionēšanās nosacījumi, 3. līmeņa uzkrājumi un minimālā pensija.',
+    keywords: ['pensija latvijā', 'pensijas ceļvedis', 'viss par pensiju'],
+    contentUpdatedAt: '2026-09-11T23:20:13+03:00',
+  },
 ];
 
 /**
