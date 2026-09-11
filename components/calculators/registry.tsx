@@ -36,6 +36,7 @@ import { EkspluatacijasNodoklaCalculator } from './EkspluatacijasNodoklaCalculat
 import { UznemumaAutoNodoklaCalculator } from './UznemumaAutoNodoklaCalculator';
 import { MaratonaLaikaPrognozesCalculator } from './MaratonaLaikaPrognozesCalculator';
 import { Vo2maxCalculator } from './Vo2maxCalculator';
+import { TreninaKalorijuCalculator } from './TreninaKalorijuCalculator';
 
 /**
  * Props every calculator component receives from the calculator page.
@@ -84,6 +85,7 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'uznemuma-auto-nodoklis': UznemumaAutoNodoklaCalculator,
   'maratona-laika-prognoze': MaratonaLaikaPrognozesCalculator,
   'vo2max': Vo2maxCalculator,
+  'trenina-kalorijas': TreninaKalorijuCalculator,
 };
 
 export function getCalculatorComponent(slug: string): ComponentType<CalculatorComponentProps> | undefined {

@@ -459,6 +459,12 @@ const explanations: Record<string, React.ReactNode> = {
       VO2max pēc Kūpera testa formulas.
     </p>
   ),
+  'trenina-kalorijas': (
+    <p className="text-panel-muted">
+      Kalkulators reizina izvēlētās aktivitātes MET vērtību ar ķermeņa svaru kilogramos un treniņa
+      ilgumu stundās, iegūstot aptuveno sadedzināto kaloriju daudzumu.
+    </p>
+  ),
   'sirdsdarbibas-zonas': (
     <p className="text-panel-muted">
       Kalkulators aprēķina pulsa rezervi, atņemot miera pulsu no maksimālā pulsa, tad katrai zonai pieskaita

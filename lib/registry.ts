@@ -464,6 +464,17 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-11T11:23:20+03:00',
   },
   {
+    slug: 'trenina-kalorijas',
+    category: 'sports',
+    title: 'Treniņa kaloriju kalkulators',
+    h1: 'Cik kalorijas sadedzina treniņā?',
+    intro: 'Ievadi aktivitātes veidu, svaru un ilgumu, uzzini aptuveno sadedzināto kaloriju daudzumu.',
+    metaDescription:
+      'Aprēķini treniņā sadedzinātās kalorijas pēc MET metodes skriešanai, riteņbraukšanai, peldēšanai un iešanai.',
+    keywords: ['treniņa kaloriju kalkulators', 'sadedzinātās kalorijas', 'met kalkulators'],
+    contentUpdatedAt: '2026-09-11T11:50:55+03:00',
+  },
+  {
     slug: 'peldesanas-css',
     category: 'sports',
     title: 'Peldēšanas CSS kalkulators',
