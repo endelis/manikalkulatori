@@ -427,7 +427,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini dienas kaloriju normu (TDEE) un bazālo metabolismu (BMR) pēc Mifflin-St Jeor formulas.',
     keywords: ['kaloriju normas kalkulators', 'bmr kalkulators', 'tdee kalkulators latviski'],
-    contentUpdatedAt: '2026-09-11T12:21:50+03:00',
+    contentUpdatedAt: '2026-09-11T12:23:04+03:00',
   },
   {
     slug: 'skriesanas-temps',
