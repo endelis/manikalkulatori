@@ -647,7 +647,7 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi summu, inflācijas likmi un gadu skaitu, uzzini nākotnes pirktspēju.',
     metaDescription: 'Aprēķini, kā inflācija ietekmē naudas pirktspēju laika gaitā pēc summas, likmes un gadu skaita.',
     keywords: ['inflācijas kalkulators', 'pirktspējas kalkulators', 'naudas vērtības kalkulators'],
-    contentUpdatedAt: '2026-09-11T13:56:38+03:00',
+    contentUpdatedAt: '2026-09-11T13:56:50+03:00',
   },
   {
     slug: 'grutniecibas-termins',
