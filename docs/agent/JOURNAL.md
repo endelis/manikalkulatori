@@ -1111,3 +1111,25 @@ page itself (57 impressions, position 70) are lower-priority
 candidates. User also offered a GA export for a future cycle to see
 which pages convert, not just rank; not needed for this cycle's
 work but worth requesting when picking the next content target.
+
+## 2026-09-11 17:05
+
+Did: chained straight into the second cycle flagged by the previous
+entry. Content-quality pass on lizings-vs-kredits (99 impressions,
+position ~71 per the same GSC export). Existing registry keywords used
+"vs" phrasing ("līzings vs kredīts") but the real top queries use "vai"
+("auto līzings vai kredīts" 29 impressions/pos 78, "auto kredīts vai
+līzings" 26/pos 79). Added 2 FAQ entries ("Kas izdevīgāk, auto līzings
+vai kredīts?", "Kā aprēķina mēneša maksājumu auto līzingam?") and 2
+keywords matching real queries. Bumped contentUpdatedAt. Full checklist
+(tsc, build, npm test: 152 files/712 tests) green, commit 8fc8bfe,
+pushed.
+Next: riepu-izmers (75 impressions, position 35, already mid-pack —
+lower priority than the two just done) and the /auto category page
+(57 impressions, position 70) are the remaining GSC-flagged candidates
+from this export. Beyond those, this export's page-level signal is
+exhausted (everything else is either low-impression or already
+ranking well, e.g. the iedzivotaju-skaits city pages at position 6-10).
+A GA export was offered by the user and would help prioritize by
+conversion rather than just impressions for the next round. No
+BLOCKED items pending.
