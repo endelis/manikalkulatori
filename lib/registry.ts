@@ -31,7 +31,7 @@ export const categories: CategoryMeta[] = [
   {
     slug: 'auto',
     title: 'Auto un transports',
-    description: 'Kalkulatori auto izmaksām, apdrošināšanai un līzingam.',
+    description: 'Kalkulatori auto izmaksām, KASKO un OCTA apdrošināšanai, degvielas cenām un riepu izmēram.',
     accentVar: 'var(--color-accent-auto)',
   },
   {
