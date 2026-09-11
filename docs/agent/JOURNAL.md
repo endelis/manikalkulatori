@@ -965,3 +965,40 @@ tax rate) before building, to make sure it adds real value rather than
 duplicating what's shipped. If no clean distinct angle exists,
 finance category is effectively done at 13/14 and the next cycle
 should look at other categories or content-quality work instead.
+
+## 2026-09-11 15:40
+
+Did: BLOCKED — researched iin-kalkulators' distinct angle. Confirmed
+capital gains/dividends/interest ARE taxed differently from
+employment income (flat rate, no VSAOI, no non-taxable minimum) —
+genuinely distinct from alga-neto/saimnieciska-darbiba, worth building
+if sourced. But the rate itself came back conflicting: one WebSearch
+synthesis said 25.5% (effective since 2025-01-01, up from 20%,
+citing a Swedbank blog and VID methodological materials), another
+independent WebSearch citing Article 11.9 of the same law directly
+said 20%, likely a stale/uncached read of the article. Three separate
+WebFetch attempts at vid.gov.lv's dedicated capital-gains page all
+returned navigation-only content, same failure mode as several earlier
+attempts on VID pages specifically (FM pages have worked far more
+reliably this session — worth defaulting to fm.gov.lv over vid.gov.lv
+when both exist for the same topic).
+Did NOT ship it: a real, unresolved conflict between two sources on
+an actual tax rate is exactly the case CHARTER.md's gated rule exists
+for. Ending this productive stretch here rather than pushing into a
+guess.
+Learned: vid.gov.lv's page-fetch failures (navigation-only content)
+have now happened often enough (this session: IIN rates page, VSAOI
+rates page, non-taxable minimum page, capital gains page) that it's a
+pattern, not bad luck — likely their pages render rate tables via
+client-side JS or a component WebFetch's HTML-to-markdown conversion
+doesn't capture. fm.gov.lv pages, by contrast, worked cleanly every
+time they existed for the same topic. Default to trying fm.gov.lv
+first for any future Latvian tax-rate research; treat vid.gov.lv as a
+likely-navigation-only fallback, not the first attempt.
+Next: iin-kalkulators (capital gains/dividend tax) needs a resolved
+rate before building — try fm.gov.lv specifically for this topic next
+time, or likumi.lv's actual Article 11.9 text with an explicit
+amendment-date check (the 2025 change, if real, would show as a
+recent amendment note). Finance category otherwise sits at a clean
+13/14; fine to move to other categories or content-quality work
+without waiting on this one.
