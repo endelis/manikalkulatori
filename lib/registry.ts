@@ -697,7 +697,7 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi vēlamo algu uz rokas, uzzini nepieciešamo bruto algu pēc VSAOI un IIN.',
     metaDescription: 'Aprēķini nepieciešamo bruto algu, lai pēc VSAOI un IIN atskaitīšanas saņemtu vēlamo algu uz rokas.',
     keywords: ['algas bruto kalkulators', 'neto uz bruto', 'bruto algas kalkulators'],
-    contentUpdatedAt: '2026-09-11T15:07:37+03:00',
+    contentUpdatedAt: '2026-09-11T15:07:50+03:00',
   },
   {
     slug: 'grutniecibas-termins',
