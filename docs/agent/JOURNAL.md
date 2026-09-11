@@ -1048,3 +1048,28 @@ calculator-count growth has hit its natural ceiling from the original
 plan, or (c) consider genuinely new calculator ideas beyond the
 original 50 if a clear demand signal emerges (e.g. from future GSC
 data). No BLOCKED items pending.
+
+## 2026-09-11 16:12
+
+Did: verified the 50/50 completeness claim programmatically rather
+than just trusting the count — extracted all 50 planned paths from
+PROJECT-OVERVIEW.md and diffed against lib/registry.ts's actual built
+slugs. Found 5 "missing," all confirmed as naming variations of
+calculators already built earlier this session, not real gaps:
+uznemuma-auto → uznemuma-auto-nodoklis, betona-daudzums →
+betona-apjoms, malkas-daudzums → malkas-apjoms, maratona-laiks →
+maratona-laika-prognoze, pulsa-zonas → sirdsdarbibas-zonas. Left them
+as-is — renaming now would break live indexed URLs (gated per
+CHARTER.md rule 7), and these are already live, functioning pages. No
+code change this cycle, verification only.
+Learned: worth doing this kind of programmatic cross-check at a major
+milestone rather than trusting the running tally kept in journal
+entries — the tally was right, but only a real diff proves it. 63
+calculators built total (50 from the original plan, 13 beyond it:
+majoklis material calculators, pensijas-kalkulators, tumsas-kalkulators,
+dzimstibas-kalkulators, the 3 iedzivotaju-skaits pages).
+Next: shift away from raw calculator-count growth (natural ceiling
+reached) toward content-quality/SEO work on existing pages, following
+the KASKO/OCTA precedent, until new GSC data suggests a different
+priority. Check for other high-impression, weak-position pages once a
+new report is available.
