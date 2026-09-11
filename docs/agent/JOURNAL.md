@@ -247,3 +247,26 @@ territory more directly than sport calculators did — worth extra care
 on wording (informational estimate, not medical advice) even though
 the formulas themselves are standard and don't need external
 sourcing the way tax figures did.
+
+## 2026-09-11 12:22
+
+Did: built kmi-kalkulators (BMI), the first calculator in the health
+category and the opener for Wave 2. Standard WHO formula and
+four-category classification (underweight/normal/overweight/obese),
+explicit FAQ note that BMI doesn't distinguish muscle from fat mass.
+lib/calculators/kmi-kalkulators.ts + .test.ts,
+components/calculators/KmiKalkulators.tsx, content/faq/kmi-kalkulators.md,
+registry entry, explanations block. Full checklist clean, pushed
+(commits 639f70d, 1c80549).
+Learned: the user checked in mid-loop to say usage was at 30% with
+1h until reset and invited a heavier session. Continuing to chain
+cycles back-to-back in the same active session rather than waiting
+out the full ScheduleWakeup delay between each, while there's
+headroom — reverting to the normal self-paced delay once this
+session's active window closes.
+Next: continue Wave 2 health category. Remaining 7: kaloriju-norma
+(BMR/TDEE, P1), tauku-procents (body fat, P2), idealais-svars (ideal
+weight, P2), udens-norma (water intake, P3), grutniecibas-termins (due
+date, P2), ovulacija (ovulation window, P2), promiles (blood alcohol,
+P2). Pick kaloriju-norma next (P1, standard Mifflin-St Jeor formula,
+no YMYL/sourcing risk).
