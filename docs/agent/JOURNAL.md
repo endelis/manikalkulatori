@@ -1269,3 +1269,21 @@ web research cycles, since two research attempts have now hit different
 failure modes on the same blocker. No other BLOCKED items pending;
 plenty of unblocked work remains (see redesign-related open items in
 the previous entry) if this stays gated.
+
+## 2026-09-11 20:26
+
+Did: user said "do something else" (alga-neto/bruto stayed blocked per
+the previous entry), so picked up the other GSC-flagged candidate from
+the 20260911 export: the /auto category page (57 impressions, position
+~70). Expanded its one-line registry description to name the real
+high-demand terms directly (KASKO, OCTA, fuel cost, tire size) instead
+of the generic "izmaksām, apdrošināšanai un līzingam" — this single
+field feeds both the homepage category card blurb and the category
+page's on-page paragraph/meta description, so one edit covers all three
+surfaces. Full checklist (tsc, build, 712 tests) green, commit c20b32c,
+pushed.
+Next: alga-neto/alga-bruto stays BLOCKED (see previous entry) pending
+user input on the non-taxable-minimum conflict. This export's
+calculator/category-level signal is now fully exhausted. Remaining
+options without new data: resume normal wave-order work (none left
+unblocked in the original 50 plan), or wait for a fresh GSC/GA pull.
