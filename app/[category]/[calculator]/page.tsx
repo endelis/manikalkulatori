@@ -1,17 +1,28 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { CUSTOM_ROUTED_SLUGS, calculators, getCalculator, getCategory, getRelatedCalculators } from '@/lib/registry';
+import {
+  CUSTOM_ROUTED_SLUGS,
+  articles,
+  calculators,
+  getCategory,
+  getContent,
+  getRelatedCalculators,
+  isArticleSlug,
+} from '@/lib/registry';
 import { loadFaq } from '@/lib/faq';
 import { SITE_URL } from '@/lib/site';
 import {
+  buildArticleSchema,
   buildBreadcrumbSchema,
   buildFaqSchema,
   buildSoftwareApplicationSchema,
   safeJsonLd,
 } from '@/lib/schema';
 import { CalculatorShell } from '@/components/CalculatorShell';
+import { ArticleShell } from '@/components/ArticleShell';
 import { getCalculatorComponent } from '@/components/calculators/registry';
+import { articleBody, articleSources } from '@/lib/articleContent';
 
 export const dynamicParams = false;
 
@@ -23,12 +34,13 @@ interface PageParams {
 export function generateStaticParams() {
   // Calculators with their own bespoke page (see CUSTOM_ROUTED_SLUGS) are served by a
   // literal app/<category>/<slug>/page.tsx route instead, so they are excluded here.
-  return calculators
-    .filter((calculator) => !CUSTOM_ROUTED_SLUGS.has(calculator.slug))
-    .map((calculator) => ({
-      category: calculator.category,
-      calculator: calculator.slug,
-    }));
+  // Articles have no such exclusion set — all of them go through this generic route.
+  return [...calculators.filter((calculator) => !CUSTOM_ROUTED_SLUGS.has(calculator.slug)), ...articles].map(
+    (item) => ({
+      category: item.category,
+      calculator: item.slug,
+    }),
+  );
 }
 
 export async function generateMetadata({
@@ -37,13 +49,13 @@ export async function generateMetadata({
   params: Promise<PageParams>;
 }): Promise<Metadata> {
   const resolvedParams = await params;
-  const calculator = getCalculator(resolvedParams.category, resolvedParams.calculator);
-  if (!calculator) return {};
+  const content = getContent(resolvedParams.category, resolvedParams.calculator);
+  if (!content) return {};
   return {
-    title: calculator.title,
-    description: calculator.metaDescription,
-    keywords: calculator.keywords,
-    alternates: { canonical: `/${calculator.category}/${calculator.slug}` },
+    title: content.title,
+    description: content.metaDescription,
+    keywords: content.keywords,
+    alternates: { canonical: `/${content.category}/${content.slug}` },
   };
 }
 
@@ -1267,8 +1279,43 @@ export default async function CalculatorPage({
 }) {
   const resolvedParams = await params;
   const category = getCategory(resolvedParams.category);
-  const calculator = getCalculator(resolvedParams.category, resolvedParams.calculator);
+  const calculator = getContent(resolvedParams.category, resolvedParams.calculator);
   if (!category || !calculator) notFound();
+
+  if (isArticleSlug(resolvedParams.category, resolvedParams.calculator)) {
+    const faq = loadFaq(calculator.slug);
+    const related = getRelatedCalculators(calculator);
+    const url = `${SITE_URL}/${category.slug}/${calculator.slug}`;
+
+    const articleSchema = buildArticleSchema({
+      headline: calculator.title,
+      description: calculator.metaDescription,
+      url,
+      datePublished: calculator.contentUpdatedAt,
+    });
+    const breadcrumbSchema = buildBreadcrumbSchema([
+      { name: 'Sākums', url: SITE_URL },
+      { name: category.title, url: `${SITE_URL}/${category.slug}` },
+      { name: calculator.title, url },
+    ]);
+    const faqSchema = buildFaqSchema(faq);
+
+    return (
+      <>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(articleSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumbSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(faqSchema) }} />
+        <ArticleShell
+          category={category}
+          article={calculator}
+          faq={faq}
+          related={related}
+          body={articleBody[calculator.slug]}
+          sources={articleSources[calculator.slug]}
+        />
+      </>
+    );
+  }
 
   const faq = loadFaq(calculator.slug);
   const related = getRelatedCalculators(calculator);

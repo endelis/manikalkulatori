@@ -27,6 +27,17 @@ export interface CalculatorMeta {
   contentUpdatedAt: string;
 }
 
+/**
+ * Articles share the exact same fields as a calculator (slug, category, title, h1,
+ * intro, metaDescription, keywords, contentUpdatedAt) since they render through the
+ * same shell pattern (breadcrumb, H1, intro, body, FAQ, related content), just with
+ * `ArticleShell` instead of `CalculatorShell` and no compute module. Kept as a
+ * separate exported array (not merged into `calculators`) so
+ * `lib/calculatorContentDrift.test.ts` — which requires every entry in `calculators` to
+ * have a mapped UI/compute file — never needs to know articles exist.
+ */
+export type ArticleMeta = CalculatorMeta;
+
 export const categories: CategoryMeta[] = [
   {
     slug: 'auto',
@@ -783,6 +794,14 @@ export const calculators: CalculatorMeta[] = [
 ];
 
 /**
+ * Informational articles (no calculator attached) — see PENSION-TOPICAL-AUTHORITY-PLAN.md.
+ * Rendered through `app/[category]/[calculator]/page.tsx`'s article branch with
+ * `ArticleShell`, body content from `lib/articleContent.tsx`, and the same
+ * `content/faq/<slug>.md` convention calculators use.
+ */
+export const articles: ArticleMeta[] = [];
+
+/**
  * Slugs that ship a bespoke `app/<category>/<slug>/page.tsx` instead of going through
  * the generic `CalculatorShell` + `app/[category]/[calculator]/page.tsx` route. These
  * calculators still live in the registry above (for the category listing, homepage
@@ -804,14 +823,38 @@ export function getCalculatorsByCategory(categorySlug: string): CalculatorMeta[]
   return calculators.filter((calculator) => calculator.category === categorySlug);
 }
 
+export function getArticlesByCategory(categorySlug: string): ArticleMeta[] {
+  return articles.filter((article) => article.category === categorySlug);
+}
+
+/** Calculators and articles share one URL namespace (`/<category>/<slug>`), so category
+ * pages, the homepage count, and the sitemap all need both combined. */
+export function getContentByCategory(categorySlug: string): CalculatorMeta[] {
+  return [...getCalculatorsByCategory(categorySlug), ...getArticlesByCategory(categorySlug)];
+}
+
 export function getCalculator(categorySlug: string, calculatorSlug: string): CalculatorMeta | undefined {
   return calculators.find(
     (calculator) => calculator.category === categorySlug && calculator.slug === calculatorSlug,
   );
 }
 
+export function getArticle(categorySlug: string, articleSlug: string): ArticleMeta | undefined {
+  return articles.find((article) => article.category === categorySlug && article.slug === articleSlug);
+}
+
+/** Looks up a slug across both calculators and articles — the shared lookup the generic
+ * `[calculator]` route uses before branching on which shell to render. */
+export function getContent(categorySlug: string, slug: string): CalculatorMeta | undefined {
+  return getCalculator(categorySlug, slug) ?? getArticle(categorySlug, slug);
+}
+
+export function isArticleSlug(categorySlug: string, slug: string): boolean {
+  return getArticle(categorySlug, slug) !== undefined;
+}
+
 export function getRelatedCalculators(current: CalculatorMeta, limit = 4): CalculatorMeta[] {
-  return calculators
-    .filter((calculator) => calculator.category === current.category && calculator.slug !== current.slug)
+  return [...calculators, ...articles]
+    .filter((item) => item.category === current.category && item.slug !== current.slug)
     .slice(0, limit);
 }

@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { categories, getCalculatorsByCategory, getCategory } from '@/lib/registry';
+import { categories, getCategory, getContentByCategory } from '@/lib/registry';
 
 export const dynamicParams = false;
 
@@ -18,7 +18,7 @@ export async function generateMetadata({
   const category = getCategory(resolvedParams.category);
   if (!category) return {};
 
-  const isEmpty = getCalculatorsByCategory(category.slug).length === 0;
+  const isEmpty = getContentByCategory(category.slug).length === 0;
 
   return {
     title: category.title,
@@ -44,7 +44,7 @@ export default async function CategoryPage({
   const category = getCategory(resolvedParams.category);
   if (!category) notFound();
 
-  const categoryCalculators = getCalculatorsByCategory(category.slug);
+  const categoryCalculators = getContentByCategory(category.slug);
 
   return (
     <main className="mx-auto flex max-w-2xl flex-col gap-8 px-4 py-10">

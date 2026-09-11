@@ -31,6 +31,25 @@ export function buildSoftwareApplicationSchema(input: SoftwareApplicationSchemaI
   };
 }
 
+export interface ArticleSchemaInput {
+  headline: string;
+  description: string;
+  url: string;
+  datePublished: string;
+}
+
+export function buildArticleSchema(input: ArticleSchemaInput) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: input.headline,
+    description: input.description,
+    url: input.url,
+    datePublished: input.datePublished,
+    dateModified: input.datePublished,
+  };
+}
+
 export interface BreadcrumbItem {
   name: string;
   url: string;

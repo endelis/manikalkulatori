@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { calculators, categories, getCalculatorsByCategory } from '@/lib/registry';
+import { articles, calculators, categories, getContentByCategory } from '@/lib/registry';
 import { SITE_URL } from '@/lib/site';
 import { NOVADS_PILOT_AREAS } from '@/lib/novads-pilot-data';
 
@@ -38,18 +38,18 @@ function latest(timestamps: string[]): string {
 export default function sitemap(): MetadataRoute.Sitemap {
   const homeEntry: MetadataRoute.Sitemap[number] = {
     url: SITE_URL,
-    lastModified: latest(calculators.map((calculator) => calculator.contentUpdatedAt)),
+    lastModified: latest([...calculators, ...articles].map((item) => item.contentUpdatedAt)),
     changeFrequency: 'weekly',
     priority: 1,
   };
 
-  // Categories with no calculators yet are real pages but have nothing to index —
-  // keep them out of the sitemap until they hold at least one calculator.
+  // Categories with no calculators or articles yet are real pages but have nothing to
+  // index — keep them out of the sitemap until they hold at least one.
   const categoryEntries: MetadataRoute.Sitemap = categories
-    .filter((category) => getCalculatorsByCategory(category.slug).length > 0)
+    .filter((category) => getContentByCategory(category.slug).length > 0)
     .map((category) => ({
       url: `${SITE_URL}/${category.slug}`,
-      lastModified: latest(getCalculatorsByCategory(category.slug).map((c) => c.contentUpdatedAt)),
+      lastModified: latest(getContentByCategory(category.slug).map((c) => c.contentUpdatedAt)),
       changeFrequency: 'weekly',
       priority: 0.8,
     }));
@@ -59,6 +59,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: calculator.contentUpdatedAt,
     changeFrequency: 'monthly',
     priority: 0.9,
+  }));
+
+  const articleEntries: MetadataRoute.Sitemap = articles.map((article) => ({
+    url: `${SITE_URL}/${article.category}/${article.slug}`,
+    lastModified: article.contentUpdatedAt,
+    changeFrequency: 'monthly',
+    priority: 0.7,
   }));
 
   // Static legal/info pages — indexable, so they belong in the sitemap even though they
@@ -90,6 +97,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     homeEntry,
     ...categoryEntries,
     ...calculatorEntries,
+    ...articleEntries,
     ...legalEntries,
     ...infoEntries,
     ...novadsPilotEntries,
