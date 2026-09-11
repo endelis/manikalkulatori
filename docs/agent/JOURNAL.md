@@ -404,3 +404,27 @@ finance/auto calculator with a ready affiliate program would be a
 better next pick — check PROJECT-OVERVIEW.md section 11 and the
 finance list (section 5) for any other item with an obvious existing
 affiliate angle before defaulting back to the original wave order.
+
+## 2026-09-11 13:09
+
+Did: built grutniecibas-termins (due date estimator, Naegele's rule:
+LMP + 280 days), plus current gestational age from LMP to today.
+Followed the existing date-handling convention (take `today` as an
+explicit string input rather than calling `new Date()` inside the
+compute function, matching tumsas-kalkulators.ts) for testability.
+Explicit "informational estimate, not medical advice" framing in the
+caption and FAQ, plus a note that ~95% of births don't land exactly
+on the calculated date. lib/calculators/grutniecibas-termins.ts +
+.test.ts, components/calculators/GrutniecibasTerminaCalculator.tsx,
+content/faq/grutniecibas-termins.md, registry entry, explanations
+block. Full checklist clean, pushed (commits ea05648, ac2da4d).
+Learned: the today-as-input convention (rather than reading the
+system clock inside a compute module) is worth remembering for any
+future date-dependent calculator — it's what makes the compute
+function pure and testable, and it's already established practice in
+this repo (tumsas-kalkulators.ts), not something I need to reinvent.
+Next: 2 health calculators remain — ovulacija (fertile window
+estimation, standard cycle-day counting) and promiles (blood alcohol,
+Widmark formula). Both non-YMYL, both deserve the same
+informational-estimate framing as this one. After these two, Wave 2
+is complete.
