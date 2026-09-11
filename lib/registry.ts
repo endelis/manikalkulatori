@@ -637,7 +637,7 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi sākuma summu, ikmēneša iemaksu un ienesīgumu, uzzini uzkrāto summu termiņa beigās.',
     metaDescription: 'Aprēķini uzkrājuma izaugsmi ar salikto procentu efektu no sākuma summas, ikmēneša iemaksām un ienesīguma.',
     keywords: ['uzkrājumu kalkulators', 'salikto procentu kalkulators', 'ieguldījumu izaugsmes kalkulators'],
-    contentUpdatedAt: '2026-09-11T13:52:00+03:00',
+    contentUpdatedAt: '2026-09-11T13:52:12+03:00',
   },
   {
     slug: 'grutniecibas-termins',
