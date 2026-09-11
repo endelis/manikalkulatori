@@ -451,6 +451,16 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-11T12:29:03+03:00',
   },
   {
+    slug: 'udens-norma',
+    category: 'veseliba',
+    title: 'Ūdens normas kalkulators',
+    h1: 'Cik ūdens tev vajag dienā?',
+    intro: 'Ievadi svaru, uzzini ieteicamo ūdens daudzumu dienā.',
+    metaDescription: 'Aprēķini ieteicamo dienas ūdens normu no ķermeņa svara pēc vispārpieņemtas vadlīnijas.',
+    keywords: ['ūdens normas kalkulators', 'cik ūdens dzert dienā', 'ūdens patēriņa kalkulators'],
+    contentUpdatedAt: '2026-09-11T12:30:56+03:00',
+  },
+  {
     slug: 'skriesanas-temps',
     category: 'sports',
     title: 'Skriešanas tempa kalkulators',

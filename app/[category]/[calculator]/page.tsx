@@ -489,6 +489,12 @@ const explanations: Record<string, React.ReactNode> = {
       dzimumam atbilstošu bāzes svaru, iegūstot ideālo svaru pēc Devina formulas.
     </p>
   ),
+  'udens-norma': (
+    <p className="text-panel-muted">
+      Kalkulators reizina svaru kilogramos ar 33 mililitriem, iegūstot ieteicamo dienas ūdens normu
+      litros.
+    </p>
+  ),
   'sirdsdarbibas-zonas': (
     <p className="text-panel-muted">
       Kalkulators aprēķina pulsa rezervi, atņemot miera pulsu no maksimālā pulsa, tad katrai zonai pieskaita
