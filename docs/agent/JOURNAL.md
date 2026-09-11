@@ -790,3 +790,34 @@ Next: continue finance category. slimibas-nauda (sick pay) is next on
 the safer-research list; alga-neto/alga-bruto is still open but should
 get a dedicated multi-round research approach like this one rather
 than a single broad attempt.
+
+## 2026-09-11 15:02
+
+Did: built slimibas-nauda (sick pay). Day 1 unpaid, days 2-3 at 75%,
+days 4-9 at 80% of average earnings, employer obligation ends day 9
+(state takes over from day 10) — all confirmed directly via
+vdi.gov.lv in one clean fetch. lib/calculators/slimibas-nauda.ts +
+.test.ts, components/calculators/SlimibasNaudasCalculator.tsx,
+content/faq/slimibas-nauda.md, registry entry, explanations block.
+Commits 1bab45d, a61a5ea, one full checklist run, pushed.
+
+Also: the user pointed out the loop was still pausing ~20 minutes
+between every single cycle via ScheduleWakeup, even though it no
+longer self-terminates — that's still "stop and wait" in practice.
+Fixed: CHARTER.md's End-of-cycle section now says not to call
+ScheduleWakeup at all when there's clear next work and the session is
+still active — chain cycles directly in the same turn, only calling
+it when actually ending the turn. This entry and the next few are
+chained directly per that fix, no wakeup gap between them.
+
+Learned: the multi-round-likumi.lv technique is now 2/2 for finance
+YMYL items (mun-kalkulators, slimibas-nauda), both single-fetch clean
+hits when the search first surfaced a specific official agency page
+(vdi.gov.lv, not just likumi.lv) to target directly.
+Next: attempt alga-neto/alga-bruto again with this same
+narrow-official-page-first approach (try vdi.gov.lv/vid.gov.lv
+directly for a specific rates page before the full statute), since
+two prior attempts (broad likumi.lv fetch, broad VID navigation fetch)
+both failed on documents too long or too generic. If it fails a third
+time, move to ipasuma-nodoklis or iin-kalkulators instead and revisit
+salary later.
