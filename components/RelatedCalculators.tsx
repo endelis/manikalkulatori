@@ -13,18 +13,18 @@ export function RelatedCalculators({ items }: RelatedCalculatorsProps) {
       <h2 id="related-heading" className="font-sans text-h2">
         Saistītie kalkulatori
       </h2>
-      <ul className="flex flex-col gap-2">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         {items.map((item) => (
-          <li key={item.slug}>
-            <Link
-              href={`/${item.category}/${item.slug}`}
-              className="text-panel-text underline decoration-panel-border underline-offset-4 transition-colors duration-[120ms] hover:decoration-current"
-            >
-              {item.title}
-            </Link>
-          </li>
+          <Link
+            key={item.slug}
+            href={`/${item.category}/${item.slug}`}
+            className="flex flex-col gap-1 rounded-xl border border-panel-border bg-panel-surface p-4 shadow-sm transition-shadow duration-[120ms] hover:shadow"
+          >
+            <span className="font-medium text-panel-text">{item.title}</span>
+            <span className="text-sm text-panel-faint">{item.intro}</span>
+          </Link>
         ))}
-      </ul>
+      </div>
     </section>
   );
 }
