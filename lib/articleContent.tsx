@@ -130,6 +130,18 @@ export const articleBody: Record<string, React.ReactNode> = {
         </Link>{' '}
         nodokļu ziņā ilgtermiņa uzkrājumam.
       </p>
+
+      <h2 className="font-sans text-h2">Citas pensiju shēmas</h2>
+      <p>
+        Atsevišķām profesijām (aviācija, dzelzceļš, jūrniecība, māksla) un militārpersonām pastāv{' '}
+        <Link
+          href="/finanses/izdienas-pensija"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          izdienas pensija
+        </Link>
+        , kas ir pilnībā atsevišķa no 1., 2. un 3. līmeņa.
+      </p>
     </>
   ),
   'izdienas-pensija': (
