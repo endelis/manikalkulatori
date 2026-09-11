@@ -428,3 +428,22 @@ estimation, standard cycle-day counting) and promiles (blood alcohol,
 Widmark formula). Both non-YMYL, both deserve the same
 informational-estimate framing as this one. After these two, Wave 2
 is complete.
+
+## 2026-09-11 13:12
+
+Did: built ovulacija (ovulation window estimator). Standard 14-day
+luteal-phase cycle-counting method, fertile window 5 days before to 1
+day after predicted ovulation. lib/calculators/ovulacija.ts +
+.test.ts, components/calculators/OvulacijasCalculator.tsx,
+content/faq/ovulacija.md, registry entry, explanations block. Full
+checklist clean, pushed (commits 378c6f6, 7912549).
+Learned: nothing new — same shape as grutniecibas-termins.
+Next: promiles (blood alcohol, Widmark formula) is the last health
+calculator, and closes out Wave 2 entirely once built. This one is
+legally sensitive as well as health-sensitive (driving limits), so
+plan: build the physiological BAC estimate only, do not state
+Latvia's specific legal driving limit number in the copy (that would
+be a legal YMYL figure needing sourcing per CHARTER.md's gated rule,
+and isn't needed for the calculator to be useful) — keep the
+disclaimer generic and strong: this is not a legal measurement, never
+use it to decide about driving.
