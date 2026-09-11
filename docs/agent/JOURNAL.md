@@ -361,3 +361,46 @@ needs explicit "informational estimate, not medical/legal advice"
 framing. Formulas are standard public clinical-estimation methods,
 not YMYL figures needing an official source citation. After these
 three, Wave 2 is complete.
+
+## 2026-09-11 13:05
+
+Did: the user asked for real strategy research toward monetization,
+with explicit permission to pivot content within legal/ethical bounds.
+Researched (WebSearch/WebFetch): confirmed manikalkulatori.lv is not
+indexed by Google at all yet (site: search returns zero results), no
+GSC verification is wired into the codebase, and the domain is only
+~3 weeks old — so content volume is no longer the bottleneck, indexing
+and domain trust are. Also found: AdSense supports Latvia (SEPA/EUR)
+but new-domain rejection risk argues for waiting; Ezoic Access Now has
+no traffic minimum; and CPA/CPL affiliate programs for loans/leasing
+(Elizings.lv, Latvijas Kredītu Centrs, doaffiliate.net) are joinable
+now regardless of traffic since they pay per lead/contract.
+
+Wrote this up as PROJECT-OVERVIEW.md section 11 (monetization
+readiness) and updated CHARTER.md's Mission with a standing exception:
+build kredita-kalkulators ahead of the rest of finance, since a
+traffic-independent affiliate program exists for it specifically,
+unlike the SEO-authority reasoning that pushed all of finance to last
+place in the original wave order. Also extended CHARTER.md's
+AdSlot-no-unwired-scaffold rule explicitly to any future affiliate
+link on kredita-kalkulators: build the tool now, never the link,
+until the user hands over a real account and tracking link.
+
+Then built kredita-kalkulators itself (standard annuity/amortization
+formula, rate is a user input not a government figure, so no YMYL
+sourcing needed). lib/calculators/kredita-kalkulators.ts + .test.ts,
+components/calculators/KreditaKalkulators.tsx,
+content/faq/kredita-kalkulators.md, registry entry, explanations
+block. Full checklist clean, pushed (commits a261faa, 22e8f76).
+
+Learned: the biggest lever right now isn't more calculators, it's
+getting the site indexed — an action only the user can take (Google
+Search Console needs account ownership). Worth surfacing this clearly
+to the user rather than quietly continuing to build; done via
+PROJECT-OVERVIEW.md section 11's action-items split.
+Next: resume Wave 2 health calculators (grutniecibas-termins,
+ovulacija, promiles) per the earlier plan, OR revisit whether another
+finance/auto calculator with a ready affiliate program would be a
+better next pick — check PROJECT-OVERVIEW.md section 11 and the
+finance list (section 5) for any other item with an obvious existing
+affiliate angle before defaulting back to the original wave order.
