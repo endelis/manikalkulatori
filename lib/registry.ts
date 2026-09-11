@@ -417,7 +417,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini kritisko peldēšanas ātrumu (CSS) un treniņu tempu no 400 metru un 200 metru testa laika.',
     keywords: ['css kalkulators peldēšanai', 'kritiskais peldēšanas ātrums', 'peldēšanas css tests'],
-    contentUpdatedAt: '2026-09-11T08:10:08+03:00',
+    contentUpdatedAt: '2026-09-11T08:12:11+03:00',
   },
   {
     slug: 'sirdsdarbibas-zonas',
