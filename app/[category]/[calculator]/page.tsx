@@ -471,6 +471,12 @@ const explanations: Record<string, React.ReactNode> = {
       noteiktās robežas, lai noteiktu kategoriju.
     </p>
   ),
+  'kaloriju-norma': (
+    <p className="text-panel-muted">
+      Kalkulators aprēķina BMR pēc Mifflin-St Jeor formulas no svara, auguma, vecuma un dzimuma, tad
+      reizina to ar izvēlētā aktivitātes līmeņa koeficientu, iegūstot dienas kaloriju normu.
+    </p>
+  ),
   'sirdsdarbibas-zonas': (
     <p className="text-panel-muted">
       Kalkulators aprēķina pulsa rezervi, atņemot miera pulsu no maksimālā pulsa, tad katrai zonai pieskaita

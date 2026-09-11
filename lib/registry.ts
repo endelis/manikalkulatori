@@ -419,6 +419,17 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-11T12:19:45+03:00',
   },
   {
+    slug: 'kaloriju-norma',
+    category: 'veseliba',
+    title: 'Kaloriju normas kalkulators',
+    h1: 'Cik kalorijas tev vajag dienā?',
+    intro: 'Ievadi svaru, augumu, vecumu un aktivitātes līmeni, uzzini bazālo metabolismu un dienas kaloriju normu.',
+    metaDescription:
+      'Aprēķini dienas kaloriju normu (TDEE) un bazālo metabolismu (BMR) pēc Mifflin-St Jeor formulas.',
+    keywords: ['kaloriju normas kalkulators', 'bmr kalkulators', 'tdee kalkulators latviski'],
+    contentUpdatedAt: '2026-09-11T12:21:50+03:00',
+  },
+  {
     slug: 'skriesanas-temps',
     category: 'sports',
     title: 'Skriešanas tempa kalkulators',

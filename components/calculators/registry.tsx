@@ -38,6 +38,7 @@ import { MaratonaLaikaPrognozesCalculator } from './MaratonaLaikaPrognozesCalcul
 import { Vo2maxCalculator } from './Vo2maxCalculator';
 import { TreninaKalorijuCalculator } from './TreninaKalorijuCalculator';
 import { KmiKalkulators } from './KmiKalkulators';
+import { KalorijuNormasCalculator } from './KalorijuNormasCalculator';
 
 /**
  * Props every calculator component receives from the calculator page.
@@ -88,6 +89,7 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'vo2max': Vo2maxCalculator,
   'trenina-kalorijas': TreninaKalorijuCalculator,
   'kmi-kalkulators': KmiKalkulators,
+  'kaloriju-norma': KalorijuNormasCalculator,
 };
 
 export function getCalculatorComponent(slug: string): ComponentType<CalculatorComponentProps> | undefined {
