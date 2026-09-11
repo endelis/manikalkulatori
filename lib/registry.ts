@@ -677,7 +677,7 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi vidējo dienas izpeļņu un darbnespējas dienu skaitu, uzzini darba devēja apmaksāto slimības naudu.',
     metaDescription: 'Aprēķini slimības naudu, ko darba devējs maksā par darbnespējas 2. līdz 9. dienu, pēc likumā noteiktajām likmēm.',
     keywords: ['slimības naudas kalkulators', 'slimības nauda', 'darbnespējas lapa a apmaksa'],
-    contentUpdatedAt: '2026-09-11T14:59:50+03:00',
+    contentUpdatedAt: '2026-09-11T15:00:04+03:00',
   },
   {
     slug: 'grutniecibas-termins',
