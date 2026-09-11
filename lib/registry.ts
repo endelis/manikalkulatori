@@ -140,8 +140,14 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi, cik daļu no uzlādes veic mājās un cik publiski, uzzini gada uzlādes izmaksas.',
     metaDescription:
       'Aprēķini elektroauto gada uzlādes izmaksas, sadalot uzlādi starp mājas un publisko lādēšanu.',
-    keywords: ['elektroauto uzlādes izmaksas', 'uzlādes cena mājās', 'publiskā lādēšana cena'],
-    contentUpdatedAt: '2026-08-22T20:26:27+03:00',
+    keywords: [
+      'elektroauto uzlādes izmaksas',
+      'uzlādes cena mājās',
+      'publiskā lādēšana cena',
+      'elektroauto uzlādes cena',
+      'uzlāde kwh cena',
+    ],
+    contentUpdatedAt: '2026-09-11T17:00:19+03:00',
   },
   {
     slug: 'nolietojums',
