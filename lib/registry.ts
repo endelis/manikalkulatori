@@ -617,7 +617,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini, cik procentu un laika ietaupīsi, maksājot par hipotēku vairāk nekā paredzēts grafikā.',
     keywords: ['hipotēkas pārmaksas kalkulators', 'hipotēkas priekšlaicīga atmaksa', 'kredīta ietaupījuma kalkulators'],
-    contentUpdatedAt: '2026-09-11T13:46:43+03:00',
+    contentUpdatedAt: '2026-09-11T13:46:11+03:00',
   },
   {
     slug: 'grutniecibas-termins',
