@@ -9,3 +9,7 @@ Spidometrs aprēķina ātrumu no riteņa apgriezienu skaita, pieņemot noteiktu 
 ### Vai lielāks riepas diametrs vienmēr nozīmē lēnāku reālo ātrumu spidometrā?
 
 Jā, ja diametrs palielinās, ritenis veic mazāk apgriezienu uz vienu nobraukto kilometru, tāpēc spidometrs rāda mazāku ātrumu, nekā tu faktiski brauc. Ar mazāku diametru notiek pretēji.
+
+### Kas ir riepas profila augstums un kā to ietekmē izmēra maiņa?
+
+Profila augstums ir riepas sānu daļas biezums, izteikts procentos no riepas platuma, piemēram, izmērā 205/55 tie ir 55%. Mainot riepas platumu vai diska izmēru, bet paturot to pašu kopējo diametru, profila augstums parasti mainās līdzi, lai diametrs saglabātos tuvu oriģinālajam. Tieši šo aprēķinu veic kalkulators augstāk.

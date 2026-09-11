@@ -174,8 +174,14 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi vecās un jaunās riepas izmēru, uzzini spidometra kļūdu un reālo braukšanas ātrumu.',
     metaDescription:
       'Aprēķini spidometra kļūdu un reālo ātrumu pēc riepu izmēra maiņas, salīdzinot veco un jauno riepu diametru.',
-    keywords: ['riepu izmēra kalkulators', 'spidometra kļūda', 'riepu diametrs'],
-    contentUpdatedAt: '2026-08-22T20:26:27+03:00',
+    keywords: [
+      'riepu izmēra kalkulators',
+      'spidometra kļūda',
+      'riepu diametrs',
+      'riepu augstuma kalkulators',
+      'riepu kalkulators',
+    ],
+    contentUpdatedAt: '2026-09-11T17:36:37+03:00',
   },
   {
     slug: 'cela-izmaksas',
