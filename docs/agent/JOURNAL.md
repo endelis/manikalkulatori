@@ -1224,3 +1224,48 @@ several entries back, (b) a fresh GSC pull now that the site looks
 different, to see whether bounce rate / time-on-page shifts, or (c)
 normal wave-order calculator building. No urgency on any of these; the
 redesign was the priority this session and is done.
+
+## 2026-09-11 20:14
+
+Did: BLOCKED — attempted alga-neto/alga-bruto (salary net/gross) again,
+using the fm.gov.lv-first approach flagged as reliable in the 2026-09-11
+14:22 entry. Confirmed the 2026 IIN bracket structure via WebSearch
+(25.5% up to 105,300 EUR/year, 33% above, plus a 3% surtax above 200,000
+EUR/year since 2025) but that is a search summary, not a fetched primary
+source, so it still needs direct verification before use. The bigger
+problem: fetched fm.gov.lv's dedicated "Neapliekamais minimums un
+nodokļa atvieglojumi" page directly (page dated 2026-01-20, a real,
+current, acceptable primary source) and it describes a differentiated
+non-taxable minimum that phases from 550 EUR/month down to zero as
+income rises to 1,800 EUR/month — but a separate WebSearch summary
+(citing tax.lv, a professional tax-advisory site, not itself a primary
+source) claims the opposite: "from 2025, the differentiated tax-exempt
+minimum... was replaced with a fixed tax-exempt minimum," i.e. flat 550
+EUR/month for everyone with no phase-out. These two claims are
+mutually exclusive and both cite 2025/2026 as the effective period.
+Did NOT ship it: a real, unresolved conflict on whether Latvia's
+highest-traffic-relevant tax calculator input (the non-taxable minimum)
+is flat or income-differentiated is precisely CHARTER.md's gated case —
+guessing wrong here is worse than not shipping, and this is the single
+highest-stakes YMYL calculator on the site.
+Learned: even a directly-fetched, dated, on-domain fm.gov.lv page is
+not automatically authoritative over a search-summarized secondary
+source when they disagree — both need to be checked against the actual
+amendment law text (likumi.lv, "Par iedzīvotāju ienākuma nodokli",
+the article governing neapliekamais minimums) to resolve, not just
+picked based on which source type seems more official. Past attempts on
+this same calculator failed to extract that law's text (truncated
+before reaching the relevant article) and a VID PDF (scanned image, not
+extractable). Both obstacles are still unresolved.
+Next: alga-neto/alga-bruto stays blocked. A future attempt should try
+fetching only the specific law section/article about neapliekamais
+minimums (not the whole statute, to avoid the truncation problem) —
+likumi.lv supports linking directly to a specific pants (article); try
+constructing that URL rather than fetching the full law page. If that
+also fails, this may need a human to resolve directly (e.g. confirm
+via an accountant/payroll source, or the user directly checking their
+own payslip against a 2026 calculation) rather than more autonomous
+web research cycles, since two research attempts have now hit different
+failure modes on the same blocker. No other BLOCKED items pending;
+plenty of unblocked work remains (see redesign-related open items in
+the previous entry) if this stays gated.
