@@ -606,7 +606,7 @@ export const calculators: CalculatorMeta[] = [
       'prognozējamā pensija',
       'mana pensija kalkulators',
     ],
-    contentUpdatedAt: '2026-09-11T22:26:33+03:00',
+    contentUpdatedAt: '2026-09-11T22:31:49+03:00',
   },
   {
     slug: 'priekslaicigas-pensijas-kalkulators',
@@ -622,7 +622,23 @@ export const calculators: CalculatorMeta[] = [
       'priekšlaicīga pensionēšanās',
       'priekšlaicīgas pensijas kalkulators',
     ],
-    contentUpdatedAt: '2026-09-11T22:26:33+03:00',
+    contentUpdatedAt: '2026-09-11T22:31:49+03:00',
+  },
+  {
+    slug: 'pensiju-3-limena-kalkulators',
+    category: 'finanses',
+    title: 'Pensiju 3. līmeņa kalkulators',
+    h1: 'Cik daudz sakrāsi pensiju 3. līmenī',
+    intro:
+      'Ievadi ikmēneša iemaksu, ienesīgumu un termiņu, uzzini uzkrāto summu un IIN atmaksas apmēru.',
+    metaDescription:
+      'Aprēķini pensiju 3. līmeņa uzkrājumu un iedzīvotāju ienākuma nodokļa atmaksu par iemaksām, pēc reālajiem 2026. gada nosacījumiem.',
+    keywords: [
+      'pensiju 3. līmenis',
+      'pensiju 3. līmeņa kalkulators',
+      'pensiju 3 limenis nodoklu atmaksa',
+    ],
+    contentUpdatedAt: '2026-09-11T22:34:51+03:00',
   },
   {
     slug: 'tumsas-kalkulators',

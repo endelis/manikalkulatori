@@ -633,6 +633,21 @@ const explanations: Record<string, React.ReactNode> = {
       ātrumu metros sekundē.
     </p>
   ),
+  'pensiju-3-limena-kalkulators': (
+    <>
+      <p className="text-panel-muted">
+        Kalkulators reizina tavu ikmēneša iemaksu ar ienesīguma pieņēmumu, izmantojot standarta
+        salikto procentu formulu (tāpat kā uzkrājumu kalkulators): katras iemaksas augšana tiek
+        summēta pa mēnešiem, izmantojot ievadīto gada ienesīgumu, dalītu ar 12.
+      </p>
+      <p className="text-panel-muted">
+        Papildus tam kalkulators aprēķina IIN atmaksu: gada iemaksa, kas nepārsniedz 10 procentus no
+        ievadītā gada bruto ienākuma un ne vairāk kā 4000 eiro, reizināta ar 25,5 procentu IIN likmi.
+        Ja gada iemaksa pārsniedz šo robežu, atmaksu saņem tikai par robežas apmēru, nevis par visu
+        iemaksu.
+      </p>
+    </>
+  ),
 };
 
 /**
@@ -1268,6 +1283,24 @@ const sourcesContent: Record<string, React.ReactNode> = {
         </a>
         , izgūts 2026. gada 5. septembrī.
       </li>
+    </ul>
+  ),
+  'pensiju-3-limena-kalkulators': (
+    <ul className="flex flex-col gap-2 text-sm text-panel-muted">
+      <li>
+        IIN atmaksas robeža (10% no ienākuma, ne vairāk kā 4000 eiro gadā),{' '}
+        <a
+          href="https://m.likumi.lv/doc.php?id=218825"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          likumi.lv
+        </a>
+        , likuma &quot;Par iedzīvotāju ienākuma nodokli&quot; normu piemērošanas kārtība, 65.2. punkts,
+        izgūts 2026. gada 11. septembrī.
+      </li>
+      <li>Iedzīvotāju ienākuma nodokļa likme 25,5%, sk. avotus iin-kalkulators lapā.</li>
     </ul>
   ),
 };

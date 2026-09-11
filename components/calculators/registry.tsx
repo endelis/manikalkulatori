@@ -50,6 +50,7 @@ import { HipotekasMaksajumaCalculator } from './HipotekasMaksajumaCalculator';
 import { HipotekasParmaksasCalculator } from './HipotekasParmaksasCalculator';
 import { PvnKalkulators } from './PvnKalkulators';
 import { UzkrajumuCalculator } from './UzkrajumuCalculator';
+import { Pensiju3LimenaCalculator } from './Pensiju3LimenaCalculator';
 import { InflacijasCalculator } from './InflacijasCalculator';
 import { AtvalinajumaNaudasCalculator } from './AtvalinajumaNaudasCalculator';
 import { MunKalkulators } from './MunKalkulators';
@@ -121,6 +122,7 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'hipotekas-parmaksa': HipotekasParmaksasCalculator,
   'pvn-kalkulators': PvnKalkulators,
   'uzkrajumi': UzkrajumuCalculator,
+  'pensiju-3-limena-kalkulators': Pensiju3LimenaCalculator,
   'inflacija': InflacijasCalculator,
   'atvalinajuma-nauda': AtvalinajumaNaudasCalculator,
   'mun-kalkulators': MunKalkulators,
