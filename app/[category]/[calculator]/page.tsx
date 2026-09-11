@@ -522,6 +522,13 @@ const explanations: Record<string, React.ReactNode> = {
       laiku, iegūstot aptuveno promiļu vērtību.
     </p>
   ),
+  'hipotekas-maksajums': (
+    <p className="text-panel-muted">
+      Kalkulators izmanto anuitātes formulu, kas no hipotēkas summas, mēneša procentu likmes un
+      termiņa gados aprēķina nemainīgu ikmēneša maksājumu, tad reizina to ar mēnešu skaitu, lai
+      iegūtu kopējās izmaksas un pārmaksu.
+    </p>
+  ),
   'sirdsdarbibas-zonas': (
     <p className="text-panel-muted">
       Kalkulators aprēķina pulsa rezervi, atņemot miera pulsu no maksimālā pulsa, tad katrai zonai pieskaita

@@ -598,6 +598,17 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-11T13:03:37+03:00',
   },
   {
+    slug: 'hipotekas-maksajums',
+    category: 'finanses',
+    title: 'Hipotēkas maksājuma kalkulators',
+    h1: 'Cik maksās tava hipotēka?',
+    intro: 'Ievadi hipotēkas summu, procentu likmi un termiņu, uzzini ikmēneša maksājumu un kopējās izmaksas.',
+    metaDescription:
+      'Aprēķini hipotēkas ikmēneša maksājumu, kopējās izmaksas un pārmaksu pēc anuitātes formulas.',
+    keywords: ['hipotēkas kalkulators', 'hipotēkas maksājuma kalkulators', 'mājokļa kredīta kalkulators'],
+    contentUpdatedAt: '2026-09-11T13:42:03+03:00',
+  },
+  {
     slug: 'grutniecibas-termins',
     category: 'veseliba',
     title: 'Grūtniecības termiņa kalkulators',
