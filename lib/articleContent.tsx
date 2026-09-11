@@ -135,7 +135,14 @@ export const articleBody: Record<string, React.ReactNode> = {
         >
           Uzzini, cik izdevīgs ir ieguldījumu konts salīdzinājumā ar parastu kontu
         </Link>{' '}
-        nodokļu ziņā ilgtermiņa uzkrājumam.
+        nodokļu ziņā ilgtermiņa uzkrājumam, vai izlasi{' '}
+        <Link
+          href="/finanses/etf-pamati-pensijas-uzkrajumam"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          ETF pamatus
+        </Link>
+        .
       </p>
 
       <h2 className="font-sans text-h2">Citas pensiju shēmas</h2>
