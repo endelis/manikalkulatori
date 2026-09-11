@@ -710,6 +710,16 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-11T15:11:08+03:00',
   },
   {
+    slug: 'saimnieciska-darbiba',
+    category: 'finanses',
+    title: 'Saimnieciskās darbības nodokļu kalkulators',
+    h1: 'Cik nodokļu jāmaksā no saimnieciskās darbības ienākuma?',
+    intro: 'Ievadi mēneša apliekamo ienākumu, uzzini VSAOI un IIN summu un to, kas paliek pēc nodokļiem.',
+    metaDescription: 'Aprēķini VSAOI un IIN no saimnieciskās darbības ienākuma vispārējā nodokļu režīmā.',
+    keywords: ['saimnieciskās darbības nodokļi', 'pašnodarbinātā kalkulators', 'saimnieciskās darbības nodokļu kalkulators'],
+    contentUpdatedAt: '2026-09-11T15:35:57+03:00',
+  },
+  {
     slug: 'grutniecibas-termins',
     category: 'veseliba',
     title: 'Grūtniecības termiņa kalkulators',

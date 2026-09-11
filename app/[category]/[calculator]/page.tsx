@@ -594,6 +594,13 @@ const explanations: Record<string, React.ReactNode> = {
       nodokli, tad dala to ar četri, lai parādītu ceturkšņa maksājumu.
     </p>
   ),
+  'saimnieciska-darbiba': (
+    <p className="text-panel-muted">
+      Kalkulators piemēro VSAOI pēc divpakāpju likmes (31,07% līdz minimālajai algai, 10% virs tās,
+      vai tikai 10%, ja ienākums ir zem minimālās algas), tad atlikumam piemēro progresīvo IIN
+      likmi, lai iegūtu summu, kas paliek pēc nodokļiem.
+    </p>
+  ),
   'sirdsdarbibas-zonas': (
     <p className="text-panel-muted">
       Kalkulators aprēķina pulsa rezervi, atņemot miera pulsu no maksimālā pulsa, tad katrai zonai pieskaita

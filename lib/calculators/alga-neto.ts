@@ -28,7 +28,7 @@ function nonTaxableMinimum(grossMonthlyEur: number): number {
   return NTM_MAX_EUR * (1 - overage / range);
 }
 
-function progressiveIin(taxableBaseEur: number): number {
+export function progressiveIin(taxableBaseEur: number): number {
   if (taxableBaseEur <= 0) return 0;
   if (taxableBaseEur <= IIN_MONTHLY_THRESHOLD_EUR) return taxableBaseEur * IIN_LOWER_RATE;
 
