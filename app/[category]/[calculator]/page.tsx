@@ -567,6 +567,13 @@ const explanations: Record<string, React.ReactNode> = {
       nodokli, tad atņem to no apgrozījuma, lai parādītu, cik paliek pēc nodokļa nomaksas.
     </p>
   ),
+  'slimibas-nauda': (
+    <p className="text-panel-muted">
+      Kalkulators aprēķina katras darba devēja apmaksātās dienas (2. līdz 9.) summu pēc likumā
+      noteiktās likmes, 75 procenti 2. un 3. dienā, 80 procenti no 4. dienas, un summē tās, lai
+      iegūtu kopējo slimības naudu.
+    </p>
+  ),
   'sirdsdarbibas-zonas': (
     <p className="text-panel-muted">
       Kalkulators aprēķina pulsa rezervi, atņemot miera pulsu no maksimālā pulsa, tad katrai zonai pieskaita
