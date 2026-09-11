@@ -23,6 +23,10 @@ interface PensijasKalkulatorsProps {
   recentActualWageGrowthYear: number;
   forecastWageGrowthPercent: number;
   forecastWageGrowthYear: number;
+  /** Caption under the retirement age slider, describing what the min/max range means.
+   * Differs between the standard calculator (deferred retirement, 65-70) and the early
+   * retirement calculator (63-64) that reuses this same component and compute module. */
+  rangeCaption: React.ReactNode;
 }
 
 // Assumed legal working age, used only to decide whether to show the pre 1996 record
@@ -49,6 +53,7 @@ export function PensijasKalkulators({
   recentActualWageGrowthYear,
   forecastWageGrowthPercent,
   forecastWageGrowthYear,
+  rangeCaption,
 }: PensijasKalkulatorsProps) {
   const [birthYear, setBirthYear] = useState(defaultBirthYear);
   const [grossSalaryMonthly, setGrossSalaryMonthly] = useState(defaultGrossSalaryMonthly);
@@ -194,11 +199,7 @@ export function PensijasKalkulators({
           />
           <span className="font-mono text-lg text-panel-text">{retirementAge}</span>
         </div>
-        <p className="text-caption text-panel-faint">
-          No {minRetirementAge} līdz {maxRetirementAge} gadiem, tikai atliktā pensionēšanās. Vispārējā vecuma
-          pensija Latvijā nav pieejama pirms 65 gadu vecuma, un priekšlaicīga pensionēšanās ar citu kārtību šeit nav
-          modelēta.
-        </p>
+        <p className="text-caption text-panel-faint">{rangeCaption}</p>
       </fieldset>
     </div>
   );

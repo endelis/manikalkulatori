@@ -38,6 +38,7 @@ const BASE_PROPS = {
   recentActualWageGrowthYear: RECENT_ACTUAL_WAGE_GROWTH_YEAR,
   forecastWageGrowthPercent: FORECAST_WAGE_GROWTH_PERCENT,
   forecastWageGrowthYear: FORECAST_WAGE_GROWTH_YEAR,
+  rangeCaption: 'test range caption',
 };
 
 const CAVEAT_TEXT = 'iespējams, ir apdrošināšanas stāžs arī pirms 1996';

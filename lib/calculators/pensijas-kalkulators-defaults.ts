@@ -14,6 +14,16 @@ export const MAX_RETIREMENT_AGE = 70;
 export const DEFAULT_RETIREMENT_AGE = 65;
 export const MIN_INSURANCE_RECORD_YEARS = 20;
 
+// Early retirement (priekšlaicīga pensionēšanās): likums "Par valsts pensijām", 11. panta
+// sestā daļa — persons with at least 30 years of insurance record may retire up to 2
+// years before the standard age. Uses the exact same NDC capital / coefficient G formula
+// as standard retirement, just at a younger age (the G table already covers 63-64), per
+// https://likumi.lv/ta/id/38048-par-valsts-pensijam, fetched 2026-09-11.
+export const MIN_EARLY_RETIREMENT_AGE = 63;
+export const MAX_EARLY_RETIREMENT_AGE = 64;
+export const DEFAULT_EARLY_RETIREMENT_AGE = 63;
+export const MIN_INSURANCE_RECORD_YEARS_FOR_EARLY_RETIREMENT = 30;
+
 // The year the NDC pension capital system began; insurance record before this year is
 // out of scope for this calculator (the Ks pre-1996 term is excluded from MVP, see
 // claude/pension-calculator-defaults-2026.md, "Zināmie vienkāršojumi").

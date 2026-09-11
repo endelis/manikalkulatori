@@ -606,7 +606,23 @@ export const calculators: CalculatorMeta[] = [
       'prognozējamā pensija',
       'mana pensija kalkulators',
     ],
-    contentUpdatedAt: '2026-09-11T22:21:00+03:00',
+    contentUpdatedAt: '2026-09-11T22:26:33+03:00',
+  },
+  {
+    slug: 'priekslaicigas-pensijas-kalkulators',
+    category: 'finanses',
+    title: 'Priekšlaicīgas pensijas kalkulators',
+    h1: 'Cik liela būs mana pensija, pensionējoties priekšlaicīgi',
+    intro:
+      'Ievadi dzimšanas gadu, algu un apdrošināšanas stāžu, uzzini aptuvenu 1. līmeņa pensiju, pensionējoties līdz 2 gadiem agrāk.',
+    metaDescription:
+      'Aprēķini aptuvenu Latvijas 1. līmeņa pensiju priekšlaicīgas pensionēšanās gadījumā (63 vai 64 gadu vecumā), ar vismaz 30 gadu apdrošināšanas stāžu.',
+    keywords: [
+      'priekšlaicīga pensija',
+      'priekšlaicīga pensionēšanās',
+      'priekšlaicīgas pensijas kalkulators',
+    ],
+    contentUpdatedAt: '2026-09-11T22:26:33+03:00',
   },
   {
     slug: 'tumsas-kalkulators',
@@ -832,6 +848,7 @@ export const articles: ArticleMeta[] = [
 export const CUSTOM_ROUTED_SLUGS = new Set<string>([
   'dzimstibas-kalkulators',
   'pensijas-kalkulators',
+  'priekslaicigas-pensijas-kalkulators',
   'tumsas-kalkulators',
 ]);
 

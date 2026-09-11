@@ -103,6 +103,20 @@ export default function PensijasKalkulatorsPage() {
           recentActualWageGrowthYear={RECENT_ACTUAL_WAGE_GROWTH_YEAR}
           forecastWageGrowthPercent={FORECAST_WAGE_GROWTH_PERCENT}
           forecastWageGrowthYear={FORECAST_WAGE_GROWTH_YEAR}
+          rangeCaption={
+            <>
+              No {MIN_RETIREMENT_AGE} līdz {MAX_RETIREMENT_AGE} gadiem, tikai atliktā pensionēšanās. Vispārējā
+              vecuma pensija Latvijā nav pieejama pirms 65 gadu vecuma. Ja tev ir vismaz 30 gadu apdrošināšanas
+              stāžs, priekšlaicīga pensionēšanās 2 gadus agrāk ir iespējama{' '}
+              <Link
+                href="/finanses/priekslaicigas-pensijas-kalkulators"
+                className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+              >
+                atsevišķā kalkulatorā
+              </Link>
+              .
+            </>
+          }
         />
 
         <section aria-labelledby="formula-heading" className="flex flex-col gap-3">
