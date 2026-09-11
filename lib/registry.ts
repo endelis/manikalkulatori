@@ -919,6 +919,18 @@ export const articles: ArticleMeta[] = [
     ],
     contentUpdatedAt: '2026-09-11T23:42:00+03:00',
   },
+  {
+    slug: 'etf-pamati-pensijas-uzkrajumam',
+    category: 'finanses',
+    title: 'ETF pamati pensijas uzkrājumam',
+    h1: 'Kas ir ETF un kāpēc tie noder ilgtermiņa uzkrājumam',
+    intro:
+      'Vienkāršs skaidrojums, kas ir ETF, kāpēc zemas izmaksas ir svarīgas, un kā tos apliek ar nodokli Latvijā.',
+    metaDescription:
+      'ETF pamati ilgtermiņa uzkrājumam Latvijā: kas ir ETF, izmaksu nozīme, diversifikācija un nodokļu piemērošana.',
+    keywords: ['kas ir etf', 'etf pamati', 'etf pensijas uzkrājumam'],
+    contentUpdatedAt: '2026-09-11T23:45:48+03:00',
+  },
 ];
 
 /**

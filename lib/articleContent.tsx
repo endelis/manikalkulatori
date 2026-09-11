@@ -206,6 +206,33 @@ export const articleBody: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  'etf-pamati-pensijas-uzkrajumam': (
+    <>
+      <p>
+        ETF (biržā tirgots fonds) apvieno daudzu uzņēmumu vai obligāciju vērtspapīrus vienā ieguldījumā,
+        kuru pērk un pārdod biržā tāpat kā atsevišķu akciju. Vienas ETF daļas iegāde vienlaikus nozīmē
+        daļu no visiem fondā iekļautajiem instrumentiem, tāpēc tas ir vienkāršs veids, kā diversificēt bez
+        vajadzības pašam izvēlēties un sekot līdzi katram atsevišķam uzņēmumam.
+      </p>
+      <p>
+        Ilgtermiņa uzkrājumam īpaši svarīgas ir zemas pārvaldīšanas izmaksas. Pat neliela gada maksa
+        procentos, savākta desmitiem gadu laikā, salikto procentu efekta dēļ var ievērojami samazināt
+        gala summu, tāpēc izmaksu salīdzināšana starp fondiem ir viens no vienkāršākajiem veidiem, kā
+        uzlabot ilgtermiņa rezultātu, nemēģinot uzminēt tirgus kustību.
+      </p>
+      <p>
+        Latvijā ETF ienākumu (kapitāla pieaugumu un dividendes) apliek ar 25,5% iedzīvotāju ienākuma
+        nodokli. Ja ETF tiek turēts ieguldījumu kontā, nodoklis jāmaksā tikai par summu, kas izņemta no
+        konta un pārsniedz iemaksāto, nevis par katru atsevišķu pārdošanu vai rebalansēšanu konta
+        ietvaros.
+      </p>
+      <p>
+        Kā ar jebkuru ieguldījumu biržā tirgotos vērtspapīros, vērtība var svārstīties, un iespējams
+        zaudēt daļu vai visu ieguldīto summu, tāpēc ETF piemērotība atkarīga no individuālā termiņa un
+        riska tolerances, nevis ir universāli piemērots risinājums ikvienam.
+      </p>
+    </>
+  ),
 };
 
 /** Optional "Avoti" section per article slug — omit an entry for an article with no
