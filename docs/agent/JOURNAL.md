@@ -651,3 +651,37 @@ need likumi.lv sourcing for tax brackets — the next research-heavy
 one), (b) similar content-quality passes on other high-impression
 pages once more GSC data accumulates, or (c) resume the normal wave
 order. No BLOCKED items pending.
+
+## 2026-09-11 14:22
+
+Did: BLOCKED — attempted alga-neto/alga-bruto (salary net/gross).
+WebSearch turned up a synthesis (25.5%/33% IIN brackets, 550 EUR
+non-taxable minimum) but per CHARTER.md's gated rule this alone can
+never satisfy the sourcing bar. Tried to verify directly: likumi.lv's
+full "Par iedzīvotāju ienākuma nodokli" statute text got cut off
+before reaching Article 15 (the actual rate schedule) in two separate
+WebFetch attempts (different anchors); the VID PDF
+(vid.gov.lv/lv/media/1937/download) turned out to be a scanned image,
+not extractable text. Could not get complete, verified rate figures
+from any primary source this cycle.
+Did NOT ship it: this is the single highest-stakes YMYL calculator on
+the whole site (net salary, used by nearly everyone) and Latvia's
+system is genuinely complex — progressive brackets plus a
+differentiated non-taxable minimum that phases with income, not a
+flat rate. Guessing here is worse than not shipping.
+Learned: WebFetch's summarization step can silently truncate a long
+statute before reaching the relevant article, and a scanned-image PDF
+returns nothing usable — for a document this long, fetching a
+specific anchor didn't help either. A future attempt should try
+fetching in smaller, more targeted pieces (e.g. ask specifically "what
+does 15. pants say, verbatim" as the very first fetch of a session
+rather than a broad "find rates" prompt), or try likumi.lv's plain-text
+export if one exists, or ask the user directly for current-year
+figures if automated sourcing keeps failing — this one is worth
+getting right even if it takes a dedicated cycle.
+Next: picking a safer item instead — atvalinajuma-nauda (vacation
+pay). Scoping around the sourcing problem: take the user's own average
+daily/monthly earnings as a direct input (not something the agent
+computes from raw payroll data via Darba likums' 6-month averaging
+rule), so the calculator is just earnings-per-day × vacation days,
+pure arithmetic, no legal figure asserted as fact.
