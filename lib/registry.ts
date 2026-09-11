@@ -799,7 +799,20 @@ export const calculators: CalculatorMeta[] = [
  * `ArticleShell`, body content from `lib/articleContent.tsx`, and the same
  * `content/faq/<slug>.md` convention calculators use.
  */
-export const articles: ArticleMeta[] = [];
+export const articles: ArticleMeta[] = [
+  {
+    slug: 'minimala-pensija',
+    category: 'finanses',
+    title: 'Minimālā pensija Latvijā',
+    h1: 'Cik liela ir minimālā vecuma pensija Latvijā 2026. gadā',
+    intro:
+      'Uzzini, kāds ir minimālās vecuma pensijas apmērs 2026. gadā, kā to aprēķina un kam tā pienākas.',
+    metaDescription:
+      'Minimālās vecuma pensijas apmērs Latvijā 2026. gadā: aprēķina bāze, koeficients un summa pēc apdrošināšanas stāža, ar avotu VSAA.',
+    keywords: ['minimālā pensija', 'minimālā vecuma pensija', 'minimālās pensijas apmērs 2026'],
+    contentUpdatedAt: '2026-09-11T22:16:13+03:00',
+  },
+];
 
 /**
  * Slugs that ship a bespoke `app/<category>/<slug>/page.tsx` instead of going through
