@@ -9,3 +9,11 @@ Braukšana bez derīgas OCTA polises ir sodāma, un negadījuma gadījumā visi 
 ### Vai lētākais piedāvājums vienmēr ir izdevīgākais?
 
 Cena ir galvenais OCTA izvēles kritērijs, jo pamata segums likumā ir noteikts vienādi visiem. Tomēr vērts pārbaudīt arī atbalsta dienesta pieejamību un papildu pakalpojumus, ko piedāvā apdrošinātājs.
+
+### Kuri apdrošinātāji Latvijā piedāvā OCTA?
+
+Latvijā OCTA piedāvā vairāki apdrošinātāji, piemēram BTA, Balta, If un Gjensidige. Tā kā pamata segums likumā noteikts vienādi visiem, galvenā atšķirība starp piedāvājumiem ir cena.
+
+### Kā salīdzināt OCTA piedāvājumus no dažādiem apdrošinātājiem?
+
+Ievāc piedāvājumus no vairākiem apdrošinātājiem ar identiskiem auto un vadītāja datiem, tad ievadi tos kalkulatorā, lai uzreiz redzētu, kurš piedāvājums ir lētākais un cik liela ir starpība pret pārējiem.
