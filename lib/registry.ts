@@ -687,7 +687,7 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi bruto algu, uzzini algu uz rokas pēc VSAOI un IIN atskaitīšanas.',
     metaDescription: 'Aprēķini neto algu no bruto algas pēc VSAOI (10,5%) un progresīvās IIN likmes ar neapliekamo minimumu.',
     keywords: ['algas neto kalkulators', 'alga uz rokas', 'bruto neto kalkulators'],
-    contentUpdatedAt: '2026-09-11T15:05:00+03:00',
+    contentUpdatedAt: '2026-09-11T15:36:11+03:00',
   },
   {
     slug: 'alga-bruto',
