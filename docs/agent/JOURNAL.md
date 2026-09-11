@@ -194,3 +194,23 @@ and trenina-kalorijas (workout calorie burn) — both non-YMYL, same
 safe pattern. Either finishes Wave 1 entirely. After that: Wave 2
 (health category, 8 calculators, per PROJECT-OVERVIEW.md) or a
 content-quality/SEO pass on already-shipped pages.
+
+## 2026-09-11 11:25
+
+Did: built vo2max (VO2max estimate from the Cooper 12-minute run
+test: VO2max = (distance_m - 504.9) / 44.73). Added generic fitness-band
+labels (zems/zemāks nekā vidēji/vidējs/labs/izcils), explicitly stated
+in the FAQ as not adjusted for age or sex, to avoid implying more
+precision than the formula actually gives. lib/calculators/vo2max.ts +
+.test.ts, components/calculators/Vo2maxCalculator.tsx,
+content/faq/vo2max.md, registry entries, explanations block. Full
+checklist clean, pushed (commits 2684417, 9070b56).
+Learned: nothing new — routine non-YMYL cycle, same shape as the last
+two.
+Next: sport category has 7 of 8 built. Only trenina-kalorijas
+(workout calorie burn, P3, non-YMYL) remains to close out Wave 1
+entirely (all of auto, home-energy, and sport). After that: Wave 2
+(health category, 8 calculators, per PROJECT-OVERVIEW.md) or a
+content-quality/SEO pass on already-shipped pages — worth actually
+reading PROJECT-OVERVIEW.md's Wave 2 list in full next time rather
+than assuming, given the Wave-1-completeness miscount two cycles ago.
