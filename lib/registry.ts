@@ -453,6 +453,17 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-11T10:53:35+03:00',
   },
   {
+    slug: 'vo2max',
+    category: 'sports',
+    title: 'VO2max kalkulators',
+    h1: 'Kāds ir tavs VO2max?',
+    intro: 'Ievadi 12 minūtēs nobraukto distanci, uzzini aptuveno VO2max pēc Kūpera testa.',
+    metaDescription:
+      'Aprēķini VO2max no Kūpera 12 minūšu skriešanas testa rezultāta un uzzini aptuveno izturības novērtējumu.',
+    keywords: ['vo2max kalkulators', 'kūpera tests', 'vo2max aprēķins'],
+    contentUpdatedAt: '2026-09-11T11:21:51+03:00',
+  },
+  {
     slug: 'peldesanas-css',
     category: 'sports',
     title: 'Peldēšanas CSS kalkulators',

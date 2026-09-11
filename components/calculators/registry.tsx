@@ -35,6 +35,7 @@ import { PeldesanasCssCalculator } from './PeldesanasCssCalculator';
 import { EkspluatacijasNodoklaCalculator } from './EkspluatacijasNodoklaCalculator';
 import { UznemumaAutoNodoklaCalculator } from './UznemumaAutoNodoklaCalculator';
 import { MaratonaLaikaPrognozesCalculator } from './MaratonaLaikaPrognozesCalculator';
+import { Vo2maxCalculator } from './Vo2maxCalculator';
 
 /**
  * Props every calculator component receives from the calculator page.
@@ -82,6 +83,7 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'ekspluatacijas-nodoklis': EkspluatacijasNodoklaCalculator,
   'uznemuma-auto-nodoklis': UznemumaAutoNodoklaCalculator,
   'maratona-laika-prognoze': MaratonaLaikaPrognozesCalculator,
+  'vo2max': Vo2maxCalculator,
 };
 
 export function getCalculatorComponent(slug: string): ComponentType<CalculatorComponentProps> | undefined {

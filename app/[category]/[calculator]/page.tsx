@@ -453,6 +453,12 @@ const explanations: Record<string, React.ReactNode> = {
       un reizina ar atskaites laiku, iegūstot prognozēto laiku pēc Rīgela formulas.
     </p>
   ),
+  'vo2max': (
+    <p className="text-panel-muted">
+      Kalkulators atņem 504,9 no 12 minūtēs nobrauktās distances metros un dala ar 44,73, iegūstot
+      VO2max pēc Kūpera testa formulas.
+    </p>
+  ),
   'sirdsdarbibas-zonas': (
     <p className="text-panel-muted">
       Kalkulators aprēķina pulsa rezervi, atņemot miera pulsu no maksimālā pulsa, tad katrai zonai pieskaita
