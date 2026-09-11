@@ -549,6 +549,12 @@ const explanations: Record<string, React.ReactNode> = {
       efektu.
     </p>
   ),
+  'inflacija': (
+    <p className="text-panel-muted">
+      Kalkulators dala šodienas summu ar (1 plus inflācijas likme) kāpinātu gadu skaitā, iegūstot
+      nākotnes pirktspēju, tad starpību pret sākotnējo summu uzrāda kā zaudēto pirktspēju.
+    </p>
+  ),
   'sirdsdarbibas-zonas': (
     <p className="text-panel-muted">
       Kalkulators aprēķina pulsa rezervi, atņemot miera pulsu no maksimālā pulsa, tad katrai zonai pieskaita

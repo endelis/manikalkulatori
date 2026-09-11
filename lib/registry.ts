@@ -640,6 +640,16 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-11T13:52:12+03:00',
   },
   {
+    slug: 'inflacija',
+    category: 'finanses',
+    title: 'Inflācijas kalkulators',
+    h1: 'Kā inflācija ietekmē tavu naudu?',
+    intro: 'Ievadi summu, inflācijas likmi un gadu skaitu, uzzini nākotnes pirktspēju.',
+    metaDescription: 'Aprēķini, kā inflācija ietekmē naudas pirktspēju laika gaitā pēc summas, likmes un gadu skaita.',
+    keywords: ['inflācijas kalkulators', 'pirktspējas kalkulators', 'naudas vērtības kalkulators'],
+    contentUpdatedAt: '2026-09-11T13:56:38+03:00',
+  },
+  {
     slug: 'grutniecibas-termins',
     category: 'veseliba',
     title: 'Grūtniecības termiņa kalkulators',
