@@ -20,7 +20,7 @@ export function ToggleField({ id, label, value, onChange, trueLabel, falseLabel 
           type="button"
           aria-pressed={!value}
           onClick={() => onChange(false)}
-          className={`flex-1 rounded-md border px-3 py-2 text-sm transition-colors duration-[120ms] ${
+          className={`flex-1 rounded-xl border px-3 py-2.5 text-sm transition-colors duration-[120ms] ${
             !value
               ? 'border-panel-border-strong bg-panel-surface-2 text-panel-text'
               : 'border-panel-border bg-panel-surface text-panel-muted'
@@ -32,7 +32,7 @@ export function ToggleField({ id, label, value, onChange, trueLabel, falseLabel 
           type="button"
           aria-pressed={value}
           onClick={() => onChange(true)}
-          className={`flex-1 rounded-md border px-3 py-2 text-sm transition-colors duration-[120ms] ${
+          className={`flex-1 rounded-xl border px-3 py-2.5 text-sm transition-colors duration-[120ms] ${
             value
               ? 'border-panel-border-strong bg-panel-surface-2 text-panel-text'
               : 'border-panel-border bg-panel-surface text-panel-muted'

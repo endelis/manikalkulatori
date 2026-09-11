@@ -17,7 +17,7 @@ export function NumberField({ id, label, value, onChange, unit, min = 0, max, st
       <label htmlFor={id} className="text-label uppercase text-panel-muted">
         {label}
       </label>
-      <div className="flex items-center gap-2 rounded-md border border-panel-border bg-panel-surface-2 px-3 py-2 transition-colors duration-[120ms]">
+      <div className="flex items-center gap-2 rounded-xl border border-panel-border-strong bg-panel-surface-2 px-3 py-2.5 transition-colors duration-[120ms] focus-within:border-panel-text">
         <input
           id={id}
           type="number"
