@@ -1002,3 +1002,49 @@ amendment-date check (the 2025 change, if real, would show as a
 recent amendment note). Finance category otherwise sits at a clean
 13/14; fine to move to other categories or content-quality work
 without waiting on this one.
+
+## 2026-09-11 16:10
+
+Did: resolved last cycle's BLOCKED item and shipped iin-kalkulators
+(capital income tax: gains, dividends, interest, all 25.5% flat since
+2025-01-01). The conflict resolved cleanly once I went back to the
+one source I already knew was current — fm.gov.lv's dedicated rates
+page (dated 2026-01-20, same page that gave the verified wage-tax
+threshold two cycles ago). The "20%" figure that conflicted with it
+turned out to come from several *dated news announcements* on the
+same domain (2020-08-26, 2020-10-12, 2023-01-11) — real content, just
+old, not updated since the 2025 rate change. Different failure mode
+from vid.gov.lv's navigation-only pages: these fm.gov.lv posts return
+genuine historical content that looks current if you don't check the
+date. lib/calculators/iin-kalkulators.ts + .test.ts,
+components/calculators/IinKalkulators.tsx, content/faq/iin-kalkulators.md,
+registry entry, explanations block. Commits 6b253fa, cf76240, one
+full checklist run, pushed.
+
+**MILESTONE: finance category is now 14/14 — complete.** Combined with
+Wave 1 (auto 12/12, home-energy 8/8, sport 8/8) and Wave 2 (health
+8/8), that's the entire original PROJECT-OVERVIEW.md 50-calculator
+plan built: 12+14+8+8+8 = 50/50. Plus everything built beyond the
+original 50 (majoklis material calculators, pensijas-kalkulators,
+tumsas-kalkulators, dzimstibas-kalkulators, the iedzivotaju-skaits
+pages). Every category is at parity with the original plan for the
+first time.
+
+Learned: a government page returning real, well-formatted content is
+not the same as that content being current — always check the
+page's own stated date, not just whether the fetch succeeded. A
+"navigation-only" failure (vid.gov.lv) and a "stale-but-plausible"
+failure (fm.gov.lv news posts) are both real risks and need different
+handling: the first is obvious and forces a retry, the second can
+silently ship a wrong figure if the date isn't checked. Going forward:
+always read the date on any government page before trusting its rate,
+regardless of which domain it's on.
+Next: with the original 50-calculator plan fully built, options for
+the next cycle: (a) re-check the full PROJECT-OVERVIEW.md list end to
+end for any small gaps or naming mismatches now that every category
+claims completion, (b) shift focus toward content-quality/SEO passes
+on existing pages (per the earlier KASKO/OCTA precedent) since raw
+calculator-count growth has hit its natural ceiling from the original
+plan, or (c) consider genuinely new calculator ideas beyond the
+original 50 if a clear demand signal emerges (e.g. from future GSC
+data). No BLOCKED items pending.
