@@ -308,3 +308,28 @@ idealais-svars next — standard formula (e.g. Devine or similar), no
 YMYL/sourcing risk. The remaining three (pregnancy, ovulation, blood
 alcohol) deserve careful wording as informational estimates, not
 medical advice, per the note two cycles ago.
+
+## 2026-09-11 12:30
+
+Did: built idealais-svars (ideal weight, Devine formula from 1974,
+a standard public medical-dosing reference formula). lib/calculators/idealais-svars.ts
++ .test.ts, components/calculators/IdealaSvaraCalculator.tsx,
+content/faq/idealais-svars.md, registry entry, explanations block.
+Full checklist clean, pushed (commits 687461e, c70c81f).
+Learned: nothing new — fourth health calculator shipped this active
+session (kmi, kaloriju-norma, tauku-procents, idealais-svars all
+today). Pausing the rapid-chain pace here: the four remaining health
+items include three (grutniecibas-termins, ovulacija, promiles) that
+are more directly health-sensitive than anything built so far
+(pregnancy/fertility/intoxication topics), and deserve a fresh,
+unhurried look rather than being rushed through back-to-back with
+everything else. udens-norma (water intake) is the one easy P3 item
+left; safe to batch with the sensitive three or do alone.
+Next: udens-norma (water intake, simple formula, no sensitivity
+concern) is the easy pick. Then grutniecibas-termins, ovulacija, and
+promiles — each needs explicit "informational estimate, not medical
+advice" framing in the FAQ/caption, standard well-known formulas
+(Naegele's rule for due date, standard fertile-window estimation,
+Widmark formula for BAC), still no external sourcing needed since
+these are public clinical-estimation formulas, not YMYL figures
+requiring an official source citation the way tax law did.
