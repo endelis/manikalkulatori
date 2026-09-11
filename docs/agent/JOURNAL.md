@@ -1160,3 +1160,67 @@ sweep here rather than stretching for marginal work; a GA export
 (offered, not yet provided) would be the natural unlock for the next
 round, or resuming normal wave-order work if nothing new comes in. No
 BLOCKED items pending.
+
+## 2026-09-11 19:45
+
+Did: shipped a full site-wide light UI redesign, direct user request driven
+end to end in this session (brainstorming -> spec -> plan -> implementation
+-> verification), superseding the dark "instrument panel" direction from
+the 2026-08-22 redesign. User feedback was direct: the dark theme "seems
+dark, rushed... not a very good experience," wanted something "smooth and
+very much user navigation friendly based on current 2026/2027 design
+patterns." Landed on a light, warm-neutral, card-based direction (spec:
+docs/superpowers/specs/2026-09-11-light-redesign-design.md, plan:
+docs/superpowers/plans/2026-09-11-light-redesign.md). Confirmed by
+inspection before starting that every calculator page is built from
+shared primitives (NumberField, ToggleField, ResultCard, Breakdown,
+CalculatorShell, Faq, RelatedCalculators) plus token-backed Tailwind
+classes, never a hardcoded hex — so retoning styles/tokens.css plus
+restyling ~9 shared files and pages restyled all 63 calculator pages at
+once, with zero per-calculator file edits and zero contentUpdatedAt
+bumps needed anywhere. Added SiteNav + MobileNavToggle, since the site
+had no persistent navigation before this (only in-page breadcrumbs) —
+that was the other half of the "navigation friendly" complaint. 13
+implementation commits plus this journal entry, all pushed; full
+checklist (tsc, build, 712 tests) green throughout.
+
+Caught two real problems during verification rather than shipping on
+faith: (1) computed actual WCAG contrast ratios for every new token
+instead of eyeballing hex values — 3 of 6 category accents (auto,
+sports, veseliba) failed AA against the new light background on first
+pass and needed darkening one shade; (2) used Playwright (installed
+fresh via npx, no project skill existed for running this app) to
+screenshot the actual rendered pages before pushing, and caught a real
+layout bug: the nav wordmark and 6 category links overlapped at desktop
+width because the header's inner container was capped at max-w-2xl (the
+narrow article-reading width), too narrow for logo + 6 links. Fixed by
+widening the nav container, adding whitespace-nowrap, and moving the
+mobile-hamburger breakpoint from 640px to 1024px so tablet widths get
+the hamburger instead of a half-wrapped row. Re-screenshot confirmed the
+fix at 1280px, 900px, and 400px.
+
+Also updated DESIGN-GUIDANCE.md, which still described the superseded
+dark direction as current (stale color values under shorthand var names
+that didn't even match the real --color-panel-*/--color-accent-* names
+in code, a "dark surface" ResultCard description, no mention of the new
+SiteNav) — left uncorrected, it would have misled any future work
+(mine or the user's) that treated it as source of truth per its own
+opening line. Fixed inline rather than filed as a followup.
+
+Learned: "run a build and it's green" is not the same as "look at the
+actual rendered page" — the nav overlap bug was invisible to
+tsc/build/tests (all pure Tailwind class strings, all valid) and only
+showed up in a real screenshot. Worth defaulting to a Playwright
+screenshot pass for any future shared-component/layout change, not
+just calculator-content changes. Also: computing real contrast ratios
+(simple luminance formula, five lines of Python) instead of eyeballing
+hex values caught 3 real AA failures that would have shipped invisibly
+wrong — cheap to do, should be standard for any token/color change
+from here on, light or dark.
+
+Next: no BLOCKED items. The redesign is live; reasonable next steps are
+(a) resume the deferred alga-neto/alga-bruto sourcing work flagged
+several entries back, (b) a fresh GSC pull now that the site looks
+different, to see whether bounce rate / time-on-page shifts, or (c)
+normal wave-order calculator building. No urgency on any of these; the
+redesign was the priority this session and is done.
