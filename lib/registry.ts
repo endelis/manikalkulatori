@@ -657,7 +657,7 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi vidējo dienas izpeļņu un atvaļinājuma dienu skaitu, uzzini kopējo atvaļinājuma naudas summu.',
     metaDescription: 'Aprēķini atvaļinājuma naudu no vidējās dienas izpeļņas un atvaļinājuma dienu skaita.',
     keywords: ['atvaļinājuma naudas kalkulators', 'atvaļinājuma nauda', 'vidējā izpeļņa atvaļinājumam'],
-    contentUpdatedAt: '2026-09-11T14:24:59+03:00',
+    contentUpdatedAt: '2026-09-11T14:25:12+03:00',
   },
   {
     slug: 'grutniecibas-termins',
