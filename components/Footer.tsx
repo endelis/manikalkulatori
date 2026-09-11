@@ -5,7 +5,7 @@ import { reopenCookieBanner } from '@/lib/cookieConsent';
 
 export function Footer() {
   return (
-    <footer className="mx-auto mt-16 flex max-w-2xl flex-col gap-3 border-t border-panel-border px-4 py-8 text-sm text-panel-muted">
+    <footer className="mx-auto mt-16 flex max-w-2xl flex-col gap-3 border-t border-panel-border px-4 py-10 text-sm text-panel-faint">
       <nav aria-label="Juridiskā informācija" className="flex flex-wrap gap-x-4 gap-y-2">
         <Link href="/par-mums" className="hover:text-panel-text">
           Par mums
