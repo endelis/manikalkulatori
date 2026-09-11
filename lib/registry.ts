@@ -638,7 +638,7 @@ export const calculators: CalculatorMeta[] = [
       'pensiju 3. līmeņa kalkulators',
       'pensiju 3 limenis nodoklu atmaksa',
     ],
-    contentUpdatedAt: '2026-09-11T22:34:51+03:00',
+    contentUpdatedAt: '2026-09-11T22:42:26+03:00',
   },
   {
     slug: 'tumsas-kalkulators',
@@ -850,6 +850,18 @@ export const articles: ArticleMeta[] = [
       'Minimālās vecuma pensijas apmērs Latvijā 2026. gadā: aprēķina bāze, koeficients un summa pēc apdrošināšanas stāža, ar avotu VSAA.',
     keywords: ['minimālā pensija', 'minimālā vecuma pensija', 'minimālās pensijas apmērs 2026'],
     contentUpdatedAt: '2026-09-11T22:16:13+03:00',
+  },
+  {
+    slug: 'priekslaicigas-vs-standarta-pensija',
+    category: 'finanses',
+    title: 'Priekšlaicīga vai standarta pensija',
+    h1: 'Priekšlaicīga vai standarta pensija, kas izdevīgāk',
+    intro:
+      'Salīdzini priekšlaicīgas un standarta pensionēšanās mēneša summu un uzzini, kas jāņem vērā, izvēloties.',
+    metaDescription:
+      'Priekšlaicīgas un standarta pensijas salīdzinājums Latvijā: kāpēc priekšlaicīgā pensija ir mazāka, kam tā pieejama, un kā izvēlēties.',
+    keywords: ['priekšlaicīga vai standarta pensija', 'pensijas izvēle', 'kad izdevīgāk pensionēties'],
+    contentUpdatedAt: '2026-09-11T22:43:54+03:00',
   },
 ];
 

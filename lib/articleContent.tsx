@@ -25,6 +25,30 @@ export const articleBody: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  'priekslaicigas-vs-standarta-pensija': (
+    <>
+      <p>
+        Latvijā standarta vecuma pensija pienākas no 65 gadu vecuma, ja ir vismaz 20 gadu apdrošināšanas
+        stāžs. Personām ar vismaz 30 gadu stāžu ir vēl viena iespēja: pensionēties līdz 2 gadiem agrāk,
+        63 vai 64 gadu vecumā.
+      </p>
+      <p>
+        Priekšlaicīgā pensija vienmēr ir mazāka par to, ko tā pati persona saņemtu, nogaidot līdz 65
+        gadiem, un šī atšķirība ir pastāvīga: tā turpinās visu atlikušo mūžu, nevis izlīdzinās vēlāk. Divu
+        iemeslu dēļ. Pirmkārt, agrāk pensionējoties, uzkrātajā kapitālā ir mazāk iemaksu, jo darba mūžs ir
+        īsāks. Otrkārt, koeficients G jaunākā vecumā ir lielāks (jo paredzamais izmaksas periods ir garāks),
+        tāpēc tas pats kapitāls, dalīts ar lielāku skaitli, dod mazāku mēneša summu.
+      </p>
+      <p>
+        Kas tad var padarīt priekšlaicīgu pensionēšanos saprātīgu izvēli, ja summa ir zemāka? Galvenokārt
+        situācijas, kad turpmāka strādāšana pati par sevi vairs nav vēlama vai iespējama (veselības stāvoklis,
+        darba tirgus situācija konkrētajā profesijā vai vecuma grupā), un divu gadu agrāka pensijas izmaksa
+        atsver zemāko mēneša summu. Tīri finansiālā ziņā, ja veselība un darba iespējas to atļauj, nogaidīšana
+        līdz standarta vecumam (vai pat vēlāk, jo katrs papildu gads to vēl palielina) dod lielāku mēneša
+        pensiju.
+      </p>
+    </>
+  ),
 };
 
 /** Optional "Avoti" section per article slug — omit an entry for an article with no
