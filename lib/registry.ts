@@ -650,6 +650,16 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-11T13:56:50+03:00',
   },
   {
+    slug: 'atvalinajuma-nauda',
+    category: 'finanses',
+    title: 'Atvaļinājuma naudas kalkulators',
+    h1: 'Cik liela būs tava atvaļinājuma nauda?',
+    intro: 'Ievadi vidējo dienas izpeļņu un atvaļinājuma dienu skaitu, uzzini kopējo atvaļinājuma naudas summu.',
+    metaDescription: 'Aprēķini atvaļinājuma naudu no vidējās dienas izpeļņas un atvaļinājuma dienu skaita.',
+    keywords: ['atvaļinājuma naudas kalkulators', 'atvaļinājuma nauda', 'vidējā izpeļņa atvaļinājumam'],
+    contentUpdatedAt: '2026-09-11T14:24:59+03:00',
+  },
+  {
     slug: 'grutniecibas-termins',
     category: 'veseliba',
     title: 'Grūtniecības termiņa kalkulators',

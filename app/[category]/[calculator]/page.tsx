@@ -555,6 +555,12 @@ const explanations: Record<string, React.ReactNode> = {
       nākotnes pirktspēju, tad starpību pret sākotnējo summu uzrāda kā zaudēto pirktspēju.
     </p>
   ),
+  'atvalinajuma-nauda': (
+    <p className="text-panel-muted">
+      Kalkulators reizina ievadīto vidējo dienas izpeļņu ar atvaļinājuma dienu skaitu, iegūstot
+      kopējo atvaļinājuma naudas summu.
+    </p>
+  ),
   'sirdsdarbibas-zonas': (
     <p className="text-panel-muted">
       Kalkulators aprēķina pulsa rezervi, atņemot miera pulsu no maksimālā pulsa, tad katrai zonai pieskaita

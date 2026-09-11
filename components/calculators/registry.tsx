@@ -51,6 +51,7 @@ import { HipotekasParmaksasCalculator } from './HipotekasParmaksasCalculator';
 import { PvnKalkulators } from './PvnKalkulators';
 import { UzkrajumuCalculator } from './UzkrajumuCalculator';
 import { InflacijasCalculator } from './InflacijasCalculator';
+import { AtvalinajumaNaudasCalculator } from './AtvalinajumaNaudasCalculator';
 
 /**
  * Props every calculator component receives from the calculator page.
@@ -114,6 +115,7 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'pvn-kalkulators': PvnKalkulators,
   'uzkrajumi': UzkrajumuCalculator,
   'inflacija': InflacijasCalculator,
+  'atvalinajuma-nauda': AtvalinajumaNaudasCalculator,
 };
 
 export function getCalculatorComponent(slug: string): ComponentType<CalculatorComponentProps> | undefined {
