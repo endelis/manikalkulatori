@@ -8,6 +8,7 @@ import { DegvielasIzmaksasCalculator } from './DegvielasIzmaksasCalculator';
 import { UzladesIzmaksasCalculator } from './UzladesIzmaksasCalculator';
 import { NolietojumsCalculator } from './NolietojumsCalculator';
 import { RiepuIzmeraCalculator } from './RiepuIzmeraCalculator';
+import { RiepuProtektoraDzilumaCalculator } from './RiepuProtektoraDzilumaCalculator';
 import { CelaIzmaksasCalculator } from './CelaIzmaksasCalculator';
 import { SolaruAtmaksasCalculator } from './SolaruAtmaksasCalculator';
 import { SiltumsuknaAtmaksasCalculator } from './SiltumsuknaAtmaksasCalculator';
@@ -88,6 +89,7 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'uzlades-izmaksas': UzladesIzmaksasCalculator,
   'nolietojums': NolietojumsCalculator,
   'riepu-izmers': RiepuIzmeraCalculator,
+  'riepu-protektora-dzilums': RiepuProtektoraDzilumaCalculator,
   'cela-izmaksas': CelaIzmaksasCalculator,
   'solaru-atmaksa': SolaruAtmaksasCalculator,
   'siltumsukna-atmaksa': SiltumsuknaAtmaksasCalculator,

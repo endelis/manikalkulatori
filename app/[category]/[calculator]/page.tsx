@@ -196,11 +196,41 @@ const explanations: Record<string, React.ReactNode> = {
     </p>
   ),
   'riepu-izmers': (
-    <p className="text-panel-muted">
-      Kalkulators aprēķina riepas kopējo diametru no diska izmēra un riepas platuma un profila, gan
-      vecajai, gan jaunajai riepai. Diametru attiecība parāda, par cik procentiem mainās reālais ātrums
-      salīdzinājumā ar spidometra rādījumu.
-    </p>
+    <>
+      <p className="text-panel-muted">
+        Kalkulators aprēķina riepas kopējo diametru no diska izmēra un riepas platuma un profila, gan
+        vecajai, gan jaunajai riepai. Diametru attiecība parāda, par cik procentiem mainās reālais ātrums
+        salīdzinājumā ar spidometra rādījumu.
+      </p>
+      <p className="text-panel-muted">
+        Sk. arī{' '}
+        <Link
+          href="/auto/riepu-protektora-dzilums"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          riepu protektora dziļuma kalkulatoru
+        </Link>
+        .
+      </p>
+    </>
+  ),
+  'riepu-protektora-dzilums': (
+    <>
+      <p className="text-panel-muted">
+        Kalkulators salīdzina ievadīto protektora dziļumu ar likumā noteikto minimumu, kas atkarīgs no
+        izvēlētās sezonas: 1,6 mm parastā periodā, 4 mm obligātās ziemas riepu lietošanas periodā.
+      </p>
+      <p className="text-panel-muted">
+        Sk. arī{' '}
+        <Link
+          href="/auto/riepu-izmers"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          riepu izmēra kalkulatoru
+        </Link>
+        .
+      </p>
+    </>
   ),
   'cela-izmaksas': (
     <p className="text-panel-muted">
@@ -1208,6 +1238,35 @@ const limitationsContent: Record<string, React.ReactNode> = {
  * reasonable placeholders the user is expected to override).
  */
 const sourcesContent: Record<string, React.ReactNode> = {
+  'riepu-protektora-dzilums': (
+    <ul className="flex flex-col gap-2 text-sm text-panel-muted">
+      <li>
+        Minimālais protektora dziļums vieglajam automobilim ziemas periodā (4 mm),{' '}
+        <a
+          href="https://www.csdd.lv/jaunumi/prasibas-transportlidzeklu-riepam-ziemas-perioda"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          CSDD
+        </a>
+        , izgūts 2026. gada 12. septembrī.
+      </li>
+      <li>
+        Minimālais protektora dziļums parastā periodā (1,6 mm) un regulas nosaukums (MK noteikumi Nr.
+        295),{' '}
+        <a
+          href="https://lvportals.lv/e-konsultacijas/28794-var-atskirties-riepu-protektora-dzilums-2023"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          LV portāls
+        </a>
+        , izgūts 2026. gada 12. septembrī.
+      </li>
+    </ul>
+  ),
   'jumta-seguma-daudzums': (
     <ul className="flex flex-col gap-2 text-sm text-panel-muted">
       <li>

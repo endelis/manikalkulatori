@@ -195,6 +195,22 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-11T17:36:37+03:00',
   },
   {
+    slug: 'riepu-protektora-dzilums',
+    category: 'auto',
+    title: 'Riepu protektora dziļuma kalkulators',
+    h1: 'Vai riepas protektora dziļums atbilst prasībai?',
+    intro:
+      'Ievadi riepas protektora dziļumu un norādi sezonu, uzzini, vai riepa atbilst likumā noteiktajai prasībai.',
+    metaDescription:
+      'Pārbaudi, vai riepas protektora dziļums atbilst Latvijas prasībai (1,6 mm parastā periodā, 4 mm obligātās ziemas riepu sezonā).',
+    keywords: [
+      'riepu protektora dziļuma kalkulators',
+      'minimālais protektora dziļums',
+      'ziemas riepu protektors',
+    ],
+    contentUpdatedAt: '2026-09-12T14:21:20+03:00',
+  },
+  {
     slug: 'cela-izmaksas',
     category: 'auto',
     title: 'Ceļa izmaksas kalkulators',
@@ -547,7 +563,7 @@ export const calculators: CalculatorMeta[] = [
       'minimālais tualetes izmērs',
       'LBN 200-21 tualete',
     ],
-    contentUpdatedAt: '2026-09-12T14:10:03+03:00',
+    contentUpdatedAt: '2026-09-12T14:16:38+03:00',
   },
   {
     slug: 'kmi-kalkulators',
@@ -1173,6 +1189,10 @@ function findHubFor(slug: string): string | undefined {
  * explicitly, since this map is not auto-mirrored.
  */
 const RELATED_OVERRIDES: Record<string, string[]> = {
+  // Tire-related pair (auto).
+  'riepu-protektora-dzilums': ['riepu-izmers'],
+  'riepu-izmers': ['riepu-protektora-dzilums'],
+
   // LBN building-code cluster (majoklis): room/opening dimension compliance checks.
   'griestu-augstuma-kalkulators': [
     'logu-platibas-kalkulators',
