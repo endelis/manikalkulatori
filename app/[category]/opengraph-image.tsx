@@ -3,6 +3,7 @@ import { categories, getCategory } from '@/lib/registry';
 
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
+export const dynamicParams = false;
 
 const ACCENT_HEX: Record<string, string> = {
   auto: '#0F766E',
@@ -13,12 +14,13 @@ const ACCENT_HEX: Record<string, string> = {
   sabiedriba: '#7C3AED',
 };
 
-export function generateImageMetadata({ params }: { params: { category: string } }) {
-  return getCategory(params.category) ? [{ id: params.category }] : [];
+export function generateStaticParams() {
+  return categories.map((category) => ({ category: category.slug }));
 }
 
-export default function OpengraphImage({ params }: { params: { category: string } }) {
-  const category = getCategory(params.category) ?? categories[0];
+export default async function OpengraphImage({ params }: { params: Promise<{ category: string }> }) {
+  const resolvedParams = await params;
+  const category = getCategory(resolvedParams.category) ?? categories[0];
   const accent = ACCENT_HEX[category.slug] ?? '#1C1917';
 
   return new ImageResponse(

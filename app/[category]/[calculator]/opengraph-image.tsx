@@ -3,6 +3,7 @@ import { CUSTOM_ROUTED_SLUGS, articles, calculators, getContent } from '@/lib/re
 
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
+export const dynamicParams = false;
 
 const ACCENT_HEX: Record<string, string> = {
   auto: '#0F766E',
@@ -13,9 +14,9 @@ const ACCENT_HEX: Record<string, string> = {
   sabiedriba: '#7C3AED',
 };
 
-export function generateImageMetadata() {
+export function generateStaticParams() {
   return [...calculators.filter((calculator) => !CUSTOM_ROUTED_SLUGS.has(calculator.slug)), ...articles].map(
-    (item) => ({ id: `${item.category}/${item.slug}` }),
+    (item) => ({ category: item.category, calculator: item.slug }),
   );
 }
 
