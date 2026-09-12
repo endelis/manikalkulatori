@@ -538,39 +538,94 @@ const explanations: Record<string, React.ReactNode> = {
         >
           hipotēkas maksājuma kalkulatoru
         </Link>
+        . Sk. arī{' '}
+        <Link
+          href="/majoklis/buvniecibas-prasibu-celvedis"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          pilnu būvniecības prasību ceļvedi
+        </Link>
         .
       </p>
     </>
   ),
   'ventilacijas-apjoma-kalkulators': (
-    <p className="text-panel-muted">
-      Kalkulators reizina cilvēku skaitu ar 15 m³/h (absolūtais minimums uz cilvēku, ja telpas vienīgais
-      piesārņojuma avots ir cilvēki), iegūstot minimālo nepieciešamo svaigā gaisa daudzumu. Dalot šo
-      summu ar telpas tilpumu, iegūst nepieciešamo gaisa apmaiņas biežumu (cik reižu stundā jāatjauno
-      viss telpas gaiss).
-    </p>
+    <>
+      <p className="text-panel-muted">
+        Kalkulators reizina cilvēku skaitu ar 15 m³/h (absolūtais minimums uz cilvēku, ja telpas vienīgais
+        piesārņojuma avots ir cilvēki), iegūstot minimālo nepieciešamo svaigā gaisa daudzumu. Dalot šo
+        summu ar telpas tilpumu, iegūst nepieciešamo gaisa apmaiņas biežumu (cik reižu stundā jāatjauno
+        viss telpas gaiss).
+      </p>
+      <p className="text-panel-muted">
+        Sk. arī{' '}
+        <Link
+          href="/majoklis/buvniecibas-prasibu-celvedis"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          pilnu būvniecības prasību ceļvedi
+        </Link>
+        .
+      </p>
+    </>
   ),
   'logu-platibas-kalkulators': (
-    <p className="text-panel-muted">
-      Kalkulators dala telpas grīdas platību ar 8, iegūstot minimālo pieļaujamo loga (stikla) platību.
-      Ja ievadītā loga platība ir vienāda ar šo vērtību vai lielāka, prasība ir izpildīta, ja mazāka,
-      kalkulators parāda trūkstošo starpību.
-    </p>
+    <>
+      <p className="text-panel-muted">
+        Kalkulators dala telpas grīdas platību ar 8, iegūstot minimālo pieļaujamo loga (stikla) platību.
+        Ja ievadītā loga platība ir vienāda ar šo vērtību vai lielāka, prasība ir izpildīta, ja mazāka,
+        kalkulators parāda trūkstošo starpību.
+      </p>
+      <p className="text-panel-muted">
+        Sk. arī{' '}
+        <Link
+          href="/majoklis/buvniecibas-prasibu-celvedis"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          pilnu būvniecības prasību ceļvedi
+        </Link>
+        .
+      </p>
+    </>
   ),
   'kapnu-formulas-kalkulators': (
-    <p className="text-panel-muted">
-      Kalkulators reizina pakāpiena augstumu ar 2 un pieskaita pakāpiena platumu, iegūstot Blondela
-      formulas summu. Ja summa ir robežās no 60 līdz 64 cm, kāpnes tiek uzskatītas par ērtām parastam
-      cilvēka solim, ja summa ir ārpus šī diapazona, kalkulators parāda, cik cm trūkst vai ir par daudz.
-    </p>
+    <>
+      <p className="text-panel-muted">
+        Kalkulators reizina pakāpiena augstumu ar 2 un pieskaita pakāpiena platumu, iegūstot Blondela
+        formulas summu. Ja summa ir robežās no 60 līdz 64 cm, kāpnes tiek uzskatītas par ērtām parastam
+        cilvēka solim, ja summa ir ārpus šī diapazona, kalkulators parāda, cik cm trūkst vai ir par daudz.
+      </p>
+      <p className="text-panel-muted">
+        Sk. arī{' '}
+        <Link
+          href="/majoklis/buvniecibas-prasibu-celvedis"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          pilnu būvniecības prasību ceļvedi
+        </Link>
+        .
+      </p>
+    </>
   ),
   'griestu-augstuma-kalkulators': (
-    <p className="text-panel-muted">
-      Kalkulators salīdzina ievadīto griestu augstumu ar LBN 200-21 7. punktā noteikto minimumu
-      izvēlētajam telpas veidam (dzīvojamā telpa, publiskā telpa, gaitenis vai sanitārā telpa,
-      tehniskā telpa). Ja ievadītais augstums ir vienāds ar šo vērtību vai lielāks, prasība ir
-      izpildīta, ja mazāks, kalkulators parāda trūkstošo starpību metros.
-    </p>
+    <>
+      <p className="text-panel-muted">
+        Kalkulators salīdzina ievadīto griestu augstumu ar LBN 200-21 7. punktā noteikto minimumu
+        izvēlētajam telpas veidam (dzīvojamā telpa, publiskā telpa, gaitenis vai sanitārā telpa,
+        tehniskā telpa). Ja ievadītais augstums ir vienāds ar šo vērtību vai lielāks, prasība ir
+        izpildīta, ja mazāks, kalkulators parāda trūkstošo starpību metros.
+      </p>
+      <p className="text-panel-muted">
+        Sk. arī{' '}
+        <Link
+          href="/majoklis/buvniecibas-prasibu-celvedis"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          pilnu būvniecības prasību ceļvedi
+        </Link>
+        .
+      </p>
+    </>
   ),
   'skriesanas-temps': (
     <p className="text-panel-muted">

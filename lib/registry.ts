@@ -1009,6 +1009,22 @@ export const articles: ArticleMeta[] = [
     keywords: ['kas ir etf', 'etf pamati', 'etf pensijas uzkrājumam'],
     contentUpdatedAt: '2026-09-11T23:45:48+03:00',
   },
+  {
+    slug: 'buvniecibas-prasibu-celvedis',
+    category: 'majoklis',
+    title: 'Mājokļa būvniecības prasību ceļvedis',
+    h1: 'Mājokļa būvniecības prasību ceļvedis',
+    intro:
+      'Viss LBN 200-21 un citu būvnormatīvu prasībās vienā vietā: siltinājums, ventilācija, logu platība, kāpnes un griestu augstums.',
+    metaDescription:
+      'Ceļvedis mājokļa būvniecības prasībām Latvijā: siltinājuma biezums, ventilācija, logu platība, kāpņu ērtums un griestu augstums pēc LBN.',
+    keywords: [
+      'būvniecības prasības mājoklim',
+      'LBN prasības dzīvojamai ēkai',
+      'mājokļa būvnormatīvi',
+    ],
+    contentUpdatedAt: '2026-09-12T13:40:00+03:00',
+  },
 ];
 
 /**
@@ -1065,17 +1081,50 @@ export function isArticleSlug(categorySlug: string, slug: string): boolean {
 }
 
 /**
- * Per category, the slug of a "hub" guide article that ties together several
- * calculators/articles on one topic (see e.g. lib/articleContent.tsx's
- * 'pensija-latvija-celvedis'). getRelatedCalculators always surfaces the hub first on
- * every other item in that category, since a hub is more useful to route a reader to
- * than another same-category item picked by keyword overlap alone, and it also fixes
- * an otherwise-real internal-linking gap: a hub added purely as one more `articles`
- * entry never naturally rises to the top of the default ordering below.
+ * A "hub" guide article that ties together several calculators/articles on one
+ * specific topic (see e.g. lib/articleContent.tsx's 'pensija-latvija-celvedis').
+ * getRelatedCalculators surfaces `hubSlug` first, but only for the items listed in
+ * `memberSlugs` — scoping to the category alone is too broad, since e.g. "finanses"
+ * also holds pvn-kalkulators, alga-neto, and kredita-kalkulators, none of which are
+ * meaningfully related to the pension guide even though they share a category. This
+ * also fixes an otherwise-real internal-linking gap: a hub added purely as one more
+ * `articles` entry never naturally rises to the top of the default ordering below.
  */
-const CATEGORY_HUB_SLUGS: Partial<Record<CategorySlug, string>> = {
-  finanses: 'pensija-latvija-celvedis',
-};
+interface CategoryHub {
+  hubSlug: string;
+  memberSlugs: string[];
+}
+
+const CATEGORY_HUBS: CategoryHub[] = [
+  {
+    hubSlug: 'pensija-latvija-celvedis',
+    memberSlugs: [
+      'pensijas-kalkulators',
+      'minimala-pensija',
+      'priekslaicigas-pensijas-kalkulators',
+      'priekslaicigas-vs-standarta-pensija',
+      'pensiju-3-limena-kalkulators',
+      'ka-izveleties-pensiju-3-limena-planu',
+      'ieguldijumu-konta-nodoklu-kalkulators',
+      'etf-pamati-pensijas-uzkrajumam',
+      'izdienas-pensija',
+    ],
+  },
+  {
+    hubSlug: 'buvniecibas-prasibu-celvedis',
+    memberSlugs: [
+      'siltinajuma-biezuma-kalkulators',
+      'ventilacijas-apjoma-kalkulators',
+      'logu-platibas-kalkulators',
+      'kapnu-formulas-kalkulators',
+      'griestu-augstuma-kalkulators',
+    ],
+  },
+];
+
+function findHubFor(slug: string): string | undefined {
+  return CATEGORY_HUBS.find((hub) => hub.memberSlugs.includes(slug))?.hubSlug;
+}
 
 /**
  * Hand-curated stronger relations, layered on top of the default same-category
@@ -1134,9 +1183,17 @@ export function getRelatedCalculators(current: CalculatorMeta, limit = 4): Calcu
     ranked.push(item);
   };
 
-  const hubSlug = CATEGORY_HUB_SLUGS[current.category];
-  if (hubSlug && hubSlug !== current.slug) {
-    add(poolBySlug.get(hubSlug));
+  // Viewing the hub itself: prioritize its own member spokes first.
+  const ownHub = CATEGORY_HUBS.find((hub) => hub.hubSlug === current.slug);
+  if (ownHub) {
+    for (const slug of ownHub.memberSlugs) {
+      add(poolBySlug.get(slug));
+    }
+  } else {
+    const hubSlug = findHubFor(current.slug);
+    if (hubSlug) {
+      add(poolBySlug.get(hubSlug));
+    }
   }
 
   for (const slug of RELATED_OVERRIDES[current.slug] ?? []) {

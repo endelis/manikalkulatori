@@ -290,6 +290,79 @@ export const articleBody: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  'buvniecibas-prasibu-celvedis': (
+    <>
+      <p>
+        Latvijas būvnormatīvi nosaka precīzas prasības mājokļa siltinājumam, ventilācijai, logu
+        platībai, kāpņu ērtumam un griestu augstumam. Turpmāk katrai prasībai ir sava sadaļa ar saiti
+        uz attiecīgo kalkulatoru.
+      </p>
+
+      <h2 className="font-sans text-h2">Siltinājums</h2>
+      <p>
+        LBN 002-19 nosaka maksimālo pieļaujamo siltuma caurlaidības koeficientu (U) katrai norobežojošai
+        konstrukcijai (ārsienai, jumtam, grīdai).{' '}
+        <Link
+          href="/majoklis/siltinajuma-biezuma-kalkulators"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          Aprēķini nepieciešamo siltinājuma biezumu
+        </Link>{' '}
+        no izvēlētā materiāla siltumvadītspējas un šī koeficienta.
+      </p>
+
+      <h2 className="font-sans text-h2">Ventilācija</h2>
+      <p>
+        LBN 231-15 nosaka minimālo svaigā gaisa daudzumu uz cilvēku dzīvojamā telpā.{' '}
+        <Link
+          href="/majoklis/ventilacijas-apjoma-kalkulators"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          Aprēķini minimālo nepieciešamo ventilācijas apjomu
+        </Link>{' '}
+        savai telpai pēc cilvēku skaita un telpas tilpuma.
+      </p>
+
+      <h2 className="font-sans text-h2">Logu platība</h2>
+      <p>
+        LBN 200-21 nosaka minimālo logu (stikla) platības attiecību pret grīdas platību dzīvojamām
+        telpām un virtuvēm, 1:8.{' '}
+        <Link
+          href="/majoklis/logu-platibas-kalkulators"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          Pārbaudi, vai tavas telpas loga platība atbilst prasībai
+        </Link>
+        .
+      </p>
+
+      <h2 className="font-sans text-h2">Griestu augstums</h2>
+      <p>
+        LBN 200-21 nosaka atšķirīgus minimālos griestu augstumus pēc telpas veida, dzīvojamai telpai
+        2,5 metri.{' '}
+        <Link
+          href="/majoklis/griestu-augstuma-kalkulators"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          Pārbaudi savas telpas griestu augstumu
+        </Link>{' '}
+        pret prasību tās veidam.
+      </p>
+
+      <h2 className="font-sans text-h2">Kāpņu ērtums</h2>
+      <p>
+        Blondela formula ir gadsimtiem pārbaudīts ērtuma princips kāpnēm, ne obligāta būvnormatīva
+        prasība, taču plaši izmantots arhitektūrā.{' '}
+        <Link
+          href="/majoklis/kapnu-formulas-kalkulators"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          Pārbaudi, vai tavas kāpnes atbilst šai formulai
+        </Link>
+        .
+      </p>
+    </>
+  ),
 };
 
 /** Optional "Avoti" section per article slug — omit an entry for an article with no
@@ -331,5 +404,39 @@ export const articleSources: Record<string, React.ReactNode> = {
       </a>
       , izgūts 2026. gada 11. septembrī.
     </p>
+  ),
+  'buvniecibas-prasibu-celvedis': (
+    <ul className="flex flex-col gap-2 text-sm text-panel-faint">
+      <li>
+        Siltinājuma U vērtības,{' '}
+        <a
+          href="https://likumi.lv/ta/id/307966-noteikumi-par-latvijas-buvnormativu-lbn-002-19-eku-norobezojoso-konstrukciju-siltumtehnika"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          LBN 002-19
+        </a>
+        , izgūts 2026. gada 12. septembrī.
+      </li>
+      <li>
+        Ventilācijas minimums,{' '}
+        <a
+          href="https://likumi.lv/ta/id/274815-noteikumi-par-latvijas-buvnormativu-lbn-231-15-dzivojamo-un-publisko-eku-apkure-un-ventilacija"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          LBN 231-15
+        </a>
+        , izgūts 2026. gada 12. septembrī.
+      </li>
+      <li>
+        Logu platība un griestu augstums,{' '}
+        <a
+          href="https://m.likumi.lv/ta/id/326992-buvju-visparigo-prasibu-buvnormativs-lbn-200-21"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          LBN 200-21
+        </a>
+        , izgūts 2026. gada 12. septembrī.
+      </li>
+    </ul>
   ),
 };

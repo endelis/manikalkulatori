@@ -52,10 +52,16 @@ describe('getRelatedCalculators', () => {
     expect(related).toHaveLength(0);
   });
 
-  it('surfaces the category hub article first for a non-hub finanses item', () => {
-    const current = getCalculator('finanses', 'alga-neto')!;
+  it('surfaces the hub first for a member of its cluster', () => {
+    const current = getCalculator('finanses', 'pensiju-3-limena-kalkulators')!;
     const related = getRelatedCalculators(current, 4);
     expect(related[0].slug).toBe('pensija-latvija-celvedis');
+  });
+
+  it('does not surface a hub for a same-category item outside its cluster', () => {
+    const current = getCalculator('finanses', 'alga-neto')!;
+    const related = getRelatedCalculators(current, 10);
+    expect(related.every((item) => item.slug !== 'pensija-latvija-celvedis')).toBe(true);
   });
 
   it('does not surface the hub as related to itself', () => {
@@ -64,10 +70,22 @@ describe('getRelatedCalculators', () => {
     expect(related.every((item) => item.slug !== 'pensija-latvija-celvedis')).toBe(true);
   });
 
-  it('prioritizes curated overrides over default array order', () => {
-    const current = getCalculator('majoklis', 'griestu-augstuma-kalkulators')!;
-    const related = getRelatedCalculators(current, 3);
+  it('surfaces its own member spokes first when viewing a hub article', () => {
+    const hub = getArticle('finanses', 'pensija-latvija-celvedis')!;
+    const related = getRelatedCalculators(hub, 4);
     expect(related.map((item) => item.slug)).toEqual([
+      'pensijas-kalkulators',
+      'minimala-pensija',
+      'priekslaicigas-pensijas-kalkulators',
+      'priekslaicigas-vs-standarta-pensija',
+    ]);
+  });
+
+  it('prioritizes curated overrides over default array order, after its own hub', () => {
+    const current = getCalculator('majoklis', 'griestu-augstuma-kalkulators')!;
+    const related = getRelatedCalculators(current, 4);
+    expect(related.map((item) => item.slug)).toEqual([
+      'buvniecibas-prasibu-celvedis',
       'logu-platibas-kalkulators',
       'ventilacijas-apjoma-kalkulators',
       'siltinajuma-biezuma-kalkulators',
@@ -79,6 +97,18 @@ describe('getRelatedCalculators', () => {
     const related = getRelatedCalculators(current, 10);
     const slugs = related.map((item) => item.slug);
     expect(new Set(slugs).size).toBe(slugs.length);
+  });
+
+  it('surfaces the majoklis building-code hub first for one of its members', () => {
+    const current = getCalculator('majoklis', 'griestu-augstuma-kalkulators')!;
+    const related = getRelatedCalculators(current, 4);
+    expect(related[0].slug).toBe('buvniecibas-prasibu-celvedis');
+  });
+
+  it('does not surface the majoklis hub for an unrelated majoklis item', () => {
+    const current = getCalculator('majoklis', 'betona-apjoms')!;
+    const related = getRelatedCalculators(current, 10);
+    expect(related.every((item) => item.slug !== 'buvniecibas-prasibu-celvedis')).toBe(true);
   });
 
   it('falls back to default array order once curated relations are exhausted', () => {
