@@ -1032,11 +1032,42 @@ const explanations: Record<string, React.ReactNode> = {
     </p>
   ),
   'peldesanas-css': (
-    <p className="text-panel-muted">
-      Kalkulators atņem 200 metru laiku no 400 metru laika, iegūto starpību dala ar divi, lai aprēķinātu
-      tempu uz 100 metriem, un dala 200 metrus ar to pašu starpību, lai iegūtu kritisko peldēšanas
-      ātrumu metros sekundē.
-    </p>
+    <>
+      <p className="text-panel-muted">
+        Kalkulators atņem 200 metru laiku no 400 metru laika, iegūto starpību dala ar divi, lai aprēķinātu
+        tempu uz 100 metriem, un dala 200 metrus ar to pašu starpību, lai iegūtu kritisko peldēšanas
+        ātrumu metros sekundē.
+      </p>
+      <p className="text-panel-muted">
+        Sk. arī{' '}
+        <Link
+          href="/sports/baseina-udens-temperaturas-kalkulators"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          baseina ūdens temperatūras kalkulatoru
+        </Link>
+        .
+      </p>
+    </>
+  ),
+  'baseina-udens-temperaturas-kalkulators': (
+    <>
+      <p className="text-panel-muted">
+        Kalkulators salīdzina ievadīto ūdens temperatūru ar MK noteikumu Nr. 470 15. punktā noteikto
+        diapazonu, kas atkarīgs no tā, vai baseins ir paredzēts tikai bērniem: 26 līdz 30 °C parastam
+        baseinam, 28 līdz 32 °C bērnu baseinam.
+      </p>
+      <p className="text-panel-muted">
+        Sk. arī{' '}
+        <Link
+          href="/sports/peldesanas-css"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          peldēšanas CSS kalkulatoru
+        </Link>
+        .
+      </p>
+    </>
   ),
   'pensiju-3-limena-kalkulators': (
     <>
@@ -1283,6 +1314,23 @@ const limitationsContent: Record<string, React.ReactNode> = {
  * reasonable placeholders the user is expected to override).
  */
 const sourcesContent: Record<string, React.ReactNode> = {
+  'baseina-udens-temperaturas-kalkulators': (
+    <ul className="flex flex-col gap-2 text-sm text-panel-muted">
+      <li>
+        Baseina ūdens un gaisa temperatūras prasība,{' '}
+        <a
+          href="https://likumi.lv/ta/id/316403-higienas-prasibas-baseina-un-pirts-pakalpojumiem"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          likumi.lv
+        </a>
+        , MK noteikumi Nr. 470 &quot;Higiēnas prasības baseina un pirts pakalpojumiem&quot;, 15. un
+        16. punkts, izgūts 2026. gada 12. septembrī.
+      </li>
+    </ul>
+  ),
   'riepu-protektora-dzilums': (
     <ul className="flex flex-col gap-2 text-sm text-panel-muted">
       <li>

@@ -743,6 +743,22 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-11T08:12:11+03:00',
   },
   {
+    slug: 'baseina-udens-temperaturas-kalkulators',
+    category: 'sports',
+    title: 'Baseina ūdens temperatūras kalkulators',
+    h1: 'Vai baseina ūdens temperatūra atbilst prasībai?',
+    intro:
+      'Ievadi baseina ūdens temperatūru, uzzini, vai tā atbilst higiēnas prasībām publiskiem baseiniem.',
+    metaDescription:
+      'Pārbaudi, vai baseina ūdens temperatūra atbilst MK noteikumu Nr. 470 prasībai (26 līdz 30°C parastam baseinam, 28 līdz 32°C bērnu baseinam).',
+    keywords: [
+      'baseina ūdens temperatūras kalkulators',
+      'peldbaseina temperatūras normas',
+      'baseina temperatūras prasība',
+    ],
+    contentUpdatedAt: '2026-09-12T16:43:00+03:00',
+  },
+  {
     slug: 'sirdsdarbibas-zonas',
     category: 'sports',
     title: 'Sirdsdarbības zonu kalkulators',
@@ -1253,6 +1269,10 @@ const RELATED_OVERRIDES: Record<string, string[]> = {
   'kapnu-pakapiena-izmeru-kalkulators': ['kapnu-formulas-kalkulators', 'griestu-augstuma-kalkulators'],
   'kapnu-formulas-kalkulators': ['kapnu-pakapiena-izmeru-kalkulators', 'griestu-augstuma-kalkulators'],
   'tualetes-izmeru-kalkulators': ['griestu-augstuma-kalkulators', 'logu-platibas-kalkulators'],
+
+  // Swimming pair (sports).
+  'baseina-udens-temperaturas-kalkulators': ['peldesanas-css'],
+  'peldesanas-css': ['baseina-udens-temperaturas-kalkulators'],
 
   // Workplace standards pair (majoklis, MK noteikumi Nr. 359).
   'darba-vietas-temperaturas-kalkulators': ['darba-vietas-apgaismojuma-kalkulators'],

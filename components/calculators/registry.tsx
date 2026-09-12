@@ -63,6 +63,7 @@ import { KapnuPakapienaIzmeruCalculator } from './KapnuPakapienaIzmeruCalculator
 import { TualetesIzmeruCalculator } from './TualetesIzmeruCalculator';
 import { DarbaVietasTemperaturaCalculator } from './DarbaVietasTemperaturaCalculator';
 import { DarbaVietasApgaismojumaCalculator } from './DarbaVietasApgaismojumaCalculator';
+import { BaseinaUdensTemperaturaCalculator } from './BaseinaUdensTemperaturaCalculator';
 import { InflacijasCalculator } from './InflacijasCalculator';
 import { AtvalinajumaNaudasCalculator } from './AtvalinajumaNaudasCalculator';
 import { MunKalkulators } from './MunKalkulators';
@@ -147,6 +148,7 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'tualetes-izmeru-kalkulators': TualetesIzmeruCalculator,
   'darba-vietas-temperaturas-kalkulators': DarbaVietasTemperaturaCalculator,
   'darba-vietas-apgaismojuma-kalkulators': DarbaVietasApgaismojumaCalculator,
+  'baseina-udens-temperaturas-kalkulators': BaseinaUdensTemperaturaCalculator,
   'inflacija': InflacijasCalculator,
   'atvalinajuma-nauda': AtvalinajumaNaudasCalculator,
   'mun-kalkulators': MunKalkulators,
