@@ -2138,3 +2138,29 @@ LBN (majoklis) and CSN (auto) -- worth checking if it has more clean
 hits (e.g. workstation lighting levels, noise limits) before it also
 runs dry, applying the same safety-hardware-vs-compliance-check filter
 each time.
+
+## 2026-09-12 15:44
+
+Did: second hit from the occupational-health vein,
+darba-vietas-apgaismojuma-kalkulators (MK noteikumi Nr. 359, Annex 2:
+minimum workplace illuminance by task type, 200 lx storage/archive up
+to 750 lx technical drawing, with reading/writing/data processing at
+500 lx). Same regulation as the temperature calculator from the
+previous tick, different annex. Confirmed via two independent direct
+fetches of the primary source, identical values both times. Built with
+a work-type SelectField (six options), cross-linked bidirectionally
+with darba-vietas-temperaturas-kalkulators. While placing the new
+registry entry, noticed and fixed a small consistency slip from the
+prior commit: the temperature calculator's metaDescription used
+hyphens for numeric ranges ("19-25°C") instead of this codebase's
+"līdz" convention (confirmed by grepping every other metaDescription
+with a numeric range, all of which already use "līdz") -- a good
+example of a small cleanup surfacing naturally while working nearby,
+not a separate detour. Full checklist green, visually verified both
+directions of the cross-link. Commits b81aede, 27656f2 (routine
+same-day contentUpdatedAt correction).
+Next: majoklis now at 27 calculators (up from 18 this morning -- exactly
+50% larger in one session). Occupational-health vein (MK 359) has two
+clean hits so far; noise limits were mentioned as a candidate third
+but not yet researched. No BLOCKED items pending beyond the two known
+pension-data blockers.
