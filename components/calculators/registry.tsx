@@ -56,6 +56,7 @@ import { SiltinajumaBiezumaCalculator } from './SiltinajumaBiezumaCalculator';
 import { VentilacijasApjomaCalculator } from './VentilacijasApjomaCalculator';
 import { LoguPlatibasCalculator } from './LoguPlatibasCalculator';
 import { KapnuFormulaCalculator } from './KapnuFormulaCalculator';
+import { GriestuAugstumaCalculator } from './GriestuAugstumaCalculator';
 import { InflacijasCalculator } from './InflacijasCalculator';
 import { AtvalinajumaNaudasCalculator } from './AtvalinajumaNaudasCalculator';
 import { MunKalkulators } from './MunKalkulators';
@@ -133,6 +134,7 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'ventilacijas-apjoma-kalkulators': VentilacijasApjomaCalculator,
   'logu-platibas-kalkulators': LoguPlatibasCalculator,
   'kapnu-formulas-kalkulators': KapnuFormulaCalculator,
+  'griestu-augstuma-kalkulators': GriestuAugstumaCalculator,
   'inflacija': InflacijasCalculator,
   'atvalinajuma-nauda': AtvalinajumaNaudasCalculator,
   'mun-kalkulators': MunKalkulators,

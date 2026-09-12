@@ -502,6 +502,22 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-12T12:08:11+03:00',
   },
   {
+    slug: 'griestu-augstuma-kalkulators',
+    category: 'majoklis',
+    title: 'Griestu augstuma kalkulators',
+    h1: 'Vai telpas griestu augstums atbilst prasībai?',
+    intro:
+      'Ievadi telpas griestu augstumu, uzzini, vai tas atbilst dzīvojamām telpām noteiktajam minimumam.',
+    metaDescription:
+      'Pārbaudi, vai telpas griestu augstums atbilst LBN 200-21 prasībai dzīvojamām telpām (vismaz 2,5 m).',
+    keywords: [
+      'griestu augstuma kalkulators',
+      'minimālais griestu augstums',
+      'telpu augstums LBN 200-21',
+    ],
+    contentUpdatedAt: '2026-09-12T12:08:11+03:00',
+  },
+  {
     slug: 'kmi-kalkulators',
     category: 'veseliba',
     title: 'ĶMI kalkulators',
