@@ -2,7 +2,7 @@
 
 A programmatic SEO project. Each calculator is one indexed page targeting one high‑intent Latvian‑language query. The site earns via display ads and affiliate placements. Goal: positive ROI within 3 months of SEO ramp.
 
-**Status (2026-09-11): the original 50-calculator plan below is fully built** — auto 12/12, finance 14/14, home-energy 8/8, health 8/8, sport 8/8. Plus everything built beyond the original 50 (majoklis material calculators, pensijas-kalkulators, tumsas-kalkulators, dzimstibas-kalkulators, the iedzivotaju-skaits pages). See section 11 for the current monetization-readiness assessment and section 10's correction note for real Google Search Console data. `docs/agent/JOURNAL.md` has the full build history.
+**Status (2026-09-12): the original 50-calculator plan below is long since fully built and substantially exceeded** — `lib/registry.ts` is the live source of truth for the current inventory (well over 80 calculator/article entries across all six categories as of this writing, majoklis alone has grown past 25 through an LBN/MK-noteikumi building-code and workplace-standards vein). The design has also since moved from the dark aesthetic this document originally specified to a light "instrument panel" redesign, see section 7 and `DESIGN-GUIDANCE.md`. See section 11 for the (dated 2026-09-11, not re-verified since) monetization-readiness assessment and section 10's correction note for real Google Search Console data. `docs/agent/JOURNAL.md` has the full, current build history; treat any specific count or design description elsewhere in this file as historical planning context, not a live snapshot.
 
 ## 1. Concept
 
@@ -172,7 +172,7 @@ Instant answer, no friction. The result is visible above the fold before any inp
 
 One clear verdict. Each calculator surfaces a single headline outcome (the monthly payment, the cheaper option, the pace) in large monospace numerals, with the detailed breakdown below it. Numbers are the hero of the page; labels and chrome stay quiet.
 
-Design identity, not template. A consistent visual system across all 50 pages builds recognition and trust, which matters for both return visits and ad viewability. Dark instrument-panel aesthetic, one accent per domain, monospace for figures, restrained motion. Avoid the generic calculator-site look (cluttered, ad-choked, untrustworthy) because trust is the conversion lever.
+Design identity, not template. A consistent visual system across every page builds recognition and trust, which matters for both return visits and ad viewability. Light "instrument panel" aesthetic (superseded from an initial dark variant in a full redesign shipped 2026-09-11, see `DESIGN-GUIDANCE.md` section 2), one accent per domain, monospace for figures, restrained motion. Avoid the generic calculator-site look (cluttered, ad-choked, untrustworthy) because trust is the conversion lever.
 
 Trust signals. Every page states its assumptions plainly, shows a short "how this is calculated" note, and dates the tax rates or grant figures it uses. For Latvian financial and tax calculators, being visibly current and correct is the differentiator over stale competitors.
 
