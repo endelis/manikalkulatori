@@ -1774,3 +1774,46 @@ load capacity, fire egress) even where data might be findable, since a
 wrong answer there risks real physical harm, not just a suboptimal
 outcome, unlike insulation/ventilation/window-area/stair-comfort where
 being off just costs comfort or a permit revision.
+
+## 2026-09-12 12:30
+
+Did: full technical SEO / AI-crawler-discoverability audit and fix,
+per direct user request ("secure we are technically 100% compliant for
+seo and also ai"). Audited every page type for canonicals, openGraph,
+JSON-LD, robots.txt, sitemap, lang attribute. Found real gaps: the
+homepage had no title/description/openGraph and no WebSite schema;
+category pages had no openGraph and no BreadcrumbList/ItemList schema;
+only 4 of ~80 pages had a social preview image at all. Fixed all of
+it: added `buildWebSiteSchema`/`buildItemListSchema` to lib/schema.ts
+(+tests), wired WebSite schema into app/page.tsx, BreadcrumbList +
+ItemList into app/[category]/page.tsx, openGraph metadata into the
+homepage/category/calculator generateMetadata functions, a generic
+opengraph-image route for the homepage, one per category, and one per
+calculator/article (74+ pages) via generateStaticParams, a new
+app/llms.txt/route.ts generated live from the registry for AI crawler
+discoverability, and site-wide Twitter card metadata in app/layout.tsx.
+Commits 554080c, 6889e4d, 684a151, 12e8da5.
+Learned: the first version of the per-calculator opengraph-image route
+used generateImageMetadata() without route params, which silently
+returned the same full-catalog id list on every page regardless of
+which calculator was being rendered -- caught this by starting a dev
+server and grepping the actual rendered <head> rather than trusting
+`npm run build` succeeding, which found every calculator page emitting
+70+ og:image tags (one per calculator on the whole site) instead of
+one. Fixed by switching to generateStaticParams, matching the existing
+page.tsx pattern for the same route segment, which correctly scopes
+one image per route. Reinforces the standing lesson that a green build
+is necessary but not sufficient for anything involving Next's
+file-convention metadata routes; always render and inspect the actual
+output. All four pre-existing bespoke pages (pensijas-kalkulators,
+priekslaicigas-pensijas-kalkulators, dzimstibas-kalkulators,
+tumsas-kalkulators) and the population-count article pages were
+already fully compliant, built correctly in earlier sessions.
+Next: SEO/AI compliance task is complete and verified (tsc, build,
+full test suite all green, visual + rendered-HTML spot checks done).
+No BLOCKED items pending. Remaining lower-priority open items from
+before this task: the average-pension (CSP) current-year figure and
+2nd-level pension fund risk-category returns are still blocked on
+incomplete source data. Otherwise, continue mining LBN/LVS building
+codes for new majoklis calculators, the most reliable vein this
+session (4 clean hits in a row, zero sourcing blockers).
