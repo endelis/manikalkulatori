@@ -20,14 +20,15 @@ Still open: calculator 2 (2nd-level fund projection) remains genuinely
 BLOCKED on sourcing — fund-return data by risk category lives behind a
 JavaScript SPA that loads asynchronously (manapensija.lv's plan-comparison
 tool), confirmed unreachable by two independent attempts; needs either a
-headless-browser-capable tool or a user-supplied export. Calculator 4
-(the combined all-3-levels calculator) and article 4 (2nd vs 3rd level
-comparison) are not blocked, just not yet built. Article 5 (how to choose a
-2nd-level plan by risk tier, `ka-izveleties-pensiju-2-limena-planu`) turned
-out not to share calculator 2's blocker — it only needed descriptive
-risk-tier text, not numeric fund-return data — and is now built and wired
-into the hub. Article 9 (coefficient G history) stays deprioritized per its
-own note below.
+headless-browser-capable tool or a user-supplied export. Calculator 4 (the
+combined all-3-levels calculator) is the only remaining not-blocked, not-yet-
+built item — deliberately deferred rather than shipped with the 2nd level
+missing, since a "total pension" tool quietly omitting a mandatory third of
+most people's pension would read as incomplete or misleading. Article 4
+(`pensiju-2-vs-3-limenis`) and article 5 (`ka-izveleties-pensiju-2-limena-
+planu`) are both built and wired into the hub; neither needed the blocked
+numeric fund-return data. Article 9 (coefficient G history) stays
+deprioritized per its own note below.
 
 One implementation deviation from section 5's original architecture, noted
 for accuracy: article body copy ended up living as JSX directly in
