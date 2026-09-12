@@ -667,7 +667,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini, cik bērniem gadā jāpiedzimst Latvijā, lai iedzīvotāju skaits stabilizētos vai sasniegtu izvēlētu mērķi, pēc oficiāliem CSP datiem.',
     keywords: ['dzimstības kalkulators', 'cik bērniem jāpiedzimst Latvijā', 'Latvijas iedzīvotāju skaits'],
-    contentUpdatedAt: '2026-09-05T14:49:43+03:00',
+    contentUpdatedAt: '2026-09-12T13:34:26+03:00',
   },
   {
     slug: 'pensijas-kalkulators',
@@ -686,7 +686,7 @@ export const calculators: CalculatorMeta[] = [
       'prognozējamā pensija',
       'mana pensija kalkulators',
     ],
-    contentUpdatedAt: '2026-09-11T22:31:49+03:00',
+    contentUpdatedAt: '2026-09-12T13:28:29+03:00',
   },
   {
     slug: 'priekslaicigas-pensijas-kalkulators',
@@ -702,7 +702,7 @@ export const calculators: CalculatorMeta[] = [
       'priekšlaicīga pensionēšanās',
       'priekšlaicīgas pensijas kalkulators',
     ],
-    contentUpdatedAt: '2026-09-11T22:31:49+03:00',
+    contentUpdatedAt: '2026-09-12T13:28:29+03:00',
   },
   {
     slug: 'pensiju-3-limena-kalkulators',
@@ -746,9 +746,7 @@ export const calculators: CalculatorMeta[] = [
     metaDescription:
       'Aprēķini, cik dienu no savas dzīves esi pavadījis tumsā, pēc Rīgas gaismas stundu svārstībām gada laikā, ar redzamu aprēķinu gaitu.',
     keywords: ['tumsas kalkulators', 'cik tumšs ir Rīgā', 'gaismas stundas Latvijā', 'dienas garums Rīgā'],
-    // Still provisional: must be re-checked against the squash merge commit's own time
-    // right before merging, per CLAUDE.md, "Sitemap dates".
-    contentUpdatedAt: '2026-09-05T14:49:43+03:00',
+    contentUpdatedAt: '2026-09-12T13:28:29+03:00',
   },
   {
     slug: 'kredita-kalkulators',
