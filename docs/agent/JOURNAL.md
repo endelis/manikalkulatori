@@ -2033,3 +2033,33 @@ or other CSN-driven auto compliance topics (e.g. child seat rules,
 light bulb/visibility requirements) for the same "real legal minimum,
 clean primary source, no existing Latvian tool" pattern that worked
 twice now (LBN building codes, MK 295 tires).
+
+## 2026-09-12 14:34
+
+Did: second CSN-driven auto calculator this tick,
+bernu-sedeklisa-prasiba (child car seat height threshold, Ceļu
+satiksmes noteikumi point 185: a car seat or booster is required
+below 150 cm height, the legal criterion is height not age).
+Confirmed via two independent direct fetches of the current
+regulation's primary text (likumi.lv and m.likumi.lv), identical
+wording both times. One WebSearch result along the way surfaced an
+old, explicitly "zaudējis spēku" (repealed) version of the same
+regulation title, a concrete reminder (matching the earlier LBN 211-15
+lesson) to confirm the fetched id/URL is the current version, not just
+match on the regulation's name. Full checklist green, visually
+verified via a running dev server (default 120cm input correctly
+showed "Nepieciešams"). Commits b3c2a1d, 94915bc (the second being the
+now-routine same-day post-commit contentUpdatedAt correction, done
+proactively this time by checking git log right after committing
+rather than waiting for a test run to catch it).
+Next: auto category now has two CSN-driven compliance calculators
+(tire tread depth, child seat height) alongside the existing
+riepu-izmers. This "find a CSN/MK-noteikumi numbered point with a
+clean, current, single-fetch-confirmable numeric threshold, no
+existing Latvian interactive tool" pattern has now worked for LBN
+building codes (majoklis) and CSN/MK-noteikumi traffic rules (auto)
+alike -- worth trying it again for veseliba or sports if those
+categories have an analogous regulated-threshold gap, or continuing
+to mine CSN for more auto compliance topics (e.g. light/visibility
+requirements, mentioned but not yet researched). No BLOCKED items
+pending beyond the two known pension-data blockers.
