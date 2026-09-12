@@ -208,7 +208,7 @@ export const calculators: CalculatorMeta[] = [
       'minimālais protektora dziļums',
       'ziemas riepu protektors',
     ],
-    contentUpdatedAt: '2026-09-12T14:21:20+03:00',
+    contentUpdatedAt: '2026-09-12T14:26:45+03:00',
   },
   {
     slug: 'cela-izmaksas',
