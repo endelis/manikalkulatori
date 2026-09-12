@@ -100,6 +100,29 @@ export const NOVADS_PILOT_AREAS: NovadsPilotArea[] = [
       { year: 2025, populationAtYearStart: 2820, liveBirths: null, deaths: null, naturalIncrease: null, netMigration: null },
     ],
   },
+  {
+    slug: 'liepaja',
+    name: 'Liepāja',
+    locative: 'Liepājā',
+    genitive: 'Liepājas',
+    referenceYear: 2025,
+    population: 66746,
+    populationReferenceDate: '2026. gada 1. janvārī',
+    births: 481,
+    deaths: 921,
+    naturalIncrease: -440,
+    netMigration: -235,
+    nationalNaturalIncrease: -14178,
+    nationalPopulation: 1845096,
+    series: [
+      { year: 2021, populationAtYearStart: 67964, liveBirths: 712, deaths: 1245, naturalIncrease: -533, netMigration: null },
+      { year: 2022, populationAtYearStart: 67360, liveBirths: 610, deaths: 1107, naturalIncrease: -497, netMigration: null },
+      { year: 2023, populationAtYearStart: 68436, liveBirths: 546, deaths: 964, naturalIncrease: -418, netMigration: null },
+      { year: 2024, populationAtYearStart: 68106, liveBirths: 464, deaths: 986, naturalIncrease: -522, netMigration: null },
+      { year: 2025, populationAtYearStart: 67421, liveBirths: 481, deaths: 921, naturalIncrease: -440, netMigration: -235 },
+      { year: 2026, populationAtYearStart: 66746, liveBirths: null, deaths: null, naturalIncrease: null, netMigration: null },
+    ],
+  },
 ];
 
 export function getNovadsPilotArea(slug: string): NovadsPilotArea | undefined {

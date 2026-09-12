@@ -21,11 +21,22 @@ const INFO_PAGE_UPDATED_AT: Record<string, string> = {
   '/sabiedriba/iedzivotaju-skaits-latvija': '2026-09-04T13:22:48+03:00',
 };
 
-// Novads pilot pages (three only, see lib/novads-pilot-data.ts). Each entry's timestamp
+// Novads/pilsēta population pages (see lib/novads-pilot-data.ts). Each entry's timestamp
 // is bumped to that page's own real commit time once committed, matching the pattern
-// above.
+// above. Per-slug (not a single blanket date) since pages have been added at different
+// times as coverage expanded past the original three-page pilot.
+const NOVADS_PILOT_ADDED_AT: Record<string, string> = {
+  daugavpils: '2026-09-04T13:22:48+03:00',
+  jelgava: '2026-09-04T13:22:48+03:00',
+  varaklani: '2026-09-04T13:22:48+03:00',
+  liepaja: '2026-09-12T18:55:00+03:00',
+};
+
 const NOVADS_PILOT_UPDATED_AT: Record<string, string> = Object.fromEntries(
-  NOVADS_PILOT_AREAS.map((area) => [`/sabiedriba/iedzivotaju-skaits/${area.slug}`, '2026-09-04T13:22:48+03:00']),
+  NOVADS_PILOT_AREAS.map((area) => [
+    `/sabiedriba/iedzivotaju-skaits/${area.slug}`,
+    NOVADS_PILOT_ADDED_AT[area.slug] ?? '2026-09-04T13:22:48+03:00',
+  ]),
 );
 
 // Calculator contentUpdatedAt values are full ISO 8601 timestamps with a timezone
