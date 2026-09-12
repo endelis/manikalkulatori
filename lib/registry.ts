@@ -756,7 +756,7 @@ export const calculators: CalculatorMeta[] = [
       'peldbaseina temperatūras normas',
       'baseina temperatūras prasība',
     ],
-    contentUpdatedAt: '2026-09-12T16:43:00+03:00',
+    contentUpdatedAt: '2026-09-12T16:47:18+03:00',
   },
   {
     slug: 'sirdsdarbibas-zonas',
