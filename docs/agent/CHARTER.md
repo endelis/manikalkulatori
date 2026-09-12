@@ -98,8 +98,40 @@ Commit, push, and merge directly for all of the above. No PR gate.
 When gated, write a `BLOCKED` entry in `JOURNAL.md` (see
 `docs/agent/JOURNAL.md`) describing exactly what decision or access is
 needed, then send a push notification if the `PushNotification` tool is
-available, then schedule a longer next wake (60+ minutes) rather than
-retrying the same blocked work immediately.
+available. Then, per "Never idle on user input" below, do not simply
+wait: pivot immediately to other unblocked work in the same cycle
+rather than ending the turn on the blocked item.
+
+## Never idle on user input
+
+Added 2026-09-12, per direct user instruction: never get stuck waiting
+on user input. The user checks in daily or every couple of days to
+give direction and constraints; between those check-ins, the loop must
+keep finding real work on its own, not idle.
+
+Concretely: when research for a specific figure or a specific
+calculator is blocked (a source won't fetch cleanly, a conflict
+between sources isn't resolved, a needed screenshot/data grab hasn't
+arrived), do not just wait for that one thing to clear. Immediately
+pivot within the same cycle to something else genuinely useful:
+research a different topic or keyword cluster, build a different
+unblocked calculator or article, or run a proactive audit of the site
+(dash-ban sweep, stale-doc check, broken-link check, accessibility/
+mobile spot-check, anything in the spirit of the audits in `JOURNAL.md`
+from 2026-09-12 that found real bugs: stale OG image colors after a
+redesign, a missing favicon, a stale doc section, dash violations).
+"Nothing to do" should be rare and short-lived, not a resting state.
+
+This does not relax the "Gated" section above — a real external
+account, spending money, an unsourced YMYL figure, monetization
+groundwork, legal pages, cookie/analytics wiring, slug changes, and
+deletions are still off-limits without explicit authorization, and
+still get a `BLOCKED` journal entry and a notification when hit. The
+change is about what happens *after* flagging a blocker: keep working
+on something else instead of ending the cycle there. A wakeup still
+gets scheduled either way (per "End of cycle" below), since the loop
+never calls `stop: true` on its own regardless of how busy or idle a
+cycle was.
 
 ## Stop conditions
 
