@@ -1543,3 +1543,24 @@ dash, and the four legal pages' pre-redesign heading/spacing style. All
 three are quick fixes if the user green-lights touching gated files,
 or the user can handle them directly. alga-neto/alga-bruto still
 pending its own separate go/no-go.
+
+## 2026-09-12 09:44
+
+Did: found and fixed one more real gap during the continued audit: the
+site had no favicon at all (no public/ directory, no app/icon.tsx) --
+browsers showed a generic default tab icon everywhere. Added
+app/icon.tsx and app/apple-icon.tsx using next/og's ImageResponse
+(same mechanism as the existing opengraph-image.tsx routes, no new
+asset/dependency needed): a simple bold "M" monogram, dark text on the
+light theme's dark-text color, verified legible by rendering the
+actual generated PNG. Commit 7fbd406.
+
+Also verified, no issues found: every internal link added across this
+session's pension content (9 in lib/articleContent.tsx, 2 more in the
+bespoke pension pages) resolves to a real registry slug; no duplicate
+meta descriptions or titles anywhere in the 72-entry registry.
+Next: three items still pending user action from the last entry
+(2 dash-ban violations, legal-page styling gap, all gated files) plus
+alga-neto/alga-bruto's separate go/no-go. Site-wide audit is now fairly
+thorough; further passes should look for genuinely new issues rather
+than re-checking what's already been covered.
