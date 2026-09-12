@@ -2364,3 +2364,43 @@ Next: no BLOCKED items pending beyond the fund-returns data blocker
 Pension cluster is now essentially complete except those two items.
 Still awaiting the user's steer from two turns ago on overall
 direction.
+
+## 2026-09-12 18:48
+
+Did: user said "Continue" (not answering the standing direction
+question, just confirming to keep going), so finished the pension
+cluster reconciliation started last tick. Built article 4,
+pensiju-2-vs-3-limenis, a comparison article (mandatory/automatic vs.
+fully voluntary, VSAOI-funded vs. extra personal contributions,
+nodokļa atmaksa only on the voluntary side) synthesized entirely from
+facts already sourced on this session's other pension pages, cited to
+VSAA's and Latvijas Banka's general explainer pages rather than
+introducing any new unsourced figure. Wired into the hub's 3rd-level
+section with a "confused about the difference?" pointer.
+Caught a real, different kind of test failure this time: lib/
+articles.test.ts enforces every article's contentUpdatedAt is not in
+the future, and the timestamp I set pre-emptively (guessing completion
+time before actually finishing) landed a few minutes ahead of real
+time. A different flavor of the same underlying habit as the many
+post-commit-drift corrections this session, but caught by a different
+test and before commit this time rather than after.
+Explicitly declined calculator 4 (combined all-3-levels total) rather
+than build it now: shipping a "total pension" tool that silently omits
+the mandatory 2nd level (still blocked) would read as incomplete or
+misleading, not just "one more calculator to add." Documented this
+reasoning directly in the plan doc so a future session doesn't
+rediscover the same tension and second-guess whether it was an
+oversight.
+Minor note: this tick's first commit message contained a stray
+mid-sentence self-correction ("except calculator 2 and article... no,
+calculator 4") that should have been edited out before committing.
+Harmless (commit messages aren't user-facing product copy and the
+dash-ban/content-quality bar doesn't apply to them), but a reminder to
+proofread commit messages before running git commit, not just
+website copy.
+Full checklist green, visually verified. Commits 38c6901, a6089fd.
+Next: PENSION-TOPICAL-AUTHORITY-PLAN.md's cluster is now complete
+except calculator 2 and calculator 4, both blocked on the same
+fund-return data. No other BLOCKED items pending. Good point to pivot
+back to fresh-topic research or another audit pass, or continue
+awaiting the user's steer on overall direction from several turns ago.
