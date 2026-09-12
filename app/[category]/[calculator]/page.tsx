@@ -660,6 +660,25 @@ const explanations: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  'tualetes-izmeru-kalkulators': (
+    <>
+      <p className="text-panel-muted">
+        Kalkulators salīdzina ievadīto telpas platumu un garumu ar LBN 200-21 118. punktā noteikto
+        minimumu, kas atkarīgs no izvēlētās pieejamības prasības. Abiem izmēriem jāatbilst attiecīgajam
+        minimumam, lai telpa uzskatītu par atbilstošu.
+      </p>
+      <p className="text-panel-muted">
+        Sk. arī{' '}
+        <Link
+          href="/majoklis/buvniecibas-prasibu-celvedis"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          pilnu būvniecības prasību ceļvedi
+        </Link>
+        .
+      </p>
+    </>
+  ),
   'skriesanas-temps': (
     <p className="text-panel-muted">
       Kalkulators saskaita kopējo laiku minūtēs un dala to ar distanci, lai iegūtu tempu uz kilometru.
@@ -1792,6 +1811,23 @@ const sourcesContent: Record<string, React.ReactNode> = {
         punkts, izgūts 2026. gada 12. septembrī. Iepriekšējais normatīvs LBN 211-15
         &quot;Dzīvojamās ēkas&quot; ir zaudējis spēku, taču noteica to pašu 2,5 m minimumu
         dzīvojamām telpām.
+      </li>
+    </ul>
+  ),
+  'tualetes-izmeru-kalkulators': (
+    <ul className="flex flex-col gap-2 text-sm text-panel-muted">
+      <li>
+        Tualetes minimālais izmērs, vispārīgi un personām ar funkcionāliem traucējumiem,{' '}
+        <a
+          href="https://m.likumi.lv/ta/id/326992-buvju-visparigo-prasibu-buvnormativs-lbn-200-21"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          likumi.lv
+        </a>
+        , būvnormatīvs LBN 200-21 &quot;Būvju vispārīgo prasību būvnormatīvs&quot;, 118. punkts, izgūts
+        2026. gada 12. septembrī.
       </li>
     </ul>
   ),

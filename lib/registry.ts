@@ -531,7 +531,23 @@ export const calculators: CalculatorMeta[] = [
       'pakāpiena augstuma prasība',
       'LBN 200-21 kāpnes',
     ],
-    contentUpdatedAt: '2026-09-12T13:46:50+03:00',
+    contentUpdatedAt: '2026-09-12T13:52:22+03:00',
+  },
+  {
+    slug: 'tualetes-izmeru-kalkulators',
+    category: 'majoklis',
+    title: 'Tualetes izmēru kalkulators',
+    h1: 'Vai tualetes telpas izmērs atbilst prasībai?',
+    intro:
+      'Ievadi telpas platumu un garumu, uzzini, vai tie atbilst LBN 200-21 minimālajam izmēram.',
+    metaDescription:
+      'Pārbaudi, vai tualetes telpas izmērs atbilst LBN 200-21 prasībai (0,8 × 1,4 m vispārīgi, 1,6 × 2,2 m personām ar funkcionāliem traucējumiem).',
+    keywords: [
+      'tualetes izmēru kalkulators',
+      'minimālais tualetes izmērs',
+      'LBN 200-21 tualete',
+    ],
+    contentUpdatedAt: '2026-09-12T14:10:03+03:00',
   },
   {
     slug: 'kmi-kalkulators',
@@ -1135,6 +1151,7 @@ const CATEGORY_HUBS: CategoryHub[] = [
       'kapnu-formulas-kalkulators',
       'kapnu-pakapiena-izmeru-kalkulators',
       'griestu-augstuma-kalkulators',
+      'tualetes-izmeru-kalkulators',
     ],
   },
 ];
@@ -1167,6 +1184,7 @@ const RELATED_OVERRIDES: Record<string, string[]> = {
   'siltinajuma-biezuma-kalkulators': ['griestu-augstuma-kalkulators', 'siltumsukna-atmaksa'],
   'kapnu-pakapiena-izmeru-kalkulators': ['kapnu-formulas-kalkulators', 'griestu-augstuma-kalkulators'],
   'kapnu-formulas-kalkulators': ['kapnu-pakapiena-izmeru-kalkulators', 'griestu-augstuma-kalkulators'],
+  'tualetes-izmeru-kalkulators': ['griestu-augstuma-kalkulators', 'logu-platibas-kalkulators'],
 
   // Heating/energy alternatives (majoklis): different ways to heat or power a home.
   'apkures-izmaksas': ['siltumsukna-atmaksa', 'elektribas-rekins', 'malkas-apjoms'],

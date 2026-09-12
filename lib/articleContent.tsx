@@ -369,6 +369,19 @@ export const articleBody: Record<string, React.ReactNode> = {
         </Link>
         .
       </p>
+
+      <h2 className="font-sans text-h2">Tualetes izmērs</h2>
+      <p>
+        LBN 200-21 nosaka tualetes telpas minimālo izmēru, 0,8 × 1,4 metri vispārīgi, un lielāku
+        izmēru, 1,6 × 2,2 metri, telpai, kas paredzēta personām ar funkcionāliem traucējumiem.{' '}
+        <Link
+          href="/majoklis/tualetes-izmeru-kalkulators"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          Pārbaudi, vai tava tualetes telpa atbilst prasībai
+        </Link>
+        .
+      </p>
     </>
   ),
 };
@@ -436,7 +449,7 @@ export const articleSources: Record<string, React.ReactNode> = {
         , izgūts 2026. gada 12. septembrī.
       </li>
       <li>
-        Logu platība, griestu augstums un kāpņu pakāpiena izmēri,{' '}
+        Logu platība, griestu augstums, kāpņu pakāpiena izmēri un tualetes izmērs,{' '}
         <a
           href="https://m.likumi.lv/ta/id/326992-buvju-visparigo-prasibu-buvnormativs-lbn-200-21"
           className="underline decoration-panel-border underline-offset-4 hover:decoration-current"

@@ -58,6 +58,7 @@ import { LoguPlatibasCalculator } from './LoguPlatibasCalculator';
 import { KapnuFormulaCalculator } from './KapnuFormulaCalculator';
 import { GriestuAugstumaCalculator } from './GriestuAugstumaCalculator';
 import { KapnuPakapienaIzmeruCalculator } from './KapnuPakapienaIzmeruCalculator';
+import { TualetesIzmeruCalculator } from './TualetesIzmeruCalculator';
 import { InflacijasCalculator } from './InflacijasCalculator';
 import { AtvalinajumaNaudasCalculator } from './AtvalinajumaNaudasCalculator';
 import { MunKalkulators } from './MunKalkulators';
@@ -137,6 +138,7 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'kapnu-formulas-kalkulators': KapnuFormulaCalculator,
   'griestu-augstuma-kalkulators': GriestuAugstumaCalculator,
   'kapnu-pakapiena-izmeru-kalkulators': KapnuPakapienaIzmeruCalculator,
+  'tualetes-izmeru-kalkulators': TualetesIzmeruCalculator,
   'inflacija': InflacijasCalculator,
   'atvalinajuma-nauda': AtvalinajumaNaudasCalculator,
   'mun-kalkulators': MunKalkulators,
