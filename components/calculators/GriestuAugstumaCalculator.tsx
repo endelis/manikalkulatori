@@ -2,13 +2,26 @@
 
 import { useMemo, useState } from 'react';
 import { NumberField } from '@/components/NumberField';
+import { SelectField } from '@/components/SelectField';
 import { ResultCard } from '@/components/ResultCard';
 import { formatNumber } from '@/lib/format';
-import { calculateGriestuAugstums, type GriestuAugstumaInputs } from '@/lib/calculators/griestu-augstums';
+import {
+  calculateGriestuAugstums,
+  type GriestuAugstumaInputs,
+  type TelpasVeids,
+} from '@/lib/calculators/griestu-augstums';
 
 const DEFAULT_INPUT: GriestuAugstumaInputs = {
   ceilingHeightM: 2.5,
+  roomType: 'dzivojama-telpa',
 };
+
+const ROOM_TYPE_OPTIONS: { value: TelpasVeids; label: string }[] = [
+  { value: 'dzivojama-telpa', label: 'Dzīvojamā telpa (2,5 m)' },
+  { value: 'publiska-telpa', label: 'Publiskā telpa, birojs (2,7 m)' },
+  { value: 'gaitenis-sanitara-telpa', label: 'Gaitenis, sanitārā telpa (2,2 m)' },
+  { value: 'tehniska-telpa', label: 'Tehniskā telpa, pagrabs (1,8 m)' },
+];
 
 export function GriestuAugstumaCalculator({ accentVar }: { accentVar: string }) {
   const [input, setInput] = useState(DEFAULT_INPUT);
@@ -31,6 +44,13 @@ export function GriestuAugstumaCalculator({ accentVar }: { accentVar: string }) 
       />
 
       <div className="reveal grid grid-cols-1 gap-4 sm:grid-cols-2" style={{ animationDelay: '60ms' }}>
+        <SelectField
+          id="roomType"
+          label="Telpas veids"
+          value={input.roomType}
+          options={ROOM_TYPE_OPTIONS}
+          onChange={(value) => setInput((prev) => ({ ...prev, roomType: value as TelpasVeids }))}
+        />
         <NumberField
           id="ceilingHeightM"
           label="Telpas griestu augstums"
@@ -42,8 +62,8 @@ export function GriestuAugstumaCalculator({ accentVar }: { accentVar: string }) 
       </div>
 
       <p className="text-caption text-panel-faint" style={!result.isCompliant ? { color: warnColor } : undefined}>
-        Prasība attiecas uz dzīvojamām telpām (LBN 200-21, 7.2. punkts): griestu augstums no tīrās
-        grīdas atzīmes ne mazāks par 2,5 m.
+        Prasības noteiktas LBN 200-21 7. punktā: minimālais augstums no tīrās grīdas atzīmes līdz
+        griestu konstrukcijas apdares apakšējai virsmai, atkarībā no telpas veida.
       </p>
     </div>
   );

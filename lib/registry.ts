@@ -507,15 +507,15 @@ export const calculators: CalculatorMeta[] = [
     title: 'Griestu augstuma kalkulators',
     h1: 'Vai telpas griestu augstums atbilst prasībai?',
     intro:
-      'Ievadi telpas griestu augstumu, uzzini, vai tas atbilst dzīvojamām telpām noteiktajam minimumam.',
+      'Ievadi telpas griestu augstumu un izvēlies telpas veidu, uzzini, vai tas atbilst LBN 200-21 noteiktajam minimumam.',
     metaDescription:
-      'Pārbaudi, vai telpas griestu augstums atbilst LBN 200-21 prasībai dzīvojamām telpām (vismaz 2,5 m).',
+      'Pārbaudi, vai telpas griestu augstums atbilst LBN 200-21 prasībai (dzīvojamā, publiskā, tehniskā telpa, gaitenis).',
     keywords: [
       'griestu augstuma kalkulators',
       'minimālais griestu augstums',
       'telpu augstums LBN 200-21',
     ],
-    contentUpdatedAt: '2026-09-12T12:08:11+03:00',
+    contentUpdatedAt: '2026-09-12T13:05:00+03:00',
   },
   {
     slug: 'kmi-kalkulators',

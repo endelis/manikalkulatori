@@ -500,8 +500,9 @@ const explanations: Record<string, React.ReactNode> = {
   ),
   'griestu-augstuma-kalkulators': (
     <p className="text-panel-muted">
-      Kalkulators salīdzina ievadīto griestu augstumu ar LBN 200-21 noteikto minimumu dzīvojamām
-      telpām, 2,5 metriem. Ja ievadītais augstums ir vienāds ar šo vērtību vai lielāks, prasība ir
+      Kalkulators salīdzina ievadīto griestu augstumu ar LBN 200-21 7. punktā noteikto minimumu
+      izvēlētajam telpas veidam (dzīvojamā telpa, publiskā telpa, gaitenis vai sanitārā telpa,
+      tehniskā telpa). Ja ievadītais augstums ir vienāds ar šo vērtību vai lielāks, prasība ir
       izpildīta, ja mazāks, kalkulators parāda trūkstošo starpību metros.
     </p>
   ),
@@ -1495,7 +1496,7 @@ const sourcesContent: Record<string, React.ReactNode> = {
   'griestu-augstuma-kalkulators': (
     <ul className="flex flex-col gap-2 text-sm text-panel-muted">
       <li>
-        Dzīvojamās telpas minimālais augstums 2,5 m,{' '}
+        Minimālie griestu augstumi pa telpu veidiem,{' '}
         <a
           href="https://m.likumi.lv/ta/id/326992-buvju-visparigo-prasibu-buvnormativs-lbn-200-21"
           target="_blank"
@@ -1504,9 +1505,10 @@ const sourcesContent: Record<string, React.ReactNode> = {
         >
           likumi.lv
         </a>
-        , būvnormatīvs LBN 200-21 &quot;Būvju vispārīgo prasību būvnormatīvs&quot;, 7.2. punkts, izgūts
-        2026. gada 12. septembrī. Iepriekšējais normatīvs LBN 211-15 &quot;Dzīvojamās ēkas&quot; ir
-        zaudējis spēku, taču noteica to pašu 2,5 m minimumu.
+        , būvnormatīvs LBN 200-21 &quot;Būvju vispārīgo prasību būvnormatīvs&quot;, 7.1. līdz 7.5.
+        punkts, izgūts 2026. gada 12. septembrī. Iepriekšējais normatīvs LBN 211-15
+        &quot;Dzīvojamās ēkas&quot; ir zaudējis spēku, taču noteica to pašu 2,5 m minimumu
+        dzīvojamām telpām.
       </li>
     </ul>
   ),
