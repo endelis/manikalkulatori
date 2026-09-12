@@ -1817,3 +1817,31 @@ before this task: the average-pension (CSP) current-year figure and
 incomplete source data. Otherwise, continue mining LBN/LVS building
 codes for new majoklis calculators, the most reliable vein this
 session (4 clean hits in a row, zero sourcing blockers).
+
+## 2026-09-12 12:38
+
+Did: fifth majoklis calculator this stretch (autonomous tick, no user
+present), griestu-augstuma-kalkulators (minimum residential ceiling
+height, LBN 200-21 point 7.2, 2.5 m). Along the way discovered LBN
+211-15 (the regulation used to source several earlier calculators'
+neighbor topics) has been repealed ("zaudējis spēku") and superseded
+by LBN 200-21, which carries forward the same 2.5 m figure, confirmed
+by two independent direct fetches of the primary source
+(m.likumi.lv/ta/id/326992). lib/calculators/griestu-augstums.ts (+test),
+components/calculators/GriestuAugstumaCalculator.tsx, registry entry,
+FAQ, explanation/sources entries in the shared page.tsx. Full checklist
+green (tsc, build, vitest, dash-ban grep, rendered-HTML spot check via
+curl since Playwright wasn't installed in this project's node_modules).
+Commit 2a775bb.
+Learned: LBN codes get renumbered/consolidated over time (211-15 into
+200-21) the same way tax law sections shift; worth a quick "zaudējis
+spēku" check on any LBN number pulled from memory or an older citation
+before trusting it, the way this tick's WebSearch surfaced the repeal
+notice unprompted in the results list.
+Next: majoklis now at 23 calculators (was 18 this morning). LBN 200-21
+likely has more uncovered room-type/dimension requirements worth
+mining (e.g. corridor/sanitary-room height minimums surfaced this tick
+but not built into a calculator, since only one source fetch covered
+those specific numbers vs. two for the residential figure -- would
+want a second independent confirmation before shipping them). No
+BLOCKED items pending.
