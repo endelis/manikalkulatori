@@ -43,6 +43,16 @@ describe('calculateAlgaNeto', () => {
     expect(result.iinEur).toBeCloseTo(expectedIin, 5);
   });
 
+  it('applies the top 36% IIN rate above the 200 000 EUR/year equivalent monthly threshold', () => {
+    const result = calculateAlgaNeto({ grossMonthlyEur: 20000, applyNonTaxableMinimum: false });
+
+    const vsaoi = 20000 * 0.105;
+    const taxableBase = 20000 - vsaoi;
+    const topThreshold = 200_000 / 12;
+    const expectedIin = 8775 * 0.255 + (topThreshold - 8775) * 0.33 + (taxableBase - topThreshold) * 0.36;
+    expect(result.iinEur).toBeCloseTo(expectedIin, 5);
+  });
+
   it('computes net as gross minus VSAOI minus IIN', () => {
     const result = calculateAlgaNeto({ grossMonthlyEur: 1000, applyNonTaxableMinimum: true });
 

@@ -771,7 +771,7 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi bruto algu, uzzini algu uz rokas pēc VSAOI un IIN atskaitīšanas.',
     metaDescription: 'Aprēķini neto algu no bruto algas pēc VSAOI (10,5%) un progresīvās IIN likmes ar neapliekamo minimumu.',
     keywords: ['algas neto kalkulators', 'alga uz rokas', 'bruto neto kalkulators'],
-    contentUpdatedAt: '2026-09-11T15:36:11+03:00',
+    contentUpdatedAt: '2026-09-12T09:56:30+03:00',
   },
   {
     slug: 'alga-bruto',
@@ -781,7 +781,7 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi vēlamo algu uz rokas, uzzini nepieciešamo bruto algu pēc VSAOI un IIN.',
     metaDescription: 'Aprēķini nepieciešamo bruto algu, lai pēc VSAOI un IIN atskaitīšanas saņemtu vēlamo algu uz rokas.',
     keywords: ['algas bruto kalkulators', 'neto uz bruto', 'bruto algas kalkulators'],
-    contentUpdatedAt: '2026-09-11T15:07:50+03:00',
+    contentUpdatedAt: '2026-09-12T09:56:30+03:00',
   },
   {
     slug: 'ipasuma-nodoklis',
@@ -801,7 +801,7 @@ export const calculators: CalculatorMeta[] = [
     intro: 'Ievadi mēneša apliekamo ienākumu, uzzini VSAOI un IIN summu un to, kas paliek pēc nodokļiem.',
     metaDescription: 'Aprēķini VSAOI un IIN no saimnieciskās darbības ienākuma vispārējā nodokļu režīmā.',
     keywords: ['saimnieciskās darbības nodokļi', 'pašnodarbinātā kalkulators', 'saimnieciskās darbības nodokļu kalkulators'],
-    contentUpdatedAt: '2026-09-11T15:36:11+03:00',
+    contentUpdatedAt: '2026-09-12T09:56:30+03:00',
   },
   {
     slug: 'iin-kalkulators',

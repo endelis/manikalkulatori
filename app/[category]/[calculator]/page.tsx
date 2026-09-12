@@ -589,8 +589,9 @@ const explanations: Record<string, React.ReactNode> = {
   'alga-neto': (
     <p className="text-panel-muted">
       Kalkulators atņem no bruto algas VSAOI darbinieka daļu (10,5%), tad piemēro neapliekamo
-      minimumu un progresīvo IIN likmi (25,5% līdz 8775 eiro mēnesī, 33% virs tā) atlikušajai
-      summai, lai iegūtu algu uz rokas.
+      minimumu un progresīvo IIN likmi atlikušajai summai, lai iegūtu algu uz rokas: 25,5% līdz
+      8775 eiro mēnesī (105 300 eiro gadā), 33% no tā līdz aptuveni 16 667 eiro mēnesī
+      (200 000 eiro gadā), un 36% (33% plus 3% solidaritātes piemaksa) virs tā.
     </p>
   ),
   'alga-bruto': (
@@ -1334,6 +1335,39 @@ const sourcesContent: Record<string, React.ReactNode> = {
         , metodiskais materiāls &quot;Ienākums no ieguldījumu konta&quot;, publicēts 2024. gada
         27. decembrī, izgūts 2026. gada 11. septembrī.
       </li>
+    </ul>
+  ),
+  'alga-neto': (
+    <ul className="flex flex-col gap-2 text-sm text-panel-muted">
+      <li>
+        IIN likmju sliekšņi (25,5% līdz 105 300 eiro gadā, 33% virs tā, plus 3% solidaritātes
+        piemaksa virs 200 000 eiro gadā),{' '}
+        <a
+          href="https://www.fm.gov.lv/lv/iedzivotaju-ienakuma-nodokla-likmes"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          Finanšu ministrija
+        </a>
+        , atjaunināts 2026. gada 20. janvārī, izgūts 2026. gada 12. septembrī.
+      </li>
+      <li>
+        Diferencētais neapliekamais minimums (550 eiro pilnā apmērā līdz 500 eiro ienākuma, samazinās
+        līdz nullei pie 1800 eiro ienākuma mēnesī),{' '}
+        <a
+          href="https://www.fm.gov.lv/lv/neapliekamais-minimums-un-nodokla-atvieglojumi-0"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          Finanšu ministrija
+        </a>
+        , atjaunināts 2026. gada 20. janvārī, izgūts 2026. gada 12. septembrī. Samazinājuma formula
+        (proporcionāla starp šiem diviem sliekšņiem) apstiprināta Ministru kabineta noteikumos par
+        neapliekamā minimuma un nodokļa atvieglojuma apmēru.
+      </li>
+      <li>VSAOI darbinieka daļas likme 10,5%, sk. avotus pensijas kalkulatora lapā.</li>
     </ul>
   ),
 };

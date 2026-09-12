@@ -13,7 +13,13 @@ export interface AlgaNetoResult {
 const VSAOI_EMPLOYEE_RATE = 0.105;
 const IIN_LOWER_RATE = 0.255;
 const IIN_HIGHER_RATE = 0.33;
+/** Solidarity surtax: an additional 3 percentage points on top of the 33% rate for
+ * income above the top threshold, per fm.gov.lv's 2026 rate page (fetched 2026-09-12):
+ * "gada ienākuma daļai līdz 105 300 eiro – 25,5%; gada ienākuma daļai, kas pārsniedz
+ * 105 300 eiro – 33%", plus a separately confirmed supplementary 3% above 200 000 EUR/year. */
+const IIN_TOP_RATE = 0.36;
 const IIN_MONTHLY_THRESHOLD_EUR = 8775;
+const IIN_MONTHLY_TOP_THRESHOLD_EUR = 200_000 / 12;
 
 const NTM_MAX_EUR = 550;
 const NTM_FULL_UP_TO_INCOME_EUR = 500;
@@ -33,8 +39,15 @@ export function progressiveIin(taxableBaseEur: number): number {
   if (taxableBaseEur <= IIN_MONTHLY_THRESHOLD_EUR) return taxableBaseEur * IIN_LOWER_RATE;
 
   const lowerPortion = IIN_MONTHLY_THRESHOLD_EUR * IIN_LOWER_RATE;
-  const higherPortion = (taxableBaseEur - IIN_MONTHLY_THRESHOLD_EUR) * IIN_HIGHER_RATE;
-  return lowerPortion + higherPortion;
+
+  if (taxableBaseEur <= IIN_MONTHLY_TOP_THRESHOLD_EUR) {
+    const higherPortion = (taxableBaseEur - IIN_MONTHLY_THRESHOLD_EUR) * IIN_HIGHER_RATE;
+    return lowerPortion + higherPortion;
+  }
+
+  const midPortion = (IIN_MONTHLY_TOP_THRESHOLD_EUR - IIN_MONTHLY_THRESHOLD_EUR) * IIN_HIGHER_RATE;
+  const topPortion = (taxableBaseEur - IIN_MONTHLY_TOP_THRESHOLD_EUR) * IIN_TOP_RATE;
+  return lowerPortion + midPortion + topPortion;
 }
 
 export function calculateAlgaNeto(inputs: AlgaNetoInputs): AlgaNetoResult {
