@@ -1122,6 +1122,22 @@ export const articles: ArticleMeta[] = [
     contentUpdatedAt: '2026-09-11T23:42:00+03:00',
   },
   {
+    slug: 'ka-izveleties-pensiju-2-limena-planu',
+    category: 'finanses',
+    title: 'Kā izvēlēties pensiju 2. līmeņa ieguldījumu plānu',
+    h1: 'Kā izvēlēties pensiju 2. līmeņa ieguldījumu plānu',
+    intro:
+      'Uzzini par konservatīvo, sabalansēto un aktīvo plānu atšķirībām un kā izvēlēties atbilstošu savam vecumam.',
+    metaDescription:
+      'Kā izvēlēties pensiju 2. līmeņa ieguldījumu plānu Latvijā: konservatīvais, sabalansētais un aktīvais plāns, riska pakāpe pēc vecuma un plāna maiņa.',
+    keywords: [
+      'pensiju 2. līmeņa plāna izvēle',
+      'pensiju 2. līmenis riska pakāpe',
+      'kā izvēlēties pensiju 2. līmeņa plānu',
+    ],
+    contentUpdatedAt: '2026-09-12T17:35:00+03:00',
+  },
+  {
     slug: 'etf-pamati-pensijas-uzkrajumam',
     category: 'finanses',
     title: 'ETF pamati pensijas uzkrājumam',
@@ -1228,6 +1244,7 @@ const CATEGORY_HUBS: CategoryHub[] = [
       'videja-pensija-latvija',
       'priekslaicigas-pensijas-kalkulators',
       'priekslaicigas-vs-standarta-pensija',
+      'ka-izveleties-pensiju-2-limena-planu',
       'pensiju-3-limena-kalkulators',
       'ka-izveleties-pensiju-3-limena-planu',
       'ieguldijumu-konta-nodoklu-kalkulators',

@@ -178,9 +178,15 @@ export const articleBody: Record<string, React.ReactNode> = {
 
       <h2 className="font-sans text-h2">2. līmenis</h2>
       <p>
-        Obligātā daļa, kas tiek ieguldīta tavā izvēlētajā pensiju fondā. Šai sadaļai plānots kalkulators,
-        taču tas vēl nav publicēts, jo fondu vidējā ienesīguma dati pēc riska kategorijām vēl nav pieejami
-        sagatavošanai nepieciešamajā formā.
+        Obligātā daļa, kas tiek ieguldīta tavā izvēlētajā pensiju fondā.{' '}
+        <Link
+          href="/finanses/ka-izveleties-pensiju-2-limena-planu"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          Uzzini, kā izvēlēties atbilstošu ieguldījumu plānu
+        </Link>
+        . Šai sadaļai plānots arī kalkulators, taču tas vēl nav publicēts, jo fondu vidējā ienesīguma
+        dati pēc riska kategorijām vēl nav pieejami sagatavošanai nepieciešamajā formā.
       </p>
 
       <h2 className="font-sans text-h2">3. līmenis</h2>
@@ -301,6 +307,13 @@ export const articleBody: Record<string, React.ReactNode> = {
       <p>
         Skaties arī{' '}
         <Link
+          href="/finanses/ka-izveleties-pensiju-2-limena-planu"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          līdzīgu izvēli 2. līmenī
+        </Link>{' '}
+        un{' '}
+        <Link
           href="/finanses/pensija-latvija-celvedis"
           className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
         >
@@ -344,6 +357,58 @@ export const articleBody: Record<string, React.ReactNode> = {
           pilnu ceļvedi par pensiju Latvijā
         </Link>
         , kas apkopo visus trīs pensiju līmeņus vienā vietā.
+      </p>
+    </>
+  ),
+  'ka-izveleties-pensiju-2-limena-planu': (
+    <>
+      <p>
+        Pensiju 2. līmeņa ieguldījumu plāni Latvijā iedalās trīs galvenajās riska kategorijās:
+        konservatīvais, sabalansētais un aktīvais. Kategorijas atšķiras pēc tā, cik lielu daļu no
+        līdzekļiem plāns drīkst ieguldīt akcijās salīdzinājumā ar obligācijām un citiem
+        zemāka riska instrumentiem.
+      </p>
+      <p>
+        Konservatīvie plāni iegulda galvenokārt obligācijās un citos zemas svārstības instrumentos,
+        tāpēc arī potenciālais ienesīgums ir zemāks. Šie plāni bieži ir paredzēti dalībniekiem, kas
+        tuvojas pensijas vecumam, kad kapitāla saglabāšana kļūst svarīgāka par tā pieaugumu. Daļa
+        pārvaldītāju piedāvā arī atsevišķus, vecumam pielāgotus konservatīvos plānus (piemēram,
+        paredzētus dalībniekiem virs 62 gadiem).
+      </p>
+      <p>
+        Sabalansētie plāni iegulda daļu līdzekļu akcijās, saglabājot lielāku daļu drošākos
+        instrumentos, tāpēc tie ir vidusceļš starp zemāku risku un augstāku potenciālo ienesīgumu.
+        Aktīvie plāni iegulda akcijās vislielāko pieļaujamo daļu, tāpēc tiem ir augstākais svārstību
+        risks īstermiņā, bet arī augstākais potenciālais ienesīgums ilgtermiņā.
+      </p>
+      <p>
+        Tāpat kā 3. līmenī, arī šeit jaunākiem dalībniekiem ar ilgu laiku līdz pensijai parasti
+        atbilstošāka ir aktīvāka politika, jo ir laiks pārciest īstermiņa svārstības apmaiņā pret
+        augstāku ilgtermiņa ienesīgumu. Tuvojoties pensijas vecumam, vērts apsvērt kapitāla pārcelšanu
+        uz konservatīvāku plānu. Izvēli var mainīt jebkurā laikā, arī pārejot uz citu pārvaldītāju,
+        neiztērējot jau uzkrāto kapitālu.
+      </p>
+      <p>
+        Šis raksts apraksta vispārīgo riska kategoriju uzbūvi, nevis konkrētu plānu ienesīgumu. Katra
+        plāna precīzo ieguldījumu struktūru un vēsturisko ienesīgumu vienmēr pārbaudi attiecīgā plāna
+        prospektā vai VSAA/Manapensija.lv salīdzināšanas rīkā.
+      </p>
+      <p>
+        Skaties arī{' '}
+        <Link
+          href="/finanses/ka-izveleties-pensiju-3-limena-planu"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          līdzīgu izvēli 3. līmenī
+        </Link>{' '}
+        un{' '}
+        <Link
+          href="/finanses/pensija-latvija-celvedis"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          pilnu ceļvedi par pensiju Latvijā
+        </Link>
+        .
       </p>
     </>
   ),
@@ -494,6 +559,20 @@ export const articleSources: Record<string, React.ReactNode> = {
         &quot;Privātie pensiju fondi (pensiju 3. līmenis)&quot;
       </a>
       , izgūts 2026. gada 11. septembrī.
+    </p>
+  ),
+  'ka-izveleties-pensiju-2-limena-planu': (
+    <p className="text-sm text-panel-faint">
+      Vispārējs riska kategoriju apraksts atbilst plaši publicētai nozares informācijai (piemēram,
+      pārvaldītāju publiskajiem plānu prospektiem un{' '}
+      <a
+        href="https://www.manapensija.lv/lv/pensiju-2-limenis/"
+        className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+      >
+        Manapensija.lv
+      </a>
+      ), nevis vienam konkrētam normatīvajam punktam. Katra plāna precīzā ieguldījumu struktūra
+      jāpārbauda tā pašreizējā prospektā, izgūts 2026. gada 12. septembrī.
     </p>
   ),
   'buvniecibas-prasibu-celvedis': (
