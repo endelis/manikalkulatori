@@ -1653,3 +1653,27 @@ specific text of likuma "Par iedzīvotāju ienākuma nodokli" 11. panta
 12. daļa from likumi.lv directly, an īres ienākuma nodokļa kalkulators
 is a real, buildable, currently-uncovered calculator idea for the
 finanses category.
+
+## 2026-09-12 10:49
+
+Did: shipped siltinajuma-biezuma-kalkulators (insulation thickness),
+found by pivoting to new-topic research right after the rental-income
+tax lead hit the same unreadable-PDF blocker pattern seen elsewhere
+this session -- demonstrating the new "never idle" policy within the
+same tick it was written. Real gap: existing Latvian insulation
+calculators (2AB, Kalo Buve, found via WebSearch) all compute cost
+given a thickness the user already chose; none compute the required
+thickness from the building code's own U-value target. Sourced the
+LBN 002-19 U-value table via a clean direct likumi.lv fetch (this one
+worked cleanly, unlike the tax-PDF attempts). Material thermal
+conductivities are standard physics reference values, not YMYL data,
+disclosed as typical ranges per material category rather than a
+specific product's number. Compute module explicitly discloses it is
+a simplified single-layer estimate. Full checklist green, verified
+visually and by hand (0.037/0.2 = 185mm). Commit 4f69465.
+Next: no BLOCKED items pending except the three already-known data
+gaps (vidējā pensija, 2nd-level fund returns, rental-income-tax exact
+text). Site now covers auto/finance/majoklis/health/sports per the
+original plan, plus the full pension cluster, plus this new insulation
+calculator. Continuing to look for genuinely new, validated topics
+rather than stopping at the first blocker on any one of them.
