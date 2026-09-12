@@ -2325,3 +2325,42 @@ beyond the known pension-fund-returns blocker. If no reply arrives by
 the next tick, default to a different flavor of work (audit/quality
 pass, or content-depth improvement on existing pages) rather than
 another marginal new-calculator search in the same exhausted vein.
+
+## 2026-09-12 18:20
+
+Did: still no user reply, continued per own last-tick guidance (audit/
+depth work over marginal new-calculator search). Reconciled
+PENSION-TOPICAL-AUTHORITY-PLAN.md against what is actually built
+(checked every planned slug against lib/registry.ts directly rather
+than trusting memory): 11 of the plan's items were already live and
+undocumented as such, one genuinely blocked (fund-return data), two
+simply not yet built (combined-total calculator, 2-vs-3 comparison
+article), and one (article 5, 2nd-level plan-choice guidance) was an
+open question the plan itself couldn't answer. Investigated that last
+one directly: confirmed it does NOT share calculator 2's data blocker,
+since it only needs descriptive risk-tier text (konservatīvais/
+sabalansētais/aktīvais and their approximate equity allocation), which
+is well-established, consistently-repeated industry knowledge (fund
+prospectuses, Manapensija.lv), not the blocked numeric fund-return
+data. Built and shipped it: ka-izveleties-pensiju-2-limena-planu,
+wired into the pension hub's previously-empty 2nd-level section
+(which used to say only "a calculator is planned but blocked," now
+also has real content) and cross-linked bidirectionally with the
+existing 3rd-level plan-choice article as a natural sibling. Updated
+the plan doc's status note twice this tick: once to add the overall
+reconciliation, once more after this specific article shipped to
+mark it built rather than leave the "may be buildable" hypothesis
+unresolved in the doc.
+Learned: a "we don't have precise regulatory data for X" blocker on a
+calculator does not automatically block an adjacent article that only
+needs qualitative/descriptive information about the same topic --
+worth checking what a piece of content actually needs before assuming
+it inherits a neighboring blocker.
+Full checklist green (tsc, build, vitest, dash-ban grep), visually
+verified the new page and both link directions via a running dev
+server. Commits 265d85c, 41b9a1e.
+Next: no BLOCKED items pending beyond the fund-returns data blocker
+(calculator 2 and article 4, both of which do need the numeric data).
+Pension cluster is now essentially complete except those two items.
+Still awaiting the user's steer from two turns ago on overall
+direction.
