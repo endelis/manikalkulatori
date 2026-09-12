@@ -19,17 +19,17 @@ export default function OpengraphImage() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: '#0B0E14',
-          color: '#E8ECF3',
+          backgroundColor: '#FAFAF9',
+          color: '#1C1917',
           fontFamily: 'sans-serif',
           padding: 64,
           textAlign: 'center',
         }}
       >
-        <div style={{ fontSize: 32, color: '#8A93A6', marginBottom: 16 }}>Manikalkulatori.lv</div>
-        <div style={{ fontSize: 140, fontWeight: 700, color: '#B18CFF', display: 'flex' }}>{perDay}</div>
-        <div style={{ fontSize: 40, color: '#E8ECF3', marginTop: 16 }}>bērni dienā nepieciešami</div>
-        <div style={{ fontSize: 28, color: '#8A93A6', marginTop: 8 }}>lai Latvijas iedzīvotāju skaits vairs nesarūktu</div>
+        <div style={{ fontSize: 32, color: '#57534E', marginBottom: 16 }}>Manikalkulatori.lv</div>
+        <div style={{ fontSize: 140, fontWeight: 700, color: '#7C3AED', display: 'flex' }}>{perDay}</div>
+        <div style={{ fontSize: 40, color: '#1C1917', marginTop: 16 }}>bērni dienā nepieciešami</div>
+        <div style={{ fontSize: 28, color: '#57534E', marginTop: 8 }}>lai Latvijas iedzīvotāju skaits vairs nesarūktu</div>
       </div>
     ),
     { ...size },
