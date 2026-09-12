@@ -56,6 +56,12 @@ export async function generateMetadata({
     description: content.metaDescription,
     keywords: content.keywords,
     alternates: { canonical: `/${content.category}/${content.slug}` },
+    openGraph: {
+      title: content.title,
+      description: content.metaDescription,
+      url: `${SITE_URL}/${content.category}/${content.slug}`,
+      locale: 'lv_LV',
+    },
   };
 }
 

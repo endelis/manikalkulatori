@@ -50,6 +50,41 @@ export function buildArticleSchema(input: ArticleSchemaInput) {
   };
 }
 
+export interface WebSiteSchemaInput {
+  name: string;
+  description: string;
+  url: string;
+}
+
+export function buildWebSiteSchema(input: WebSiteSchemaInput) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: input.name,
+    description: input.description,
+    url: input.url,
+    inLanguage: 'lv',
+  };
+}
+
+export interface ItemListEntry {
+  name: string;
+  url: string;
+}
+
+export function buildItemListSchema(items: ItemListEntry[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      url: item.url,
+    })),
+  };
+}
+
 export interface BreadcrumbItem {
   name: string;
   url: string;

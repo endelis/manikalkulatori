@@ -1,5 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import { buildBreadcrumbSchema, buildFaqSchema, buildSoftwareApplicationSchema, safeJsonLd } from './schema';
+import {
+  buildBreadcrumbSchema,
+  buildFaqSchema,
+  buildItemListSchema,
+  buildSoftwareApplicationSchema,
+  buildWebSiteSchema,
+  safeJsonLd,
+} from './schema';
 
 describe('buildSoftwareApplicationSchema', () => {
   it('builds a schema.org SoftwareApplication node', () => {
@@ -49,6 +56,41 @@ describe('safeJsonLd', () => {
   it('produces JSON equivalent to JSON.stringify for ordinary data', () => {
     const data = { '@type': 'FAQPage', mainEntity: [] };
     expect(JSON.parse(safeJsonLd(data))).toEqual(data);
+  });
+});
+
+describe('buildWebSiteSchema', () => {
+  it('builds a schema.org WebSite node', () => {
+    const schema = buildWebSiteSchema({
+      name: 'Manikalkulatori.lv',
+      description: 'Bezmaksas kalkulatori latviešu valodā.',
+      url: 'https://manikalkulatori.lv',
+    });
+
+    expect(schema['@context']).toBe('https://schema.org');
+    expect(schema['@type']).toBe('WebSite');
+    expect(schema.name).toBe('Manikalkulatori.lv');
+    expect(schema.url).toBe('https://manikalkulatori.lv');
+    expect(schema.inLanguage).toBe('lv');
+  });
+});
+
+describe('buildItemListSchema', () => {
+  it('builds an ordered ItemList', () => {
+    const schema = buildItemListSchema([
+      { name: 'KASKO kalkulators', url: 'https://manikalkulatori.lv/auto/kasko-kalkulators' },
+      { name: 'OCTA kalkulators', url: 'https://manikalkulatori.lv/auto/octa-kalkulators' },
+    ]);
+
+    expect(schema['@type']).toBe('ItemList');
+    expect(schema.itemListElement).toHaveLength(2);
+    expect(schema.itemListElement[0]).toEqual({
+      '@type': 'ListItem',
+      position: 1,
+      name: 'KASKO kalkulators',
+      url: 'https://manikalkulatori.lv/auto/kasko-kalkulators',
+    });
+    expect(schema.itemListElement[1].position).toBe(2);
   });
 });
 

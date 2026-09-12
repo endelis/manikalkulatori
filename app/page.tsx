@@ -2,14 +2,34 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { categories, getCalculatorsByCategory } from '@/lib/registry';
 import { pluralizeKalkulatori } from '@/lib/format';
+import { SITE_URL } from '@/lib/site';
+import { buildWebSiteSchema, safeJsonLd } from '@/lib/schema';
+
+const HOME_DESCRIPTION =
+  'Bezmaksas kalkulatori auto, finanšu, mājokļa, veselības un sporta jautājumiem latviešu valodā.';
 
 export const metadata: Metadata = {
+  description: HOME_DESCRIPTION,
   alternates: { canonical: '/' },
+  openGraph: {
+    title: 'Manikalkulatori.lv',
+    description: HOME_DESCRIPTION,
+    url: SITE_URL,
+    locale: 'lv_LV',
+  },
 };
 
 export default function HomePage() {
+  const webSiteSchema = buildWebSiteSchema({
+    name: 'Manikalkulatori.lv',
+    description: HOME_DESCRIPTION,
+    url: SITE_URL,
+  });
+
   return (
-    <main className="mx-auto flex max-w-2xl flex-col gap-8 px-4 py-12">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(webSiteSchema) }} />
+      <main className="mx-auto flex max-w-2xl flex-col gap-8 px-4 py-12">
       <header className="flex flex-col gap-2">
         <h1 className="font-sans text-h1">Manikalkulatori.lv</h1>
         <p className="text-panel-muted">
@@ -54,6 +74,7 @@ export default function HomePage() {
           );
         })}
       </div>
-    </main>
+      </main>
+    </>
   );
 }

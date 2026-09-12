@@ -499,7 +499,7 @@ export const calculators: CalculatorMeta[] = [
       'blondela formula',
       'pakāpiena augstums un platums',
     ],
-    contentUpdatedAt: '2026-09-12T12:03:18+03:00',
+    contentUpdatedAt: '2026-09-12T12:08:11+03:00',
   },
   {
     slug: 'kmi-kalkulators',

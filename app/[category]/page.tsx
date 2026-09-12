@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { categories, getCategory, getContentByCategory } from '@/lib/registry';
+import { SITE_URL } from '@/lib/site';
+import { buildBreadcrumbSchema, buildItemListSchema, safeJsonLd } from '@/lib/schema';
 
 export const dynamicParams = false;
 
@@ -25,6 +27,12 @@ export async function generateMetadata({
     description: category.description,
     alternates: { canonical: `/${category.slug}` },
     robots: isEmpty ? { index: false, follow: true } : undefined,
+    openGraph: {
+      title: category.title,
+      description: category.description,
+      url: `${SITE_URL}/${category.slug}`,
+      locale: 'lv_LV',
+    },
   };
 }
 
@@ -46,8 +54,25 @@ export default async function CategoryPage({
 
   const categoryCalculators = getContentByCategory(category.slug);
 
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: 'Sākums', url: SITE_URL },
+    { name: category.title, url: `${SITE_URL}/${category.slug}` },
+  ]);
+
+  const itemListSchema = buildItemListSchema(
+    categoryCalculators.map((calculator) => ({
+      name: calculator.title,
+      url: `${SITE_URL}/${category.slug}/${calculator.slug}`,
+    }))
+  );
+
   return (
-    <main className="mx-auto flex max-w-2xl flex-col gap-8 px-4 py-10">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumbSchema) }} />
+      {categoryCalculators.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(itemListSchema) }} />
+      )}
+      <main className="mx-auto flex max-w-2xl flex-col gap-8 px-4 py-10">
       <nav aria-label="Breadcrumb" className="text-sm text-panel-faint">
         <Link href="/">Sākums</Link>
         {' / '}
@@ -79,6 +104,7 @@ export default async function CategoryPage({
           ))}
         </div>
       )}
-    </main>
+      </main>
+    </>
   );
 }
