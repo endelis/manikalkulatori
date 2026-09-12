@@ -1603,3 +1603,17 @@ need better data than what's been provided. Otherwise the site is in
 good shape: light redesign complete and audited, pension cluster
 built out, alga-neto/alga-bruto now complete including the top
 bracket, all previously-flagged gated-file issues resolved.
+
+## 2026-09-12 10:17
+
+Did: quick follow-up, added a FAQ entry to alga-neto documenting the
+top IIN bracket (25.5%/33%/36%) added in the previous commit, since
+the compute logic and explanation text mentioned it but the FAQ
+didn't. Checked saimnieciska-darbiba's explanation/FAQ too since it
+shares the same underlying function; left it as-is since it refers to
+"progresīvo IIN likmi" generically without enumerating brackets, so it
+stays accurate without needing an edit. Commit 2e49381, full checklist
+green.
+Next: no BLOCKED items. Site is in solid shape across the redesign,
+pension cluster, and salary calculators. Will keep auditing for real
+issues on future ticks rather than idling.
