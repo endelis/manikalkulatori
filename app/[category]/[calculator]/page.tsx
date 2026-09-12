@@ -478,6 +478,13 @@ const explanations: Record<string, React.ReactNode> = {
       viss telpas gaiss).
     </p>
   ),
+  'logu-platibas-kalkulators': (
+    <p className="text-panel-muted">
+      Kalkulators dala telpas grīdas platību ar 8, iegūstot minimālo pieļaujamo loga (stikla) platību.
+      Ja ievadītā loga platība ir vienāda ar šo vērtību vai lielāka, prasība ir izpildīta, ja mazāka,
+      kalkulators parāda trūkstošo starpību.
+    </p>
+  ),
   'skriesanas-temps': (
     <p className="text-panel-muted">
       Kalkulators saskaita kopējo laiku minūtēs un dala to ar distanci, lai iegūtu tempu uz kilometru.
@@ -1445,6 +1452,23 @@ const sourcesContent: Record<string, React.ReactNode> = {
         Iepriekšējā redakcijā ietvertā telpu tipu tabula (3. pielikums) svītrota ar 2023. gada 17.
         janvāra grozījumiem un aizstāta ar atsauci uz standartu LVS EN 16798-1, ko šis kalkulators
         neietver.
+      </li>
+    </ul>
+  ),
+  'logu-platibas-kalkulators': (
+    <ul className="flex flex-col gap-2 text-sm text-panel-muted">
+      <li>
+        Logu platības attiecība pret grīdas platību ne mazāka par 1:8 dzīvojamām telpām un virtuvēm,{' '}
+        <a
+          href="https://m.likumi.lv/ta/id/326992-buvju-visparigo-prasibu-buvnormativs-lbn-200-21"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          likumi.lv
+        </a>
+        , būvnormatīvs LBN 200-21 &quot;Būvju vispārīgo prasību būvnormatīvs&quot;, 99. punkts, izgūts
+        2026. gada 12. septembrī.
       </li>
     </ul>
   ),

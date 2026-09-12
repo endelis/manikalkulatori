@@ -467,7 +467,23 @@ export const calculators: CalculatorMeta[] = [
       'gaisa apmaiņas kalkulators',
       'svaigā gaisa daudzums telpā',
     ],
-    contentUpdatedAt: '2026-09-12T11:44:15+03:00',
+    contentUpdatedAt: '2026-09-12T11:49:12+03:00',
+  },
+  {
+    slug: 'logu-platibas-kalkulators',
+    category: 'majoklis',
+    title: 'Logu platības kalkulators',
+    h1: 'Vai loga platība atbilst dienasgaismas prasībai?',
+    intro:
+      'Ievadi telpas grīdas platību un loga platību, uzzini, vai tā atbilst 1:8 prasībai.',
+    metaDescription:
+      'Pārbaudi, vai loga platība dzīvojamā telpā vai virtuvē atbilst LBN 200-21 prasībai (logu platība vismaz 1:8 pret grīdas platību).',
+    keywords: [
+      'logu platības kalkulators',
+      'logu platība pret grīdas platību',
+      'dienasgaismas prasība logiem',
+    ],
+    contentUpdatedAt: '2026-09-12T11:51:29+03:00',
   },
   {
     slug: 'kmi-kalkulators',
