@@ -1925,3 +1925,33 @@ cluster (majoklis material-quantity calculators, or sports training-
 zone calculators, don't cluster as tightly as pensions/LBN-compliance
 did); or continue new-calculator research per the established
 building-code vein.
+
+## 2026-09-12 13:52
+
+Did: sixth majoklis calculator, kapnu-pakapiena-izmeru-kalkulators
+(LBN 200-21 point 62's legal stair-step limits: riser height 12-18 cm,
+tread depth plus two riser heights 60-65 cm). Deliberately distinct
+from the existing kapnu-formulas-kalkulators, which checks Blondel's
+60-64cm comfort convention, not law, and explicitly disclaims that it
+is not a safety requirement -- this new one is the actual legal
+minimum, a different number and a different source category (codified
+requirement vs. centuries-old architectural convention), so it earns
+its own calculator rather than becoming a mode on the existing one.
+Considered and declined going further into railing height (margu
+augstums) for the same LBN point: that is fall-protection safety
+hardware, not a dimension/permit-compliance check, so it stays on the
+same "not touching this" list as electrical sizing and structural
+load capacity from earlier this session. Confirmed the 12-18/60-65 cm
+figures via two independent direct fetches of the primary source
+(m.likumi.lv and likumi.lv mirrors of LBN 200-21), identical wording
+both times. Wired as a 6th member of the buvniecibas-prasibu-celvedis
+hub, cross-linked bidirectionally with kapnu-formulas-kalkulators.
+Full checklist green (tsc, build, vitest, dash-ban grep), visually
+verified the new page and both hub link directions via a running dev
+server. Commit bafc332.
+Next: no BLOCKED items pending. majoklis now at 24 calculators (was 18
+this morning, roughly a third larger in one session via the LBN
+building-code vein). Worth checking whether that vein has more clean
+hits left (LBN 200-21 has other numbered points not yet mined) before
+concluding it is exhausted, or pivoting back to the two open pension-
+cluster data blockers.
