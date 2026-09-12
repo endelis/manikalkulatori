@@ -164,6 +164,59 @@ describe.skipIf(!allBuilt)('novads pilot pages, JS disabled usability', () => {
   });
 });
 
+describe('population page series stays inside a real browsable hierarchy, not a doorway pattern', () => {
+  /**
+   * Google's scaled-content-abuse / doorway-page guidance specifically calls out pages
+   * "targeted at specific regions or cities" that sit "closer to search results than a
+   * clearly defined, browsable hierarchy." The mitigating factor this repo relies on is
+   * that every area page is reachable from a real editorial hub page
+   * (app/sabiedriba/iedzivotaju-skaits-latvija/page.tsx) that has its own national-level
+   * content, not just an auto-generated index — this test guards that the link from the
+   * hub to each area actually exists in the hub's own rendered output, since the hub
+   * page renders that list by mapping over NOVADS_PILOT_AREAS and a future refactor
+   * could silently break that without any other test catching it.
+   */
+  it('the parent hub page links to every area in NOVADS_PILOT_AREAS', () => {
+    const hubFile = path.join(
+      process.cwd(),
+      '.next',
+      'server',
+      'app',
+      'sabiedriba',
+      'iedzivotaju-skaits-latvija.html',
+    );
+    if (!fs.existsSync(hubFile)) return; // build has not run yet in this environment
+    const html = fs.readFileSync(hubFile, 'utf-8');
+    for (const area of NOVADS_PILOT_AREAS) {
+      expect(
+        html.includes(`/sabiedriba/iedzivotaju-skaits/${area.slug}`),
+        `${area.slug}: not linked from the population hub page`,
+      ).toBe(true);
+    }
+  });
+
+  /**
+   * Not a hard technical limit, a deliberate speed bump: this series' whole defense
+   * against a doorway-page classification rests on each page carrying genuinely
+   * computed, non-interchangeable content (see the "every rendered number traces to..."
+   * test above) plus real hub integration, not on page count. Growing this series
+   * quickly, area after area, is exactly the shape of "many pages generated... without
+   * adding value" that Google's spam policy names, even when each individual page is
+   * honestly sourced. If this test starts failing, the right response is to raise the
+   * threshold deliberately (a one-line change) only after re-reading that reasoning,
+   * not to bump the number reflexively to make the suite pass.
+   */
+  it('area count has not silently grown past a deliberate review threshold', () => {
+    const REVIEW_THRESHOLD = 12;
+    expect(
+      NOVADS_PILOT_AREAS.length,
+      `NOVADS_PILOT_AREAS has grown to ${NOVADS_PILOT_AREAS.length} areas. This is a deliberate speed bump, ` +
+        'not a bug: re-read this test\'s comment and this repo\'s technical-compliance notes on scaled content ' +
+        'abuse before raising REVIEW_THRESHOLD.',
+    ).toBeLessThanOrEqual(REVIEW_THRESHOLD);
+  });
+});
+
 describe('sitemap includes the novads pilot pages', () => {
   it('lists all three URLs with a valid full ISO 8601 timestamp', () => {
     const sitemapFile = path.join(process.cwd(), '.next', 'server', 'app', 'sitemap.xml.body');
