@@ -110,6 +110,16 @@ const explanations: Record<string, React.ReactNode> = {
         45&nbsp;000 eiro, vai 60&nbsp;000 eiro, ja auto ir vismaz 6 sēdvietas. Lietotam auto papildus
         jāmaksā vismaz 8&nbsp;750 eiro bez PVN. Lietoti spraudņa hibrīdi atbalstu nesaņem.
       </p>
+      <p className="text-panel-muted">
+        Atlikušo summu pēc atbalsta bieži finansē ar kredītu, tāpēc noderēs arī{' '}
+        <Link
+          href="/finanses/kredita-kalkulators"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          kredīta ikmēneša maksājuma kalkulators
+        </Link>
+        .
+      </p>
     </>
   ),
   'kasko-kalkulators': (
@@ -140,6 +150,16 @@ const explanations: Record<string, React.ReactNode> = {
         atlikušo vērtību, vai jāatjauno līgums, tāpēc zemāks mēneša maksājums nenozīmē automātiski
         izdevīgāku izvēli.
       </p>
+      <p className="text-panel-muted">
+        Ja apsver tikai kredītu (bez līzinga), sk. arī{' '}
+        <Link
+          href="/finanses/kredita-kalkulators"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          vienkāršo kredīta kalkulatoru
+        </Link>
+        .
+      </p>
     </>
   ),
   'degvielas-izmaksas': (
@@ -149,11 +169,23 @@ const explanations: Record<string, React.ReactNode> = {
     </p>
   ),
   'uzlades-izmaksas': (
-    <p className="text-panel-muted">
-      Kalkulators aprēķina kopējo gadā patērēto enerģiju no tava nobraukuma un patēriņa, tad sadala to
-      starp mājas un publisko lādēšanu pēc tavis norādītās proporcijas. Katrai daļai piemēro atbilstošo
-      cenu un summē kopējās gada izmaksas.
-    </p>
+    <>
+      <p className="text-panel-muted">
+        Kalkulators aprēķina kopējo gadā patērēto enerģiju no tava nobraukuma un patēriņa, tad sadala to
+        starp mājas un publisko lādēšanu pēc tavis norādītās proporcijas. Katrai daļai piemēro atbilstošo
+        cenu un summē kopējās gada izmaksas.
+      </p>
+      <p className="text-panel-muted">
+        Mājas lādēšanas daļa palielina arī tavu kopējo elektrības rēķinu, ko var pārbaudīt ar{' '}
+        <Link
+          href="/majoklis/elektribas-rekins"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          elektrības rēķina kalkulatoru
+        </Link>
+        .
+      </p>
+    </>
   ),
   'nolietojums': (
     <p className="text-panel-muted">
@@ -184,11 +216,23 @@ const explanations: Record<string, React.ReactNode> = {
     </p>
   ),
   'uznemuma-auto-nodoklis': (
-    <p className="text-panel-muted">
-      Kalkulators nosaka mēneša likmi pēc transportlīdzekļa veida un dzinēja jaudas: elektromobiļiem un
-      spraudņa hibrīdiem fiksēta likme, citiem pēc 2009. gada reģistrētiem transportlīdzekļiem likme
-      pieaug pa jaudas grupām, tad reizina ar divpadsmit, lai iegūtu gada summu.
-    </p>
+    <>
+      <p className="text-panel-muted">
+        Kalkulators nosaka mēneša likmi pēc transportlīdzekļa veida un dzinēja jaudas: elektromobiļiem un
+        spraudņa hibrīdiem fiksēta likme, citiem pēc 2009. gada reģistrētiem transportlīdzekļiem likme
+        pieaug pa jaudas grupām, tad reizina ar divpadsmit, lai iegūtu gada summu.
+      </p>
+      <p className="text-panel-muted">
+        Ja rēķini šo nodokli kā saimnieciskās darbības veicējs, sk. arī{' '}
+        <Link
+          href="/finanses/saimnieciska-darbiba"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          saimnieciskās darbības ienākuma nodokļu kalkulatoru
+        </Link>
+        .
+      </p>
+    </>
   ),
   'solaru-atmaksa': (
     <p className="text-panel-muted">
@@ -207,10 +251,22 @@ const explanations: Record<string, React.ReactNode> = {
     </p>
   ),
   'elektribas-rekins': (
-    <p className="text-panel-muted">
-      Kalkulators reizina mēneša patēriņu ar elektrības cenu, lai iegūtu mainīgo daļu, tad pieskaita
-      fiksēto mēneša maksu. Gada izmaksas iegūst, reizinot mēneša rēķinu ar divpadsmit.
-    </p>
+    <>
+      <p className="text-panel-muted">
+        Kalkulators reizina mēneša patēriņu ar elektrības cenu, lai iegūtu mainīgo daļu, tad pieskaita
+        fiksēto mēneša maksu. Gada izmaksas iegūst, reizinot mēneša rēķinu ar divpadsmit.
+      </p>
+      <p className="text-panel-muted">
+        Ja mājās lādē arī elektroauto, tā daļu rēķinā palīdz novērtēt{' '}
+        <Link
+          href="/auto/uzlades-izmaksas"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          uzlādes izmaksu kalkulators
+        </Link>
+        .
+      </p>
+    </>
   ),
   'apkures-izmaksas': (
     <p className="text-panel-muted">
@@ -474,6 +530,16 @@ const explanations: Record<string, React.ReactNode> = {
         <li>Ekstrudētais polistirols (XPS): 0,030 līdz 0,035</li>
         <li>Poliuretāna putas (PUR/PIR): 0,022 līdz 0,028</li>
       </ul>
+      <p className="text-panel-muted">
+        Ja siltināšanu plāno finansēt ar hipotēku vai remonta kredītu, sk. arī{' '}
+        <Link
+          href="/finanses/hipotekas-maksajums"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          hipotēkas maksājuma kalkulatoru
+        </Link>
+        .
+      </p>
     </>
   ),
   'ventilacijas-apjoma-kalkulators': (
@@ -537,10 +603,22 @@ const explanations: Record<string, React.ReactNode> = {
     </p>
   ),
   'trenina-kalorijas': (
-    <p className="text-panel-muted">
-      Kalkulators reizina izvēlētās aktivitātes MET vērtību ar ķermeņa svaru kilogramos un treniņa
-      ilgumu stundās, iegūstot aptuveno sadedzināto kaloriju daudzumu.
-    </p>
+    <>
+      <p className="text-panel-muted">
+        Kalkulators reizina izvēlētās aktivitātes MET vērtību ar ķermeņa svaru kilogramos un treniņa
+        ilgumu stundās, iegūstot aptuveno sadedzināto kaloriju daudzumu.
+      </p>
+      <p className="text-panel-muted">
+        Lai redzētu, kā šis daudzums iekļaujas kopējā dienas kaloriju budžetā, sk. arī{' '}
+        <Link
+          href="/veseliba/kaloriju-norma"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          dienas kaloriju normas kalkulatoru
+        </Link>
+        .
+      </p>
+    </>
   ),
   'kmi-kalkulators': (
     <p className="text-panel-muted">
@@ -549,10 +627,22 @@ const explanations: Record<string, React.ReactNode> = {
     </p>
   ),
   'kaloriju-norma': (
-    <p className="text-panel-muted">
-      Kalkulators aprēķina BMR pēc Mifflin-St Jeor formulas no svara, auguma, vecuma un dzimuma, tad
-      reizina to ar izvēlētā aktivitātes līmeņa koeficientu, iegūstot dienas kaloriju normu.
-    </p>
+    <>
+      <p className="text-panel-muted">
+        Kalkulators aprēķina BMR pēc Mifflin-St Jeor formulas no svara, auguma, vecuma un dzimuma, tad
+        reizina to ar izvēlētā aktivitātes līmeņa koeficientu, iegūstot dienas kaloriju normu.
+      </p>
+      <p className="text-panel-muted">
+        Ja regulāri trenējies, konkrēta treniņa sadedzinātās kalorijas palīdz precizēt{' '}
+        <Link
+          href="/sports/trenina-kalorijas"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          treniņa kaloriju kalkulators
+        </Link>
+        .
+      </p>
+    </>
   ),
   'tauku-procents': (
     <p className="text-panel-muted">
@@ -573,24 +663,67 @@ const explanations: Record<string, React.ReactNode> = {
     </p>
   ),
   'kredita-kalkulators': (
-    <p className="text-panel-muted">
-      Kalkulators izmanto anuitātes formulu, kas no kredīta summas, mēneša procentu likmes un
-      termiņa aprēķina nemainīgu ikmēneša maksājumu, tad reizina to ar mēnešu skaitu, lai iegūtu
-      kopējās izmaksas un pārmaksu.
-    </p>
+    <>
+      <p className="text-panel-muted">
+        Kalkulators izmanto anuitātes formulu, kas no kredīta summas, mēneša procentu likmes un
+        termiņa aprēķina nemainīgu ikmēneša maksājumu, tad reizina to ar mēnešu skaitu, lai iegūtu
+        kopējās izmaksas un pārmaksu.
+      </p>
+      <p className="text-panel-muted">
+        Auto iegādei sk. arī{' '}
+        <Link
+          href="/auto/lizings-vs-kredits"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          līzinga un kredīta salīdzinājumu
+        </Link>
+        , mājokļa iegādei{' '}
+        <Link
+          href="/finanses/hipotekas-maksajums"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          hipotēkas kalkulatoru
+        </Link>
+        .
+      </p>
+    </>
   ),
   'grutniecibas-termins': (
-    <p className="text-panel-muted">
-      Kalkulators pieskaita 280 dienas pēdējo menstruāciju pirmajai dienai, iegūstot paredzamo
-      dzemdību termiņu pēc Negēles likuma, un aprēķina pagājušo dienu skaitu līdz šodienai, lai
-      parādītu pašreizējo grūtniecības vecumu.
-    </p>
+    <>
+      <p className="text-panel-muted">
+        Kalkulators pieskaita 280 dienas pēdējo menstruāciju pirmajai dienai, iegūstot paredzamo
+        dzemdību termiņu pēc Negēles likuma, un aprēķina pagājušo dienu skaitu līdz šodienai, lai
+        parādītu pašreizējo grūtniecības vecumu.
+      </p>
+      <p className="text-panel-muted">
+        Plašāku ainu par dzimstību Latvijā sk.{' '}
+        <Link
+          href="/sabiedriba/dzimstibas-kalkulators"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          dzimstības un mirstības kalkulatorā
+        </Link>
+        .
+      </p>
+    </>
   ),
   'ovulacija': (
-    <p className="text-panel-muted">
-      Kalkulators atņem 14 dienu luteālo fāzi no cikla garuma, lai atrastu ovulācijas dienu, tad
-      piemēro piecu dienu logu pirms tās un vienu dienu pēc tās, lai noteiktu auglīgo periodu.
-    </p>
+    <>
+      <p className="text-panel-muted">
+        Kalkulators atņem 14 dienu luteālo fāzi no cikla garuma, lai atrastu ovulācijas dienu, tad
+        piemēro piecu dienu logu pirms tās un vienu dienu pēc tās, lai noteiktu auglīgo periodu.
+      </p>
+      <p className="text-panel-muted">
+        Ja izdodas ieņemt, uzreiz noderēs{' '}
+        <Link
+          href="/veseliba/grutniecibas-termins"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          grūtniecības termiņa kalkulators
+        </Link>
+        .
+      </p>
+    </>
   ),
   'promiles': (
     <p className="text-panel-muted">
@@ -600,11 +733,23 @@ const explanations: Record<string, React.ReactNode> = {
     </p>
   ),
   'hipotekas-maksajums': (
-    <p className="text-panel-muted">
-      Kalkulators izmanto anuitātes formulu, kas no hipotēkas summas, mēneša procentu likmes un
-      termiņa gados aprēķina nemainīgu ikmēneša maksājumu, tad reizina to ar mēnešu skaitu, lai
-      iegūtu kopējās izmaksas un pārmaksu.
-    </p>
+    <>
+      <p className="text-panel-muted">
+        Kalkulators izmanto anuitātes formulu, kas no hipotēkas summas, mēneša procentu likmes un
+        termiņa gados aprēķina nemainīgu ikmēneša maksājumu, tad reizina to ar mēnešu skaitu, lai
+        iegūtu kopējās izmaksas un pārmaksu.
+      </p>
+      <p className="text-panel-muted">
+        Ja māja pēc iegādes vēl jāsiltina, sk. arī{' '}
+        <Link
+          href="/majoklis/siltinajuma-biezuma-kalkulators"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          siltinājuma biezuma kalkulatoru
+        </Link>
+        .
+      </p>
+    </>
   ),
   'hipotekas-parmaksa': (
     <p className="text-panel-muted">
@@ -673,11 +818,23 @@ const explanations: Record<string, React.ReactNode> = {
     </p>
   ),
   'saimnieciska-darbiba': (
-    <p className="text-panel-muted">
-      Kalkulators piemēro VSAOI pēc divpakāpju likmes (31,07% līdz minimālajai algai, 10% virs tās,
-      vai tikai 10%, ja ienākums ir zem minimālās algas), tad atlikumam piemēro progresīvo IIN
-      likmi, lai iegūtu summu, kas paliek pēc nodokļiem.
-    </p>
+    <>
+      <p className="text-panel-muted">
+        Kalkulators piemēro VSAOI pēc divpakāpju likmes (31,07% līdz minimālajai algai, 10% virs tās,
+        vai tikai 10%, ja ienākums ir zem minimālās algas), tad atlikumam piemēro progresīvo IIN
+        likmi, lai iegūtu summu, kas paliek pēc nodokļiem.
+      </p>
+      <p className="text-panel-muted">
+        Ja saimnieciskās darbības ietvaros izmanto arī auto, sk. arī{' '}
+        <Link
+          href="/auto/uznemuma-auto-nodoklis"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          uzņēmuma vieglā auto nodokļa kalkulatoru
+        </Link>
+        .
+      </p>
+    </>
   ),
   'iin-kalkulators': (
     <p className="text-panel-muted">

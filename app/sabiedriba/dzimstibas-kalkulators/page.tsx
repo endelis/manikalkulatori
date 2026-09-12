@@ -285,6 +285,20 @@ export default function DzimstibasKalkulatorsPage() {
             >
               tumsas kalkulatoru
             </Link>
+            . Ja plāno ģimenes papildinājumu, noderēs arī{' '}
+            <Link
+              href="/veseliba/grutniecibas-termins"
+              className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+            >
+              grūtniecības termiņa
+            </Link>{' '}
+            un{' '}
+            <Link
+              href="/veseliba/ovulacija"
+              className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+            >
+              ovulācijas kalkulators
+            </Link>
             .
           </p>
         </section>
