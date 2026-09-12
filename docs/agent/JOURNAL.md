@@ -1698,3 +1698,28 @@ Next: no BLOCKED items. Will keep alternating between new-topic
 research and site audits each tick, accepting that not every research
 attempt yields a build, per the "never idle" policy that measures
 effort, not guaranteed hits.
+
+## 2026-09-12 11:48
+
+Did: shipped a second new calculator this stretch,
+ventilacijas-apjoma-kalkulators (minimum fresh air requirement per
+occupant, per LBN 231-15). Found via the same building-code-physics
+pattern that worked for the insulation calculator: search results in
+Latvian were dominated by low-quality .ru machine-translated content
+farms, not real competitors, signaling a genuine content gap. Caught
+a real nuance before building too broadly: the original regulation had
+a full table of rates per room type, but it was deleted by a 2023
+amendment and replaced with a reference to a paid standard (LVS EN
+16798-1) this session can't cite, so scoped the calculator to only the
+one figure still directly in the regulation (15 m3/h/person minimum),
+disclosed clearly rather than guessing at room-type multipliers.
+Sourced by direct likumi.lv fetch. Fixed siltinajuma-biezuma-kalkulators's
+contentUpdatedAt too (same post-commit-timestamp-drift pattern as
+several earlier fixes this session -- testing before committing can't
+catch this class of drift since git log has no entry yet). Full
+checklist green, verified visually and by hand. Commit f1fcd7c.
+Next: majoklis now has 20 calculators (was 18 at session start). Two
+new building-code-driven finds in a row worked well; worth trying that
+pattern again (LBN/LVS standards, not tax law) before returning to
+tax-driven topics that keep hitting the same PDF-sourcing wall. No
+BLOCKED items pending.
