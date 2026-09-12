@@ -595,7 +595,7 @@ export const calculators: CalculatorMeta[] = [
       'pieļaujamā temperatūra birojā',
       'darba aizsardzības prasības temperatūra',
     ],
-    contentUpdatedAt: '2026-09-12T15:06:38+03:00',
+    contentUpdatedAt: '2026-09-12T15:11:15+03:00',
   },
   {
     slug: 'kmi-kalkulators',
