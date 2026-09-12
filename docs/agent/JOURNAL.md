@@ -2230,3 +2230,55 @@ alongside majoklis (LBN, MK 359) and auto (CSN, MK 295) -- worth
 checking if sports/veseliba have more facility- or public-health-
 standard gaps in this vein (gym/sauna temperature, changing-room
 requirements) before it also runs dry.
+
+## 2026-09-12 17:15
+
+Did: unblocked the average-pension data blocker that had been open
+since earlier this session, via a genuinely new technique rather than
+retrying the same failed approach. Every prior attempt (three separate
+ticks) went through WebFetch against either the CSP statistics portal
+or the PXWEB interactive database UI, both JS-rendered and unreadable
+as text. This time, found that data.gov.lv publishes the same
+underlying VSAA dataset as a plain XLSX file resource (not routed
+through any interactive UI), located the real per-file download URL
+by fetching the dataset's listing page directly (a wrong guessed URL
+first returned the CKAN site's HTML shell, not the file -- worth
+remembering that data.gov.lv resource URLs must be read off the
+dataset page, never guessed), downloaded it directly via curl
+(bypassing WebFetch's markdown conversion entirely, which would have
+mangled a binary XLSX anyway), and parsed it locally with openpyxl,
+the same tool that worked once before this session when the user
+manually supplied a file. Shipped a new article, videja-pensija-
+latvija: June 2026 national average granted pension is 687.31 EUR
+(439,597 recipients), 658.38 EUR for women, 741.60 EUR for men, with
+an age-band breakdown, explicitly disambiguated from the different
+"vidējais izmaksātais apmērs" statistic that news articles cite (the
+688.44 vs 680.07 EUR discrepancy noticed two ticks ago). Wired into
+the pension hub as its 3rd member, cross-linked with minimala-pensija.
+One real test failure surfaced and was fixed: registry.test.ts's
+hardcoded hub-member-order assertion needed updating for the new
+member's insertion position, a normal consequence of changing a list
+a test pins exact order against, not a design flaw.
+Then made a second good-faith attempt at the other long-standing
+blocker (2nd-level pension fund risk-category returns) using the same
+direct-download instinct, and confirmed it is blocked for a genuinely
+different reason: manapensija.lv's plan-comparison page is a
+JavaScript SPA that loads its data table asynchronously from an API
+after render ("Uzgaidiet, notiek datu ielāde" placeholder is all
+WebFetch ever sees), not a static file the way the pension dataset
+was. This is the same class of failure as PXWEB, just a different
+site, confirming this blocker needs either a headless-browser tool
+this session doesn't have or a manually-supplied export, not more
+WebFetch attempts of any kind. Not escalating as newly BLOCKED since
+this was already known open from before; just confirming genuinely
+still stuck via a second real attempt, not under-tried.
+Commits d9b9131 (article), plus the registry.test.ts fix bundled in
+the same commit since it was caught before push, not after.
+Next: no BLOCKED items pending beyond the one remaining pension-fund-
+returns blocker, which now has two independently-confirmed distinct
+reasons for being stuck (PXWEB rendering, and now also SPA/async
+API loading) -- worth trying only if a headless-browser-capable tool
+becomes available, otherwise treat as settled until the user supplies
+data directly. The average-pension unblock is a good reminder to try
+"is there a plain file download" before assuming a data source is
+unreachable, for any future blocked figure.
