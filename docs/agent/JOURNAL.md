@@ -1870,3 +1870,58 @@ Next: no BLOCKED items pending. Continue mining LBN 200-21 and other
 LBN/LVS codes for further majoklis gaps, or return to the two open
 pension-cluster data blockers (average-pension CSP figure, 2nd-level
 fund risk-category returns) if building-code topics run dry.
+
+## 2026-09-12 13:45
+
+Did: full internal-linking strategy, researched then executed in 3
+phases per direct user request ("research and learn best internal
+linking practices... suggest strategy" then "execute on all").
+Researched current (2026) SEO guidance from Google's own docs plus
+several industry sources (flagged one, memorable.design, as a
+content-scraper page unrelated to its own headline once actually
+fetched, a good reminder to verify rather than trust titles/ranking).
+Audited the site's actual linking against that research and found: the
+pension hub article had zero inbound links from its 9 spokes and could
+never surface in the default related-calculators ordering either; none
+of the 4 bespoke-routed pages (pensijas-kalkulators, priekslaicigas-
+pensijas-kalkulators, dzimstibas-kalkulators, tumsas-kalkulators)
+rendered the RelatedCalculators widget at all; and same-category
+membership alone was too coarse a relatedness signal on a site this
+size.
+Phase 1 (commits 9e64def, 25241ea): getRelatedCalculators
+(lib/registry.ts) now surfaces a category hub first plus a
+hand-curated RELATED_OVERRIDES list before falling back to array
+order; wired RelatedCalculators into all 4 bespoke pages; added
+back-links from every pension spoke to its hub.
+Phase 2 (commit 3811811): ~9 one-sentence cross-category contextual
+links between genuine alternatives/complements (auto financing <->
+finanses loans, EV charging <-> home electricity, self-employment <->
+company car tax, insulation <-> mortgage, training calories <-> daily
+calorie budget, pregnancy timing <-> national birth stats).
+Phase 3 (commit f512c5b): new hub article buvniecibas-prasibu-celvedis
+tying together the 5 LBN-driven majoklis calculators, mirroring the
+pension hub's exact pattern (per-topic section, one link each,
+consolidated sources, back-links from every spoke).
+Learned: caught a real design flaw in my own Phase 1 work before it
+compounded further -- the first hub implementation (CATEGORY_HUB_SLUGS,
+category -> hub) surfaced the pension guide for every finanses
+calculator regardless of relevance (alga-neto, pvn-kalkulators, etc.
+would show it as their #1 related item despite having nothing to do
+with pensions). Caught this while building Phase 3's majoklis hub,
+before shipping it, and replaced it with CATEGORY_HUBS (hub -> explicit
+member slugs) so a hub only surfaces for calculators it actually
+covers. Worth remembering: verify a "looks right" design against a
+concrete counter-example (here: "what does alga-neto's related list
+actually look like?") before treating it as done, not just against the
+happy-path case it was built for.
+All three phases fully tested (added 10+ new registry tests), built,
+and visually/rendered-HTML verified via a running dev server at each
+step; the new hub page confirmed to inherit full SEO/AI compliance
+(schema, OG image, llms.txt) automatically since it goes through the
+existing generic article route.
+Next: no BLOCKED items pending. Natural continuations: extend the same
+hub pattern to another category if one accumulates enough of a genuine
+cluster (majoklis material-quantity calculators, or sports training-
+zone calculators, don't cluster as tightly as pensions/LBN-compliance
+did); or continue new-calculator research per the established
+building-code vein.
