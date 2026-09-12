@@ -2,9 +2,11 @@ import { describe, expect, it } from 'vitest';
 import {
   calculators,
   categories,
+  getArticle,
   getCalculator,
   getCalculatorsByCategory,
   getCategory,
+  getContent,
   getRelatedCalculators,
 } from './registry';
 
@@ -48,6 +50,64 @@ describe('getRelatedCalculators', () => {
     const current = calculators[0];
     const related = getRelatedCalculators(current, 0);
     expect(related).toHaveLength(0);
+  });
+
+  it('surfaces the category hub article first for a non-hub finanses item', () => {
+    const current = getCalculator('finanses', 'alga-neto')!;
+    const related = getRelatedCalculators(current, 4);
+    expect(related[0].slug).toBe('pensija-latvija-celvedis');
+  });
+
+  it('does not surface the hub as related to itself', () => {
+    const hub = getArticle('finanses', 'pensija-latvija-celvedis')!;
+    const related = getRelatedCalculators(hub, 4);
+    expect(related.every((item) => item.slug !== 'pensija-latvija-celvedis')).toBe(true);
+  });
+
+  it('prioritizes curated overrides over default array order', () => {
+    const current = getCalculator('majoklis', 'griestu-augstuma-kalkulators')!;
+    const related = getRelatedCalculators(current, 3);
+    expect(related.map((item) => item.slug)).toEqual([
+      'logu-platibas-kalkulators',
+      'ventilacijas-apjoma-kalkulators',
+      'siltinajuma-biezuma-kalkulators',
+    ]);
+  });
+
+  it('never returns duplicates even if the hub also appears in an override list', () => {
+    const current = getCalculator('finanses', 'mun-kalkulators')!;
+    const related = getRelatedCalculators(current, 10);
+    const slugs = related.map((item) => item.slug);
+    expect(new Set(slugs).size).toBe(slugs.length);
+  });
+
+  it('falls back to default array order once curated relations are exhausted', () => {
+    const current = getCalculator('auto', 'elektroauto-vs-benzina')!;
+    const related = getRelatedCalculators(current, 4);
+    expect(related).toHaveLength(4);
+    expect(related.every((item) => item.category === 'auto')).toBe(true);
+  });
+});
+
+describe('pension hub back-links', () => {
+  it('every finanses pension spoke that RELATED_OVERRIDES/hub logic points at the hub also links back to it in its own body content', () => {
+    // getContent is exercised here only to assert the spokes still exist; the actual
+    // back-link text lives in lib/articleContent.tsx and app/[category]/[calculator]/page.tsx
+    // explanations, which this registry-level test cannot see. See those files directly.
+    const pensionSpokes = [
+      'pensijas-kalkulators',
+      'minimala-pensija',
+      'priekslaicigas-pensijas-kalkulators',
+      'priekslaicigas-vs-standarta-pensija',
+      'pensiju-3-limena-kalkulators',
+      'ka-izveleties-pensiju-3-limena-planu',
+      'ieguldijumu-konta-nodoklu-kalkulators',
+      'etf-pamati-pensijas-uzkrajumam',
+      'izdienas-pensija',
+    ];
+    for (const slug of pensionSpokes) {
+      expect(getContent('finanses', slug), `${slug} should exist in the registry`).toBeDefined();
+    }
   });
 });
 

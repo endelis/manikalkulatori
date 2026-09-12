@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { getCategory, getCalculator } from '@/lib/registry';
+import { getCategory, getCalculator, getRelatedCalculators } from '@/lib/registry';
 import { loadFaq } from '@/lib/faq';
 import { SITE_URL } from '@/lib/site';
 import { buildBreadcrumbSchema, buildFaqSchema, buildSoftwareApplicationSchema, safeJsonLd } from '@/lib/schema';
 import { formatNumber } from '@/lib/format';
 import { Faq } from '@/components/Faq';
+import { RelatedCalculators } from '@/components/RelatedCalculators';
 import { PensijasKalkulators } from '@/components/calculators/PensijasKalkulators';
 import {
   CURRENT_YEAR,
@@ -64,6 +65,7 @@ export default function PensijasKalkulatorsPage() {
   ]);
 
   const faqSchema = buildFaqSchema(faq);
+  const related = getRelatedCalculators(calculator);
 
   return (
     <>
@@ -310,6 +312,7 @@ export default function PensijasKalkulatorsPage() {
         </section>
 
         <Faq items={faq} />
+        <RelatedCalculators items={related} />
       </main>
     </>
   );

@@ -712,6 +712,16 @@ const explanations: Record<string, React.ReactNode> = {
         Ja gada iemaksa pārsniedz šo robežu, atmaksu saņem tikai par robežas apmēru, nevis par visu
         iemaksu.
       </p>
+      <p className="text-panel-muted">
+        Skaties arī{' '}
+        <Link
+          href="/finanses/pensija-latvija-celvedis"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          pilnu ceļvedi par pensiju Latvijā
+        </Link>
+        , kas apkopo visus trīs pensiju līmeņus vienā vietā.
+      </p>
     </>
   ),
   'ieguldijumu-konta-nodoklu-kalkulators': (
@@ -726,6 +736,16 @@ const explanations: Record<string, React.ReactNode> = {
         pieņem, ka katra gada peļņa tiek realizēta un aplikta ar nodokli tajā pašā gadā, tāpēc mazāk
         naudas turpina augt nākamajos gados. Starpība starp abām beigu summām ir nodokļa atlikšanas
         radītais ieguvums.
+      </p>
+      <p className="text-panel-muted">
+        Šis konta veids ir viens no iespējamiem rīkiem 3. līmeņa uzkrājumam. Skaties arī{' '}
+        <Link
+          href="/finanses/pensija-latvija-celvedis"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          pilnu ceļvedi par pensiju Latvijā
+        </Link>
+        .
       </p>
     </>
   ),

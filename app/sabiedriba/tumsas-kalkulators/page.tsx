@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { getCategory, getCalculator } from '@/lib/registry';
+import { getCategory, getCalculator, getRelatedCalculators } from '@/lib/registry';
 import { loadFaq } from '@/lib/faq';
 import { SITE_URL } from '@/lib/site';
 import { buildBreadcrumbSchema, buildFaqSchema, buildSoftwareApplicationSchema, safeJsonLd } from '@/lib/schema';
 import { formatNumber } from '@/lib/format';
 import { Faq } from '@/components/Faq';
+import { RelatedCalculators } from '@/components/RelatedCalculators';
 import { TumsasKalkulators } from '@/components/calculators/TumsasKalkulators';
 import {
   AVERAGE_DAYLIGHT_HOURS,
@@ -87,6 +88,7 @@ export default function TumsasKalkulatorsPage() {
   ]);
 
   const faqSchema = buildFaqSchema(faq);
+  const related = getRelatedCalculators(calculator);
 
   return (
     <>
@@ -244,6 +246,7 @@ export default function TumsasKalkulatorsPage() {
         </section>
 
         <Faq items={faq} />
+        <RelatedCalculators items={related} />
       </main>
     </>
   );

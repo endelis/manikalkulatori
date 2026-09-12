@@ -1066,8 +1066,88 @@ export function isArticleSlug(categorySlug: string, slug: string): boolean {
   return getArticle(categorySlug, slug) !== undefined;
 }
 
+/**
+ * Per category, the slug of a "hub" guide article that ties together several
+ * calculators/articles on one topic (see e.g. lib/articleContent.tsx's
+ * 'pensija-latvija-celvedis'). getRelatedCalculators always surfaces the hub first on
+ * every other item in that category, since a hub is more useful to route a reader to
+ * than another same-category item picked by keyword overlap alone, and it also fixes
+ * an otherwise-real internal-linking gap: a hub added purely as one more `articles`
+ * entry never naturally rises to the top of the default ordering below.
+ */
+const CATEGORY_HUB_SLUGS: Partial<Record<CategorySlug, string>> = {
+  finanses: 'pensija-latvija-celvedis',
+};
+
+/**
+ * Hand-curated stronger relations, layered on top of the default same-category
+ * ordering below. Same-category membership alone is too coarse a signal on a site
+ * this size: two items can share a category (e.g. "majoklis" has 20+ calculators
+ * spanning insulation, flooring, and staircases) without being genuinely related, and
+ * keyword-overlap scoring does not work either, since these titles/keywords are short,
+ * domain-specific phrases with almost no shared vocabulary even between calculators
+ * that clearly belong together (e.g. "siltinājuma biezums" and "ventilācijas apjoms"
+ * share no words, but both come from LBN building codes and are genuinely related).
+ * Add a pair only where the relation would help a reader, and add both directions
+ * explicitly, since this map is not auto-mirrored.
+ */
+const RELATED_OVERRIDES: Record<string, string[]> = {
+  // LBN building-code cluster (majoklis): room/opening dimension compliance checks.
+  'griestu-augstuma-kalkulators': [
+    'logu-platibas-kalkulators',
+    'ventilacijas-apjoma-kalkulators',
+    'siltinajuma-biezuma-kalkulators',
+  ],
+  'logu-platibas-kalkulators': ['griestu-augstuma-kalkulators', 'ventilacijas-apjoma-kalkulators'],
+  'ventilacijas-apjoma-kalkulators': ['griestu-augstuma-kalkulators', 'logu-platibas-kalkulators'],
+  'siltinajuma-biezuma-kalkulators': ['griestu-augstuma-kalkulators', 'siltumsukna-atmaksa'],
+
+  // Heating/energy alternatives (majoklis): different ways to heat or power a home.
+  'apkures-izmaksas': ['siltumsukna-atmaksa', 'elektribas-rekins', 'malkas-apjoms'],
+  'siltumsukna-atmaksa': ['apkures-izmaksas', 'solaru-atmaksa', 'siltinajuma-biezuma-kalkulators'],
+  'solaru-atmaksa': ['siltumsukna-atmaksa', 'elektribas-rekins'],
+  'elektribas-rekins': ['apkures-izmaksas', 'solaru-atmaksa'],
+
+  // Income structuring alternatives (finanses): different ways to earn/declare income.
+  'alga-neto': ['alga-bruto', 'iin-kalkulators', 'saimnieciska-darbiba'],
+  'alga-bruto': ['alga-neto', 'saimnieciska-darbiba'],
+  'saimnieciska-darbiba': ['mun-kalkulators', 'alga-neto', 'iin-kalkulators'],
+  'mun-kalkulators': ['saimnieciska-darbiba', 'iin-kalkulators'],
+  'iin-kalkulators': ['alga-neto', 'saimnieciska-darbiba'],
+
+  // Borrowing alternatives (finanses): loan-shaped comparisons.
+  'kredita-kalkulators': ['hipotekas-maksajums', 'hipotekas-parmaksa'],
+  'hipotekas-maksajums': ['hipotekas-parmaksa', 'kredita-kalkulators'],
+  'hipotekas-parmaksa': ['hipotekas-maksajums', 'kredita-kalkulators'],
+};
+
 export function getRelatedCalculators(current: CalculatorMeta, limit = 4): CalculatorMeta[] {
-  return [...calculators, ...articles]
-    .filter((item) => item.category === current.category && item.slug !== current.slug)
-    .slice(0, limit);
+  const pool = [...calculators, ...articles].filter(
+    (item) => item.category === current.category && item.slug !== current.slug,
+  );
+  const poolBySlug = new Map(pool.map((item) => [item.slug, item]));
+
+  const ranked: CalculatorMeta[] = [];
+  const seen = new Set<string>();
+
+  const add = (item: CalculatorMeta | undefined) => {
+    if (!item || seen.has(item.slug)) return;
+    seen.add(item.slug);
+    ranked.push(item);
+  };
+
+  const hubSlug = CATEGORY_HUB_SLUGS[current.category];
+  if (hubSlug && hubSlug !== current.slug) {
+    add(poolBySlug.get(hubSlug));
+  }
+
+  for (const slug of RELATED_OVERRIDES[current.slug] ?? []) {
+    add(poolBySlug.get(slug));
+  }
+
+  for (const item of pool) {
+    add(item);
+  }
+
+  return ranked.slice(0, limit);
 }

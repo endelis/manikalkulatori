@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { getCategory, getCalculator } from '@/lib/registry';
+import { getCategory, getCalculator, getRelatedCalculators } from '@/lib/registry';
 import { loadFaq } from '@/lib/faq';
 import { SITE_URL } from '@/lib/site';
 import { buildBreadcrumbSchema, buildFaqSchema, buildSoftwareApplicationSchema, safeJsonLd } from '@/lib/schema';
 import { formatNumber } from '@/lib/format';
 import { Faq } from '@/components/Faq';
+import { RelatedCalculators } from '@/components/RelatedCalculators';
 import { BirthsDeathsChart } from '@/components/BirthsDeathsChart';
 import { BirthsDeathsTable } from '@/components/BirthsDeathsTable';
 import { DzimstibasKalkulators } from '@/components/calculators/DzimstibasKalkulators';
@@ -53,6 +54,7 @@ export default function DzimstibasKalkulatorsPage() {
   ]);
 
   const faqSchema = buildFaqSchema(faq);
+  const related = getRelatedCalculators(calculator);
 
   return (
     <>
@@ -288,6 +290,7 @@ export default function DzimstibasKalkulatorsPage() {
         </section>
 
         <Faq items={faq} />
+        <RelatedCalculators items={related} />
 
         <div style={{ height: 0 }} aria-hidden="true" />
       </main>

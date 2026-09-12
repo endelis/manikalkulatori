@@ -25,6 +25,16 @@ export const articleBody: Record<string, React.ReactNode> = {
         bērnības. Piemēram, ar 25 gadu stāžu minimālā pensija ir 255,60 plus 5 reizes 4,26, kas ir 276,90
         eiro mēnesī.
       </p>
+      <p>
+        Skaties arī{' '}
+        <Link
+          href="/finanses/pensija-latvija-celvedis"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          pilnu ceļvedi par pensiju Latvijā
+        </Link>
+        , kas apkopo visus trīs pensiju līmeņus vienā vietā.
+      </p>
     </>
   ),
   'priekslaicigas-vs-standarta-pensija': (
@@ -48,6 +58,16 @@ export const articleBody: Record<string, React.ReactNode> = {
         atsver zemāko mēneša summu. Tīri finansiālā ziņā, ja veselība un darba iespējas to atļauj, nogaidīšana
         līdz standarta vecumam (vai pat vēlāk, jo katrs papildu gads to vēl palielina) dod lielāku mēneša
         pensiju.
+      </p>
+      <p>
+        Skaties arī{' '}
+        <Link
+          href="/finanses/pensija-latvija-celvedis"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          pilnu ceļvedi par pensiju Latvijā
+        </Link>
+        , kas apkopo visus trīs pensiju līmeņus vienā vietā.
       </p>
     </>
   ),
@@ -186,6 +206,16 @@ export const articleBody: Record<string, React.ReactNode> = {
         apmēru aprēķina pēc likuma &quot;Par valsts pensijām&quot; vispārējās kārtības, nevis pēc atsevišķas
         izdienas pensijas formulas.
       </p>
+      <p>
+        Skaties arī{' '}
+        <Link
+          href="/finanses/pensija-latvija-celvedis"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          pilnu ceļvedi par pensiju Latvijā
+        </Link>
+        , kas apkopo visus trīs pensiju līmeņus vienā vietā.
+      </p>
     </>
   ),
   'ka-izveleties-pensiju-3-limena-planu': (
@@ -210,6 +240,16 @@ export const articleBody: Record<string, React.ReactNode> = {
         Uzkrāto kapitālu var pārcelt uz citu plānu, arī citā pensiju fondā, tāpēc sākotnējā izvēle nav
         galīga. Iespējams arī vienlaicīgi iemaksāt vairākos plānos, kas ir viens no veidiem, kā sadalīt
         risku starp dažādām ieguldījumu stratēģijām.
+      </p>
+      <p>
+        Skaties arī{' '}
+        <Link
+          href="/finanses/pensija-latvija-celvedis"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          pilnu ceļvedi par pensiju Latvijā
+        </Link>
+        , kas apkopo visus trīs pensiju līmeņus vienā vietā.
       </p>
     </>
   ),
@@ -237,6 +277,16 @@ export const articleBody: Record<string, React.ReactNode> = {
         Kā ar jebkuru ieguldījumu biržā tirgotos vērtspapīros, vērtība var svārstīties, un iespējams
         zaudēt daļu vai visu ieguldīto summu, tāpēc ETF piemērotība atkarīga no individuālā termiņa un
         riska tolerances, nevis ir universāli piemērots risinājums ikvienam.
+      </p>
+      <p>
+        Skaties arī{' '}
+        <Link
+          href="/finanses/pensija-latvija-celvedis"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          pilnu ceļvedi par pensiju Latvijā
+        </Link>
+        , kas apkopo visus trīs pensiju līmeņus vienā vietā.
       </p>
     </>
   ),
