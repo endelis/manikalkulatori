@@ -515,7 +515,7 @@ export const calculators: CalculatorMeta[] = [
       'minimālais griestu augstums',
       'telpu augstums LBN 200-21',
     ],
-    contentUpdatedAt: '2026-09-12T13:05:00+03:00',
+    contentUpdatedAt: '2026-09-12T13:08:11+03:00',
   },
   {
     slug: 'kmi-kalkulators',
