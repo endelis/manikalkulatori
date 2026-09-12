@@ -8,8 +8,8 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <main className="mx-auto flex max-w-2xl flex-col gap-4 px-4 py-8">
-      <h1 className="font-mono text-2xl font-semibold">Lietošanas noteikumi</h1>
+    <main className="mx-auto flex max-w-2xl flex-col gap-6 px-4 py-10">
+      <h1 className="font-sans text-h1">Lietošanas noteikumi</h1>
       <p className="text-panel-muted">Lietojot Manikalkulatori.lv, tu piekrīti šiem noteikumiem.</p>
       <ol className="list-decimal space-y-2 pl-5 text-panel-muted">
         <li>

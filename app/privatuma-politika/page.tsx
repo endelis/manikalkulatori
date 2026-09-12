@@ -8,17 +8,17 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="mx-auto flex max-w-2xl flex-col gap-4 px-4 py-8">
-      <h1 className="font-mono text-2xl font-semibold">Privātuma politika</h1>
+    <main className="mx-auto flex max-w-2xl flex-col gap-6 px-4 py-10">
+      <h1 className="font-sans text-h1">Privātuma politika</h1>
       <p className="text-panel-muted">
         Šī privātuma politika apraksta, kādus datus Manikalkulatori.lv apstrādā un kā tie tiek izmantoti.
       </p>
-      <h2 className="font-mono text-xl">Mitināšana</h2>
+      <h2 className="font-sans text-h2">Mitināšana</h2>
       <p className="text-panel-muted">
         Vietne darbojas uz Vercel infrastruktūras. Vercel apstrādā standarta servera žurnālus (IP
         adresi, pieprasījuma laiku, pārlūkprogrammas veidu) drošības un darbības nodrošināšanai.
       </p>
-      <h2 className="font-mono text-xl">Analītika</h2>
+      <h2 className="font-sans text-h2">Analītika</h2>
       <p className="text-panel-muted">
         Apmeklējumu statistikai izmantojam Vercel Web Analytics, kas neizmanto sīkdatnes un neuzkrāj
         personu identificējošu informāciju, tikai apkopotus, anonimizētus datus par lapu apmeklējumiem.
@@ -40,20 +40,20 @@ export default function PrivacyPolicyPage() {
         </a>
         .
       </p>
-      <h2 className="font-mono text-xl">Sīkdatnes</h2>
+      <h2 className="font-sans text-h2">Sīkdatnes</h2>
       <p className="text-panel-muted">
         Kad pirmo reizi apmeklē vietni, parādās sīkdatņu paziņojums ar iespēju pieņemt vai noraidīt
-        analītikas sīkdatnes. Ja noraidi, Google Analytics netiek ielādēts un sīkdatnes netiek uzstādītas
-        — vietne darbojas tāpat abos gadījumos. Savu izvēli jebkurā brīdī vari mainīt, izmantojot saiti
+        analītikas sīkdatnes. Ja noraidi, Google Analytics netiek ielādēts un sīkdatnes netiek uzstādītas,
+        vietne darbojas tāpat abos gadījumos. Savu izvēli jebkurā brīdī vari mainīt, izmantojot saiti
         &quot;Sīkdatņu iestatījumi&quot; lapas apakšā. Ja nākotnē tiks pievienotas reklāmas, piemēram,
         Google AdSense, šī politika tiks atjaunināta.
       </p>
-      <h2 className="font-mono text-xl">Kalkulatoru dati</h2>
+      <h2 className="font-sans text-h2">Kalkulatoru dati</h2>
       <p className="text-panel-muted">
         Kalkulatoros ievadītie skaitļi tiek apstrādāti tikai tavā pārlūkprogrammā un netiek nosūtīti vai
         saglabāti serverī.
       </p>
-      <h2 className="font-mono text-xl">Kontakti</h2>
+      <h2 className="font-sans text-h2">Kontakti</h2>
       <p className="text-panel-muted">
         Jautājumus par datu apstrādi vari sūtīt uz kontaktu lapā norādīto e-pastu.
       </p>

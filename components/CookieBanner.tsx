@@ -21,7 +21,7 @@ export function CookieBanner() {
       <div className="mx-auto flex max-w-3xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm text-panel-muted">
           Izmantojam Google Analytics apmeklējumu statistikai, kas uzstāda sīkdatnes. Vari tās pieņemt vai
-          noraidīt — lapa strādā abos gadījumos. Vairāk lasi{' '}
+          noraidīt, lapa strādā abos gadījumos. Vairāk lasi{' '}
           <Link
             href="/privatuma-politika"
             className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
