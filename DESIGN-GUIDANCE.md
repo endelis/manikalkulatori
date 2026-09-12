@@ -211,48 +211,20 @@ Further voice rules for all copy:
 
 This rule applies to everything Claude Code generates for the site and to any content drafted for it later. If content is drafted elsewhere, it passes the same check before publishing: no dash as punctuation or structure, plain practitioner Latvian, concrete local specifics.
 
-## 12. Design tokens starter (drop into styles/tokens.css)
+## 12. Design tokens
 
-```css
-:root {
-  /* base */
-  --bg: #0B0E14;
-  --surface: #0F131C;
-  --surface-2: #12161F;
-  --border: #1B212D;
-  --border-strong: #232A38;
-  --text: #E8ECF3;
-  --text-muted: #8A93A6;
-  --text-faint: #5B6579;
+`styles/tokens.css` is the actual source of truth for color tokens (see §3 above,
+which matches it exactly). This section used to duplicate a "starter" version of that
+file here, including spacing/radius/shadow variables (`--s1`, `--r-sm`, `--shadow-card`,
+etc.) that were never actually implemented anywhere in the codebase, only ever
+existing in this doc, and colors that went stale the moment §3 was updated for the
+2026-09-11 light redesign but this section wasn't. Removed rather than re-duplicated,
+to stop this exact drift from happening again: spacing and radius are set directly as
+Tailwind utility classes per component (`gap-4`, `rounded-xl`, `shadow-sm`, etc.), not
+through custom properties, and colors live only in `styles/tokens.css`.
 
-  /* accents (page sets --accent to one of these via registry) */
-  --accent-auto: #00D3C7;
-  --accent-finance: #4C9AFF;
-  --accent-home: #FFB020;
-  --accent-health: #FF6B8A;
-  --accent-sport: #7CE23F;
-  --accent: var(--accent-auto); /* default, overridden per page */
-  --warn: #FFB020; /* "other option" in comparisons */
-
-  /* spacing */
-  --s1: 4px;  --s2: 8px;  --s3: 12px; --s4: 16px;
-  --s5: 20px; --s6: 24px; --s7: 32px; --s8: 48px; --s9: 64px;
-
-  /* radius */
-  --r-sm: 6px; --r-md: 8px; --r-lg: 12px;
-
-  /* type */
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  --font-sans: "YourSans", system-ui, sans-serif; /* self-hosted, not Inter */
-
-  /* elevation */
-  --shadow-card: 0 1px 0 rgba(255,255,255,0.02), 0 8px 24px rgba(0,0,0,0.4);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * { animation: none !important; transition: none !important; }
-}
-```
+Reduced-motion handling is implemented in `app/globals.css` (zeroes animation and
+transition durations under `prefers-reduced-motion: reduce`), not as a token here.
 
 ## 13. Design acceptance checklist (run per page before shipping)
 
