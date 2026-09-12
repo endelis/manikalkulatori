@@ -470,6 +470,14 @@ const explanations: Record<string, React.ReactNode> = {
       </ul>
     </>
   ),
+  'ventilacijas-apjoma-kalkulators': (
+    <p className="text-panel-muted">
+      Kalkulators reizina cilvēku skaitu ar 15 m³/h (absolūtais minimums uz cilvēku, ja telpas vienīgais
+      piesārņojuma avots ir cilvēki), iegūstot minimālo nepieciešamo svaigā gaisa daudzumu. Dalot šo
+      summu ar telpas tilpumu, iegūst nepieciešamo gaisa apmaiņas biežumu (cik reižu stundā jāatjauno
+      viss telpas gaiss).
+    </p>
+  ),
   'skriesanas-temps': (
     <p className="text-panel-muted">
       Kalkulators saskaita kopējo laiku minūtēs un dala to ar distanci, lai iegūtu tempu uz kilometru.
@@ -1417,6 +1425,26 @@ const sourcesContent: Record<string, React.ReactNode> = {
       <li>
         Materiālu siltumvadītspējas ir tipiskas, plaši publicētas vērtības, ne konkrēta ražotāja dati.
         Konkrētam produktam vienmēr pārbaudi tā tehnisko datu lapu.
+      </li>
+    </ul>
+  ),
+  'ventilacijas-apjoma-kalkulators': (
+    <ul className="flex flex-col gap-2 text-sm text-panel-muted">
+      <li>
+        Minimālais svaigā gaisa daudzums 15 m³/h uz cilvēku,{' '}
+        <a
+          href="https://likumi.lv/ta/id/274815-noteikumi-par-latvijas-buvnormativu-lbn-231-15-dzivojamo-un-publisko-eku-apkure-un-ventilacija"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          likumi.lv
+        </a>
+        , Latvijas būvnormatīvs LBN 231-15 &quot;Dzīvojamo un publisko ēku apkure un ventilācija&quot;,
+        97. punkts, spēkā ar grozījumiem līdz 2026. gada 30. jūnijam, izgūts 2026. gada 12. septembrī.
+        Iepriekšējā redakcijā ietvertā telpu tipu tabula (3. pielikums) svītrota ar 2023. gada 17.
+        janvāra grozījumiem un aizstāta ar atsauci uz standartu LVS EN 16798-1, ko šis kalkulators
+        neietver.
       </li>
     </ul>
   ),

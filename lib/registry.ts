@@ -451,7 +451,23 @@ export const calculators: CalculatorMeta[] = [
       'siltinājuma biezums',
       'LBN 002-19',
     ],
-    contentUpdatedAt: '2026-09-12T10:45:53+03:00',
+    contentUpdatedAt: '2026-09-12T10:50:22+03:00',
+  },
+  {
+    slug: 'ventilacijas-apjoma-kalkulators',
+    category: 'majoklis',
+    title: 'Ventilācijas apjoma kalkulators',
+    h1: 'Cik daudz svaigā gaisa nepieciešams telpā?',
+    intro:
+      'Ievadi cilvēku skaitu un telpas tilpumu, uzzini minimālo nepieciešamo svaigā gaisa daudzumu.',
+    metaDescription:
+      'Aprēķini minimālo nepieciešamo svaigā gaisa daudzumu telpā (m³/h) pēc LBN 231-15 un iegūsti gaisa apmaiņas biežumu.',
+    keywords: [
+      'ventilācijas apjoma kalkulators',
+      'gaisa apmaiņas kalkulators',
+      'svaigā gaisa daudzums telpā',
+    ],
+    contentUpdatedAt: '2026-09-12T11:44:15+03:00',
   },
   {
     slug: 'kmi-kalkulators',
