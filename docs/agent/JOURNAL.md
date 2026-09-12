@@ -1516,3 +1516,30 @@ Next: two dash-ban violations now flagged and pending user action
 (privatuma-politika:47, CookieBanner.tsx:24), both one-line rephrases,
 both gated from autonomous fixing. alga-neto/alga-bruto still pending
 go/no-go. Continuing to look for more real issues rather than idling.
+
+## 2026-09-12 09:46
+
+Did: extended the audit to the four gated legal pages
+(par-mums, kontakti, noteikumi, privatuma-politika). All four still use
+the pre-redesign heading style (font-mono text-2xl font-semibold, and
+font-mono text-xl for h2s in privatuma-politika) and old spacing
+(py-8/gap-4 instead of the redesign's py-10/gap-8) -- none were
+touched during the 2026-09-11 light redesign, which only covered
+CalculatorShell, the homepage, and the category pages. Visually this
+means these four pages still look like the old dark-era typography
+convention (monospace headings) even though the color tokens
+underneath already inherited the light values automatically (they use
+text-panel-muted etc, which are token-driven), so they're not broken,
+just visually inconsistent with the rest of the site.
+Did NOT fix: all four are explicitly gated by CHARTER.md rule 5
+(legal/GDPR pages, not the agent's call). This is a bigger, more
+visible gap than the two dash-ban violations already flagged (those
+are one-line rephrases; this is a genuine styling pass across 4 files)
+so flagging it separately and clearly rather than folding it into the
+dash-ban note.
+Next: three gated items now pending user action or explicit
+authorization to proceed: privatuma-politika:47 dash, CookieBanner.tsx:24
+dash, and the four legal pages' pre-redesign heading/spacing style. All
+three are quick fixes if the user green-lights touching gated files,
+or the user can handle them directly. alga-neto/alga-bruto still
+pending its own separate go/no-go.
