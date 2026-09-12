@@ -717,11 +717,42 @@ const explanations: Record<string, React.ReactNode> = {
     </>
   ),
   'darba-vietas-temperaturas-kalkulators': (
-    <p className="text-panel-muted">
-      Kalkulators salīdzina ievadīto telpas temperatūru ar MK noteikumu Nr. 359 noteikto diapazonu I
-      darba kategorijai, kas atkarīgs no izvēlētās sezonas: 19 līdz 25 °C aukstajā periodā, 20 līdz
-      28 °C siltajā periodā.
-    </p>
+    <>
+      <p className="text-panel-muted">
+        Kalkulators salīdzina ievadīto telpas temperatūru ar MK noteikumu Nr. 359 noteikto diapazonu I
+        darba kategorijai, kas atkarīgs no izvēlētās sezonas: 19 līdz 25 °C aukstajā periodā, 20 līdz
+        28 °C siltajā periodā.
+      </p>
+      <p className="text-panel-muted">
+        Sk. arī{' '}
+        <Link
+          href="/majoklis/darba-vietas-apgaismojuma-kalkulators"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          darba vietas apgaismojuma kalkulatoru
+        </Link>
+        .
+      </p>
+    </>
+  ),
+  'darba-vietas-apgaismojuma-kalkulators': (
+    <>
+      <p className="text-panel-muted">
+        Kalkulators salīdzina ievadīto apgaismojumu ar MK noteikumu Nr. 359 2. pielikumā noteikto
+        minimumu izvēlētajam darba veidam, no 200 lx noliktavas telpām līdz 750 lx tehniskajai
+        rasēšanai.
+      </p>
+      <p className="text-panel-muted">
+        Sk. arī{' '}
+        <Link
+          href="/majoklis/darba-vietas-temperaturas-kalkulators"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          darba vietas temperatūras kalkulatoru
+        </Link>
+        .
+      </p>
+    </>
   ),
   'skriesanas-temps': (
     <p className="text-panel-muted">
@@ -1933,6 +1964,23 @@ const sourcesContent: Record<string, React.ReactNode> = {
           likumi.lv
         </a>
         , MK noteikumi Nr. 359 &quot;Darba aizsardzības prasības darba vietās&quot;, 1. pielikums,
+        izgūts 2026. gada 12. septembrī.
+      </li>
+    </ul>
+  ),
+  'darba-vietas-apgaismojuma-kalkulators': (
+    <ul className="flex flex-col gap-2 text-sm text-panel-muted">
+      <li>
+        Minimālais apgaismojums pēc darba veida,{' '}
+        <a
+          href="https://likumi.lv/ta/id/191430-darba-aizsardzibas-prasibas-darba-vietas"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          likumi.lv
+        </a>
+        , MK noteikumi Nr. 359 &quot;Darba aizsardzības prasības darba vietās&quot;, 2. pielikums,
         izgūts 2026. gada 12. septembrī.
       </li>
     </ul>

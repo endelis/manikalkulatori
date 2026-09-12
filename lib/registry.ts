@@ -589,13 +589,29 @@ export const calculators: CalculatorMeta[] = [
     intro:
       'Ievadi telpas temperatūru un sezonu, uzzini, vai tā atbilst darba aizsardzības prasībai biroja tipa darbam.',
     metaDescription:
-      'Pārbaudi, vai darba telpas temperatūra atbilst MK noteikumu Nr. 359 prasībai I darba kategorijai (19-25°C ziemā, 20-28°C vasarā).',
+      'Pārbaudi, vai darba telpas temperatūra atbilst MK noteikumu Nr. 359 prasībai I darba kategorijai (19 līdz 25°C ziemā, 20 līdz 28°C vasarā).',
     keywords: [
       'darba vietas temperatūras kalkulators',
       'pieļaujamā temperatūra birojā',
       'darba aizsardzības prasības temperatūra',
     ],
     contentUpdatedAt: '2026-09-12T15:11:15+03:00',
+  },
+  {
+    slug: 'darba-vietas-apgaismojuma-kalkulators',
+    category: 'majoklis',
+    title: 'Darba vietas apgaismojuma kalkulators',
+    h1: 'Vai darba vietas apgaismojums atbilst prasībai?',
+    intro:
+      'Izvēlies darba veidu un ievadi izmērīto apgaismojumu, uzzini, vai tas atbilst darba aizsardzības prasībai.',
+    metaDescription:
+      'Pārbaudi, vai darba vietas apgaismojums (lx) atbilst MK noteikumu Nr. 359 prasībai pēc darba veida (lasīšana, rasēšana, arhīvs un citi).',
+    keywords: [
+      'darba vietas apgaismojuma kalkulators',
+      'apgaismojuma normas birojā',
+      'lux normas darba vietā',
+    ],
+    contentUpdatedAt: '2026-09-12T15:39:41+03:00',
   },
   {
     slug: 'kmi-kalkulators',
@@ -1237,6 +1253,10 @@ const RELATED_OVERRIDES: Record<string, string[]> = {
   'kapnu-pakapiena-izmeru-kalkulators': ['kapnu-formulas-kalkulators', 'griestu-augstuma-kalkulators'],
   'kapnu-formulas-kalkulators': ['kapnu-pakapiena-izmeru-kalkulators', 'griestu-augstuma-kalkulators'],
   'tualetes-izmeru-kalkulators': ['griestu-augstuma-kalkulators', 'logu-platibas-kalkulators'],
+
+  // Workplace standards pair (majoklis, MK noteikumi Nr. 359).
+  'darba-vietas-temperaturas-kalkulators': ['darba-vietas-apgaismojuma-kalkulators'],
+  'darba-vietas-apgaismojuma-kalkulators': ['darba-vietas-temperaturas-kalkulators'],
 
   // Heating/energy alternatives (majoklis): different ways to heat or power a home.
   'apkures-izmaksas': ['siltumsukna-atmaksa', 'elektribas-rekins', 'malkas-apjoms'],
