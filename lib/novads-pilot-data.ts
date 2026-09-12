@@ -1,9 +1,11 @@
 import type { PopulationYearRow } from './calculators/dzimstibas-kalkulators';
 
 /**
- * Sourced defaults for the three novads pilot pages, see claude/demografijas-defaults-2026.md,
- * section "Novads pilot". Every value here traces to CSP PxWeb tables IRS031, IDS031, and
- * IMV021, retrieved 2026-09-04.
+ * Sourced defaults for the population/demographics page series. Every value here traces
+ * to CSP PxWeb tables IRS031, IDS031, and IMV021 (the first three areas per
+ * claude/demografijas-defaults-2026.md, section "Novads pilot"; later areas fetched
+ * directly via the same tables' JSON API, see docs/agent/JOURNAL.md 2026-09-12 for the
+ * method). `retrievedDate` is per-area since areas were added on different dates.
  */
 export interface NovadsPilotArea {
   slug: string;
@@ -23,6 +25,10 @@ export interface NovadsPilotArea {
   /** National comparison, same referenceYear, same pairing method. */
   nationalNaturalIncrease: number;
   nationalPopulation: number;
+  /** Latvian date prose ("2026. gada 4. septembrī") for the "Avoti" section, matching
+   * when this area's CSP figures were actually fetched. Never interpolate an ISO date
+   * string directly into visible copy, see CLAUDE.md's dash-ban section. */
+  retrievedDate: string;
   /** Annual rows, at least the last five years; some fields may be null where CSP has not
    * yet published the breakdown for this area (see the data file for which and why). */
   series: PopulationYearRow[];
@@ -43,6 +49,7 @@ export const NOVADS_PILOT_AREAS: NovadsPilotArea[] = [
     netMigration: 111,
     nationalNaturalIncrease: -14178,
     nationalPopulation: 1845096,
+    retrievedDate: '2026. gada 4. septembrī',
     series: [
       { year: 2021, populationAtYearStart: 80627, liveBirths: 593, deaths: 1829, naturalIncrease: -1236, netMigration: null },
       { year: 2022, populationAtYearStart: 79120, liveBirths: 550, deaths: 1479, naturalIncrease: -929, netMigration: null },
@@ -66,6 +73,7 @@ export const NOVADS_PILOT_AREAS: NovadsPilotArea[] = [
     netMigration: -83,
     nationalNaturalIncrease: -14178,
     nationalPopulation: 1845096,
+    retrievedDate: '2026. gada 4. septembrī',
     series: [
       { year: 2021, populationAtYearStart: 55336, liveBirths: 560, deaths: 911, naturalIncrease: -351, netMigration: null },
       { year: 2022, populationAtYearStart: 54694, liveBirths: 488, deaths: 799, naturalIncrease: -311, netMigration: null },
@@ -92,6 +100,7 @@ export const NOVADS_PILOT_AREAS: NovadsPilotArea[] = [
     netMigration: -36,
     nationalNaturalIncrease: -13774,
     nationalPopulation: 1860565,
+    retrievedDate: '2026. gada 4. septembrī',
     series: [
       { year: 2021, populationAtYearStart: 2945, liveBirths: 18, deaths: 69, naturalIncrease: -51, netMigration: null },
       { year: 2022, populationAtYearStart: 2918, liveBirths: 22, deaths: 57, naturalIncrease: -35, netMigration: null },
@@ -114,6 +123,7 @@ export const NOVADS_PILOT_AREAS: NovadsPilotArea[] = [
     netMigration: -235,
     nationalNaturalIncrease: -14178,
     nationalPopulation: 1845096,
+    retrievedDate: '2026. gada 12. septembrī',
     series: [
       { year: 2021, populationAtYearStart: 67964, liveBirths: 712, deaths: 1245, naturalIncrease: -533, netMigration: null },
       { year: 2022, populationAtYearStart: 67360, liveBirths: 610, deaths: 1107, naturalIncrease: -497, netMigration: null },
@@ -137,6 +147,7 @@ export const NOVADS_PILOT_AREAS: NovadsPilotArea[] = [
     netMigration: 24,
     nationalNaturalIncrease: -14178,
     nationalPopulation: 1845096,
+    retrievedDate: '2026. gada 12. septembrī',
     series: [
       { year: 2021, populationAtYearStart: 33372, liveBirths: 239, deaths: 608, naturalIncrease: -369, netMigration: null },
       { year: 2022, populationAtYearStart: 32955, liveBirths: 266, deaths: 548, naturalIncrease: -282, netMigration: null },
@@ -160,6 +171,7 @@ export const NOVADS_PILOT_AREAS: NovadsPilotArea[] = [
     netMigration: -140,
     nationalNaturalIncrease: -14178,
     nationalPopulation: 1845096,
+    retrievedDate: '2026. gada 12. septembrī',
     series: [
       { year: 2021, populationAtYearStart: 26839, liveBirths: 210, deaths: 564, naturalIncrease: -354, netMigration: null },
       { year: 2022, populationAtYearStart: 26481, liveBirths: 206, deaths: 480, naturalIncrease: -274, netMigration: null },
@@ -183,6 +195,7 @@ export const NOVADS_PILOT_AREAS: NovadsPilotArea[] = [
     netMigration: 55,
     nationalNaturalIncrease: -14178,
     nationalPopulation: 1845096,
+    retrievedDate: '2026. gada 12. septembrī',
     series: [
       { year: 2021, populationAtYearStart: 22971, liveBirths: 265, deaths: 363, naturalIncrease: -98, netMigration: null },
       { year: 2022, populationAtYearStart: 22757, liveBirths: 225, deaths: 365, naturalIncrease: -140, netMigration: null },
@@ -206,6 +219,7 @@ export const NOVADS_PILOT_AREAS: NovadsPilotArea[] = [
     netMigration: -1500,
     nationalNaturalIncrease: -14178,
     nationalPopulation: 1845096,
+    retrievedDate: '2026. gada 12. septembrī',
     series: [
       { year: 2021, populationAtYearStart: 614618, liveBirths: 5407, deaths: 10829, naturalIncrease: -5422, netMigration: null },
       { year: 2022, populationAtYearStart: 605802, liveBirths: 4797, deaths: 9768, naturalIncrease: -4971, netMigration: null },
@@ -229,6 +243,7 @@ export const NOVADS_PILOT_AREAS: NovadsPilotArea[] = [
     netMigration: 1208,
     nationalNaturalIncrease: -14178,
     nationalPopulation: 1845096,
+    retrievedDate: '2026. gada 12. septembrī',
     series: [
       { year: 2021, populationAtYearStart: 50248, liveBirths: 653, deaths: 866, naturalIncrease: -213, netMigration: null },
       { year: 2022, populationAtYearStart: 50561, liveBirths: 612, deaths: 858, naturalIncrease: -246, netMigration: null },

@@ -241,7 +241,7 @@ export default async function NovadsIedzivotajuSkaitsPage({
               >
                 CSP tabula IRS031
               </a>
-              , izgūts 2026. gada 4. septembrī.
+              , izgūts {area.retrievedDate}.
             </li>
             <li>
               Dzīvi dzimušo skaits,{' '}
@@ -253,7 +253,7 @@ export default async function NovadsIedzivotajuSkaitsPage({
               >
                 CSP tabula IDS031
               </a>
-              , izgūts 2026. gada 4. septembrī.
+              , izgūts {area.retrievedDate}.
             </li>
             <li>
               Mirušo skaits,{' '}
@@ -265,7 +265,7 @@ export default async function NovadsIedzivotajuSkaitsPage({
               >
                 CSP tabula IMV021
               </a>
-              , izgūts 2026. gada 4. septembrī.
+              , izgūts {area.retrievedDate}.
             </li>
           </ul>
           <p className="text-panel-muted">
