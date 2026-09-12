@@ -441,6 +441,35 @@ const explanations: Record<string, React.ReactNode> = {
       </ul>
     </>
   ),
+  'siltinajuma-biezuma-kalkulators': (
+    <>
+      <p className="text-panel-muted">
+        Kalkulators dala materiāla siltumvadītspēju (λ, W/(m·K)) ar pieļaujamo siltuma caurlaidības
+        koeficientu (U, W/(m²·K)), iegūstot nepieciešamo siltinājuma biezumu metros: biezums = λ ÷ U.
+        Šis ir vienkāršots aprēķins vienam izolācijas slānim, kas neietver konstrukcijas citu slāņu un
+        virsmu pretestību, tāpēc reālam projektam vienmēr vērts konsultēties ar sertificētu speciālistu.
+      </p>
+      <p className="text-panel-muted">
+        <strong>LBN 002-19 pieļaujamās U vērtības dzīvojamām ēkām</strong> (W/(m²·K)):
+      </p>
+      <ul className="list-disc pl-5 text-panel-muted">
+        <li>Ārsienas: 0,23</li>
+        <li>Jumti un pārsegumi: 0,20</li>
+        <li>Grīda saskarē ar grunti: 0,20</li>
+        <li>Pārsegums virs neapkurināta pagraba: 0,30</li>
+      </ul>
+      <p className="text-panel-muted">
+        <strong>Tipiskas materiālu siltumvadītspējas (λ)</strong> (W/(m·K), konkrētam produktam pārbaudi
+        ražotāja tehnisko datu lapu):
+      </p>
+      <ul className="list-disc pl-5 text-panel-muted">
+        <li>Minerālvate: 0,035 līdz 0,040</li>
+        <li>Putupolistirols (EPS): 0,035 līdz 0,040</li>
+        <li>Ekstrudētais polistirols (XPS): 0,030 līdz 0,035</li>
+        <li>Poliuretāna putas (PUR/PIR): 0,022 līdz 0,028</li>
+      </ul>
+    </>
+  ),
   'skriesanas-temps': (
     <p className="text-panel-muted">
       Kalkulators saskaita kopējo laiku minūtēs un dala to ar distanci, lai iegūtu tempu uz kilometru.
@@ -1368,6 +1397,27 @@ const sourcesContent: Record<string, React.ReactNode> = {
         neapliekamā minimuma un nodokļa atvieglojuma apmēru.
       </li>
       <li>VSAOI darbinieka daļas likme 10,5%, sk. avotus pensijas kalkulatora lapā.</li>
+    </ul>
+  ),
+  'siltinajuma-biezuma-kalkulators': (
+    <ul className="flex flex-col gap-2 text-sm text-panel-muted">
+      <li>
+        Pieļaujamās U vērtības dzīvojamām ēkām,{' '}
+        <a
+          href="https://likumi.lv/ta/id/307966-noteikumi-par-latvijas-buvnormativu-lbn-002-19-eku-norobezojoso-konstrukciju-siltumtehnika"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          likumi.lv
+        </a>
+        , Latvijas būvnormatīvs LBN 002-19 &quot;Ēku norobežojošo konstrukciju siltumtehnika&quot;, 3.
+        tabula, izgūts 2026. gada 12. septembrī.
+      </li>
+      <li>
+        Materiālu siltumvadītspējas ir tipiskas, plaši publicētas vērtības, ne konkrēta ražotāja dati.
+        Konkrētam produktam vienmēr pārbaudi tā tehnisko datu lapu.
+      </li>
     </ul>
   ),
 };

@@ -438,6 +438,22 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-05T23:35:49+03:00',
   },
   {
+    slug: 'siltinajuma-biezuma-kalkulators',
+    category: 'majoklis',
+    title: 'Siltinājuma biezuma kalkulators',
+    h1: 'Cik biezai jābūt siltumizolācijai?',
+    intro:
+      'Ievadi pieļaujamo U vērtību un materiāla siltumvadītspēju, uzzini nepieciešamo siltinājuma biezumu.',
+    metaDescription:
+      'Aprēķini nepieciešamo siltinājuma biezumu pēc LBN 002-19 pieļaujamās U vērtības un izvēlētā materiāla siltumvadītspējas.',
+    keywords: [
+      'siltinājuma biezuma kalkulators',
+      'siltinājuma biezums',
+      'LBN 002-19',
+    ],
+    contentUpdatedAt: '2026-09-12T10:45:53+03:00',
+  },
+  {
     slug: 'kmi-kalkulators',
     category: 'veseliba',
     title: 'ĶMI kalkulators',

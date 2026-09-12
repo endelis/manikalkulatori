@@ -52,6 +52,7 @@ import { PvnKalkulators } from './PvnKalkulators';
 import { UzkrajumuCalculator } from './UzkrajumuCalculator';
 import { Pensiju3LimenaCalculator } from './Pensiju3LimenaCalculator';
 import { IeguldijumuKontaCalculator } from './IeguldijumuKontaCalculator';
+import { SiltinajumaBiezumaCalculator } from './SiltinajumaBiezumaCalculator';
 import { InflacijasCalculator } from './InflacijasCalculator';
 import { AtvalinajumaNaudasCalculator } from './AtvalinajumaNaudasCalculator';
 import { MunKalkulators } from './MunKalkulators';
@@ -125,6 +126,7 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'uzkrajumi': UzkrajumuCalculator,
   'pensiju-3-limena-kalkulators': Pensiju3LimenaCalculator,
   'ieguldijumu-konta-nodoklu-kalkulators': IeguldijumuKontaCalculator,
+  'siltinajuma-biezuma-kalkulators': SiltinajumaBiezumaCalculator,
   'inflacija': InflacijasCalculator,
   'atvalinajuma-nauda': AtvalinajumaNaudasCalculator,
   'mun-kalkulators': MunKalkulators,
