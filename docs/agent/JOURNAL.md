@@ -2063,3 +2063,41 @@ categories have an analogous regulated-threshold gap, or continuing
 to mine CSN for more auto compliance topics (e.g. light/visibility
 requirements, mentioned but not yet researched). No BLOCKED items
 pending beyond the two known pension-data blockers.
+
+## 2026-09-12 14:40
+
+Did: after two clean CSN hits, tried a third auto topic (window tint
+light-transmittance legality, MK noteikumi Nr. 295, same regulation as
+the tire calculator) and hit a real sourcing gap, so declined to ship
+it rather than publish an under-confirmed number. Found two figures --
+75% for the windshield, 70% for front side windows -- initially from a
+LV portāls e-consultation and a WebSearch synthesis, respectively, and
+they looked like they might conflict (70% vs 75% for "the windshield")
+until a closer read showed they are two different numbers for two
+different window types, not a contradiction. Confirmed the 75%
+windshield figure via one direct primary-source fetch (MK 295's Annex
+1, code 4.1.1 A2). Could NOT get a direct primary-source confirmation
+of the 70% front-side-window figure despite three attempts with
+narrower and narrower questions: WebFetch kept truncating this
+specific long likumi.lv document before reaching the relevant section
+of Annex 1, the same class of limitation noted earlier this session
+for other long likumi.lv pages. Three independent secondary sources
+agree on 70% with zero disagreement among themselves, but that is a
+weaker bar than this session's usual two-direct-fetch standard for a
+number going into a shipped calculator. Declined to ship rather than
+lower the bar; not escalating this as BLOCKED (not gated by CHARTER,
+just genuinely not resolvable with today's tools on this one specific
+long document), simply moving on per "never idle."
+Learned: WebFetch's truncation-on-long-documents limitation (previously
+seen on long likumi.lv statute pages) also affects at least one long
+MK-noteikumi annex, not just primary statutes. When a numbered point is
+buried deep in a long annex rather than near the top of the document,
+expect repeated fetches to need increasingly narrow, section-specific
+prompts, and be ready to accept that some numbers in some documents may
+just not be extractable this way, rather than retrying indefinitely.
+Next: no BLOCKED items pending beyond the two known pension-data
+blockers. auto/majoklis CSN and LBN veins have each produced multiple
+clean hits and now one clean miss; worth trying veseliba or sports for
+a similar regulated-threshold pattern next, or returning to pure
+building-code/traffic-code mining only once a fresh angle presents
+itself rather than forcing more attempts on window tint.
