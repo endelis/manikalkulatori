@@ -1138,6 +1138,22 @@ export const articles: ArticleMeta[] = [
     contentUpdatedAt: '2026-09-12T17:35:00+03:00',
   },
   {
+    slug: 'pensiju-2-vs-3-limenis',
+    category: 'finanses',
+    title: 'Pensiju 2. vs 3. līmenis',
+    h1: 'Pensiju 2. vs 3. līmenis: atšķirības un kā izvēlēties',
+    intro:
+      'Uzzini galvenās atšķirības starp obligāto 2. līmeni un brīvprātīgo 3. līmeni, un kāpēc tie nav savstarpēji aizstājami.',
+    metaDescription:
+      'Pensiju 2. līmeņa un 3. līmeņa atšķirības Latvijā: obligāts pret brīvprātīgu, iemaksu avots un nodokļu atmaksa.',
+    keywords: [
+      'pensiju 2. līmenis vs 3. līmenis',
+      'pensiju līmeņu atšķirība',
+      'pensiju 2. un 3. līmenis salīdzinājums',
+    ],
+    contentUpdatedAt: '2026-09-12T18:45:00+03:00',
+  },
+  {
     slug: 'etf-pamati-pensijas-uzkrajumam',
     category: 'finanses',
     title: 'ETF pamati pensijas uzkrājumam',
@@ -1247,6 +1263,7 @@ const CATEGORY_HUBS: CategoryHub[] = [
       'ka-izveleties-pensiju-2-limena-planu',
       'pensiju-3-limena-kalkulators',
       'ka-izveleties-pensiju-3-limena-planu',
+      'pensiju-2-vs-3-limenis',
       'ieguldijumu-konta-nodoklu-kalkulators',
       'etf-pamati-pensijas-uzkrajumam',
       'izdienas-pensija',

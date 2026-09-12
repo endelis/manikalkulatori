@@ -205,6 +205,13 @@ export const articleBody: Record<string, React.ReactNode> = {
         >
           kā izvēlēties plānu
         </Link>
+        . Neskaidrs, kā 2. un 3. līmenis atšķiras? Izlasi{' '}
+        <Link
+          href="/finanses/pensiju-2-vs-3-limenis"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          to salīdzinājumu
+        </Link>
         .
       </p>
 
@@ -412,6 +419,74 @@ export const articleBody: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  'pensiju-2-vs-3-limenis': (
+    <>
+      <p>
+        Pensiju 2. un 3. līmenis bieži tiek sajaukti, jo abi ir saistīti ar ieguldījumu plāna izvēli,
+        taču tie ir divi principiāli atšķirīgi mehānismi, kas viens otru papildina, nevis aizstāj.
+      </p>
+      <p>
+        <strong>2. līmenis ir obligāts.</strong> Daļa no darba devēja veiktajām valsts sociālās
+        apdrošināšanas obligātajām iemaksām (VSAOI) tiek novirzīta uz izvēlēto pensiju fondu, nevis
+        tieši uz valsts pensiju budžetu. Tā ir jau esošās algas daļa, kas tiek pārvirzīta, nevis
+        papildu izdevums no algas uz rokas, un dalība tajā automātiski notiek visiem, kas dzimuši
+        pēc noteikta gada vai izvēlējušies pievienoties.
+      </p>
+      <p>
+        <strong>3. līmenis ir pilnībā brīvprātīgs.</strong> Tas ir papildu uzkrājums no jau
+        saņemtās neto algas vai citiem ienākumiem, ko katrs izvēlas veikt pats, ar iespēju to
+        jebkurā brīdī pārtraukt, uzsākt no jauna vai mainīt iemaksu apmēru.
+      </p>
+      <p>
+        Būtiska atšķirība ir arī nodokļu ziņā. 3. līmeņa iemaksas dod tiesības uz iedzīvotāju
+        ienākuma nodokļa atmaksu par gada iemaksu summu (līdz noteiktam ierobežojumam, sk.{' '}
+        <Link
+          href="/finanses/pensiju-3-limena-kalkulators"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          3. līmeņa kalkulatoru
+        </Link>{' '}
+        precīzam aprēķinam), jo tā ir brīvprātīga papildu iemaksa no jau apliktiem ienākumiem.
+        2. līmeņa iemaksas šādu atsevišķu nodokļa atmaksu nedod, jo tās jau ir daļa no obligātajām
+        sociālajām iemaksām, kuras aprēķina pirms algas nodošanas darbiniekam.
+      </p>
+      <p>
+        Abos līmeņos dalībnieks izvēlas ieguldījumu plānu pēc riska pakāpes (konservatīvais,
+        sabalansētais, aktīvais) un var to mainīt vai pāriet pie cita pārvaldītāja. Tā kā abi
+        līmeņi darbojas pēc līdzīgas loģikas, principi, kā izvēlēties plānu pēc vecuma un atlikušā
+        laika līdz pensijai, ir līdzīgi abos gadījumos.
+      </p>
+      <p>
+        Praktiskais secinājums: 2. līmenis nav izvēle, tas jau notiek automātiski, tāpēc vienīgā
+        rīcība tur ir plāna izvēle. 3. līmenis ir papildu iespēja tiem, kas vēlas uzkrāt vairāk par
+        obligāto minimumu un izmantot pieejamo nodokļa atmaksu.
+      </p>
+      <p>
+        Skaties arī{' '}
+        <Link
+          href="/finanses/ka-izveleties-pensiju-2-limena-planu"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          kā izvēlēties 2. līmeņa plānu
+        </Link>
+        ,{' '}
+        <Link
+          href="/finanses/ka-izveleties-pensiju-3-limena-planu"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          kā izvēlēties 3. līmeņa plānu
+        </Link>
+        , vai{' '}
+        <Link
+          href="/finanses/pensija-latvija-celvedis"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          pilnu ceļvedi par pensiju Latvijā
+        </Link>
+        .
+      </p>
+    </>
+  ),
   'buvniecibas-prasibu-celvedis': (
     <>
       <p>
@@ -573,6 +648,25 @@ export const articleSources: Record<string, React.ReactNode> = {
       </a>
       ), nevis vienam konkrētam normatīvajam punktam. Katra plāna precīzā ieguldījumu struktūra
       jāpārbauda tā pašreizējā prospektā, izgūts 2026. gada 12. septembrī.
+    </p>
+  ),
+  'pensiju-2-vs-3-limenis': (
+    <p className="text-sm text-panel-faint">
+      Vispārējais 2. līmeņa mehānisma apraksts,{' '}
+      <a
+        href="https://www.vsaa.gov.lv/pakalpojumi/stradajosajiem/2-pensiju-limenis/"
+        className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+      >
+        VSAA
+      </a>
+      , un 3. līmeņa nodokļa atmaksas nosacījumi,{' '}
+      <a
+        href="https://www.bank.lv/darbibas-jomas/klientu-aizsardziba/jautajumi-un-atbildes/privatie-pensiju-fondi-pensiju-3-limenis"
+        className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+      >
+        Latvijas Banka
+      </a>
+      , izgūts 2026. gada 12. septembrī.
     </p>
   ),
   'buvniecibas-prasibu-celvedis': (
