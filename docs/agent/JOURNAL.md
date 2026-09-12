@@ -1453,3 +1453,47 @@ Next: no more unblocked pension work without new data. Reasonable
 next moves: wait for the two blockers to clear, resume normal
 wave-order/content-quality work elsewhere on the site, or take
 direction on something else entirely.
+
+## 2026-09-12 09:37
+
+Did: user pushed back on idling during quiet ticks ("You always need to
+figure out something to do"). Ran a proactive audit instead of waiting
+passively on the alga-neto decision, and found two real, previously
+unnoticed bugs from the 2026-09-11 light redesign:
+
+1. All three bespoke opengraph-image.tsx routes (pensijas-kalkulators,
+   dzimstibas-kalkulators, tumsas-kalkulators) still hardcoded the old
+   dark-theme hex values, so social-media link previews showed a dark
+   image jarringly inconsistent with the actual light site. Also found
+   pensijas-kalkulators's OG image used sabiedriba's purple accent
+   despite being in the finanses category, a pre-existing
+   miscategorization from before the redesign. Fixed all three, added
+   a matching OG image for priekslaicigas-pensijas-kalkulators (built
+   yesterday without one), verified all four render correctly (one
+   needed a Satori "explicit display:flex for multi-child div" fix
+   along the way). Commit 0e3cf5e.
+2. DESIGN-GUIDANCE.md section 12 ("Design tokens starter") was a
+   second, undated copy of color tokens that went stale the moment
+   section 3 was updated for the redesign but this section wasn't --
+   the exact drift bug 1 was a live-code instance of. Also discovered
+   its spacing/radius/shadow variables were never implemented anywhere
+   in the actual codebase, only ever existing in this doc since it was
+   first written. Replaced with a short pointer to the real source of
+   truth instead of a second copy. Commit e9aad3f.
+
+Also did a broader sweep: confirmed no other hardcoded old-theme hex
+values exist anywhere in actual code (only in historical spec/plan
+docs, correctly left as history), confirmed the sitemap includes every
+new article/calculator from the pension push, and spot-checked the
+pension hub page and one calculator at 400px mobile width (both clean,
+no overflow).
+Learned: a full-site aesthetic redesign needs a deliberate sweep for
+generated/non-component image assets (OG images, favicons, anything
+using next/og's ImageResponse) since these render as static PNGs with
+their own hardcoded style props, not CSS classes, so they don't
+inherit token changes automatically the way every other page did. Add
+this to the checklist for any future redesign.
+Next: alga-neto/alga-bruto still pending the user's go/no-go from the
+earlier findings (differentiated NM formula sourced, ready to build
+once confirmed). No other known issues found this pass; will keep
+proactively auditing rather than idling on quiet ticks going forward.
