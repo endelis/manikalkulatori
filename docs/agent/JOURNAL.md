@@ -1845,3 +1845,28 @@ but not built into a calculator, since only one source fetch covered
 those specific numbers vs. two for the residential figure -- would
 want a second independent confirmation before shipping them). No
 BLOCKED items pending.
+
+## 2026-09-12 13:08
+
+Did: got the second independent confirmation flagged in the previous
+entry (direct re-fetch of m.likumi.lv/ta/id/326992 asking for exact
+point numbers 7.1 through 7.7, which matched the first fetch's numbers
+exactly), then used it to expand griestu-augstuma-kalkulators from
+residential-only to all room types LBN 200-21 point 7 covers: 2.7 m
+public/office (7.1), 2.5 m residential (7.2), 2.2 m corridor/sanitary
+(7.4), 1.8 m technical/basement (7.5). Added a room-type dropdown,
+which needed a new components/SelectField.tsx since every existing
+choice field in this codebase (ToggleField) is boolean-only. Updated
+lib/calculators/griestu-augstums.ts (+test), the UI component, FAQ,
+and sources/explanation entries in page.tsx accordingly. Full checklist
+green, visually verified all four room-type option labels render.
+Fixed the same post-commit contentUpdatedAt drift pattern as usual.
+Commits 3a28769, bc8db33.
+Learned: this is the first calculator in the codebase needing more
+than a binary choice; SelectField is now available for any future
+calculator that needs a multi-option picker (e.g. heating type, wall
+material) instead of stacking booleans or hardcoding one scenario.
+Next: no BLOCKED items pending. Continue mining LBN 200-21 and other
+LBN/LVS codes for further majoklis gaps, or return to the two open
+pension-cluster data blockers (average-pension CSP figure, 2nd-level
+fund risk-category returns) if building-code topics run dry.
