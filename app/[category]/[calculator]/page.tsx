@@ -716,6 +716,13 @@ const explanations: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  'darba-vietas-temperaturas-kalkulators': (
+    <p className="text-panel-muted">
+      Kalkulators salīdzina ievadīto telpas temperatūru ar MK noteikumu Nr. 359 noteikto diapazonu I
+      darba kategorijai, kas atkarīgs no izvēlētās sezonas: 19 līdz 25 °C aukstajā periodā, 20 līdz
+      28 °C siltajā periodā.
+    </p>
+  ),
   'skriesanas-temps': (
     <p className="text-panel-muted">
       Kalkulators saskaita kopējo laiku minūtēs un dala to ar distanci, lai iegūtu tempu uz kilometru.
@@ -1910,6 +1917,23 @@ const sourcesContent: Record<string, React.ReactNode> = {
         </a>
         , būvnormatīvs LBN 200-21 &quot;Būvju vispārīgo prasību būvnormatīvs&quot;, 118. punkts, izgūts
         2026. gada 12. septembrī.
+      </li>
+    </ul>
+  ),
+  'darba-vietas-temperaturas-kalkulators': (
+    <ul className="flex flex-col gap-2 text-sm text-panel-muted">
+      <li>
+        Pieļaujamā gaisa temperatūra I darba kategorijai, aukstajā un siltajā periodā,{' '}
+        <a
+          href="https://likumi.lv/ta/id/191430-darba-aizsardzibas-prasibas-darba-vietas"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          likumi.lv
+        </a>
+        , MK noteikumi Nr. 359 &quot;Darba aizsardzības prasības darba vietās&quot;, 1. pielikums,
+        izgūts 2026. gada 12. septembrī.
       </li>
     </ul>
   ),

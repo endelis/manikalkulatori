@@ -582,6 +582,22 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-12T14:16:38+03:00',
   },
   {
+    slug: 'darba-vietas-temperaturas-kalkulators',
+    category: 'majoklis',
+    title: 'Darba vietas temperatūras kalkulators',
+    h1: 'Vai darba vietas temperatūra atbilst prasībai?',
+    intro:
+      'Ievadi telpas temperatūru un sezonu, uzzini, vai tā atbilst darba aizsardzības prasībai biroja tipa darbam.',
+    metaDescription:
+      'Pārbaudi, vai darba telpas temperatūra atbilst MK noteikumu Nr. 359 prasībai I darba kategorijai (19-25°C ziemā, 20-28°C vasarā).',
+    keywords: [
+      'darba vietas temperatūras kalkulators',
+      'pieļaujamā temperatūra birojā',
+      'darba aizsardzības prasības temperatūra',
+    ],
+    contentUpdatedAt: '2026-09-12T15:06:38+03:00',
+  },
+  {
     slug: 'kmi-kalkulators',
     category: 'veseliba',
     title: 'ĶMI kalkulators',
