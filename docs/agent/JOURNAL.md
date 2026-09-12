@@ -1677,3 +1677,24 @@ text). Site now covers auto/finance/majoklis/health/sports per the
 original plan, plus the full pension cluster, plus this new insulation
 calculator. Continuing to look for genuinely new, validated topics
 rather than stopping at the first blocker on any one of them.
+
+## 2026-09-12 11:22
+
+Did: continued applying the "never idle" policy. Researched three more
+potential new calculator topics via WebSearch: calorie deficit
+(already covered by kaloriju-norma, and the broader space is heavily
+saturated with dedicated Latvian competitors), electrical connection
+load sizing (already an official Sadales tikls utility tool, not worth
+competing with the grid operator's own calculator), and pregnancy due
+date (saturated with dedicated exact-match domains,
+grutniecibaskalkulators.lv and grutniecibas-kalkulators.lv, plus an
+established app brand WomanLog). None panned out as good new wedges,
+which is a normal research outcome, not a failure to fix. Did a quick
+code-quality check instead: no `any` types in any calculator file, and
+`npx next lint` reported clean (noting CLAUDE.md's documented caveat
+that a clean local lint result in this worktree setup isn't fully
+trustworthy, so this is informational, not a strong verification).
+Next: no BLOCKED items. Will keep alternating between new-topic
+research and site audits each tick, accepting that not every research
+attempt yields a build, per the "never idle" policy that measures
+effort, not guaranteed hits.
