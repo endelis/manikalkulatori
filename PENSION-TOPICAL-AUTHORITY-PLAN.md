@@ -4,6 +4,40 @@ Companion to `PROJECT-OVERVIEW.md` and `DESIGN-GUIDANCE.md`. This is a content
 strategy plan, not a code implementation plan — it defines what to build and why;
 implementation follows the normal calculator/content workflow once approved.
 
+**Status (2026-09-12): the pillar and almost the entire cluster are live.**
+Built and shipped: the hub (`pensija-latvija-celvedis`), `pensijas-kalkulators`
+(enhanced), both articles 1 and 2 (`minimala-pensija`, `videja-pensija-latvija`
+— the latter's "needs sourcing" line below is now resolved, see its own
+sourcing note), calculator 3 (`pensiju-3-limena-kalkulators`), calculator 5
+(`priekslaicigas-pensijas-kalkulators`) plus its comparison article
+(`priekslaicigas-vs-standarta-pensija`), calculator 6
+(`ieguldijumu-konta-nodoklu-kalkulators`) plus its companion article
+(`etf-pamati-pensijas-uzkrajumam`), article 3 (`izdienas-pensija`), and
+article 6 (`ka-izveleties-pensiju-3-limena-planu`). All wired into the hub
+with bidirectional links, matching section 2's architecture.
+
+Still open: calculator 2 (2nd-level fund projection) remains genuinely
+BLOCKED on sourcing — fund-return data by risk category lives behind a
+JavaScript SPA that loads asynchronously (manapensija.lv's plan-comparison
+tool), confirmed unreachable by two independent attempts; needs either a
+headless-browser-capable tool or a user-supplied export. Calculator 4
+(the combined all-3-levels calculator) and article 4 (2nd vs 3rd level
+comparison) are not blocked, just not yet built. Article 5 (how to choose a
+2nd-level plan by risk tier) may be buildable now even though calculator 2
+is blocked, since it only needs Manapensija.lv's descriptive risk-tier text,
+not the numeric return data — worth checking before assuming it shares
+calculator 2's blocker. Article 9 (coefficient G history) stays
+deprioritized per its own note below.
+
+One implementation deviation from section 5's original architecture, noted
+for accuracy: article body copy ended up living as JSX directly in
+`lib/articleContent.tsx` (matching the existing `explanations`/
+`sourcesContent` convention for calculators in `app/[category]/[calculator]/
+page.tsx`), not as `content/articles/<slug>.md` markdown files as originally
+planned. This keeps one authoring convention across the whole codebase rather
+than two, and was a reasonable call made during implementation, not an
+oversight.
+
 ## 1. Why pension, not generic "investing"
 
 The original idea was a general investing content push. Real keyword data
