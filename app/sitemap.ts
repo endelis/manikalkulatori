@@ -30,6 +30,9 @@ const NOVADS_PILOT_ADDED_AT: Record<string, string> = {
   jelgava: '2026-09-04T13:22:48+03:00',
   varaklani: '2026-09-04T13:22:48+03:00',
   liepaja: '2026-09-12T18:55:00+03:00',
+  ventspils: '2026-09-12T19:05:00+03:00',
+  rezekne: '2026-09-12T19:05:00+03:00',
+  valmiera: '2026-09-12T19:05:00+03:00',
 };
 
 const NOVADS_PILOT_UPDATED_AT: Record<string, string> = Object.fromEntries(
