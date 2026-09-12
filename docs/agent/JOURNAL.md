@@ -1617,3 +1617,39 @@ green.
 Next: no BLOCKED items. Site is in solid shape across the redesign,
 pension cluster, and salary calculators. Will keep auditing for real
 issues on future ticks rather than idling.
+
+## 2026-09-12 10:35
+
+Did: applying the new "never idle on user input" policy (see
+CHARTER.md), used this tick to research new topics rather than wait.
+Found a real, currently-uncovered opportunity: Latvia's simplified 10%
+flat tax on rental/lease income (an alternative to normal progressive
+IIN for landlords, covering "īres un nomas ienākums") -- no calculator
+on the site covers this, and it's a distinct, real tax regime, not
+a duplicate of anything existing.
+
+Did NOT build it yet: 4 separate attempts to get a clean, direct
+primary-source fetch of the exact rule (rate, deductions, notification
+timing) all failed the same way other tax-PDF sourcing has failed this
+session -- lvportals summary only (2019-dated, needed a currency
+check), VID's own page returned navigation-only content, the "normu
+piemērošanas kārtība" regulation truncated before reaching the
+relevant article (same failure as alga-neto's early attempts), and the
+specific VID methodical material PDF ("Nodokļi no dzīvokļa izīrēšanas
+vai iznomāšanas", updated 2026-02-24) turned out to be a scanned
+image, unreadable by WebFetch or the Read tool (no poppler-utils in
+this environment, same blocker as the ieguldījumu konts PDF before the
+user pasted its text directly). Two independent secondary sources
+(including one explicitly 2026-dated) agree on 10% and cite the same
+statute reference (likuma "Par iedzīvotāju ienākuma nodokli" 11. panta
+12. daļa), which is reasonable corroboration but not the direct fetch
+CHARTER.md's sourcing bar requires -- staying disciplined about that
+even though the case for this specific figure is fairly strong.
+Did NOT idle on this: pivoting immediately to a different topic per
+the new standing policy.
+Next: if the user can grab the text of that VID PDF (same pattern as
+the ieguldījumu konts unblock -- paste the extracted text) or the
+specific text of likuma "Par iedzīvotāju ienākuma nodokli" 11. panta
+12. daļa from likumi.lv directly, an īres ienākuma nodokļa kalkulators
+is a real, buildable, currently-uncovered calculator idea for the
+finanses category.
