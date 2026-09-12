@@ -1955,3 +1955,37 @@ building-code vein). Worth checking whether that vein has more clean
 hits left (LBN 200-21 has other numbered points not yet mined) before
 concluding it is exhausted, or pivoting back to the two open pension-
 cluster data blockers.
+
+## 2026-09-12 14:15
+
+Did: seventh majoklis calculator, tualetes-izmeru-kalkulators (LBN
+200-21 point 118's minimum toilet room size: 0.8 x 1.4 m generally,
+1.6 x 2.2 m for a room accessible to people with functional
+disabilities, toggled by a boolean field). User said "dont stop now
+then" mid-tick, so continued straight through to a full ship rather
+than stopping at research. Surveyed LBN 200-21 broadly first (asked
+for other numbered points with concrete residential dimensions) and
+deliberately skipped several candidates that surfaced: corridor/ramp/
+door widths and railing heights are either accessibility-specific
+(narrower audience fit) or genuine fall-protection safety hardware
+(same "not touching this" category as electrical sizing from earlier),
+not permit-compliance dimension checks like the 7 calculators already
+shipped. Toilet room size was the one clean, general-residential,
+comfort/compliance-only fit. Confirmed via two independent direct
+fetches of the primary source (m.likumi.lv and likumi.lv), identical
+wording both times. Wired as 7th member of buvniecibas-prasibu-celvedis.
+Caught and fixed a real drift-test failure before it reached master:
+kapnu-pakapiena-izmeru-kalkulators's contentUpdatedAt (set at file-
+creation time, previous tick) was 5 minutes 32 seconds stale against
+its actual commit time, the same recurring post-commit-timestamp
+pattern as many earlier fixes this session. Full checklist green,
+visually verified via a running dev server. Commit ddc2baf.
+Next: majoklis now at 25 calculators (up from 18 this morning). LBN
+200-21's remaining unmined points (corridor width, door width, ramp
+slope, railing height, resting-area spacing) are accessibility- or
+safety-hardware-focused, not a good fit for this site's comfort/
+compliance-only scope -- the LBN 200-21 vein for majoklis may be close
+to exhausted for now. Worth trying a different LBN/LVS number next, or
+pivoting to the two open pension-cluster data blockers, or a fresh
+building-code-adjacent topic outside majoklis (e.g. LVS parking space
+dimensions, if a genuinely general-audience angle exists).
