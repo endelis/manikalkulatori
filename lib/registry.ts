@@ -483,7 +483,23 @@ export const calculators: CalculatorMeta[] = [
       'logu platība pret grīdas platību',
       'dienasgaismas prasība logiem',
     ],
-    contentUpdatedAt: '2026-09-12T11:51:29+03:00',
+    contentUpdatedAt: '2026-09-12T11:56:30+03:00',
+  },
+  {
+    slug: 'kapnu-formulas-kalkulators',
+    category: 'majoklis',
+    title: 'Kāpņu formulas kalkulators',
+    h1: 'Vai manas kāpnes būs ērtas?',
+    intro:
+      'Ievadi pakāpiena augstumu un platumu, uzzini, vai kāpnes atbilst Blondela ērtuma formulai.',
+    metaDescription:
+      'Pārbaudi kāpņu ērtumu pēc Blondela formulas (2 reizes pakāpiena augstums plus platums, 60 līdz 64 cm).',
+    keywords: [
+      'kāpņu formulas kalkulators',
+      'blondela formula',
+      'pakāpiena augstums un platums',
+    ],
+    contentUpdatedAt: '2026-09-12T12:03:18+03:00',
   },
   {
     slug: 'kmi-kalkulators',

@@ -485,6 +485,13 @@ const explanations: Record<string, React.ReactNode> = {
       kalkulators parāda trūkstošo starpību.
     </p>
   ),
+  'kapnu-formulas-kalkulators': (
+    <p className="text-panel-muted">
+      Kalkulators reizina pakāpiena augstumu ar 2 un pieskaita pakāpiena platumu, iegūstot Blondela
+      formulas summu. Ja summa ir robežās no 60 līdz 64 cm, kāpnes tiek uzskatītas par ērtām parastam
+      cilvēka solim, ja summa ir ārpus šī diapazona, kalkulators parāda, cik cm trūkst vai ir par daudz.
+    </p>
+  ),
   'skriesanas-temps': (
     <p className="text-panel-muted">
       Kalkulators saskaita kopējo laiku minūtēs un dala to ar distanci, lai iegūtu tempu uz kilometru.
