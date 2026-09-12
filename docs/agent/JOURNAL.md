@@ -2198,3 +2198,35 @@ blockers. Noise-limit regulation still unidentified; worth a fresh
 search for the actual governing MK-noteikumi number if returning to
 that specific topic, or continuing to alternate between new-calculator
 ticks and audit ticks as material presents itself.
+
+## 2026-09-12 16:48
+
+Did: identified the actual noise regulation (MK noteikumi Nr. 66,
+"Darba aizsardzības prasības nodarbināto aizsardzībai pret darba
+vides trokšņa radīto risku") but on inspection it governs hearing-
+damage exposure limits, not a comfort/permit-compliance threshold --
+correctly filed alongside railing height and window tint as
+safety-hardware-adjacent territory this session avoids, rather than
+building it just because a clean regulation number was finally found.
+Pivoted to a completely different domain instead: baseina-udens-
+temperaturas-kalkulators (public swimming pool water temperature, MK
+noteikumi Nr. 470 point 15: 26-30 C standard pool, 28-32 C children's
+pool). Along the way, the first regulation search surfaced a repealed
+predecessor (id 186601, "Zaudējis spēku") before a second search found
+the live one (id 316403) -- the same repealed-regulation trap hit
+several times earlier this session, now routine to check for. Also
+verified SelectField's color-contrast tokens are identical to the
+already-WCAG-audited NumberField (bg-panel-surface-2 / text-panel-text
+/ border-panel-border-strong), confirming no new accessibility risk
+was introduced when that component shipped two ticks ago. Confirmed
+the pool figures via two independent direct fetches, identical
+wording both times. Full checklist green, visually verified, cross-
+linked bidirectionally with the existing peldesanas-css calculator.
+Commits 86bc919, 2b9ced3 (routine same-day contentUpdatedAt
+correction).
+Next: no BLOCKED items pending beyond the two known pension-data
+blockers. First sports-category regulated-threshold hit this session,
+alongside majoklis (LBN, MK 359) and auto (CSN, MK 295) -- worth
+checking if sports/veseliba have more facility- or public-health-
+standard gaps in this vein (gym/sauna temperature, changing-room
+requirements) before it also runs dry.
