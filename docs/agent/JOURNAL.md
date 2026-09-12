@@ -1989,3 +1989,47 @@ to exhausted for now. Worth trying a different LBN/LVS number next, or
 pivoting to the two open pension-cluster data blockers, or a fresh
 building-code-adjacent topic outside majoklis (e.g. LVS parking space
 dimensions, if a genuinely general-audience angle exists).
+
+## 2026-09-12 14:27
+
+Did: tried to unblock the long-open average-pension (CSP) data
+blocker first, per "don't stop" instruction mid-tick. Tried three
+fresh angles (data.gov.lv open-data pension dataset, CSP's own
+statistics-portal table page, a direct WebSearch-vs-WebFetch
+cross-check that caught a real discrepancy: WebSearch's synthesized
+answer said 688.44 EUR for March 2026, but directly fetching the
+actual cited news article said 680.07 EUR for the same month, a
+useful reminder that WebSearch's own summary can drift from the page
+it claims to cite). All three angles ultimately point back to the
+same wall as before: the authoritative CSP figure lives in a
+JS-rendered PXWEB interactive database (data.stat.gov.lv/pxweb) that
+WebFetch cannot read as text, and the open-data XLSX export isn't
+readable either (no poppler/openpyxl-equivalent available for casual
+xlsx reads via WebFetch, only via the Python+openpyxl workaround used
+once earlier this session when the user manually supplied file
+paths). Confirmed genuinely still blocked, not just under-tried.
+Pivoted immediately to a fresh vein instead of continuing to press on
+it: auto category, riepu-protektora-dzilums (legal minimum tire tread
+depth, MK noteikumi Nr. 295: 1.6mm/4mm by season). Confirmed via CSDD
+(the official road authority) and an LV portāls legal e-consultation
+that quotes the regulation directly, both agreeing with several
+tire-shop sources with zero conflicts found. Real gap: search results
+were pure tire-shop marketing content, no interactive Latvian tool.
+Cross-linked with the existing riepu-izmers calculator. Full checklist
+green, visually verified. Caught and fixed the same recurring
+post-commit contentUpdatedAt drift twice this tick (once for the
+previous tick's tualetes-izmeru-kalkulators, once pre-emptively for
+this tick's own new calculator, checking git log immediately after
+committing rather than waiting for the next test run to catch it).
+Commits 282bd63, 1416fbf.
+Next: no BLOCKED items pending beyond the two known, still-genuinely-
+blocked pension-data items (average pension CSP figure, 2nd-level
+fund risk-category returns), both requiring either a manually-supplied
+file/screenshot from the user or a tool this session doesn't have
+(headless browser for PXWEB, or openpyxl invoked directly rather than
+through WebFetch). auto category now has a second tire-compliance
+calculator alongside riepu-izmers; worth checking OCTA/KASKO-adjacent
+or other CSN-driven auto compliance topics (e.g. child seat rules,
+light bulb/visibility requirements) for the same "real legal minimum,
+clean primary source, no existing Latvian tool" pattern that worked
+twice now (LBN building codes, MK 295 tires).
