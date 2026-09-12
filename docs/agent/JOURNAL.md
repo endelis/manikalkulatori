@@ -1497,3 +1497,22 @@ Next: alga-neto/alga-bruto still pending the user's go/no-go from the
 earlier findings (differentiated NM formula sourced, ready to build
 once confirmed). No other known issues found this pass; will keep
 proactively auditing rather than idling on quiet ticks going forward.
+
+## 2026-09-12 09:42
+
+Did: continued the proactive audit. Found a real, site-wide dash-ban
+violation in components/CookieBanner.tsx:24 -- an em dash used as
+punctuation ("Vari tās pieņemt vai noraidīt — lapa strādā abos
+gadījumos"), same category of issue as the already-flagged
+privacy-policy violation from an earlier session. This one is higher
+impact since the cookie banner renders on every single page via
+app/layout.tsx, not just one legal page.
+Did NOT fix it: CHARTER.md rule 6 explicitly gates
+components/CookieBanner.tsx (cookie-consent/analytics wiring) from
+autonomous edits, same as the legal pages gate that stopped the
+earlier privacy-policy fix. Flagging directly to the user instead.
+GoogleAnalytics.tsx checked too, clean, no similar issue there.
+Next: two dash-ban violations now flagged and pending user action
+(privatuma-politika:47, CookieBanner.tsx:24), both one-line rephrases,
+both gated from autonomous fixing. alga-neto/alga-bruto still pending
+go/no-go. Continuing to look for more real issues rather than idling.
