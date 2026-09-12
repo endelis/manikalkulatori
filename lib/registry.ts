@@ -224,7 +224,7 @@ export const calculators: CalculatorMeta[] = [
       'autosēdeklīša prasība',
       'no cik cm nevajag bērnu sēdeklīti',
     ],
-    contentUpdatedAt: '2026-09-12T14:29:30+03:00',
+    contentUpdatedAt: '2026-09-12T14:33:25+03:00',
   },
   {
     slug: 'cela-izmaksas',
