@@ -1723,3 +1723,30 @@ new building-code-driven finds in a row worked well; worth trying that
 pattern again (LBN/LVS standards, not tax law) before returning to
 tax-driven topics that keep hitting the same PDF-sourcing wall. No
 BLOCKED items pending.
+
+## 2026-09-12 11:56
+
+Did: third new calculator this stretch, logu-platibas-kalkulators
+(window area vs floor area compliance, LBN 200-21's 1:8 minimum ratio
+for residential rooms and kitchens). Sourced by direct fetch,
+confirmed current (not a stale figure carried over from an older LBN
+211-98/211-08 version, though the ratio itself has apparently stayed
+1:8 across all of them). Reused the existing winner/loser ResultCard
+tone convention to show compliant vs non-compliant clearly. Fixed
+ventilacijas-apjoma-kalkulators's contentUpdatedAt, same recurring
+post-commit-timestamp pattern. Full checklist green, verified visually.
+Commit 9097b03.
+
+Session total for this "never idle" stretch: 3 new majoklis
+calculators (insulation thickness, ventilation fresh-air requirement,
+window-area compliance), all found via the same building-code-physics
+research pattern, all real gaps (competitor searches returned either
+cost-only tools, official-but-different-purpose utility tools, or
+low-quality machine-translated content, never a genuine equivalent
+Latvian tool). majoklis category now at 21 calculators (was 18 this
+morning).
+Next: this pattern (LBN/LVS building codes, not tax law) has now
+produced 3 clean hits in a row with zero sourcing blockers, versus tax
+topics which keep hitting the same PDF/navigation-only wall. Worth
+continuing to mine LBN building codes for more gaps before returning
+to tax-driven ideas. No BLOCKED items pending.
