@@ -9,6 +9,7 @@ import { UzladesIzmaksasCalculator } from './UzladesIzmaksasCalculator';
 import { NolietojumsCalculator } from './NolietojumsCalculator';
 import { RiepuIzmeraCalculator } from './RiepuIzmeraCalculator';
 import { RiepuProtektoraDzilumaCalculator } from './RiepuProtektoraDzilumaCalculator';
+import { BernuSedeklisaPrasibaCalculator } from './BernuSedeklisaPrasibaCalculator';
 import { CelaIzmaksasCalculator } from './CelaIzmaksasCalculator';
 import { SolaruAtmaksasCalculator } from './SolaruAtmaksasCalculator';
 import { SiltumsuknaAtmaksasCalculator } from './SiltumsuknaAtmaksasCalculator';
@@ -90,6 +91,7 @@ export const calculatorComponents: Record<string, ComponentType<CalculatorCompon
   'nolietojums': NolietojumsCalculator,
   'riepu-izmers': RiepuIzmeraCalculator,
   'riepu-protektora-dzilums': RiepuProtektoraDzilumaCalculator,
+  'bernu-sedeklisa-prasiba': BernuSedeklisaPrasibaCalculator,
   'cela-izmaksas': CelaIzmaksasCalculator,
   'solaru-atmaksa': SolaruAtmaksasCalculator,
   'siltumsukna-atmaksa': SiltumsuknaAtmaksasCalculator,

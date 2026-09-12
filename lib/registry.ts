@@ -211,6 +211,22 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-12T14:26:45+03:00',
   },
   {
+    slug: 'bernu-sedeklisa-prasiba',
+    category: 'auto',
+    title: 'Bērnu autosēdeklīša prasības kalkulators',
+    h1: 'Vai bērnam nepieciešams autosēdeklītis?',
+    intro:
+      'Ievadi bērna augumu, uzzini, vai automobilī nepieciešams autosēdeklītis vai paliktnis.',
+    metaDescription:
+      'Pārbaudi, vai bērnam nepieciešams autosēdeklītis vai paliktnis pēc Ceļu satiksmes noteikumu 185. punkta (robeža 150 cm augums).',
+    keywords: [
+      'bērnu autosēdeklīša kalkulators',
+      'autosēdeklīša prasība',
+      'no cik cm nevajag bērnu sēdeklīti',
+    ],
+    contentUpdatedAt: '2026-09-12T14:29:30+03:00',
+  },
+  {
     slug: 'cela-izmaksas',
     category: 'auto',
     title: 'Ceļa izmaksas kalkulators',

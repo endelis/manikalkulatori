@@ -232,6 +232,13 @@ const explanations: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  'bernu-sedeklisa-prasiba': (
+    <p className="text-panel-muted">
+      Kalkulators salīdzina ievadīto bērna augumu ar Ceļu satiksmes noteikumu 185. punktā noteikto
+      150 cm robežu. Ja augums ir zem robežas, autosēdeklītis vai paliktnis ir nepieciešams, ja virs
+      vai vienāds ar to, šī konkrētā prasība vairs neattiecas.
+    </p>
+  ),
   'cela-izmaksas': (
     <p className="text-panel-muted">
       Kalkulators aprēķina degvielas izmaksas no brauciena attāluma, patēriņa un degvielas cenas, tad
@@ -1264,6 +1271,22 @@ const sourcesContent: Record<string, React.ReactNode> = {
           LV portāls
         </a>
         , izgūts 2026. gada 12. septembrī.
+      </li>
+    </ul>
+  ),
+  'bernu-sedeklisa-prasiba': (
+    <ul className="flex flex-col gap-2 text-sm text-panel-muted">
+      <li>
+        Bērna autosēdeklīša vai paliktņa prasība un 150 cm auguma robeža,{' '}
+        <a
+          href="https://likumi.lv/ta/id/274865-celu-satiksmes-noteikumi"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          likumi.lv
+        </a>
+        , Ceļu satiksmes noteikumi, 185. punkts, izgūts 2026. gada 12. septembrī.
       </li>
     </ul>
   ),
