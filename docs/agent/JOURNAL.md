@@ -2465,3 +2465,68 @@ the right default for upcoming cycles is NOT more new-page volume --
 prefer smaller-footprint work (bug fixes, audits, doc accuracy, or
 outreach-adjacent drafting if asked) until the user weighs in on
 overall direction and pace.
+
+## 2026-09-12 21:05
+
+Did: executed the 4-phase technical-compliance plan the user approved
+(research done and proposed the previous turn; the user replied with
+per-phase instructions rather than a blanket "go"). Phase 1: added
+security headers to next.config.mjs (CSP, HSTS, X-Content-Type-
+Options, X-Frame-Options, Referrer-Policy, Permissions-Policy).
+Documented CSP's one real gap in a comment (script-src/style-src need
+'unsafe-inline' since this site is fully statically generated with no
+per-request nonce available, and ships one real inline script plus
+inline JSON-LD on every page) rather than silently accepting a weaker
+policy without explaining why. Verified via a production build + next
+start: headers present, homepage/calculator/OG-image routes still 200,
+inline JSON-LD unaffected, full suite green.
+Also did the other Phase 1 item (spot-check calculator explanation
+copy for boilerplate reuse): ran a pairwise text-similarity check
+across all 74 calculator explanation paragraphs, found the highest
+matches (tapetes-daudzums/gipskartona-loksnu-daudzums 83%, mun-
+kalkulators/iin-kalkulators 81%, kredita-kalkulators/hipotekas-
+maksajums 75%) and read each pair in full before concluding: these are
+genuinely different calculators sharing the same underlying formula
+shape (area-divided-by-coverage-rounded-up; percentage-of-amount;
+annuity formula), described accurately and concisely, not padded
+boilerplate -- the actual distinguishing content (title, inputs, FAQ,
+sources, defaults) differs per calculator. Concluded no action needed,
+which is itself the useful finding (confirmed, not assumed).
+Phase 2 (par-mums): user said they don't have much specific personal
+info to add but authorized expanding it on their behalf if warranted.
+Rewrote it using facts already true and documented in this repo
+(PROJECT-OVERVIEW.md's real EV/leasing/KASKO/triathlon experience list)
+plus the site's actual, checkable sourcing discipline (primary-source
+citations with retrieval dates, explicit disclosure of non-cited
+defaults) -- deliberately did not invent a name, persona, or
+unverifiable credential, since that would trade a weak E-E-A-T signal
+for a dishonest one.
+Phase 3 (GSC Coverage monitoring): user's own action, scheduled for
+2026-09-19. Nothing for this session to do now; noting the date so a
+future cycle around then knows to ask how it went rather than
+re-proposing the same check.
+Phase 4 (doorway-page test gate): before writing a new test, actually
+checked whether the population pages already sit inside a real
+browsable hierarchy or are orphaned -- confirmed the parent hub page
+(iedzivotaju-skaits-latvija) already renders its area list by mapping
+over NOVADS_PILOT_AREAS, so every area added this session was already
+linked from a real editorial page with national-level content, not an
+orphaned doorway page. Also re-read the existing novads-pilot.rendered
+.test.ts fully before adding anything and found it already covers more
+than given credit for (every rendered number traces to sourced data or
+a pure recomputation of it, cross-contamination checks, small-area
+branching) -- avoided duplicating that. Added exactly the two things
+missing: a regression guard that the hub's rendered HTML actually
+links to every area (not just that the source maps over the array,
+which could still break in rendering), and a deliberate speed-bump
+test capping area count at 12 (currently 9) with a comment explaining
+the reasoning, so future growth of this series requires re-reading
+that reasoning rather than reflexively raising a number to pass CI.
+Full checklist green after every phase. Commits ecce5b0 (headers),
+96ff522 (par-mums), 082e4be (tests).
+Next: all 4 phases of the technical-compliance plan are complete.
+Per the standing pace guidance from two ticks ago, still holding off
+on new-page volume. Good next steps whenever resumed: check back on
+2026-09-19 GSC results with the user, or continue smaller-footprint
+audit/accuracy work in the meantime. No BLOCKED items pending beyond
+the fund-returns data blocker.
