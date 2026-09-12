@@ -1564,3 +1564,42 @@ Next: three items still pending user action from the last entry
 alga-neto/alga-bruto's separate go/no-go. Site-wide audit is now fairly
 thorough; further passes should look for genuinely new issues rather
 than re-checking what's already been covered.
+
+## 2026-09-12 09:59
+
+Did: user said "Go", authorizing the three gated fixes plus
+alga-neto/alga-bruto. Fixed the two dash-ban violations
+(CookieBanner.tsx, privatuma-politika) and restyled all four legal
+pages to the light redesign's typography/spacing convention, per
+explicit user authorization to touch these normally-gated files this
+time. Commit 19af81b.
+
+Then discovered, while starting on alga-neto/alga-bruto: they were
+already fully built and live (commit 0e6d01d, earlier today, before
+this session's visible context began), already correctly implementing
+the differentiated non-taxable minimum and 25.5%/33% brackets -- the
+exact figures independently re-derived a few entries back while
+treating this as still blocked. That research wasn't wasted: it
+surfaced one real, undisclosed gap the existing implementation had --
+no modeling of the additional 3% solidarity surtax above 200 000
+EUR/year (36% total marginal above that point). Added it to the shared
+progressiveIin function, sourced by direct fetch of fm.gov.lv's rates
+page. This also changes alga-bruto's and saimnieciska-darbiba's output
+for high earners (both consume progressiveIin/calculateAlgaNeto), so
+both got contentUpdatedAt bumps despite neither file changing. Added a
+sources section to alga-neto (previously had none) citing both fm.gov.lv
+pages used across this investigation. Full checklist green (154/155
+files, only the known stale-worktree artifact failing), verified
+visually. Commit d9065e5.
+
+Learned: worth checking whether a "blocked" item from an earlier
+journal entry has since been resolved by a cycle whose work isn't in
+current visible context, before re-doing the research from scratch --
+in this case redundant, but a git log check on the relevant file at
+the start would have caught it faster.
+Next: no BLOCKED items pending. Two remaining known blockers from
+earlier (vidējā pensija current figure, 2nd-level fund returns) still
+need better data than what's been provided. Otherwise the site is in
+good shape: light redesign complete and audited, pension cluster
+built out, alga-neto/alga-bruto now complete including the top
+bracket, all previously-flagged gated-file issues resolved.
