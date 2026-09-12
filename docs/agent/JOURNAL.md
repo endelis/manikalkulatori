@@ -1750,3 +1750,27 @@ produced 3 clean hits in a row with zero sourcing blockers, versus tax
 topics which keep hitting the same PDF/navigation-only wall. Worth
 continuing to mine LBN building codes for more gaps before returning
 to tax-driven ideas. No BLOCKED items pending.
+
+## 2026-09-12 12:07
+
+Did: fourth majoklis calculator this stretch,
+kapnu-formulas-kalkulators (Blondel's staircase comfort formula).
+Different sourcing category from the other three: this is a
+centuries-old, universally recognized architectural principle, not a
+Latvian legal requirement, so no external URL citation was forced onto
+it, just clear disclosure in the calculator's own text that it is a
+comfort convention, not a code requirement, and that real safety
+requirements (railing height, flight width) are separate and need a
+building specialist. Real gap confirmed the same way as the others:
+Latvian search results were either machine-translated .ru content or
+static blog explanations, no interactive Latvian tool found. Fixed
+logu-platibas-kalkulators's contentUpdatedAt, same recurring
+post-commit-timestamp drift pattern. Full checklist green, verified
+visually. Commit d7af651.
+Next: user said "double down the pace." majoklis now at 22 calculators
+(was 18 this morning). Continuing to mine this vein; deliberately
+avoiding safety-critical topics (electrical wire sizing, structural
+load capacity, fire egress) even where data might be findable, since a
+wrong answer there risks real physical harm, not just a suboptimal
+outcome, unlike insulation/ventilation/window-area/stair-comfort where
+being off just costs comfort or a permit revision.
