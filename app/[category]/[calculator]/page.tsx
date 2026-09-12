@@ -603,6 +603,39 @@ const explanations: Record<string, React.ReactNode> = {
         >
           pilnu būvniecības prasību ceļvedi
         </Link>
+        {' '}un{' '}
+        <Link
+          href="/majoklis/kapnu-pakapiena-izmeru-kalkulators"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          LBN 200-21 juridiskās prasības kalkulatoru
+        </Link>
+        .
+      </p>
+    </>
+  ),
+  'kapnu-pakapiena-izmeru-kalkulators': (
+    <>
+      <p className="text-panel-muted">
+        Kalkulators pārbauda divus nosacījumus atsevišķi: vai pakāpiena augstums ir robežās no 12 līdz
+        18 cm, un vai pakāpiena platuma un divkāršota augstuma summa ir robežās no 60 līdz 65 cm. Abi
+        nosacījumi jāizpilda, lai kāpnes atbilstu LBN 200-21 62. punkta prasībai.
+      </p>
+      <p className="text-panel-muted">
+        Sk. arī{' '}
+        <Link
+          href="/majoklis/kapnu-formulas-kalkulators"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          Blondela ērtuma formulas kalkulatoru
+        </Link>{' '}
+        un{' '}
+        <Link
+          href="/majoklis/buvniecibas-prasibu-celvedis"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          pilnu būvniecības prasību ceļvedi
+        </Link>
         .
       </p>
     </>
@@ -1721,6 +1754,24 @@ const sourcesContent: Record<string, React.ReactNode> = {
           likumi.lv
         </a>
         , būvnormatīvs LBN 200-21 &quot;Būvju vispārīgo prasību būvnormatīvs&quot;, 99. punkts, izgūts
+        2026. gada 12. septembrī.
+      </li>
+    </ul>
+  ),
+  'kapnu-pakapiena-izmeru-kalkulators': (
+    <ul className="flex flex-col gap-2 text-sm text-panel-muted">
+      <li>
+        Pakāpiena augstuma (12 līdz 18 cm) un platuma plus divu augstumu summas (60 līdz 65 cm)
+        prasība,{' '}
+        <a
+          href="https://m.likumi.lv/ta/id/326992-buvju-visparigo-prasibu-buvnormativs-lbn-200-21"
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          likumi.lv
+        </a>
+        , būvnormatīvs LBN 200-21 &quot;Būvju vispārīgo prasību būvnormatīvs&quot;, 62. punkts, izgūts
         2026. gada 12. septembrī.
       </li>
     </ul>

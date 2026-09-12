@@ -349,7 +349,7 @@ export const articleBody: Record<string, React.ReactNode> = {
         pret prasību tās veidam.
       </p>
 
-      <h2 className="font-sans text-h2">Kāpņu ērtums</h2>
+      <h2 className="font-sans text-h2">Kāpņu ērtums un izmēri</h2>
       <p>
         Blondela formula ir gadsimtiem pārbaudīts ērtuma princips kāpnēm, ne obligāta būvnormatīva
         prasība, taču plaši izmantots arhitektūrā.{' '}
@@ -358,6 +358,14 @@ export const articleBody: Record<string, React.ReactNode> = {
           className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
         >
           Pārbaudi, vai tavas kāpnes atbilst šai formulai
+        </Link>
+        . LBN 200-21 papildus nosaka juridisku prasību pašiem pakāpiena izmēriem (augstums 12 līdz
+        18 cm, platuma plus divu augstumu summa 60 līdz 65 cm), atsevišķi no ērtuma formulas.{' '}
+        <Link
+          href="/majoklis/kapnu-pakapiena-izmeru-kalkulators"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          Pārbaudi šo juridisko prasību
         </Link>
         .
       </p>
@@ -428,7 +436,7 @@ export const articleSources: Record<string, React.ReactNode> = {
         , izgūts 2026. gada 12. septembrī.
       </li>
       <li>
-        Logu platība un griestu augstums,{' '}
+        Logu platība, griestu augstums un kāpņu pakāpiena izmēri,{' '}
         <a
           href="https://m.likumi.lv/ta/id/326992-buvju-visparigo-prasibu-buvnormativs-lbn-200-21"
           className="underline decoration-panel-border underline-offset-4 hover:decoration-current"

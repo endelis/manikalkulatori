@@ -518,6 +518,22 @@ export const calculators: CalculatorMeta[] = [
     contentUpdatedAt: '2026-09-12T13:08:11+03:00',
   },
   {
+    slug: 'kapnu-pakapiena-izmeru-kalkulators',
+    category: 'majoklis',
+    title: 'Kāpņu pakāpiena izmēru kalkulators',
+    h1: 'Vai kāpņu pakāpiena izmēri atbilst prasībai?',
+    intro:
+      'Ievadi pakāpiena augstumu un platumu, uzzini, vai tie atbilst LBN 200-21 juridiskajai prasībai.',
+    metaDescription:
+      'Pārbaudi, vai kāpņu pakāpiena augstums (12 līdz 18 cm) un platuma plus divu augstumu summa (60 līdz 65 cm) atbilst LBN 200-21 prasībai.',
+    keywords: [
+      'kāpņu pakāpiena izmēru kalkulators',
+      'pakāpiena augstuma prasība',
+      'LBN 200-21 kāpnes',
+    ],
+    contentUpdatedAt: '2026-09-12T13:46:50+03:00',
+  },
+  {
     slug: 'kmi-kalkulators',
     category: 'veseliba',
     title: 'ĶMI kalkulators',
@@ -1117,6 +1133,7 @@ const CATEGORY_HUBS: CategoryHub[] = [
       'ventilacijas-apjoma-kalkulators',
       'logu-platibas-kalkulators',
       'kapnu-formulas-kalkulators',
+      'kapnu-pakapiena-izmeru-kalkulators',
       'griestu-augstuma-kalkulators',
     ],
   },
@@ -1148,6 +1165,8 @@ const RELATED_OVERRIDES: Record<string, string[]> = {
   'logu-platibas-kalkulators': ['griestu-augstuma-kalkulators', 'ventilacijas-apjoma-kalkulators'],
   'ventilacijas-apjoma-kalkulators': ['griestu-augstuma-kalkulators', 'logu-platibas-kalkulators'],
   'siltinajuma-biezuma-kalkulators': ['griestu-augstuma-kalkulators', 'siltumsukna-atmaksa'],
+  'kapnu-pakapiena-izmeru-kalkulators': ['kapnu-formulas-kalkulators', 'griestu-augstuma-kalkulators'],
+  'kapnu-formulas-kalkulators': ['kapnu-pakapiena-izmeru-kalkulators', 'griestu-augstuma-kalkulators'],
 
   // Heating/energy alternatives (majoklis): different ways to heat or power a home.
   'apkures-izmaksas': ['siltumsukna-atmaksa', 'elektribas-rekins', 'malkas-apjoms'],
