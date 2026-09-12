@@ -2164,3 +2164,37 @@ Next: majoklis now at 27 calculators (up from 18 this morning -- exactly
 clean hits so far; noise limits were mentioned as a candidate third
 but not yet researched. No BLOCKED items pending beyond the two known
 pension-data blockers.
+
+## 2026-09-12 16:15
+
+Did: tried the third occupational-health candidate (workplace noise
+limits, dB) and found it does NOT live in MK 359 (confirmed directly:
+point 29.8 explicitly defers to a separate noise-specific regulation
+this session hasn't identified yet), unlike temperature and lighting
+which are both in MK 359's own annexes. Rather than force a weakly-
+sourced figure from a different, unidentified regulation, pivoted to
+an audit-style task instead, per the established rotation between
+new-content and audit ticks. Read PROJECT-OVERVIEW.md in full and
+found a real, concrete staleness bug: its Pillar B design section
+still described the "dark instrument-panel aesthetic" as current,
+even though DESIGN-GUIDANCE.md was already correctly updated for the
+2026-09-11 light redesign -- this file was simply missed at the time.
+The top status line was also frozen at "the original 50-calculator
+plan is fully built" dated 2026-09-11, despite the registry having
+grown to 90+ slug entries since (verified by counting `slug: '`
+occurrences in lib/registry.ts directly rather than guessing). Fixed
+both: the design line now correctly states the light redesign and
+points to DESIGN-GUIDANCE.md section 2; the status line now points to
+lib/registry.ts and docs/agent/JOURNAL.md as the live sources of truth
+instead of restating a number that will go stale again within days.
+Left the historical "first 50 calculators" list (section 5) and its
+now-renamed slugs (malkas-daudzums vs. the real malkas-apjoms, etc.)
+untouched, since it is explicitly framed as historical planning
+context, not a live inventory, and a full rewrite there would be a
+bigger, less clearly beneficial change than the two real staleness
+bugs fixed. Commit 50ef44f.
+Next: no BLOCKED items pending beyond the two known pension-data
+blockers. Noise-limit regulation still unidentified; worth a fresh
+search for the actual governing MK-noteikumi number if returning to
+that specific topic, or continuing to alternate between new-calculator
+ticks and audit ticks as material presents itself.
