@@ -2282,3 +2282,46 @@ becomes available, otherwise treat as settled until the user supplies
 data directly. The average-pension unblock is a good reminder to try
 "is there a plain file download" before assuming a data source is
 unreachable, for any future blocked figure.
+
+## 2026-09-12 17:25
+
+Did: verification-only tick (no user reply yet to the question posed
+at the end of the last turn about direction, so proceeded on own
+judgment per the standing never-idle instruction rather than wait).
+Spot-checked today's ~12-item batch of new pages against the
+registry-driven infrastructure: sitemap.xml (101 URLs, all 6 newest
+slugs present), llms.txt (86 entries, both of today's newest additions
+present and correctly worded), and a fresh OG image render for the
+newest article (videja-pensija-latvija, 200 OK, valid PNG). Everything
+came back clean, confirming the registry-driven architecture is
+holding up correctly across a large single-session batch with no
+manual per-page wiring anywhere.
+Then tried one more LBN/LVS building-code angle (accessible parking
+space width) and declined it after two searches: the real governing
+document is LVS 190-7, a paywalled Latvian standard, not a freely
+published MK-noteikumi regulation like every other source this
+session has used, so no direct primary-source fetch was possible.
+Secondary sources were also internally inconsistent in a way that
+suggested AI-search-synthesis garbling rather than a real, quotable
+figure (one summary read "at least 350cm" while simultaneously
+implying "narrower than 330cm is inaccessible," which does not
+parse as a coherent single rule). Declined rather than publish a
+number with this much residual uncertainty.
+Learned: this is the third sourcing-friction decline in the last two
+ticks (noise limits, sauna temperature, now parking width), after a
+long run of clean LBN/MK-noteikumi hits. Treating this as a signal
+that the "well-known Ministry of Cabinet regulation, freely published
+on likumi.lv, with a clean single numeric threshold" vein this session
+mined successfully (majoklis LBN/MK 359, auto CSN/MK 295, sports MK
+470) may be close to exhausted for now, rather than continuing to
+force searches into paywalled-standard or ambiguous territory. A
+different kind of task (deepening existing content, another audit
+pass, or waiting for the user's steer on the question posed last turn)
+is likely higher-value than one more marginal regulated-threshold
+search right now.
+Next: awaiting the user's answer to "keep hunting for calculators, or
+focus elsewhere" from the previous turn. No BLOCKED items pending
+beyond the known pension-fund-returns blocker. If no reply arrives by
+the next tick, default to a different flavor of work (audit/quality
+pass, or content-depth improvement on existing pages) rather than
+another marginal new-calculator search in the same exhausted vein.
