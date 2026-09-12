@@ -26,6 +26,16 @@ export const articleBody: Record<string, React.ReactNode> = {
         eiro mēnesī.
       </p>
       <p>
+        Šī ir minimālā garantija, nevis tipiskā summa. Vidējo faktisko pensijas apmēru sk.{' '}
+        <Link
+          href="/finanses/videja-pensija-latvija"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          vidējās pensijas rakstā
+        </Link>
+        .
+      </p>
+      <p>
         Skaties arī{' '}
         <Link
           href="/finanses/pensija-latvija-celvedis"
@@ -34,6 +44,46 @@ export const articleBody: Record<string, React.ReactNode> = {
           pilnu ceļvedi par pensiju Latvijā
         </Link>
         , kas apkopo visus trīs pensiju līmeņus vienā vietā.
+      </p>
+    </>
+  ),
+  'videja-pensija-latvija': (
+    <>
+      <p>
+        2026. gada jūnijā vidējais piešķirtais vecuma pensijas apmērs Latvijā (ieskaitot piemaksu par
+        apdrošināšanas stāžu līdz 1995. gadam) bija <strong>687,31 eiro</strong> mēnesī, kopumā
+        439&nbsp;597 saņēmēju. Šis skaitlis atspoguļo jaunpiešķirto un pārrēķināto pensiju vidējo
+        apmēru attiecīgajā mēnesī, nevis visu jebkad piešķirto pensiju vēsturisko vidējo, tāpēc tas
+        var nedaudz atšķirties no citur publicētajiem &quot;vidējās pensijas&quot; skaitļiem, kas
+        mēra citu rādītāju (visu izmaksāto pensiju vidējo apmēru).
+      </p>
+      <p>
+        Vidējā pensija atšķiras pēc dzimuma: sievietēm tā bija <strong>658,38 eiro</strong> (286&nbsp;811
+        saņēmējas), vīriešiem <strong>741,60 eiro</strong> (152&nbsp;786 saņēmēji), starpība rodas no
+        atšķirīgas algu vēstures un apdrošināšanas stāža garuma.
+      </p>
+      <p>
+        Vidējā pensija atšķiras arī pēc vecuma grupas: no 740,16 eiro personām, kas pensionējušās pirms
+        65 gadu vecuma, līdz 584,13 eiro visvecākajai grupai (virs 89 gadiem). Jaunāk pensionējušos
+        pensijas parasti ir lielākas, jo balstās uz jaunākiem, augstākiem algu datiem un ilgāku
+        apdrošināšanas stāžu.
+      </p>
+      <p>
+        Skaties arī{' '}
+        <Link
+          href="/finanses/minimala-pensija"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          minimālās pensijas garantiju
+        </Link>{' '}
+        un{' '}
+        <Link
+          href="/finanses/pensija-latvija-celvedis"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          pilnu ceļvedi par pensiju Latvijā
+        </Link>
+        .
       </p>
     </>
   ),
@@ -96,7 +146,14 @@ export const articleBody: Record<string, React.ReactNode> = {
         >
           minimālās pensijas garantiju
         </Link>
-        , ja aprēķinātā summa sanāk maza.
+        , ja aprēķinātā summa sanāk maza, vai salīdzini ar{' '}
+        <Link
+          href="/finanses/videja-pensija-latvija"
+          className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+        >
+          vidējo pensiju Latvijā
+        </Link>
+        .
       </p>
 
       <h2 className="font-sans text-h2">Priekšlaicīga pensionēšanās</h2>
@@ -400,6 +457,19 @@ export const articleSources: Record<string, React.ReactNode> = {
         &quot;No 2026. gada 1. janvāra paaugstināti pensiju un atlīdzību minimālie apmēri&quot;
       </a>
       , publicēts 2025. gada 12. decembrī, spēkā no 2026. gada 1. janvāra, izgūts 2026. gada 11. septembrī.
+    </p>
+  ),
+  'videja-pensija-latvija': (
+    <p className="text-sm text-panel-faint">
+      Valsts sociālās apdrošināšanas aģentūra, datu kopa{' '}
+      <a
+        href="https://data.gov.lv/dati/lv/dataset/vecuma-pensiju-sanemeju-skaits-un-pensijas-videjais-pieskirtais-apmers"
+        className="underline decoration-panel-border underline-offset-4 hover:decoration-current"
+      >
+        &quot;Vecuma pensiju saņēmēju skaits un pensijas vidējais piešķirtais apmērs&quot;
+      </a>
+      , fails Vecuma_pensijas_06-2026.xlsx, Latvijas Atvērto datu portāls, izgūts 2026. gada 12.
+      septembrī.
     </p>
   ),
   'izdienas-pensija': (

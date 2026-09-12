@@ -1058,6 +1058,18 @@ export const articles: ArticleMeta[] = [
     contentUpdatedAt: '2026-09-11T22:16:13+03:00',
   },
   {
+    slug: 'videja-pensija-latvija',
+    category: 'finanses',
+    title: 'Vidējā pensija Latvijā',
+    h1: 'Cik liela ir vidējā vecuma pensija Latvijā',
+    intro:
+      'Uzzini vidējo piešķirto vecuma pensijas apmēru Latvijā 2026. gadā, sadalījumā pa vecuma grupām un dzimumu, ar avotu VSAA.',
+    metaDescription:
+      'Vidējā vecuma pensija Latvijā 2026. gada jūnijā: 687,31 eiro kopā, sadalījumā pa vecuma grupām un dzimumu, ar avotu Valsts atvērto datu portālā.',
+    keywords: ['vidējā pensija Latvijā', 'vidējā vecuma pensija', 'vidējā pensija 2026'],
+    contentUpdatedAt: '2026-09-12T17:10:00+03:00',
+  },
+  {
     slug: 'priekslaicigas-vs-standarta-pensija',
     category: 'finanses',
     title: 'Priekšlaicīga vai standarta pensija',
@@ -1213,6 +1225,7 @@ const CATEGORY_HUBS: CategoryHub[] = [
     memberSlugs: [
       'pensijas-kalkulators',
       'minimala-pensija',
+      'videja-pensija-latvija',
       'priekslaicigas-pensijas-kalkulators',
       'priekslaicigas-vs-standarta-pensija',
       'pensiju-3-limena-kalkulators',

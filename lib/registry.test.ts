@@ -76,8 +76,8 @@ describe('getRelatedCalculators', () => {
     expect(related.map((item) => item.slug)).toEqual([
       'pensijas-kalkulators',
       'minimala-pensija',
+      'videja-pensija-latvija',
       'priekslaicigas-pensijas-kalkulators',
-      'priekslaicigas-vs-standarta-pensija',
     ]);
   });
 
