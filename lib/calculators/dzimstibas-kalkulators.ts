@@ -60,7 +60,19 @@ const MONTHS_PER_YEAR = 12;
 const MINUTES_PER_DAY = 24 * 60;
 const PERCENT_DIVISOR = 100;
 
+/**
+ * Births needed can never be negative: if net migration alone already exceeds deaths
+ * (or, for mode C, already exceeds the target), zero births still leaves the population
+ * growing, not shrinking, so the floor is 0, not a negative "births needed" that has no
+ * real meaning. Real areas hit this: e.g. Jūrmala's 2025 net migration (1208) exceeds
+ * its deaths (705).
+ */
 export function computeBirthsNeeded(input: DzimstibasInput): number {
+  const raw = computeRawBirthsNeeded(input);
+  return Math.max(0, raw);
+}
+
+function computeRawBirthsNeeded(input: DzimstibasInput): number {
   switch (input.mode) {
     case 'nulles-dabiskais':
       return input.deaths;

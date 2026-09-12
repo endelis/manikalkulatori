@@ -54,6 +54,23 @@ describe('computeDzimstibas mode B, nulles kopējās izmaiņas', () => {
     expect(result.birthsNeeded).toBeLessThan(base.birthsCurrent);
     expect(result.multiplier).toBeLessThan(1);
   });
+
+  it('floors birthsNeeded at zero when net migration alone exceeds deaths, never negative', () => {
+    // Real case: Jūrmala 2025, deaths 705, net migration 1208 (population already
+    // growing from migration alone). A raw deaths-minus-migration formula would give
+    // -503, which is not a meaningful "births needed" value.
+    const result = computeDzimstibas({
+      ...base,
+      mode: 'nulles-kopejas',
+      deaths: 705,
+      netMigration: 1208,
+    });
+    expect(result.birthsNeeded).toBe(0);
+    expect(result.perMonth).toBe(0);
+    expect(result.perDay).toBe(0);
+    expect(result.multiplier).toBe(0);
+    expect(result.tfrNeeded).toBe(0);
+  });
 });
 
 describe('computeDzimstibas mode C, mērķa izaugsme, likme input', () => {
