@@ -23,11 +23,11 @@ tool), confirmed unreachable by two independent attempts; needs either a
 headless-browser-capable tool or a user-supplied export. Calculator 4
 (the combined all-3-levels calculator) and article 4 (2nd vs 3rd level
 comparison) are not blocked, just not yet built. Article 5 (how to choose a
-2nd-level plan by risk tier) may be buildable now even though calculator 2
-is blocked, since it only needs Manapensija.lv's descriptive risk-tier text,
-not the numeric return data — worth checking before assuming it shares
-calculator 2's blocker. Article 9 (coefficient G history) stays
-deprioritized per its own note below.
+2nd-level plan by risk tier, `ka-izveleties-pensiju-2-limena-planu`) turned
+out not to share calculator 2's blocker — it only needed descriptive
+risk-tier text, not numeric fund-return data — and is now built and wired
+into the hub. Article 9 (coefficient G history) stays deprioritized per its
+own note below.
 
 One implementation deviation from section 5's original architecture, noted
 for accuracy: article body copy ended up living as JSX directly in
