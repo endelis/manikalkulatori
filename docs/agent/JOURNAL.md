@@ -2404,3 +2404,64 @@ except calculator 2 and calculator 4, both blocked on the same
 fund-return data. No other BLOCKED items pending. Good point to pivot
 back to fresh-topic research or another audit pass, or continue
 awaiting the user's steer on overall direction from several turns ago.
+
+## 2026-09-12 19:15
+
+Did: applied the average-pension unblock technique (direct CSP PxWeb
+JSON API via curl, bypassing the browsable UI WebFetch cannot render)
+to a completely different site feature: the "iedzīvotāju skaits"
+population/demographics page series, previously stuck at its original
+3-area pilot (Daugavpils, Jelgava, Varakļānu novads). Confirmed the
+same PxWeb tables used for that pilot (IRS031, IDS031, IMV021) have a
+working JSON API, found the correct query shape after one wrong guess
+(used "ContentsCode" instead of "INDICATOR" as the filter variable
+first, got a clear "Bad Request," not silently wrong data), then
+expanded coverage to 6 more areas in one stretch: Liepāja, Ventspils,
+Rēzekne, Valmiera, Rīga, and Jūrmala. Cross-verified every single
+year's births-minus-deaths against the table's own published NATGROW
+value before use (matched exactly, all 6 areas, all 5 years), same
+discipline as the original pilot. Split sitemap.ts's single blanket
+date for all novads-pilot pages into a per-slug map so a page added
+today does not silently inherit the original pilot's 2026-09-04 date.
+Adding Jūrmala (the first genuinely-growing area in this series --
+positive net migration exceeds its death count) surfaced a real,
+previously-latent bug in the shared dzimstibas-kalkulators compute
+module, used by both the interactive calculator and this page series:
+the "births needed to stop shrinking" formula (deaths minus migration)
+went negative when migration alone already exceeds deaths, which is
+not a meaningful value (you cannot need negative births). This was
+never triggered by the original 3 pilot areas or by prior calculator
+tests, since none had migration exceeding deaths. The dedicated
+dash-scan test for this page series caught it immediately once it
+started iterating over the newly-added areas (it flagged the raw
+hyphen-minus character the negative number rendered with), which is
+exactly the kind of edge case that test was written to catch. Fixed
+at the root -- computeBirthsNeeded now floors at 0 for all three
+modes -- rather than patching the page-level display, since the same
+latent bug could have surfaced on the live interactive calculator for
+any user modeling a similarly migration-heavy area. Added a test
+reproducing Jūrmala's exact real numbers. Full checklist green after
+the fix (tsc, build, vitest including the dash-scan test, manual
+visual/rendered-text verification of the corrected sentence).
+Commits b668fbd, 6834093, ecccc6d.
+Mid-stretch, the user asked directly whether this pace of publishing
+risks looking spammy to Google and what actually moves rankings. Gave
+a direct, unhedged answer grounding the response in the site's own
+already-documented GSC data (PROJECT-OVERVIEW.md section 11: the real
+bottleneck is ranking position from low domain authority, not
+indexing) rather than generic reassurance: named the population-page
+series specifically as structurally close to Google's "scaled content
+abuse" pattern despite genuine per-page differentiation, recommended
+pausing further page-count growth to let this batch settle and watching
+GSC's Coverage report for "Discovered, currently not indexed" pileup as
+the real warning sign, and pointed at backlinks/off-page promotion
+(not more content) as the actual lever content volume cannot substitute
+for. This is a recorded, deliberate pace-change recommendation, not
+just a one-off answer -- future cycles should not resume aggressive
+new-page velocity without the user weighing in on it first.
+Next: no BLOCKED items pending beyond the one remaining pension-fund-
+returns blocker. Per the pace conversation just had with the user,
+the right default for upcoming cycles is NOT more new-page volume --
+prefer smaller-footprint work (bug fixes, audits, doc accuracy, or
+outreach-adjacent drafting if asked) until the user weighs in on
+overall direction and pace.
