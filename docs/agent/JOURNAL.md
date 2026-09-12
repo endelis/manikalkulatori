@@ -2101,3 +2101,40 @@ clean hits and now one clean miss; worth trying veseliba or sports for
 a similar regulated-threshold pattern next, or returning to pure
 building-code/traffic-code mining only once a fresh angle presents
 itself rather than forcing more attempts on window tint.
+
+## 2026-09-12 15:12
+
+Did: found a new regulated-threshold vein, occupational health
+standards, via darba-vietas-temperaturas-kalkulators (MK noteikumi
+Nr. 359 "Darba aizsardzības prasības darba vietās", Annex 1, Category
+I work: 19-25 C cold period / 20-28 C warm period). First checked
+whether the existing promiles (BAC estimate) calculator already
+compares against Latvia's legal driving limit before considering that
+angle -- it deliberately does not, carrying an explicit disclaimer
+that the estimate must never be used as a basis for deciding whether
+to drive. Correctly read that as an intentional safety boundary already
+drawn in this codebase and did not add a legal-limit comparison there,
+consistent with this session's standing rule to leave "wrong output
+could contribute to a real physical risk" territory alone. Confirmed
+the temperature figures via two independent direct fetches of the
+primary source (likumi.lv and m.likumi.lv), identical both times.
+Placed under majoklis (indoor-environment compliance, alongside
+ventilation/insulation) since none of the six fixed categories map
+cleanly to "workplace regulation" and forcing a new category would be
+a bigger, unauthorized structural change. Deliberately kept it out of
+the LBN building-code hub since it is a different regulation and
+subject (labor protection vs. construction), avoiding the same
+over-broad-hub mistake caught and fixed earlier this session. Also
+caught my own dash-ban near-miss before commit: first draft displayed
+the range as "19–25 °C" (en dash), grepped for it, found no precedent
+for that pattern anywhere in visible UI text in this codebase (only in
+exempt code comments), and rewrote it as "19 līdz 25 °C" to match
+every other range-display calculator's established convention. Full
+checklist green, visually verified. Commits 49ada8f, d1fb84c (routine
+same-day contentUpdatedAt correction, done proactively as usual now).
+Next: no BLOCKED items pending beyond the two known pension-data
+blockers. Occupational-health/MK-noteikumi is a new vein alongside
+LBN (majoklis) and CSN (auto) -- worth checking if it has more clean
+hits (e.g. workstation lighting levels, noise limits) before it also
+runs dry, applying the same safety-hardware-vs-compliance-check filter
+each time.
