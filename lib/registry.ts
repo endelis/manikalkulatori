@@ -611,7 +611,7 @@ export const calculators: CalculatorMeta[] = [
       'apgaismojuma normas birojā',
       'lux normas darba vietā',
     ],
-    contentUpdatedAt: '2026-09-12T15:39:41+03:00',
+    contentUpdatedAt: '2026-09-12T15:44:07+03:00',
   },
   {
     slug: 'kmi-kalkulators',
